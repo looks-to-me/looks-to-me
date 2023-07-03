@@ -1,5 +1,7 @@
 import { Inter } from 'next/font/google';
 
+import 'modern-normalize';
+
 import type { FC, ReactNode } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
