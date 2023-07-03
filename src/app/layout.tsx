@@ -1,6 +1,10 @@
+import clsx from 'clsx';
 import { Inter } from 'next/font/google';
 
+import * as styles from './layout.css';
+
 import 'modern-normalize';
+import './_theme';
 
 import type { FC, ReactNode } from 'react';
 
@@ -20,7 +24,9 @@ const RootLayout: FC<RootLayoutProps> = ({
 }) => {
   return (
     <html lang="ja">
-      <body className={inter.className}>{children}</body>
+      <body className={clsx(styles.body, inter.className)}>
+        {children}
+      </body>
     </html>
   );
 };

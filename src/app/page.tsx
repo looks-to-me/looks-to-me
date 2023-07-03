@@ -1,10 +1,8 @@
-import * as styles from './page.css';
-
 import type { FC } from 'react';
 
 const HomePage: FC = () => {
   return (
-    <main className={styles.wrapper}>
+    <main>
       LooksToMe
     </main>
   );
