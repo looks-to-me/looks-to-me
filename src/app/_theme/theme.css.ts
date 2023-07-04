@@ -21,6 +21,8 @@ export const theme = createGlobalTheme(':root', {
       textMuted: '',
       background: '',
       backgroundInset: '',
+      border: '',
+      borderMuted: '',
     },
   },
 });

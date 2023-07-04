@@ -22,6 +22,8 @@ globalStyle(':root', {
         [theme.color.tokens.textMuted]: theme.color.palette.gray400,
         [theme.color.tokens.background]: theme.color.palette.gray900,
         [theme.color.tokens.backgroundInset]: theme.color.palette.black,
+        [theme.color.tokens.border]: theme.color.palette.gray600,
+        [theme.color.tokens.borderMuted]: theme.color.palette.gray700,
       },
     },
   },
