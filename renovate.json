@@ -1,0 +1,31 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":timezone(Asia/Tokyo)"
+  ],
+  "branchPrefix": "deps/",
+  "labels": ["deps"],
+  "schedule": [
+    "after 10:00 before 18:00 every weekday"
+  ],
+  "automerge": true,
+  "platformAutomerge": true,
+  "automergeStrategy": "merge-commit",
+  "major": {
+    "automerge": false
+  },
+  "ignorePaths": [
+    "**/node_modules/**"
+  ],
+  "packageRules": [
+    {
+      "groupName": "lint packages",
+      "extends": ["packages:linters"]
+    },
+    {
+      "groupName": "test packages",
+      "extends": ["packages:test"]
+    }
+  ]
+}
