@@ -1,0 +1,53 @@
+name: Consistent Pull Request
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  consistent-pull-request:
+    name: Consistent Pull Request
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Check head branch name
+        if: >-
+          github.event.action == 'opened'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          branch_name="${{ github.head_ref }}"
+          if ! [[ ${branch_name} =~ ^(feature|bugfix|refactor|chore|deps)/.* ]]; then
+              echo "::error::Branch name '${branch_name}' does not follow naming convention"
+              gh pr close "${{ github.event.number }}"
+              exit 1
+          fi
+
+      - name: Consistent pull request title and label
+        if: >-
+          github.event.action != 'synchronize' &&
+          github.event.pull_request.state == 'open'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          branch_name="${{ github.head_ref }}"
+          label=$(echo "${branch_name}" | cut -d'/' -f1)
+          pr_title="${{ github.event.pull_request.title }}"
+          pr_title_regex="^\[${label}\]"
+          if ! [[ ${pr_title} =~ ${pr_title_regex} ]]; then
+            pr_title="[${label}] ${pr_title}"
+          fi
+          gh pr edit "${{ github.event.number }}" --title "${pr_title}" --add-label "${label}"
+
+      - name: Check base branch name
+        if: >-
+          github.event.pull_request.state == 'open'
+        run: |
+          branch_name="${{ github.base_ref }}"
+          if ! [[ ${branch_name} =~ ^(main|staging|develop)$ ]]; then
+              echo "::error::Cannot merge into branch name '${branch_name}'."
+              exit 1
+          fi
