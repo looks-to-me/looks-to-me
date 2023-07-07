@@ -19,4 +19,4 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Build
-        run: pnpm run pages:build
+        run: pnpm run build:ci

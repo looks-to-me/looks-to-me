@@ -6,14 +6,13 @@
   "scripts": {
     "dev": "next dev",
     "dev:storybook": "storybook dev",
+    "dev:pages": "next-on-pages --watch",
     "build": "next build",
     "build:storybook": "storybook build -o public/storybook && mv public/storybook/index.html public/storybook/index.htm",
+    "build:pages": "next-on-pages",
+    "build:ci": "pnpm run build:storybook && pnpm run build:pages",
     "start": "next start",
-    "lint": "next lint",
-    "pages:build": "pnpm run build:storybook && next-on-pages",
-    "pages:watch": "next-on-pages --watch",
-    "pages:dev": "wrangler pages dev .vercel/output/static --compatibility-flag=nodejs_compat",
-    "pages:deploy": "pnpm run pages:build && wrangler pages publish .vercel/output/static"
+    "start:pages": "wrangler pages dev .vercel/output/static --compatibility-flag=nodejs_compat"
   },
   "pnpm": {
     "overrides": {
