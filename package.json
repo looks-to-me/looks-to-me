@@ -30,6 +30,7 @@
     "modern-normalize": "2.0.0",
     "next": "13.4.10",
     "next-auth": "4.22.1",
+    "@auth/core": "0.9.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "zod": "3.21.4"
