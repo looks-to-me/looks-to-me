@@ -26,7 +26,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "1.1.0",
+    "@cloudflare/next-on-pages": "1.2.0",
     "@tsconfig/next": "1.0.5",
     "@tsconfig/strictest": "2.0.1",
     "@types/node": "20.3.1",

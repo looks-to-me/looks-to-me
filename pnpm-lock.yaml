@@ -26,8 +26,8 @@ dependencies:
 
 devDependencies:
   '@cloudflare/next-on-pages':
-    specifier: 1.1.0
-    version: 1.1.0(vercel@30.2.3)(wrangler@3.1.2)
+    specifier: 1.2.0
+    version: 1.2.0(vercel@30.2.3)(wrangler@3.1.2)
   '@tsconfig/next':
     specifier: 1.0.5
     version: 1.0.5
@@ -1337,8 +1337,8 @@ packages:
       mime: 3.0.0
     dev: true
 
-  /@cloudflare/next-on-pages@1.1.0(vercel@30.2.3)(wrangler@3.1.2):
-    resolution: {integrity: sha512-W/5c7nG44hZgh/+iP4I7g7IKCLCddb6AEqL+VJDKBgFZrK3v7g8sNO65KeKsnI70vvGv3MHX/rmNYaZoOkOLOA==}
+  /@cloudflare/next-on-pages@1.2.0(vercel@30.2.3)(wrangler@3.1.2):
+    resolution: {integrity: sha512-BZv2m/MJ7S5mnhroKwQr7zEux5NZPRX/SstS1vIe73jTSdY/yDYoZ/Y2hQ8sOtb0kFspq4QFSCIlXkSSY9EuQA==}
     hasBin: true
     peerDependencies:
       vercel: ^30.0.0
