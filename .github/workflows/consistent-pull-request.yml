@@ -9,6 +9,8 @@ jobs:
     name: Consistent Pull Request
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    permissions:
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -17,12 +19,13 @@ jobs:
         if: >-
           github.event.action == 'opened'
         env:
+          HEAD_REF: ${{ github.head_ref }}
+          PR_NUMBER: ${{ github.event.number }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          branch_name="${{ github.head_ref }}"
-          if ! [[ ${branch_name} =~ ^(feature|bugfix|refactor|chore|deps)/.* ]]; then
-              echo "::error::Branch name '${branch_name}' does not follow naming convention"
-              gh pr close "${{ github.event.number }}"
+          if ! [[ "${HEAD_REF}" =~ ^(feature|bugfix|refactor|chore|deps)/.* ]]; then
+              echo "::error::Branch name '${HEAD_REF}' does not follow naming convention"
+              gh pr close "${PR_NUMBER}"
               exit 1
           fi
 
@@ -31,23 +34,25 @@ jobs:
           github.event.action != 'synchronize' &&
           github.event.pull_request.state == 'open'
         env:
+          HEAD_REF: ${{ github.head_ref }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_NUMBER: ${{ github.event.number }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          branch_name="${{ github.head_ref }}"
-          label=$(echo "${branch_name}" | cut -d'/' -f1)
-          pr_title="${{ github.event.pull_request.title }}"
+          label=$(echo "${HEAD_REF}" | cut -d'/' -f1)
           pr_title_regex="^\[${label}\]"
-          if ! [[ ${pr_title} =~ ${pr_title_regex} ]]; then
-            pr_title="[${label}] ${pr_title}"
+          if ! [[ "${PR_TITLE}" =~ ${pr_title_regex} ]]; then
+            PR_TITLE="[${label}] ${PR_TITLE}"
           fi
-          gh pr edit "${{ github.event.number }}" --title "${pr_title}" --add-label "${label}"
+          gh pr edit "${PR_NUMBER}" --title "${PR_TITLE}" --add-label "${label}"
 
       - name: Check base branch name
         if: >-
           github.event.pull_request.state == 'open'
+        env:
+          BASE_REF: ${{ github.base_ref }}
         run: |
-          branch_name="${{ github.base_ref }}"
-          if ! [[ ${branch_name} =~ ^(main|staging|develop)$ ]]; then
-              echo "::error::Cannot merge into branch name '${branch_name}'."
+          if ! [[ "${BASE_REF}" =~ ^(main|staging|develop)$ ]]; then
+              echo "::error::Cannot merge into branch name '${BASE_REF}'."
               exit 1
           fi
