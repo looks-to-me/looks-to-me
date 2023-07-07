@@ -1,3 +1,4 @@
+import { NextAuthProvider } from './_components/next-auth-provider';
 import { Root } from './_components/root';
 
 import type { FC, ReactNode } from 'react';
@@ -18,7 +19,7 @@ const RootLayout: FC<RootLayoutProps> = ({
     <html lang="ja">
       <body>
         <Root>
-          {children}
+          <NextAuthProvider>{children}</NextAuthProvider>
         </Root>
       </body>
     </html>
