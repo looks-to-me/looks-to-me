@@ -43,6 +43,6 @@
     "eslint-plugin-unused-imports": "2.0.0",
     "typescript": "5.1.6",
     "vercel": "30.2.3",
-    "wrangler": "3.1.1"
+    "wrangler": "3.1.2"
   }
 }
