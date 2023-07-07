@@ -13,3 +13,5 @@ const handler = NextAuth({
 
 // https://next-auth.js.org/configuration/initialization#route-handlers-app
 export { handler as GET, handler as POST };
+
+export const runtime = 'edge';
