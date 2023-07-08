@@ -55,7 +55,7 @@
     "mini-css-extract-plugin": "2.7.6",
     "storybook": "7.0.26",
     "typescript": "5.1.6",
-    "vercel": "30.2.3",
+    "vercel": "31.0.1",
     "webpack-merge": "5.9.0",
     "wrangler": "3.1.1"
   }
