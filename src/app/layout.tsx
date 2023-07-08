@@ -1,14 +1,6 @@
-import clsx from 'clsx';
-import { Inter } from 'next/font/google';
-
-import * as styles from './layout.css';
-
-import 'modern-normalize';
-import './_theme';
+import { Root } from './_components/root';
 
 import type { FC, ReactNode } from 'react';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'LooksToMe',
@@ -24,8 +16,10 @@ const RootLayout: FC<RootLayoutProps> = ({
 }) => {
   return (
     <html lang="ja">
-      <body className={clsx(styles.body, inter.className)}>
-        {children}
+      <body>
+        <Root>
+          {children}
+        </Root>
       </body>
     </html>
   );
