@@ -1,9 +1,9 @@
-import { style, globalStyle } from '@vanilla-extract/css';
+import { globalStyle } from '@vanilla-extract/css';
 import { calc } from '@vanilla-extract/css-utils';
 
-import { theme } from './_theme';
+import { theme } from '../../_theme';
 
-export const body = style({
+globalStyle('body', {
   color: theme.color.tokens.text,
   backgroundColor: theme.color.tokens.background,
   fontSize: theme.font.size.normal,
