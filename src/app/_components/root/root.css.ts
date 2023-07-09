@@ -4,8 +4,8 @@ import { calc } from '@vanilla-extract/css-utils';
 import { theme } from '../../_theme';
 
 globalStyle('body', {
-  color: theme.color.tokens.text,
-  backgroundColor: theme.color.tokens.background,
+  color: theme.color.token.semantic.text,
+  backgroundColor: theme.color.token.semantic.background,
   fontSize: theme.font.size.normal,
   fontWeight: theme.font.weight.normal,
 });
