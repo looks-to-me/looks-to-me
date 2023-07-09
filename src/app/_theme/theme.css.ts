@@ -36,13 +36,15 @@ export const theme = createGlobalTheme(':root', {
       green800: '',
       green900: '',
     },
-    tokens: {
-      text: '',
-      textMuted: '',
-      background: '',
-      backgroundInset: '',
-      border: '',
-      borderMuted: '',
+    token: {
+      semantic: {
+        text: '',
+        textMuted: '',
+        background: '',
+        backgroundInset: '',
+        border: '',
+        borderMuted: '',
+      },
       button: {
         normal: {
           text: '',
