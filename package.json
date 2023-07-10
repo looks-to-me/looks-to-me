@@ -2,7 +2,7 @@
   "name": "looks-to-me",
   "version": "1.0.0",
   "private": true,
-  "packageManager": "pnpm@8.6.6",
+  "packageManager": "pnpm@8.6.7",
   "scripts": {
     "dev": "next dev",
     "dev:storybook": "storybook dev",
