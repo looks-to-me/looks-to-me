@@ -4,6 +4,7 @@
   "private": true,
   "packageManager": "pnpm@8.6.7",
   "scripts": {
+    "create:component": "scaffdog generate component",
     "dev": "next dev",
     "dev:storybook": "storybook dev",
     "dev:pages": "next-on-pages --watch",
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "1.2.0",
+    "@scaffdog/types": "2.5.1",
     "@storybook/addon-essentials": "7.0.26",
     "@storybook/addon-interactions": "7.0.26",
     "@storybook/addon-links": "7.0.26",
@@ -55,6 +57,7 @@
     "eslint-plugin-jest": "27.2.2",
     "eslint-plugin-unused-imports": "2.0.0",
     "mini-css-extract-plugin": "2.7.6",
+    "scaffdog": "2.5.1",
     "storybook": "7.0.26",
     "typescript": "5.1.6",
     "vercel": "30.2.3",
