@@ -84,7 +84,7 @@ import type { ForwardRefRenderFunction , ComponentPropsWithoutRef } from 'react'
 export type {{ inputs.name | pascal }}Props = ComponentPropsWithoutRef<'div'> & {
 };
 
-export const {{ inputs.name | pascal }}Render: ForwardRefRenderFunction<HTMLDivElement, {{ inputs.name | pascal }}Props> = ({
+const {{ inputs.name | pascal }}Render: ForwardRefRenderFunction<HTMLDivElement, {{ inputs.name | pascal }}Props> = ({
   className,
   ...props
 }, ref) => {
@@ -98,7 +98,7 @@ export const {{ inputs.name | pascal }}Render: ForwardRefRenderFunction<HTMLDivE
   );
 };
 
-export const Button = forwardRef<HTMLDivElement, {{ inputs.name | pascal }}Props>({{ inputs.name | pascal }}Render);
+export const {{ inputs.name | pascal }} = forwardRef<HTMLDivElement, {{ inputs.name | pascal }}Props>({{ inputs.name | pascal }}Render);
 
 ```
 
