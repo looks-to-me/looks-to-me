@@ -54,7 +54,7 @@
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
     "eslint-plugin-import": "2.27.5",
-    "eslint-plugin-jest": "27.2.2",
+    "eslint-plugin-jest": "27.2.3",
     "eslint-plugin-unused-imports": "2.0.0",
     "mini-css-extract-plugin": "2.7.6",
     "scaffdog": "2.5.1",
