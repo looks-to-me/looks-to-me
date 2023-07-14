@@ -6,12 +6,14 @@
   "scripts": {
     "create:component": "scaffdog generate component",
     "dev": "next dev",
-    "dev:proxy": "cf-bindings-proxy --d1=DB",
+    "dev:proxy": "cf-bindings-proxy",
     "dev:storybook": "storybook dev",
     "build": "next build",
     "build:storybook": "storybook build -o public/storybook && mv public/storybook/index.html public/storybook/index.htm",
     "build:pages": "next-on-pages",
-    "build:ci": "pnpm run build:storybook && pnpm run build:pages"
+    "build:ci": "pnpm run build:storybook && pnpm run build:pages",
+    "migrate:create": "drizzle-kit generate:sqlite",
+    "migrate:apply": "wrangler d1 migrations apply local --local"
   },
   "pnpm": {
     "overrides": {
@@ -54,6 +56,7 @@
     "@vanilla-extract/next-plugin": "2.1.3",
     "@vanilla-extract/recipes": "0.4.0",
     "@vanilla-extract/webpack-plugin": "2.2.0",
+    "better-sqlite3": "8.4.0",
     "drizzle-kit": "0.19.9",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.10",
