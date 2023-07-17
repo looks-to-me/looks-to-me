@@ -10,5 +10,3 @@ export const { handlers: { GET,POST }, auth } = NextAuth({
   ],
   secret: process.env['NEXTAUTH_SECRET'] || '',
 });
-
-export const runtime = 'edge';
