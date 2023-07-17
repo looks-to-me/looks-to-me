@@ -20,8 +20,8 @@ dependencies:
     specifier: 0.6.0
     version: 0.6.0(typescript@5.1.6)(zod@3.21.4)
   cf-bindings-proxy:
-    specifier: 0.2.2
-    version: 0.2.2(@cloudflare/workers-types@4.20230710.1)(wrangler@3.2.0)
+    specifier: 0.2.3
+    version: 0.2.3(@cloudflare/workers-types@4.20230710.1)(wrangler@3.2.0)
   clsx:
     specifier: 1.2.1
     version: 1.2.1
@@ -6963,8 +6963,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /cf-bindings-proxy@0.2.2(@cloudflare/workers-types@4.20230710.1)(wrangler@3.2.0):
-    resolution: {integrity: sha512-UkevBwkEhF8Q2tpyAh+tqHBCHbQ/dYEwCFvDWtSuD9GXh3+LYsIaSjYxN/Kmio4/4o2q7iTrYR/irZuin0iDAQ==}
+  /cf-bindings-proxy@0.2.3(@cloudflare/workers-types@4.20230710.1)(wrangler@3.2.0):
+    resolution: {integrity: sha512-seLF7dNBwGOkWXqUAggna9m/Kq6JlCrHjy5aOrH86H7iEF9EUbQHC5ZEJW8/Vd54bjguOamNKMDFZFGN/Siwrg==}
     hasBin: true
     peerDependencies:
       '@cloudflare/workers-types': '>=4'
