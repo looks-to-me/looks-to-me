@@ -1,0 +1,45 @@
+name: Migration
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - migrations/**
+
+jobs:
+  migration:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Configure
+        run: |
+          cat <<EOF > wrangler.toml
+          [[d1_databases]]
+          binding = "DB"
+          database_id = "${{ secrets.CLOUDFLARE_D1_PREVIEW_ID }}"
+          database_name = "preview"
+
+          [[d1_databases]]
+          binding = "DB"
+          database_id = "${{ secrets.CLOUDFLARE_D1_PRODUCTION_ID }}"
+          database_name = "production"
+          EOF
+
+# TODO: migration does not work with GitHubActions.
+# @see: https://github.com/cloudflare/workers-sdk/issues/3598
+
+#      - name: Migrate preview
+#        run: echo y | pnpm wrangler d1 migrations apply preview
+#        env:
+#          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+#      - name: Migrate production
+#        run: pnpm wrangler d1 migrations apply production
+#        env:
+#          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
