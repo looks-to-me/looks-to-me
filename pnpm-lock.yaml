@@ -46,8 +46,8 @@ dependencies:
 
 devDependencies:
   '@cloudflare/next-on-pages':
-    specifier: 1.3.0
-    version: 1.3.0(vercel@30.2.3)(wrangler@3.2.0)
+    specifier: 1.3.1
+    version: 1.3.1(vercel@30.2.3)(wrangler@3.2.0)
   '@cloudflare/workers-types':
     specifier: 4.20230710.1
     version: 4.20230710.1
@@ -2596,8 +2596,8 @@ packages:
     dependencies:
       mime: 3.0.0
 
-  /@cloudflare/next-on-pages@1.3.0(vercel@30.2.3)(wrangler@3.2.0):
-    resolution: {integrity: sha512-lhQMXi165IZwaoBGJwcHddTuk0ssoNl8v2Q+msld6t7zIvHWDS5kJHnr3aWffsFU2pHb6bxvzRqdgqfLI9/N2w==}
+  /@cloudflare/next-on-pages@1.3.1(vercel@30.2.3)(wrangler@3.2.0):
+    resolution: {integrity: sha512-1zhmbqZ6pnVMBlXwCkc83sESiOjDF91LIjczILY+FjYRWBDeQDsqxvUg8e/U/hy/3mq1j8yqdoa+mnQf/IGAVg==}
     hasBin: true
     peerDependencies:
       vercel: ^30.0.0
