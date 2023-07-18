@@ -1,3 +1,5 @@
+import { ClerkProvider } from '@clerk/nextjs';
+
 import { Root } from './_components/root';
 
 import type { FC, ReactNode } from 'react';
@@ -15,13 +17,15 @@ const RootLayout: FC<RootLayoutProps> = ({
   children,
 }) => {
   return (
-    <html lang="ja">
-      <body>
-        <Root>
-          {children}
-        </Root>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="ja">
+        <body>
+          <Root>
+            {children}
+          </Root>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 };
 
