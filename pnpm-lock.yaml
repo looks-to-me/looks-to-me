@@ -106,8 +106,8 @@ devDependencies:
     specifier: 2.2.0
     version: 2.2.0(@types/node@20.4.2)(webpack@5.88.1)
   drizzle-kit:
-    specifier: 0.19.6
-    version: 0.19.6
+    specifier: 0.19.8
+    version: 0.19.8
   eslint:
     specifier: 8.45.0
     version: 8.45.0
@@ -2680,8 +2680,8 @@ packages:
     engines: {node: '>=10.0.0'}
     dev: true
 
-  /@drizzle-team/studio@0.0.1:
-    resolution: {integrity: sha512-cHgGezy2ojBFMaU6PZyBkksgFsg2CQ8IRN4mS7WdbA/Zv6xUK6fCNmpEWS/FftbxoA4B8Z0XGnuKsaTJEZsGgA==}
+  /@drizzle-team/studio@0.0.3:
+    resolution: {integrity: sha512-GXda7FZIhZeJmXY8uPUCScHRcn6C7QVdG7CxEXnAxXWRc5eXbCR0mklqSpG2buOWtCKCTonL4MKpzSmqY9yTEw==}
     dev: true
 
   /@edge-runtime/format@2.1.0:
@@ -7878,11 +7878,11 @@ packages:
       wordwrap: 1.0.0
     dev: true
 
-  /drizzle-kit@0.19.6:
-    resolution: {integrity: sha512-Feb/9yKPn6rZI95NvaUwTwpfRJkwGx9MR7ObhUropm+rEwcT9BfHdiJXGzLf4oNcoSFCqmY7zIj8j92lusjyRA==}
+  /drizzle-kit@0.19.8:
+    resolution: {integrity: sha512-pgTP7MPoiktVkpK8C+0d4uCbG+4YmKldn9GoguWJFUXyBQtMhmbCHQvpmBkGiWBD5l0I7ijp6n3zSPSlGveL5Q==}
     hasBin: true
     dependencies:
-      '@drizzle-team/studio': 0.0.1
+      '@drizzle-team/studio': 0.0.3
       '@esbuild-kit/esm-loader': 2.5.5
       camelcase: 7.0.1
       chalk: 5.2.0
