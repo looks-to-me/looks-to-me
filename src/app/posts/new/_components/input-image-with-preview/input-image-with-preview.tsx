@@ -1,11 +1,9 @@
-'use client'
+'use client';
 import clsx from 'clsx';
-
-import * as styles from './input-image-with-preview.css';
-
+import Image from 'next/image';
 import { useState, type FC, type InputHTMLAttributes } from 'react';
 
-import Image from 'next/image';
+import * as styles from './input-image-with-preview.css';
 
 const ACCEPTABLE_TYPES = 'image/png, image/jpeg, image/jpg, image/gif';
 
@@ -13,7 +11,6 @@ export type InputImageWithPreviewProps = {
   className?: string | undefined;
   name: InputHTMLAttributes<HTMLInputElement>['name'];
 };
-
 
 const imageUrl = (image: File) => {
   if (image === undefined) return '';
