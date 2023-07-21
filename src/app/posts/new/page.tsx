@@ -1,13 +1,13 @@
-import { UploadImage } from '../../_components/upload-image';
+import { PostCreateForm } from '../../_components/PostCreateForm';
 
 import type { FC } from 'react';
 
-const PostsNew: FC = () => {
+const PostsNewPage: FC = () => {
   return (
     <main>
-      <UploadImage />
+      <PostCreateForm />
     </main>
   );
 };
 
-export default PostsNew;
+export default PostsNewPage;

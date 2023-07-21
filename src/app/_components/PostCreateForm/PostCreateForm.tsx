@@ -3,9 +3,9 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import { useState, type FC } from 'react';
 
-import * as styles from './upload-image.css';
+import * as styles from './PostCreateForm.css';
 
-export type UploadImageProps = {
+export type PostCreateFormProps = {
   className?: string | undefined;
 };
 
@@ -16,7 +16,7 @@ const imageUrl = (image: File) => {
   return window.URL.createObjectURL(image);
 };
 
-export const UploadImage: FC<UploadImageProps> = ({
+export const PostCreateForm: FC<PostCreateFormProps> = ({
   className,
 }) => {
   const [image, setImage] = useState<File>();
@@ -33,6 +33,7 @@ export const UploadImage: FC<UploadImageProps> = ({
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (image === undefined) return;
+
     // バックエンドに画像を送る
   };
 
