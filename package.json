@@ -12,6 +12,8 @@
     "build:storybook": "storybook build -o public/storybook && mv public/storybook/index.html public/storybook/index.htm",
     "build:pages": "next-on-pages",
     "build:ci": "pnpm run build:storybook && pnpm run build:pages",
+    "lint:code": "next lint",
+    "lint:type": "tsc --pretty --noEmit",
     "migrate:create": "drizzle-kit generate:sqlite",
     "migrate:apply": "wrangler d1 migrations apply local --local"
   },
