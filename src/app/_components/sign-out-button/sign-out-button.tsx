@@ -1,13 +1,14 @@
-'use client'
+'use client';
 
 import clsx from 'clsx';
+import { useRouter } from 'next/navigation';
+import { useCallback } from 'react';
 
 import * as styles from './sign-out-button.css';
-
-import { useCallback, type FC, MouseEventHandler } from 'react';
-import { Button } from '../button';
-import { useRouter } from 'next/navigation'
 import { supabase } from '../../_libs/supabase/client-instance';
+import { Button } from '../button';
+
+import type { MouseEventHandler, FC } from 'react';
 
 export type SignOutButtonProps = {
   className?: string | undefined;
@@ -16,12 +17,12 @@ export type SignOutButtonProps = {
 export const SignOutButton: FC<SignOutButtonProps> = ({
   className,
 }) => {
-  const router = useRouter()
+  const router = useRouter();
   const onClick = useCallback<MouseEventHandler<HTMLButtonElement>>(async () => {
-    const {error: _error} = await supabase.auth.signOut()
+    const { error: _error } = await supabase.auth.signOut();
 
-    router.refresh()
-  }, [])
+    router.refresh();
+  }, [router]);
 
   return (
     <div className={clsx(className, styles.wrapper)}>

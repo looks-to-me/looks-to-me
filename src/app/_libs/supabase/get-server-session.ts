@@ -1,9 +1,10 @@
-import { Session } from "@supabase/supabase-js"
-import { supabase } from "./server-instance"
+import { supabase } from './server-instance';
 
-type GetServerSession = () => Promise<{ session: Session | null }>
+import type { Session } from '@supabase/supabase-js';
+
+type GetServerSession = () => Promise<{ session: Session | null }>;
 export const getServerSession: GetServerSession = async () => {
-  const { data } = await supabase.auth.getSession()
+  const { data } = await supabase.auth.getSession();
 
-  return data
-}
+  return data;
+};

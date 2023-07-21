@@ -1,12 +1,12 @@
 import { Header } from './_components/header';
+import { SignInButton } from './_components/sign-in-button';
+import { SignOutButton } from './_components/sign-out-button';
+import { getServerSession } from './_libs/supabase/get-server-session';
 
 import type { FC } from 'react';
-import { getServerSession } from './_libs/supabase/get-server-session';
-import { SignOutButton } from './_components/sign-out-button';
-import { SignInButton } from './_components/sign-in-button';
 
 const HomePage: FC = async () => {
-  const { session } = await getServerSession()
+  const { session } = await getServerSession();
 
   return (
     <div>
@@ -29,3 +29,5 @@ const HomePage: FC = async () => {
 };
 
 export default HomePage;
+
+export const runtime = 'edge';

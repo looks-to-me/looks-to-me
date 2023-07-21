@@ -1,13 +1,14 @@
-'use client'
+'use client';
 
 import clsx from 'clsx';
+import { useRouter } from 'next/navigation';
+import { useCallback } from 'react';
 
 import * as styles from './sign-in-button.css';
-
-import { useCallback, type FC, MouseEventHandler } from 'react';
-import { Button } from '../button';
-import { useRouter } from 'next/navigation'
 import { supabase } from '../../_libs/supabase/client-instance';
+import { Button } from '../button';
+
+import type { MouseEventHandler, FC } from 'react';
 
 export type SignInButtonProps = {
   className?: string | undefined;
@@ -16,17 +17,17 @@ export type SignInButtonProps = {
 export const SignInButton: FC<SignInButtonProps> = ({
   className,
 }) => {
-  const router = useRouter()
+  const router = useRouter();
   const onClick = useCallback<MouseEventHandler<HTMLButtonElement>>(async () => {
-    const {data: _data, error: _error} = await supabase.auth.signInWithOAuth({
+    const { data: _data, error: _error } = await supabase.auth.signInWithOAuth({
       provider: 'github',
       options: {
         redirectTo: `${location.origin}/auth/callback`,
       },
-    })
+    });
 
-    router.refresh()
-  }, [])
+    router.refresh();
+  }, [router]);
 
   return (
     <div className={clsx(className, styles.wrapper)}>
