@@ -1,9 +1,8 @@
-'use client';
 import clsx from 'clsx';
 import Image from 'next/image';
 import { useState, type FC } from 'react';
 
-import * as styles from './PostCreateForm.css';
+import * as styles from './post-create-form.css';
 
 export type PostCreateFormProps = {
   className?: string | undefined;

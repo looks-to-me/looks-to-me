@@ -1,4 +1,4 @@
-import { PostCreateForm } from './PostCreateForm';
+import { PostCreateForm } from './post-create-form';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
