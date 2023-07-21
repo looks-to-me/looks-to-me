@@ -12,3 +12,5 @@ const HomePage: FC = () => {
 };
 
 export default HomePage;
+
+export const runtime = 'edge';
