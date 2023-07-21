@@ -1,4 +1,5 @@
 const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin');
+const { merge } = require('webpack-merge');
 
 const withVanillaExtract = createVanillaExtractPlugin();
 
@@ -10,6 +11,12 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  images: {
+    disableStaticImages: true,
+  },
+  experimental: {
+    typedRoutes: true,
+  },
   trailingSlash: true,
   rewrites: async () => [
     {
@@ -17,8 +24,20 @@ const nextConfig = {
       destination: '/storybook/index.htm',
     },
   ],
-  experimental: {
-    typedRoutes: true,
+  webpack: config => {
+    return merge(config, {
+      module: {
+        rules: [
+          {
+            test: /\.svg$/,
+            use: [{
+              loader: '@svgr/webpack',
+              options: { icon: true, ref: true },
+            }],
+          },
+        ],
+      },
+    });
   },
 };
 

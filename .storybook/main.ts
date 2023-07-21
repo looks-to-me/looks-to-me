@@ -29,6 +29,13 @@ const config: StorybookConfig = {
       }
     });
 
+    config?.module?.rules?.forEach(rule => {
+      if (!rule || typeof rule !== 'object') return;
+      if (rule.test instanceof RegExp && rule.test.test('.svg')) {
+        rule.exclude = /\.svg$/;
+      }
+    });
+
     return merge(config, {
       plugins: [
         new VanillaExtractPlugin(),
@@ -47,6 +54,13 @@ const config: StorybookConfig = {
                 },
               },
             ],
+          },
+          {
+            test: /\.svg$/,
+            use: [{
+              loader: '@svgr/webpack',
+              options: { icon: true, ref: true },
+            }],
           },
         ],
       },

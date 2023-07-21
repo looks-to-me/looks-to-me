@@ -16,7 +16,8 @@
     ".storybook/**/*.tsx",
     "**/*.ts",
     "**/*.tsx",
-    "next-env.d.ts"
+    "next-env.d.ts",
+    "svgr.d.ts"
   ],
   "exclude": [
     "node_modules"
