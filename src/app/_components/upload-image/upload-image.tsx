@@ -9,7 +9,7 @@ export type UploadImageProps = {
   className?: string | undefined;
 };
 
-const acceptableTypes = 'image/png, image/jpeg, image/jpg, image/gif';
+const ACCEPTABLE_TYPES = 'image/png, image/jpeg, image/jpg, image/gif';
 
 const imageUrl = (image: File) => {
   if (image === undefined) return '';
@@ -33,7 +33,7 @@ export const UploadImage: FC<UploadImageProps> = ({
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (image === undefined) return;
-    console.log(image)
+    // バックエンドに画像を送る
   };
 
   return (
@@ -42,7 +42,7 @@ export const UploadImage: FC<UploadImageProps> = ({
         image && <Image src={imageUrl(image)} alt="Preview" width='320' height='300' />
       }
       <form onSubmit={onSubmit} >
-        <input type="file" id='image' accept={acceptableTypes} onChange={onFileInputChange} />
+        <input type="file" id='image' accept={ACCEPTABLE_TYPES} onChange={onFileInputChange} />
         <input type="submit"/>
       </form>
 
