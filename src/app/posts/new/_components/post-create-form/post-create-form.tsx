@@ -12,14 +12,17 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
   className,
 }) => {
 
-  const submitImage = async (formData: FormData) => {
+  // eslint-disable-next-line @typescript-eslint/require-await,
+  const submitImage = async (formData: FormData): Promise<void> => {
     'use server';
     // バックエンドに画像を送る
     console.log(formData.get('image'));
+    return;
   };
 
   return (
     <div className={clsx(className, styles.wrapper)}>
+      {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
       <form action={submitImage} >
         <InputImageWithPreview name='image' />
         <input type="submit"/>
