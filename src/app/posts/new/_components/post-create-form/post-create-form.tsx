@@ -1,48 +1,27 @@
 import clsx from 'clsx';
-import Image from 'next/image';
-import { useState, type FC } from 'react';
+import { type FC } from 'react';
 
 import * as styles from './post-create-form.css';
+import { InputImageWithPreview } from '../input-image-with-preview';
 
 export type PostCreateFormProps = {
   className?: string | undefined;
 };
 
-const ACCEPTABLE_TYPES = 'image/png, image/jpeg, image/jpg, image/gif';
-
-const imageUrl = (image: File) => {
-  if (image === undefined) return '';
-  return window.URL.createObjectURL(image);
-};
-
 export const PostCreateForm: FC<PostCreateFormProps> = ({
   className,
 }) => {
-  const [image, setImage] = useState<File>();
 
-  const onFileInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (!e.target.files) return;
-
-    const fileObject = e.target.files[0];
-    if(fileObject === undefined) return;
-
-    setImage(fileObject);
-  };
-
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (image === undefined) return;
-
+  const submitImage = async (formData: FormData) => {
+    'use server';
     // バックエンドに画像を送る
+    console.log(formData.get('image'));
   };
 
   return (
     <div className={clsx(className, styles.wrapper)}>
-      {
-        image && <Image src={imageUrl(image)} alt="Preview" width='320' height='300' />
-      }
-      <form onSubmit={onSubmit} >
-        <input type="file" id='image' accept={ACCEPTABLE_TYPES} onChange={onFileInputChange} />
+      <form action={submitImage} >
+        <InputImageWithPreview name='image' />
         <input type="submit"/>
       </form>
 
