@@ -18,8 +18,8 @@ export const SessionStatus: FC<SessionStatusProps> = async ({
 
   return (
     <div className={className}>
-      <p>{session ? 'logged in' : 'logged out'}</p>
-      {session ? <LogoutButton /> : <LoginButton />}
+      <p>{session?.user ? 'logged in' : 'logged out'}</p>
+      {session?.user ? <LogoutButton /> : <LoginButton />}
     </div>
   );
 };

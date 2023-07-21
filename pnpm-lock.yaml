@@ -14,8 +14,8 @@ patchedDependencies:
 
 dependencies:
   '@auth/core':
-    specifier: 0.9.0
-    version: 0.9.0
+    specifier: 0.10.0
+    version: 0.10.0
   '@radix-ui/react-slot':
     specifier: 1.0.2
     version: 1.0.2(@types/react@18.2.15)(react@18.2.0)
@@ -184,8 +184,8 @@ packages:
       preact-render-to-string: 5.2.3(preact@10.11.3)
     dev: false
 
-  /@auth/core@0.9.0:
-    resolution: {integrity: sha512-W2WO0WCBg1T3P8+yjQPzurTQhPv6ecBYfJ2oE3uvXPAX5ZLWAMSjKFAIa9oLZy5pwrB+YehJZPnlIxVilhrVcg==}
+  /@auth/core@0.10.0:
+    resolution: {integrity: sha512-mmvAzFUcDHG0m6avQ6/sYI3wtQtt3Tjbk4wCr27OlCeNnlzqK8lDQJIDFbJOTXEu/dNUx8sUQ0xMp7A6GAaHQw==}
     peerDependencies:
       nodemailer: ^6.8.0
     peerDependenciesMeta:
