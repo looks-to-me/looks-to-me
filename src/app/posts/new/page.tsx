@@ -1,4 +1,4 @@
-import { PostCreateForm } from '../../_components/PostCreateForm';
+import { PostCreateForm } from '../../_components/post/PostCreateForm';
 
 import type { FC } from 'react';
 
