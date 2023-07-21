@@ -17,6 +17,9 @@ const nextConfig = {
       destination: '/storybook/index.htm',
     },
   ],
+  experimental: {
+    typedRoutes: true,
+  },
 };
 
 module.exports = withVanillaExtract(nextConfig);

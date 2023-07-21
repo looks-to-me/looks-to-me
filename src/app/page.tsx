@@ -1,10 +1,17 @@
+import { Header } from './_components/header';
+
 import type { FC } from 'react';
 
 const HomePage: FC = () => {
   return (
-    <main>
-      LooksToMe
-    </main>
+    <div>
+      <Header>
+        Header
+      </Header>
+      <main>
+        MainContent
+      </main>
+    </div>
   );
 };
 
