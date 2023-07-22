@@ -11,18 +11,10 @@ const HomePage: FC = async () => {
   return (
     <div>
       <Header>
-        Header
+        {session ? <SignOutButton /> : <SignInButton />}
       </Header>
       <main>
-        <h1>LooksToMe</h1>
-        {session ? (
-          <div>
-            <p>logged in: {JSON.stringify(session.user.user_metadata)}</p>
-            <SignOutButton />
-          </div>
-        ) : (
-          <SignInButton />
-        )}
+        MainContent
       </main>
     </div>
   );
