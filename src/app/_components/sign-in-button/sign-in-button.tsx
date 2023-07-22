@@ -22,7 +22,7 @@ export const SignInButton: FC<SignInButtonProps> = ({
     const { data: _data, error: _error } = await supabase.auth.signInWithOAuth({
       provider: 'github',
       options: {
-        redirectTo: `${location.origin}/auth/callback`,
+        redirectTo: `${window.location.origin}/auth/callback`,
       },
     });
 
