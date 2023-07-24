@@ -1,6 +1,6 @@
+import { relations, type InferModel } from 'drizzle-orm';
 import { text, sqliteTable, unique } from 'drizzle-orm/sqlite-core';
 
-import { relations, type InferModel } from 'drizzle-orm';
 import { users } from './users';
 
 export const images = sqliteTable('images', {
@@ -13,6 +13,6 @@ export const images = sqliteTable('images', {
 
 export const imagesRelations = relations(images, ({ one }) => ({
   user: one(users),
-}))
+}));
 
 export type Image = InferModel<typeof images>;

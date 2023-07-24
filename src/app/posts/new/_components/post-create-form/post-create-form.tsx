@@ -1,12 +1,13 @@
+import { randomUUID } from 'crypto';
+
 import clsx from 'clsx';
 import { type FC } from 'react';
 
 import * as styles from './post-create-form.css';
-import { InputImageWithPreview } from '../input-image-with-preview';
 import { db } from '../../../../_libs/db';
 import { images } from '../../../../_libs/db/schema/tables/images';
 import { uploadImage } from '../../../../_libs/storage';
-import { randomUUID } from 'crypto';
+import { InputImageWithPreview } from '../input-image-with-preview';
 
 export type PostCreateFormProps = {
   className?: string | undefined;
@@ -30,7 +31,7 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
     const edittedImage = image;
 
     // 画像をR2にアップロードする
-    const uploadReult = await uploadImage({image: edittedImage});
+    const uploadReult = await uploadImage({ image: edittedImage });
 
     const insertResult = await db().insert(images).values({
       id: randomUUID(), // TODO 画像のIDをどうするか
