@@ -28,7 +28,7 @@
   "dependencies": {
     "@radix-ui/react-slot": "1.0.2",
     "@t3-oss/env-nextjs": "0.6.0",
-    "cf-bindings-proxy": "0.2.3",
+    "cf-bindings-proxy": "0.2.4",
     "clsx": "2.0.0",
     "drizzle-orm": "0.27.2",
     "modern-normalize": "2.0.0",
