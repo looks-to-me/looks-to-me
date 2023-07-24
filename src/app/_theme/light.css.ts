@@ -88,6 +88,9 @@ globalStyle(':root', {
         [theme.color.token.button.ghost.disabled.text]: theme.color.palette.gray400,
         [theme.color.token.button.ghost.disabled.border]: theme.color.palette.gray200,
         [theme.color.token.button.ghost.disabled.background]: 'transparent',
+
+        [theme.color.token.tooltip.text]: theme.color.palette.white,
+        [theme.color.token.tooltip.background]: theme.color.palette.gray900,
       },
     },
   },

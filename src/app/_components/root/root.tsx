@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google';
 import 'modern-normalize';
 import './root.css';
 
+import { TooltipProvider } from '../tooltip';
+
 import type { FC, ReactNode } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -16,7 +18,9 @@ export const Root: FC<RootProps> = ({
 }) => {
   return (
     <div className={inter.className}>
-      {children}
+      <TooltipProvider>
+        {children}
+      </TooltipProvider>
     </div>
   );
 };
