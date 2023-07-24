@@ -3,6 +3,10 @@ import { type FC } from 'react';
 
 import * as styles from './post-create-form.css';
 import { InputImageWithPreview } from '../input-image-with-preview';
+import { db } from '../../../../_libs/db';
+import { images } from '../../../../_libs/db/schema/tables/images';
+import { uploadImage } from '../../../../_libs/storage';
+import { randomUUID } from 'crypto';
 
 export type PostCreateFormProps = {
   className?: string | undefined;
@@ -15,8 +19,27 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
   // eslint-disable-next-line @typescript-eslint/require-await,
   const submitImage = async (formData: FormData): Promise<void> => {
     'use server';
-    // バックエンドに画像を送る
-    console.log(formData.get('image'));
+
+    const image = formData.get('image');
+    if (image === null || typeof image === 'string'){
+      console.error('image is null or string', image);
+      return;
+    }
+
+    // TODO 画像を加工する
+    const edittedImage = image;
+
+    // 画像をR2にアップロードする
+    const uploadReult = await uploadImage({image: edittedImage});
+
+    const insertResult = await db().insert(images).values({
+      id: randomUUID(), // TODO 画像のIDをどうするか
+      key: uploadReult.key,
+      userId: 'TODO', // TODO Fkeyなので今は動かない
+    }).run();
+
+    // TODO 終わったら画面遷移？
+    console.log(insertResult);
     return;
   };
 
