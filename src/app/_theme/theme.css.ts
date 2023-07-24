@@ -107,6 +107,10 @@ export const theme = createGlobalTheme(':root', {
           },
         },
       },
+      tooltip: {
+        text: '',
+        background: '',
+      },
     },
   },
   font: {
