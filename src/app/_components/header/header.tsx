@@ -53,4 +53,4 @@ const HeaderRender: ForwardRefRenderFunction<HTMLElement, HeaderProps> = ({
   );
 };
 
-export const Header = forwardRef<HTMLElement, HeaderProps>(HeaderRender);
+export const Header = forwardRef(HeaderRender);
