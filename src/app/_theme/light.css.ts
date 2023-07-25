@@ -43,7 +43,7 @@ globalStyle(':root', {
         [theme.color.palette.green900]: '#002d11',
 
         [theme.color.token.semantic.text]: theme.color.palette.black,
-        [theme.color.token.semantic.textMuted]: theme.color.palette.gray500,
+        [theme.color.token.semantic.textMuted]: theme.color.palette.gray600,
         [theme.color.token.semantic.background]: theme.color.palette.white,
         [theme.color.token.semantic.backgroundInset]: theme.color.palette.gray50,
         [theme.color.token.semantic.border]: theme.color.palette.gray200,
