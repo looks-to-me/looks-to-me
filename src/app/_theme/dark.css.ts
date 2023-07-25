@@ -43,11 +43,13 @@ globalStyle(':root', {
         [theme.color.palette.green900]: '#04260f',
 
         [theme.color.token.semantic.text]: theme.color.palette.gray50,
-        [theme.color.token.semantic.textMuted]: theme.color.palette.gray400,
+        [theme.color.token.semantic.textMuted]: theme.color.palette.gray300,
         [theme.color.token.semantic.background]: theme.color.palette.gray900,
         [theme.color.token.semantic.backgroundInset]: theme.color.palette.black,
         [theme.color.token.semantic.border]: theme.color.palette.gray600,
         [theme.color.token.semantic.borderMuted]: theme.color.palette.gray700,
+        [theme.color.token.semantic.overlay]: `color-mix(in srgb, ${theme.color.palette.gray400} 32%, transparent)`,
+        [theme.color.token.semantic.shadow]: `color-mix(in srgb, ${theme.color.palette.gray900} 80%, transparent)`,
 
         [theme.color.token.button.normal.text]: theme.color.palette.gray100,
         [theme.color.token.button.normal.border]: theme.color.palette.gray600,

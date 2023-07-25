@@ -44,6 +44,8 @@ export const theme = createGlobalTheme(':root', {
         backgroundInset: '',
         border: '',
         borderMuted: '',
+        overlay: '',
+        shadow: '',
       },
       button: {
         normal: {
