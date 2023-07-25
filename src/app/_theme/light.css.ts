@@ -48,6 +48,8 @@ globalStyle(':root', {
         [theme.color.token.semantic.backgroundInset]: theme.color.palette.gray50,
         [theme.color.token.semantic.border]: theme.color.palette.gray200,
         [theme.color.token.semantic.borderMuted]: theme.color.palette.gray100,
+        [theme.color.token.semantic.overlay]: `color-mix(in srgb, ${theme.color.palette.gray100} 48%, transparent)`,
+        [theme.color.token.semantic.shadow]: `color-mix(in srgb, ${theme.color.palette.gray700} 16%, transparent)`,
 
         [theme.color.token.button.normal.text]: theme.color.palette.gray900,
         [theme.color.token.button.normal.border]: theme.color.palette.gray200,
