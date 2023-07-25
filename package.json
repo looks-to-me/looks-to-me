@@ -2,7 +2,7 @@
   "name": "looks-to-me",
   "version": "1.0.0",
   "private": true,
-  "packageManager": "pnpm@8.6.9",
+  "packageManager": "pnpm@8.6.10",
   "scripts": {
     "create:component": "scaffdog generate component",
     "dev": "next dev",
