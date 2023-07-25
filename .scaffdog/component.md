@@ -99,7 +99,7 @@ const {{ inputs.name | pascal }}Render: ForwardRefRenderFunction<HTMLDivElement,
   );
 };
 
-export const {{ inputs.name | pascal }} = forwardRef<HTMLDivElement, {{ inputs.name | pascal }}Props>({{ inputs.name | pascal }}Render);
+export const {{ inputs.name | pascal }} = forwardRef({{ inputs.name | pascal }}Render);
 
 ```
 

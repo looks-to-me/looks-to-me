@@ -44,4 +44,4 @@ const ButtonRender: ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = (
   );
 };
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(ButtonRender);
+export const Button = forwardRef(ButtonRender);
