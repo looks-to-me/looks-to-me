@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import Link from 'next/link';
 import { forwardRef } from 'react';
 
 import * as styles from './header.css';
@@ -8,6 +7,7 @@ import GitHubWhite from '../../_icons/github-white.svg';
 import StorybookBlack from '../../_icons/storybook-black.svg';
 import StorybookWhite from '../../_icons/storybook-white.svg';
 import { Button } from '../button';
+import { Logo } from '../logo';
 import { PrefersColorScheme } from '../prefers-color-scheme';
 
 import type { ForwardRefRenderFunction , ComponentPropsWithoutRef } from 'react';
@@ -23,11 +23,7 @@ const HeaderRender: ForwardRefRenderFunction<HTMLElement, HeaderProps> = ({
 }, ref) => {
   return (
     <header {...props} ref={ref} className={clsx(className, styles.wrapper)}>
-      <Link className={styles.link} href="/">
-        <h1 className={styles.logo}>
-          LooksToMe
-        </h1>
-      </Link>
+      <Logo />
       <div className={styles.container}>
         {children}
       </div>
