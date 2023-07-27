@@ -39,3 +39,8 @@ globalStyle('h6', {
   fontSize: calc.subtract(theme.font.size.normal, '.125rem'),
   fontWeight: theme.font.weight.semiBold,
 });
+
+globalStyle('a', {
+  textDecoration: 'none',
+  color: theme.color.palette.blue500,
+});
