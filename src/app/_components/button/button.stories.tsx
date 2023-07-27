@@ -1,4 +1,6 @@
 import { Button } from './button';
+import CloseIcon from '../../_icons/close.svg';
+import { AccessibleIcon } from '../accessible-icon';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -53,9 +55,9 @@ export const Icon: Story = {
   args: {
     ...Default.args,
     children: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="1em" height="1em" fill="currentColor">
-        <path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/>
-      </svg>
+      <AccessibleIcon label="Close">
+        <CloseIcon />
+      </AccessibleIcon>
     ),
     size: 'icon',
   },
