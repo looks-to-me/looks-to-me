@@ -1,4 +1,5 @@
 import { AccessibleIcon } from './accessible-icon';
+import CloseIcon from '../../_icons/close.svg';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -9,5 +10,8 @@ export default {
 type Story = StoryObj<typeof AccessibleIcon>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    label: 'Close',
+    children: <CloseIcon />,
+  },
 };
