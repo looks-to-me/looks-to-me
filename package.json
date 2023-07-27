@@ -30,6 +30,7 @@
     "@radix-ui/react-separator": "1.0.3",
     "@radix-ui/react-slot": "1.0.2",
     "@radix-ui/react-tooltip": "1.0.6",
+    "@radix-ui/react-visually-hidden": "1.0.3",
     "@t3-oss/env-nextjs": "0.6.0",
     "cf-bindings-proxy": "0.2.4",
     "clsx": "2.0.0",
