@@ -5,7 +5,8 @@ import clsx from 'clsx';
 import { forwardRef } from 'react';
 
 import * as styles from './sheet.css';
-import Close from '../../_icons/close.svg';
+import CloseIcon from '../../_icons/close.svg';
+import { AccessibleIcon } from '../accessible-icon';
 import { Button } from '../button';
 
 import type { RecipeVariants } from '@vanilla-extract/recipes';
@@ -36,7 +37,9 @@ const SheetContentRender: ForwardRefRenderFunction<ElementRef<typeof DialogPrimi
         {children}
         <DialogPrimitive.Close asChild>
           <Button className={styles.close} variant="ghost" size="icon" borderless>
-            <Close />
+            <AccessibleIcon label="Close">
+              <CloseIcon />
+            </AccessibleIcon>
           </Button>
         </DialogPrimitive.Close>
       </DialogPrimitive.Content>
