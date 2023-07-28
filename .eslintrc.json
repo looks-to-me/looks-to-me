@@ -44,6 +44,7 @@
       "pathGroupsExcludedImportTypes": ["builtin"],
       "alphabetize": { "order": "asc", "caseInsensitive": true }
     }],
+    "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
     "no-unused-vars": "off",
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [
