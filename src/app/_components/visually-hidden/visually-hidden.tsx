@@ -1,3 +1,5 @@
+'use client';
+
 import * as VisuallyHiddenPrimitive from '@radix-ui/react-visually-hidden';
 
 import type { ComponentPropsWithoutRef } from 'react';
