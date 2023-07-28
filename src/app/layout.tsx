@@ -1,7 +1,7 @@
 import { Root } from './_components/root';
+import { SupabaseClientSessionProvider } from './_libs/supabase/client-session-provider';
 
 import type { FC, ReactNode } from 'react';
-import { SupabaseClientSessionProvider } from './_libs/supabase/client-session-provider';
 
 export const metadata = {
   title: 'LooksToMe',
