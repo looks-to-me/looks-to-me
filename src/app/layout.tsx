@@ -1,6 +1,7 @@
 import { Root } from './_components/root';
 
 import type { FC, ReactNode } from 'react';
+import { SupabaseClientSessionProvider } from './_libs/supabase/client-session-provider';
 
 export const metadata = {
   title: 'LooksToMe',
@@ -18,7 +19,9 @@ const RootLayout: FC<RootLayoutProps> = ({
     <html lang="ja">
       <body>
         <Root>
-          {children}
+          <SupabaseClientSessionProvider>
+            {children}
+          </SupabaseClientSessionProvider>
         </Root>
       </body>
     </html>
