@@ -1,5 +1,4 @@
 import { Root } from './_components/root';
-import { SupabaseClientSessionProvider } from './_libs/supabase/client-session-provider';
 
 import type { FC, ReactNode } from 'react';
 
@@ -19,9 +18,7 @@ const RootLayout: FC<RootLayoutProps> = ({
     <html lang="ja">
       <body>
         <Root>
-          <SupabaseClientSessionProvider>
-            {children}
-          </SupabaseClientSessionProvider>
+          {children}
         </Root>
       </body>
     </html>
