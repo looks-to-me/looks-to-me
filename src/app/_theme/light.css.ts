@@ -92,10 +92,10 @@ globalStyle(':root', {
         [theme.color.token.button.danger.disabled.border]: theme.color.palette.gray200,
         [theme.color.token.button.danger.disabled.background]: theme.color.palette.gray50,
 
-        [theme.color.token.button.ghost.text]: theme.color.palette.gray700,
+        [theme.color.token.button.ghost.text]: theme.color.palette.gray900,
         [theme.color.token.button.ghost.border]: theme.color.palette.gray200,
         [theme.color.token.button.ghost.background]: 'transparent',
-        [theme.color.token.button.ghost.hover.text]: theme.color.palette.gray700,
+        [theme.color.token.button.ghost.hover.text]: theme.color.palette.gray900,
         [theme.color.token.button.ghost.hover.border]: theme.color.palette.gray300,
         [theme.color.token.button.ghost.hover.background]: `color-mix(in srgb, ${theme.color.palette.gray200} 32%, transparent)`,
         [theme.color.token.button.ghost.disabled.text]: theme.color.palette.gray400,
