@@ -37,6 +37,7 @@
     "@supabase/supabase-js": "2.26.0",
     "@t3-oss/env-nextjs": "0.6.0",
     "cf-bindings-proxy": "0.2.4",
+    "client-only": "0.0.1",
     "clsx": "2.0.0",
     "date-fns": "2.30.0",
     "deepmerge": "4.3.1",
@@ -45,6 +46,7 @@
     "next": "13.4.12",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "server-only": "0.0.1",
     "zod": "3.21.4"
   },
   "devDependencies": {
