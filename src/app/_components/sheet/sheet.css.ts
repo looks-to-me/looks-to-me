@@ -112,8 +112,8 @@ export const content = recipe({
 
 export const close = style({
   position: 'absolute',
-  top: '.75rem',
-  right: '.75rem',
+  top: '.5rem',
+  right: '.5rem',
   fontSize: '1rem',
 });
 
