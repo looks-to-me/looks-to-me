@@ -1,10 +1,8 @@
 'use client';
 
-import clsx from 'clsx';
 import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 
-import * as styles from './sign-in-button.css';
 import { supabase } from '../../_libs/supabase/client-instance';
 import { Button } from '../button';
 
@@ -30,7 +28,7 @@ export const SignInButton: FC<SignInButtonProps> = ({
   }, [router]);
 
   return (
-    <div className={clsx(className, styles.wrapper)}>
+    <div className={className}>
       <Button onClick={onClick}>GitHubでログイン</Button>
     </div>
   );

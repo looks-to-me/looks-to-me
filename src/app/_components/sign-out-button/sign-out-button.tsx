@@ -1,10 +1,8 @@
 'use client';
 
-import clsx from 'clsx';
 import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 
-import * as styles from './sign-out-button.css';
 import { supabase } from '../../_libs/supabase/client-instance';
 import { Button } from '../button';
 
@@ -25,7 +23,7 @@ export const SignOutButton: FC<SignOutButtonProps> = ({
   }, [router]);
 
   return (
-    <div className={clsx(className, styles.wrapper)}>
+    <div className={className}>
       <Button onClick={onClick}>ログアウト</Button>
     </div>
   );
