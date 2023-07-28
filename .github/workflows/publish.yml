@@ -3,6 +3,10 @@ name: Publish
 on:
   push:
 
+env:
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+  NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
+
 jobs:
   publish:
     name: Publish to Cloudflare Pages
