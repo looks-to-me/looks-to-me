@@ -7,6 +7,7 @@ import GitHubWhite from '../../_icons/github-white.svg';
 import StorybookBlack from '../../_icons/storybook-black.svg';
 import StorybookWhite from '../../_icons/storybook-white.svg';
 import { Button } from '../button';
+import { GlobalNavigation } from '../global-navigation';
 import { Logo } from '../logo';
 import { PrefersColorScheme } from '../prefers-color-scheme';
 
@@ -23,6 +24,7 @@ const HeaderRender: ForwardRefRenderFunction<HTMLElement, HeaderProps> = ({
 }, ref) => {
   return (
     <header {...props} ref={ref} className={clsx(className, styles.wrapper)}>
+      <GlobalNavigation />
       <Logo />
       <div className={styles.container}>
         {children}
