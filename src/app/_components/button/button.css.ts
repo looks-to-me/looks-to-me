@@ -111,10 +111,10 @@ export const wrapper = recipe({
         padding: '5px 8px',
       },
       medium: {
-        padding: '7px 12px',
+        padding: '7px 8px',
       },
       large: {
-        padding: '9px 16px',
+        padding: '9px 8px',
       },
     },
   },
