@@ -4,11 +4,11 @@ import { NextResponse } from 'next/server';
 
 import type { NextRequest } from 'next/server';
 
+/**
+ * sign in時に必要
+ * @see https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-sign-in-with-code-exchange
+ */
 export const GET = async (request: NextRequest) => {
-  /**
-   * sign in時に必要
-   * @see https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-sign-in-with-code-exchange
-   */
   const requestUrl = new URL(request.url);
   const code = requestUrl.searchParams.get('code');
   if (code) {
