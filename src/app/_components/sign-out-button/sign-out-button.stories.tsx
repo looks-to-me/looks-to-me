@@ -4,6 +4,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
   component: SignOutButton,
+  parameters: {
+    nextjs: {
+      appDirectory: true,
+    },
+  },
 } as Meta<typeof SignOutButton>;
 
 type Story = StoryObj<typeof SignOutButton>;
