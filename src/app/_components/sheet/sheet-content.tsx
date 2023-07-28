@@ -2,12 +2,13 @@
 
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import clsx from 'clsx';
-import { forwardRef } from 'react';
+import { forwardRef, Children } from 'react';
 
 import * as styles from './sheet.css';
 import CloseIcon from '../../_icons/close.svg';
 import { AccessibleIcon } from '../accessible-icon';
 import { Button } from '../button';
+import { Separator } from '../separator';
 
 import type { RecipeVariants } from '@vanilla-extract/recipes';
 import type { ElementRef , ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
@@ -34,7 +35,12 @@ const SheetContentRender: ForwardRefRenderFunction<ElementRef<typeof DialogPrimi
         ref={ref}
         className={clsx(className, styles.content({ side }))}
       >
-        {children}
+        {Children.map(children, (child, index) => (
+          <>
+            {0 < index && <Separator />}
+            {child}
+          </>
+        ))}
         <DialogPrimitive.Close asChild>
           <Button className={styles.close} variant="ghost" size="icon" borderless>
             <AccessibleIcon label="Close">

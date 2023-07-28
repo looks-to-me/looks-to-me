@@ -1,6 +1,7 @@
 import { Sheet } from './sheet';
 import { SheetContent } from './sheet-content';
 import { SheetDescription } from './sheet-description';
+import { SheetSection } from './sheet-section';
 import { SheetTitle } from './sheet-title';
 import { SheetTrigger } from './sheet-trigger';
 import { Button } from '../button';
@@ -21,8 +22,34 @@ export const Default: Story = {
           <Button>Open</Button>
         </SheetTrigger>
         <SheetContent>
-          <SheetTitle>Title</SheetTitle>
-          <SheetDescription>Description</SheetDescription>
+          <SheetSection style={{ marginRight: '3rem' }}>
+            <SheetTitle>Title</SheetTitle>
+            <SheetDescription>Description</SheetDescription>
+          </SheetSection>
+        </SheetContent>
+      </>
+    ),
+  },
+};
+
+export const MultiSection: Story = {
+  args: {
+    children: (
+      <>
+        <SheetTrigger>
+          <Button>Open</Button>
+        </SheetTrigger>
+        <SheetContent>
+          <SheetSection style={{ marginRight: '3rem' }}>
+            <SheetTitle>Title</SheetTitle>
+            <SheetDescription>Description</SheetDescription>
+          </SheetSection>
+          <SheetSection style={{ flexGrow: 1 }}>
+            Content
+          </SheetSection>
+          <SheetSection>
+            Footer
+          </SheetSection>
         </SheetContent>
       </>
     ),
@@ -37,8 +64,10 @@ export const Left: Story = {
           <Button>Open</Button>
         </SheetTrigger>
         <SheetContent side="left">
-          <SheetTitle>Title</SheetTitle>
-          <SheetDescription>Description</SheetDescription>
+          <SheetSection style={{ marginRight: '3rem' }}>
+            <SheetTitle>Title</SheetTitle>
+            <SheetDescription>Description</SheetDescription>
+          </SheetSection>
         </SheetContent>
       </>
     ),
@@ -53,8 +82,10 @@ export const Top: Story = {
           <Button>Open</Button>
         </SheetTrigger>
         <SheetContent side="top">
-          <SheetTitle>Title</SheetTitle>
-          <SheetDescription>Description</SheetDescription>
+          <SheetSection style={{ marginRight: '3rem' }}>
+            <SheetTitle>Title</SheetTitle>
+            <SheetDescription>Description</SheetDescription>
+          </SheetSection>
         </SheetContent>
       </>
     ),
@@ -69,8 +100,10 @@ export const Bottom: Story = {
           <Button>Open</Button>
         </SheetTrigger>
         <SheetContent side="bottom">
-          <SheetTitle>Title</SheetTitle>
-          <SheetDescription>Description</SheetDescription>
+          <SheetSection style={{ marginRight: '3rem' }}>
+            <SheetTitle>Title</SheetTitle>
+            <SheetDescription>Description</SheetDescription>
+          </SheetSection>
         </SheetContent>
       </>
     ),

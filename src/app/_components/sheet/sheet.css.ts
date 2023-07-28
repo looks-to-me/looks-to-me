@@ -44,8 +44,8 @@ export const content = recipe({
       position: 'fixed',
       display: 'flex',
       flexDirection: 'column',
-      gap: '.5rem',
-      padding: '1.5rem',
+      gap: '8px',
+      padding: '8px',
       backgroundColor: theme.color.token.semantic.background,
       boxShadow: `0 0 0 1px ${theme.color.token.semantic.border}, 0 16px 32px ${theme.color.token.semantic.shadow}`,
       selectors: {
@@ -112,8 +112,8 @@ export const content = recipe({
 
 export const close = style({
   position: 'absolute',
-  top: '1rem',
-  right: '1rem',
+  top: '.75rem',
+  right: '.75rem',
   fontSize: '1rem',
 });
 
@@ -125,4 +125,11 @@ export const title = style({
 export const description = style({
   margin: 0,
   color: theme.color.token.semantic.textMuted,
+});
+
+export const section = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '8px',
+  padding: '8px',
 });
