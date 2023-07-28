@@ -5,6 +5,7 @@ import { theme } from '../../_theme';
 export const wrapper = recipe({
   base: {
     display: 'inline-flex',
+    alignItems: 'center',
     cursor: 'pointer',
     border: 'solid 1px',
     borderRadius: theme.radius.medium,
