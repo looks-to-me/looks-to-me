@@ -17,7 +17,9 @@ export const SignInButton: FC<SignInButtonProps> = ({
 }) => {
   const router = useRouter();
   const onClick = useCallback<MouseEventHandler<HTMLButtonElement>>(async () => {
-    const { data: _data, error: _error } = await supabase.auth.signInWithOAuth({
+    // TODO: エラーハンドリング
+    // const { data: _data, error: _error } =
+    await supabase.auth.signInWithOAuth({
       provider: 'github',
       options: {
         redirectTo: `${window.location.origin}/auth/callback`,

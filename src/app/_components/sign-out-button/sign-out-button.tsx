@@ -17,7 +17,9 @@ export const SignOutButton: FC<SignOutButtonProps> = ({
 }) => {
   const router = useRouter();
   const onClick = useCallback<MouseEventHandler<HTMLButtonElement>>(async () => {
-    const { error: _error } = await supabase.auth.signOut();
+    // TODO: エラーハンドリング
+    // const { error: _error } =
+    await supabase.auth.signOut();
 
     router.refresh();
   }, [router]);
