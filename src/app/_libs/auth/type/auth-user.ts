@@ -1,10 +1,10 @@
 import { z } from 'zod';
 
-export const UserSchema = z.object({
+export const AuthUserSchema = z.object({
   id: z.string(),
   accountName: z.string(),
   displayName: z.string(),
   avatarUrl: z.string(),
 });
 
-export type User = z.infer<typeof UserSchema>;
+export type AuthUser = z.infer<typeof AuthUserSchema>;
