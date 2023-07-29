@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 
-import { supabase } from '../../_libs/supabase/client/instance';
+import { supabase } from '../../_libs/auth/client/instance';
 import { Button } from '../button';
 
 import type { MouseEventHandler, FC } from 'react';

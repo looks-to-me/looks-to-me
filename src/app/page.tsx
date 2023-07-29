@@ -1,7 +1,7 @@
 import { Header } from './_components/header';
 import { SignInButton } from './_components/sign-in-button';
 import { SignOutButton } from './_components/sign-out-button';
-import { getSession } from './_libs/supabase/server/get-session';
+import { getSession } from './_libs/auth/server/get-session';
 
 import type { FC } from 'react';
 
