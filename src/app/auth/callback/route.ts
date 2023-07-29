@@ -4,6 +4,8 @@ import { NextResponse } from 'next/server';
 
 import type { NextRequest } from 'next/server';
 
+export const runtime = 'edge';
+
 /**
  * sign in時に必要
  * @see https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-sign-in-with-code-exchange
@@ -19,5 +21,3 @@ export const GET = async (request: NextRequest) => {
   // ログイン後にリダイレクトする先（いまはリクエストしてきたところに戻している）
   return NextResponse.redirect(requestUrl.origin);
 };
-
-export const runtime = 'edge';
