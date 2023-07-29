@@ -1,17 +1,17 @@
-import { SignInButton } from './sign-in-button';
+import { LogoutButton } from './logout-button';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  component: SignInButton,
+  component: LogoutButton,
   parameters: {
     nextjs: {
       appDirectory: true,
     },
   },
-} as Meta<typeof SignInButton>;
+} as Meta<typeof LogoutButton>;
 
-type Story = StoryObj<typeof SignInButton>;
+type Story = StoryObj<typeof LogoutButton>;
 
 export const Default: Story = {
   args: {},

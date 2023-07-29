@@ -6,10 +6,6 @@ export const main = style({
   flexGrow: 1,
 });
 
-export const buttonLink = style({
-  gap: '8px',
-});
-
 export const buttonLinkIcon = style({
   fontSize: theme.font.size.medium,
 });
