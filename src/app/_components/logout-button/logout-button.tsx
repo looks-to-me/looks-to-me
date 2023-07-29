@@ -8,30 +8,25 @@ import { Button } from '../button';
 
 import type { MouseEventHandler, FC } from 'react';
 
-export type SignInButtonProps = {
+export type LogoutButtonProps = {
   className?: string | undefined;
 };
 
-export const SignInButton: FC<SignInButtonProps> = ({
+export const LogoutButton: FC<LogoutButtonProps> = ({
   className,
 }) => {
   const router = useRouter();
   const onClick = useCallback<MouseEventHandler<HTMLButtonElement>>(async () => {
     // TODO: エラーハンドリング
-    // const { data: _data, error: _error } =
-    await supabase.auth.signInWithOAuth({
-      provider: 'github',
-      options: {
-        redirectTo: `${window.location.origin}/auth/callback`,
-      },
-    });
+    // const { error: _error } =
+    await supabase.auth.signOut();
 
     router.refresh();
   }, [router]);
 
   return (
     <div className={className}>
-      <Button onClick={onClick}>GitHubでログイン</Button>
+      <Button onClick={onClick}>ログアウト</Button>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { Header } from './_components/header';
-import { SignInButton } from './_components/sign-in-button';
-import { SignOutButton } from './_components/sign-out-button';
+import { LoginButton } from './_components/login-button';
+import { LogoutButton } from './_components/logout-button';
 import { getUser } from './_libs/auth/server/get-user';
 
 import type { FC } from 'react';
@@ -13,7 +13,7 @@ const HomePage: FC = async () => {
   return (
     <div>
       <Header>
-        {user ? <SignOutButton /> : <SignInButton />}
+        {user ? <LogoutButton /> : <LoginButton />}
       </Header>
       <main>
         MainContent
