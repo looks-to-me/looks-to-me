@@ -6,17 +6,20 @@ import { useCallback } from 'react';
 import { supabase } from '../../_libs/auth/client/instance';
 import { Button } from '../button';
 
-import type { MouseEventHandler, FC } from 'react';
+import type { MouseEventHandler, FC , ComponentPropsWithoutRef } from 'react';
 
-export type LogoutButtonProps = {
-  className?: string | undefined;
+type OmitProps = 'asChild';
+
+export type LogoutButtonProps = Omit<ComponentPropsWithoutRef<typeof Button>, OmitProps> & {
+  // nothing
 };
 
 export const LogoutButton: FC<LogoutButtonProps> = ({
   className,
+  ...props
 }) => {
   const router = useRouter();
-  const onClick = useCallback<MouseEventHandler<HTMLButtonElement>>(async () => {
+  const handleClick = useCallback<MouseEventHandler<HTMLButtonElement>>(async () => {
     // TODO: エラーハンドリング
     // const { error: _error } =
     await supabase.auth.signOut();
@@ -25,8 +28,8 @@ export const LogoutButton: FC<LogoutButtonProps> = ({
   }, [router]);
 
   return (
-    <div className={className}>
-      <Button onClick={onClick}>ログアウト</Button>
-    </div>
+    <Button {...props} className={className} onClick={handleClick}>
+      Logout
+    </Button>
   );
 };

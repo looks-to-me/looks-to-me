@@ -42,7 +42,7 @@ export const GlobalNavigation: FC<GlobalNavigationProps> = ({
           <Logo />
         </SheetSection>
         <SheetSection>
-          <Button className={styles.buttonLink} variant="ghost" size="medium" borderless asChild>
+          <Button variant="ghost" size="medium" borderless asChild>
             <a href="https://github.com/looks-to-me/looks-to-me" target="_blank">
               <PrefersColorScheme
                 light={<GitHubBlack />}
@@ -51,7 +51,7 @@ export const GlobalNavigation: FC<GlobalNavigationProps> = ({
               GitHub Repository
             </a>
           </Button>
-          <Button className={styles.buttonLink} variant="ghost" size="medium" borderless asChild>
+          <Button variant="ghost" size="medium" borderless asChild>
             <a href="/storybook" target="_blank">
               <PrefersColorScheme
                 light={<StorybookBlack />}
@@ -60,7 +60,7 @@ export const GlobalNavigation: FC<GlobalNavigationProps> = ({
               Storybook
             </a>
           </Button>
-          <Button className={styles.buttonLink} variant="ghost" size="medium" borderless asChild>
+          <Button variant="ghost" size="medium" borderless asChild>
             <a href="https://github.com/looks-to-me/looks-to-me/issues" target="_blank">
               <ReportIcon className={styles.buttonLinkIcon} />
               Bug reports or feature requests
