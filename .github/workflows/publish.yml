@@ -3,10 +3,6 @@ name: Publish
 on:
   push:
 
-env:
-  NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
-  NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
-
 jobs:
   publish:
     name: Publish to Cloudflare Pages
@@ -14,6 +10,8 @@ jobs:
     permissions:
       contents: read
       deployments: write
+    environment:
+      name: ${{ github.ref == 'refs/heads/main' && 'looks-to-me (Production)' || 'looks-to-me (Preview)' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -23,6 +21,9 @@ jobs:
 
       - name: Build
         run: pnpm run build:ci
+        env:
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
