@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 import 'modern-normalize';
 import './root.css';
 
-import { SupabaseClientSessionProvider } from '../../_libs/supabase/client-session-provider';
+import { SessionProvider } from '../../_libs/auth/client/session-provider';
 import { TooltipProvider } from '../tooltip';
 
 import type { FC, ReactNode } from 'react';
@@ -19,11 +19,11 @@ export const Root: FC<RootProps> = ({
 }) => {
   return (
     <div className={inter.className}>
-      <TooltipProvider>
-        <SupabaseClientSessionProvider>
+      <SessionProvider>
+        <TooltipProvider>
           {children}
-        </SupabaseClientSessionProvider>
-      </TooltipProvider>
+        </TooltipProvider>
+      </SessionProvider>
     </div>
   );
 };
