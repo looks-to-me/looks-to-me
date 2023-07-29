@@ -13,17 +13,7 @@ export const wrapper = style({
 });
 
 export const container = style({
-  flex: 1,
-});
-
-export const logo = style({
-  margin: 0,
-  fontSize: '1rem',
-});
-
-export const links = style({
-  display: 'flex',
-  gap: '8px',
+  flexGrow: 1,
 });
 
 export const link = style({

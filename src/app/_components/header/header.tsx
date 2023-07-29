@@ -2,24 +2,22 @@ import clsx from 'clsx';
 import { forwardRef } from 'react';
 
 import * as styles from './header.css';
-import GitHubBlack from '../../_icons/github-black.svg';
-import GitHubWhite from '../../_icons/github-white.svg';
-import StorybookBlack from '../../_icons/storybook-black.svg';
-import StorybookWhite from '../../_icons/storybook-white.svg';
-import { Button } from '../button';
 import { GlobalNavigation } from '../global-navigation';
+import { LoginButton } from '../login-button';
 import { Logo } from '../logo';
-import { PrefersColorScheme } from '../prefers-color-scheme';
+import { LogoutButton } from '../logout-button';
 
+import type { AuthUser } from '../../_libs/auth/type/auth-user';
 import type { ForwardRefRenderFunction , ComponentPropsWithoutRef } from 'react';
 
 export type HeaderProps = ComponentPropsWithoutRef<'header'> & {
-  // nothing
+  authUser?: AuthUser | undefined;
 };
 
 const HeaderRender: ForwardRefRenderFunction<HTMLElement, HeaderProps> = ({
   className,
   children,
+  authUser,
   ...props
 }, ref) => {
   return (
@@ -29,24 +27,7 @@ const HeaderRender: ForwardRefRenderFunction<HTMLElement, HeaderProps> = ({
       <div className={styles.container}>
         {children}
       </div>
-      <div className={styles.links}>
-        <Button variant="ghost" size="icon" asChild>
-          <a className={styles.link} href="https://github.com/looks-to-me/looks-to-me">
-            <PrefersColorScheme
-              light={<GitHubBlack />}
-              dark={<GitHubWhite />}
-            />
-          </a>
-        </Button>
-        <Button variant="ghost" size="icon" asChild>
-          <a className={styles.link} href="/storybook/">
-            <PrefersColorScheme
-              light={<StorybookBlack />}
-              dark={<StorybookWhite />}
-            />
-          </a>
-        </Button>
-      </div>
+      {authUser ? <LogoutButton size="medium" /> : <LoginButton size="medium" />}
     </header>
   );
 };
