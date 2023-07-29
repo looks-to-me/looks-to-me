@@ -1,19 +1,19 @@
 import { Header } from './_components/header';
 import { SignInButton } from './_components/sign-in-button';
 import { SignOutButton } from './_components/sign-out-button';
-import { getSession } from './_libs/auth/server/get-session';
+import { getUser } from './_libs/auth/server/get-user';
 
 import type { FC } from 'react';
 
 export const runtime = 'edge';
 
 const HomePage: FC = async () => {
-  const session = await getSession();
+  const user = await getUser();
 
   return (
     <div>
       <Header>
-        {session ? <SignOutButton /> : <SignInButton />}
+        {user ? <SignOutButton /> : <SignInButton />}
       </Header>
       <main>
         MainContent
