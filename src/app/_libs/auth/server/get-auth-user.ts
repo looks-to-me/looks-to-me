@@ -1,12 +1,12 @@
 import { supabase } from './instance';
-import { UserSchema } from '../type/user';
+import { AuthUserSchema } from '../type/auth-user';
 
-import type { User } from '../type/user';
+import type { AuthUser } from '../type/auth-user';
 
-export const getUser = async (): Promise<User | undefined> => {
+export const getAuthUser = async (): Promise<AuthUser | undefined> => {
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) return;
-  return UserSchema.parse({
+  return AuthUserSchema.parse({
     id: user.id,
     accountName: user.user_metadata['user_name'],
     displayName: user.user_metadata['name'],
