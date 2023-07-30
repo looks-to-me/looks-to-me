@@ -26,6 +26,10 @@ module.exports = phase => {
         source: '/storybook/',
         destination: '/storybook/index.htm',
       },
+      {
+        source: '/@:username',
+        destination: '/users/:username',
+      },
     ],
     webpack: config => {
       return merge(config, {
