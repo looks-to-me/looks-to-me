@@ -26,10 +26,13 @@ module.exports = phase => {
         source: '/storybook/',
         destination: '/storybook/index.htm',
       },
-      {
-        source: '/@:username',
-        destination: '/users/:username',
-      },
+    ],
+    redirects: async () => [
+        {
+          source: '/%40:username',
+          destination: '/@:username',
+          permanent: true,
+      }
     ],
     webpack: config => {
       return merge(config, {
