@@ -88,8 +88,8 @@ devDependencies:
     specifier: 4.20230724.0
     version: 4.20230724.0
   '@scaffdog/types':
-    specifier: 2.5.1
-    version: 2.5.1
+    specifier: 3.0.0
+    version: 3.0.0
   '@storybook/addon-essentials':
     specifier: 7.1.1
     version: 7.1.1(react-dom@18.2.0)(react@18.2.0)
@@ -4597,6 +4597,12 @@ packages:
     resolution: {integrity: sha512-L3sABfZr8b+JX0sRqBS5baQ6pIJ2R6wkXhETPFW34oVjxxN2mEAIwVus4DbN5H/iiXgNBkAk1qlPX9x4WBxkzQ==}
     dependencies:
       type-fest: 3.12.0
+    dev: true
+
+  /@scaffdog/types@3.0.0:
+    resolution: {integrity: sha512-XRECzkYKBl3nD7erkj9TipcDue7+gG9LnfrIs14eLToeMOsCsASHGgUMDw/b2yKsyKdHDU2T6hJfQRb1Cew7WQ==}
+    dependencies:
+      type-fest: 3.13.1
     dev: true
 
   /@sinclair/typebox@0.25.24:
@@ -16267,6 +16273,11 @@ packages:
 
   /type-fest@3.12.0:
     resolution: {integrity: sha512-qj9wWsnFvVEMUDbESiilKeXeHL7FwwiFcogfhfyjmvT968RXSvnl23f1JOClTHYItsi7o501C/7qVllscUP3oA==}
+    engines: {node: '>=14.16'}
+    dev: true
+
+  /type-fest@3.13.1:
+    resolution: {integrity: sha512-tLq3bSNx+xSpwvAJnzrK0Ep5CLNWjvFTOp71URMaAEWBfRb9nnJiBoUe0tF8bI4ZFO3omgBR6NvnbzVUT3Ly4g==}
     engines: {node: '>=14.16'}
     dev: true
 
