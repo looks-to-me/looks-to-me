@@ -28,11 +28,11 @@ module.exports = phase => {
       },
     ],
     redirects: async () => [
-        {
-          source: '/%40:username',
-          destination: '/@:username',
-          permanent: true,
-      }
+      {
+        source: '/%40:username/',
+        destination: '/@:username/',
+        permanent: true,
+      },
     ],
     webpack: config => {
       return merge(config, {
