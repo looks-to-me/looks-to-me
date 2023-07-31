@@ -5,7 +5,7 @@ import type { FC } from 'react';
 
 export const runtime = 'edge';
 
-export const UserProfilePage: FC<
+const UserProfilePage: FC<
   NextPageProps<{
     /**
      * username string that starts with "@"
