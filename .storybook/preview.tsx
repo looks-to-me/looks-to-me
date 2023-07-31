@@ -1,4 +1,5 @@
 import { Root } from '../src/app/_components/root';
+import { initMockDatabase } from '../src/app/_libs/db/instance/mock';
 
 import type { Preview } from '@storybook/react';
 
@@ -18,6 +19,12 @@ const preview: Preview = {
         <Story />
       </Root>
     ),
+  ],
+  loaders: [
+    async () => {
+      await initMockDatabase();
+      return {};
+    },
   ],
 };
 

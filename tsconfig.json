@@ -17,6 +17,7 @@
     "**/*.ts",
     "**/*.tsx",
     "next-env.d.ts",
+    "sqlite-wasm.d.ts",
     "svgr.d.ts"
   ],
   "exclude": [
