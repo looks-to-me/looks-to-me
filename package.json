@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "1.5.0",
-    "@cloudflare/workers-types": "4.20230724.0",
+    "@cloudflare/workers-types": "4.20230801.0",
     "@scaffdog/types": "3.0.0",
     "@storybook/addon-essentials": "7.1.1",
     "@storybook/addon-interactions": "7.1.1",

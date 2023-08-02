@@ -45,7 +45,7 @@ dependencies:
     version: 0.6.0(typescript@5.1.6)(zod@3.21.4)
   cf-bindings-proxy:
     specifier: 0.2.4
-    version: 0.2.4(@cloudflare/workers-types@4.20230724.0)(wrangler@3.4.0)
+    version: 0.2.4(@cloudflare/workers-types@4.20230801.0)(wrangler@3.4.0)
   client-only:
     specifier: 0.0.1
     version: 0.0.1
@@ -60,7 +60,7 @@ dependencies:
     version: 4.3.1
   drizzle-orm:
     specifier: 0.27.2
-    version: 0.27.2(@cloudflare/workers-types@4.20230724.0)(better-sqlite3@8.5.0)
+    version: 0.27.2(@cloudflare/workers-types@4.20230801.0)(better-sqlite3@8.5.0)
   modern-normalize:
     specifier: 2.0.0
     version: 2.0.0
@@ -85,8 +85,8 @@ devDependencies:
     specifier: 1.5.0
     version: 1.5.0(vercel@30.2.3)(wrangler@3.4.0)
   '@cloudflare/workers-types':
-    specifier: 4.20230724.0
-    version: 4.20230724.0
+    specifier: 4.20230801.0
+    version: 4.20230801.0
   '@scaffdog/types':
     specifier: 3.0.0
     version: 3.0.0
@@ -2926,8 +2926,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@cloudflare/workers-types@4.20230724.0:
-    resolution: {integrity: sha512-WuFlsai21oJhRMBHdkM0saIuK1Faitp/GXWj31Zlbe3cCtPNlwYtX5WkojDNWWAxX47LMHBF9wv7wrytNLabYA==}
+  /@cloudflare/workers-types@4.20230801.0:
+    resolution: {integrity: sha512-RzRUR+J/T3h58qbTZHYntYsnZXu3JnrlZIhqP2hhdyfoZAZ/+ko4wX0foAqlYHi+kXWaWtySHBuMcx6ec6TXlQ==}
 
   /@colors/colors@1.5.0:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
@@ -6305,7 +6305,7 @@ packages:
   /@types/hast@2.3.4:
     resolution: {integrity: sha512-wLEm0QvaoawEDoTRwzTXp4b4jpwiJDvR5KMnFnVodm3scufTlBOWRD6N1OBf9TZMhjlNsSfcO5V+7AF4+Vy+9g==}
     dependencies:
-      '@types/unist': 2.0.6
+      '@types/unist': 3.0.0
     dev: true
 
   /@types/html-minifier-terser@6.1.0:
@@ -8197,7 +8197,7 @@ packages:
       clone-response: 1.0.3
       get-stream: 5.2.0
       http-cache-semantics: 4.1.1
-      keyv: 4.5.2
+      keyv: 4.5.3
       lowercase-keys: 2.0.0
       normalize-url: 6.1.0
       responselike: 2.0.1
@@ -8261,14 +8261,14 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /cf-bindings-proxy@0.2.4(@cloudflare/workers-types@4.20230724.0)(wrangler@3.4.0):
+  /cf-bindings-proxy@0.2.4(@cloudflare/workers-types@4.20230801.0)(wrangler@3.4.0):
     resolution: {integrity: sha512-NzWMlGl2dCUe2/024h92BQ+qTS7FEICZLeTR2DWI/uuEZuJYGArpN0Eh2OfIHpLFJ2kZhcrSkxE9MNQVGq4aBQ==}
     hasBin: true
     peerDependencies:
       '@cloudflare/workers-types': '>=4'
       wrangler: '>=3.0.0'
     dependencies:
-      '@cloudflare/workers-types': 4.20230724.0
+      '@cloudflare/workers-types': 4.20230801.0
       wrangler: 3.4.0
     dev: false
 
@@ -9270,7 +9270,7 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.27.2(@cloudflare/workers-types@4.20230724.0)(better-sqlite3@8.5.0):
+  /drizzle-orm@0.27.2(@cloudflare/workers-types@4.20230801.0)(better-sqlite3@8.5.0):
     resolution: {integrity: sha512-ZvBvceff+JlgP7FxHKe0zOU9CkZ4RcOtibumIrqfYzDGuOeF0YUY0F9iMqYpRM7pxnLRfC+oO7rWOUH3T5oFQA==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
@@ -9332,7 +9332,7 @@ packages:
       sqlite3:
         optional: true
     dependencies:
-      '@cloudflare/workers-types': 4.20230724.0
+      '@cloudflare/workers-types': 4.20230801.0
       better-sqlite3: 8.5.0
     dev: false
 
@@ -12498,12 +12498,6 @@ packages:
     dependencies:
       array-includes: 3.1.6
       object.assign: 4.1.4
-    dev: true
-
-  /keyv@4.5.2:
-    resolution: {integrity: sha512-5MHbFaKn8cNSmVW7BYnijeAVlE4cYA/SVkifVgrh7yotnfhKmjuXpDKjrABLnT0SfHWV21P8ow07OGfRrNDg8g==}
-    dependencies:
-      json-buffer: 3.0.1
     dev: true
 
   /keyv@4.5.3:
