@@ -16,6 +16,7 @@ const nextConfig = {
   },
   experimental: {
     typedRoutes: true,
+    serverActions: true,
   },
   trailingSlash: true,
   rewrites: async () => [
