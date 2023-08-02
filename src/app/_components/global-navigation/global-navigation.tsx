@@ -52,7 +52,7 @@ export const GlobalNavigation: FC<GlobalNavigationProps> = ({
             </a>
           </Button>
           <Button variant="ghost" size="medium" borderless asChild>
-            <a href="/storybook" target="_blank">
+            <a href="/storybook/" target="_blank">
               <PrefersColorScheme
                 light={<StorybookBlack />}
                 dark={<StorybookWhite />}
