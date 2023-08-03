@@ -90,6 +90,9 @@ devDependencies:
   '@scaffdog/types':
     specifier: 3.0.0
     version: 3.0.0
+  '@sqlite.org/sqlite-wasm':
+    specifier: 3.42.0-build4
+    version: 3.42.0-build4
   '@storybook/addon-essentials':
     specifier: 7.2.0
     version: 7.2.0(@types/react-dom@18.2.7)(@types/react@18.2.18)(react-dom@18.2.0)(react@18.2.0)
@@ -171,6 +174,9 @@ devDependencies:
   mini-css-extract-plugin:
     specifier: 2.7.6
     version: 2.7.6(webpack@5.88.1)
+  rimraf:
+    specifier: 5.0.1
+    version: 5.0.1
   scaffdog:
     specifier: 3.0.0
     version: 3.0.0
@@ -4724,6 +4730,13 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
+  /@sqlite.org/sqlite-wasm@3.42.0-build4:
+    resolution: {integrity: sha512-wuG0vS1C8YvsGVPOgAsm47faP4/VLiZA+Ji9iegM0Z4loOB0C4S8/GXKVlMU+p8apkF1i5ncUtkyWv1DbGPKWQ==}
+    hasBin: true
+    optionalDependencies:
+      comlink: 4.4.1
+    dev: true
+
   /@storybook/addon-actions@7.2.0(@types/react-dom@18.2.7)(@types/react@18.2.18)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-N591y7SARPzV3W41mtdutxg1shLA3vCBDC9yxWyMW6wpUn8vAkuTp1HZDlMa7bYwxzco4/qmJs+ddE/7pQTT6w==}
     peerDependencies:
@@ -8622,6 +8635,12 @@ packages:
     dependencies:
       delayed-stream: 1.0.0
     dev: true
+
+  /comlink@4.4.1:
+    resolution: {integrity: sha512-+1dlx0aY5Jo1vHy/tSsIGpSkN4tS9rZSW8FIhG0JH/crs9wwweswIo/POr451r7bZww3hFbPAKnTpimzL/mm4Q==}
+    requiresBuild: true
+    dev: true
+    optional: true
 
   /comma-separated-tokens@2.0.3:
     resolution: {integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==}
@@ -15230,6 +15249,14 @@ packages:
     hasBin: true
     dependencies:
       glob: 7.2.3
+    dev: true
+
+  /rimraf@5.0.1:
+    resolution: {integrity: sha512-OfFZdwtd3lZ+XZzYP/6gTACubwFcHdLRqS9UX3UwpU2dnGQYkPFISRwvM3w9IiB2w7bW5qGo/uAwE4SmXXSKvg==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dependencies:
+      glob: 10.3.3
     dev: true
 
   /ripemd160@2.0.2:
