@@ -123,6 +123,26 @@ export const theme = createGlobalTheme(':root', {
         text: '',
         background: '',
       },
+      toast: {
+        normal: {
+          title: '',
+          description: '',
+          border: '',
+          background: '',
+        },
+        success: {
+          title: '',
+          description: '',
+          border: '',
+          background: '',
+        },
+        error: {
+          title: '',
+          description: '',
+          border: '',
+          background: '',
+        },
+      },
     },
   },
   font: {

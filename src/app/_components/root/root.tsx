@@ -4,6 +4,7 @@ import 'modern-normalize';
 import './root.css';
 
 import { SessionProvider } from '../../_libs/auth/client/session-provider';
+import { Toaster } from '../toaster';
 import { TooltipProvider } from '../tooltip';
 
 import type { FC, ReactNode } from 'react';
@@ -24,6 +25,7 @@ export const Root: FC<RootProps> = ({
           {children}
         </TooltipProvider>
       </SessionProvider>
+      <Toaster />
     </div>
   );
 };
