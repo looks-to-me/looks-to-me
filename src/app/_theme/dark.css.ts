@@ -104,6 +104,21 @@ globalStyle(':root', {
 
         [theme.color.token.tooltip.text]: theme.color.palette.white,
         [theme.color.token.tooltip.background]: theme.color.palette.gray400,
+
+        [theme.color.token.toast.normal.title]: theme.color.palette.white,
+        [theme.color.token.toast.normal.description]: theme.color.palette.gray200,
+        [theme.color.token.toast.normal.border]: theme.color.palette.gray600,
+        [theme.color.token.toast.normal.background]: theme.color.palette.gray800,
+
+        [theme.color.token.toast.success.title]: theme.color.palette.green300,
+        [theme.color.token.toast.success.description]: theme.color.palette.green400,
+        [theme.color.token.toast.success.border]: theme.color.palette.green600,
+        [theme.color.token.toast.success.background]: theme.color.palette.gray800,
+
+        [theme.color.token.toast.error.title]: theme.color.palette.red400,
+        [theme.color.token.toast.error.description]: theme.color.palette.red500,
+        [theme.color.token.toast.error.border]: theme.color.palette.red600,
+        [theme.color.token.toast.error.background]: theme.color.palette.gray800,
       },
     },
   },
