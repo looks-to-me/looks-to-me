@@ -164,6 +164,13 @@ export const theme = createGlobalTheme(':root', {
       large: '8px',
       pill: '9999px',
     },
+    shadow: {
+      border: '0 0 0 1px',
+      tiny: '0 1px 2px 0',
+      normal: '0 4px 6px -1px',
+      medium: '0 10px 15px -3px',
+      large: '0 20px 25px -5px',
+    },
   },
   duration: {
     fast: '100ms',

@@ -47,7 +47,7 @@ export const content = recipe({
       gap: '8px',
       padding: '8px',
       backgroundColor: theme.color.token.semantic.background,
-      boxShadow: `0 0 0 1px ${theme.color.token.semantic.border}, 0 16px 32px ${theme.color.token.semantic.shadow}`,
+      boxShadow: `${theme.size.shadow.border} ${theme.color.token.semantic.border}, ${theme.size.shadow.large} ${theme.color.token.semantic.shadow}`,
       selectors: {
         '&[data-state="closed"]': deepmerge.all<StyleRule>([
           animateOut(),
