@@ -4,11 +4,11 @@ import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 
 import * as styles from './login-button.css';
-import GitHubBlack from '../../_icons/github-black.svg';
-import GitHubWhite from '../../_icons/github-white.svg';
-import { supabase } from '../../_libs/auth/client/instance';
-import { Button } from '../button';
-import { PrefersColorScheme } from '../prefers-color-scheme';
+import { Button } from '../../../_components/button';
+import { PrefersColorScheme } from '../../../_components/prefers-color-scheme';
+import GitHubBlack from '../../../_icons/github-black.svg';
+import GitHubWhite from '../../../_icons/github-white.svg';
+import { supabase } from '../../../_libs/auth/client/instance';
 
 import type { MouseEventHandler, FC, ComponentPropsWithoutRef } from 'react';
 

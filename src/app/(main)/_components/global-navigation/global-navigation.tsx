@@ -1,18 +1,18 @@
 import { getYear } from 'date-fns';
 
 import * as styles from './global-navigation.css';
-import GitHubBlack from '../../_icons/github-black.svg';
-import GitHubWhite from '../../_icons/github-white.svg';
-import MenuIcon from '../../_icons/menu.svg';
-import ReportIcon from '../../_icons/report.svg';
-import StorybookBlack from '../../_icons/storybook-black.svg';
-import StorybookWhite from '../../_icons/storybook-white.svg';
-import { AccessibleIcon } from '../accessible-icon';
-import { Button } from '../button';
+import { AccessibleIcon } from '../../../_components/accessible-icon';
+import { Button } from '../../../_components/button';
+import { PrefersColorScheme } from '../../../_components/prefers-color-scheme';
+import { Sheet, SheetContent, SheetSection, SheetTitle, SheetTrigger } from '../../../_components/sheet';
+import { VisuallyHidden } from '../../../_components/visually-hidden';
+import GitHubBlack from '../../../_icons/github-black.svg';
+import GitHubWhite from '../../../_icons/github-white.svg';
+import MenuIcon from '../../../_icons/menu.svg';
+import ReportIcon from '../../../_icons/report.svg';
+import StorybookBlack from '../../../_icons/storybook-black.svg';
+import StorybookWhite from '../../../_icons/storybook-white.svg';
 import { Logo } from '../logo';
-import { PrefersColorScheme } from '../prefers-color-scheme';
-import { Sheet, SheetContent, SheetSection, SheetTitle, SheetTrigger } from '../sheet';
-import { VisuallyHidden } from '../visually-hidden';
 
 import type { FC } from 'react';
 

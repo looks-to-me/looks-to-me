@@ -7,7 +7,7 @@ import { LoginButton } from '../login-button';
 import { Logo } from '../logo';
 import { LogoutButton } from '../logout-button';
 
-import type { AuthUser } from '../../_libs/auth/type/auth-user';
+import type { AuthUser } from '../../../_libs/auth/type/auth-user';
 import type { ForwardRefRenderFunction , ComponentPropsWithoutRef } from 'react';
 
 export type HeaderProps = ComponentPropsWithoutRef<'header'> & {
