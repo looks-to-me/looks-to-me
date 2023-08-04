@@ -8,6 +8,9 @@ overrides:
   tsconfig-paths: 4.2.0
 
 patchedDependencies:
+  cf-bindings-proxy@0.2.5:
+    hash: cqb52lye7zwziha6m2e73j6z6m
+    path: patches/cf-bindings-proxy@0.2.5.patch
   esbuild-register@3.4.2:
     hash: spgfiu64hqpilsoes5nxr46kwy
     path: patches/esbuild-register@3.4.2.patch
@@ -48,7 +51,7 @@ dependencies:
     version: 0.6.0(typescript@5.1.6)(zod@3.21.4)
   cf-bindings-proxy:
     specifier: 0.2.5
-    version: 0.2.5(@cloudflare/workers-types@4.20230801.0)(wrangler@3.4.0)
+    version: 0.2.5(patch_hash=cqb52lye7zwziha6m2e73j6z6m)(@cloudflare/workers-types@4.20230801.0)(wrangler@3.4.0)
   client-only:
     specifier: 0.0.1
     version: 0.0.1
@@ -8601,7 +8604,7 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /cf-bindings-proxy@0.2.5(@cloudflare/workers-types@4.20230801.0)(wrangler@3.4.0):
+  /cf-bindings-proxy@0.2.5(patch_hash=cqb52lye7zwziha6m2e73j6z6m)(@cloudflare/workers-types@4.20230801.0)(wrangler@3.4.0):
     resolution: {integrity: sha512-j2n8+u0tmrXRS4G1L2pyKHVbR80KzMjt2U9EFbeSyne/0HVTRVtG1n15Po1WAU+635FN3XmWQyTu9JQ3xRtoGw==}
     hasBin: true
     peerDependencies:
@@ -8611,6 +8614,7 @@ packages:
       '@cloudflare/workers-types': 4.20230801.0
       wrangler: 3.4.0
     dev: false
+    patched: true
 
   /chalk@2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
