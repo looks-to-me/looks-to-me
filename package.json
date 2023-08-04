@@ -22,7 +22,8 @@
       "tsconfig-paths": "4.2.0"
     },
     "patchedDependencies": {
-      "esbuild-register@3.4.2": "patches/esbuild-register@3.4.2.patch"
+      "esbuild-register@3.4.2": "patches/esbuild-register@3.4.2.patch",
+      "cf-bindings-proxy@0.2.5": "patches/cf-bindings-proxy@0.2.5.patch"
     }
   },
   "dependencies": {
