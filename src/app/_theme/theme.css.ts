@@ -119,8 +119,9 @@ export const theme = createGlobalTheme(':root', {
           },
         },
       },
-      tooltip: {
+      popover: {
         text: '',
+        border: '',
         background: '',
       },
       toast: {
@@ -143,9 +144,8 @@ export const theme = createGlobalTheme(':root', {
           background: '',
         },
       },
-      popover: {
+      tooltip: {
         text: '',
-        border: '',
         background: '',
       },
     },
