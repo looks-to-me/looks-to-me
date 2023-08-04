@@ -8,7 +8,7 @@ import type { InferModel } from 'drizzle-orm';
 export const images = sqliteTable('images', {
   id: text('id').primaryKey(),
   key: text('key').notNull(),
-  userId: text('userId').notNull().references(() => users.id),
+  userId: text('user_id').notNull().references(() => users.id),
 }, (t) => ({
   keyUnq: unique('images_key_unique').on(t.key),
 }));

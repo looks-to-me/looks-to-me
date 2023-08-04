@@ -15,7 +15,6 @@ export type InputImageWithPreviewProps = {
 };
 
 const imageUrl = (image: File) => {
-  if (image === undefined) return '';
   return window.URL.createObjectURL(image);
 };
 

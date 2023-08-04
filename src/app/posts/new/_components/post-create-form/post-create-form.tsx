@@ -9,6 +9,14 @@ import { InputImageWithPreview } from '../input-image-with-preview';
 
 import type { FC } from 'react';
 
+class ImageUploadError extends Error {
+  public override readonly name = 'ImageUploadError';
+
+  constructor(message: string, file?: File | string | null, options?: ErrorOptions) {
+    super(message, options);
+  }
+}
+
 export type PostCreateFormProps = {
   className?: string | undefined;
 };
@@ -17,25 +25,23 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
   className,
 }) => {
 
-  // eslint-disable-next-line @typescript-eslint/require-await,
   const submitImage = async (formData: FormData): Promise<void> => {
     'use server';
 
     const image = formData.get('image');
-    if (image === null || typeof image === 'string'){
-      console.error('image is null or string', image);
-      return;
+    if (image === null || typeof image === 'string') {
+      throw new ImageUploadError('Image is null or string', image);
     }
 
     // TODO 画像を加工する
     const edittedImage = image;
 
     // 画像をR2にアップロードする
-    const uploadReult = await uploadImage({ image: edittedImage });
+    const uploadResult = await uploadImage({ image: edittedImage });
 
     const insertResult = await db().insert(images).values({
       id: createId(),
-      key: uploadReult.key,
+      key: uploadResult.key,
       userId: 'TODO', // TODO Fkeyなので今は動かない
     }).run();
 
@@ -46,12 +52,10 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
 
   return (
     <div className={clsx(className, styles.wrapper)}>
-      {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
       <form action={submitImage} >
         <InputImageWithPreview name='image' />
         <input type="submit"/>
       </form>
-
     </div>
   );
 };
