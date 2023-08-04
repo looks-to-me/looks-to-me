@@ -8,7 +8,7 @@ export const toast = style({
       color: theme.color.token.toast.normal.title,
       border: `solid 1px ${theme.color.token.toast.normal.border}`,
       backgroundColor: theme.color.token.toast.normal.background,
-      boxShadow: `0 4px 12px ${theme.color.token.semantic.border}`,
+      boxShadow: `0 4px 12px ${theme.color.token.semantic.shadow}`,
     },
     '&[data-sonner-toast][data-styled=true][data-type=success]': {
       color: theme.color.token.toast.success.title,
