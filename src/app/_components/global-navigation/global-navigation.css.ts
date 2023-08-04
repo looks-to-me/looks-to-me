@@ -7,7 +7,7 @@ export const main = style({
 });
 
 export const buttonLinkIcon = style({
-  fontSize: theme.font.size.medium,
+  fontSize: theme.size.font.medium,
 });
 
 export const footer = style({
@@ -24,5 +24,5 @@ export const copyright = style({
 export const companyLinks = style({
   display: 'flex',
   gap: '8px',
-  fontSize: theme.font.size.tiny,
+  fontSize: theme.size.font.tiny,
 });

@@ -64,7 +64,7 @@ export const content = recipe({
           top: 0,
           left: 0,
           right: 0,
-          borderRadius: `0 0 ${theme.radius.large} ${theme.radius.large}`,
+          borderRadius: `0 0 ${theme.size.radius.large} ${theme.size.radius.large}`,
           selectors: {
             '&[data-state="closed"]': slideOutToTop(),
           },
@@ -76,7 +76,7 @@ export const content = recipe({
           bottom: 0,
           left: 0,
           right: 0,
-          borderRadius: `${theme.radius.large} ${theme.radius.large} 0 0`,
+          borderRadius: `${theme.size.radius.large} ${theme.size.radius.large} 0 0`,
           selectors: {
             '&[data-state="closed"]': slideOutToBottom(),
           },
@@ -88,7 +88,7 @@ export const content = recipe({
           left: 0,
           top: 0,
           bottom: 0,
-          borderRadius: `0 ${theme.radius.large} ${theme.radius.large} 0`,
+          borderRadius: `0 ${theme.size.radius.large} ${theme.size.radius.large} 0`,
           selectors: {
             '&[data-state="closed"]': slideOutToLeft(),
           },
@@ -100,7 +100,7 @@ export const content = recipe({
           right: 0,
           top: 0,
           bottom: 0,
-          borderRadius: `${theme.radius.large} 0 0 ${theme.radius.large}`,
+          borderRadius: `${theme.size.radius.large} 0 0 ${theme.size.radius.large}`,
           selectors: {
             '&[data-state="closed"]': slideOutToRight(),
           },
@@ -119,7 +119,7 @@ export const close = style({
 
 export const title = style({
   margin: 0,
-  fontSize: theme.font.size.large,
+  fontSize: theme.size.font.large,
 });
 
 export const description = style({

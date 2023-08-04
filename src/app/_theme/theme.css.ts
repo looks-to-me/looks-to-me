@@ -150,26 +150,20 @@ export const theme = createGlobalTheme(':root', {
       },
     },
   },
-  font: {
-    size: {
+  size: {
+    font: {
       tiny: '.75rem',
       normal: '.875rem',
       medium: '1rem',
       large: '1.25rem',
     },
-    weight: {
-      light: '300',
-      normal: '400',
-      medium: '500',
-      semiBold: '600',
+    radius: {
+      tiny: '2px',
+      normal: '4px',
+      medium: '6px',
+      large: '8px',
+      pill: '9999px',
     },
-  },
-  radius: {
-    tiny: '2px',
-    normal: '4px',
-    medium: '6px',
-    large: '8px',
-    pill: '9999px',
   },
   duration: {
     fast: '100ms',

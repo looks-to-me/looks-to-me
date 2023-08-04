@@ -9,7 +9,7 @@ export const wrapper = recipe({
     alignItems: 'center',
     cursor: 'pointer',
     border: 'solid 1px',
-    borderRadius: theme.radius.medium,
+    borderRadius: theme.size.radius.medium,
     transitionDuration: theme.duration.normal,
     transitionProperty: 'color, background-color, border-color',
     selectors: {
