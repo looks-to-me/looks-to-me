@@ -23,11 +23,11 @@ export const content = style([
   {
     zIndex: 100,
     padding: '4px 8px',
-    fontSize: theme.font.size.tiny,
+    fontSize: theme.size.font.tiny,
     color: theme.color.token.tooltip.text,
     fill: theme.color.token.tooltip.background,
     backgroundColor: theme.color.token.tooltip.background,
-    borderRadius: theme.radius.medium,
+    borderRadius: theme.size.radius.medium,
     transition: 'color .25s, background-color .25s',
     selectors: {
       '&[data-state="closed"]': deepmerge.all<StyleRule>([

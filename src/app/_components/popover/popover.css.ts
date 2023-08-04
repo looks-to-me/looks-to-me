@@ -25,9 +25,9 @@ export const content = style([
     padding: '8px',
     color: theme.color.token.popover.text,
     backgroundColor: theme.color.token.popover.background,
-    borderRadius: theme.radius.large,
+    borderRadius: theme.size.radius.large,
     border: `1px solid ${theme.color.token.popover.border}`,
-    boxShadow: `0 4px 12px ${theme.color.token.semantic.shadow}`,
+    boxShadow: `${theme.size.shadow.normal} ${theme.color.token.semantic.shadow}`,
     selectors: {
       '&[data-state="closed"]': deepmerge.all<StyleRule>([
         animateOut(),

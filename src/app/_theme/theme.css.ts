@@ -119,8 +119,9 @@ export const theme = createGlobalTheme(':root', {
           },
         },
       },
-      tooltip: {
+      popover: {
         text: '',
+        border: '',
         background: '',
       },
       toast: {
@@ -143,33 +144,33 @@ export const theme = createGlobalTheme(':root', {
           background: '',
         },
       },
-      popover: {
+      tooltip: {
         text: '',
-        border: '',
         background: '',
       },
     },
   },
-  font: {
-    size: {
+  size: {
+    font: {
       tiny: '.75rem',
       normal: '.875rem',
       medium: '1rem',
       large: '1.25rem',
     },
-    weight: {
-      light: '300',
-      normal: '400',
-      medium: '500',
-      semiBold: '600',
+    radius: {
+      tiny: '2px',
+      normal: '4px',
+      medium: '6px',
+      large: '8px',
+      pill: '9999px',
     },
-  },
-  radius: {
-    tiny: '2px',
-    normal: '4px',
-    medium: '6px',
-    large: '8px',
-    pill: '9999px',
+    shadow: {
+      border: '0 0 0 1px',
+      tiny: '0 1px 2px 0',
+      normal: '0 4px 6px -1px',
+      medium: '0 10px 15px -3px',
+      large: '0 20px 25px -5px',
+    },
   },
   duration: {
     fast: '100ms',

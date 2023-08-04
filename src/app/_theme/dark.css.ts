@@ -102,8 +102,9 @@ globalStyle(':root', {
         [theme.color.token.button.ghost.disabled.border]: theme.color.palette.gray600,
         [theme.color.token.button.ghost.disabled.background]: 'transparent',
 
-        [theme.color.token.tooltip.text]: theme.color.palette.white,
-        [theme.color.token.tooltip.background]: theme.color.palette.gray400,
+        [theme.color.token.popover.text]: theme.color.palette.gray50,
+        [theme.color.token.popover.border]: theme.color.palette.gray500,
+        [theme.color.token.popover.background]: theme.color.palette.gray700,
 
         [theme.color.token.toast.normal.title]: theme.color.palette.white,
         [theme.color.token.toast.normal.description]: theme.color.palette.gray200,
@@ -120,9 +121,8 @@ globalStyle(':root', {
         [theme.color.token.toast.error.border]: theme.color.palette.red600,
         [theme.color.token.toast.error.background]: theme.color.palette.gray800,
 
-        [theme.color.token.popover.text]: theme.color.palette.gray50,
-        [theme.color.token.popover.border]: theme.color.palette.gray500,
-        [theme.color.token.popover.background]: theme.color.palette.gray700,
+        [theme.color.token.tooltip.text]: theme.color.palette.white,
+        [theme.color.token.tooltip.background]: theme.color.palette.gray400,
       },
     },
   },
