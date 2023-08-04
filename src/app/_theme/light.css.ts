@@ -119,6 +119,10 @@ globalStyle(':root', {
         [theme.color.token.toast.error.description]: theme.color.palette.red600,
         [theme.color.token.toast.error.border]: theme.color.palette.red400,
         [theme.color.token.toast.error.background]: theme.color.palette.gray50,
+
+        [theme.color.token.popover.text]: theme.color.palette.black,
+        [theme.color.token.popover.border]: theme.color.palette.gray100,
+        [theme.color.token.popover.background]: theme.color.palette.white,
       },
     },
   },
