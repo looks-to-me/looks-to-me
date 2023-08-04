@@ -3,8 +3,8 @@
 import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 
-import { supabase } from '../../_libs/auth/client/instance';
-import { Button } from '../button';
+import { Button } from '../../../_components/button';
+import { supabase } from '../../../_libs/auth/client/instance';
 
 import type { MouseEventHandler, FC , ComponentPropsWithoutRef } from 'react';
 

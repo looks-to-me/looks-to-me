@@ -1,5 +1,5 @@
 import { Header } from './_components/header';
-import { getAuthUser } from './_libs/auth/server/get-auth-user';
+import { getAuthUser } from '../_libs/auth/server/get-auth-user';
 
 import type { FC } from 'react';
 

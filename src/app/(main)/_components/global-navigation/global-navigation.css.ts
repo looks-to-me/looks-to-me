@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { theme } from '../../_theme';
+import { theme } from '../../../_theme';
 
 export const main = style({
   flexGrow: 1,
