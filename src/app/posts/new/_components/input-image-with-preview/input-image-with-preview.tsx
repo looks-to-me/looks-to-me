@@ -1,9 +1,11 @@
 'use client';
 import clsx from 'clsx';
 import Image from 'next/image';
-import { useState, type FC, type InputHTMLAttributes } from 'react';
+import { useState } from 'react';
 
 import * as styles from './input-image-with-preview.css';
+
+import type { FC, InputHTMLAttributes } from 'react';
 
 const ACCEPTABLE_TYPES = 'image/png, image/jpeg, image/jpg, image/gif';
 

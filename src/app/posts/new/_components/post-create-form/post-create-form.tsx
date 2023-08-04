@@ -1,13 +1,14 @@
 import { randomUUID } from 'crypto';
 
 import clsx from 'clsx';
-import { type FC } from 'react';
 
 import * as styles from './post-create-form.css';
 import { db } from '../../../../_libs/db';
 import { images } from '../../../../_libs/db/schema/tables/images';
 import { uploadImage } from '../../../../_libs/storage';
 import { InputImageWithPreview } from '../input-image-with-preview';
+
+import type { FC } from 'react';
 
 export type PostCreateFormProps = {
   className?: string | undefined;

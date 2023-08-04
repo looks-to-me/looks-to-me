@@ -1,7 +1,9 @@
-import { relations, type InferModel } from 'drizzle-orm';
+import { relations } from 'drizzle-orm';
 import { text, sqliteTable } from 'drizzle-orm/sqlite-core';
 
 import { images } from './images';
+
+import type { InferModel } from 'drizzle-orm';
 
 export const users = sqliteTable('users', {
   id: text('id').primaryKey(),
