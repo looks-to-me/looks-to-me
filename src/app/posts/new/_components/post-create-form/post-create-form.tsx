@@ -1,3 +1,4 @@
+import { createId } from '@paralleldrive/cuid2';
 import clsx from 'clsx';
 
 import * as styles from './post-create-form.css';
@@ -33,7 +34,7 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
     const uploadReult = await uploadImage({ image: edittedImage });
 
     const insertResult = await db().insert(images).values({
-      id: Math.random().toString(), // TODO 画像のIDをどうするか
+      id: createId(),
       key: uploadReult.key,
       userId: 'TODO', // TODO Fkeyなので今は動かない
     }).run();
