@@ -143,6 +143,11 @@ export const theme = createGlobalTheme(':root', {
           background: '',
         },
       },
+      popover: {
+        text: '',
+        border: '',
+        background: '',
+      },
     },
   },
   font: {
