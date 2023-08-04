@@ -12,7 +12,7 @@ import type { FC } from 'react';
 class ImageUploadError extends Error {
   public override readonly name = 'ImageUploadError';
 
-  constructor(message: string, file?: File | string | null, options?: ErrorOptions) {
+  constructor(message: string, options?: ErrorOptions) {
     super(message, options);
   }
 }
@@ -30,7 +30,7 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
 
     const image = formData.get('image');
     if (image === null || typeof image === 'string') {
-      throw new ImageUploadError('Image is null or string', image);
+      throw new ImageUploadError('Image is null or string');
     }
 
     // TODO 画像を加工する

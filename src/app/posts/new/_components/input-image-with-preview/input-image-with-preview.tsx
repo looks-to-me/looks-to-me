@@ -36,7 +36,7 @@ export const InputImageWithPreview: FC<InputImageWithPreviewProps> = ({
   return (
     <div className={clsx(className, styles.wrapper)}>
       <input type="file" name={name} accept={ACCEPTABLE_TYPES} onChange={onFileInputChange} />
-      {image && <Image src={imageUrl(image)} alt="Preview" width='320' height='300' />}
+      {image && <Image src={imageUrl(image)} alt="Preview" width='320' />}
     </div>
   );
 };
