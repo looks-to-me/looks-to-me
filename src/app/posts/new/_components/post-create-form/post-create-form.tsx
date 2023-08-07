@@ -1,4 +1,3 @@
-import { createId } from '@paralleldrive/cuid2';
 import clsx from 'clsx';
 
 import * as styles from './post-create-form.css';
