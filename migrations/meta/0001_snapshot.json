@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "sqlite",
-  "id": "06e8f906-0e09-4cd0-a7bb-d75f36ec3a39",
+  "id": "2b0edb2a-f274-4c06-a29c-9e241a6f2de6",
   "prevId": "df51eed9-d579-4989-a300-ca287018029d",
   "tables": {
     "images": {
@@ -14,37 +14,22 @@
           "notNull": true,
           "autoincrement": false
         },
-        "key": {
-          "name": "key",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "userId": {
-          "name": "userId",
+        "user_id": {
+          "name": "user_id",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
         }
       },
-      "indexes": {
-        "images_key_unique": {
-          "name": "images_key_unique",
-          "columns": [
-            "key"
-          ],
-          "isUnique": true
-        }
-      },
+      "indexes": {},
       "foreignKeys": {
-        "images_userId_users_id_fk": {
-          "name": "images_userId_users_id_fk",
+        "images_user_id_users_id_fk": {
+          "name": "images_user_id_users_id_fk",
           "tableFrom": "images",
           "tableTo": "users",
           "columnsFrom": [
-            "userId"
+            "user_id"
           ],
           "columnsTo": [
             "id"
