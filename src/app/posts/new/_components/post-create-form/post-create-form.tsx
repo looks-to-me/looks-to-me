@@ -40,8 +40,7 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
     const uploadResult = await uploadImage({ image: edittedImage });
 
     const insertResult = await db().insert(images).values({
-      id: createId(),
-      key: uploadResult.key,
+      id: uploadResult.key,
       userId: 'TODO', // TODO Fkeyなので今は動かない
     }).run();
 
