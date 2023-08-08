@@ -65,8 +65,8 @@ dependencies:
     specifier: 4.3.1
     version: 4.3.1
   drizzle-orm:
-    specifier: 0.27.2
-    version: 0.27.2(@cloudflare/workers-types@4.20230807.0)(better-sqlite3@8.5.0)
+    specifier: 0.28.1
+    version: 0.28.1(@cloudflare/workers-types@4.20230807.0)(better-sqlite3@8.5.0)
   modern-normalize:
     specifier: 2.0.0
     version: 2.0.0
@@ -9646,8 +9646,8 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.27.2(@cloudflare/workers-types@4.20230807.0)(better-sqlite3@8.5.0):
-    resolution: {integrity: sha512-ZvBvceff+JlgP7FxHKe0zOU9CkZ4RcOtibumIrqfYzDGuOeF0YUY0F9iMqYpRM7pxnLRfC+oO7rWOUH3T5oFQA==}
+  /drizzle-orm@0.28.1(@cloudflare/workers-types@4.20230807.0)(better-sqlite3@8.5.0):
+    resolution: {integrity: sha512-6ms2pVxvkBJtuP1BZTUCzLLkr+iK/cNgd+tCw+I5/PoM8PB9kXaYoW9yNe/cnaXb0TLJ1gDEndDIyQdRX7zCdQ==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
       '@cloudflare/workers-types': '>=3'
