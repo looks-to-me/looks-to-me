@@ -97,8 +97,8 @@ devDependencies:
     specifier: 3.0.0
     version: 3.0.0
   '@sqlite.org/sqlite-wasm':
-    specifier: 3.42.0-build6
-    version: 3.42.0-build6
+    specifier: 3.42.0-build7
+    version: 3.42.0-build7
   '@storybook/addon-essentials':
     specifier: 7.2.1
     version: 7.2.1(@types/react-dom@18.2.7)(@types/react@18.2.18)(react-dom@18.2.0)(react@18.2.0)
@@ -4771,8 +4771,8 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
-  /@sqlite.org/sqlite-wasm@3.42.0-build6:
-    resolution: {integrity: sha512-+UheiWZVyT6iww4CekWZpx1VPjYMjvVaQbaORmG0Z3GrERLyO1uW0oKSROF4g0rZXuhXjXtJbLtNQkHx3kF0uw==}
+  /@sqlite.org/sqlite-wasm@3.42.0-build7:
+    resolution: {integrity: sha512-3c8zpD8w9ex9ZA+y86tv85bj9zioRsCTt9MkVPEwAjhZ8InjxeoLZTyCw0LpH6fF9N2V1iZCKeFoDVbimv1q8g==}
     hasBin: true
     optionalDependencies:
       comlink: 4.4.1
