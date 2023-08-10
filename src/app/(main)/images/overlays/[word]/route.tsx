@@ -6,12 +6,16 @@ export const runtime = 'edge';
 
 export const contentType = 'image/png';
 
+const normalize = (word: string) => {
+  return `${word[0]?.toUpperCase()}${word.slice(1).toLowerCase()}`;
+};
+
 // TODO: Font size, etc. must be adjusted.
 export const GET = (
   _: NextRequest,
   { params }: { params: { word: string } },
 ) => {
-  const word = params.word.toUpperCase();
+  const word = normalize(params.word);
 
   return new ImageResponse((
     <div
