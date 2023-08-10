@@ -15,6 +15,13 @@
       "when": 1691373409242,
       "tag": "0001_goofy_titania",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1691703235178,
+      "tag": "0002_long_starhawk",
+      "breakpoints": true
     }
   ]
 }

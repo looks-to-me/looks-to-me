@@ -7,7 +7,9 @@ import type { InferModel } from 'drizzle-orm';
 
 export const users = sqliteTable('users', {
   id: text('id').primaryKey(),
-  name: text('name'),
+  name: text('name').notNull(),
+  displayName: text('display_name').notNull(),
+  avatarUrl: text('avatar_url').notNull(),
 });
 
 export const usersRelations = relations(users, ({ many }) => ({
