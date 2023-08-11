@@ -8,7 +8,7 @@ export default {
 
 type Story = StoryObj<typeof Separator>;
 
-export const Default: Story = {
+export const Default = {
   decorators: [
     Story => (
       <div style={{ width: '160px' }}>
@@ -16,9 +16,9 @@ export const Default: Story = {
       </div>
     ),
   ],
-};
+} satisfies Story;
 
-export const Vertical: Story = {
+export const Vertical = {
   args: {
     orientation: 'vertical',
   },
@@ -29,4 +29,4 @@ export const Vertical: Story = {
       </div>
     ),
   ],
-};
+} satisfies Story;

@@ -9,9 +9,9 @@ export default {
 
 type Story = StoryObj<typeof AccessibleIcon>;
 
-export const Default: Story = {
+export const Default = {
   args: {
     label: 'Close',
     children: <CloseIcon />,
   },
-};
+} satisfies Story;

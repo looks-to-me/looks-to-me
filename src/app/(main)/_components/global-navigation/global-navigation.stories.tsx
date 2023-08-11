@@ -8,6 +8,6 @@ export default {
 
 type Story = StoryObj<typeof GlobalNavigation>;
 
-export const Default: Story = {
+export const Default = {
   args: {},
-};
+} satisfies Story;

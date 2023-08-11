@@ -8,6 +8,6 @@ export default {
 
 type Story = StoryObj<typeof PostCreateForm>;
 
-export const Default: Story = {
+export const Default = {
   args: {},
-};
+} satisfies Story;

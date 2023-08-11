@@ -14,7 +14,7 @@ export default {
 
 type Story = StoryObj<typeof Sheet>;
 
-export const Default: Story = {
+export const Default = {
   args: {
     children: (
       <>
@@ -30,9 +30,9 @@ export const Default: Story = {
       </>
     ),
   },
-};
+} satisfies Story;
 
-export const MultiSection: Story = {
+export const MultiSection = {
   args: {
     children: (
       <>
@@ -54,9 +54,9 @@ export const MultiSection: Story = {
       </>
     ),
   },
-};
+} satisfies Story;
 
-export const Left: Story = {
+export const Left = {
   args: {
     children: (
       <>
@@ -72,9 +72,9 @@ export const Left: Story = {
       </>
     ),
   },
-};
+} satisfies Story;
 
-export const Top: Story = {
+export const Top = {
   args: {
     children: (
       <>
@@ -90,9 +90,9 @@ export const Top: Story = {
       </>
     ),
   },
-};
+} satisfies Story;
 
-export const Bottom: Story = {
+export const Bottom = {
   args: {
     children: (
       <>
@@ -108,4 +108,4 @@ export const Bottom: Story = {
       </>
     ),
   },
-};
+} satisfies Story;

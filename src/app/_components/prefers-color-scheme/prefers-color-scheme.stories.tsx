@@ -8,9 +8,9 @@ export default {
 
 type Story = StoryObj<typeof PrefersColorScheme>;
 
-export const Default: Story = {
+export const Default = {
   args: {
     light: <div>Light</div>,
     dark: <div>Dark</div>,
   },
-};
+} satisfies Story;

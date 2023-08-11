@@ -13,6 +13,6 @@ export default {
 
 type Story = StoryObj<typeof LogoutButton>;
 
-export const Default: Story = {
+export const Default = {
   args: {},
-};
+} satisfies Story;
