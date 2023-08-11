@@ -11,7 +11,7 @@ export default {
 
 type Story = StoryObj<typeof Popover>;
 
-export const Default: Story = {
+export const Default = {
   args: {
     children: (
       <>
@@ -24,4 +24,4 @@ export const Default: Story = {
       </>
     ),
   },
-};
+} satisfies Story;

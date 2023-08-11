@@ -11,7 +11,7 @@ export default {
 
 type Story = StoryObj<typeof Toaster>;
 
-export const Default: Story = {
+export const Default = {
   render: () => {
     const show = () => {
       toast('Title', { description: 'description' });
@@ -21,9 +21,9 @@ export const Default: Story = {
       <Button onClick={show}>Show</Button>
     );
   },
-};
+} satisfies Story;
 
-export const Success: Story = {
+export const Success = {
   render: () => {
     const show = () => {
       toast.success('Title', { description: 'description' });
@@ -33,9 +33,9 @@ export const Success: Story = {
       <Button onClick={show}>Show</Button>
     );
   },
-};
+} satisfies Story;
 
-export const Error: Story = {
+export const Error = {
   render: () => {
     const show = () => {
       toast.error('Title', { description: 'description' });
@@ -45,9 +45,9 @@ export const Error: Story = {
       <Button onClick={show}>Show</Button>
     );
   },
-};
+} satisfies Story;
 
-export const Async: Story = {
+export const Async = {
   render: () => {
     const show = (promise: () => Promise<void>) => {
       toast.promise(promise, {
@@ -74,4 +74,4 @@ export const Async: Story = {
       </>
     );
   },
-};
+} satisfies Story;

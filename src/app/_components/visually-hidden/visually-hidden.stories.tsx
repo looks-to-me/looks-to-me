@@ -8,8 +8,8 @@ export default {
 
 type Story = StoryObj<typeof VisuallyHidden>;
 
-export const Default: Story = {
+export const Default = {
   args: {
     children: 'hidden text',
   },
-};
+} satisfies Story;

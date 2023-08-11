@@ -14,13 +14,13 @@ export default {
 
 type Story = StoryObj<typeof Header>;
 
-export const Default: Story = {
+export const Default = {
   args: {
     children: 'Header',
   },
-};
+} satisfies Story;
 
-export const LoggedIn: Story = {
+export const LoggedIn = {
   args: {
     ...Default.args,
     authUser: {
@@ -30,4 +30,4 @@ export const LoggedIn: Story = {
       avatarUrl: 'https://example.com',
     },
   },
-};
+} satisfies Story;

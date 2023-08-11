@@ -8,7 +8,7 @@ export default {
 
 type Story = StoryObj<typeof InfiniteScroll>;
 
-export const Default: Story = {
+export const Default = {
   args: {
     nodes: Array.from({ length: 20 }).map((_, index) => (
       <div key={index} style={{ width: '100%', height: '64px' }}>
@@ -21,4 +21,4 @@ export const Default: Story = {
       </div>
     ))),
   },
-};
+} satisfies Story;
