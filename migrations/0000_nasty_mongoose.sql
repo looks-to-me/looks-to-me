@@ -8,5 +8,6 @@ CREATE TABLE `users` (
 	`id` text PRIMARY KEY NOT NULL,
 	`name` text NOT NULL,
 	`display_name` text NOT NULL,
-	`avatar_url` text NOT NULL
+	`avatar_url` text NOT NULL,
+	`registered_at` integer NOT NULL
 );
