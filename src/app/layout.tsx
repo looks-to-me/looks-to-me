@@ -1,4 +1,6 @@
 import { Root } from './_components/root';
+import { getAuthUser } from './_libs/auth/server/get-auth-user';
+import { upsertUser } from './upsert-user';
 
 import type { FC, ReactNode } from 'react';
 
@@ -11,9 +13,14 @@ export type RootLayoutProps = {
   children: ReactNode;
 };
 
-const RootLayout: FC<RootLayoutProps> = ({
+const RootLayout: FC<RootLayoutProps> = async ({
   children,
 }) => {
+  const authUser = await getAuthUser();
+  if (authUser) {
+    await upsertUser(authUser);
+  }
+
   return (
     <html lang="ja">
       <body>
