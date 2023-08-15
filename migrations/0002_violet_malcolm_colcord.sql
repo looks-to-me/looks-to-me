@@ -1,0 +1,1 @@
+ALTER TABLE images ADD `uploaded_at` integer NOT NULL;

@@ -41,6 +41,7 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
     const insertResult = await db().insert(images).values({
       id: uploadResult.key,
       userId: 'TODO', // TODO Fkeyなので今は動かない
+      uploadedAt: new Date(),
     }).run();
 
     // TODO 終わったら画面遷移？
