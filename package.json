@@ -64,7 +64,7 @@
     "@storybook/builder-webpack5": "7.2.3",
     "@storybook/nextjs": "7.2.3",
     "@storybook/react": "7.2.3",
-    "@svgr/webpack": "8.0.1",
+    "@svgr/webpack": "8.1.0",
     "@tsconfig/next": "2.0.0",
     "@tsconfig/strictest": "2.0.1",
     "@types/node": "20.5.0",
