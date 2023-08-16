@@ -1,35 +1,19 @@
-import clsx from 'clsx';
-import { forwardRef } from 'react';
+import { HeaderPresenter } from './header-presenter';
+import { getAuthUser } from '../../../_libs/auth/server/get-auth-user';
 
-import * as styles from './header.css';
-import { GlobalNavigation } from '../global-navigation';
-import { LoginButton } from '../login-button';
-import { Logo } from '../logo';
-import { LogoutButton } from '../logout-button';
+import type { ComponentPropsWithoutRef , FC } from 'react';
 
-import type { AuthUser } from '../../../_libs/auth/type/auth-user';
-import type { ForwardRefRenderFunction , ComponentPropsWithoutRef } from 'react';
+export type HeaderProps = ComponentPropsWithoutRef<'header'>;
 
-export type HeaderProps = ComponentPropsWithoutRef<'header'> & {
-  authUser?: AuthUser | undefined;
-};
-
-const HeaderRender: ForwardRefRenderFunction<HTMLElement, HeaderProps> = ({
-  className,
+export const Header: FC<HeaderProps> = async ({
   children,
-  authUser,
   ...props
-}, ref) => {
+}) => {
+  const authUser = await getAuthUser();
+
   return (
-    <header {...props} ref={ref} className={clsx(className, styles.wrapper)}>
-      <GlobalNavigation />
-      <Logo />
-      <div className={styles.container}>
-        {children}
-      </div>
-      {authUser ? <LogoutButton size="medium" /> : <LoginButton size="medium" />}
-    </header>
+    <HeaderPresenter {...props} authUser={authUser}>
+      {children}
+    </HeaderPresenter>
   );
 };
-
-export const Header = forwardRef(HeaderRender);
