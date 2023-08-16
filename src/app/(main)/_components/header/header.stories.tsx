@@ -1,18 +1,18 @@
-import { Header } from './header';
+import { HeaderPresenter } from './header-presenter';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  component: Header,
+  component: HeaderPresenter,
   parameters: {
     layout: 'fullscreen',
     nextjs: {
       appDirectory: true,
     },
   },
-} as Meta<typeof Header>;
+} as Meta<typeof HeaderPresenter>;
 
-type Story = StoryObj<typeof Header>;
+type Story = StoryObj<typeof HeaderPresenter>;
 
 export const Default = {
   args: {

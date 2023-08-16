@@ -1,16 +1,13 @@
 import { Header } from './_components/header';
-import { getAuthUser } from '../_libs/auth/server/get-auth-user';
 
 import type { FC } from 'react';
 
 export const runtime = 'edge';
 
-const HomePage: FC = async () => {
-  const authUser = await getAuthUser();
-
+const HomePage: FC = () => {
   return (
     <div>
-      <Header authUser={authUser}>
+      <Header>
         Home
       </Header>
       <main>
