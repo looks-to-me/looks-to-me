@@ -61,7 +61,7 @@
     "@storybook/addon-essentials": "7.3.1",
     "@storybook/addon-interactions": "7.3.1",
     "@storybook/addon-links": "7.3.1",
-    "@storybook/builder-webpack5": "7.3.0",
+    "@storybook/builder-webpack5": "7.3.1",
     "@storybook/nextjs": "7.3.1",
     "@storybook/react": "7.3.1",
     "@svgr/webpack": "8.1.0",
