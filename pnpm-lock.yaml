@@ -53,8 +53,8 @@ dependencies:
     specifier: 0.6.0
     version: 0.6.0(typescript@5.1.6)(zod@3.22.1)
   cf-bindings-proxy:
-    specifier: 0.2.6
-    version: 0.2.6(@cloudflare/workers-types@4.20230814.0)(wrangler@3.5.1)
+    specifier: 0.2.7
+    version: 0.2.7(@cloudflare/workers-types@4.20230814.0)(wrangler@3.5.1)
   client-only:
     specifier: 0.0.1
     version: 0.0.1
@@ -7395,8 +7395,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /cf-bindings-proxy@0.2.6(@cloudflare/workers-types@4.20230814.0)(wrangler@3.5.1):
-    resolution: {integrity: sha512-oyhQS3QDLXQqmrZ2iO9voLAUo+fK+m5QBcKOiRY8hAGVXOeyq6cUuHViUq6OhnQDSZLqGQjQnpO5ERzjN6ZcOw==}
+  /cf-bindings-proxy@0.2.7(@cloudflare/workers-types@4.20230814.0)(wrangler@3.5.1):
+    resolution: {integrity: sha512-5xjQX4WuoMN+SDYOJo8UD0VYEnB8qvxZiKotZt3yNmW+73MBZ+N8KflNleulWxPYDB3/tdRfBiuzgEwUJ6Ofzg==}
     hasBin: true
     peerDependencies:
       '@cloudflare/workers-types': '>=4'
