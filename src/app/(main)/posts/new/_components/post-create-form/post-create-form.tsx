@@ -1,8 +1,11 @@
+import { createId } from '@paralleldrive/cuid2';
 import clsx from 'clsx';
 
 import * as styles from './post-create-form.css';
+import { getAuthUser } from '../../../../../_libs/auth/server/get-auth-user';
 import { db } from '../../../../../_libs/db';
 import { images } from '../../../../../_libs/db/schema/tables/images';
+import { posts } from '../../../../../_libs/db/schema/tables/posts';
 import { uploadImage } from '../../../../../_libs/storage';
 import { InputImageWithPreview } from '../input-image-with-preview';
 
@@ -24,7 +27,7 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
   className,
 }) => {
 
-  const submitImage = async (formData: FormData): Promise<void> => {
+  const submitPost = async (formData: FormData): Promise<void> => {
     'use server';
 
     const image = formData.get('image');
@@ -32,17 +35,34 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
       throw new ImageUploadError('Image is null or string');
     }
 
-    // TODO 画像を加工する
-    const edittedImage = image;
+    const word = formData.get('word') || 'Good';
+    if(typeof word !== 'string') {
+      throw new ImageUploadError('Word is not string');
+    }
 
     // 画像をR2にアップロードする
-    const uploadResult = await uploadImage({ image: edittedImage });
+    const uploadResult = await uploadImage({ image });
 
-    const insertResult = await db().insert(images).values({
-      id: uploadResult.key,
-      userId: 'TODO', // TODO Fkeyなので今は動かない
-      uploadedAt: new Date(),
-    }).run();
+    const authUser = await getAuthUser();
+    if (authUser === undefined) {
+      throw new ImageUploadError('Login Required');
+    }
+
+    // DBに画像と投稿を登録する
+    const insertResult = await db().transaction(async (tx) => {
+      await tx.insert(images).values({
+        id: uploadResult.key,
+        userId: authUser.id,
+        uploadedAt: new Date(),
+      }).run();
+      await tx.insert(posts).values({
+        id: createId(),
+        userId: authUser.id,
+        imageId: uploadResult.key,
+        word,
+        postedAt: new Date(),
+      }).run();
+    });
 
     // TODO 終わったら画面遷移？
     console.log(insertResult);
@@ -51,9 +71,10 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
 
   return (
     <div className={clsx(className, styles.wrapper)}>
-      <form action={submitImage} >
+      <form action={submitPost} >
         <InputImageWithPreview name='image' />
-        <input type="submit"/>
+        <input name='word' type="text" />
+        <input type="submit" />
       </form>
     </div>
   );
