@@ -8,36 +8,51 @@ import { useInViewPort } from '../../_hooks/useInViewPort';
 
 import type { ReactNode, ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
 
+export type InfiniteScrollCursor = string;
+
+export type InfiniteScrollEdge = {
+  cursor: InfiniteScrollCursor;
+  node: ReactNode;
+};
+
+export type InfiniteScrollFetcherArgs = {
+  cursor: InfiniteScrollCursor;
+  size: number;
+};
+
+export type InfiniteScrollFetcher = (args: InfiniteScrollFetcherArgs) => Promise<InfiniteScrollEdge[]>;
+
 export type InfiniteScrollProps = ComponentPropsWithoutRef<'div'> & {
   asChild?: boolean | undefined;
-  nodes: ReactNode[];
-  fetcher: (offset: number) => Promise<ReactNode[]>;
+  edges: InfiniteScrollEdge[];
+  fetcher: InfiniteScrollFetcher;
 };
 
 const InfiniteScrollRender: ForwardRefRenderFunction<HTMLDivElement, InfiniteScrollProps> = ({
   asChild,
-  nodes,
+  edges,
   fetcher,
   ...props
 }, ref): ReactNode => {
   const Wrapper = asChild ? Slot : 'div';
 
-  const [displayNodes, setDisplayNodes] = useState(nodes);
-  const [hasMore, setHasMore] = useState(true);
+  const [displayEdges, setDisplayEdges] = useState(edges);
+  const [hasMore, setHasMore] = useState(1 <= edges.length);
 
   const anchorRef = useRef<HTMLDivElement>(null);
   useInViewPort(anchorRef, async entry => {
-    if (!entry.isIntersecting || !hasMore) return;
+    const cursor = displayEdges.at(-1)?.cursor;
+    if (!entry.isIntersecting || !hasMore || !cursor) return;
 
-    const nodes = await fetcher(displayNodes.length);
-    if (nodes.length <= 0) return setHasMore(false);
+    const edges = await fetcher({ cursor, size: displayEdges.length });
+    if (edges.length <= 0) return setHasMore(false);
 
-    setDisplayNodes(previous => [...previous, ...nodes]);
+    setDisplayEdges(previous => [...previous, ...edges]);
   });
 
   return (
     <Wrapper {...props} ref={ref}>
-      {displayNodes}
+      {displayEdges.map(edge => edge.node)}
       <div className={styles.anchor} ref={anchorRef} />
     </Wrapper>
   );

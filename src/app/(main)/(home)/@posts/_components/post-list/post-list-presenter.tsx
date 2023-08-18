@@ -3,11 +3,12 @@ import clsx from 'clsx';
 import * as styles from './post-list.css';
 import { InfiniteScroll } from '../../../../../_components/infinite-scroll';
 
-import type { ReactNode , ComponentPropsWithoutRef , FC } from 'react';
+import type { InfiniteScrollFetcher , InfiniteScrollEdge } from '../../../../../_components/infinite-scroll';
+import type { ComponentPropsWithoutRef , FC } from 'react';
 
 export type PostListPresenterProps = ComponentPropsWithoutRef<'div'> & {
-  posts: ReactNode[];
-  fetcher: (offset: number) => Promise<ReactNode[]>;
+  posts: InfiniteScrollEdge[];
+  fetcher: InfiniteScrollFetcher;
 };
 
 export const PostListPresenter: FC<PostListPresenterProps> = ({
@@ -20,7 +21,7 @@ export const PostListPresenter: FC<PostListPresenterProps> = ({
     <InfiniteScroll
       {...props}
       className={clsx(className, styles.wrapper)}
-      nodes={posts}
+      edges={posts}
       fetcher={fetcher}
     />
   );
