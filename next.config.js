@@ -15,6 +15,13 @@ module.exports = phase => {
     },
     images: {
       disableStaticImages: true,
+      remotePatterns: [
+        // allow https://avatars.githubusercontent.com/u/54714779?v=4
+        {
+          protocol: 'https',
+          hostname: 'avatars.githubusercontent.com',
+        },
+      ],
     },
     experimental: {
       typedRoutes: true,

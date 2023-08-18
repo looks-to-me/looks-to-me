@@ -1,7 +1,9 @@
 import clsx from 'clsx';
+import Image from 'next/image';
 
 import * as styles from './header.css';
 import { GitHubLoginButton } from '../github-login-button';
+import { Popover, PopoverContent, PopoverTrigger } from '../../../_components/popover';
 import { GlobalNavigation } from '../global-navigation';
 import { Logo } from '../logo';
 import { LogoutButton } from '../logout-button';
@@ -26,7 +28,33 @@ export const HeaderPresenter: FC<HeaderPresenterProps> = ({
       <div className={styles.container}>
         {children}
       </div>
-      {authUser ? <LogoutButton size="medium" /> : <GitHubLoginButton />}
+      <Popover>
+        <PopoverTrigger>
+          {authUser
+            ? <Image
+              src={authUser.avatarUrl}
+              alt={authUser.displayName ?? authUser.id}
+              width={32}
+              height={32}
+              className={styles.userAvatar}
+            />
+            : <GitHubLoginButton />
+          }
+        </PopoverTrigger>
+        {authUser && (
+          <PopoverContent>
+            <div className={styles.popover}>
+              <div className={styles.accountInfoArea}>
+                <p className={styles.accountName}>{authUser.accountName}</p>
+                <p className={styles.displayName}>{authUser.displayName}</p>
+              </div>
+              <div>
+                <LogoutButton size="medium" />
+              </div>
+            </div>
+          </PopoverContent>
+        )}
+      </Popover>
     </header>
   );
 };
