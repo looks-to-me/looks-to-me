@@ -1,6 +1,5 @@
 'use client';
 import clsx from 'clsx';
-import Image from 'next/image';
 import { useState } from 'react';
 
 import * as styles from './input-image-with-preview.css';
@@ -36,7 +35,8 @@ export const InputImageWithPreview: FC<InputImageWithPreviewProps> = ({
   return (
     <div className={clsx(className, styles.wrapper)}>
       <input type="file" name={name} accept={ACCEPTABLE_TYPES} onChange={onFileInputChange} />
-      {image && <Image src={imageUrl(image)} alt="Preview" width='320' />}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      {image && <img src={imageUrl(image)} alt="Preview"/>}
     </div>
   );
 };
