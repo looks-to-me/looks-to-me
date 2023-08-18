@@ -2,8 +2,6 @@ import { createId } from '@paralleldrive/cuid2';
 
 import { env } from '../env';
 
-const client = env().BUCKET;
-
 class StorageError extends Error {
   public override readonly name = 'StorageError';
 
@@ -24,6 +22,8 @@ const fileToBase64 = async (file: File): Promise<string> => {
 };
 
 export const uploadImage: UploadImage = async ({ image }) => {
+  const client = env().BUCKET;
+
   // upload image to R2 and returns the image key
   // TODO: cf-bindings-proxyのバグでarrayBufferが使えないので，一旦base64で送る
   // const buf = await image.arrayBuffer();
