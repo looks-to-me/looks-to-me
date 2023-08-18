@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import 'modern-normalize';
 import './root.css';
 
+import { SyncOAuthUser } from '../../(main)/_components/sync-o-auth-user';
 import { SessionProvider } from '../../_libs/auth/client/session-provider';
 import { Toaster } from '../toaster';
 import { TooltipProvider } from '../tooltip';
@@ -21,9 +22,11 @@ export const Root: FC<RootProps> = ({
   return (
     <div className={inter.className}>
       <SessionProvider>
-        <TooltipProvider>
-          {children}
-        </TooltipProvider>
+        <SyncOAuthUser>
+          <TooltipProvider>
+            {children}
+          </TooltipProvider>
+        </SyncOAuthUser>
       </SessionProvider>
       <Toaster />
     </div>
