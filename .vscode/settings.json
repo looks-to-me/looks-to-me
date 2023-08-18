@@ -11,5 +11,8 @@
   },
   "[json]": {
     "editor.formatOnSave": false
-  }
+  },
+  "cSpell.words": [
+    "upsert"
+  ]
 }

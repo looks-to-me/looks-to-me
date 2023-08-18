@@ -39,6 +39,7 @@
     "@supabase/auth-helpers-react": "0.4.2",
     "@supabase/supabase-js": "2.32.0",
     "@t3-oss/env-nextjs": "0.6.1",
+    "ahooks": "3.7.8",
     "cf-bindings-proxy": "0.2.7",
     "client-only": "0.0.1",
     "clsx": "2.0.0",
