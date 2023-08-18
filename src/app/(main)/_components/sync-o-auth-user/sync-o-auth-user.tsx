@@ -4,7 +4,7 @@ import { useUser } from '@supabase/auth-helpers-react';
 import { usePrevious } from 'ahooks';
 import { useEffect } from 'react';
 
-import { upsertUser } from './upsert-user';
+import { upsertUser } from './actions/upsert-user';
 
 import type { FC, PropsWithChildren } from 'react';
 
