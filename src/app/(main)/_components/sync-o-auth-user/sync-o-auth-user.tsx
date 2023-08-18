@@ -6,9 +6,9 @@ import { useEffect } from 'react';
 
 import { upsertUser } from './actions/upsert-user';
 
-import type { FC, PropsWithChildren } from 'react';
+import type { FC } from 'react';
 
-export const SyncOAuthUser: FC<PropsWithChildren> = ({ children }) => {
+export const SyncOAuthUser: FC = () => {
   const user = useUser();
   const previous = usePrevious(user);
 
@@ -23,5 +23,5 @@ export const SyncOAuthUser: FC<PropsWithChildren> = ({ children }) => {
     }
   }, [previous, user]);
 
-  return <>{children}</>;
+  return null;
 };
