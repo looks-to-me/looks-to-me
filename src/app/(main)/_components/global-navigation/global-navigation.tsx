@@ -1,4 +1,5 @@
 import { getYear } from 'date-fns';
+import Link from 'next/link';
 
 import * as styles from './global-navigation.css';
 import { AccessibleIcon } from '../../../_components/accessible-icon';
@@ -8,6 +9,7 @@ import { Sheet, SheetContent, SheetSection, SheetTitle, SheetTrigger } from '../
 import { VisuallyHidden } from '../../../_components/visually-hidden';
 import GitHubBlack from '../../../_icons/github-black.svg';
 import GitHubWhite from '../../../_icons/github-white.svg';
+import HomeIcon from '../../../_icons/home.svg';
 import MenuIcon from '../../../_icons/menu.svg';
 import ReportIcon from '../../../_icons/report.svg';
 import StorybookBlack from '../../../_icons/storybook-black.svg';
@@ -40,11 +42,18 @@ export const GlobalNavigation: FC<GlobalNavigationProps> = ({
             </SheetTitle>
           </VisuallyHidden>
           <Logo />
+          <Button variant="ghost" size="medium" borderless asChild>
+            <Link href="/">
+              <HomeIcon className={styles.buttonLinkIcon} />
+              Home
+            </Link>
+          </Button>
         </SheetSection>
         <SheetSection>
           <Button variant="ghost" size="medium" borderless asChild>
             <a href="https://github.com/looks-to-me/looks-to-me" target="_blank">
               <PrefersColorScheme
+                className={styles.buttonLinkIcon}
                 light={<GitHubBlack />}
                 dark={<GitHubWhite />}
               />
@@ -54,6 +63,7 @@ export const GlobalNavigation: FC<GlobalNavigationProps> = ({
           <Button variant="ghost" size="medium" borderless asChild>
             <a href="/storybook/" target="_blank">
               <PrefersColorScheme
+                className={styles.buttonLinkIcon}
                 light={<StorybookBlack />}
                 dark={<StorybookWhite />}
               />
