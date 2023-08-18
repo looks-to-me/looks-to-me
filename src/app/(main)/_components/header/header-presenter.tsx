@@ -2,8 +2,12 @@ import clsx from 'clsx';
 import Image from 'next/image';
 
 import * as styles from './header.css';
-import { GitHubLoginButton } from '../github-login-button';
+import { Button } from '../../../_components/button';
+import { Dialog } from '../../../_components/dialog';
+import { DialogContent } from '../../../_components/dialog/dialog-content';
+import { DialogTrigger } from '../../../_components/dialog/dialog-trigger';
 import { Popover, PopoverContent, PopoverTrigger } from '../../../_components/popover';
+import { GitHubLoginButton } from '../github-login-button';
 import { GlobalNavigation } from '../global-navigation';
 import { Logo } from '../logo';
 import { LogoutButton } from '../logout-button';
@@ -30,15 +34,27 @@ export const HeaderPresenter: FC<HeaderPresenterProps> = ({
       </div>
       <Popover>
         <PopoverTrigger>
-          {authUser
-            ? <Image
-              src={authUser.avatarUrl}
-              alt={authUser.displayName ?? authUser.id}
-              width={32}
-              height={32}
-              className={styles.userAvatar}
-            />
-            : <GitHubLoginButton />
+          {
+            authUser
+              ? (
+                <Image
+                  src={authUser.avatarUrl}
+                  alt={authUser.displayName ?? authUser.id}
+                  width={32}
+                  height={32}
+                  className={styles.userAvatar}
+                />
+              )
+              : (
+                <Dialog>
+                  <DialogTrigger>
+                    <Button>ログイン</Button>
+                  </DialogTrigger>
+                  <DialogContent>
+                    <GitHubLoginButton />
+                  </DialogContent>
+                </Dialog>
+              )
           }
         </PopoverTrigger>
         {authUser && (
