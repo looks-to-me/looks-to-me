@@ -53,6 +53,7 @@ export const GlobalNavigation: FC<GlobalNavigationProps> = ({
           <Button variant="ghost" size="medium" borderless asChild>
             <a href="https://github.com/looks-to-me/looks-to-me" target="_blank">
               <PrefersColorScheme
+                className={styles.buttonLinkIcon}
                 light={<GitHubBlack />}
                 dark={<GitHubWhite />}
               />
@@ -62,6 +63,7 @@ export const GlobalNavigation: FC<GlobalNavigationProps> = ({
           <Button variant="ghost" size="medium" borderless asChild>
             <a href="/storybook/" target="_blank">
               <PrefersColorScheme
+                className={styles.buttonLinkIcon}
                 light={<StorybookBlack />}
                 dark={<StorybookWhite />}
               />
