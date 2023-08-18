@@ -22,10 +22,18 @@ export const Root: FC<RootProps> = ({
   return (
     <div className={inter.className}>
       <SessionProvider>
+<<<<<<< HEAD
         <TooltipProvider>
           {children}
         </TooltipProvider>
         <SyncOAuthUser />
+=======
+        <SyncOAuthUser>
+          <TooltipProvider>
+            {children}
+          </TooltipProvider>
+        </SyncOAuthUser>
+>>>>>>> 92b7349 (upsert)
       </SessionProvider>
       <Toaster />
     </div>
