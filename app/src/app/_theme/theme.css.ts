@@ -51,6 +51,7 @@ export const theme = createGlobalTheme(':root', {
         text: '',
         textMuted: '',
         background: '',
+        backgroundMuted: '',
         backgroundInset: '',
         border: '',
         borderMuted: '',
@@ -182,6 +183,9 @@ export const theme = createGlobalTheme(':root', {
       normal: '0 4px 6px -1px',
       medium: '0 10px 15px -3px',
       large: '0 20px 25px -5px',
+    },
+    avatar: {
+      base: '1.25rem',
     },
   },
   duration: {
