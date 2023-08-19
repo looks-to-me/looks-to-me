@@ -11,13 +11,14 @@ import type { FC } from 'react';
 export const SyncOAuthUser: FC = () => {
   const user = useUser();
   const previous = usePrevious(user);
+  console.log({ user });
 
   useEffect(() => {
     if (user && !previous) {
       void upsertUser({
         id: user.id,
         accountName: user.user_metadata['user_name'],
-        displayName: user.user_metadata['name'],
+        displayName: user.user_metadata['name'] ?? null,
         avatarUrl: user.user_metadata['avatar_url'],
       });
     }
