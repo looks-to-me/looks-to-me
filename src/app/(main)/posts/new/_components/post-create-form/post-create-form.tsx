@@ -48,15 +48,17 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
       throw new ImageUploadError('Login Required');
     }
 
+    const postId = createId()
+
     // DBに画像と投稿を登録する
-    const insertResult = await db().transaction(async (tx) => {
+    await db().transaction(async (tx) => {
       await tx.insert(images).values({
         id: uploadResult.key,
         userId: authUser.id,
         uploadedAt: new Date(),
       }).run();
       await tx.insert(posts).values({
-        id: createId(),
+        id: postId,
         userId: authUser.id,
         imageId: uploadResult.key,
         word,
@@ -65,7 +67,7 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
     });
 
     // TODO 終わったら画面遷移？
-    console.log(insertResult);
+    console.log(postId);
     return;
   };
 
