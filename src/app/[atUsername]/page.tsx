@@ -5,6 +5,15 @@ import type { FC } from 'react';
 
 export const runtime = 'edge';
 
+const getUsername = (atUsername: string): string => {
+  const decodedAtUsername = decodeURIComponent(atUsername);
+  const at = decodedAtUsername.at(0);
+  if (at !== '@') {
+    return '';
+  }
+  return decodedAtUsername.slice(1);
+};
+
 const UserProfilePage: FC<
   NextPageProps<{
     /**
@@ -13,12 +22,7 @@ const UserProfilePage: FC<
     atUsername: string;
   }>
 > = ({ params: { atUsername } }) => {
-  const decodedAtUsername = decodeURIComponent(atUsername);
-  const at = decodedAtUsername.slice(0, 1);
-  if (at !== '@') {
-    return notFound();}
-
-  const username = decodedAtUsername.slice(1);
+  const username = getUsername(atUsername);
   if (username === '') {
     return notFound();
   }
