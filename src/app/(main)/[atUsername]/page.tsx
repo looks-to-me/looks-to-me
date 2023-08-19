@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 
-import type { NextPageProps } from '../_types/nextPageProps';
+import type { NextPageProps } from '../../_types/nextPageProps';
 import type { FC } from 'react';
 
 export const runtime = 'edge';
