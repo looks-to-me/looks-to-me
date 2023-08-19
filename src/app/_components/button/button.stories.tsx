@@ -1,5 +1,7 @@
 import { Button } from './button';
+import { ButtonIcon } from './button-icon';
 import CloseIcon from '../../_icons/close.svg';
+import HomeIcon from '../../_icons/home.svg';
 import { AccessibleIcon } from '../accessible-icon';
 
 import type { Meta, StoryObj } from '@storybook/react';
@@ -12,7 +14,14 @@ type Story = StoryObj<typeof Button>;
 
 export const Default = {
   args: {
-    children: 'Button',
+    children: (
+      <>
+        <ButtonIcon>
+          <HomeIcon />
+        </ButtonIcon>
+        Button
+      </>
+    ),
   },
 } satisfies Story;
 
@@ -55,9 +64,11 @@ export const Icon = {
   args: {
     ...Default.args,
     children: (
-      <AccessibleIcon label="Close">
-        <CloseIcon />
-      </AccessibleIcon>
+      <ButtonIcon>
+        <AccessibleIcon label="Close">
+          <CloseIcon />
+        </AccessibleIcon>
+      </ButtonIcon>
     ),
     size: 'icon',
   },
