@@ -1,12 +1,11 @@
 'use client';
 
+import clsx from 'clsx';
 import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 
 import * as styles from './login-button.css';
 import { Button } from '../../../_components/button';
-import { PrefersColorScheme } from '../../../_components/prefers-color-scheme';
-import GitHubBlack from '../../../_icons/github-black.svg';
 import GitHubWhite from '../../../_icons/github-white.svg';
 import { supabase } from '../../../_libs/auth/client/instance';
 
@@ -37,12 +36,8 @@ export const LoginButton: FC<LoginButtonProps> = ({
   }, [router]);
 
   return (
-    <Button {...props} className={className} variant="primary" onClick={handleClick}>
-      <PrefersColorScheme
-        className={styles.icon}
-        light={<GitHubBlack />}
-        dark={<GitHubWhite />}
-      />
+    <Button {...props} className={clsx(className, styles.button)} onClick={handleClick}>
+      <GitHubWhite className={styles.icon} />
       Login with GitHub
     </Button>
   );
