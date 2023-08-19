@@ -74,6 +74,7 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
       <form action={submitPost} >
         <InputImageWithPreview name='image' />
         <input name='word' type="text" />
+        <TagSelector />
         <input type="submit" />
       </form>
     </div>
