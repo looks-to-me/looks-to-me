@@ -1,4 +1,4 @@
-import { imageTags, imageTagsRelations } from './tables/imageTags';
+import { postTags, postTagsRelations } from './tables/postTags';
 import { imagesRelations, images } from './tables/images';
 import { posts, postsRelations } from './tables/posts';
 import { tags, tagsRelations } from './tables/tags';
@@ -13,6 +13,6 @@ export const schema = {
   imagesRelations,
   tags,
   tagsRelations,
-  imageTags,
-  imageTagsRelations,
+  postTags,
+  postTagsRelations,
 };

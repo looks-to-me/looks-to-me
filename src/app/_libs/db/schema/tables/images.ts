@@ -3,7 +3,6 @@ import { text, sqliteTable, integer } from 'drizzle-orm/sqlite-core';
 
 import { posts } from './posts';
 import { users } from './users';
-import { imageTags } from './imageTags';
 
 export const images = sqliteTable('images', {
   id: text('id').primaryKey(),
@@ -14,7 +13,6 @@ export const images = sqliteTable('images', {
 export const imagesRelations = relations(images, ({ one, many }) => ({
   user: one(users),
   posts: many(posts),
-  imageTags: many(imageTags),
 }));
 
 export type Image = InferModel<typeof images>;

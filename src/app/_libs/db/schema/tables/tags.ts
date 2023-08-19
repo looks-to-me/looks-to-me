@@ -1,6 +1,6 @@
 import { relations, type InferModel } from "drizzle-orm";
 import { sqliteTable, text, integer, unique } from "drizzle-orm/sqlite-core";
-import { imageTags } from "./imageTags";
+import { postTags } from "./postTags";
 
 export const tags = sqliteTable('tags', {
   name: text('name').primaryKey(),
@@ -10,7 +10,7 @@ export const tags = sqliteTable('tags', {
 }));
 
 export const tagsRelations = relations(tags, ({ many }) => ({
-  imageTags: many(imageTags),
+  postTags: many(postTags),
 }));
 
 
