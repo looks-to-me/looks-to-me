@@ -5,10 +5,10 @@ import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 
 import * as styles from './login-button.css';
-import { Button } from '../../../_components/button';
 import GitHubWhite from '../../../_icons/github-white.svg';
 import { supabase } from '../../../_libs/auth/client/instance';
 
+import type { Button } from '../../../_components/button';
 import type { MouseEventHandler, FC, ComponentPropsWithoutRef } from 'react';
 
 type OmitProps = 'variant' | 'borderless' | 'asChild';
@@ -36,9 +36,9 @@ export const LoginButton: FC<LoginButtonProps> = ({
   }, [router]);
 
   return (
-    <Button {...props} className={clsx(className, styles.button)} onClick={handleClick}>
+    <button {...props} className={clsx(className, styles.button)} onClick={handleClick}>
       <GitHubWhite className={styles.icon} />
       Login with GitHub
-    </Button>
+    </button>
   );
 };
