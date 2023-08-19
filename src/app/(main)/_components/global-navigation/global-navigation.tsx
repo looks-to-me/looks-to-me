@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import * as styles from './global-navigation.css';
 import { AccessibleIcon } from '../../../_components/accessible-icon';
-import { Button } from '../../../_components/button';
+import { Button, ButtonIcon } from '../../../_components/button';
 import { PrefersColorScheme } from '../../../_components/prefers-color-scheme';
 import { Sheet, SheetContent, SheetSection, SheetTitle, SheetTrigger } from '../../../_components/sheet';
 import { VisuallyHidden } from '../../../_components/visually-hidden';
@@ -29,9 +29,11 @@ export const GlobalNavigation: FC<GlobalNavigationProps> = ({
     <Sheet>
       <SheetTrigger>
         <Button className={className} size="icon">
-          <AccessibleIcon label="Open global navigation">
-            <MenuIcon />
-          </AccessibleIcon>
+          <ButtonIcon>
+            <AccessibleIcon label="Open global navigation">
+              <MenuIcon />
+            </AccessibleIcon>
+          </ButtonIcon>
         </Button>
       </SheetTrigger>
       <SheetContent side="left">
@@ -44,7 +46,9 @@ export const GlobalNavigation: FC<GlobalNavigationProps> = ({
           <Logo />
           <Button variant="ghost" size="medium" borderless asChild>
             <Link href="/">
-              <HomeIcon className={styles.buttonLinkIcon} />
+              <ButtonIcon>
+                <HomeIcon className={styles.buttonLinkIcon} />
+              </ButtonIcon>
               Home
             </Link>
           </Button>
@@ -72,7 +76,9 @@ export const GlobalNavigation: FC<GlobalNavigationProps> = ({
           </Button>
           <Button variant="ghost" size="medium" borderless asChild>
             <a href="https://github.com/looks-to-me/looks-to-me/issues" target="_blank">
-              <ReportIcon className={styles.buttonLinkIcon} />
+              <ButtonIcon>
+                <ReportIcon className={styles.buttonLinkIcon} />
+              </ButtonIcon>
               Bug reports or feature requests
             </a>
           </Button>

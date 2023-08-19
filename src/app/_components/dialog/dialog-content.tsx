@@ -7,7 +7,7 @@ import { forwardRef } from 'react';
 import * as styles from './dialog.css';
 import CloseIcon from '../../_icons/close.svg';
 import { AccessibleIcon } from '../accessible-icon';
-import { Button } from '../button';
+import { Button, ButtonIcon } from '../button';
 
 import type { ElementRef , ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
 
@@ -29,9 +29,11 @@ const DialogContentRender: ForwardRefRenderFunction<ElementRef<typeof DialogPrim
         {children}
         <DialogPrimitive.Close asChild>
           <Button className={styles.close} variant="ghost" size="icon" borderless>
-            <AccessibleIcon label="Close">
-              <CloseIcon />
-            </AccessibleIcon>
+            <ButtonIcon>
+              <AccessibleIcon label="Close">
+                <CloseIcon />
+              </AccessibleIcon>
+            </ButtonIcon>
           </Button>
         </DialogPrimitive.Close>
       </DialogPrimitive.Content>
