@@ -48,7 +48,7 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
       throw new ImageUploadError('Login Required');
     }
 
-    const postId = createId()
+    const postId = createId();
 
     // DBに画像と投稿を登録する
     await db().transaction(async (tx) => {
