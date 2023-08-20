@@ -1,5 +1,5 @@
 import { ImageResponse } from 'next/server';
-import * as z from 'zod';
+import { z } from 'zod';
 
 import type { NextRequest } from 'next/server';
 
