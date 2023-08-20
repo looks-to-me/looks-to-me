@@ -11,7 +11,6 @@ import type { FC } from 'react';
 export const SyncOAuthUser: FC = () => {
   const user = useUser();
   const previous = usePrevious(user);
-  console.log({ user });
 
   useEffect(() => {
     if (user && !previous) {
