@@ -9,7 +9,7 @@ import type { InferModel } from 'drizzle-orm';
 export const users = sqliteTable('users', {
   id: text('id').primaryKey(),
   name: text('name').notNull(),
-  displayName: text('display_name').notNull(),
+  displayName: text('display_name'),
   avatarUrl: text('avatar_url').notNull(),
   registeredAt: integer('registered_at', { mode: 'timestamp_ms' }).notNull(),
 });

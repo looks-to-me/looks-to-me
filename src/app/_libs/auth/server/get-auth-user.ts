@@ -9,7 +9,7 @@ export const getAuthUser = async (): Promise<AuthUser | undefined> => {
   return AuthUserSchema.parse({
     id: user.id,
     accountName: user.user_metadata['user_name'],
-    displayName: user.user_metadata['name'],
+    displayName: user.user_metadata['name'] ?? null,
     avatarUrl: user.user_metadata['avatar_url'],
   });
 };

@@ -17,7 +17,7 @@ export const SyncOAuthUser: FC = () => {
       void upsertUser({
         id: user.id,
         accountName: user.user_metadata['user_name'],
-        displayName: user.user_metadata['name'],
+        displayName: user.user_metadata['name'] ?? null,
         avatarUrl: user.user_metadata['avatar_url'],
       });
     }
