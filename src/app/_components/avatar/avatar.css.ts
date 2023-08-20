@@ -1,12 +1,15 @@
-import { style } from '@vanilla-extract/css';
+import { style, createVar } from '@vanilla-extract/css';
+import { calc } from '@vanilla-extract/css-utils';
 
 import { theme } from '../../_theme';
+
+export const size = createVar();
 
 export const wrapper = style({
   position: 'relative',
   display: 'flex',
-  width: '4rem',
-  height: '4rem',
+  width: calc.multiply(theme.size.avatar.base, size),
+  height: calc.multiply(theme.size.avatar.base, size),
   flexShrink: 0,
   overflow: 'hidden',
   borderRadius: theme.size.radius.pill,

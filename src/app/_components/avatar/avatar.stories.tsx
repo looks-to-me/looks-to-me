@@ -13,10 +13,22 @@ type Story = StoryObj<typeof Avatar>;
 export const Default = {
   args: {
     children: (
-      <Avatar>
-        <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+      <>
+        <AvatarImage src="https://github.com/sushidesu.png" alt="@sushidesu" />
         <AvatarFallback />
-      </Avatar>
+      </>
+    ),
+  },
+} satisfies Story;
+
+export const Large = {
+  args: {
+    size: 10,
+    children: (
+      <>
+        <AvatarImage src="https://github.com/sushidesu.png" alt="@sushidesu" />
+        <AvatarFallback />
+      </>
     ),
   },
 } satisfies Story;
@@ -24,10 +36,10 @@ export const Default = {
 export const Fallback = {
   args: {
     children: (
-      <Avatar>
-        <AvatarImage src={undefined} />
-        <AvatarFallback />
-      </Avatar>
+      <>
+        <AvatarImage />
+        <AvatarFallback>S</AvatarFallback>
+      </>
     ),
   },
 } satisfies Story;
