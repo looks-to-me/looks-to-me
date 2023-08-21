@@ -12,6 +12,7 @@ import GitHubWhite from '../../../_icons/github-white.svg';
 import HomeIcon from '../../../_icons/home.svg';
 import MenuIcon from '../../../_icons/menu.svg';
 import ReportIcon from '../../../_icons/report.svg';
+import ShuffleIcon from '../../../_icons/shuffle.svg';
 import StorybookBlack from '../../../_icons/storybook-black.svg';
 import StorybookWhite from '../../../_icons/storybook-white.svg';
 import { Logo } from '../logo';
@@ -50,6 +51,14 @@ export const GlobalNavigation: FC<GlobalNavigationProps> = ({
                 <HomeIcon className={styles.buttonLinkIcon} />
               </ButtonIcon>
               Home
+            </Link>
+          </Button>
+          <Button variant="ghost" size="medium" borderless asChild>
+            <Link href="/shuffle">
+              <ButtonIcon>
+                <ShuffleIcon className={styles.buttonLinkIcon} />
+              </ButtonIcon>
+              Shuffle
             </Link>
           </Button>
         </SheetSection>
