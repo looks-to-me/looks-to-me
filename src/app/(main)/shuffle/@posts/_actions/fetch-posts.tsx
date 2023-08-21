@@ -1,6 +1,6 @@
 'use server';
 
-import { desc, lt } from 'drizzle-orm';
+import { sql } from 'drizzle-orm';
 
 import { db } from '../../../../_libs/db';
 import { schema } from '../../../../_libs/db/schema';
@@ -10,12 +10,11 @@ import type { InfiniteScrollEdge } from '../../../../_components/infinite-scroll
 
 const limit = 32;
 
-export const fetchPosts = async (cursor?: string): Promise<InfiniteScrollEdge[]> => {
+export const fetchPosts = async (): Promise<InfiniteScrollEdge[]> => {
   const posts = await db()
     .select()
     .from(schema.posts)
-    .where(cursor ? lt(schema.posts.postedAt, new Date(cursor)) : undefined)
-    .orderBy(desc(schema.posts.postedAt))
+    .where(sql`_ROWID_ >= (ABS(RANDOM()) % ((SELECT MAX(_ROWID_) FROM posts) - ${limit} + 2))`)
     .limit(limit)
     .all();
 

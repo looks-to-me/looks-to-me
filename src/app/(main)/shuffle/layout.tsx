@@ -3,18 +3,16 @@ import * as styles from './layout.css';
 import type { FC, ReactNode } from 'react';
 
 export const metadata = {
-  title: {
-    absolute: 'LooksToMe',
-  },
+  title: 'Shuffle',
   robots: 'noindex',
 };
 
-export type HomeLayoutProps = {
+export type ShuffleLayoutProps = {
   children: ReactNode;
   posts: ReactNode;
 };
 
-const HomeLayout: FC<HomeLayoutProps> = ({
+const ShuffleLayout: FC<ShuffleLayoutProps> = ({
   children,
   posts,
 }) => {
@@ -28,4 +26,4 @@ const HomeLayout: FC<HomeLayoutProps> = ({
   );
 };
 
-export default HomeLayout;
+export default ShuffleLayout;
