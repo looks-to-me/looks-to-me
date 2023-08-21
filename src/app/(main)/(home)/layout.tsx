@@ -3,7 +3,9 @@ import * as styles from './layout.css';
 import type { FC, ReactNode } from 'react';
 
 export const metadata = {
-  title: 'LooksToMe',
+  title: {
+    absolute: 'LooksToMe',
+  },
   robots: 'noindex',
 };
 

@@ -3,7 +3,10 @@ import { Root } from './_components/root';
 import type { FC, ReactNode } from 'react';
 
 export const metadata = {
-  title: 'LooksToMe',
+  title: {
+    template: '%s | LooksToMe',
+    default: 'LooksToMe',
+  },
   robots: 'noindex',
 };
 
