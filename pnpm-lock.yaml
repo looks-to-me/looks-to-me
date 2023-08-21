@@ -51,7 +51,7 @@ dependencies:
     version: 2.32.0
   '@t3-oss/env-nextjs':
     specifier: 0.6.1
-    version: 0.6.1(typescript@5.1.6)(zod@3.22.1)
+    version: 0.6.1(typescript@5.1.6)(zod@3.22.2)
   ahooks:
     specifier: 3.7.8
     version: 3.7.8(react@18.2.0)
@@ -92,8 +92,8 @@ dependencies:
     specifier: 0.6.2
     version: 0.6.2(react-dom@18.2.0)(react@18.2.0)
   zod:
-    specifier: 3.22.1
-    version: 3.22.1
+    specifier: 3.22.2
+    version: 3.22.2
 
 devDependencies:
   '@cloudflare/next-on-pages':
@@ -1775,8 +1775,8 @@ packages:
       semver: 7.5.4
       vercel: 30.2.3(@swc/core@1.3.70)(@types/node@20.5.1)
       wrangler: 3.4.0
-      zod: 3.22.1
-      zodcli: 0.0.4(zod@3.22.1)
+      zod: 3.22.2
+      zodcli: 0.0.4(zod@3.22.2)
     dev: true
 
   /@cloudflare/workerd-darwin-64@1.20230724.0:
@@ -3731,7 +3731,7 @@ packages:
     dependencies:
       '@scaffdog/types': 3.0.0
       jiti: 1.19.1
-      zod: 3.22.1
+      zod: 3.22.2
     dev: true
 
   /@scaffdog/core@3.0.0:
@@ -5218,25 +5218,25 @@ packages:
       defer-to-connect: 2.0.1
     dev: true
 
-  /@t3-oss/env-core@0.6.1(typescript@5.1.6)(zod@3.22.1):
+  /@t3-oss/env-core@0.6.1(typescript@5.1.6)(zod@3.22.2):
     resolution: {integrity: sha512-KQD7qEDJtkWIWWmTVjNvk0wnHpkvAQ6CRbUxbWMFNG/fiosBQDQvtRpBNu6USxBscJCoC4z6y7P9MN52/mLOzw==}
     peerDependencies:
       typescript: '>=4.7.2'
       zod: ^3.0.0
     dependencies:
       typescript: 5.1.6
-      zod: 3.22.1
+      zod: 3.22.2
     dev: false
 
-  /@t3-oss/env-nextjs@0.6.1(typescript@5.1.6)(zod@3.22.1):
+  /@t3-oss/env-nextjs@0.6.1(typescript@5.1.6)(zod@3.22.2):
     resolution: {integrity: sha512-z1dIC++Vxj9kmzX5nSPfcrCSkszy3dTEPC4Ssx7Ap5AqR3c2Qa7S0xf8axn6coy7D/vCXDAAnHYnCMDhtcY3SQ==}
     peerDependencies:
       typescript: '>=4.7.2'
       zod: ^3.0.0
     dependencies:
-      '@t3-oss/env-core': 0.6.1(typescript@5.1.6)(zod@3.22.1)
+      '@t3-oss/env-core': 0.6.1(typescript@5.1.6)(zod@3.22.2)
       typescript: 5.1.6
-      zod: 3.22.1
+      zod: 3.22.2
     dev: false
 
   /@tootallnate/once@1.1.2:
@@ -8335,7 +8335,7 @@ packages:
       hanji: 0.0.5
       json-diff: 0.9.0
       minimatch: 7.4.6
-      zod: 3.22.1
+      zod: 3.22.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -12347,7 +12347,7 @@ packages:
       workerd: 1.20230724.0
       ws: 8.13.0
       youch: 3.2.3
-      zod: 3.22.1
+      zod: 3.22.2
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -14291,7 +14291,7 @@ packages:
       valid-filename: 4.0.0
       wrap-ansi: 8.1.0
       yargs: 17.7.2
-      zod: 3.22.1
+      zod: 3.22.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -16294,16 +16294,16 @@ packages:
   /zod@3.21.4:
     resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
 
-  /zod@3.22.1:
-    resolution: {integrity: sha512-+qUhAMl414+Elh+fRNtpU+byrwjDFOS1N7NioLY+tSlcADTx4TkCUua/hxJvxwDXcV4397/nZ420jy4n4+3WUg==}
+  /zod@3.22.2:
+    resolution: {integrity: sha512-wvWkphh5WQsJbVk1tbx1l1Ly4yg+XecD+Mq280uBGt9wa5BKSWf4Mhp6GmrkPixhMxmabYY7RbzlwVP32pbGCg==}
 
-  /zodcli@0.0.4(zod@3.22.1):
+  /zodcli@0.0.4(zod@3.22.2):
     resolution: {integrity: sha512-+WdBcf7Z19ueKI/w9SbxRXGyPnn5Fg/hc2nvOL3YKwcnhL2dvp58MvZwScvJS/Zqt4ePwSOLajboFG6su8BM8w==}
     peerDependencies:
       zod: ^3.21.4
     dependencies:
       typescript: 4.9.5
-      zod: 3.22.1
+      zod: 3.22.2
     dev: true
 
   /zwitch@2.0.4:
