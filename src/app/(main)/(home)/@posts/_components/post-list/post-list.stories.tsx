@@ -1,5 +1,5 @@
 import { PostListPresenter } from './post-list-presenter';
-import { Post } from '../post';
+import { Post } from '../../../../_components/post';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

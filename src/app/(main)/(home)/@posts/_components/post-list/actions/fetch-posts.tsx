@@ -4,7 +4,7 @@ import { desc, lt } from 'drizzle-orm';
 
 import { db } from '../../../../../../_libs/db';
 import { schema } from '../../../../../../_libs/db/schema';
-import { Post } from '../../post';
+import { Post } from '../../../../../_components/post';
 
 import type { InfiniteScrollEdge } from '../../../../../../_components/infinite-scroll';
 

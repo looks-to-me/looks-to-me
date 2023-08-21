@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import Image from 'next/image';
 
 import * as styles from './post.css';
-import { AspectRatio } from '../../../../../_components/aspect-ratio';
+import { AspectRatio } from '../../../_components/aspect-ratio';
 
 import type { FC } from 'react';
 
