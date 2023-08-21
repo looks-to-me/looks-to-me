@@ -1,13 +1,13 @@
-import { PostListPresenter } from './post-list-presenter';
+import { PostList } from './post-list';
 import { Post } from '../post';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  component: PostListPresenter,
-} as Meta<typeof PostListPresenter>;
+  component: PostList,
+} as Meta<typeof PostList>;
 
-type Story = StoryObj<typeof PostListPresenter>;
+type Story = StoryObj<typeof PostList>;
 
 export const Default = {
   args: {
