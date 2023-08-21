@@ -68,7 +68,7 @@
     "@svgr/webpack": "8.1.0",
     "@tsconfig/next": "2.0.0",
     "@tsconfig/strictest": "2.0.1",
-    "@types/node": "20.5.0",
+    "@types/node": "20.5.1",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
     "@typescript-eslint/eslint-plugin": "6.4.0",
