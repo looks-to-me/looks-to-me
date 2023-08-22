@@ -26,7 +26,7 @@ export const HeaderPresenter: FC<HeaderPresenterProps> = ({
       <div className={styles.container}>
         {children}
       </div>
-      {authUser ? <LogoutButton size="medium" /> : <GitHubLoginButton size="medium" />}
+      {authUser ? <LogoutButton size="medium" /> : <GitHubLoginButton />}
     </header>
   );
 };
