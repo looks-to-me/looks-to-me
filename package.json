@@ -56,7 +56,7 @@
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "1.5.1",
-    "@cloudflare/workers-types": "4.20230814.0",
+    "@cloudflare/workers-types": "4.20230821.0",
     "@scaffdog/types": "3.0.0",
     "@sqlite.org/sqlite-wasm": "3.42.0-build7",
     "@storybook/addon-essentials": "7.3.2",
