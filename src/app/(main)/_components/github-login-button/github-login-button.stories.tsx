@@ -1,17 +1,17 @@
-import { LoginButton } from './login-button';
+import { GitHubLoginButton } from './github-login-button';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  component: LoginButton,
+  component: GitHubLoginButton,
   parameters: {
     nextjs: {
       appDirectory: true,
     },
   },
-} as Meta<typeof LoginButton>;
+} as Meta<typeof GitHubLoginButton>;
 
-type Story = StoryObj<typeof LoginButton>;
+type Story = StoryObj<typeof GitHubLoginButton>;
 
 export const Default = {
   args: {},

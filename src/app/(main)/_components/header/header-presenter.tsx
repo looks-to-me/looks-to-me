@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 
 import * as styles from './header.css';
+import { GitHubLoginButton } from '../github-login-button';
 import { GlobalNavigation } from '../global-navigation';
-import { LoginButton } from '../login-button';
 import { Logo } from '../logo';
 import { LogoutButton } from '../logout-button';
 
@@ -26,7 +26,7 @@ export const HeaderPresenter: FC<HeaderPresenterProps> = ({
       <div className={styles.container}>
         {children}
       </div>
-      {authUser ? <LogoutButton size="medium" /> : <LoginButton size="medium" />}
+      {authUser ? <LogoutButton size="medium" /> : <GitHubLoginButton size="medium" />}
     </header>
   );
 };

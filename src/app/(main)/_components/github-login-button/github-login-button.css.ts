@@ -13,9 +13,14 @@ export const button = style({
   gap: '8px',
   alignItems: 'center',
   cursor: 'pointer',
-  border: 'solid 1px',
+  border: `solid 1px ${theme.color.token.semantic.border}`,
   borderRadius: theme.size.radius.medium,
   transitionDuration: theme.duration.normal,
-  transitionProperty: 'color, background-color, border-color',
+  transitionProperty: 'background-color',
   padding: '7px 8px',
+  selectors: {
+    '&:hover': {
+      backgroundColor: '#4a4f5a',
+    },
+  },
 });
