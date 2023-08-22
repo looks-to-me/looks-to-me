@@ -8,6 +8,16 @@ import { Post } from '../../../_components/post';
 
 import type { InfiniteScrollEdge } from '../../../../_components/infinite-scroll';
 
+// Fisher–Yates shuffle
+const shuffle = <T extends object>(array: Array<T>): Array<T> => {
+  return array.reduce((previous, current, index) => {
+    const key = Math.floor(Math.random() * (index + 1));
+    previous[index] = previous[key]!;
+    previous[key] = current;
+    return previous;
+  }, [] as Array<T>);
+};
+
 const limit = 32;
 
 export const fetchPosts = async (): Promise<InfiniteScrollEdge[]> => {
@@ -18,7 +28,7 @@ export const fetchPosts = async (): Promise<InfiniteScrollEdge[]> => {
     .limit(limit)
     .all();
 
-  return posts.map(post => ({
+  return shuffle(posts).map(post => ({
     cursor: post.postedAt.toISOString(),
     node: (
       <Post
