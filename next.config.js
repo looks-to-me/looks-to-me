@@ -20,7 +20,6 @@ module.exports = phase => {
       typedRoutes: true,
       serverActions: true,
     },
-    trailingSlash: true,
     rewrites: async () => [
       {
         source: '/storybook/',
