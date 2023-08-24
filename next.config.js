@@ -39,6 +39,7 @@ module.exports = phase => {
           rules: [
             {
               test: /\.svg$/,
+              exclude: /icon\.svg$/,
               use: [{
                 loader: '@svgr/webpack',
                 options: { icon: true, ref: true },
