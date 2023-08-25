@@ -1,10 +1,10 @@
 import clsx from 'clsx';
 
 import * as styles from './header.css';
-import { GitHubLoginButton } from '../github-login-button';
+import { AvatarAndUserMenu } from '../avatar-and-user-menu';
 import { GlobalNavigation } from '../global-navigation';
+import { LoginButtonAndDialog } from '../login-button-and-dialog';
 import { Logo } from '../logo';
-import { LogoutButton } from '../logout-button';
 
 import type { AuthUser } from '../../../_libs/auth/type/auth-user';
 import type { ComponentPropsWithoutRef, FC } from 'react';
@@ -26,7 +26,11 @@ export const HeaderPresenter: FC<HeaderPresenterProps> = ({
       <div className={styles.container}>
         {children}
       </div>
-      {authUser ? <LogoutButton size="medium" /> : <GitHubLoginButton />}
+      {
+        authUser
+          ? <AvatarAndUserMenu authUser={authUser} />
+          : <LoginButtonAndDialog />
+      }
     </header>
   );
 };
