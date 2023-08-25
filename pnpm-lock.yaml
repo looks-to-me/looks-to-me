@@ -72,7 +72,7 @@ dependencies:
     version: 4.3.1
   drizzle-orm:
     specifier: 0.28.5
-    version: 0.28.5(@cloudflare/workers-types@4.20230821.0)(better-sqlite3@8.5.1)
+    version: 0.28.5(@cloudflare/workers-types@4.20230821.0)(better-sqlite3@8.5.2)
   modern-normalize:
     specifier: 2.0.0
     version: 2.0.0
@@ -163,8 +163,8 @@ devDependencies:
     specifier: 2.3.0
     version: 2.3.0(@types/node@20.5.6)(webpack@5.88.1)
   better-sqlite3:
-    specifier: 8.5.1
-    version: 8.5.1
+    specifier: 8.5.2
+    version: 8.5.2
   drizzle-kit:
     specifier: 0.19.13
     version: 0.19.13
@@ -6917,8 +6917,8 @@ packages:
       open: 8.4.2
     dev: true
 
-  /better-sqlite3@8.5.1:
-    resolution: {integrity: sha512-aDfC67xfll6bugnOqRJhdUWioQZnkhLkrwZ+oo6yZbNMtyktbwkDO4SfBcCVWbm4BlsCjCNTJchlHaBt+vB4Iw==}
+  /better-sqlite3@8.5.2:
+    resolution: {integrity: sha512-w/EZ/jwuZF+/47mAVC2+rhR2X/gwkZ+fd1pbX7Y90D5NRaRzDQcxrHY10t6ijGiYIonCVsBSF5v1cay07bP5sg==}
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
@@ -8320,7 +8320,7 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.28.5(@cloudflare/workers-types@4.20230821.0)(better-sqlite3@8.5.1):
+  /drizzle-orm@0.28.5(@cloudflare/workers-types@4.20230821.0)(better-sqlite3@8.5.2):
     resolution: {integrity: sha512-6r6Iw4c38NAmW6TiKH3TUpGUQ1YdlEoLJOQptn8XPx3Z63+vFNKfAiANqrIiYZiMjKR9+NYAL219nFrmo1duXA==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
@@ -8383,7 +8383,7 @@ packages:
         optional: true
     dependencies:
       '@cloudflare/workers-types': 4.20230821.0
-      better-sqlite3: 8.5.1
+      better-sqlite3: 8.5.2
     dev: false
 
   /duplexify@3.7.1:
@@ -12314,7 +12314,7 @@ packages:
     dependencies:
       acorn: 8.9.0
       acorn-walk: 8.2.0
-      better-sqlite3: 8.5.1
+      better-sqlite3: 8.5.2
       capnp-ts: 0.7.0
       exit-hook: 2.2.1
       glob-to-regexp: 0.4.1
