@@ -8,6 +8,11 @@ import type { FC } from 'react';
 
 export const runtime = 'edge';
 
+export const metadata = {
+  title: 'Privacy Policy',
+  robots: 'noindex',
+};
+
 const ShufflePage: FC = () => {
   return (
     <>
