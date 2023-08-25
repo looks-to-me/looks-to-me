@@ -73,7 +73,6 @@
     "storybook": "7.3.2",
     "typescript": "5.2.2",
     "vercel": "30.2.3",
-    "webpack-merge": "5.9.0",
-    "wrangler": "3.4.0"
+    "webpack-merge": "5.9.0"
   }
 }
