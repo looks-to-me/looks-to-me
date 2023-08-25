@@ -72,12 +72,19 @@ export const InputImageWithPreview: FC<InputImageWithPreviewProps> = ({
           backgroundColor: isDropActive ? buttonTheme.background : buttonTheme.hover.background,
         }}
       >
-        <p>Drop an Image Here</p>
-        <p>or if you prefer...</p>
+        {
+          image ? (
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img src={imageUrl(image)} alt="Preview"/>
+          ) : (
+            <>
+              <p>Drop an Image Here</p>
+              <p>or if you prefer...</p>
+            </>
+          )
+        }
         <input type="file" name={name} accept={ACCEPTABLE_TYPES} onChange={onFileInputChange} ref={inputRef} />
       </div>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      {image && <img src={imageUrl(image)} alt="Preview"/>}
     </div>
   );
 };

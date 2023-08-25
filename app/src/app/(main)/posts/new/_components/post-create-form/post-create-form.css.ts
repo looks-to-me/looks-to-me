@@ -1,6 +1,10 @@
 import { style } from '@vanilla-extract/css';
 
 export const wrapper = style({
+  padding: '1rem',
+  display:' flex',
+  justifyContent: 'center',
+  margin: '0 auto',
 });
 
 export const textForm = style({
@@ -21,4 +25,10 @@ export const textForm = style({
   '::placeholder': {
     color: '#888',
   },
+});
+
+export const submitButton = style({
+  // 右寄せ
+  marginLeft: 'auto',
+  marginRight: '0',
 });

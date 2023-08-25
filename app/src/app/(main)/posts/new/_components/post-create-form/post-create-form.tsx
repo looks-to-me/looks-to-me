@@ -89,10 +89,12 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
     <div className={clsx(className, styles.wrapper)}>
       <form action={submitPost} >
         <InputImageWithPreview name='image' />
-        <div>
-          Looks <VariableTextInput className={styles.textForm} name='word' defaultValue="Good" /> To Me
+        <div style={{ display: 'flex', marginTop: '1rem' }} >
+          <div>
+            Looks <VariableTextInput className={styles.textForm} name='word' defaultValue="Good" /> To Me
+          </div>
+          <Button type='submit' variant='primary' className={styles.submitButton} >Submit</Button>
         </div>
-        <Button type='submit' >Submit</Button>
       </form>
     </div>
   );
