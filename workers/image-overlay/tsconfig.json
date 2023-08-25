@@ -3,14 +3,19 @@
   "extends": [
     "../../tsconfig.json"
   ],
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "types": [
+      "@cloudflare/workers-types"
+    ]
+  },
   "include": [
     "**/*.ts",
     "worker-configuration.d.ts"
   ],
   "exclude": [
     "node_modules"
-  ],
-  "compilerOptions": {
-    "types": ["@cloudflare/workers-types"]
-  }
+  ]
 }

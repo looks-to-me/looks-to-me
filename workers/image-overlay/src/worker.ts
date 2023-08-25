@@ -23,7 +23,7 @@ export default {
     request: Request,
     _env: Env,
     _ctx: ExecutionContext,
-  ) {
+  ): Promise<Response> {
     const url = new URL(request.url);
     const origin = url.searchParams.get('origin');
     const overlay = url.searchParams.get('overlay');
