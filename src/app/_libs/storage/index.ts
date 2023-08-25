@@ -1,7 +1,5 @@
 import { createId } from '@paralleldrive/cuid2';
 
-import { env } from '../env';
-
 class UploadFileError extends Error {
   public override readonly name = 'UploadFileError';
   public static readonly message = 'Failed to upload file';
@@ -11,28 +9,17 @@ class UploadFileError extends Error {
   }
 }
 
-export const uploadImage: UploadImage = async ({ image }) => {
+export const uploadFile: UploadFile = (client) => async (file) => {
   // upload image to R2 and returns the image key
-
-  const client = env().BUCKET;
-
-  const buf = await image.arrayBuffer();
-  const result = await client.put(createId(), buf);
-
-  if (result === null) {
-    throw new UploadFileError('Failed to upload image: result is null');
+  try {
+    const buf = await file.arrayBuffer();
+    const result = await client.put(createId(), buf);
+    if (result) return result;
+  } catch (error) {
+    throw new UploadFileError({ cause: error });
   }
 
-  return {
-    key: result.key,
-  };
+  throw new UploadFileError();
 };
 
-export type UploadImageArgs = {
-  image: File;
-};
-export type UploadImageResult = {
-  key: string;
-};
-
-export type UploadImage = (args: UploadImageArgs) => Promise<UploadImageResult>;
+export type UploadFile = (client: R2Bucket) => (file: File) => Promise<R2Object>;

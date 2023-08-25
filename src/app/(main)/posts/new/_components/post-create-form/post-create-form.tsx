@@ -6,7 +6,8 @@ import { getAuthUser } from '../../../../../_libs/auth/server/get-auth-user';
 import { db } from '../../../../../_libs/db';
 import { images } from '../../../../../_libs/db/schema/tables/images';
 import { posts } from '../../../../../_libs/db/schema/tables/posts';
-import { uploadImage } from '../../../../../_libs/storage';
+import { env } from '../../../../../_libs/env';
+import { uploadFile } from '../../../../../_libs/storage';
 import { InputImageWithPreview } from '../input-image-with-preview';
 
 import type { FC } from 'react';
@@ -41,7 +42,8 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
     }
 
     // 画像をR2にアップロードする
-    const uploadResult = await uploadImage({ image });
+    const client = env().BUCKET;
+    const uploadResult = await uploadFile(client)(image);
 
     const authUser = await getAuthUser();
     if (authUser === undefined) {
