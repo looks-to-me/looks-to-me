@@ -2,7 +2,17 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+### 1. create .env.local
+
+Contact us for more information.
+
+### 2. run the proxy server
+
+```bash
+pnpm run dev:proxy
+```
+
+### 3. run the development server
 
 ```bash
 npm run dev
@@ -10,6 +20,12 @@ npm run dev
 yarn dev
 # or
 pnpm dev
+```
+
+### 4. apply migration
+
+```bash
+pnpm run migrate:apply
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
