@@ -73,7 +73,7 @@ const AuthControl: FC<AuthControlProps> = ({ authUser }) => {
   ) : (
     <Dialog>
       <DialogTrigger>
-        <Button>ログイン</Button>
+        <Button>Login</Button>
       </DialogTrigger>
       <DialogContent>
         <div className={styles.dialog}>
