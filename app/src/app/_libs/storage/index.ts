@@ -1,5 +1,7 @@
 import { createId } from '@paralleldrive/cuid2';
 
+import type { R2Bucket, R2Object } from '@cloudflare/workers-types';
+
 class UploadFileError extends Error {
   public override readonly name = 'UploadFileError';
   public static readonly message = 'Failed to upload file';
