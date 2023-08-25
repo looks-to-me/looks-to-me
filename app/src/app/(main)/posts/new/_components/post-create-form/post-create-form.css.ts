@@ -2,8 +2,7 @@ import { style } from '@vanilla-extract/css';
 
 export const wrapper = style({
   padding: '1rem',
-  display:' flex',
-  justifyContent: 'center',
+  maxWidth: '600px',
   margin: '0 auto',
 });
 

@@ -59,6 +59,11 @@ export const InputImageWithPreview: FC<InputImageWithPreviewProps> = ({
     }
   };
 
+  const clickInput = () => {
+    if(inputRef.current === null) return;
+    inputRef.current.click();
+  }
+
   return (
     <div className={clsx(className, styles.wrapper)}>
       <div
@@ -71,6 +76,7 @@ export const InputImageWithPreview: FC<InputImageWithPreviewProps> = ({
           borderColor: isDropActive ? buttonTheme.border : buttonTheme.hover.border,
           backgroundColor: isDropActive ? buttonTheme.background : buttonTheme.hover.background,
         }}
+        onClick={clickInput}
       >
         {
           image ? (
@@ -79,11 +85,11 @@ export const InputImageWithPreview: FC<InputImageWithPreviewProps> = ({
           ) : (
             <>
               <p>Drop an Image Here</p>
-              <p>or if you prefer...</p>
+              <p>or click to upload</p>
             </>
           )
         }
-        <input type="file" name={name} accept={ACCEPTABLE_TYPES} onChange={onFileInputChange} ref={inputRef} />
+        <input type="file" hidden name={name} accept={ACCEPTABLE_TYPES} onChange={onFileInputChange} ref={inputRef} />
       </div>
     </div>
   );
