@@ -3,7 +3,7 @@ import { style } from '@vanilla-extract/css';
 import { theme } from '../../../_theme';
 
 export const content = style({
-  width: '400px',
+  width: '480px',
   display: 'flex',
   flexDirection: 'column',
   gap: '8px',

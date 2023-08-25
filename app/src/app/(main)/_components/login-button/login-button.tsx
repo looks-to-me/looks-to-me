@@ -1,4 +1,6 @@
-import * as styles from './login-button-and-dialog.css';
+import Link from 'next/link';
+
+import * as styles from './login-button.css';
 import { Button } from '../../../_components/button';
 import { Dialog } from '../../../_components/dialog';
 import { DialogContent } from '../../../_components/dialog/dialog-content';
@@ -7,21 +9,23 @@ import { GitHubLoginButton } from '../github-login-button';
 
 import type { FC } from 'react';
 
-export const LoginButtonAndDialog: FC = () => {
+export const LoginButton: FC = () => {
   return (
     <Dialog>
       <DialogTrigger>
-        <Button>Login</Button>
+        <Button size="medium">Login</Button>
       </DialogTrigger>
       <DialogContent>
         <div className={styles.content}>
-          {/* TODO: いいねできるようになったら、それも書く */}
-          <p>Login to be able to post images.</p>
+          {/* TODO: Add a description of the favorite feature when it is created */}
+          <p>By logging in, you will be able to submit images.</p>
           <div className={styles.buttonArea}>
             <GitHubLoginButton />
           </div>
-          {/* TODO: "terms of use and privacy policy"をリンクにする */}
-          <p className={styles.annotation}>Please login after agreeing to the terms of use and privacy policy.</p>
+          {/* TODO: "terms of use" link */}
+          <p className={styles.annotation}>
+            Please login after agreeing to the terms of use and <Link href="/privacy">privacy policy</Link>.
+          </p>
         </div>
       </DialogContent>
     </Dialog>
