@@ -219,6 +219,15 @@ importers:
         specifier: 5.9.0
         version: 5.9.0
 
+  workers/image-overlay:
+    devDependencies:
+      '@cloudflare/workers-types':
+        specifier: 4.20230821.0
+        version: 4.20230821.0
+      typescript:
+        specifier: 5.2.2
+        version: 5.2.2
+
 packages:
 
   /@aashutoshrathi/word-wrap@1.2.6:
