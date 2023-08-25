@@ -34,7 +34,7 @@ export const popover = style({
   padding: '8px',
   borderRadius: theme.size.radius.normal,
   backgroundColor: theme.color.token.semantic.background,
-  height: '100px',
+  height: '120px',
   width: '200px',
 });
 
@@ -51,5 +51,29 @@ export const accountName = style({
 
 export const displayName = style({
   margin: 0,
+  color: theme.color.token.semantic.textMuted,
+});
+
+export const popoverButtonArea = style({
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'flex-end',
+});
+
+export const dialog = style({
+  width: '400px',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '8px',
+  padding: '8px',
+});
+
+export const dialogButtonArea = style({
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+});
+
+export const dialogAnnotation = style({
   color: theme.color.token.semantic.textMuted,
 });
