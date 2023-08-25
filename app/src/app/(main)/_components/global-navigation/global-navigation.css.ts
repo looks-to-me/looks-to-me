@@ -21,7 +21,7 @@ export const copyright = style({
   color: theme.color.token.semantic.textMuted,
 });
 
-export const companyLinks = style({
+export const links = style({
   display: 'flex',
   gap: '8px',
   fontSize: theme.size.font.tiny,

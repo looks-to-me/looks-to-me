@@ -95,7 +95,10 @@ export const GlobalNavigation: FC<GlobalNavigationProps> = ({
             <small className={styles.copyright}>
               © {getYear(new Date())} PrAha, Inc.
             </small>
-            <div className={styles.companyLinks}>
+            <div className={styles.links}>
+              <a href="/privacy">Privacy</a>
+            </div>
+            <div className={styles.links}>
               <a href="https://www.praha-inc.com/" target="_blank">PrAha</a>
               <a href="https://tech.agaroot.co.jp/" target="_blank">AGAROOT TECHNOLOGIES</a>
             </div>
