@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  publish:
+  publish-app:
     name: Publish to Cloudflare Pages
     runs-on: ubuntu-latest
     permissions:
@@ -20,7 +20,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Build
-        run: pnpm run build:ci
+        run: pnpm run build:ci --filter="@looks-to-me/app"
         env:
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
@@ -30,7 +30,7 @@ jobs:
         with:
           wranglerVersion: '3'
           projectName: looks-to-me
-          directory: .vercel/output/static
+          directory: app/.vercel/output/static
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}

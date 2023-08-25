@@ -4,9 +4,7 @@
   ],
   "extends": [
     "eslint:recommended",
-    "plugin:import/recommended",
-    "plugin:next-on-pages/recommended",
-    "next/core-web-vitals"
+    "plugin:import/recommended"
   ],
   "rules": {
     "yoda": "off",
@@ -50,10 +48,7 @@
     "unused-imports/no-unused-vars": [
       "warn",
       { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
-    ],
-    "react/jsx-newline": ["error", {
-      "prevent": true
-    }]
+    ]
   },
   "overrides": [
     {

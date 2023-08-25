@@ -1,0 +1,17 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [
+    "**/.env",
+    "**/.env.*local"
+  ],
+  "pipeline": {
+    "build:ci": {
+      "outputs": [
+        ".next/**",
+        "dist/**"
+      ]
+    },
+    "lint:code": {},
+    "lint:type": {}
+  }
+}
