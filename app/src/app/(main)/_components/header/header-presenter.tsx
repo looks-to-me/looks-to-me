@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import * as styles from './header.css';
 import { AvatarAndUserMenu } from '../avatar-and-user-menu';
 import { GlobalNavigation } from '../global-navigation';
-import { LoginButtonAndDialog } from '../login-button-and-dialog';
+import { LoginButton } from '../login-button';
 import { Logo } from '../logo';
 
 import type { AuthUser } from '../../../_libs/auth/type/auth-user';
@@ -26,11 +26,11 @@ export const HeaderPresenter: FC<HeaderPresenterProps> = ({
       <div className={styles.container}>
         {children}
       </div>
-      {
-        authUser
-          ? <AvatarAndUserMenu authUser={authUser} />
-          : <LoginButtonAndDialog />
-      }
+      {authUser ? (
+        <AvatarAndUserMenu authUser={authUser} />
+      ) : (
+        <LoginButton />
+      )}
     </header>
   );
 };
