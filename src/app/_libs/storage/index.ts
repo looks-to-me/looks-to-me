@@ -2,11 +2,12 @@ import { createId } from '@paralleldrive/cuid2';
 
 import { env } from '../env';
 
-class StorageError extends Error {
-  public override readonly name = 'StorageError';
+class UploadFileError extends Error {
+  public override readonly name = 'UploadFileError';
+  public static readonly message = 'Failed to upload file';
 
-  constructor(message: string, options?: ErrorOptions) {
-    super(message, options);
+  constructor(options?: ErrorOptions) {
+    super(UploadFileError.message, options);
   }
 }
 
@@ -19,7 +20,7 @@ export const uploadImage: UploadImage = async ({ image }) => {
   const result = await client.put(createId(), buf);
 
   if (result === null) {
-    throw new StorageError('Failed to upload image: result is null');
+    throw new UploadFileError('Failed to upload image: result is null');
   }
 
   return {
