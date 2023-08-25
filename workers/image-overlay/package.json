@@ -1,0 +1,15 @@
+{
+  "name": "@looks-to-me/worker-image-overlay",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "build:ci": "wrangler deploy --dry-run --outdir=dist",
+    "lint:code": "eslint",
+    "lint:type": "tsc --pretty --noEmit"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "4.20230821.0",
+    "typescript": "5.2.2"
+  }
+}
