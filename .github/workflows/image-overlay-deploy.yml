@@ -1,0 +1,30 @@
+name: Image Overlay Deploy
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'workers/image-overlay/**'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: workers/image-overlay
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install
+        run: yarn install --frozen-lockfile
+      - name: Build
+        run: yarn build
+      - name: Deploy app
+        uses: cloudflare/wrangler-action@3.0.0
+        with:
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          workingDirectory: workers/image-overlay
+          command: deploy
