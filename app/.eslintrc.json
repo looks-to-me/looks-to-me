@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "../.eslintrc.json",
+    "plugin:next-on-pages/recommended",
+    "next/core-web-vitals"
+  ],
+  "rules": {
+    "react/jsx-newline": ["error", {
+      "prevent": true
+    }]
+  }
+}
