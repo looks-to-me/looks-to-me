@@ -1,12 +1,14 @@
 'use client';
 import clsx from 'clsx';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import * as styles from './input-image-with-preview.css';
+import { theme } from '../../../../../_theme';
 
-import type { FC, InputHTMLAttributes } from 'react';
+import type { DragEvent, FC, InputHTMLAttributes } from 'react';
 
 const ACCEPTABLE_TYPES = 'image/png, image/jpeg, image/jpg, image/gif';
+const buttonTheme = theme.color.token.button.normal;
 
 export type InputImageWithPreviewProps = {
   className?: string | undefined;
@@ -21,6 +23,7 @@ export const InputImageWithPreview: FC<InputImageWithPreviewProps> = ({
   className,
   name,
 }) => {
+  const inputRef = useRef<HTMLInputElement>(null);
   const [image, setImage] = useState<File>();
 
   const onFileInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,9 +35,47 @@ export const InputImageWithPreview: FC<InputImageWithPreviewProps> = ({
     setImage(fileObject);
   };
 
+  const [isDropActive, setIsDropActive] = useState(false);
+  const onDragEnger = (e: DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setIsDropActive(true);
+  };
+  const onDragLeave = (e: DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    if (!(e.currentTarget as Node).contains(e.relatedTarget as Node)) {
+      setIsDropActive(false);
+    }
+  };
+
+  const onDrop = (e: DragEvent<HTMLDivElement>) => {
+    console.log(e);
+    e.preventDefault();
+    setIsDropActive(false);
+    if (e.dataTransfer.files !== null && e.dataTransfer.files.length > 0) {
+      if(inputRef.current === null) return;
+      inputRef.current.files = e.dataTransfer.files;
+      e.dataTransfer.clearData();
+      setImage(e.dataTransfer.files[0]);
+    }
+  };
+
   return (
     <div className={clsx(className, styles.wrapper)}>
-      <input type="file" name={name} accept={ACCEPTABLE_TYPES} onChange={onFileInputChange} />
+      <div
+        onDragEnter={onDragEnger}
+        onDragLeave={onDragLeave}
+        onDragOver={(e) => e.preventDefault()}
+        onDrop={onDrop}
+        className={clsx(styles.dropZone)}
+        style={{
+          borderColor: isDropActive ? buttonTheme.border : buttonTheme.hover.border,
+          backgroundColor: isDropActive ? buttonTheme.background : buttonTheme.hover.background,
+        }}
+      >
+        <p>Drop an Image Here</p>
+        <p>or if you prefer...</p>
+        <input type="file" name={name} accept={ACCEPTABLE_TYPES} onChange={onFileInputChange} ref={inputRef} />
+      </div>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       {image && <img src={imageUrl(image)} alt="Preview"/>}
     </div>
