@@ -24,5 +24,8 @@ next-env.d.ts
 # Wrangler
 .wrangler
 
-# storybook
+# Storybook
 */public/storybook
+
+# Turborepo
+.turbo

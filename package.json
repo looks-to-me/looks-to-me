@@ -4,7 +4,10 @@
   "private": true,
   "packageManager": "pnpm@8.6.12",
   "scripts": {
-    "create:component": "scaffdog generate component"
+    "create:component": "scaffdog generate component",
+    "build:ci": "turbo run build:ci",
+    "lint:code": "turbo run lint:code",
+    "lint:type": "turbo run lint:type"
   },
   "pnpm": {
     "overrides": {
@@ -22,6 +25,7 @@
     "eslint-plugin-import": "2.28.1",
     "eslint-plugin-jest": "27.2.3",
     "eslint-plugin-unused-imports": "3.0.0",
-    "scaffdog": "3.0.0"
+    "scaffdog": "3.0.0",
+    "turbo": "1.10.13"
   }
 }
