@@ -62,7 +62,7 @@ export const InputImageWithPreview: FC<InputImageWithPreviewProps> = ({
   const clickInput = () => {
     if(inputRef.current === null) return;
     inputRef.current.click();
-  }
+  };
 
   return (
     <div className={clsx(className, styles.wrapper)}>
