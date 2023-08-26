@@ -21,7 +21,7 @@ export const getImageSize = (buffer: Uint8Array) => {
 export default {
   async fetch(
     request: Request,
-    _env: Env,
+    env: Env,
     _ctx: ExecutionContext,
   ): Promise<Response> {
     const url = new URL(request.url);
@@ -32,13 +32,16 @@ export default {
       return new Response('Invalid Request', { status: 400 });
     }
 
-    const response = await fetch(origin);
+    const headers = { authorization: `Bearer ${env.POST_RAW_IMAGE_TOKEN}` };
+    const response = await fetch(origin, { headers });
     const buffer = await response.arrayBuffer();
     const size = getImageSize(new Uint8Array(buffer));
 
     return fetch(origin, {
+      headers,
       cf: {
         image: {
+          'origin-auth': 'share-publicly',
           draw: [
             {
               url: overlay,
