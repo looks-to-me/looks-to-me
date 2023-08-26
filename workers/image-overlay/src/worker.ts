@@ -1,50 +1,43 @@
-import { GIF } from './image-size/gif';
-import { JPEG } from './image-size/jpeg';
-import { PNG } from './image-size/png';
+import { z } from 'zod';
 
-export const getImageSize = (buffer: Uint8Array) => {
-  if (PNG.validate(buffer)) {
-    return PNG.calculate(buffer);
-  }
-
-  if (JPEG.validate(buffer)) {
-    return JPEG.calculate(buffer);
-  }
-
-  if (GIF.validate(buffer)) {
-    return GIF.calculate(buffer);
-  }
-
-  throw Error('not supported format');
-};
+const schema = z.object({
+  origin: z.string().url(),
+  overlay: z.string().url(),
+  width: z.coerce.number(),
+  height: z.coerce.number(),
+});
 
 export default {
   async fetch(
     request: Request,
-    _env: Env,
+    env: Env,
     _ctx: ExecutionContext,
   ): Promise<Response> {
-    const url = new URL(request.url);
-    const origin = url.searchParams.get('origin');
-    const overlay = url.searchParams.get('overlay');
-
-    if (!origin || !overlay) {
-      return new Response('Invalid Request', { status: 400 });
+    if (request.headers.get('authorization') !== `Bearer ${env.INTERNAL_API_TOKEN}`) {
+      return new Response('Unauthorized', { status: 401 });
     }
 
-    const response = await fetch(origin);
-    const buffer = await response.arrayBuffer();
-    const size = getImageSize(new Uint8Array(buffer));
+    const url = new URL(request.url);
+    const input = schema.parse({
+      origin: url.searchParams.get('origin'),
+      overlay: url.searchParams.get('overlay'),
+      width: url.searchParams.get('width'),
+      height: url.searchParams.get('height'),
+    });
 
-    return fetch(origin, {
+    return fetch(input.origin, {
+      headers: {
+        authorization: `Bearer ${env.INTERNAL_API_TOKEN}`,
+      },
       cf: {
         image: {
+          'origin-auth': 'share-publicly',
           draw: [
             {
-              url: overlay,
+              url: input.overlay,
               fit: 'contain',
-              width: size.width,
-              height: size.height,
+              width: input.width,
+              height: input.height,
             },
           ],
         },

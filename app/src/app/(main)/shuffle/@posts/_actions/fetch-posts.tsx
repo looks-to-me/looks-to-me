@@ -36,7 +36,7 @@ export const fetchPosts = async (): Promise<InfiniteScrollEdge[]> => {
         post={{
           id: post.id,
           word: post.word,
-          image: `/images/posts/${post.id}/`,
+          image: `/images/posts/${post.id}`,
         }}
       />
     ),
