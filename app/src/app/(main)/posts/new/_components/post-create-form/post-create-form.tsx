@@ -62,21 +62,23 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
 
     const postId = createId();
 
-    await db().transaction(async (tx) => {
-      await tx.insert(schema.images).values({
+    // TODO: Make use of transaction or batch.
+    // @see: https://github.com/drizzle-team/drizzle-orm/issues/758
+    {
+      await db().insert(schema.images).values({
         id: uploadResult.key,
         userId: userProvider.userId,
         uploadedAt: new Date(),
       }).run();
 
-      await tx.insert(schema.posts).values({
+      await db().insert(schema.posts).values({
         id: postId,
         userId: userProvider.userId,
         imageId: uploadResult.key,
         word: word,
         postedAt: new Date(),
       }).run();
-    });
+    }
 
     // TODO: show toast
   };
