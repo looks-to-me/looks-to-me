@@ -17,7 +17,7 @@ class SubmitPostError extends Error {
   }
 }
 
-const inputsSchema = z.object({
+const inputSchema = z.object({
   image: z.custom<Blob>(value => value instanceof Blob),
   word: z.string()
     .regex(/^[a-zA-Z]+$/, { message: 'Must be a alphabetic.' })
@@ -26,7 +26,7 @@ const inputsSchema = z.object({
 });
 
 export const submitPost = async (formData: FormData): Promise<void> => {
-  const inputs = inputsSchema.parse({
+  const input = inputSchema.parse({
     image: formData.get('image'),
     word: formData.get('word'),
   });
@@ -47,7 +47,7 @@ export const submitPost = async (formData: FormData): Promise<void> => {
   if (!userProvider) throw new SubmitPostError('Unauthorized');
 
   const imageId = createId();
-  await storage().put(`users/${userProvider.userId}/images/${imageId}`, await inputs.image.arrayBuffer());
+  await storage().put(`users/${userProvider.userId}/images/${imageId}`, await input.image.arrayBuffer());
 
   const postId = createId();
 
@@ -69,7 +69,7 @@ export const submitPost = async (formData: FormData): Promise<void> => {
         id: postId,
         userId: userProvider.userId,
         imageId: imageId,
-        word: inputs.word,
+        word: input.word,
         postedAt: new Date(),
       })
       .run();

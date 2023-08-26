@@ -8,6 +8,9 @@
     "lint:code": "eslint",
     "lint:type": "tsc --pretty --noEmit"
   },
+  "dependencies": {
+    "zod": "3.22.2"
+  },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20230821.0",
     "typescript": "5.2.2",

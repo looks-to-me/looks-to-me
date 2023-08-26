@@ -220,6 +220,10 @@ importers:
         version: 5.9.0
 
   workers/image-overlay:
+    dependencies:
+      zod:
+        specifier: 3.22.2
+        version: 3.22.2
     devDependencies:
       '@cloudflare/workers-types':
         specifier: 4.20230821.0
