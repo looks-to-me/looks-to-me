@@ -1,5 +1,5 @@
 import { HeaderPresenter } from './header-presenter';
-import { getAuthUser } from '../../../_libs/auth/server/get-auth-user';
+import { getUserMetadata } from '../../../_libs/auth/server/get-user-metadata';
 
 import type { ComponentPropsWithoutRef , FC } from 'react';
 
@@ -9,10 +9,10 @@ export const Header: FC<HeaderProps> = async ({
   children,
   ...props
 }) => {
-  const authUser = await getAuthUser();
+  const userMetadata = await getUserMetadata();
 
   return (
-    <HeaderPresenter {...props} authUser={authUser}>
+    <HeaderPresenter {...props} userMetadata={userMetadata}>
       {children}
     </HeaderPresenter>
   );

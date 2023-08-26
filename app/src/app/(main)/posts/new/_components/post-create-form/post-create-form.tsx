@@ -1,11 +1,11 @@
 import { createId } from '@paralleldrive/cuid2';
 import clsx from 'clsx';
+import { and, eq } from 'drizzle-orm';
 
 import * as styles from './post-create-form.css';
-import { getAuthUser } from '../../../../../_libs/auth/server/get-auth-user';
+import { getUserMetadata } from '../../../../../_libs/auth/server/get-user-metadata';
 import { db } from '../../../../../_libs/db';
-import { images } from '../../../../../_libs/db/schema/tables/images';
-import { posts } from '../../../../../_libs/db/schema/tables/posts';
+import { schema } from '../../../../../_libs/db/schema';
 import { env } from '../../../../../_libs/env';
 import { uploadFile } from '../../../../../_libs/storage';
 import { InputImageWithPreview } from '../input-image-with-preview';
@@ -45,32 +45,40 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
     const client = env().BUCKET;
     const uploadResult = await uploadFile(client)(image);
 
-    const authUser = await getAuthUser();
-    if (authUser === undefined) {
-      throw new ImageUploadError('Login Required');
-    }
+    const userMetadata = await getUserMetadata();
+    if (!userMetadata) throw new ImageUploadError('Unauthorized');
+
+    const userProvider = await db()
+      .select()
+      .from(schema.userProviders)
+      .where(
+        and(
+          eq(schema.userProviders.provider, userMetadata.provider),
+          eq(schema.userProviders.sub, userMetadata.sub),
+        ),
+      )
+      .get();
+    if (!userProvider) throw new ImageUploadError('Unauthorized');
 
     const postId = createId();
 
-    // DBに画像と投稿を登録する
     await db().transaction(async (tx) => {
-      await tx.insert(images).values({
+      await tx.insert(schema.images).values({
         id: uploadResult.key,
-        userId: authUser.id,
+        userId: userProvider.userId,
         uploadedAt: new Date(),
       }).run();
-      await tx.insert(posts).values({
+
+      await tx.insert(schema.posts).values({
         id: postId,
-        userId: authUser.id,
+        userId: userProvider.userId,
         imageId: uploadResult.key,
-        word,
+        word: word,
         postedAt: new Date(),
       }).run();
     });
 
-    // TODO 終わったら画面遷移？
-    console.log(postId);
-    return;
+    // TODO: show toast
   };
 
   return (

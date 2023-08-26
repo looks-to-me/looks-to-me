@@ -14,12 +14,7 @@ export const SyncOAuthUser: FC = () => {
 
   useEffect(() => {
     if (user && !previous) {
-      void upsertUser({
-        id: user.id,
-        accountName: user.user_metadata['user_name'],
-        displayName: user.user_metadata['name'] ?? null,
-        avatarUrl: user.user_metadata['avatar_url'],
-      });
+      void upsertUser(user);
     }
   }, [previous, user]);
 
