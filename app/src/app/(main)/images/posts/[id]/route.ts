@@ -13,7 +13,7 @@ export const runtime = 'edge';
 const fetchImageSize = async (origin: string): Promise<ImageSize> => {
   const response = await fetch(origin, {
     headers: {
-      authorization: `Bearer ${env().POST_RAW_IMAGE_TOKEN}`,
+      authorization: `Bearer ${env().INTERNAL_API_TOKEN}`,
     },
   });
 
@@ -21,12 +21,12 @@ const fetchImageSize = async (origin: string): Promise<ImageSize> => {
   return getImageSize(new Uint8Array(buffer));
 };
 
-const fetchImage = async (request: NextRequest, origin: string, overlay: string): Promise<Response> => {
+const fetchImage = async (origin: string, overlay: string): Promise<Response> => {
   if (env().NODE_ENV === 'development') {
     return fetch(origin);
   }
 
-  const url = new URL(request.url);
+  const url = new URL(env().IMAGE_OVERLAY_WORKER_URL);
   url.searchParams.set('origin', origin);
   url.searchParams.set('overlay', overlay);
 
@@ -34,7 +34,11 @@ const fetchImage = async (request: NextRequest, origin: string, overlay: string)
   url.searchParams.set('width', size.width.toString());
   url.searchParams.set('height', size.height.toString());
 
-  return await env().IMAGE_OVERLAY.fetch(url) as unknown as Response;
+  return await fetch(url, {
+    headers: {
+      authorization: `Bearer ${env().INTERNAL_API_TOKEN}`,
+    },
+  });
 };
 
 export const GET = async (request: NextRequest, { params }: { params: { id: string } }) => {
@@ -47,7 +51,6 @@ export const GET = async (request: NextRequest, { params }: { params: { id: stri
 
   const url = new URL(request.url);
   const response = await fetchImage(
-    request,
     `${url.origin}/images/posts/${post.id}/raw`,
     `${url.origin}/images/overlays/${post.word}`,
   );

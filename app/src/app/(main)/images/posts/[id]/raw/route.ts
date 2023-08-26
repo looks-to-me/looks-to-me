@@ -14,7 +14,7 @@ export const runtime = 'edge';
 export const GET = async (request: NextRequest, { params }: { params: { id: string } }) => {
   // In the production environment, it should only be accessible by Workers.
   if (env().NODE_ENV === 'production') {
-    if (request.headers.get('authorization') !== `Bearer ${env().POST_RAW_IMAGE_TOKEN}`) {
+    if (request.headers.get('authorization') !== `Bearer ${env().INTERNAL_API_TOKEN}`) {
       return Response.error();
     }
   }

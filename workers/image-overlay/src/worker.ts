@@ -13,8 +13,11 @@ export default {
     env: Env,
     _ctx: ExecutionContext,
   ): Promise<Response> {
-    const url = new URL(request.url);
+    if (request.headers.get('authorization') !== `Bearer ${env.INTERNAL_API_TOKEN}`) {
+      return new Response('Unauthorized', { status: 401 });
+    }
 
+    const url = new URL(request.url);
     const input = schema.parse({
       origin: url.searchParams.get('origin'),
       overlay: url.searchParams.get('overlay'),
@@ -24,7 +27,7 @@ export default {
 
     return fetch(input.origin, {
       headers: {
-        authorization: `Bearer ${env.POST_RAW_IMAGE_TOKEN}`,
+        authorization: `Bearer ${env.INTERNAL_API_TOKEN}`,
       },
       cf: {
         image: {
