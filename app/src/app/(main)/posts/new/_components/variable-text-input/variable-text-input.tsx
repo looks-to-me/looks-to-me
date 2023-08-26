@@ -1,4 +1,5 @@
 'use client';
+
 import clsx from 'clsx';
 import { useRef } from 'react';
 
@@ -22,9 +23,9 @@ export const VariableTextInput: FC<VariableTextInputProps> = ({
   };
 
   return (
-    <div className={styles.inputTextItem}>
-      <div className={styles.inputTextDummy} data-placeholder="Good" ref={dummy}></div>
-      <input {...props} className={clsx(className, styles.inputText)} type='text' onChange={onChange} />
+    <div className={styles.wrapper}>
+      <div ref={dummy} className={styles.dummy} data-placeholder={props.placeholder}></div>
+      <input {...props} className={clsx(className, styles.input)} type='text' onChange={onChange} />
     </div>
   );
 };

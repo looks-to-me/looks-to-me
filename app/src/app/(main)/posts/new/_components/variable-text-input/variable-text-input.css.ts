@@ -1,14 +1,11 @@
 import { style } from '@vanilla-extract/css';
 
 export const wrapper = style({
-});
-
-export const inputTextItem = style({
   position: 'relative',
   display: 'inline-block',
 });
 
-export const inputTextDummy = style({
+export const dummy = style({
   display: 'inline-block',
   overflow: 'hidden',
   minWidth: '1em',
@@ -26,7 +23,7 @@ export const inputTextDummy = style({
   },
 });
 
-export const inputText = style({
+export const input = style({
   position: 'absolute',
   top: '0',
   left: '0',

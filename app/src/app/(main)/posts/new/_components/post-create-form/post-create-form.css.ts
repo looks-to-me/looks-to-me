@@ -1,12 +1,19 @@
 import { style } from '@vanilla-extract/css';
 
+import { theme } from '../../../../../_theme';
+
 export const wrapper = style({
   padding: '1rem',
   maxWidth: '600px',
   margin: '0 auto',
 });
 
-export const textForm = style({
+export const footer = style({
+  display: 'flex',
+  marginTop: '1rem',
+});
+
+export const word = style({
   appearance: 'none',
   background: 'transparent',
   border: 'none',
@@ -16,18 +23,15 @@ export const textForm = style({
   padding: '2px 4px',
   outline: 'none',
   transition: 'border-color 0.3s',
-
   ':focus': {
-    borderBottomColor: '#007BFF',
+    borderBottomColor: theme.color.palette.blue500,
   },
-
   '::placeholder': {
-    color: '#888',
+    color: theme.color.palette.gray500,
   },
 });
 
-export const submitButton = style({
-  // 右寄せ
+export const submit = style({
   marginLeft: 'auto',
   marginRight: '0',
 });
