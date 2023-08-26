@@ -1,27 +1,79 @@
 'use server';
 
+import { createId } from '@paralleldrive/cuid2';
+import { and, eq } from 'drizzle-orm';
+
+import { UserMetadataSchema } from '../../../../_libs/auth/type/user-metadata';
 import { db } from '../../../../_libs/db';
-import { users } from '../../../../_libs/db/schema/tables/users';
+import { schema } from '../../../../_libs/db/schema';
 
-import type { AuthUser } from '../../../../_libs/auth/type/auth-user';
+import type { User } from '@supabase/auth-helpers-react';
 
-type UpsertUser = (authUser: AuthUser) => Promise<void>;
-export const upsertUser: UpsertUser = async (authUser) => {
+export const upsertUser = async (user: User): Promise<void> => {
+  const userMetadata = UserMetadataSchema.parse({
+    ...user.app_metadata,
+    ...user.user_metadata,
+  });
+
+  const userProvider = await db()
+    .select()
+    .from(schema.userProviders)
+    .where(
+      and(
+        eq(schema.userProviders.provider, userMetadata.provider),
+        eq(schema.userProviders.sub, userMetadata.sub),
+      ),
+    )
+    .get();
+
+  // create user if not exists
+  if (!userProvider) {
+    return await db().transaction(async transaction => {
+      const userId = createId();
+      await transaction
+        .insert(schema.users)
+        .values({
+          id: userId,
+          registeredAt: new Date(),
+        })
+        .run();
+
+      await transaction
+        .insert(schema.userProviders)
+        .values({
+          userId: userId,
+          provider: userMetadata.provider,
+          sub: userMetadata.sub,
+        })
+        .run();
+
+      await transaction
+        .insert(schema.userProfiles)
+        .values({
+          userId: userId,
+          name: userMetadata.user_name,
+          displayName: userMetadata.name ?? null,
+          avatarUrl: userMetadata.avatar_url,
+        })
+        .run();
+    });
+  }
+
+  // upsert user profile
   await db()
-    .insert(users)
+    .insert(schema.userProfiles)
     .values({
-      id: authUser.id,
-      name: authUser.accountName,
-      displayName: authUser.displayName,
-      avatarUrl: authUser.avatarUrl,
-      registeredAt: new Date(),
+      userId: userProvider.userId,
+      name: userMetadata.user_name,
+      displayName: userMetadata.name ?? null,
+      avatarUrl: userMetadata.avatar_url,
     })
     .onConflictDoUpdate({
-      target: users.id,
+      target: schema.userProfiles.userId,
       set: {
-        name: authUser.accountName,
-        displayName: authUser.displayName,
-        avatarUrl: authUser.avatarUrl,
+        name: userMetadata.user_name,
+        displayName: userMetadata.name ?? null,
+        avatarUrl: userMetadata.avatar_url,
       },
     })
     .run();

@@ -23,11 +23,12 @@ export const Default = {
 export const LoggedIn = {
   args: {
     ...Default.args,
-    authUser: {
-      id: '1',
-      accountName: 'test',
-      displayName: 'Test',
-      avatarUrl: 'https://example.com',
+    userMetadata: {
+      sub: '1',
+      provider: 'github',
+      name: 'Test',
+      user_name: 'test',
+      avatar_url: 'https://example.com',
     },
   },
 } satisfies Story;

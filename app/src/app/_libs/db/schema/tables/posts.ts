@@ -4,8 +4,6 @@ import { text, sqliteTable, integer, unique } from 'drizzle-orm/sqlite-core';
 import { images } from './images';
 import { users } from './users';
 
-import type { InferModel } from 'drizzle-orm';
-
 export const posts = sqliteTable('posts', {
   id: text('id').primaryKey(),
   userId: text('user_id').notNull().references(() => users.id),
@@ -21,4 +19,4 @@ export const postsRelations = relations(posts, ({ one }) => ({
   image: one(images),
 }));
 
-export type Post = InferModel<typeof posts>;
+export type Post = typeof posts._.inferSelect;
