@@ -28,9 +28,11 @@ export const upsertUser = async (user: User): Promise<void> => {
 
   // create user if not exists
   if (!userProvider) {
-    return await db().transaction(async transaction => {
+    // TODO: Make use of transaction or batch.
+    // @see: https://github.com/drizzle-team/drizzle-orm/issues/758
+    {
       const userId = createId();
-      await transaction
+      await db()
         .insert(schema.users)
         .values({
           id: userId,
@@ -38,7 +40,7 @@ export const upsertUser = async (user: User): Promise<void> => {
         })
         .run();
 
-      await transaction
+      await db()
         .insert(schema.userProviders)
         .values({
           userId: userId,
@@ -47,7 +49,7 @@ export const upsertUser = async (user: User): Promise<void> => {
         })
         .run();
 
-      await transaction
+      await db()
         .insert(schema.userProfiles)
         .values({
           userId: userId,
@@ -56,7 +58,9 @@ export const upsertUser = async (user: User): Promise<void> => {
           avatarUrl: userMetadata.avatar_url,
         })
         .run();
-    });
+    }
+
+    return;
   }
 
   // upsert user profile
