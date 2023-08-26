@@ -3,12 +3,14 @@ import clsx from 'clsx';
 import { and, eq } from 'drizzle-orm';
 
 import * as styles from './post-create-form.css';
+import { Button } from '../../../../../_components/button';
 import { getUserMetadata } from '../../../../../_libs/auth/server/get-user-metadata';
 import { db } from '../../../../../_libs/db';
 import { schema } from '../../../../../_libs/db/schema';
 import { env } from '../../../../../_libs/env';
 import { uploadFile } from '../../../../../_libs/storage';
 import { InputImageWithPreview } from '../input-image-with-preview';
+import { VariableTextInput } from '../variable-text-input';
 
 import type { FC } from 'react';
 
@@ -87,8 +89,12 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
     <div className={clsx(className, styles.wrapper)}>
       <form action={submitPost} >
         <InputImageWithPreview name='image' />
-        <input name='word' type="text" />
-        <input type="submit" />
+        <div className={styles.footer}>
+          <div>
+            Looks <VariableTextInput className={styles.word} name='word' placeholder="Good" defaultValue="Good" /> To Me
+          </div>
+          <Button type='submit' variant='primary' className={styles.submit} >Submit</Button>
+        </div>
       </form>
     </div>
   );
