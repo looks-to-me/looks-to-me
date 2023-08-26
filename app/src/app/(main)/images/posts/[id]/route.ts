@@ -55,7 +55,13 @@ export const GET = async (request: NextRequest, { params }: { params: { id: stri
     `${url.origin}/images/overlays/${post.word}`,
   );
 
+  const headers: Record<string, string> = { 'cache-control': 'public, max-age=31536000, immutable' };
+  response.headers.forEach((value, key) => {
+    if (key.startsWith('cf-')) return;
+    headers[key] = value;
+  });
+
   return new Response(await response.blob(), {
-    headers: response.headers,
+    headers,
   });
 };
