@@ -132,8 +132,8 @@ importers:
         version: 3.22.2
     devDependencies:
       '@cloudflare/next-on-pages':
-        specifier: 1.5.1
-        version: 1.5.1(vercel@30.2.3)(wrangler@3.4.0)
+        specifier: 1.6.0
+        version: 1.6.0(vercel@30.2.3)(wrangler@3.4.0)
       '@cloudflare/workers-types':
         specifier: 4.20230821.0
         version: 4.20230821.0
@@ -1713,11 +1713,11 @@ packages:
     dependencies:
       mime: 3.0.0
 
-  /@cloudflare/next-on-pages@1.5.1(vercel@30.2.3)(wrangler@3.4.0):
-    resolution: {integrity: sha512-CVkKqT7V04NDu/hfzFxEjsmo4yOLoLzWotBADEoqCxtSYuWBiDJZQiftIKyZiU08iIFkTGxgZRdyO1ngDazwdg==}
+  /@cloudflare/next-on-pages@1.6.0(vercel@30.2.3)(wrangler@3.4.0):
+    resolution: {integrity: sha512-AeTs0Poqw70HEG6hynO25qx/gYdhTh8hH8E+qjYO+ji0LCKkP7FH12yvOobWKNfsUiTP95+3qz5AF9nvA+2z1g==}
     hasBin: true
     peerDependencies:
-      vercel: ^30.0.0
+      vercel: ^30.0.0 || ^31.0.0 || ^32.0.0
       wrangler: ^3.0.0
     dependencies:
       acorn: 8.9.0
@@ -6429,6 +6429,7 @@ packages:
   /acorn@8.9.0:
     resolution: {integrity: sha512-jaVNAFBHNLXspO543WnNNPZFRtavh3skAkITqD0/2aeMkKZTN+254PyhwxFYrk3vQ1xfY+2wbesJMs/JC8/PwQ==}
     engines: {node: '>=0.4.0'}
+    hasBin: true
 
   /address@1.2.2:
     resolution: {integrity: sha512-4B/qKCfeE/ODUaAUpSwfzazo5x29WD4r3vXiWsB7I2mSDAihwEqKO+g8GELZUQSSAo5e1XTYh3ZVfLyxBc12nA==}
@@ -9026,6 +9027,7 @@ packages:
   /esbuild@0.15.18:
     resolution: {integrity: sha512-x/R72SmW3sSFRm5zrrIjAhCeQSAWoni3CmHEqfQrZIQTM3lVCdehdwuIqaOtfC2slvpdlLa62GYoN8SxT23m6Q==}
     engines: {node: '>=12'}
+    hasBin: true
     requiresBuild: true
     optionalDependencies:
       '@esbuild/android-arm': 0.15.18
@@ -11338,6 +11340,7 @@ packages:
 
   /js-yaml@3.14.1:
     resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==}
+    hasBin: true
     dependencies:
       argparse: 1.0.10
       esprima: 4.0.1
@@ -11345,6 +11348,7 @@ packages:
 
   /js-yaml@4.1.0:
     resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
+    hasBin: true
     dependencies:
       argparse: 2.0.1
     dev: true
@@ -14279,6 +14283,7 @@ packages:
 
   /semver@6.1.1:
     resolution: {integrity: sha512-rWYq2e5iYW+fFe/oPPtYJxYgjBm8sC4rmoGdUOgBB7VnwKt6HrL793l2voH1UlsyYZpJ4g0wfjnTEO1s1NP2eQ==}
+    hasBin: true
     dev: true
 
   /semver@6.3.1:
@@ -14287,6 +14292,7 @@ packages:
   /semver@7.3.8:
     resolution: {integrity: sha512-NB1ctGL5rlHrPJtFDVIVzTyQylMLu9N9VICA6HSFJo8MCGVTMW6gfpicwKmmK/dAjTOrqu5l63JJOpDSrAis3A==}
     engines: {node: '>=10'}
+    hasBin: true
     dependencies:
       lru-cache: 6.0.0
     dev: true
@@ -14294,6 +14300,7 @@ packages:
   /semver@7.5.4:
     resolution: {integrity: sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==}
     engines: {node: '>=10'}
+    hasBin: true
     dependencies:
       lru-cache: 6.0.0
 
