@@ -9,11 +9,6 @@ import type { FC } from 'react';
 
 export const runtime = 'edge';
 
-export const metadata = {
-  title: 'New post',
-  robots: 'noindex',
-};
-
 const PostsNewPage: FC = () => {
   return (
     <>
