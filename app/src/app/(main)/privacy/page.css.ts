@@ -2,17 +2,8 @@ import { style } from '@vanilla-extract/css';
 
 import { theme } from '../../_theme';
 
-export const title = style({
-  fontWeight: 600,
-});
-
-export const main = style({
-  padding: '16px',
-});
-
 export const article = style({
   maxWidth: '800px',
-  padding: '16px',
   margin: '0 auto',
 });
 
