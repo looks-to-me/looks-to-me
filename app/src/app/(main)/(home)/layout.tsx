@@ -1,4 +1,9 @@
+import Link from 'next/link';
+
 import * as styles from './layout.css';
+import { Button } from '../../_components/button';
+import { Header } from '../_components/header';
+import { PageLayout } from '../_components/page-layout';
 
 import type { FC, ReactNode } from 'react';
 
@@ -19,12 +24,22 @@ const HomeLayout: FC<HomeLayoutProps> = ({
   posts,
 }) => {
   return (
-    <>
-      {children}
+    <PageLayout
+      header={(
+        <Header>
+          <Button className={styles.title} variant="ghost" size="medium" borderless asChild>
+            <Link href="/">
+              Home
+            </Link>
+          </Button>
+        </Header>
+      )}
+    >
       <main className={styles.main}>
         {posts}
+        {children}
       </main>
-    </>
+    </PageLayout>
   );
 };
 
