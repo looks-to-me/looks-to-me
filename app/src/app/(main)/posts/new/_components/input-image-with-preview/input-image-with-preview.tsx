@@ -81,7 +81,7 @@ export const InputImageWithPreview: FC<InputImageWithPreviewProps> = ({
         {
           image ? (
             /* eslint-disable-next-line @next/next/no-img-element */
-            <img src={imageUrl(image)} alt="Preview"/>
+            <img src={imageUrl(image)} alt="Preview" className={styles.image}/>
           ) : (
             <>
               <p>Drop an Image Here</p>
