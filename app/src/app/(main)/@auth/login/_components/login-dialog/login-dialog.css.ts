@@ -3,8 +3,8 @@ import { style } from '@vanilla-extract/css';
 import { theme } from '../../../../../_theme';
 
 export const wrapper = style({
-  width: '100%',
-  maxWidth: '420px',
+  width: '400px',
+  maxWidth: '86vw',
   display: 'flex',
   flexDirection: 'column',
   gap: '8px',

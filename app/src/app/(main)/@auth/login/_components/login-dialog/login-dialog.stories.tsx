@@ -9,5 +9,7 @@ export default {
 type Story = StoryObj<typeof LoginDialog>;
 
 export const Default = {
-  args: {},
+  args: {
+    canGoBack: false,
+  },
 } satisfies Story;
