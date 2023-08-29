@@ -4,10 +4,10 @@ import { createId } from '@paralleldrive/cuid2';
 import { and, eq } from 'drizzle-orm';
 import { z } from 'zod';
 
-import { getUserMetadata } from '../../../../../../_libs/auth/server/get-user-metadata';
-import { db } from '../../../../../../_libs/db';
-import { schema } from '../../../../../../_libs/db/schema';
-import { storage } from '../../../../../../_libs/storage';
+import { getUserMetadata } from '../../../../../_libs/auth/server/get-user-metadata';
+import { db } from '../../../../../_libs/db';
+import { schema } from '../../../../../_libs/db/schema';
+import { storage } from '../../../../../_libs/storage';
 
 const fetchUserId = async (): Promise<string | undefined> => {
   const userMetadata = await getUserMetadata();

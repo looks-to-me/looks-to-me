@@ -4,6 +4,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
   component: LoginForm,
+  parameters: {
+    nextjs: {
+      appDirectory: true,
+    },
+  },
 } as Meta<typeof LoginForm>;
 
 type Story = StoryObj<typeof LoginForm>;

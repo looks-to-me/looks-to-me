@@ -1,27 +1,17 @@
-'use client';
-
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-
-import { Button } from '../../../_components/button';
+import { LinkButton } from '../link-button';
 
 import type { FC } from 'react';
 
-export const LoginButton: FC = () => {
-  const path = usePathname();
-  const isDisabled = path === '/login';
+export type LoginButtonProps = {
+  className?: string | undefined;
+};
 
+export const LoginButton: FC<LoginButtonProps> = ({
+  className,
+}) => {
   return (
-    <Button size="medium" disabled={isDisabled} asChild>
-      {isDisabled ? (
-        <button>
-          Login
-        </button>
-      ) : (
-        <Link href="/login">
-          Login
-        </Link>
-      )}
-    </Button>
+    <LinkButton className={className} href="/login" variant="normal" size="medium">
+      Login
+    </LinkButton>
   );
 };

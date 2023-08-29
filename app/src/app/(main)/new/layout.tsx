@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
 import * as styles from './layout.css';
-import { Button } from '../../../_components/button';
-import { Header } from '../../_components/header';
-import { PageLayout } from '../../_components/page-layout';
+import { Button } from '../../_components/button';
+import { Header } from '../_components/header';
+import { PageLayout } from '../_components/page-layout';
 
 import type { FC, ReactNode } from 'react';
 
@@ -12,12 +12,12 @@ export const metadata = {
   robots: 'noindex',
 };
 
-export type PostsNewLayoutProps = {
+export type NewPostLayoutProps = {
   children: ReactNode;
   auth: ReactNode;
 };
 
-const PostsNewLayout: FC<PostsNewLayoutProps> = ({
+const NewPostLayout: FC<NewPostLayoutProps> = ({
   children,
   auth,
 }) => {
@@ -26,7 +26,7 @@ const PostsNewLayout: FC<PostsNewLayoutProps> = ({
       header={(
         <Header>
           <Button className={styles.title} variant="ghost" size="medium" borderless asChild>
-            <Link href="/posts/new">
+            <Link href="/new">
               New post
             </Link>
           </Button>
@@ -41,4 +41,4 @@ const PostsNewLayout: FC<PostsNewLayoutProps> = ({
   );
 };
 
-export default PostsNewLayout;
+export default NewPostLayout;

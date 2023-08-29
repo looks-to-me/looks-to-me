@@ -4,10 +4,10 @@ import type { FC } from 'react';
 
 export const runtime = 'edge';
 
-const PostsNewPage: FC = () => {
+const NewPostPage: FC = () => {
   return (
     <PostCreateForm />
   );
 };
 
-export default PostsNewPage;
+export default NewPostPage;
