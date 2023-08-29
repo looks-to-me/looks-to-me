@@ -1,31 +1,13 @@
 'use server';
 
 import { createId } from '@paralleldrive/cuid2';
-import { and, eq } from 'drizzle-orm';
 import { z } from 'zod';
 
 import { getUserMetadata } from '../../../../../_libs/auth/server/get-user-metadata';
 import { db } from '../../../../../_libs/db';
 import { schema } from '../../../../../_libs/db/schema';
 import { storage } from '../../../../../_libs/storage';
-
-const fetchUserId = async (): Promise<string | undefined> => {
-  const userMetadata = await getUserMetadata();
-  if (!userMetadata) return;
-
-  const userProvider = await db()
-    .select()
-    .from(schema.userProviders)
-    .where(
-      and(
-        eq(schema.userProviders.type, userMetadata.provider),
-        eq(schema.userProviders.sub, userMetadata.sub),
-      ),
-    )
-    .get();
-
-  return userProvider?.userId;
-};
+import { findUserProviderByTypeAndSub } from '../../../../_repositories/user-provider-repository';
 
 const uploadImage = async (userId: string, image: Blob): Promise<string> => {
   const imageId = createId();
@@ -80,16 +62,19 @@ export type SubmitPostResult = {
 
 export const submitPost = async (formData: FormData): Promise<SubmitPostResult> => {
   try {
-    const userId = await fetchUserId();
-    if (!userId) return { type: 'error', reason: 'unauthorized', message: 'Login required!' };
+    const userMetadata = await getUserMetadata();
+    if (!userMetadata) return { type: 'error', reason: 'unauthorized', message: 'Login required!' };
+
+    const userProvider = await findUserProviderByTypeAndSub(userMetadata.provider, userMetadata.sub);
+    if (!userProvider) return { type: 'error', reason: 'unauthorized', message: 'Login required!' };
 
     const input = inputSchema.parse({
       image: formData.get('image'),
       word: formData.get('word'),
     });
 
-    const imageId = await uploadImage(userId, input.image);
-    await insertPost(userId, imageId, input.word);
+    const imageId = await uploadImage(userProvider.userId, input.image);
+    await insertPost(userProvider.userId, imageId, input.word);
 
     return { type: 'success', message: 'Post created!' };
   } catch (error) {
