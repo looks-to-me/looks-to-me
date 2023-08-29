@@ -1,6 +1,8 @@
 'use client';
 
 import clsx from 'clsx';
+import { useRouter } from 'next/navigation';
+import { useCallback } from 'react';
 import { toast } from 'sonner';
 
 import { submitPost } from './actions/submitPost';
@@ -18,15 +20,26 @@ export type PostCreateFormProps = {
 export const PostCreateForm: FC<PostCreateFormProps> = ({
   className,
 }) => {
+  const router = useRouter();
 
-  const onSubmit = async (formData: FormData): Promise<void> => {
-    await submitPost(formData);
-    toast.success('Post created!');
-  };
+  const handleSubmit = useCallback((formData: FormData): void => {
+    toast.promise(async () => {
+      const result = await submitPost(formData);
+      if (result.type === 'error') {
+        if (result.reason === 'unauthorized') router.push('/login');
+        throw result.message;
+      }
+      return result.message;
+    }, {
+      loading: 'Submitting...',
+      success: (result: string) => result,
+      error: (error: string) => error,
+    });
+  }, [router]);
 
   return (
     <div className={clsx(className, styles.wrapper)}>
-      <form action={onSubmit} >
+      <form action={handleSubmit} >
         <InputImageWithPreview name='image' />
         <div className={styles.footer}>
           <div>
