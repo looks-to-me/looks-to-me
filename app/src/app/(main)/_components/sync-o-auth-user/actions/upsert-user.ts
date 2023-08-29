@@ -20,7 +20,7 @@ export const upsertUser = async (user: User): Promise<void> => {
     .from(schema.userProviders)
     .where(
       and(
-        eq(schema.userProviders.provider, userMetadata.provider),
+        eq(schema.userProviders.type, userMetadata.provider),
         eq(schema.userProviders.sub, userMetadata.sub),
       ),
     )
@@ -44,7 +44,7 @@ export const upsertUser = async (user: User): Promise<void> => {
         .insert(schema.userProviders)
         .values({
           userId: userId,
-          provider: userMetadata.provider,
+          type: userMetadata.provider,
           sub: userMetadata.sub,
         })
         .run();
