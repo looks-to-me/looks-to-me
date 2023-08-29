@@ -67,7 +67,7 @@
     "better-sqlite3": "8.5.2",
     "drizzle-kit": "0.19.13",
     "eslint-config-next": "13.4.19",
-    "eslint-plugin-next-on-pages": "1.5.1",
+    "eslint-plugin-next-on-pages": "1.6.0",
     "mini-css-extract-plugin": "2.7.6",
     "rimraf": "5.0.1",
     "storybook": "7.3.2",
