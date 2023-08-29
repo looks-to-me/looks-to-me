@@ -12,6 +12,10 @@ export const wrapper = style({
   backgroundColor: theme.color.token.semantic.backgroundInset,
 });
 
+export const logo = style({
+  fontSize: '2rem',
+});
+
 export const container = style({
   flexGrow: 1,
 });

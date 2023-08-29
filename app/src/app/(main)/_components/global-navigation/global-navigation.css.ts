@@ -6,6 +6,10 @@ export const main = style({
   flexGrow: 1,
 });
 
+export const logo = style({
+  fontSize: '2rem',
+});
+
 export const buttonLinkIcon = style({
   fontSize: theme.size.font.medium,
 });
