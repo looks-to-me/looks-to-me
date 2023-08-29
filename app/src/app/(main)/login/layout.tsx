@@ -1,33 +1,31 @@
 import Link from 'next/link';
 
 import * as styles from './layout.css';
-import { Button } from '../../../_components/button';
-import { Header } from '../../_components/header';
-import { PageLayout } from '../../_components/page-layout';
+import { Button } from '../../_components/button';
+import { Header } from '../_components/header';
+import { PageLayout } from '../_components/page-layout';
 
 import type { FC, ReactNode } from 'react';
 
 export const metadata = {
-  title: 'New post',
+  title: 'Login',
   robots: 'noindex',
 };
 
-export type PostsNewLayoutProps = {
+export type LoginLayoutProps = {
   children: ReactNode;
-  auth: ReactNode;
 };
 
-const PostsNewLayout: FC<PostsNewLayoutProps> = ({
+const LoginLayout: FC<LoginLayoutProps> = ({
   children,
-  auth,
 }) => {
   return (
     <PageLayout
       header={(
         <Header>
           <Button className={styles.title} variant="ghost" size="medium" borderless asChild>
-            <Link href="/posts/new">
-              New post
+            <Link href="/login">
+              Login
             </Link>
           </Button>
         </Header>
@@ -35,10 +33,9 @@ const PostsNewLayout: FC<PostsNewLayoutProps> = ({
     >
       <main className={styles.main}>
         {children}
-        {auth}
       </main>
     </PageLayout>
   );
 };
 
-export default PostsNewLayout;
+export default LoginLayout;

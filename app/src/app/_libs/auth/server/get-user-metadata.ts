@@ -1,3 +1,5 @@
+'use server';
+
 import { supabase } from './instance';
 import { UserMetadataSchema } from '../type/user-metadata';
 
