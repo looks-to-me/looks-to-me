@@ -12,6 +12,7 @@ export const wrapper = style({
 export const paragraph = style({
   margin: '0',
   lineHeight: 1.5,
+  alignSelf: 'center',
 });
 
 export const buttonArea = style({
