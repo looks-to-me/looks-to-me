@@ -18,7 +18,7 @@ const fetchUserId = async (): Promise<string | undefined> => {
     .from(schema.userProviders)
     .where(
       and(
-        eq(schema.userProviders.provider, userMetadata.provider),
+        eq(schema.userProviders.type, userMetadata.provider),
         eq(schema.userProviders.sub, userMetadata.sub),
       ),
     )

@@ -5,10 +5,10 @@ import { users } from './users';
 
 export const userProviders = sqliteTable('user_providers', {
   userId: text('user_id').notNull(),
-  provider: text('provider').notNull(),
+  type: text('type').notNull(),
   sub: text('sub').notNull(),
 }, t => ({
-  subUnique: unique().on(t.provider, t.sub),
+  subUnique: unique().on(t.type, t.sub),
 }));
 
 export const userProvidersRelations = relations(userProviders, ({ one }) => ({
