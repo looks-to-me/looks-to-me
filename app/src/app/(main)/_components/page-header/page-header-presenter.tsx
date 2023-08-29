@@ -7,17 +7,17 @@ import { GlobalNavigation } from '../global-navigation';
 import { LoginButton } from '../login-button';
 import { NewPostButton } from '../new-post-button';
 
-import type { UserMetadata } from '../../../_libs/auth/type/user-metadata';
+import type { UserEntity } from '../../_repositories/user-repository';
 import type { ComponentPropsWithoutRef, FC } from 'react';
 
 export type HeaderPresenterProps = ComponentPropsWithoutRef<'header'> & {
-  userMetadata?: UserMetadata | undefined;
+  user?: UserEntity | undefined;
 };
 
 export const PageHeaderPresenter: FC<HeaderPresenterProps> = ({
   className,
   children,
-  userMetadata,
+  user,
   ...props
 }) => {
   return (
@@ -28,8 +28,8 @@ export const PageHeaderPresenter: FC<HeaderPresenterProps> = ({
         {children}
       </div>
       <NewPostButton />
-      {userMetadata ? (
-        <AvatarMenu userMetadata={userMetadata} />
+      {user ? (
+        <AvatarMenu user={user} />
       ) : (
         <LoginButton />
       )}
