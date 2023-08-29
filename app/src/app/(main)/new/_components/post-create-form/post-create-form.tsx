@@ -7,7 +7,7 @@ import { toast } from 'sonner';
 
 import { submitPost } from './actions/submitPost';
 import * as styles from './post-create-form.css';
-import { Button } from '../../../../../_components/button';
+import { Button } from '../../../../_components/button';
 import { InputImageWithPreview } from '../input-image-with-preview';
 import { VariableTextInput } from '../variable-text-input';
 

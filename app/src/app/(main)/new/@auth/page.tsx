@@ -3,8 +3,8 @@
 import { useMount } from 'ahooks';
 import { useRouter } from 'next/navigation';
 
-import { dispatch } from '../../../../_helpers/dispatch';
-import { getUserMetadata } from '../../../../_libs/auth/server/get-user-metadata';
+import { dispatch } from '../../../_helpers/dispatch';
+import { getUserMetadata } from '../../../_libs/auth/server/get-user-metadata';
 
 import type { FC } from 'react';
 

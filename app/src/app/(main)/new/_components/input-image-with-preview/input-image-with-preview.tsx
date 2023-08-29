@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { useRef, useState } from 'react';
 
 import * as styles from './input-image-with-preview.css';
-import { theme } from '../../../../../_theme';
+import { theme } from '../../../../_theme';
 
 import type { DragEvent, FC, InputHTMLAttributes } from 'react';
 
