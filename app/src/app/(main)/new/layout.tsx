@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import * as styles from './layout.css';
 import { Button } from '../../_components/button';
-import { Header } from '../_components/header';
+import { PageHeader } from '../_components/page-header';
 import { PageLayout } from '../_components/page-layout';
 
 import type { FC, ReactNode } from 'react';
@@ -24,13 +24,13 @@ const NewPostLayout: FC<NewPostLayoutProps> = ({
   return (
     <PageLayout
       header={(
-        <Header>
+        <PageHeader>
           <Button className={styles.title} variant="ghost" size="medium" borderless asChild>
             <Link href="/new">
               New post
             </Link>
           </Button>
-        </Header>
+        </PageHeader>
       )}
     >
       <main className={styles.main}>

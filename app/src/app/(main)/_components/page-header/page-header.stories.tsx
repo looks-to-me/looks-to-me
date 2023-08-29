@@ -1,18 +1,18 @@
-import { HeaderPresenter } from './header-presenter';
+import { PageHeaderPresenter } from './page-header-presenter';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  component: HeaderPresenter,
+  component: PageHeaderPresenter,
   parameters: {
     layout: 'fullscreen',
     nextjs: {
       appDirectory: true,
     },
   },
-} as Meta<typeof HeaderPresenter>;
+} as Meta<typeof PageHeaderPresenter>;
 
-type Story = StoryObj<typeof HeaderPresenter>;
+type Story = StoryObj<typeof PageHeaderPresenter>;
 
 export const Default = {
   args: {

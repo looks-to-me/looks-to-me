@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import * as styles from './header.css';
+import * as styles from './page-header.css';
 import { AvatarMenu } from '../avatar-menu';
 import { GlobalNavigation } from '../global-navigation';
 import { LoginButton } from '../login-button';
@@ -14,7 +14,7 @@ export type HeaderPresenterProps = ComponentPropsWithoutRef<'header'> & {
   userMetadata?: UserMetadata | undefined;
 };
 
-export const HeaderPresenter: FC<HeaderPresenterProps> = ({
+export const PageHeaderPresenter: FC<HeaderPresenterProps> = ({
   className,
   children,
   userMetadata,
