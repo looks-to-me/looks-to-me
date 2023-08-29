@@ -14,10 +14,12 @@ export const metadata = {
 
 export type PostsNewLayoutProps = {
   children: ReactNode;
+  auth: ReactNode;
 };
 
 const PostsNewLayout: FC<PostsNewLayoutProps> = ({
   children,
+  auth,
 }) => {
   return (
     <PageLayout
@@ -33,6 +35,7 @@ const PostsNewLayout: FC<PostsNewLayoutProps> = ({
     >
       <main className={styles.main}>
         {children}
+        {auth}
       </main>
     </PageLayout>
   );
