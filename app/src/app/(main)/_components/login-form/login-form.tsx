@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import * as styles from './login-form.css';
 import { GitHubLoginButton } from '../github-login-button';
+import { Logo } from '../logo';
 
 import type { FC } from 'react';
 
@@ -15,6 +16,10 @@ export const LoginForm: FC<LoginFormProps> = ({
 }) => {
   return (
     <div className={clsx(className, styles.wrapper)}>
+      <div className={styles.brand}>
+        <Logo />
+        LooksToMe
+      </div>
       <p className={styles.paragraph}>LooksToMeはLGTM画像共有プラットフォームです。良い感じな画像をみんなでシェアしましょう。</p>
       <div className={styles.buttonArea}>
         <GitHubLoginButton />

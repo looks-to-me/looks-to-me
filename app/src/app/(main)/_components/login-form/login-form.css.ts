@@ -9,6 +9,15 @@ export const wrapper = style({
   padding: '8px',
 });
 
+export const brand = style({
+  display: 'flex',
+  flexDirection: 'row',
+  gap: '8px',
+  fontSize: '2rem',
+  alignSelf: 'center',
+  alignItems: 'center',
+});
+
 export const paragraph = style({
   margin: '0',
   lineHeight: 1.5,

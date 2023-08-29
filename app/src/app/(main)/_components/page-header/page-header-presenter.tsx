@@ -23,7 +23,7 @@ export const PageHeaderPresenter: FC<HeaderPresenterProps> = ({
   return (
     <header {...props} className={clsx(className, styles.wrapper)}>
       <GlobalNavigation />
-      <Logo />
+      <Logo className={styles.logo} />
       <div className={styles.container}>
         {children}
       </div>

@@ -44,7 +44,7 @@ export const GlobalNavigation: FC<GlobalNavigationProps> = ({
               Global navigation
             </SheetTitle>
           </VisuallyHidden>
-          <Logo />
+          <Logo className={styles.logo} />
           <Button variant="ghost" size="medium" borderless asChild>
             <Link href="/">
               <ButtonIcon>
