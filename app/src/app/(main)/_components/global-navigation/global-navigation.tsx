@@ -15,7 +15,7 @@ import ReportIcon from '../../../_icons/report.svg';
 import ShuffleIcon from '../../../_icons/shuffle.svg';
 import StorybookBlack from '../../../_icons/storybook-black.svg';
 import StorybookWhite from '../../../_icons/storybook-white.svg';
-import { Logo } from '../logo';
+import { ApplicationLogo } from '../application-logo';
 
 import type { FC } from 'react';
 
@@ -44,7 +44,7 @@ export const GlobalNavigation: FC<GlobalNavigationProps> = ({
               Global navigation
             </SheetTitle>
           </VisuallyHidden>
-          <Logo className={styles.logo} />
+          <ApplicationLogo className={styles.logo} />
           <Button variant="ghost" size="medium" borderless asChild>
             <Link href="/">
               <ButtonIcon>

@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { forwardRef } from 'react';
 
-import * as styles from './logo.css';
+import * as styles from './application-logo.css';
 import { AccessibleIcon } from '../../../_components/accessible-icon';
 import { PrefersColorScheme } from '../../../_components/prefers-color-scheme';
 import LooksToMeBlack from '../../../_icons/looks-to-me-black.svg';
@@ -10,11 +10,11 @@ import LooksToMeWhite from '../../../_icons/looks-to-me-white.svg';
 
 import type { ForwardRefRenderFunction , ComponentPropsWithoutRef } from 'react';
 
-export type LogoProps = Omit<ComponentPropsWithoutRef<typeof Link>, 'href'> & {
+export type ApplicationLogoProps = Omit<ComponentPropsWithoutRef<typeof Link>, 'href'> & {
   // nothing
 };
 
-const LogoRender: ForwardRefRenderFunction<HTMLAnchorElement, LogoProps> = ({
+const ApplicationLogoRender: ForwardRefRenderFunction<HTMLAnchorElement, ApplicationLogoProps> = ({
   className,
   ...props
 }, ref) => {
@@ -42,4 +42,4 @@ const LogoRender: ForwardRefRenderFunction<HTMLAnchorElement, LogoProps> = ({
   );
 };
 
-export const Logo = forwardRef(LogoRender);
+export const ApplicationLogo = forwardRef(ApplicationLogoRender);
