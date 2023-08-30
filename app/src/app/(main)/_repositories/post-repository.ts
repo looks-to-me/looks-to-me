@@ -30,7 +30,7 @@ export const insertPost = async (post: Post): Promise<Post> => {
 export const findPostById = async (id: Post['id']): Promise<Post | undefined> => {
   return await db()
     .select({
-      id: schema.users.id,
+      id: schema.posts.id,
       userId: schema.posts.userId,
       imageId: schema.posts.imageId,
       word: schema.posts.word,
