@@ -1,40 +1,30 @@
-import { eq } from 'drizzle-orm';
-
-import { getImageSize } from './_helpers/image-size';
-import { db } from '../../../../_libs/db';
-import { schema } from '../../../../_libs/db/schema';
 import { env } from '../../../../_libs/env';
+import { findImageById } from '../../../_repositories/image-repository';
+import { findPostById } from '../../../_repositories/post-repository';
 
-import type { ImageSize } from './_helpers/image-size';
 import type { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
 
-const fetchImageSize = async (origin: string): Promise<ImageSize> => {
-  const response = await fetch(origin, {
-    headers: {
-      authorization: `Bearer ${env().INTERNAL_API_TOKEN}`,
-    },
-  });
+const fetchImage = async (url: URL, id: string): Promise<Response> => {
+  const post = await findPostById(id);
+  if (!post) return Response.error();
+  
+  const image = await findImageById(post.imageId);
+  if (!image) return Response.error();
 
-  const buffer = await response.arrayBuffer();
-  return getImageSize(new Uint8Array(buffer));
-};
-
-const fetchImage = async (origin: string, overlay: string): Promise<Response> => {
+  const origin = `${url.origin}/images/posts/${post.id}/raw`;
   if (env().NODE_ENV === 'development') {
     return fetch(origin);
   }
 
-  const url = new URL(env().IMAGE_OVERLAY_WORKER_URL);
-  url.searchParams.set('origin', origin);
-  url.searchParams.set('overlay', overlay);
+  const fetchUrl = new URL(env().IMAGE_OVERLAY_WORKER_URL);
+  fetchUrl.searchParams.set('origin', origin);
+  fetchUrl.searchParams.set('overlay', `${url.origin}/images/overlays/${post.word}`);
+  fetchUrl.searchParams.set('width', image.width.toString());
+  fetchUrl.searchParams.set('height', image.height.toString());
 
-  const size = await fetchImageSize(origin);
-  url.searchParams.set('width', size.width.toString());
-  url.searchParams.set('height', size.height.toString());
-
-  return await fetch(url, {
+  return await fetch(fetchUrl, {
     headers: {
       authorization: `Bearer ${env().INTERNAL_API_TOKEN}`,
     },
@@ -42,18 +32,11 @@ const fetchImage = async (origin: string, overlay: string): Promise<Response> =>
 };
 
 export const GET = async (request: NextRequest, { params }: { params: { id: string } }) => {
-  const post = await db()
-    .select()
-    .from(schema.posts)
-    .where(eq(schema.posts.id, params.id))
-    .get();
+  const post = await findPostById(params.id);
   if (!post) return Response.error();
 
   const url = new URL(request.url);
-  const response = await fetchImage(
-    `${url.origin}/images/posts/${post.id}/raw`,
-    `${url.origin}/images/overlays/${post.word}`,
-  );
+  const response = await fetchImage(url, params.id);
 
   const headers: Record<string, string> = { 'cache-control': 'public, max-age=31536000, immutable' };
   response.headers.forEach((value, key) => {

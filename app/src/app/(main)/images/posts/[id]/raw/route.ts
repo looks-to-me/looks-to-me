@@ -1,10 +1,8 @@
-import { eq } from 'drizzle-orm';
 import { NextResponse } from 'next/dist/server/web/spec-extension/response';
 
-import { db } from '../../../../../_libs/db';
-import { schema } from '../../../../../_libs/db/schema';
 import { env } from '../../../../../_libs/env';
 import { storage } from '../../../../../_libs/storage';
+import { findPostById } from '../../../../_repositories/post-repository';
 
 import type { Headers as WorkerHeaders } from '@cloudflare/workers-types';
 import type { NextRequest } from 'next/server';
@@ -19,11 +17,7 @@ export const GET = async (request: NextRequest, { params }: { params: { id: stri
     }
   }
 
-  const post = await db()
-    .select()
-    .from(schema.posts)
-    .where(eq(schema.posts.id, params.id))
-    .get();
+  const post = await findPostById(params.id);
   if (!post) return Response.error();
 
   const image = await storage().get(`users/${post.userId}/images/${post.imageId}`);
