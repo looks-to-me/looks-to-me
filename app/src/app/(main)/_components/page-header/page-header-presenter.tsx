@@ -7,11 +7,11 @@ import { GlobalNavigation } from '../global-navigation';
 import { LoginButton } from '../login-button';
 import { NewPostButton } from '../new-post-button';
 
-import type { UserEntity } from '../../_repositories/user-repository';
+import type { User } from '../../_repositories/user-repository';
 import type { ComponentPropsWithoutRef, FC } from 'react';
 
 export type HeaderPresenterProps = ComponentPropsWithoutRef<'header'> & {
-  user?: UserEntity | undefined;
+  user?: User | undefined;
 };
 
 export const PageHeaderPresenter: FC<HeaderPresenterProps> = ({

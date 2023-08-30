@@ -5,19 +5,16 @@ import { eq } from 'drizzle-orm';
 import { db } from '../../_libs/db';
 import { schema } from '../../_libs/db/schema';
 
-import type { UserProfile } from '../../_libs/db/schema/tables/user-profiles';
-import type { User } from '../../_libs/db/schema/tables/users';
-
-export type UserEntity = {
-  id: User['id'];
+export type User = {
+  id: string;
   profile: {
-    name: UserProfile['name'];
-    displayName: UserProfile['displayName'];
-    avatarUrl: UserProfile['avatarUrl'];
+    name: string;
+    displayName: string | null;
+    avatarUrl: string;
   };
 };
 
-export const insertUser = async (user: UserEntity): Promise<UserEntity> => {
+export const insertUser = async (user: User): Promise<User> => {
   // TODO: Make use of transaction or batch.
   // @see: https://github.com/drizzle-team/drizzle-orm/issues/758
   {
@@ -40,7 +37,7 @@ export const insertUser = async (user: UserEntity): Promise<UserEntity> => {
   return user;
 };
 
-export const updateUser = async (user: UserEntity): Promise<UserEntity> => {
+export const updateUser = async (user: User): Promise<User> => {
   await db()
     .update(schema.userProfiles)
     .set(user.profile)
@@ -50,7 +47,7 @@ export const updateUser = async (user: UserEntity): Promise<UserEntity> => {
   return user;
 };
 
-export const findUserById = async (id: UserEntity['id']): Promise<UserEntity | undefined> => {
+export const findUserById = async (id: User['id']): Promise<User | undefined> => {
   return await db()
     .select({
       id: schema.users.id,

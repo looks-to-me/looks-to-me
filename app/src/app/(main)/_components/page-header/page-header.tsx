@@ -3,12 +3,12 @@ import { getUserMetadata } from '../../../_libs/auth/server/get-user-metadata';
 import { findUserProviderByTypeAndSub } from '../../_repositories/user-provider-repository';
 import { findUserById } from '../../_repositories/user-repository';
 
-import type { UserEntity } from '../../_repositories/user-repository';
+import type { User } from '../../_repositories/user-repository';
 import type { ComponentPropsWithoutRef , FC } from 'react';
 
 export type PageHeaderProps = ComponentPropsWithoutRef<'header'>;
 
-const getUser = async (): Promise<UserEntity | undefined> => {
+const getUser = async (): Promise<User | undefined> => {
   const userMetadata = await getUserMetadata();
   if (!userMetadata) return;
   
