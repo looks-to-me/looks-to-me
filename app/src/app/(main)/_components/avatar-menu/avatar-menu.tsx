@@ -6,12 +6,12 @@ import * as styles from './avatar-menu.css';
 import { Popover, PopoverContent, PopoverTrigger } from '../../../_components/popover';
 import { LogoutButton } from '../logout-button';
 
-import type { UserEntity } from '../../_repositories/user-repository';
+import type { User } from '../../_repositories/user-repository';
 import type { FC } from 'react';
 
 export type AvatarMenuProps = {
   className?: string;
-  user: UserEntity;
+  user: User;
 };
 
 export const AvatarMenu: FC<AvatarMenuProps> = ({

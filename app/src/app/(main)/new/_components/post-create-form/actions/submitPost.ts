@@ -4,47 +4,15 @@ import { createId } from '@paralleldrive/cuid2';
 import { z } from 'zod';
 
 import { getUserMetadata } from '../../../../../_libs/auth/server/get-user-metadata';
-import { db } from '../../../../../_libs/db';
-import { schema } from '../../../../../_libs/db/schema';
 import { storage } from '../../../../../_libs/storage';
+import { insertImage } from '../../../../_repositories/image-repository';
+import { insertPost } from '../../../../_repositories/post-repository';
 import { findUserProviderByTypeAndSub } from '../../../../_repositories/user-provider-repository';
-
-const uploadImage = async (userId: string, image: Blob): Promise<string> => {
-  const imageId = createId();
-  await storage().put(`users/${userId}/images/${imageId}`, await image.arrayBuffer());
-  return imageId;
-};
-
-const insertPost = async (userId: string, imageId: string, word: string): Promise<void> => {
-  const postId = createId();
-
-  // TODO: Make use of transaction or batch.
-  // @see: https://github.com/drizzle-team/drizzle-orm/issues/758
-  {
-    await db()
-      .insert(schema.images)
-      .values({
-        id: imageId,
-        userId: userId,
-        uploadedAt: new Date(),
-      })
-      .run();
-
-    await db()
-      .insert(schema.posts)
-      .values({
-        id: postId,
-        userId: userId,
-        imageId: imageId,
-        word: word,
-        postedAt: new Date(),
-      })
-      .run();
-  }
-};
 
 const inputSchema = z.object({
   image: z.custom<Blob>(value => value instanceof Blob),
+  imageWidth: z.coerce.number().positive(),
+  imageHeight: z.coerce.number().positive(),
   word: z.string()
     .regex(/^[a-zA-Z]+$/, { message: 'Must be a alphabetic.' })
     .max(32, { message: 'Must be less than 32 characters.' })
@@ -70,11 +38,26 @@ export const submitPost = async (formData: FormData): Promise<SubmitPostResult> 
 
     const input = inputSchema.parse({
       image: formData.get('image'),
+      imageWidth: formData.get('image-width'),
+      imageHeight: formData.get('image-height'),
       word: formData.get('word'),
     });
 
-    const imageId = await uploadImage(userProvider.userId, input.image);
-    await insertPost(userProvider.userId, imageId, input.word);
+    const image = await insertImage({
+      id: createId(),
+      userId: userProvider.userId,
+      width: input.imageWidth,
+      height: input.imageHeight,
+    });
+
+    await storage().put(`users/${userProvider.userId}/images/${image.id}`, await input.image.arrayBuffer());
+
+    await insertPost({
+      id: createId(),
+      userId: userProvider.userId,
+      imageId: image.id,
+      word: input.word,
+    });
 
     return { type: 'success', message: 'Post created!' };
   } catch (error) {

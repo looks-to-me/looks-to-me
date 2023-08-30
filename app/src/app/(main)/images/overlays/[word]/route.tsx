@@ -23,6 +23,11 @@ const textStyle = {
     0px 1px 0px #000,  0px -1px 0px #000`,
 };
 
+export const overlaySize = {
+  width: 1200,
+  height: 630,
+};
+
 export const GET = (_: NextRequest, { params }: { params: { word: string } }) => {
   const word = wordSchema.parse(params.word);
 
@@ -46,5 +51,8 @@ export const GET = (_: NextRequest, { params }: { params: { word: string } }) =>
         </div>
       </div>
     ),
+    {
+      ...overlaySize,
+    },
   );
 };
