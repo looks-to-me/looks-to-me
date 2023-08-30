@@ -1,7 +1,6 @@
 import { env } from '../../../../_libs/env';
 import { findImageById } from '../../../_repositories/image-repository';
 import { findPostById } from '../../../_repositories/post-repository';
-import { overlaySize } from '../../overlays/[word]/route';
 
 import type { NextRequest } from 'next/server';
 
@@ -25,8 +24,8 @@ const fetchImage = async (url: URL, id: string): Promise<Response> => {
 
   // Make the image equal to the width of the overlay without changing the aspect ratio.
   const ratio = image.width / image.height;
-  fetchUrl.searchParams.set('width', overlaySize.width.toString());
-  fetchUrl.searchParams.set('height', (overlaySize.width / ratio).toString());
+  fetchUrl.searchParams.set('width', '1200');
+  fetchUrl.searchParams.set('height', (1200 / ratio).toString());
 
   return await fetch(fetchUrl, {
     headers: {
