@@ -53,7 +53,7 @@ const InfiniteScrollRender: ForwardRefRenderFunction<HTMLDivElement, InfiniteScr
   return (
     <Wrapper {...props} ref={ref}>
       {displayEdges.map(edge => edge.node)}
-      <div className={styles.anchor} ref={anchorRef} />
+      <div ref={anchorRef} className={styles.anchor} />
     </Wrapper>
   );
 };
