@@ -1,4 +1,5 @@
 'use client';
+
 import clsx from 'clsx';
 import { useRef, useState } from 'react';
 
@@ -36,7 +37,7 @@ export const InputImageWithPreview: FC<InputImageWithPreviewProps> = ({
   };
 
   const [isDropActive, setIsDropActive] = useState(false);
-  const onDragEnger = (e: DragEvent<HTMLDivElement>) => {
+  const onDragEnter = (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     setIsDropActive(true);
   };
@@ -67,7 +68,7 @@ export const InputImageWithPreview: FC<InputImageWithPreviewProps> = ({
   return (
     <div className={clsx(className, styles.wrapper)}>
       <div
-        onDragEnter={onDragEnger}
+        onDragEnter={onDragEnter}
         onDragLeave={onDragLeave}
         onDragOver={(e) => e.preventDefault()}
         onDrop={onDrop}
@@ -81,7 +82,7 @@ export const InputImageWithPreview: FC<InputImageWithPreviewProps> = ({
         {
           image ? (
             /* eslint-disable-next-line @next/next/no-img-element */
-            <img src={imageUrl(image)} alt="Preview" className={styles.image}/>
+            <img src={imageUrl(image)} alt="Preview" className={styles.image} />
           ) : (
             <>
               <p>Drop an Image Here</p>
@@ -89,7 +90,7 @@ export const InputImageWithPreview: FC<InputImageWithPreviewProps> = ({
             </>
           )
         }
-        <input type="file" hidden name={name} accept={ACCEPTABLE_TYPES} onChange={onFileInputChange} ref={inputRef} />
+        <input ref={inputRef} type="file" name={name} accept={ACCEPTABLE_TYPES} onChange={onFileInputChange} hidden />
       </div>
     </div>
   );
