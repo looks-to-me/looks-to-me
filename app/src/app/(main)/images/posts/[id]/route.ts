@@ -1,6 +1,7 @@
 import { env } from '../../../../_libs/env';
 import { findImageById } from '../../../_repositories/image-repository';
 import { findPostById } from '../../../_repositories/post-repository';
+import { overlaySize } from '../../overlays/[word]/route';
 
 import type { NextRequest } from 'next/server';
 
@@ -21,8 +22,11 @@ const fetchImage = async (url: URL, id: string): Promise<Response> => {
   const fetchUrl = new URL(env().IMAGE_OVERLAY_WORKER_URL);
   fetchUrl.searchParams.set('origin', origin);
   fetchUrl.searchParams.set('overlay', `${url.origin}/images/overlays/${post.word}`);
-  fetchUrl.searchParams.set('width', image.width.toString());
-  fetchUrl.searchParams.set('height', image.height.toString());
+
+  // Make the image equal to the width of the overlay without changing the aspect ratio.
+  const ratio = image.width / image.height;
+  fetchUrl.searchParams.set('width', overlaySize.width.toString());
+  fetchUrl.searchParams.set('height', (overlaySize.width / ratio).toString());
 
   return await fetch(fetchUrl, {
     headers: {
@@ -39,6 +43,8 @@ export const GET = async (request: NextRequest, { params }: { params: { id: stri
   const response = await fetchImage(url, params.id);
 
   const headers: Record<string, string> = { 'cache-control': 'public, max-age=31536000, immutable' };
+
+  // Exclude Cloudflare-related headers so that Cloudflare does not mis-detect them as loop backs.
   response.headers.forEach((value, key) => {
     if (key.startsWith('cf-')) return;
     headers[key] = value;

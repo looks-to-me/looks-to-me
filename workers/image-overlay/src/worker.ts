@@ -31,6 +31,8 @@ export default {
       },
       cf: {
         image: {
+          width: input.width,
+          height: input.height,
           'origin-auth': 'share-publicly',
           draw: [
             {
