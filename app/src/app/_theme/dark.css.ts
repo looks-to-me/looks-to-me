@@ -56,6 +56,7 @@ globalStyle(':root', {
         [theme.color.token.semantic.text]: theme.color.palette.gray50,
         [theme.color.token.semantic.textMuted]: theme.color.palette.gray300,
         [theme.color.token.semantic.background]: theme.color.palette.gray900,
+        [theme.color.token.semantic.backgroundMuted]: theme.color.palette.gray500,
         [theme.color.token.semantic.backgroundInset]: theme.color.palette.black,
         [theme.color.token.semantic.border]: theme.color.palette.gray600,
         [theme.color.token.semantic.borderMuted]: theme.color.palette.gray700,
