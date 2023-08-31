@@ -1,15 +1,12 @@
-import { style, createVar } from '@vanilla-extract/css';
-import { calc } from '@vanilla-extract/css-utils';
+import { style } from '@vanilla-extract/css';
 
 import { theme } from '../../_theme';
-
-export const size = createVar();
 
 export const wrapper = style({
   position: 'relative',
   display: 'flex',
-  width: calc.multiply(theme.size.avatar.base, size),
-  height: calc.multiply(theme.size.avatar.base, size),
+  width: '1em',
+  height: '1em',
   flexShrink: 0,
   overflow: 'hidden',
   borderRadius: theme.size.radius.pill,
@@ -27,6 +24,7 @@ export const fallback = style({
   width: '100%',
   alignItems: 'center',
   justifyContent: 'center',
+  fontSize: 'min(1rem, .5em)',
   borderRadius: theme.size.radius.pill,
   backgroundColor: theme.color.token.semantic.backgroundMuted,
   color: theme.color.token.semantic.text,

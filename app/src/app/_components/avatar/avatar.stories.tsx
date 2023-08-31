@@ -14,20 +14,8 @@ export const Default = {
   args: {
     children: (
       <>
-        <AvatarImage src="https://github.com/sushidesu.png" alt="@sushidesu" />
-        <AvatarFallback />
-      </>
-    ),
-  },
-} satisfies Story;
-
-export const Large = {
-  args: {
-    size: 10,
-    children: (
-      <>
-        <AvatarImage src="https://github.com/sushidesu.png" alt="@sushidesu" />
-        <AvatarFallback />
+        <AvatarImage src="https://via.placeholder.com/160x160/" alt="@user_name" />
+        <AvatarFallback>user_name</AvatarFallback>
       </>
     ),
   },
@@ -38,7 +26,7 @@ export const Fallback = {
     children: (
       <>
         <AvatarImage />
-        <AvatarFallback>S</AvatarFallback>
+        <AvatarFallback>user_name</AvatarFallback>
       </>
     ),
   },

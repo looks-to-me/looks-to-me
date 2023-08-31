@@ -7,26 +7,25 @@ import { forwardRef } from 'react';
 
 import * as styles from './avatar.css';
 
-import type { ElementRef, ForwardRefRenderFunction } from 'react';
+import type { ComponentPropsWithoutRef, ElementRef, ForwardRefRenderFunction } from 'react';
 
-export type AvatarImageProps = React.ComponentPropsWithoutRef<
-  typeof AvatarPrimitive.Image
->;
+export type AvatarImageProps = ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>;
 
-const AvatarImageRender: ForwardRefRenderFunction<
-  ElementRef<typeof AvatarPrimitive.Image>,
-  AvatarImageProps
-> = ({ className, ...props }, ref) => {
+const AvatarImageRender: ForwardRefRenderFunction<ElementRef<typeof AvatarPrimitive.Image>, AvatarImageProps> = ({
+  className,
+  ...props
+}, ref) => {
+  const hasImage = !!props.src && !!props.alt;
+
   return (
-    // use next/image when src and alt are provided
     <AvatarPrimitive.Image
+      {...props}
       ref={ref}
       className={clsx(className, styles.image)}
-      {...props}
-      asChild={props.src !== undefined && props.alt !== undefined}
+      asChild={hasImage}
     >
-      {props.src !== undefined && props.alt !== undefined && (
-        <Image src={props.src} alt={props.alt} sizes={'16rem'} fill />
+      {hasImage && (
+        <Image src={props.src!} alt={props.alt!} fill />
       )}
     </AvatarPrimitive.Image>
   );
