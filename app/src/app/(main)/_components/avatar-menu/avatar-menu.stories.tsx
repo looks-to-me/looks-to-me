@@ -4,6 +4,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
   component: AvatarMenu,
+  parameters: {
+    nextjs: {
+      appDirectory: true,
+    },
+  },
 } as Meta<typeof AvatarMenu>;
 
 type Story = StoryObj<typeof AvatarMenu>;

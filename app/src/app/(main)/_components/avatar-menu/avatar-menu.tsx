@@ -1,8 +1,8 @@
 import clsx from 'clsx';
-import Image from 'next/image';
 import Link from 'next/link';
 
 import * as styles from './avatar-menu.css';
+import { Avatar, AvatarFallback, AvatarImage } from '../../../_components/avatar';
 import { Popover, PopoverContent, PopoverTrigger } from '../../../_components/popover';
 import { LogoutButton } from '../logout-button';
 
@@ -21,13 +21,16 @@ export const AvatarMenu: FC<AvatarMenuProps> = ({
   return (
     <Popover>
       <PopoverTrigger>
-        <Image
-          className={clsx(className, styles.avatar)}
-          src={`/images/avatars/${user.id}`}
-          alt={user.profile.displayName ?? user.profile.name}
-          width={32}
-          height={32}
-        />
+        <Avatar className={clsx(className, styles.avatar)}>
+          <AvatarImage
+            src={`/images/avatars/${user.id}`}
+            alt={user.profile.displayName ?? user.profile.name}
+            sizes="32px"
+          />
+          <AvatarFallback>
+            {user.profile.displayName ?? user.profile.name}
+          </AvatarFallback>
+        </Avatar>
       </PopoverTrigger>
       <PopoverContent>
         <div className={styles.content}>

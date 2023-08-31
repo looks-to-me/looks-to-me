@@ -3,8 +3,8 @@ import { style } from '@vanilla-extract/css';
 import { theme } from '../../../_theme';
 
 export const avatar = style({
-  borderRadius: '50%',
   cursor: 'pointer',
+  fontSize: '2rem',
 });
 
 export const content = style({

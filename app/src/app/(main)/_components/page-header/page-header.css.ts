@@ -19,9 +19,3 @@ export const logo = style({
 export const container = style({
   flexGrow: 1,
 });
-
-export const link = style({
-  fontSize: '1rem',
-  textDecoration: 'none',
-  color: theme.color.token.semantic.text,
-});
