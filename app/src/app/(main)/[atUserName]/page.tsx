@@ -10,10 +10,10 @@ export const runtime = 'edge';
 const UserProfilePage: FC<UserProfilePageProps> = ({
   params,
 }) => {
-  const username = getUserName(params.atUsername);
-  if (!username) return notFound();
+  const userName = getUserName(params.atUserName);
+  if (!userName) return notFound();
 
-  return <div>{`hello ${username}`}</div>;
+  return <div>{`hello ${userName}`}</div>;
 };
 
 export default UserProfilePage;

@@ -6,12 +6,12 @@ import type { Metadata } from 'next';
 import type { FC, ReactNode } from 'react';
 
 export const generateMetadata = (
-  { params: { atUsername } }: UserProfilePageProps,
+  { params: { atUserName } }: UserProfilePageProps,
 ): Metadata => {
-  const username = getUserName(atUsername);
+  const userName = getUserName(atUserName);
   // TODO: get display name
   return {
-    title: username ?? 'not found',
+    title: userName ?? 'not found',
     robots: 'noindex',
   };
 };
