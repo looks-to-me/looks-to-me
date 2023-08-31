@@ -15,7 +15,7 @@ const inputSchema = z.object({
   imageHeight: z.coerce.number().positive(),
   word: z.string()
     .regex(/^[a-zA-Z]+$/, { message: 'Must be a alphabetic.' })
-    .max(32, { message: 'Must be less than 32 characters.' })
+    .max(16, { message: 'Must be less than 16 characters.' })
     .transform((word) => `${word[0]?.toUpperCase()}${word.slice(1).toLowerCase()}`),
 });
 
