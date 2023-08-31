@@ -33,6 +33,7 @@ export default {
         image: {
           width: input.width,
           height: input.height,
+          fit: 'contain',
           'origin-auth': 'share-publicly',
           draw: [
             {
