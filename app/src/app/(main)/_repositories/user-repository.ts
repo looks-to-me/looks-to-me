@@ -62,3 +62,19 @@ export const findUserById = async (id: User['id']): Promise<User | undefined> =>
     .where(eq(schema.users.id, id))
     .get();
 };
+
+export const findUserByName = async (name: User['profile']['name']): Promise<User | undefined> => {
+  return await db()
+    .select({
+      id: schema.users.id,
+      profile: {
+        name: schema.userProfiles.name,
+        displayName: schema.userProfiles.displayName,
+        avatarUrl: schema.userProfiles.avatarUrl,
+      },
+    })
+    .from(schema.users)
+    .innerJoin(schema.userProfiles, eq(schema.users.id, schema.userProfiles.userId))
+    .where(eq(schema.userProfiles.name, name))
+    .get();
+};
