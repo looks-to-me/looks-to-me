@@ -5,16 +5,18 @@ import { Button } from '../../_components/button';
 import { PageHeader } from '../_components/page-header';
 import { PageLayout } from '../_components/page-layout';
 
-import type { FC, ReactNode } from 'react';
+import type { PrivacyPolicyPageProps } from './page';
+import type { LayoutProps } from '../../_types/layout-props';
+import type { FC } from 'react';
 
 export const metadata = {
   title: 'Privacy Policy',
   robots: 'noindex',
 };
 
-export type PrivacyPolicyLayoutProps = {
-  children: ReactNode;
-};
+export type PrivacyPolicyLayoutProps = PrivacyPolicyPageProps & LayoutProps<{
+  // empty
+}>;
 
 const PrivacyPolicyLayout: FC<PrivacyPolicyLayoutProps> = ({
   children,

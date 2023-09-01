@@ -4,14 +4,19 @@ import { findPostById } from '../../../_repositories/post-repository';
 import { findUserByName } from '../../../_repositories/user-repository';
 import { getUserName } from '../../_helpers/getUserName';
 
-import type { NextPageProps } from '../../../../_types/nextPageProps';
+import type { UserProfilePageProps } from '../../(profile)/page';
+import type { PageProps } from '../../../../_types/page-props';
 import type { FC } from 'react';
 
 export const runtime = 'edge';
 
-export type UserPostDetailsPageProps = NextPageProps<{
-  atUserName: string;
-  postId: string;
+export type UserPostDetailsPageProps = UserProfilePageProps & PageProps<{
+  params: {
+    postId: string;
+  };
+  searchParams: {
+    // empty
+  };
 }>;
 
 const UserPostDetailsPage: FC<UserPostDetailsPageProps> = async ({

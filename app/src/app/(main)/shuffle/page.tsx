@@ -1,8 +1,18 @@
+import type { PageProps } from '../../_types/page-props';
 import type { FC } from 'react';
 
 export const runtime = 'edge';
 
-const ShufflePage: FC = () => {
+export type ShufflePageProps = PageProps<{
+  params: {
+    // empty
+  };
+  searchParams: {
+    // empty
+  };
+}>;
+
+const ShufflePage: FC<ShufflePageProps> = () => {
   return null;
 };
 

@@ -2,10 +2,22 @@ import { notFound } from 'next/navigation';
 
 import { getUserName } from '../_helpers/getUserName';
 
-import type { UserProfilePageProps } from '../_types/userProfilePageProps';
+import type { PageProps } from '../../../_types/page-props';
 import type { FC } from 'react';
 
 export const runtime = 'edge';
+
+export type UserProfilePageProps = PageProps<{
+  params: {
+    /**
+     * username string that starts with "@"
+     */
+    atUserName: string;
+  };
+  searchParams: {
+    // empty
+  };
+}>;
 
 const UserProfilePage: FC<UserProfilePageProps> = ({
   params,

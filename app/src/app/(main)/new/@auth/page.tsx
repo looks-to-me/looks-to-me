@@ -6,11 +6,22 @@ import { useRouter } from 'next/navigation';
 import { dispatch } from '../../../_helpers/dispatch';
 import { getUserMetadata } from '../../../_libs/auth/server/get-user-metadata';
 
+import type { PageProps } from '../../../_types/page-props';
+import type { NewPostPageProps } from '../page';
 import type { FC } from 'react';
 
 export const runtime = 'edge';
 
-const PostsNewAuthPage: FC = () => {
+export type NewPostAuthPageProps = NewPostPageProps & PageProps<{
+  params: {
+    // empty
+  };
+  searchParams: {
+    // empty
+  };
+}>;
+
+const NewPostAuthPage: FC<NewPostAuthPageProps> = () => {
   const router = useRouter();
 
   useMount(dispatch(async () => {
@@ -22,4 +33,4 @@ const PostsNewAuthPage: FC = () => {
   return null;
 };
 
-export default PostsNewAuthPage;
+export default NewPostAuthPage;

@@ -1,10 +1,20 @@
 import * as styles from './page.css';
 
+import type { PageProps } from '../../_types/page-props';
 import type { FC } from 'react';
 
 export const runtime = 'edge';
 
-const PrivacyPolicyPage: FC = () => {
+export type PrivacyPolicyPageProps = PageProps<{
+  params: {
+    // empty
+  };
+  searchParams: {
+    // empty
+  };
+}>;
+
+const PrivacyPolicyPage: FC<PrivacyPolicyPageProps> = () => {
   return (
     <article className={styles.article}>
       <p className={styles.paragraph}>
