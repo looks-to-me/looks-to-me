@@ -5,11 +5,6 @@ import type { FC } from 'react';
 
 export const runtime = 'edge';
 
-export const metadata = {
-  title: 'Login',
-  robots: 'noindex',
-};
-
 export type LoginPageProps = PageProps<{
   params: {
     // empty
