@@ -31,7 +31,6 @@ const UserPostDetailsMainPage: FC<UserPostDetailsMainPageProps> = async ({
         className={styles.image}
         src={`/images/posts/${post.id}`}
         alt={`Looks ${post.word} To Me`}
-        objectFit="contain"
         sizes="80vw"
         fill
       />
