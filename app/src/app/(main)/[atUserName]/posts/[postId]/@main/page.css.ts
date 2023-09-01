@@ -12,4 +12,6 @@ export const wrapper = style({
 
 export const image = style({
   position: 'relative !important' as 'relative',
+  maxHeight: '64vh',
+  backgroundColor: theme.color.token.semantic.backgroundInset,
 });
