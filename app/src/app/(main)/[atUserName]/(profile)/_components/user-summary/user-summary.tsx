@@ -21,15 +21,15 @@ export const UserSummary: FC<UserSummaryProps> = ({
   return (
     <div className={clsx(styles.wrapper)}>
       <Image
-        className={clsx(styles.image)}
+        className={styles.image}
         width={60}
         height={60}
         src={avatarUrl} alt={name}
       />
-      <div className={clsx(styles.main)}>
-        <p className={clsx(styles.name)}>{name}</p>
-        <div className={clsx(styles.lower)}>
-          <p className={clsx(styles.numOfPosts)}>{`${numOfPosts} posts`}</p>
+      <div className={styles.main}>
+        <p className={styles.name}>{name}</p>
+        <div className={styles.lower}>
+          <p className={styles.numOfPosts}>{`${numOfPosts} posts`}</p>
           <a href={githubUrl} target="_blank">
             GitHub
           </a>
