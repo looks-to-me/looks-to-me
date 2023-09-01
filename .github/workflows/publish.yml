@@ -49,7 +49,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Publish to Cloudflare Workers
-        uses: cloudflare/wrangler-action@v3.1.0
+        uses: cloudflare/wrangler-action@v3.1.1
         with:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
