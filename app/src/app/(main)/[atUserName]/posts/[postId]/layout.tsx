@@ -11,7 +11,7 @@ import { getUserName } from '../../_helpers/getUserName';
 import type { UserPostDetailsPageProps } from './page';
 import type { LayoutProps } from '../../../../_types/layout-props';
 import type { Metadata } from 'next';
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 export const generateMetadata = async ({ params }: UserPostDetailsPageProps): Promise<Metadata> => {
   const userName = getUserName(params.atUserName);
@@ -29,11 +29,12 @@ export const generateMetadata = async ({ params }: UserPostDetailsPageProps): Pr
 };
 
 export type UserPostDetailsLayoutProps = UserPostDetailsPageProps & LayoutProps<{
-  // empty
+  header: ReactNode;
 }>;
 
 const UserPostDetailsLayout: FC<UserPostDetailsLayoutProps> = async ({
   children,
+  header,
   params,
 }) => {
   const userName = getUserName(params.atUserName);
@@ -66,6 +67,9 @@ const UserPostDetailsLayout: FC<UserPostDetailsLayoutProps> = async ({
       )}
     >
       <main className={styles.main}>
+        <article className={styles.article}>
+          {header}
+        </article>
         {children}
       </main>
     </PageLayout>
