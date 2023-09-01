@@ -58,8 +58,8 @@ globalStyle(':root', {
         [theme.color.token.semantic.background]: theme.color.palette.gray900,
         [theme.color.token.semantic.backgroundMuted]: theme.color.palette.gray500,
         [theme.color.token.semantic.backgroundInset]: theme.color.palette.black,
-        [theme.color.token.semantic.border]: theme.color.palette.gray600,
-        [theme.color.token.semantic.borderMuted]: theme.color.palette.gray700,
+        [theme.color.token.semantic.border]: theme.color.palette.gray500,
+        [theme.color.token.semantic.borderMuted]: theme.color.palette.gray600,
         [theme.color.token.semantic.overlay]: `color-mix(in srgb, ${theme.color.palette.gray400} 32%, transparent)`,
         [theme.color.token.semantic.shadow]: `color-mix(in srgb, ${theme.color.palette.gray900} 80%, transparent)`,
 
@@ -117,7 +117,7 @@ globalStyle(':root', {
 
         [theme.color.token.popover.text]: theme.color.palette.gray50,
         [theme.color.token.popover.border]: theme.color.palette.gray500,
-        [theme.color.token.popover.background]: theme.color.palette.gray700,
+        [theme.color.token.popover.background]: theme.color.palette.gray800,
 
         [theme.color.token.toast.normal.title]: theme.color.palette.white,
         [theme.color.token.toast.normal.description]: theme.color.palette.gray200,

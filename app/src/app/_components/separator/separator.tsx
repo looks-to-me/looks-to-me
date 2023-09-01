@@ -12,7 +12,7 @@ export type SeparatorProps = ComponentPropsWithoutRef<typeof SeparatorPrimitive.
 
 const SeparatorRender: ForwardRefRenderFunction<ElementRef<typeof SeparatorPrimitive.Root>, SeparatorProps> = ({
   className,
-  decorative = true,
+  decorative = false,
   orientation = 'horizontal',
   ...props
 }, ref) => {

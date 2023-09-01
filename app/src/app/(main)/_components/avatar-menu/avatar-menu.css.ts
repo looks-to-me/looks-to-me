@@ -7,18 +7,7 @@ export const avatar = style({
   fontSize: '2rem',
 });
 
-export const content = style({
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'space-between',
-  padding: '8px',
-  borderRadius: theme.size.radius.normal,
-  backgroundColor: theme.color.token.semantic.background,
-  height: '120px',
-  width: '200px',
-});
-
-export const accountInfoArea = style({
+export const account = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '4px',
@@ -26,16 +15,11 @@ export const accountInfoArea = style({
 
 export const accountName = style({
   margin: 0,
-  fontWeight: 'bold',
+  fontWeight: 600,
 });
 
 export const displayName = style({
   margin: 0,
+  fontWeight: 400,
   color: theme.color.token.semantic.textMuted,
-});
-
-export const buttonArea = style({
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'flex-end',
 });
