@@ -1,4 +1,6 @@
+import { Breadcrumbs, BreadcrumbsItem } from '../../../_components/breadcrumbs';
 import { PageHeader } from '../../_components/page-header';
+import { PageLayout } from '../../_components/page-layout';
 import { getUserName } from '../_helpers/getUserName';
 
 import type { UserProfilePageProps } from './page';
@@ -21,12 +23,28 @@ export type UserProfileLayoutProps = UserProfilePageProps & LayoutProps<{
   // empty
 }>;
 
-const UserProfileLayout: FC<UserProfileLayoutProps> = ({ children }) => {
+const UserProfileLayout: FC<UserProfileLayoutProps> = ({
+  params,
+  children,
+}) => {
+  const userName = getUserName(params.atUserName);
+
   return (
-    <>
-      <PageHeader />
-      <main>{children}</main>
-    </>
+    <PageLayout
+      header={(
+        <PageHeader>
+          <Breadcrumbs>
+            <BreadcrumbsItem href={`/@${userName}`}>
+              {userName}
+            </BreadcrumbsItem>
+          </Breadcrumbs>
+        </PageHeader>
+      )}
+    >
+      <main>
+        {children}
+      </main>
+    </PageLayout>
   );
 };
 
