@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 
+import { findPostsByUserId } from '../../../_repositories/post-repository';
 import { findUserByName } from '../../../_repositories/user-repository';
 import { getUserName } from '../../_helpers/getUserName';
 import { UserSummary } from '../_components/user-summary';
@@ -28,12 +29,15 @@ const UserProfileHeaderPage: FC<UserProfileHeaderPageProps> = async ({
   const user = await findUserByName(userName);
   if (!user) return notFound();
 
+  const posts = await findPostsByUserId(user.id);
+
   return (
     <header>
       <UserSummary 
         avatarUrl={user.profile.avatarUrl}
         name={user.profile.displayName ?? user.profile.name}
-        numOfPosts={120}
+        // TODO: githubUrl
+        numOfPosts={posts.length}
       />
     </header>
   );
