@@ -2,21 +2,14 @@ import { headers } from 'next/headers';
 
 import { LoginDialog } from './_components/login-dialog';
 
-import type { PageProps } from '../../../_types/page-props';
+import type { LoginPageProps } from '../../login/page';
 import type { FC } from 'react';
 
 export const runtime = 'edge';
 
-export type AuthLoginPageProps = PageProps<{
-  params: {
-    // empty
-  };
-  searchParams: {
-    // empty
-  };
-}>;
+export type ModalLoginPageProps = LoginPageProps;
 
-const AuthLoginPage: FC<AuthLoginPageProps> = () => {
+const ModalLoginPage: FC<ModalLoginPageProps> = () => {
   const canGoBack = headers().get('host') === headers().get('referer')?.split('/')[2];
 
   return (
@@ -24,4 +17,4 @@ const AuthLoginPage: FC<AuthLoginPageProps> = () => {
   );
 };
 
-export default AuthLoginPage;
+export default ModalLoginPage;
