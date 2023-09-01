@@ -1,8 +1,18 @@
+import type { PageProps } from '../../_types/page-props';
 import type { FC } from 'react';
 
 export const runtime = 'edge';
 
-const HomePage: FC = () => {
+export type HomePageProps = PageProps<{
+  params: {
+    // empty
+  };
+  searchParams: {
+    // empty
+  };
+}>;
+
+const HomePage: FC<HomePageProps> = () => {
   return null;
 };
 

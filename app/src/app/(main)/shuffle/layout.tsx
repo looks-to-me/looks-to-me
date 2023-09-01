@@ -5,6 +5,8 @@ import { Button } from '../../_components/button';
 import { PageHeader } from '../_components/page-header';
 import { PageLayout } from '../_components/page-layout';
 
+import type { ShufflePageProps } from './page';
+import type { LayoutProps } from '../../_types/layout-props';
 import type { FC, ReactNode } from 'react';
 
 export const metadata = {
@@ -12,10 +14,9 @@ export const metadata = {
   robots: 'noindex',
 };
 
-export type ShuffleLayoutProps = {
-  children: ReactNode;
+export type ShuffleLayoutProps = ShufflePageProps & LayoutProps<{
   posts: ReactNode;
-};
+}>;
 
 const ShuffleLayout: FC<ShuffleLayoutProps> = ({
   children,

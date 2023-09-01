@@ -9,11 +9,12 @@ import { findPostById } from '../../../_repositories/post-repository';
 import { findUserByName } from '../../../_repositories/user-repository';
 import { getUserName } from '../../_helpers/getUserName';
 
-import type { NextPageProps } from '../../../../_types/nextPageProps';
+import type { UserPostDetailsPageProps } from './page';
+import type { LayoutProps } from '../../../../_types/layout-props';
 import type { Metadata } from 'next';
-import type { FC, ReactNode } from 'react';
+import type { FC } from 'react';
 
-export const generateMetadata = async ({ params }: UserPostDetailsLayoutProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: UserPostDetailsPageProps): Promise<Metadata> => {
   const userName = getUserName(params.atUserName);
   if (!userName) return {};
 
@@ -28,12 +29,9 @@ export const generateMetadata = async ({ params }: UserPostDetailsLayoutProps): 
   };
 };
 
-export type UserPostDetailsLayoutProps = NextPageProps<{
-  atUserName: string;
-  postId: string;
-}> & {
-  children: ReactNode;
-};
+export type UserPostDetailsLayoutProps = UserPostDetailsPageProps & LayoutProps<{
+  // empty
+}>;
 
 const UserPostDetailsLayout: FC<UserPostDetailsLayoutProps> = async ({
   children,

@@ -1,9 +1,9 @@
+import type { LayoutProps } from '../_types/layout-props';
 import type { FC, ReactNode } from 'react';
 
-export type MainLayoutProps = {
-  children: ReactNode;
+export type MainLayoutProps = LayoutProps<{
   modal: ReactNode;
-};
+}>;
 
 const MainLayout: FC<MainLayoutProps> = ({
   children,

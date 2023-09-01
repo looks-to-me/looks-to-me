@@ -5,6 +5,8 @@ import { Button } from '../../_components/button';
 import { PageHeader } from '../_components/page-header';
 import { PageLayout } from '../_components/page-layout';
 
+import type { NewPostPageProps } from './page';
+import type { LayoutProps } from '../../_types/layout-props';
 import type { FC, ReactNode } from 'react';
 
 export const metadata = {
@@ -12,10 +14,9 @@ export const metadata = {
   robots: 'noindex',
 };
 
-export type NewPostLayoutProps = {
-  children: ReactNode;
+export type NewPostLayoutProps = NewPostPageProps & LayoutProps<{
   auth: ReactNode;
-};
+}>;
 
 const NewPostLayout: FC<NewPostLayoutProps> = ({
   children,
