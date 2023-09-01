@@ -13,12 +13,10 @@ import type { FC } from 'react';
 
 export type LoginDialogProps = {
   className?: string | undefined;
-  canGoBack: boolean;
 };
 
 export const LoginDialog: FC<LoginDialogProps> = ({
   className,
-  canGoBack,
 }) => {
   const isMounted = useIsMounted();
   const router = useRouter();
@@ -26,12 +24,8 @@ export const LoginDialog: FC<LoginDialogProps> = ({
   const handleOpenChange = useCallback((open: boolean) => {
     if (open) return;
 
-    if (canGoBack) {
-      return router.back();
-    } else {
-      return router.push('/');
-    }
-  }, [canGoBack, router]);
+    router.back();
+  }, [router]);
 
   return (
     <Dialog open={isMounted} onOpenChange={handleOpenChange}>
