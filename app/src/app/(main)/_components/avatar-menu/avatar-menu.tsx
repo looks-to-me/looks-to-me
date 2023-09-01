@@ -3,8 +3,17 @@ import Link from 'next/link';
 
 import * as styles from './avatar-menu.css';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../_components/avatar';
-import { Popover, PopoverContent, PopoverTrigger } from '../../../_components/popover';
-import { LogoutButton } from '../logout-button';
+import {
+  DropDownMenu,
+  DropDownMenuContent,
+  DropDownMenuGroup,
+  DropDownMenuTrigger,
+  DropDownMenuIcon,
+  DropDownMenuItem,
+  DropDownMenuLabel,
+} from '../../../_components/drop-down-menu';
+import LogoutIcon from '../../../_icons/logout.svg';
+import PersonIcon from '../../../_icons/person.svg';
 
 import type { User } from '../../_repositories/user-repository';
 import type { FC } from 'react';
@@ -19,8 +28,8 @@ export const AvatarMenu: FC<AvatarMenuProps> = ({
   user,
 }) => {
   return (
-    <Popover>
-      <PopoverTrigger>
+    <DropDownMenu>
+      <DropDownMenuTrigger>
         <Avatar className={clsx(className, styles.avatar)}>
           <AvatarImage
             src={`/images/avatars/${user.id}`}
@@ -31,21 +40,35 @@ export const AvatarMenu: FC<AvatarMenuProps> = ({
             {user.profile.displayName ?? user.profile.name}
           </AvatarFallback>
         </Avatar>
-      </PopoverTrigger>
-      <PopoverContent>
-        <div className={styles.content}>
-          <div className={styles.accountInfoArea}>
+      </DropDownMenuTrigger>
+      <DropDownMenuContent>
+        <DropDownMenuLabel>
+          <div className={styles.account}>
             <p className={styles.accountName}>{user.profile.name}</p>
             {user.profile.displayName && (
               <p className={styles.displayName}>{user.profile.displayName}</p>
             )}
-            <Link href={`/@${user.profile.name}/`}>Your profile</Link>
           </div>
-          <div className={styles.buttonArea}>
-            <LogoutButton size="medium" />
-          </div>
-        </div>
-      </PopoverContent>
-    </Popover>
+        </DropDownMenuLabel>
+        <DropDownMenuGroup>
+          <DropDownMenuItem asChild>
+            <Link href={`/@${user.profile.name}`}>
+              <DropDownMenuIcon>
+                <PersonIcon />
+              </DropDownMenuIcon>
+              Your profile
+            </Link>
+          </DropDownMenuItem>
+          <DropDownMenuItem asChild>
+            <Link href="/logout">
+              <DropDownMenuIcon>
+                <LogoutIcon />
+              </DropDownMenuIcon>
+              Logout
+            </Link>
+          </DropDownMenuItem>
+        </DropDownMenuGroup>
+      </DropDownMenuContent>
+    </DropDownMenu>
   );
 };
