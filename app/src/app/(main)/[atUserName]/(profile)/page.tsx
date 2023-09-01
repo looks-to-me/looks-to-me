@@ -1,8 +1,8 @@
 import { notFound } from 'next/navigation';
 
-import { getUserName } from './_helpers/getUserName';
+import { getUserName } from '../_helpers/getUserName';
 
-import type { UserProfilePageProps } from './_types/userProfilePageProps';
+import type { UserProfilePageProps } from '../_types/userProfilePageProps';
 import type { FC } from 'react';
 
 export const runtime = 'edge';

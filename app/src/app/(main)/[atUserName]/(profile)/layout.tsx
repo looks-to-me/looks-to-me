@@ -1,7 +1,7 @@
-import { getUserName } from './_helpers/getUserName';
-import { PageHeader } from '../_components/page-header';
+import { PageHeader } from '../../_components/page-header';
+import { getUserName } from '../_helpers/getUserName';
 
-import type { UserProfilePageProps } from './_types/userProfilePageProps';
+import type { UserProfilePageProps } from '../_types/userProfilePageProps';
 import type { Metadata } from 'next';
 import type { FC, ReactNode } from 'react';
 
