@@ -20,6 +20,7 @@ export const Default = {
             id: `id-${index}`,
             word: 'Good',
             image: 'https://via.placeholder.com/300x225?text=LGTM&',
+            link: `/@user/posts/id-${index}`,
           }}
         />
       ),
@@ -33,6 +34,7 @@ export const Default = {
             id: `id-${index + args.size}`,
             word: 'Good',
             image: 'https://via.placeholder.com/300x225?text=LGTM&',
+            link: `/@user/posts/id-${index}`,
           }}
         />
       ),

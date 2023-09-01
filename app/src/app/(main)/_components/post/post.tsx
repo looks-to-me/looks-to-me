@@ -1,9 +1,11 @@
 import clsx from 'clsx';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import * as styles from './post.css';
 import { AspectRatio } from '../../../_components/aspect-ratio';
 
+import type { Route } from 'next';
 import type { FC } from 'react';
 
 export type PostProps = {
@@ -12,6 +14,7 @@ export type PostProps = {
     id: string;
     image: string;
     word: string;
+    link: Route<`/@${string}/posts/${string}`>;
   };
 };
 
@@ -20,8 +23,7 @@ export const Post: FC<PostProps> = ({
   post,
 }) => {
   return (
-    // TODO: Add a link to the post details page
-    <div className={clsx(className, styles.wrapper)}>
+    <Link className={clsx(className, styles.wrapper)} href={post.link}>
       <AspectRatio ratio={4 / 3}>
         <Image
           className={styles.image}
@@ -31,6 +33,6 @@ export const Post: FC<PostProps> = ({
           fill
         />
       </AspectRatio>
-    </div>
+    </Link>
   );
 };
