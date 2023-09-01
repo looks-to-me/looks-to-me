@@ -1,7 +1,5 @@
-import Link from 'next/link';
-
 import * as styles from './layout.css';
-import { Button } from '../../_components/button';
+import { Breadcrumbs, BreadcrumbsItem } from '../../_components/breadcrumbs';
 import { PageHeader } from '../_components/page-header';
 import { PageLayout } from '../_components/page-layout';
 
@@ -25,11 +23,11 @@ const PrivacyPolicyLayout: FC<PrivacyPolicyLayoutProps> = ({
     <PageLayout
       header={(
         <PageHeader>
-          <Button className={styles.title} variant="ghost" size="medium" borderless asChild>
-            <Link href="/privacy">
+          <Breadcrumbs>
+            <BreadcrumbsItem href="/privacy">
               Privacy Policy
-            </Link>
-          </Button>
+            </BreadcrumbsItem>
+          </Breadcrumbs>
         </PageHeader>
       )}
     >
