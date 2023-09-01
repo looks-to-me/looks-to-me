@@ -32,3 +32,22 @@ export const Default = {
     ),
   },
 } satisfies Story;
+
+export const WithClose = {
+  args: {
+    children: (
+      <>
+        <DialogTrigger>
+          <Button>Open</Button>
+        </DialogTrigger>
+        <DialogContent style={{ width: '240px' }} withClose>
+          <DialogTitle>Title</DialogTitle>
+          <DialogDescription>Description</DialogDescription>
+          <DialogClose>
+            <Button style={{ alignSelf: 'end' }}>Action</Button>
+          </DialogClose>
+        </DialogContent>
+      </>
+    ),
+  },
+} satisfies Story;
