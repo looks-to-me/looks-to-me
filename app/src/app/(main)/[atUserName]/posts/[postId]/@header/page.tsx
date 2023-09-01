@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-import { ShareButton } from './_components/share-button';
 import * as styles from './page.css';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../../../_components/avatar';
+import { env } from '../../../../../_libs/env';
+import { ShareButton } from '../../../../_components/share-button';
 import { findPostById } from '../../../../_repositories/post-repository';
 import { findUserById } from '../../../../_repositories/user-repository';
 
@@ -51,7 +52,7 @@ const UserPostDetailsHeaderPage: FC<UserPostDetailsHeaderPageProps> = async ({
         </h2>
       </div>
       <div className={styles.toolbar}>
-        <ShareButton post={post} />
+        <ShareButton text={`![LGTM](${env().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id})`} />
       </div>
     </header>
   );

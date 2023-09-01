@@ -8,6 +8,9 @@ import type { D1Database, R2Bucket } from '@cloudflare/workers-types';
 
 export const env = memoize(() => {
   return createEnv({
+    client: {
+      NEXT_PUBLIC_APP_ORIGIN: z.string().url(),
+    },
     server: {
       NODE_ENV: z.enum(['production', 'development', 'test']),
       DB: z.custom<D1Database>(value => value && typeof value === 'object'),
@@ -16,6 +19,7 @@ export const env = memoize(() => {
       IMAGE_OVERLAY_WORKER_URL: z.string().url(),
     },
     runtimeEnv: {
+      NEXT_PUBLIC_APP_ORIGIN: process.env['NEXT_PUBLIC_APP_ORIGIN'],
       NODE_ENV: process.env.NODE_ENV,
       DB: binding('DB'),
       BUCKET: binding('BUCKET'),

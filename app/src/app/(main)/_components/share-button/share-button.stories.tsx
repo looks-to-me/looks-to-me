@@ -9,5 +9,7 @@ export default {
 type Story = StoryObj<typeof ShareButton>;
 
 export const Default = {
-  args: {},
+  args: {
+    text: 'share',
+  },
 } satisfies Story;
