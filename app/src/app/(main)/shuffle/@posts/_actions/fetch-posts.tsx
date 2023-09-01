@@ -33,7 +33,7 @@ export const fetchPosts = async (): Promise<InfiniteScrollEdge[]> => {
     .from(schema.posts)
     .innerJoin(schema.users, eq(schema.posts.userId, schema.users.id))
     .innerJoin(schema.userProfiles, eq(schema.userProfiles.userId, schema.users.id))
-    .where(sql`_ROWID_ >= (ABS(RANDOM()) % ((SELECT MAX(_ROWID_) FROM posts) - ${limit} + 2))`)
+    .where(sql`posts._ROWID_ >= (ABS(RANDOM()) % ((SELECT MAX(_ROWID_) FROM posts) - ${limit} + 2))`)
     .limit(limit)
     .all();
 
