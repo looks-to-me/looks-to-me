@@ -1,3 +1,4 @@
+import * as styles from './layout.css';
 import { Breadcrumbs, BreadcrumbsItem } from '../../../_components/breadcrumbs';
 import { PageHeader } from '../../_components/page-header';
 import { PageLayout } from '../../_components/page-layout';
@@ -6,7 +7,7 @@ import { getUserName } from '../_helpers/getUserName';
 import type { UserProfilePageProps } from './page';
 import type { LayoutProps } from '../../../_types/layout-props';
 import type { Metadata } from 'next';
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 export const generateMetadata = (
   { params: { atUserName } }: UserProfilePageProps,
@@ -20,11 +21,14 @@ export const generateMetadata = (
 };
 
 export type UserProfileLayoutProps = UserProfilePageProps & LayoutProps<{
-  // empty
+  header: ReactNode;
+  posts: ReactNode;
 }>;
 
 const UserProfileLayout: FC<UserProfileLayoutProps> = ({
   params,
+  header,
+  posts,
   children,
 }) => {
   const userName = getUserName(params.atUserName);
@@ -41,7 +45,11 @@ const UserProfileLayout: FC<UserProfileLayoutProps> = ({
         </PageHeader>
       )}
     >
-      <main>
+      <main className={styles.main}>
+        <article className={styles.article}>
+          {header}
+          {posts}
+        </article>
         {children}
       </main>
     </PageLayout>

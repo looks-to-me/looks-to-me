@@ -9,7 +9,7 @@ export type UserSummaryProps = {
   name: string;
   avatarUrl: string;
   numOfPosts: number;
-  githubUrl: string;
+  githubUrl?: string;
 };
 
 export const UserSummary: FC<UserSummaryProps> = ({
@@ -30,9 +30,11 @@ export const UserSummary: FC<UserSummaryProps> = ({
         <p className={styles.name}>{name}</p>
         <div className={styles.lower}>
           <p className={styles.numOfPosts}>{`${numOfPosts} posts`}</p>
-          <a href={githubUrl} target="_blank">
+          {githubUrl && (
+            <a href={githubUrl} target="_blank">
             GitHub
-          </a>
+            </a>
+          )}
         </div>
       </div>
     </div>

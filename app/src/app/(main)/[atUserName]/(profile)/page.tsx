@@ -1,7 +1,3 @@
-import { notFound } from 'next/navigation';
-
-import { getUserName } from '../_helpers/getUserName';
-
 import type { PageProps } from '../../../_types/page-props';
 import type { FC } from 'react';
 
@@ -19,13 +15,8 @@ export type UserProfilePageProps = PageProps<{
   };
 }>;
 
-const UserProfilePage: FC<UserProfilePageProps> = ({
-  params,
-}) => {
-  const userName = getUserName(params.atUserName);
-  if (!userName) return notFound();
-
-  return <div>{`hello ${userName}`}</div>;
+const UserProfilePage: FC<UserProfilePageProps> = () => {
+  return null;
 };
 
 export default UserProfilePage;
