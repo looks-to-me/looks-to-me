@@ -21,6 +21,7 @@ export const Default = {
       id: 'id',
       word: 'Good',
       image: 'https://via.placeholder.com/300x225?text=LGTM&',
+      link: '/@user/posts/id',
     },
   },
 } satisfies Story;

@@ -1,6 +1,6 @@
 'use server';
 
-import { desc, lt } from 'drizzle-orm';
+import { desc, eq, lt } from 'drizzle-orm';
 
 import { db } from '../../../../_libs/db';
 import { schema } from '../../../../_libs/db/schema';
@@ -12,8 +12,17 @@ const limit = 32;
 
 export const fetchPosts = async (cursor?: string): Promise<InfiniteScrollEdge[]> => {
   const posts = await db()
-    .select()
+    .select({
+      id: schema.posts.id,
+      word: schema.posts.word,
+      postedAt: schema.posts.postedAt,
+      user: {
+        name: schema.userProfiles.name,
+      },
+    })
     .from(schema.posts)
+    .innerJoin(schema.users, eq(schema.posts.userId, schema.users.id))
+    .innerJoin(schema.userProfiles, eq(schema.userProfiles.userId, schema.users.id))
     .where(cursor ? lt(schema.posts.postedAt, new Date(cursor)) : undefined)
     .orderBy(desc(schema.posts.postedAt))
     .limit(limit)
@@ -28,6 +37,7 @@ export const fetchPosts = async (cursor?: string): Promise<InfiniteScrollEdge[]>
           id: post.id,
           word: post.word,
           image: `/images/posts/${post.id}`,
+          link: `/@${post.user.name}/posts/${post.id}`,
         }}
       />
     ),

@@ -1,6 +1,6 @@
 'use server';
 
-import { sql } from 'drizzle-orm';
+import { eq, sql } from 'drizzle-orm';
 
 import { db } from '../../../../_libs/db';
 import { schema } from '../../../../_libs/db/schema';
@@ -22,8 +22,17 @@ const limit = 32;
 
 export const fetchPosts = async (): Promise<InfiniteScrollEdge[]> => {
   const posts = await db()
-    .select()
+    .select({
+      id: schema.posts.id,
+      word: schema.posts.word,
+      postedAt: schema.posts.postedAt,
+      user: {
+        name: schema.userProfiles.name,
+      },
+    })
     .from(schema.posts)
+    .innerJoin(schema.users, eq(schema.posts.userId, schema.users.id))
+    .innerJoin(schema.userProfiles, eq(schema.userProfiles.userId, schema.users.id))
     .where(sql`_ROWID_ >= (ABS(RANDOM()) % ((SELECT MAX(_ROWID_) FROM posts) - ${limit} + 2))`)
     .limit(limit)
     .all();
@@ -37,6 +46,7 @@ export const fetchPosts = async (): Promise<InfiniteScrollEdge[]> => {
           id: post.id,
           word: post.word,
           image: `/images/posts/${post.id}`,
+          link: `/@${post.user.name}/posts/${post.id}`,
         }}
       />
     ),
