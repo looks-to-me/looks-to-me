@@ -30,11 +30,13 @@ export const generateMetadata = async ({ params }: UserPostDetailsPageProps): Pr
 
 export type UserPostDetailsLayoutProps = UserPostDetailsPageProps & LayoutProps<{
   header: ReactNode;
+  main: ReactNode;
 }>;
 
 const UserPostDetailsLayout: FC<UserPostDetailsLayoutProps> = async ({
   children,
   header,
+  main,
   params,
 }) => {
   const userName = getUserName(params.atUserName);
@@ -69,6 +71,7 @@ const UserPostDetailsLayout: FC<UserPostDetailsLayoutProps> = async ({
       <main className={styles.main}>
         <article className={styles.article}>
           {header}
+          {main}
         </article>
         {children}
       </main>

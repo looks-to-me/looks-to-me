@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { ShareButton } from './_components/share-button';
@@ -32,19 +33,23 @@ const UserPostDetailsHeaderPage: FC<UserPostDetailsHeaderPageProps> = async ({
 
   return (
     <header className={styles.wrapper}>
-      <Avatar className={styles.avatar}>
-        <AvatarImage
-          src={`/images/avatars/${user.id}`}
-          alt={user.profile.displayName ?? user.profile.name}
-          sizes="32px"
-        />
-        <AvatarFallback>
-          {user.profile.displayName ?? user.profile.name}
-        </AvatarFallback>
-      </Avatar>
-      <h2 className={styles.title}>
-        Looks {post.word} To Me
-      </h2>
+      <div className={styles.container}>
+        <Link href={`/@${user.profile.name}`}>
+          <Avatar className={styles.avatar}>
+            <AvatarImage
+              src={`/images/avatars/${user.id}`}
+              alt={user.profile.displayName ?? user.profile.name}
+              sizes="32px"
+            />
+            <AvatarFallback>
+              {user.profile.displayName ?? user.profile.name}
+            </AvatarFallback>
+          </Avatar>
+        </Link>
+        <h2 className={styles.title}>
+          Looks {post.word} To Me
+        </h2>
+      </div>
       <div className={styles.toolbar}>
         <ShareButton post={post} />
       </div>
