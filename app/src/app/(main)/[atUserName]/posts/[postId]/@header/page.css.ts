@@ -7,6 +7,7 @@ export const wrapper = style({
   gap: '16px',
   alignItems: 'center',
   paddingBottom: '16px',
+  marginBottom: '32px',
   borderBottom: `solid 1px ${theme.color.token.semantic.border}`,
 });
 
