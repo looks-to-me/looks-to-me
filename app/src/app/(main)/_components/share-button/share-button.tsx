@@ -1,34 +1,30 @@
 'use client';
 
-import clsx from 'clsx';
 import { useCallback } from 'react';
 import { toast } from 'sonner';
 
-import * as styles from './share-button.css';
-import { Button, ButtonIcon } from '../../../../../../../_components/button';
-import CopyIcon from '../../../../../../../_icons/copy.svg';
+import { Button, ButtonIcon } from '../../../_components/button';
+import CopyIcon from '../../../_icons/copy.svg';
 
-import type { Post } from '../../../../../../_repositories/post-repository';
 import type { FC } from 'react';
 
 export type ShareButtonProps = {
   className?: string | undefined;
-  post: Post;
+  text: string;
 };
 
-// TODO: plane text link, tweet link, etc.
 export const ShareButton: FC<ShareButtonProps> = ({
   className,
-  post,
+  text,
 }) => {
   const handleClick = useCallback(() => {
-    void navigator.clipboard.writeText(`![LGTM](${origin}/images/posts/${post.id})`);
+    void navigator.clipboard.writeText(text);
     toast.success('Copied!');
-  }, [post.id]);
+  }, [text]);
 
   return (
     <Button
-      className={clsx(className, styles.wrapper)}
+      className={className}
       variant="primary"
       size="medium"
       onClick={handleClick}
