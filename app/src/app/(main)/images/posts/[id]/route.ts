@@ -32,7 +32,7 @@ const fetchImage = async (request: Request, id: string): Promise<Response> => {
 
   return await fetch(fetchUrl, {
     headers: {
-      ...request.headers,
+      accept: request.headers.get('accept') ?? 'image/jpeg',
       authorization: `Bearer ${env().INTERNAL_API_TOKEN}`,
     },
   });

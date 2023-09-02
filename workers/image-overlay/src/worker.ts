@@ -25,12 +25,16 @@ export default {
       height: url.searchParams.get('height'),
     });
 
+    const accept = request.headers.get('accept');
+    const format = accept?.includes('image/avif') ? 'avif' : accept?.includes('image/webp') ? 'webp' : 'jpeg';
+
     return fetch(input.origin, {
       headers: {
         authorization: `Bearer ${env.INTERNAL_API_TOKEN}`,
       },
       cf: {
         image: {
+          format,
           width: input.width,
           height: input.height,
           fit: 'contain',
