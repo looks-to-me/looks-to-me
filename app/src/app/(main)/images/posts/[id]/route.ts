@@ -30,9 +30,10 @@ const fetchImage = async (request: Request, id: string): Promise<Response> => {
   fetchUrl.searchParams.set('width', '1200');
   fetchUrl.searchParams.set('height', (1200 / ratio).toString());
 
+  const accept = request.headers.get('accept');
   return await fetch(fetchUrl, {
     headers: {
-      accept: request.headers.get('accept') ?? 'image/jpeg',
+      ...(accept ? { accept } : {}),
       authorization: `Bearer ${env().INTERNAL_API_TOKEN}`,
     },
   });
@@ -43,7 +44,7 @@ export const GET = async (request: NextRequest, { params }: { params: { id: stri
   if (!post) return Response.error();
 
   const accept = request.headers.get('accept');
-  const format = accept?.includes('image/avif') ? 'avif' : accept?.includes('image/webp') ? 'webp' : 'jpeg';
+  const format = accept?.includes('image/webp') ? 'webp' : 'unknown';
   
   return imageCache({
     url: request.url,
