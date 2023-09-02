@@ -1,5 +1,6 @@
 import * as styles from './layout.css';
 import { Breadcrumbs, BreadcrumbsItem } from '../../_components/breadcrumbs';
+import { generateOpenGraphMetadata } from '../../_helpers/generateOpenGraphMetadata';
 import { PageHeader } from '../_components/page-header';
 import { PageLayout } from '../_components/page-layout';
 
@@ -12,6 +13,11 @@ export const metadata = {
     absolute: 'LooksToMe',
   },
   robots: 'noindex',
+  ...generateOpenGraphMetadata({
+    title: {
+      absolute: 'LooksToMe',
+    },
+  }),
 };
 
 export type HomeLayoutProps = HomePageProps & LayoutProps<{

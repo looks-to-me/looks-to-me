@@ -1,22 +1,31 @@
 import * as styles from './layout.css';
 import { Breadcrumbs, BreadcrumbsItem } from '../../../_components/breadcrumbs';
+import { generateOpenGraphMetadata } from '../../../_helpers/generateOpenGraphMetadata';
 import { PageHeader } from '../../_components/page-header';
 import { PageLayout } from '../../_components/page-layout';
+import { findUserByName } from '../../_repositories/user-repository';
 import { getUserName } from '../_helpers/getUserName';
 
 import type { UserProfilePageProps } from './page';
 import type { LayoutProps } from '../../../_types/layout-props';
-import type { Metadata } from 'next';
 import type { FC, ReactNode } from 'react';
 
-export const generateMetadata = (
+export const generateMetadata = async (
   { params: { atUserName } }: UserProfilePageProps,
-): Metadata => {
+) => {
   const userName = getUserName(atUserName);
-  // TODO: get display name
+  if (!userName) return {};
+
+  const user = await findUserByName(userName);
+  if (!user) return {};
+
+  const title = user.profile.displayName ?? user.profile.name;
   return {
-    title: userName ?? 'not found',
+    title,
     robots: 'noindex',
+    ...generateOpenGraphMetadata({
+      title,
+    }),
   };
 };
 
