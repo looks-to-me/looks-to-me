@@ -4,7 +4,6 @@ import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 
 import { Dialog } from '../../../../_components/dialog';
-import { DialogContent } from '../../../../_components/dialog/dialog-content';
 import { useIsMounted } from '../../../../_hooks/use-is-mounted';
 
 import type { DialogProps } from '../../../../_components/dialog';
@@ -27,9 +26,7 @@ export const ModalDialog: FC<ModalDialogProps> = ({
 
   return (
     <Dialog {...props} open={isMounted} onOpenChange={handleOpenChange}>
-      <DialogContent>
-        {children}
-      </DialogContent>
+      {children}
     </Dialog>
   );
 };

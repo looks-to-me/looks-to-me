@@ -7,6 +7,7 @@ export const wrapper = style({
   overflow: 'hidden',
   borderRadius: theme.size.radius.medium,
   border: `solid 1px ${theme.color.token.semantic.border}`,
+  backgroundColor: theme.color.token.semantic.backgroundInset,
   selectors: {
     '&:after': {
       content: '',

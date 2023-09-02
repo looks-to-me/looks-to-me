@@ -1,3 +1,4 @@
+import { DialogContent } from '../../../_components/dialog/dialog-content';
 import { ModalDialog } from '../_components/modal-dialog';
 
 import type { ModalLoginPageProps } from './page';
@@ -13,7 +14,9 @@ const ModalLoginLayout: FC<ModalLoginLayoutProps> = ({
 }) => {
   return (
     <ModalDialog>
-      {children}
+      <DialogContent withClose>
+        {children}
+      </DialogContent>
     </ModalDialog>
   );
 };

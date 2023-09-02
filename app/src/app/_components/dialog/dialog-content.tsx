@@ -11,11 +11,14 @@ import { Button, ButtonIcon } from '../button';
 
 import type { ElementRef , ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
 
-export type DialogContentProps = ComponentPropsWithoutRef<typeof DialogPrimitive.Content>;
+export type DialogContentProps = ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & {
+  withClose?: boolean;
+};
 
 const DialogContentRender: ForwardRefRenderFunction<ElementRef<typeof DialogPrimitive.Content>, DialogContentProps> = ({
   className,
   children,
+  withClose,
   ...props
 }, ref) => {
   return (
@@ -27,15 +30,17 @@ const DialogContentRender: ForwardRefRenderFunction<ElementRef<typeof DialogPrim
         className={clsx(className, styles.content)}
       >
         {children}
-        <DialogPrimitive.Close asChild>
-          <Button className={styles.close} variant="ghost" size="icon" borderless>
-            <ButtonIcon>
-              <AccessibleIcon label="Close">
-                <CloseIcon />
-              </AccessibleIcon>
-            </ButtonIcon>
-          </Button>
-        </DialogPrimitive.Close>
+        {withClose && (
+          <DialogPrimitive.Close asChild>
+            <Button className={styles.close} variant="ghost" size="icon" borderless>
+              <ButtonIcon>
+                <AccessibleIcon label="Close">
+                  <CloseIcon />
+                </AccessibleIcon>
+              </ButtonIcon>
+            </Button>
+          </DialogPrimitive.Close>
+        )}
       </DialogPrimitive.Content>
     </DialogPrimitive.Portal>
   );
