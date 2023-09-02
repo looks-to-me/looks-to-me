@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 
+import * as styles from './page.css';
 import { findPostsByUserId } from '../../../_repositories/post-repository';
 import { findUserByName } from '../../../_repositories/user-repository';
 import { getUserName } from '../../_helpers/getUserName';
@@ -32,7 +33,7 @@ const UserProfileHeaderPage: FC<UserProfileHeaderPageProps> = async ({
   const posts = await findPostsByUserId(user.id);
 
   return (
-    <header>
+    <header className={styles.wrapper}>
       <UserSummary 
         avatarUrl={user.profile.avatarUrl}
         name={user.profile.displayName ?? user.profile.name}

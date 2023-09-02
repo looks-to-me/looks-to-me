@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 
 import { fetchUserPosts } from './_actions/fetch-user-posts';
+import * as styles from './page.css';
 import { PostList } from '../../../_components/post-list';
 import { findUserByName } from '../../../_repositories/user-repository';
 import { getUserName } from '../../_helpers/getUserName';
@@ -38,7 +39,7 @@ const UserProfilePostsPage: FC<UserProfileMainPageProps> = async ({
   };
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <PostList
         posts={posts}
         fetcher={fetcher}
