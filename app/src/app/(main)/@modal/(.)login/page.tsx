@@ -1,27 +1,17 @@
-import { headers } from 'next/headers';
+import * as styles from './page.css';
+import { LoginForm } from '../../_components/login-form';
 
-import { LoginDialog } from './_components/login-dialog';
-
-import type { PageProps } from '../../../_types/page-props';
+import type { LoginPageProps } from '../../login/page';
 import type { FC } from 'react';
 
 export const runtime = 'edge';
 
-export type AuthLoginPageProps = PageProps<{
-  params: {
-    // empty
-  };
-  searchParams: {
-    // empty
-  };
-}>;
+export type ModalLoginPageProps = LoginPageProps;
 
-const AuthLoginPage: FC<AuthLoginPageProps> = () => {
-  const canGoBack = headers().get('host') === headers().get('referer')?.split('/')[2];
-
+const ModalLoginPage: FC<ModalLoginPageProps> = () => {
   return (
-    <LoginDialog canGoBack={canGoBack} />
+    <LoginForm className={styles.form} />
   );
 };
 
-export default AuthLoginPage;
+export default ModalLoginPage;
