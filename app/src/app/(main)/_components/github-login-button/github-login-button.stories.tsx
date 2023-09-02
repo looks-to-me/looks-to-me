@@ -16,3 +16,10 @@ type Story = StoryObj<typeof GitHubLoginButton>;
 export const Default = {
   args: {},
 } satisfies Story;
+
+export const Medium = {
+  args: {
+    ...Default.args,
+    size: 'medium',
+  },
+} satisfies Story;

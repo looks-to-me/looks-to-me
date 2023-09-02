@@ -5,8 +5,8 @@ import { theme } from '../../../_theme';
 export const wrapper = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: "1.5rem",
-  padding: "2rem 1rem"
+  gap: '1.5rem',
+  padding: '2rem 1rem',
 });
 
 export const brand = style({
