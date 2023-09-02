@@ -44,7 +44,7 @@ export const GET = async (request: NextRequest, { params }: { params: { id: stri
   if (!post) return Response.error();
 
   const accept = request.headers.get('accept');
-  const format = accept?.includes('image/avif') ? 'avif' : accept?.includes('image/webp') ? 'webp' : 'unknown';
+  const format = accept?.includes('image/webp') ? 'webp' : 'unknown';
   
   return imageCache({
     url: request.url,

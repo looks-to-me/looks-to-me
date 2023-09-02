@@ -26,7 +26,7 @@ export default {
     });
 
     const accept = request.headers.get('accept');
-    const format = accept?.includes('image/avif') ? 'avif' : accept?.includes('image/webp') ? 'webp' : undefined;
+    const format = accept?.includes('image/webp') ? 'webp' : undefined;
 
     return fetch(input.origin, {
       headers: {
