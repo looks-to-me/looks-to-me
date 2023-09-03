@@ -8,6 +8,9 @@ import { storage } from '../../../../../_libs/storage';
 import { insertImage } from '../../../../_repositories/image-repository';
 import { insertPost } from '../../../../_repositories/post-repository';
 import { findUserProviderByTypeAndSub } from '../../../../_repositories/user-provider-repository';
+import { findUserById } from '../../../../_repositories/user-repository';
+
+import type { Route } from 'next';
 
 const inputSchema = z.object({
   image: z.custom<Blob>(value => value instanceof Blob),
@@ -22,6 +25,7 @@ const inputSchema = z.object({
 export type SubmitPostResult = {
   type: 'success';
   message: string;
+  redirectUrl: Route<`/@${string}/posts/${string}`>;
 } | {
   type: 'error';
   reason: 'unauthorized' | 'unknown';
@@ -36,6 +40,9 @@ export const submitPost = async (formData: FormData): Promise<SubmitPostResult> 
     const userProvider = await findUserProviderByTypeAndSub(userMetadata.provider, userMetadata.sub);
     if (!userProvider) return { type: 'error', reason: 'unauthorized', message: 'Login required!' };
 
+    const user = await findUserById(userProvider.userId);
+    if (!user) return { type: 'error', reason: 'unauthorized', message: 'Login required!' };
+
     const input = inputSchema.parse({
       image: formData.get('image'),
       imageWidth: formData.get('image-width'),
@@ -45,21 +52,21 @@ export const submitPost = async (formData: FormData): Promise<SubmitPostResult> 
 
     const image = await insertImage({
       id: createId(),
-      userId: userProvider.userId,
+      userId: user.id,
       width: input.imageWidth,
       height: input.imageHeight,
     });
 
-    await storage().put(`users/${userProvider.userId}/images/${image.id}`, await input.image.arrayBuffer());
+    await storage().put(`users/${user.id}/images/${image.id}`, await input.image.arrayBuffer());
 
-    await insertPost({
+    const post = await insertPost({
       id: createId(),
-      userId: userProvider.userId,
+      userId: user.id,
       imageId: image.id,
       word: input.word,
     });
 
-    return { type: 'success', message: 'Post created!' };
+    return { type: 'success', message: 'Post created!', redirectUrl: `/@${user.profile.name}/posts/${post.id}` };
   } catch (error) {
     console.error(error);
     return { type: 'error', reason: 'unknown', message: 'Post creation failed!' };
