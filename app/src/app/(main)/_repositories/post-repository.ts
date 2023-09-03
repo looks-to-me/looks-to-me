@@ -1,6 +1,6 @@
 'use server';
 
-import { eq } from 'drizzle-orm';
+import { eq, sql } from 'drizzle-orm';
 
 import { db } from '../../_libs/db';
 import { schema } from '../../_libs/db/schema';
@@ -42,14 +42,13 @@ export const findPostById = async (id: Post['id']): Promise<Post | undefined> =>
     .get();
 };
 
-export const findPostsByUserId = async (userId: User['id']): Promise<Post[]> => {
-  return await db()
+export const countPostsByUserId = async (userId: User['id']): Promise<number> => {
+  const result = await db()
     .select({
-      id: schema.posts.id,
-      userId: schema.posts.userId,
-      imageId: schema.posts.imageId,
-      word: schema.posts.word,
+      count: sql<number>`COUNT(*)`,
     }).from(schema.posts)
     .where(eq(schema.posts.userId, userId))
-    .all();
+    .get();
+
+  return result?.count ?? 0;
 };

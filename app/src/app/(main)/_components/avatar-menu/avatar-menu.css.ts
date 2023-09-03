@@ -14,10 +14,13 @@ export const account = style({
 });
 
 export const accountName = style({
+  fontSize: theme.size.font.medium,
   fontWeight: 600,
+  lineHeight: 1,
 });
 
 export const displayName = style({
-  fontWeight: 400,
   color: theme.color.token.semantic.textMuted,
+  fontWeight: 400,
+  lineHeight: 1,
 });
