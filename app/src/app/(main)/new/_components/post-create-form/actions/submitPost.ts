@@ -4,6 +4,7 @@ import { createId } from '@paralleldrive/cuid2';
 import { z } from 'zod';
 
 import { getUserMetadata } from '../../../../../_libs/auth/server/get-user-metadata';
+import { env } from '../../../../../_libs/env';
 import { storage } from '../../../../../_libs/storage';
 import { insertImage } from '../../../../_repositories/image-repository';
 import { insertPost } from '../../../../_repositories/post-repository';
@@ -65,6 +66,9 @@ export const submitPost = async (formData: FormData): Promise<SubmitPostResult> 
       imageId: image.id,
       word: input.word,
     });
+
+    // Pre-cache the posted images.
+    void fetch(`${env().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id}`);
 
     return { type: 'success', message: 'Post created!', redirectUrl: `/@${user.profile.name}/posts/${post.id}` };
   } catch (error) {
