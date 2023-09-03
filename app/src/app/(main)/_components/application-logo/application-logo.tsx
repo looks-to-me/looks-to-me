@@ -7,15 +7,18 @@ import { AccessibleIcon } from '../../../_components/accessible-icon';
 import { PrefersColorScheme } from '../../../_components/prefers-color-scheme';
 import LooksToMeBlack from '../../../_icons/looks-to-me-black.svg';
 import LooksToMeWhite from '../../../_icons/looks-to-me-white.svg';
+import LooksToMeWithTextBlack from '../../../_icons/looks-to-me-with-text-black.svg';
+import LooksToMeWithTextWhite from '../../../_icons/looks-to-me-with-text-white.svg';
 
 import type { ForwardRefRenderFunction , ComponentPropsWithoutRef } from 'react';
 
 export type ApplicationLogoProps = Omit<ComponentPropsWithoutRef<typeof Link>, 'href'> & {
-  // nothing
+  withText?: boolean;
 };
 
 const ApplicationLogoRender: ForwardRefRenderFunction<HTMLAnchorElement, ApplicationLogoProps> = ({
   className,
+  withText = false,
   ...props
 }, ref) => {
   return (
@@ -25,14 +28,22 @@ const ApplicationLogoRender: ForwardRefRenderFunction<HTMLAnchorElement, Applica
           light={(
             <div className={styles.icon}>
               <AccessibleIcon label="LooksToMe">
-                <LooksToMeBlack />
+                {withText ? (
+                  <LooksToMeWithTextBlack width="auto" height="auto" />
+                ) : (
+                  <LooksToMeBlack width="auto" height="auto" />
+                )}
               </AccessibleIcon>
             </div>
           )}
           dark={(
             <div className={styles.icon}>
               <AccessibleIcon label="LooksToMe">
-                <LooksToMeWhite />
+                {withText ? (
+                  <LooksToMeWithTextWhite width="auto" height="auto" />
+                ) : (
+                  <LooksToMeWhite width="auto" height="auto" />
+                )}
               </AccessibleIcon>
             </div>
           )}
