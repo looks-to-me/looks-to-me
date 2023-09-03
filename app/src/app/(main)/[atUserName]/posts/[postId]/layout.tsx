@@ -2,6 +2,7 @@ import { notFound, redirect } from 'next/navigation';
 
 import * as styles from './layout.css';
 import { Breadcrumbs, BreadcrumbsItem } from '../../../../_components/breadcrumbs';
+import { createMetadata } from '../../../../_helpers/create-metadata';
 import { PageHeader } from '../../../_components/page-header';
 import { PageLayout } from '../../../_components/page-layout';
 import { findPostById } from '../../../_repositories/post-repository';
@@ -23,9 +24,12 @@ export const generateMetadata = async ({ params }: UserPostDetailsPageProps): Pr
   const user = await findUserById(post.userId);
   if (!user) return {};
 
-  return {
-    title: `${user.profile.displayName ?? user.profile.name} / Looks ${post.word} To Me`,
-  };
+  const title = `${user.profile.displayName ?? user.profile.name} / Looks ${post.word} To Me`;
+
+  // TODO: Make it return the OGP image including the post image.
+  return createMetadata({
+    title,
+  });
 };
 
 export type UserPostDetailsLayoutProps = UserPostDetailsPageProps & LayoutProps<{

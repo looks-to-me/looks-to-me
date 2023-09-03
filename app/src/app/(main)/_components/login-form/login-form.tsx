@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import Link from 'next/link';
 
 import * as styles from './login-form.css';
-import { ApplicationLogo } from '../application-logo';
+import { ApplicationLogoWithText } from '../application-logo-with-text';
 import { GitHubLoginButton } from '../github-login-button';
 
 import type { FC } from 'react';
@@ -17,8 +17,7 @@ export const LoginForm: FC<LoginFormProps> = ({
   return (
     <div className={clsx(className, styles.wrapper)}>
       <div className={styles.brand}>
-        <ApplicationLogo />
-        LooksToMe
+        <ApplicationLogoWithText />
       </div>
       <p className={styles.paragraph}>LooksToMeはLGTM画像共有プラットフォームです。良い感じな画像をみんなでシェアしましょう。</p>
       <div className={styles.buttonArea}>
