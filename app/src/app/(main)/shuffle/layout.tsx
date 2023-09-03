@@ -1,6 +1,6 @@
 import * as styles from './layout.css';
 import { Breadcrumbs, BreadcrumbsItem } from '../../_components/breadcrumbs';
-import { generateOpenGraphMetadata } from '../../_helpers/generateOpenGraphMetadata';
+import { createMetadata } from '../../_helpers/create-metadata';
 import { PageHeader } from '../_components/page-header';
 import { PageLayout } from '../_components/page-layout';
 
@@ -8,12 +8,9 @@ import type { ShufflePageProps } from './page';
 import type { LayoutProps } from '../../_types/layout-props';
 import type { FC, ReactNode } from 'react';
 
-export const metadata = {
+export const metadata = createMetadata({
   title: 'Shuffle',
-  ...generateOpenGraphMetadata({
-    title: 'Shuffle',
-  }),
-};
+});
 
 export type ShuffleLayoutProps = ShufflePageProps & LayoutProps<{
   posts: ReactNode;
