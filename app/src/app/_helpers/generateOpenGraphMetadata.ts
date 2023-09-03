@@ -3,7 +3,7 @@ import type { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 
 /**
  * Generates Open Graph and Twitter metadata for the given arguments.
- * If args.images is not provided, a default OG image will be used.
+ * If "args.images" is not provided, a default OG image will be used.
  */
 export const generateOpenGraphMetadata
 = (args: { title: string | {

@@ -21,7 +21,7 @@ export const LoginForm: FC<LoginFormProps> = ({
       </div>
       <p className={styles.paragraph}>LooksToMeはLGTM画像共有プラットフォームです。良い感じな画像をみんなでシェアしましょう。</p>
       <div className={styles.buttonArea}>
-        <GitHubLoginButton size="medium" />
+        <GitHubLoginButton />
       </div>
       <p className={styles.annotation}>
         <Link href="/terms">利用規約</Link>、<Link href="/privacy">プライバシーポリシー</Link>に同意したうえでログインしてください。

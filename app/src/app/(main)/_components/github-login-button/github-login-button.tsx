@@ -8,20 +8,12 @@ import * as styles from './github-login-button.css';
 import GitHubWhite from '../../../_icons/github-white.svg';
 import { supabase } from '../../../_libs/auth/client/instance';
 
-import type { RecipeVariants } from '@vanilla-extract/recipes';
 import type { MouseEventHandler, FC, ComponentPropsWithoutRef } from 'react';
 
-type GitHubLoginButtonVariants = NonNullable<RecipeVariants<typeof styles.button>>;
-
-export type GitHubLoginButtonSize = Exclude<GitHubLoginButtonVariants['size'], undefined>;
-
-export type LoginButtonProps = ComponentPropsWithoutRef<'button'> & {
-  size?: GitHubLoginButtonSize | undefined;
-};
+export type LoginButtonProps = ComponentPropsWithoutRef<'button'>;
 
 export const GitHubLoginButton: FC<LoginButtonProps> = ({
   className,
-  size = 'normal',
   ...props
 }) => {
   const router = useRouter();
@@ -39,7 +31,7 @@ export const GitHubLoginButton: FC<LoginButtonProps> = ({
   }, [router]);
 
   return (
-    <button {...props} className={clsx(className, styles.button({ size }))} onClick={handleClick}>
+    <button {...props} className={clsx(className, styles.button)} onClick={handleClick}>
       <GitHubWhite className={styles.icon} />
       Login with GitHub
     </button>
