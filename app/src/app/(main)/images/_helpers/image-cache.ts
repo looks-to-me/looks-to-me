@@ -34,6 +34,10 @@ export const imageCache = async (keyParams: CacheKeyParams, callback: () => Prom
 
   const response = await callback();
   const buffer = await response.arrayBuffer();
-  await env().BUCKET.put(key, buffer);
+
+  if (response.ok) {
+    await env().BUCKET.put(key, buffer);
+  }
+
   return new Response(buffer, { headers: response.headers });
 };
