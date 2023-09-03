@@ -44,3 +44,13 @@ globalStyle('a', {
   textDecoration: 'none',
   color: theme.color.palette.blue500,
 });
+
+globalStyle('li', {
+  margin: '8px 0',
+  lineHeight: 1.5,
+});
+
+globalStyle('p', {
+  margin: 0,
+  lineHeight: 1.5,
+});
