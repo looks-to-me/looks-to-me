@@ -3,13 +3,15 @@ import { env } from './_libs/env';
 
 import type { FC, ReactNode } from 'react';
 
-export const metadata = {
-  title: {
-    template: '%s | LooksToMe',
-    default: 'LooksToMe',
-  },
-  robots: 'noindex',
-  metadataBase: new URL(env().NEXT_PUBLIC_APP_ORIGIN),
+export const generateMetadata = () => {
+  return {
+    title: {
+      template: '%s | LooksToMe',
+      default: 'LooksToMe',
+    },
+    robots: 'noindex',
+    metadataBase: env().NEXT_PUBLIC_APP_ORIGIN,
+  };
 };
 
 export type RootLayoutProps = {
