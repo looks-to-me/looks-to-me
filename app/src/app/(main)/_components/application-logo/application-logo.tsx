@@ -29,9 +29,9 @@ const ApplicationLogoRender: ForwardRefRenderFunction<HTMLAnchorElement, Applica
             <div className={styles.icon}>
               <AccessibleIcon label="LooksToMe">
                 {withText ? (
-                  <LooksToMeWithTextBlack width="100%" height="auto" />
+                  <LooksToMeWithTextBlack width="100%" />
                 ) : (
-                  <LooksToMeBlack width="100%" height="auto" />
+                  <LooksToMeBlack width="100%" />
                 )}
               </AccessibleIcon>
             </div>
@@ -40,9 +40,9 @@ const ApplicationLogoRender: ForwardRefRenderFunction<HTMLAnchorElement, Applica
             <div className={styles.icon}>
               <AccessibleIcon label="LooksToMe">
                 {withText ? (
-                  <LooksToMeWithTextWhite width="100%" height="auto" />
+                  <LooksToMeWithTextWhite width="100%" />
                 ) : (
-                  <LooksToMeWhite width="100%" height="auto" />
+                  <LooksToMeWhite width="100%" />
                 )}
               </AccessibleIcon>
             </div>
