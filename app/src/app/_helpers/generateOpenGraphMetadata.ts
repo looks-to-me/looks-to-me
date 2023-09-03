@@ -18,7 +18,7 @@ export const generateOpenGraphMetadata
       siteName: 'LooksToMe',
       title,
       images: args.images ?? {
-        url: '/og-image.png',
+        url: '/looks-to-me-with-text-black.png',
         width: 1200,
         height: 630,
       },
