@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { theme } from '../../../../../_theme';
+import { theme } from '../../../../../../_theme';
 
 export const wrapper = style({
   display: 'flex',
@@ -9,7 +9,7 @@ export const wrapper = style({
 });
 
 export const image = style({
-  borderRadius: theme.size.radius.pill,
+  fontSize: '4rem',
 });
 
 export const main = style({
@@ -18,9 +18,22 @@ export const main = style({
   gap: '.6rem',
 });
 
-export const name = style({
+export const header = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '4px',
+});
+
+export const accountName = style({
   fontSize: theme.size.font.medium,
-  fontWeight: 'bold',
+  fontWeight: 600,
+  lineHeight: 1,
+});
+
+export const displayName = style({
+  color: theme.color.token.semantic.textMuted,
+  fontWeight: 400,
+  lineHeight: 1,
 });
 
 export const lower = style({

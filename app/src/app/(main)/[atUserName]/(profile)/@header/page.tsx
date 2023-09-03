@@ -1,10 +1,10 @@
 import { notFound } from 'next/navigation';
 
+import { UserSummary } from './_components/user-summary';
 import * as styles from './page.css';
-import { findPostsByUserId } from '../../../_repositories/post-repository';
+import { countPostsByUserId } from '../../../_repositories/post-repository';
 import { findUserByName } from '../../../_repositories/user-repository';
 import { getUserName } from '../../_helpers/getUserName';
-import { UserSummary } from '../_components/user-summary';
 
 import type { PageProps } from '../../../../_types/page-props';
 import type { UserProfilePageProps } from '../page';
@@ -30,15 +30,13 @@ const UserProfileHeaderPage: FC<UserProfileHeaderPageProps> = async ({
   const user = await findUserByName(userName);
   if (!user) return notFound();
 
-  const posts = await findPostsByUserId(user.id);
+  const numOfPosts = await countPostsByUserId(user.id);
 
   return (
     <header className={styles.wrapper}>
-      <UserSummary 
-        avatarUrl={user.profile.avatarUrl}
-        name={user.profile.displayName ?? user.profile.name}
-        // TODO: githubUrl
-        numOfPosts={posts.length}
+      <UserSummary
+        user={user}
+        numOfPosts={numOfPosts}
       />
     </header>
   );

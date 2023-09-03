@@ -10,9 +10,14 @@ type Story = StoryObj<typeof UserSummary>;
 
 export const Default = {
   args: {
-    name: 'name',
-    avatarUrl: 'https://via.placeholder.com/160x160/',
-    githubUrl: 'http://example.com',
+    user: {
+      id: '1',
+      profile: {
+        name: 'name',
+        displayName: 'displayName',
+        avatarUrl: 'https://example.com',
+      },
+    },
     numOfPosts: 120,
   },
 } satisfies Story;
