@@ -68,7 +68,7 @@ export const submitPost = async (formData: FormData): Promise<SubmitPostResult> 
     });
 
     // Pre-cache the posted images.
-    void fetch(`${env().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id}`);
+    await fetch(`${env().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id}`);
 
     return { type: 'success', message: 'Post created!', redirectUrl: `/@${user.profile.name}/posts/${post.id}` };
   } catch (error) {
