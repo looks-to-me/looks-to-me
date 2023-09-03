@@ -13,6 +13,7 @@ export const wrapper = style({
 });
 
 export const item = style({
+  margin: 0,
   selectors: {
     '&:not(:last-child)::after': {
       content: '/',
