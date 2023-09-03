@@ -22,7 +22,6 @@ export const generateMetadata = async (
   const title = user.profile.displayName ?? user.profile.name;
   return {
     title,
-    robots: 'noindex',
     ...generateOpenGraphMetadata({
       title,
     }),

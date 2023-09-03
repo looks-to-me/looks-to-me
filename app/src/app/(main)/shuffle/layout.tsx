@@ -10,7 +10,6 @@ import type { FC, ReactNode } from 'react';
 
 export const metadata = {
   title: 'Shuffle',
-  robots: 'noindex',
   ...generateOpenGraphMetadata({
     title: 'Shuffle',
   }),

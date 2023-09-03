@@ -10,7 +10,6 @@ import type { FC } from 'react';
 
 export const metadata = {
   title: 'Privacy Policy',
-  robots: 'noindex',
   ...generateOpenGraphMetadata({
     title: 'Privacy Policy',
   }),

@@ -11,7 +11,6 @@ import type { FC } from 'react';
 
 export const metadata: Metadata = {
   title: 'Login',
-  robots: 'noindex',
   ...generateOpenGraphMetadata({
     title: 'Login',
   }),

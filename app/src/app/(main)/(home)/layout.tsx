@@ -12,7 +12,6 @@ export const metadata = {
   title: {
     absolute: 'LooksToMe',
   },
-  robots: 'noindex',
   ...generateOpenGraphMetadata({
     title: {
       absolute: 'LooksToMe',

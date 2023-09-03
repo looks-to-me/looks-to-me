@@ -10,7 +10,6 @@ import type { FC, ReactNode } from 'react';
 
 export const metadata = {
   title: 'New post',
-  robots: 'noindex',
   ...generateOpenGraphMetadata({
     title: 'New post',
   }),

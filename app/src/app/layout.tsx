@@ -9,7 +9,6 @@ export const generateMetadata = () => {
       template: '%s | LooksToMe',
       default: 'LooksToMe',
     },
-    robots: 'noindex',
     metadataBase: env().NEXT_PUBLIC_APP_ORIGIN,
   };
 };
