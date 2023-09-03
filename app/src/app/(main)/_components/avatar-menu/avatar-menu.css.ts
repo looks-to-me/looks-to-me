@@ -14,12 +14,10 @@ export const account = style({
 });
 
 export const accountName = style({
-  margin: 0,
   fontWeight: 600,
 });
 
 export const displayName = style({
-  margin: 0,
   fontWeight: 400,
   color: theme.color.token.semantic.textMuted,
 });

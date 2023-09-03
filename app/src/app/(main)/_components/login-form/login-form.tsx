@@ -24,9 +24,8 @@ export const LoginForm: FC<LoginFormProps> = ({
       <div className={styles.buttonArea}>
         <GitHubLoginButton />
       </div>
-      {/* TODO: "terms of use" link */}
       <p className={styles.annotation}>
-        利用規約、<Link href="/privacy">プライバシーポリシー</Link>に同意したうえでログインしてください。
+        <Link href="/terms">利用規約</Link>、<Link href="/privacy">プライバシーポリシー</Link>に同意したうえでログインしてください。
       </p>
     </div>
   );

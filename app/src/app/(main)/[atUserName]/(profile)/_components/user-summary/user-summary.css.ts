@@ -21,7 +21,6 @@ export const main = style({
 export const name = style({
   fontSize: theme.size.font.medium,
   fontWeight: 'bold',
-  margin: 0,
 });
 
 export const lower = style({
@@ -32,5 +31,4 @@ export const lower = style({
 
 export const numOfPosts = style({
   fontSize: theme.size.font.tiny,
-  margin: 0,
 });

@@ -19,8 +19,6 @@ export const brand = style({
 });
 
 export const paragraph = style({
-  margin: '0',
-  lineHeight: 1.5,
   alignSelf: 'center',
 });
 
@@ -32,7 +30,6 @@ export const buttonArea = style({
 });
 
 export const annotation = style({
-  margin: '0',
   color: theme.color.token.semantic.textMuted,
   alignSelf: 'center',
 });

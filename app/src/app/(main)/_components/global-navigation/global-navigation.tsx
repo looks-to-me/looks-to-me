@@ -96,7 +96,8 @@ export const GlobalNavigation: FC<GlobalNavigationProps> = ({
               © {getYear(new Date())} PrAha, Inc.
             </small>
             <div className={styles.links}>
-              <a href="/privacy">Privacy</a>
+              <a href="/privacy">Privacy Policy</a>
+              <a href="/terms">Terms Of Use</a>
             </div>
             <div className={styles.links}>
               <a href="https://www.praha-inc.com/" target="_blank">PrAha</a>
