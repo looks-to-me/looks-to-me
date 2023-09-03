@@ -1,6 +1,6 @@
 'use server';
 
-import { desc, eq, lt } from 'drizzle-orm';
+import { and, desc, eq, lt } from 'drizzle-orm';
 
 import { db } from '../../../../../_libs/db';
 import { schema } from '../../../../../_libs/db/schema';
@@ -23,8 +23,12 @@ export const fetchUserPosts = async (userId: string, cursor?: string): Promise<I
     .from(schema.posts)
     .innerJoin(schema.users, eq(schema.posts.userId, schema.users.id))
     .innerJoin(schema.userProfiles, eq(schema.userProfiles.userId, schema.users.id))
-    .where(eq(schema.posts.userId, userId))
-    .where(cursor ? lt(schema.posts.postedAt, new Date(cursor)) : undefined)
+    .where(
+      and(
+        eq(schema.posts.userId, userId),
+        cursor ? lt(schema.posts.postedAt, new Date(cursor)) : undefined,
+      ),
+    )
     .orderBy(desc(schema.posts.postedAt))
     .limit(limit)
     .all();
