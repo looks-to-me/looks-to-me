@@ -13,7 +13,7 @@ export const wrapper = style({
 });
 
 export const logo = style({
-  fontSize: '2rem',
+  width: '2rem',
 });
 
 export const container = style({

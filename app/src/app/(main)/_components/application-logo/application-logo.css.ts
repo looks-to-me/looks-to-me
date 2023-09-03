@@ -6,7 +6,6 @@ export const wrapper = style({
 
 export const container = style({
   margin: 0,
-  fontSize: '1em',
 });
 
 export const icon = style({

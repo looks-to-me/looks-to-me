@@ -9,5 +9,20 @@ export default {
 type Story = StoryObj<typeof ApplicationLogo>;
 
 export const Default = {
-  args: {},
+  args: {
+    style: {
+      display: 'block',
+      width: '4rem',
+    },
+  },
+} satisfies Story;
+
+export const WithText = {
+  args: {
+    style: {
+      display: 'block',
+      width: '16rem',
+    },
+    withText: true,
+  },
 } satisfies Story;

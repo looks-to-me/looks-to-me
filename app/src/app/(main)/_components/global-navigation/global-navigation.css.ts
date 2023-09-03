@@ -7,7 +7,7 @@ export const main = style({
 });
 
 export const logo = style({
-  fontSize: '2rem',
+  width: '2rem',
 });
 
 export const buttonLinkIcon = style({
