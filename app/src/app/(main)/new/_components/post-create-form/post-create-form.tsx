@@ -29,6 +29,8 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
         if (result.reason === 'unauthorized') router.push('/login');
         throw result.message;
       }
+
+      router.push(result.redirectUrl);
       return result.message;
     }, {
       loading: 'Submitting...',
