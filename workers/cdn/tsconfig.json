@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": [
+    "../../tsconfig.json"
+  ],
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "types": [
+      "@cloudflare/workers-types"
+    ]
+  },
+  "include": [
+    "**/*.ts",
+    "worker-configuration.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
