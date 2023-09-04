@@ -114,7 +114,7 @@ importers:
         version: 4.3.1
       drizzle-orm:
         specifier: 0.28.5
-        version: 0.28.5(@cloudflare/workers-types@4.20230821.0)(better-sqlite3@8.5.2)
+        version: 0.28.5(@cloudflare/workers-types@4.20230821.0)(better-sqlite3@8.6.0)
       modern-normalize:
         specifier: 2.0.0
         version: 2.0.0
@@ -195,8 +195,8 @@ importers:
         specifier: 2.3.0
         version: 2.3.0(@types/node@20.5.9)(webpack@5.88.1)
       better-sqlite3:
-        specifier: 8.5.2
-        version: 8.5.2
+        specifier: 8.6.0
+        version: 8.6.0
       drizzle-kit:
         specifier: 0.19.13
         version: 0.19.13
@@ -6780,8 +6780,8 @@ packages:
       open: 8.4.2
     dev: true
 
-  /better-sqlite3@8.5.2:
-    resolution: {integrity: sha512-w/EZ/jwuZF+/47mAVC2+rhR2X/gwkZ+fd1pbX7Y90D5NRaRzDQcxrHY10t6ijGiYIonCVsBSF5v1cay07bP5sg==}
+  /better-sqlite3@8.6.0:
+    resolution: {integrity: sha512-jwAudeiTMTSyby+/SfbHDebShbmC2MCH8mU2+DXi0WJfv13ypEJm47cd3kljmy/H130CazEvkf2Li//ewcMJ1g==}
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
@@ -8072,7 +8072,7 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.28.5(@cloudflare/workers-types@4.20230821.0)(better-sqlite3@8.5.2):
+  /drizzle-orm@0.28.5(@cloudflare/workers-types@4.20230821.0)(better-sqlite3@8.6.0):
     resolution: {integrity: sha512-6r6Iw4c38NAmW6TiKH3TUpGUQ1YdlEoLJOQptn8XPx3Z63+vFNKfAiANqrIiYZiMjKR9+NYAL219nFrmo1duXA==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
@@ -8135,7 +8135,7 @@ packages:
         optional: true
     dependencies:
       '@cloudflare/workers-types': 4.20230821.0
-      better-sqlite3: 8.5.2
+      better-sqlite3: 8.6.0
     dev: false
 
   /duplexify@3.7.1:
@@ -11489,7 +11489,7 @@ packages:
     dependencies:
       acorn: 8.9.0
       acorn-walk: 8.2.0
-      better-sqlite3: 8.5.2
+      better-sqlite3: 8.6.0
       capnp-ts: 0.7.0
       exit-hook: 2.2.1
       glob-to-regexp: 0.4.1
@@ -12389,6 +12389,7 @@ packages:
   /prebuild-install@7.1.1:
     resolution: {integrity: sha512-jAXscXWMcCK8GgCoHOfIr0ODh5ai8mj63L2nWrjuAgXE6tDyYGnx4/8o/rCgU+B4JSyZBKbeZqzhtwtC3ovxjw==}
     engines: {node: '>=10'}
+    hasBin: true
     dependencies:
       detect-libc: 2.0.1
       expand-template: 2.0.3
@@ -13257,6 +13258,7 @@ packages:
 
   /semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
+    hasBin: true
 
   /semver@7.3.8:
     resolution: {integrity: sha512-NB1ctGL5rlHrPJtFDVIVzTyQylMLu9N9VICA6HSFJo8MCGVTMW6gfpicwKmmK/dAjTOrqu5l63JJOpDSrAis3A==}
