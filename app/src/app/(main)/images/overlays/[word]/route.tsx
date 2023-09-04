@@ -44,17 +44,17 @@ export const GET = async (request: NextRequest, { params }: { params: { word: st
             height: '100%',
           }}
         >
-          <div style={{ ...textStyle, fontSize: 240, fontWeight: 700, letterSpacing: '.1em' }}>
+          <div style={{ ...textStyle, fontSize: 120, fontWeight: 700, letterSpacing: '.1em' }}>
             L{word.at(0)}TM
           </div>
-          <div style={{ ...textStyle, fontSize: 60, letterSpacing: '.05em' }}>
+          <div style={{ ...textStyle, fontSize: 30, letterSpacing: '.05em' }}>
             Looks {word} To Me
           </div>
         </div>
       ),
       {
-        width: 1200,
-        height: 630,
+        width: 600,
+        height: 300,
         fonts: [
           {
             name: 'Inter',

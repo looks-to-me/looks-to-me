@@ -27,8 +27,8 @@ const fetchImage = async (request: Request, id: string): Promise<Response> => {
 
   // Make the image equal to the width of the overlay without changing the aspect ratio.
   const ratio = image.width / image.height;
-  fetchUrl.searchParams.set('width', '1200');
-  fetchUrl.searchParams.set('height', (1200 / ratio).toString());
+  fetchUrl.searchParams.set('width', '600');
+  fetchUrl.searchParams.set('height', (600 / ratio).toString());
 
   const accept = request.headers.get('accept');
   return await fetch(fetchUrl, {
