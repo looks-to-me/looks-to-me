@@ -29,6 +29,12 @@ export const insertPost = async (post: Post): Promise<Post> => {
   return post;
 };
 
+export const deletePost = async (id: Post['id']): Promise<void> => {
+  await db()
+    .delete(schema.posts)
+    .where(eq(schema.posts.id, id));
+};
+
 export const findPostById = async (id: Post['id']): Promise<Post | undefined> => {
   return await db()
     .select({

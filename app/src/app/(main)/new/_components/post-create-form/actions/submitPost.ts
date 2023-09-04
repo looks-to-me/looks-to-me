@@ -6,8 +6,8 @@ import { z } from 'zod';
 import { getUserMetadata } from '../../../../../_libs/auth/server/get-user-metadata';
 import { env } from '../../../../../_libs/env';
 import { storage } from '../../../../../_libs/storage';
-import { insertImage } from '../../../../_repositories/image-repository';
-import { insertPost } from '../../../../_repositories/post-repository';
+import { deleteImage, insertImage } from '../../../../_repositories/image-repository';
+import { deletePost, insertPost } from '../../../../_repositories/post-repository';
 import { findUserProviderByTypeAndSub } from '../../../../_repositories/user-provider-repository';
 import { findUserById } from '../../../../_repositories/user-repository';
 
@@ -58,7 +58,8 @@ export const submitPost = async (formData: FormData): Promise<SubmitPostResult> 
       height: input.imageHeight,
     });
 
-    await storage().put(`users/${user.id}/images/${image.id}`, await input.image.arrayBuffer());
+    const key = `users/${user.id}/images/${image.id}`;
+    await storage().put(key, await input.image.arrayBuffer());
 
     const post = await insertPost({
       id: createId(),
@@ -67,11 +68,18 @@ export const submitPost = async (formData: FormData): Promise<SubmitPostResult> 
       word: input.word,
     });
 
-    // Pre-cache the posted images.
-    await Promise.all([
+    // TODO: If the request fails, make it retry.
+    const results = await Promise.all([
       fetch(`${env().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id}`),
       fetch(`${env().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id}`, { headers: { 'accept': 'image/webp' } }),
     ]);
+
+    if (results.some(result => !result.ok)) {
+      await deleteImage(image.id);
+      await deletePost(post.id);
+      await storage().delete(key);
+      return { type: 'error', reason: 'unknown', message: 'Post creation failed!' };
+    }
 
     return { type: 'success', message: 'Post created!', redirectUrl: `/@${user.profile.name}/posts/${post.id}` };
   } catch (error) {
