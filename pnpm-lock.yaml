@@ -49,6 +49,9 @@ importers:
 
   app:
     dependencies:
+      '@looks-to-me/package-image-cache':
+        specifier: workspace:*
+        version: link:../packages/image-cache
       '@paralleldrive/cuid2':
         specifier: 2.2.2
         version: 2.2.2
@@ -224,6 +227,15 @@ importers:
       webpack-merge:
         specifier: 5.9.0
         version: 5.9.0
+
+  packages/image-cache:
+    devDependencies:
+      '@cloudflare/workers-types':
+        specifier: 4.20230821.0
+        version: 4.20230821.0
+      typescript:
+        specifier: 5.2.2
+        version: 5.2.2
 
   workers/image-overlay:
     dependencies:
@@ -11498,7 +11510,7 @@ packages:
       set-cookie-parser: 2.6.0
       source-map-support: 0.5.21
       stoppable: 1.1.0
-      undici: 5.22.1
+      undici: 5.23.0
       workerd: 1.20230724.0
       ws: 8.13.0
       youch: 3.2.3
@@ -14242,18 +14254,11 @@ packages:
       which-boxed-primitive: 1.0.2
     dev: true
 
-  /undici@5.22.1:
-    resolution: {integrity: sha512-Ji2IJhFXZY0x/0tVBXeQwgPlLWw13GVzpsWPQ3rV50IFMMof2I55PZZxtm4P6iNq+L5znYN9nSTAq0ZyE6lSJw==}
-    engines: {node: '>=14.0'}
-    dependencies:
-      busboy: 1.6.0
-
   /undici@5.23.0:
     resolution: {integrity: sha512-1D7w+fvRsqlQ9GscLBwcAJinqcZGHUKjbOmXdlE/v8BvEGXjeWAax+341q44EuTcHXXnfyKNbKRq4Lg7OzhMmg==}
     engines: {node: '>=14.0'}
     dependencies:
       busboy: 1.6.0
-    dev: true
 
   /unicode-canonical-property-names-ecmascript@2.0.0:
     resolution: {integrity: sha512-yY5PpDlfVIU5+y/BSCxAJRBIS1Zc2dDG3Ujq+sR0U+JjUevW2JhocOF+soROYDSaAezOzOKuyyixhD6mBknSmQ==}

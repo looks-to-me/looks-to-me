@@ -16,6 +16,7 @@
     "migrate:apply": "wrangler d1 migrations apply local --local"
   },
   "dependencies": {
+    "@looks-to-me/package-image-cache": "workspace:*",
     "@paralleldrive/cuid2": "2.2.2",
     "@radix-ui/react-accessible-icon": "1.0.3",
     "@radix-ui/react-aspect-ratio": "1.0.3",

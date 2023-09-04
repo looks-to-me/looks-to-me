@@ -1,9 +1,11 @@
+import { imageCache } from '@looks-to-me/package-image-cache';
 import { ImageResponse } from 'next/server';
 import { z } from 'zod';
 
 import { loadGoogleFont } from '../../../../_helpers/load-google-font';
-import { imageCache } from '../../_helpers/image-cache';
+import { env } from '../../../../_libs/env';
 
+import type { CacheKeyParams } from '@looks-to-me/package-image-cache';
 import type { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
@@ -27,10 +29,12 @@ const textStyle = {
 };
 
 export const GET = async (request: NextRequest, { params }: { params: { word: string } }) => {
-  return imageCache({
-    url: request.url,
+  const key: CacheKeyParams = {
+    path: new URL(request.url).pathname,
     format: 'png',
-  }, async () => {
+  };
+
+  return imageCache(env().BUCKET, key, async () => {
     const word = wordSchema.parse(params.word);
     return new ImageResponse(
       (
