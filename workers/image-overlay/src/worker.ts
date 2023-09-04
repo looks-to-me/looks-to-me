@@ -28,7 +28,7 @@ export default {
     const accept = request.headers.get('accept');
     const format = accept?.includes('image/webp') ? 'webp' : undefined;
 
-    return fetch(input.origin, {
+    const response = await fetch(input.origin, {
       headers: {
         authorization: `Bearer ${env.INTERNAL_API_TOKEN}`,
       },
@@ -50,5 +50,12 @@ export default {
         },
       },
     });
+
+    const warning = response.headers.get('warning');
+    if (warning) {
+      return new Response(warning, { status: 400 });
+    }
+
+    return response;
   },
 };

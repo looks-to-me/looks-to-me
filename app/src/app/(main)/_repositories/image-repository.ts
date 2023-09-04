@@ -27,6 +27,12 @@ export const insertImage = async (image: Image): Promise<Image> => {
   return image;
 };
 
+export const deleteImage = async (id: Image['id']): Promise<void> => {
+  await db()
+    .delete(schema.images)
+    .where(eq(schema.images.id, id));
+};
+
 export const findImageById = async (id: Image['id']): Promise<Image | undefined> => {
   return await db()
     .select({
