@@ -64,7 +64,7 @@ module.exports = phase => {
     nextConfig.images = {
       ...nextConfig.images,
       loader: 'custom',
-      loaderFile: './next.loader.js',
+      loaderFile: './next.loader.ts',
     };
   }
 
