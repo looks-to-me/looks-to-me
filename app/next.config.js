@@ -7,6 +7,9 @@ const withVanillaExtract = createVanillaExtractPlugin();
 module.exports = phase => {
   /** @type {import('next').NextConfig} */
   const nextConfig = {
+    transpilePackages: [
+      '@looks-to-me/package-image-cache',
+    ],
     eslint: {
       ignoreDuringBuilds: true,
     },
@@ -61,7 +64,7 @@ module.exports = phase => {
     nextConfig.images = {
       ...nextConfig.images,
       loader: 'custom',
-      loaderFile: './next.loader.js',
+      loaderFile: './next.loader.ts',
     };
   }
 

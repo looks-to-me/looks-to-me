@@ -10,6 +10,7 @@ export const env = memoize(() => {
   return createEnv({
     client: {
       NEXT_PUBLIC_APP_ORIGIN: z.string().url(),
+      NEXT_PUBLIC_CDN_ORIGIN: z.string().url(),
     },
     server: {
       NODE_ENV: z.enum(['production', 'development', 'test']),
@@ -20,6 +21,7 @@ export const env = memoize(() => {
     },
     runtimeEnv: {
       NEXT_PUBLIC_APP_ORIGIN: process.env['NEXT_PUBLIC_APP_ORIGIN'],
+      NEXT_PUBLIC_CDN_ORIGIN: process.env['NEXT_PUBLIC_CDN_ORIGIN'],
       NODE_ENV: process.env.NODE_ENV,
       DB: binding('DB'),
       BUCKET: binding('BUCKET'),

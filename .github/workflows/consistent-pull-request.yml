@@ -52,7 +52,7 @@ jobs:
         env:
           BASE_REF: ${{ github.base_ref }}
         run: |
-          if ! [[ "${BASE_REF}" =~ ^(main|staging|develop)$ ]]; then
+          if ! [[ "${BASE_REF}" =~ ^(main|preview)$ ]]; then
               echo "::error::Cannot merge into branch name '${BASE_REF}'."
               exit 1
           fi
