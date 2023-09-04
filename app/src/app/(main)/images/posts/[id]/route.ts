@@ -60,6 +60,7 @@ export const GET = async (request: NextRequest, { params }: { params: { id: stri
     });
 
     return new Response(await response.blob(), {
+      status: response.status,
       headers,
     });
   });
