@@ -34,5 +34,12 @@ export const imageCache = async (bucket: R2Bucket, params: CacheKeyParams, callb
     }
   }
 
-  return new Response(buffer, response);
+  const headers = new Headers(response.headers);
+  headers.set('cache-control', 'public, max-age=31536000, immutable');
+
+  return new Response(buffer, {
+    headers,
+    status: response.status,
+    statusText: response.statusText,
+  });
 };

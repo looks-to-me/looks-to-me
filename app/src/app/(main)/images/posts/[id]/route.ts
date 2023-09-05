@@ -57,15 +57,17 @@ export const GET = async (request: NextRequest, { params }: { params: { id: stri
     const response = await fetchImage(request, params.id);
 
     // Exclude Cloudflare-related headers so that Cloudflare does not mis-detect them as loop backs.
-    const headers: Record<string, string> = { 'cache-control': 'public, max-age=31536000, immutable' };
-    response.headers.forEach((value, key) => {
-      if (key.startsWith('cf-')) return;
-      headers[key] = value;
+    const headers = new Headers(response.headers);
+    headers.forEach((_value, key) => {
+      if (key.startsWith('cf-')) {
+        headers.delete(key);
+      }
     });
 
     return new Response(await response.blob(), {
-      status: response.status,
       headers,
+      status: response.status,
+      statusText: response.statusText,
     });
   });
 };
