@@ -4,8 +4,6 @@ import { z } from 'zod';
 
 import { memoize } from '../../_helpers/memoize';
 
-import type { D1Database, R2Bucket } from '@cloudflare/workers-types';
-
 export const env = memoize(() => {
   return createEnv({
     client: {

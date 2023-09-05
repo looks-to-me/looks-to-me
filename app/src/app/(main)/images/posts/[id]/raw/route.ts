@@ -4,7 +4,6 @@ import { env } from '../../../../../_libs/env';
 import { storage } from '../../../../../_libs/storage';
 import { findPostById } from '../../../../_repositories/post-repository';
 
-import type { Headers as WorkerHeaders } from '@cloudflare/workers-types';
 import type { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
@@ -24,7 +23,7 @@ export const GET = async (request: NextRequest, { params }: { params: { id: stri
   if (!image) return Response.error();
 
   const headers = new Headers();
-  image.writeHttpMetadata(headers as unknown as WorkerHeaders);
+  image.writeHttpMetadata(headers);
   headers.set('etag', image.httpEtag);
   headers.set('cache-control', 'public, max-age=31536000, immutable');
 

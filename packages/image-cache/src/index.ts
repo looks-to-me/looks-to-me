@@ -1,5 +1,3 @@
-import type { Headers as WorkerHeaders, R2Bucket } from '@cloudflare/workers-types';
-
 export type CacheKeyParams = {
   path: string;
   format?: 'webp' | 'png' | undefined;
@@ -19,7 +17,7 @@ export const imageCache = async (bucket: R2Bucket, params: CacheKeyParams, callb
 
   if (cache) {
     const headers = new Headers();
-    cache.writeHttpMetadata(headers as unknown as WorkerHeaders);
+    cache.writeHttpMetadata(headers);
     headers.set('etag', cache.httpEtag);
     headers.set('cache-control', 'public, max-age=31536000, immutable');
     return new Response(await cache.arrayBuffer(), { headers });
