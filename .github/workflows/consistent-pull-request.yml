@@ -23,7 +23,7 @@ jobs:
           PR_NUMBER: ${{ github.event.number }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if ! [[ "${HEAD_REF}" =~ ^(feature|bugfix|refactor|chore|deps)/.* ]]; then
+          if ! [[ "${HEAD_REF}" =~ ^(preview|feature|bugfix|refactor|chore|deps)/.* ]]; then
               echo "::error::Branch name '${HEAD_REF}' does not follow naming convention"
               gh pr close "${PR_NUMBER}"
               exit 1
