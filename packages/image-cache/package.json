@@ -9,7 +9,7 @@
     "lint:type": "tsc --pretty --noEmit"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20230821.0",
+    "@cloudflare/workers-types": "4.20230904.0",
     "typescript": "5.2.2"
   }
 }
