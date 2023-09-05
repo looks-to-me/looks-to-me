@@ -1,0 +1,15 @@
+{
+  "name": "@looks-to-me/package-image-cache",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "lint:code": "eslint",
+    "lint:type": "tsc --pretty --noEmit"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "4.20230904.0",
+    "typescript": "5.2.2"
+  }
+}

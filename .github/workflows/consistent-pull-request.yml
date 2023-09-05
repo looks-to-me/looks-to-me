@@ -17,7 +17,8 @@ jobs:
 
       - name: Check head branch name
         if: >-
-          github.event.action == 'opened'
+          github.event.action == 'opened' &&
+          !contains(fromJSON('["main", "preview"]'), github.head_ref)
         env:
           HEAD_REF: ${{ github.head_ref }}
           PR_NUMBER: ${{ github.event.number }}
@@ -32,7 +33,8 @@ jobs:
       - name: Consistent pull request title and label
         if: >-
           github.event.action != 'synchronize' &&
-          github.event.pull_request.state == 'open'
+          github.event.pull_request.state == 'open' &&
+          !contains(fromJSON('["main", "preview"]'), github.head_ref)
         env:
           HEAD_REF: ${{ github.head_ref }}
           PR_TITLE: ${{ github.event.pull_request.title }}
@@ -48,11 +50,12 @@ jobs:
 
       - name: Check base branch name
         if: >-
-          github.event.pull_request.state == 'open'
+          github.event.pull_request.state == 'open' &&
+          !contains(fromJSON('["main", "preview"]'), github.head_ref)
         env:
           BASE_REF: ${{ github.base_ref }}
         run: |
-          if ! [[ "${BASE_REF}" =~ ^(main|staging|develop)$ ]]; then
+          if ! [[ "${BASE_REF}" =~ ^(main|preview)$ ]]; then
               echo "::error::Cannot merge into branch name '${BASE_REF}'."
               exit 1
           fi
