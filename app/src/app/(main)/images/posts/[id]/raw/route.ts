@@ -26,7 +26,7 @@ export const GET = async (request: NextRequest, { params }: { params: { id: stri
   const headers = new Headers();
   image.writeHttpMetadata(headers as unknown as WorkerHeaders);
   headers.set('etag', image.httpEtag);
-  headers.set('cache-control', 'private, no-store');
+  headers.set('cache-control', 'public, max-age=31536000, immutable');
 
   return new NextResponse(await image.blob() as unknown as Blob, {
     headers,
