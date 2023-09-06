@@ -52,7 +52,9 @@ const UserPostDetailsHeaderPage: FC<UserPostDetailsHeaderPageProps> = async ({
         </h2>
       </div>
       <div className={styles.toolbar}>
-        <ShareButton text={`![LGTM](${env().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id})`} />
+        <ShareButton
+          text={`![L${post.word.toUpperCase().at(0)}TM](${env().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id})`}
+        />
       </div>
     </header>
   );
