@@ -18,17 +18,14 @@ export default {
       width: url.searchParams.get('width'),
     });
 
-    const accept = request.headers.get('accept');
-    const format = accept?.includes('image/webp') ? 'webp' : undefined;
+    const format = request.headers.get('accept')?.includes('image/webp') ? 'webp' : undefined;
 
     const params: ImageCacheParams = {
-      ...ctx,
+      request,
+      format,
+      width: input.width,
       bucket: env.BUCKET,
-      key: {
-        path: url.pathname,
-        width: input.width,
-        format,
-      },
+      waitUntil: ctx.waitUntil.bind(ctx),
     };
 
     return imageCache(params, async () => {

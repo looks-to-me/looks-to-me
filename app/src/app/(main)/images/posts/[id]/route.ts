@@ -52,16 +52,12 @@ export const GET = async (request: NextRequest, context: Context) => {
   const post = await findPostById(context.params.id);
   if (!post) return Response.error();
 
-  const accept = request.headers.get('accept');
-  const format = accept?.includes('image/webp') ? 'webp' : undefined;
-
+  const executionContext = getRequestExecutionContext();
   const params: ImageCacheParams = {
-    ...getRequestExecutionContext(),
+    request,
+    format: request.headers.get('accept')?.includes('image/webp') ? 'webp' : undefined,
     bucket: env().BUCKET,
-    key: {
-      path: new URL(request.url).pathname,
-      format: format,
-    },
+    waitUntil: executionContext.waitUntil.bind(executionContext),
   };
 
   return imageCache(params, async () => {

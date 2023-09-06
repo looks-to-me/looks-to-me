@@ -7,6 +7,9 @@
     "target": "ES2022",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
+    "lib": [
+      "esnext"
+    ],
     "types": [
       "@cloudflare/workers-types"
     ]

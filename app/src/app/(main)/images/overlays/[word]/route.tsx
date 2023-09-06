@@ -36,13 +36,12 @@ type Context = {
 };
 
 export const GET = async (request: NextRequest, context: Context) => {
+  const executionContext = getRequestExecutionContext();
   const params: ImageCacheParams = {
-    ...getRequestExecutionContext(),
+    request,
+    format: 'png',
     bucket: env().BUCKET,
-    key: {
-      path: new URL(request.url).pathname,
-      format: 'png',
-    },
+    waitUntil: executionContext.waitUntil.bind(executionContext),
   };
 
   return imageCache(params, async () => {
