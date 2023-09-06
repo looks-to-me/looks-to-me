@@ -1,3 +1,4 @@
+import { getRequestExecutionContext } from '@cloudflare/next-on-pages/helpers';
 import { imageCache } from '@looks-to-me/package-image-cache';
 import { ImageResponse } from 'next/server';
 import { z } from 'zod';
@@ -5,7 +6,7 @@ import { z } from 'zod';
 import { loadGoogleFont } from '../../../../_helpers/load-google-font';
 import { env } from '../../../../_libs/env';
 
-import type { CacheKeyParams } from '@looks-to-me/package-image-cache';
+import type { ImageCacheParams } from '@looks-to-me/package-image-cache';
 import type { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
@@ -28,14 +29,24 @@ const textStyle = {
     0px 1px 0px #000,  0px -1px 0px #000`,
 };
 
-export const GET = async (request: NextRequest, { params }: { params: { word: string } }) => {
-  const key: CacheKeyParams = {
-    path: new URL(request.url).pathname,
-    format: 'png',
+type Context = {
+  params: {
+    word: string;
+  };
+};
+
+export const GET = async (request: NextRequest, context: Context) => {
+  const params: ImageCacheParams = {
+    ...getRequestExecutionContext(),
+    bucket: env().BUCKET,
+    key: {
+      path: new URL(request.url).pathname,
+      format: 'png',
+    },
   };
 
-  return imageCache(env().BUCKET, key, async () => {
-    const word = wordSchema.parse(params.word);
+  return imageCache(params, async () => {
+    const word = wordSchema.parse(context.params.word);
     return new ImageResponse(
       (
         <div

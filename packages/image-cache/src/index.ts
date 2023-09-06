@@ -11,9 +11,15 @@ const cacheKey = (params: CacheKeyParams): string => {
   return key;
 };
 
-export const imageCache = async (bucket: R2Bucket, params: CacheKeyParams, callback: () => Promise<Response>) => {
-  const key = cacheKey(params);
-  const cache = await bucket.get(key);
+export type ImageCacheParams = {
+  key: CacheKeyParams;
+  bucket: R2Bucket;
+  waitUntil: ExecutionContext['waitUntil'];
+};
+
+export const imageCache = async (params: ImageCacheParams, callback: () => Promise<Response>) => {
+  const key = cacheKey(params.key);
+  const cache = await params.bucket.get(key);
 
   if (cache) {
     const headers = new Headers();
@@ -31,7 +37,7 @@ export const imageCache = async (bucket: R2Bucket, params: CacheKeyParams, callb
     headers.set('cache-control', 'public, max-age=31536000, immutable');
 
     if (headers.get('content-type')?.startsWith('image/')) {
-      await bucket.put(key, buffer);
+      params.waitUntil(params.bucket.put(key, buffer));
     }
   }
 
