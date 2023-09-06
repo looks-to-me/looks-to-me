@@ -27,15 +27,15 @@ export const imageCache = async (bucket: R2Bucket, params: CacheKeyParams, callb
 
   const response = await callback();
   const buffer = await response.arrayBuffer();
+  const headers = new Headers(response.headers);
 
   if (response.ok) {
-    if (response.headers.get('content-type')?.startsWith('image/')) {
+    headers.set('cache-control', 'public, max-age=31536000, immutable');
+
+    if (headers.get('content-type')?.startsWith('image/')) {
       await bucket.put(key, buffer);
     }
   }
-
-  const headers = new Headers(response.headers);
-  headers.set('cache-control', 'public, max-age=31536000, immutable');
 
   return new Response(buffer, {
     headers,
