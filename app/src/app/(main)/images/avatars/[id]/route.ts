@@ -4,8 +4,14 @@ import type { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
 
-export const GET = async (_: NextRequest, { params }: { params: { id: string } }) => {
-  const user = await findUserById(params.id);
+type Context = {
+  params: {
+    id: string;
+  };
+};
+
+export const GET = async (_: NextRequest, context: Context) => {
+  const user = await findUserById(context.params.id);
   if (!user) return Response.error();
   return await fetch(user.profile.avatarUrl);
 };
