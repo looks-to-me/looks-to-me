@@ -4,7 +4,7 @@ import { text, sqliteTable, unique } from 'drizzle-orm/sqlite-core';
 import { users } from './users';
 
 export const userProviders = sqliteTable('user_providers', {
-  userId: text('user_id').notNull(),
+  userId: text('user_id').notNull().references(() => users.id),
   type: text('type').notNull(),
   sub: text('sub').notNull(),
 }, t => ({
