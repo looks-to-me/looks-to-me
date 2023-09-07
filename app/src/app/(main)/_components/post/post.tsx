@@ -23,7 +23,7 @@ export const Post: FC<PostProps> = ({
   post,
 }) => {
   return (
-    <Link className={clsx(className, styles.wrapper)} href={post.link}>
+    <Link className={clsx(className, styles.wrapper)} href={post.link} prefetch={false}>
       <AspectRatio ratio={4 / 3}>
         <Image
           className={styles.image}
