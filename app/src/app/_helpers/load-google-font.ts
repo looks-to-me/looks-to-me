@@ -1,5 +1,3 @@
-/// <reference types="@cloudflare/workers-types" />
-
 export type LoadGoogleFontProps = {
   family: string;
   weight?: number;

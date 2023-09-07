@@ -2,7 +2,7 @@
   "name": "looks-to-me",
   "version": "1.0.0",
   "private": true,
-  "packageManager": "pnpm@8.7.1",
+  "packageManager": "pnpm@8.7.4",
   "scripts": {
     "create:component": "scaffdog generate component",
     "build:ci": "turbo run build:ci",
@@ -14,7 +14,8 @@
       "tsconfig-paths": "4.2.0"
     },
     "patchedDependencies": {
-      "esbuild-register@3.4.2": "patches/esbuild-register@3.4.2.patch"
+      "esbuild-register@3.4.2": "patches/esbuild-register@3.4.2.patch",
+      "@cloudflare/next-on-pages@1.6.0": "patches/@cloudflare__next-on-pages@1.6.0.patch"
     }
   },
   "devDependencies": {
