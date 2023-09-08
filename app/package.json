@@ -44,7 +44,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "server-only": "0.0.1",
-    "sonner": "0.7.0",
+    "sonner": "0.7.1",
     "zod": "3.22.2"
   },
   "devDependencies": {
