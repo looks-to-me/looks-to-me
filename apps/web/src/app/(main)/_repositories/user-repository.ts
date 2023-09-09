@@ -1,6 +1,6 @@
 'use server';
 
-import { eq } from 'drizzle-orm';
+import { eq, sql } from 'drizzle-orm';
 
 import { database } from '../../_libs/database';
 import { schema } from '../../_libs/database/schema';
@@ -14,7 +14,7 @@ export type User = {
   };
 };
 
-export const insertUser = async (user: User): Promise<User> => {
+export const saveUser = async (user: User): Promise<User> => {
   // TODO: Make use of transaction or batch.
   // @see: https://github.com/drizzle-team/drizzle-orm/issues/758
   {
@@ -24,25 +24,32 @@ export const insertUser = async (user: User): Promise<User> => {
         id: user.id,
         registeredAt: new Date(),
       })
+      .onConflictDoUpdate({
+        target: schema.users.id,
+        set: {
+          registeredAt: sql`excluded.registered_at`,
+        },
+      })
       .run();
 
     await database()
       .insert(schema.userProfiles)
       .values({
-        ...user.profile,
         userId: user.id,
-      });
+        name: user.profile.name,
+        displayName: user.profile.displayName,
+        avatarUrl: user.profile.avatarUrl,
+      })
+      .onConflictDoUpdate({
+        target: schema.userProfiles.userId,
+        set: {
+          name: sql`excluded.name`,
+          displayName: sql`excluded.display_name`,
+          avatarUrl: sql`excluded.avatar_url`,
+        },
+      })
+      .run();
   }
-
-  return user;
-};
-
-export const updateUser = async (user: User): Promise<User> => {
-  await database()
-    .update(schema.userProfiles)
-    .set(user.profile)
-    .where(eq(schema.userProfiles.userId, user.id))
-    .run();
 
   return user;
 };
