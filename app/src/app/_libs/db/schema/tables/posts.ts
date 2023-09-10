@@ -14,9 +14,10 @@ export const posts = sqliteTable('posts', {
   wordUnique: unique().on(t.imageId, t.word),
 }));
 
-export const postsRelations = relations(posts, ({ one }) => ({
+export const postsRelations = relations(posts, ({ one, many }) => ({
   user: one(users),
   image: one(images),
+  postTags: many(posts),
 }));
 
 export type Post = typeof posts._.inferSelect;
