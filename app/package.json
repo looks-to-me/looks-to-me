@@ -30,7 +30,7 @@
     "@radix-ui/react-visually-hidden": "1.0.3",
     "@supabase/auth-helpers-nextjs": "0.7.4",
     "@supabase/auth-helpers-react": "0.4.2",
-    "@supabase/supabase-js": "2.33.1",
+    "@supabase/supabase-js": "2.33.2",
     "@t3-oss/env-nextjs": "0.6.1",
     "ahooks": "3.7.8",
     "cf-bindings-proxy": "0.5.0",
