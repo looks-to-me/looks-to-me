@@ -145,7 +145,7 @@ importers:
     devDependencies:
       '@cloudflare/next-on-pages':
         specifier: 1.6.0
-        version: 1.6.0(patch_hash=vzhjonihlo4ohanv4cu4dlt64i)(vercel@32.2.1)(wrangler@3.4.0)
+        version: 1.6.0(patch_hash=vzhjonihlo4ohanv4cu4dlt64i)(vercel@32.2.2)(wrangler@3.4.0)
       '@cloudflare/workers-types':
         specifier: 4.20230904.0
         version: 4.20230904.0
@@ -225,8 +225,8 @@ importers:
         specifier: 5.2.2
         version: 5.2.2
       vercel:
-        specifier: 32.2.1
-        version: 32.2.1(@swc/core@1.3.70)
+        specifier: 32.2.2
+        version: 32.2.2(@swc/core@1.3.70)
       webpack-merge:
         specifier: 5.9.0
         version: 5.9.0
@@ -1760,7 +1760,7 @@ packages:
     dependencies:
       mime: 3.0.0
 
-  /@cloudflare/next-on-pages@1.6.0(patch_hash=vzhjonihlo4ohanv4cu4dlt64i)(vercel@32.2.1)(wrangler@3.4.0):
+  /@cloudflare/next-on-pages@1.6.0(patch_hash=vzhjonihlo4ohanv4cu4dlt64i)(vercel@32.2.2)(wrangler@3.4.0):
     resolution: {integrity: sha512-AeTs0Poqw70HEG6hynO25qx/gYdhTh8hH8E+qjYO+ji0LCKkP7FH12yvOobWKNfsUiTP95+3qz5AF9nvA+2z1g==}
     hasBin: true
     peerDependencies:
@@ -1776,7 +1776,7 @@ packages:
       js-yaml: 4.1.0
       pcre-to-regexp: 1.1.0
       semver: 7.5.4
-      vercel: 32.2.1(@swc/core@1.3.70)
+      vercel: 32.2.2(@swc/core@1.3.70)
       wrangler: 3.4.0
       zod: 3.22.2
       zodcli: 0.0.4(zod@3.22.2)
@@ -6021,8 +6021,8 @@ packages:
       ts-morph: 12.0.0
     dev: true
 
-  /@vercel/next@4.0.3:
-    resolution: {integrity: sha512-L717gOM7Hihsrg8b05aJRfqJmfK0ZgH16GZR1GOOrZdf2Z+0IyRC3lWaT6C7VL0URk0mBHfLlzJX9rjVglSOJw==}
+  /@vercel/next@4.0.4:
+    resolution: {integrity: sha512-XTuo1TWi6rR0UX23Q47goGcVqcHzwBRX6XcOe2FS0HQcAE0WYu2/Hc78JiHQRbd5SgDjAJXfFWl/kQYUhnZ6rw==}
     dev: true
 
   /@vercel/nft@0.22.5:
@@ -6088,8 +6088,8 @@ packages:
       - supports-color
     dev: true
 
-  /@vercel/remix-builder@2.0.4:
-    resolution: {integrity: sha512-OpE/GJxOvzi0J5zxUCZxJfDi11H5a9U0HYwAfMs4x/U6gG2Qzmbgk3kdGNgNuWgAmobvw8pmz1tukkgiJR+0/Q==}
+  /@vercel/remix-builder@2.0.5:
+    resolution: {integrity: sha512-EzqyE/B4dNhKYmukOGBDrRl5Z/J7UkX8Q9DXOr0EBR1fs09l+T/qxLshk7rLU2ubl1oDHiIuxOYQWHVb2vtdFw==}
     dependencies:
       '@vercel/nft': 0.22.5
       '@vercel/static-config': 3.0.0
@@ -14571,19 +14571,19 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vercel@32.2.1(@swc/core@1.3.70):
-    resolution: {integrity: sha512-JFMek2Pu9Fft7iKaKnapkx2FZjUvxTTVr1NMoKK9FNTpjxP17UW2qoqLcyAbwsbNyZLUn5PNd7qOWSFkIEalSw==}
+  /vercel@32.2.2(@swc/core@1.3.70):
+    resolution: {integrity: sha512-00k+/ZfGFjOWM/fobVlJcW56+LUnZC/0MyoeEvLncmjq2jMyDW3qI2ol9R9wGo93FwOUJodPtGnfaV/MO6Ufug==}
     engines: {node: '>= 16'}
     hasBin: true
     dependencies:
       '@vercel/build-utils': 7.2.0
       '@vercel/go': 3.0.1
       '@vercel/hydrogen': 1.0.1
-      '@vercel/next': 4.0.3
+      '@vercel/next': 4.0.4
       '@vercel/node': 3.0.5(@swc/core@1.3.70)
       '@vercel/python': 4.0.1
       '@vercel/redwood': 2.0.2
-      '@vercel/remix-builder': 2.0.4
+      '@vercel/remix-builder': 2.0.5
       '@vercel/ruby': 2.0.2
       '@vercel/static-build': 2.0.5(@swc/core@1.3.70)
     transitivePeerDependencies:
