@@ -198,8 +198,8 @@ importers:
         specifier: 0.5.0
         version: 0.5.0(@vanilla-extract/css@1.13.0)
       '@vanilla-extract/webpack-plugin':
-        specifier: 2.3.0
-        version: 2.3.0(@types/node@20.6.2)(webpack@5.88.1)
+        specifier: 2.3.1
+        version: 2.3.1(@types/node@20.6.2)(webpack@5.88.1)
       better-sqlite3:
         specifier: 8.6.0
         version: 8.6.0
@@ -5933,7 +5933,7 @@ packages:
     peerDependencies:
       next: '>=12.1.7'
     dependencies:
-      '@vanilla-extract/webpack-plugin': 2.3.0(@types/node@20.6.2)(webpack@5.88.1)
+      '@vanilla-extract/webpack-plugin': 2.3.1(@types/node@20.6.2)(webpack@5.88.1)
       browserslist: 4.21.9
       next: 13.4.19(@babel/core@7.22.9)(react-dom@18.2.0)(react@18.2.0)
     transitivePeerDependencies:
@@ -5959,8 +5959,8 @@ packages:
       '@vanilla-extract/css': 1.13.0
     dev: true
 
-  /@vanilla-extract/webpack-plugin@2.3.0(@types/node@20.6.2)(webpack@5.88.1):
-    resolution: {integrity: sha512-c+oaozLGNu+dqLNattJ9nVmy6t2OZw6qEW0xJkPS4bRXlpMSNrPwkKB1Lpov2yd2/eDuxTFi760zTZygwFNBVA==}
+  /@vanilla-extract/webpack-plugin@2.3.1(@types/node@20.6.2)(webpack@5.88.1):
+    resolution: {integrity: sha512-S767iP+S67Uh+BsTe+u60BMbtRqZAxzjK7gYd6a+1hcbMKznYxdQMeP2qs9wr+NhRqZFrNxewo3/ztMnN85TOg==}
     peerDependencies:
       webpack: ^4.30.0 || ^5.20.2
     dependencies:
@@ -10929,6 +10929,7 @@ packages:
   /json5@2.2.3:
     resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
     engines: {node: '>=6'}
+    hasBin: true
 
   /jsonc-parser@3.2.0:
     resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==}
@@ -13130,6 +13131,7 @@ packages:
   /rollup@3.25.2:
     resolution: {integrity: sha512-VLnkxZMDr3jpxgtmS8pQZ0UvhslmF4ADq/9w4erkctbgjCqLW9oa89fJuXEs4ZmgyoF7Dm8rMDKSS5b5u2hHUg==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
+    hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
@@ -14612,6 +14614,7 @@ packages:
   /vite-node@0.28.5(@types/node@20.6.2):
     resolution: {integrity: sha512-LmXb9saMGlrMZbXTvOveJKwMTBTNUH66c8rJnQ0ZPNX+myPEol64+szRzXtV5ORb0Hb/91yq+/D3oERoyAt6LA==}
     engines: {node: '>=v14.16.0'}
+    hasBin: true
     dependencies:
       cac: 6.7.14
       debug: 4.3.4
