@@ -105,7 +105,7 @@ importers:
         version: 3.7.8(react@18.2.0)
       cf-bindings-proxy:
         specifier: 0.5.0
-        version: 0.5.0(@cloudflare/workers-types@4.20230904.0)(wrangler@3.4.0)
+        version: 0.5.0(@cloudflare/workers-types@4.20230914.0)(wrangler@3.4.0)
       client-only:
         specifier: 0.0.1
         version: 0.0.1
@@ -120,7 +120,7 @@ importers:
         version: 4.3.1
       drizzle-orm:
         specifier: 0.28.6
-        version: 0.28.6(@cloudflare/workers-types@4.20230904.0)(better-sqlite3@8.6.0)
+        version: 0.28.6(@cloudflare/workers-types@4.20230914.0)(better-sqlite3@8.6.0)
       modern-normalize:
         specifier: 2.0.0
         version: 2.0.0
@@ -147,8 +147,8 @@ importers:
         specifier: 1.6.0
         version: 1.6.0(patch_hash=vzhjonihlo4ohanv4cu4dlt64i)(vercel@32.2.5)(wrangler@3.4.0)
       '@cloudflare/workers-types':
-        specifier: 4.20230904.0
-        version: 4.20230904.0
+        specifier: 4.20230914.0
+        version: 4.20230914.0
       '@sqlite.org/sqlite-wasm':
         specifier: 3.42.0-build7
         version: 3.42.0-build7
@@ -234,8 +234,8 @@ importers:
   packages/image-cache:
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: 4.20230904.0
-        version: 4.20230904.0
+        specifier: 4.20230914.0
+        version: 4.20230914.0
       typescript:
         specifier: 5.2.2
         version: 5.2.2
@@ -250,8 +250,8 @@ importers:
         version: 3.22.2
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: 4.20230904.0
-        version: 4.20230904.0
+        specifier: 4.20230914.0
+        version: 4.20230914.0
       typescript:
         specifier: 5.2.2
         version: 5.2.2
@@ -266,8 +266,8 @@ importers:
         version: 3.22.2
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: 4.20230904.0
-        version: 4.20230904.0
+        specifier: 4.20230914.0
+        version: 4.20230914.0
       typescript:
         specifier: 5.2.2
         version: 5.2.2
@@ -1823,8 +1823,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@cloudflare/workers-types@4.20230904.0:
-    resolution: {integrity: sha512-IX4oJCe14ctblSPZBlW64BVZ9nYLUo6sD2I5gu3hX0ywByYWm1OuoKm9Xb/Zpbj8Ph18Z7Ryii6u2/ocnncXdA==}
+  /@cloudflare/workers-types@4.20230914.0:
+    resolution: {integrity: sha512-OVeN4lFVu1O0PJGZ2d0FwpK8lelFcr33qYOgCh77ErEYmEBO4adwnIxcIsdQbFbhF0ffN6joiVcljD4zakdaeQ==}
 
   /@colors/colors@1.5.0:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
@@ -7166,14 +7166,14 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /cf-bindings-proxy@0.5.0(@cloudflare/workers-types@4.20230904.0)(wrangler@3.4.0):
+  /cf-bindings-proxy@0.5.0(@cloudflare/workers-types@4.20230914.0)(wrangler@3.4.0):
     resolution: {integrity: sha512-nzpUv1J3uwmJ3Zf9BemI3ffZS0BVHmWuvL1YivdapiqXpmuQNnFhGi45eeXCG0U4n0yLVfegHvgxC847LgC70w==}
     hasBin: true
     peerDependencies:
       '@cloudflare/workers-types': '>=4'
       wrangler: '>=3.0.0'
     dependencies:
-      '@cloudflare/workers-types': 4.20230904.0
+      '@cloudflare/workers-types': 4.20230914.0
       wrangler: 3.4.0
     dev: false
 
@@ -8102,7 +8102,7 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.28.6(@cloudflare/workers-types@4.20230904.0)(better-sqlite3@8.6.0):
+  /drizzle-orm@0.28.6(@cloudflare/workers-types@4.20230914.0)(better-sqlite3@8.6.0):
     resolution: {integrity: sha512-yBe+F9htrlYER7uXgDJUQsTHFoIrI5yMm5A0bg0GiZ/kY5jNXTWoEy4KQtg35cE27sw1VbgzoMWHAgCckUUUww==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
@@ -8164,7 +8164,7 @@ packages:
       sqlite3:
         optional: true
     dependencies:
-      '@cloudflare/workers-types': 4.20230904.0
+      '@cloudflare/workers-types': 4.20230914.0
       better-sqlite3: 8.6.0
     dev: false
 
