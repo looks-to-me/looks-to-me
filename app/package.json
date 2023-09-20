@@ -59,7 +59,7 @@
     "@storybook/react": "7.4.2",
     "@svgr/webpack": "8.1.0",
     "@tsconfig/next": "2.0.0",
-    "@types/node": "20.6.2",
+    "@types/node": "20.6.3",
     "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
     "@vanilla-extract/css": "1.13.0",
