@@ -137,8 +137,8 @@ importers:
         specifier: 0.0.1
         version: 0.0.1
       sonner:
-        specifier: 0.7.4
-        version: 0.7.4(react-dom@18.2.0)(react@18.2.0)
+        specifier: 1.0.3
+        version: 1.0.3(react-dom@18.2.0)(react@18.2.0)
       zod:
         specifier: 3.22.2
         version: 3.22.2
@@ -13610,8 +13610,8 @@ packages:
       tslib: 2.5.3
     dev: true
 
-  /sonner@0.7.4(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-xRVYOCTAxJge7hRGSwu7q+gIS9B2csuOZw8yNEaXe/qlncft5a7UmkttGNb4LOGu79rAB/GJ6JQbUMpJNf51Nw==}
+  /sonner@1.0.3(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-hBoA2zKuYW3lUnpx4K0vAn8j77YuYiwvP9sLQfieNS2pd5FkT20sMyPTDJnl9S+5T27ZJbwQRPiujwvDBwhZQg==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
