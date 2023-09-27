@@ -1,11 +1,15 @@
 import { createEnv } from '@t3-oss/env-nextjs';
 import { binding } from 'cf-bindings-proxy';
+import { PHASE_PRODUCTION_BUILD } from 'next/constants';
 import { z } from 'zod';
 
 import { memoize } from '../../_helpers/memoize';
 
+const isBuildPhase = process.env['NEXT_PHASE'] === PHASE_PRODUCTION_BUILD;
+
 export const env = memoize(() => {
   return createEnv({
+    isServer: isBuildPhase ? false : typeof window === 'undefined',
     client: {
       NEXT_PUBLIC_APP_ORIGIN: z.string().url(),
       NEXT_PUBLIC_CDN_ORIGIN: z.string().url(),
