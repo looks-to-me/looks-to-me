@@ -28,6 +28,6 @@
     "eslint-plugin-unused-imports": "3.0.0",
     "scaffdog": "3.0.0",
     "turbo": "1.10.14",
-    "wrangler": "3.4.0"
+    "wrangler": "3.10.0"
   }
 }
