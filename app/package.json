@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "1.6.0",
-    "@cloudflare/workers-types": "4.20230922.0",
+    "@cloudflare/workers-types": "4.20231002.0",
     "@sqlite.org/sqlite-wasm": "3.42.0-build7",
     "@storybook/addon-essentials": "7.4.5",
     "@storybook/addon-interactions": "7.4.5",
