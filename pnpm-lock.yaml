@@ -99,7 +99,7 @@ importers:
         version: 2.37.0
       '@t3-oss/env-nextjs':
         specifier: 0.6.1
-        version: 0.6.1(typescript@5.2.2)(zod@3.22.2)
+        version: 0.6.1(typescript@5.2.2)(zod@3.22.3)
       ahooks:
         specifier: 3.7.8
         version: 3.7.8(react@18.2.0)
@@ -140,8 +140,8 @@ importers:
         specifier: 1.0.3
         version: 1.0.3(react-dom@18.2.0)(react@18.2.0)
       zod:
-        specifier: 3.22.2
-        version: 3.22.2
+        specifier: 3.22.3
+        version: 3.22.3
     devDependencies:
       '@cloudflare/next-on-pages':
         specifier: 1.6.0
@@ -246,8 +246,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/image-cache
       zod:
-        specifier: 3.22.2
-        version: 3.22.2
+        specifier: 3.22.3
+        version: 3.22.3
     devDependencies:
       '@cloudflare/workers-types':
         specifier: 4.20231002.0
@@ -262,8 +262,8 @@ importers:
   workers/image-overlay:
     dependencies:
       zod:
-        specifier: 3.22.2
-        version: 3.22.2
+        specifier: 3.22.3
+        version: 3.22.3
     devDependencies:
       '@cloudflare/workers-types':
         specifier: 4.20231002.0
@@ -1772,8 +1772,8 @@ packages:
       semver: 7.5.4
       vercel: 32.3.1(@swc/core@1.3.70)
       wrangler: 3.10.1
-      zod: 3.22.2
-      zodcli: 0.0.4(zod@3.22.2)
+      zod: 3.22.3
+      zodcli: 0.0.4(zod@3.22.3)
     dev: true
     patched: true
 
@@ -3861,7 +3861,7 @@ packages:
     dependencies:
       '@scaffdog/types': 3.0.0
       jiti: 1.19.1
-      zod: 3.22.2
+      zod: 3.22.3
     dev: true
 
   /@scaffdog/core@3.0.0:
@@ -5367,25 +5367,25 @@ packages:
       defer-to-connect: 2.0.1
     dev: true
 
-  /@t3-oss/env-core@0.6.1(typescript@5.2.2)(zod@3.22.2):
+  /@t3-oss/env-core@0.6.1(typescript@5.2.2)(zod@3.22.3):
     resolution: {integrity: sha512-KQD7qEDJtkWIWWmTVjNvk0wnHpkvAQ6CRbUxbWMFNG/fiosBQDQvtRpBNu6USxBscJCoC4z6y7P9MN52/mLOzw==}
     peerDependencies:
       typescript: '>=4.7.2'
       zod: ^3.0.0
     dependencies:
       typescript: 5.2.2
-      zod: 3.22.2
+      zod: 3.22.3
     dev: false
 
-  /@t3-oss/env-nextjs@0.6.1(typescript@5.2.2)(zod@3.22.2):
+  /@t3-oss/env-nextjs@0.6.1(typescript@5.2.2)(zod@3.22.3):
     resolution: {integrity: sha512-z1dIC++Vxj9kmzX5nSPfcrCSkszy3dTEPC4Ssx7Ap5AqR3c2Qa7S0xf8axn6coy7D/vCXDAAnHYnCMDhtcY3SQ==}
     peerDependencies:
       typescript: '>=4.7.2'
       zod: ^3.0.0
     dependencies:
-      '@t3-oss/env-core': 0.6.1(typescript@5.2.2)(zod@3.22.2)
+      '@t3-oss/env-core': 0.6.1(typescript@5.2.2)(zod@3.22.3)
       typescript: 5.2.2
-      zod: 3.22.2
+      zod: 3.22.3
     dev: false
 
   /@tootallnate/once@2.0.0:
@@ -8312,7 +8312,7 @@ packages:
       hanji: 0.0.5
       json-diff: 0.9.0
       minimatch: 7.4.6
-      zod: 3.22.2
+      zod: 3.22.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -11941,7 +11941,7 @@ packages:
       workerd: 1.20230922.0
       ws: 8.13.0
       youch: 3.2.3
-      zod: 3.22.2
+      zod: 3.22.3
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -13741,7 +13741,7 @@ packages:
       valid-filename: 4.0.0
       wrap-ansi: 8.1.0
       yargs: 17.7.2
-      zod: 3.22.2
+      zod: 3.22.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -15725,14 +15725,14 @@ packages:
       mustache: 4.2.0
       stacktracey: 2.1.8
 
-  /zod@3.22.2:
-    resolution: {integrity: sha512-wvWkphh5WQsJbVk1tbx1l1Ly4yg+XecD+Mq280uBGt9wa5BKSWf4Mhp6GmrkPixhMxmabYY7RbzlwVP32pbGCg==}
+  /zod@3.22.3:
+    resolution: {integrity: sha512-EjIevzuJRiRPbVH4mGc8nApb/lVLKVpmUhAaR5R5doKGfAnGJ6Gr3CViAVjP+4FWSxCsybeWQdcgCtbX+7oZug==}
 
-  /zodcli@0.0.4(zod@3.22.2):
+  /zodcli@0.0.4(zod@3.22.3):
     resolution: {integrity: sha512-+WdBcf7Z19ueKI/w9SbxRXGyPnn5Fg/hc2nvOL3YKwcnhL2dvp58MvZwScvJS/Zqt4ePwSOLajboFG6su8BM8w==}
     peerDependencies:
       zod: ^3.21.4
     dependencies:
       typescript: 4.9.5
-      zod: 3.22.2
+      zod: 3.22.3
     dev: true
