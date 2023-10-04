@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@looks-to-me/package-image-cache": "workspace:*",
-    "zod": "3.22.2"
+    "zod": "3.22.3"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20231002.0",
