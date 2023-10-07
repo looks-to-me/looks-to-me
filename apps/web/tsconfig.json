@@ -8,8 +8,9 @@
     "plugins": [
       { "name": "next" }
     ],
-    "types": [
-      "@cloudflare/workers-types"
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/@cloudflare/workers-types"
     ]
   },
   "include": [

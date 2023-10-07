@@ -19,7 +19,7 @@ CREATE TABLE `temp` (
 );
 --> statement-breakpoint
 DROP INDEX IF EXISTS `user_providers_type_sub_unique`;--> statement-breakpoint
-CREATE UNIQUE INDEX `user_providers_type_sub_unique` ON `temp` (`type`,`sub`);
+CREATE UNIQUE INDEX `user_providers_type_sub_unique` ON `temp` (`type`,`sub`);--> statement-breakpoint
 INSERT INTO `temp` SELECT * FROM `user_providers`;--> statement-breakpoint
 DROP TABLE `user_providers`;--> statement-breakpoint
 ALTER TABLE `temp` RENAME TO `user_providers`;
