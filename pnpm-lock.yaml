@@ -174,8 +174,8 @@ importers:
         specifier: 8.1.0
         version: 8.1.0
       '@tsconfig/next':
-        specifier: 2.0.0
-        version: 2.0.0
+        specifier: 2.0.1
+        version: 2.0.1
       '@types/node':
         specifier: 20.8.2
         version: 20.8.2
@@ -5412,8 +5412,8 @@ packages:
       path-browserify: 1.0.1
     dev: true
 
-  /@tsconfig/next@2.0.0:
-    resolution: {integrity: sha512-ip/XpFLWuUrhDkbI8ixpWxPlmWvUhQCLS5rB7nibcZUavA1Ru34Q7a5CniBM7BdHw1YlAXu40HXUn66h/A4EBQ==}
+  /@tsconfig/next@2.0.1:
+    resolution: {integrity: sha512-8Za+6fv85ipdoO1u/Xknyurab8T92LbS0/KzRB0/GHvPh3xl0L4yf5+VmSxXNwjF1uS/xLSqf+BPhfaqasCpZw==}
     dev: true
 
   /@tsconfig/node10@1.0.9:

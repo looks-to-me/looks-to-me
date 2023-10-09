@@ -58,7 +58,7 @@
     "@storybook/nextjs": "7.4.6",
     "@storybook/react": "7.4.6",
     "@svgr/webpack": "8.1.0",
-    "@tsconfig/next": "2.0.0",
+    "@tsconfig/next": "2.0.1",
     "@types/node": "20.8.2",
     "@types/react": "18.2.25",
     "@types/react-dom": "18.2.10",
