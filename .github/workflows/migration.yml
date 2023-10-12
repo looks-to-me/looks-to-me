@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - apps/migrations/**
+      - apps/web/migrations/**
 
 jobs:
   migration:
