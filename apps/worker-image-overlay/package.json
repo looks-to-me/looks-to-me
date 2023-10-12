@@ -1,5 +1,5 @@
 {
-  "name": "@looks-to-me/worker-image-overlay",
+  "name": "@looks-to-me/app-worker-image-overlay",
   "version": "1.0.0",
   "private": true,
   "scripts": {

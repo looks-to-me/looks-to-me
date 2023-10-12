@@ -250,16 +250,7 @@ importers:
         specifier: 3.12.0
         version: 3.12.0
 
-  packages/image-cache:
-    devDependencies:
-      '@cloudflare/workers-types':
-        specifier: 4.20231010.0
-        version: 4.20231010.0
-      typescript:
-        specifier: 5.2.2
-        version: 5.2.2
-
-  workers/image-overlay:
+  apps/worker-image-overlay:
     dependencies:
       zod:
         specifier: 3.22.4
@@ -274,6 +265,15 @@ importers:
       wrangler:
         specifier: 3.12.0
         version: 3.12.0
+
+  packages/image-cache:
+    devDependencies:
+      '@cloudflare/workers-types':
+        specifier: 4.20231010.0
+        version: 4.20231010.0
+      typescript:
+        specifier: 5.2.2
+        version: 5.2.2
 
 packages:
 
