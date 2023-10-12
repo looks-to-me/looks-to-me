@@ -8,9 +8,9 @@ overrides:
   tsconfig-paths: 4.2.0
 
 patchedDependencies:
-  '@cloudflare/next-on-pages@1.6.0':
-    hash: vzhjonihlo4ohanv4cu4dlt64i
-    path: patches/@cloudflare__next-on-pages@1.6.0.patch
+  '@cloudflare/next-on-pages@1.6.3':
+    hash: zc57uqp6fxwv3ndk2mwwkia4ny
+    path: patches/@cloudflare__next-on-pages@1.6.3.patch
   esbuild-register@3.4.2:
     hash: spgfiu64hqpilsoes5nxr46kwy
     path: patches/esbuild-register@3.4.2.patch
@@ -144,8 +144,8 @@ importers:
         version: 3.22.4
     devDependencies:
       '@cloudflare/next-on-pages':
-        specifier: 1.6.0
-        version: 1.6.0(patch_hash=vzhjonihlo4ohanv4cu4dlt64i)(vercel@32.4.1)(wrangler@3.12.0)
+        specifier: 1.6.3
+        version: 1.6.3(patch_hash=zc57uqp6fxwv3ndk2mwwkia4ny)(vercel@32.4.1)(wrangler@3.12.0)
       '@cloudflare/workers-types':
         specifier: 4.20231010.0
         version: 4.20231010.0
@@ -1754,11 +1754,11 @@ packages:
     dependencies:
       mime: 3.0.0
 
-  /@cloudflare/next-on-pages@1.6.0(patch_hash=vzhjonihlo4ohanv4cu4dlt64i)(vercel@32.4.1)(wrangler@3.12.0):
-    resolution: {integrity: sha512-AeTs0Poqw70HEG6hynO25qx/gYdhTh8hH8E+qjYO+ji0LCKkP7FH12yvOobWKNfsUiTP95+3qz5AF9nvA+2z1g==}
+  /@cloudflare/next-on-pages@1.6.3(patch_hash=zc57uqp6fxwv3ndk2mwwkia4ny)(vercel@32.4.1)(wrangler@3.12.0):
+    resolution: {integrity: sha512-v+gmG3M8mOUJxeby3Odtuz64D5ta/6bF9rjAiKiq7YQtoRNgYaMZwLOFz7sejabEC2CukjW1Zbj8YULFM1jcOw==}
     hasBin: true
     peerDependencies:
-      vercel: ^30.0.0 || ^31.0.0 || ^32.0.0
+      vercel: '>=30.0.0'
       wrangler: ^3.0.0
     dependencies:
       acorn: 8.9.0
