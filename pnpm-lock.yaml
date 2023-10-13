@@ -47,8 +47,8 @@ importers:
         specifier: 1.10.15
         version: 1.10.15
       wrangler:
-        specifier: 3.12.0
-        version: 3.12.0
+        specifier: 3.13.1
+        version: 3.13.1
 
   apps/web:
     dependencies:
@@ -105,7 +105,7 @@ importers:
         version: 3.7.8(react@18.2.0)
       cf-bindings-proxy:
         specifier: 0.7.0
-        version: 0.7.0(@cloudflare/workers-types@4.20231010.0)(wrangler@3.12.0)
+        version: 0.7.0(@cloudflare/workers-types@4.20231010.0)(wrangler@3.13.1)
       client-only:
         specifier: 0.0.1
         version: 0.0.1
@@ -145,7 +145,7 @@ importers:
     devDependencies:
       '@cloudflare/next-on-pages':
         specifier: 1.6.3
-        version: 1.6.3(patch_hash=zc57uqp6fxwv3ndk2mwwkia4ny)(vercel@32.4.1)(wrangler@3.12.0)
+        version: 1.6.3(patch_hash=zc57uqp6fxwv3ndk2mwwkia4ny)(vercel@32.4.1)(wrangler@3.13.1)
       '@cloudflare/workers-types':
         specifier: 4.20231010.0
         version: 4.20231010.0
@@ -247,8 +247,8 @@ importers:
         specifier: 5.2.2
         version: 5.2.2
       wrangler:
-        specifier: 3.12.0
-        version: 3.12.0
+        specifier: 3.13.1
+        version: 3.13.1
 
   apps/worker-image-overlay:
     dependencies:
@@ -263,8 +263,8 @@ importers:
         specifier: 5.2.2
         version: 5.2.2
       wrangler:
-        specifier: 3.12.0
-        version: 3.12.0
+        specifier: 3.13.1
+        version: 3.13.1
 
   packages/image-cache:
     devDependencies:
@@ -1755,7 +1755,7 @@ packages:
     dependencies:
       mime: 3.0.0
 
-  /@cloudflare/next-on-pages@1.6.3(patch_hash=zc57uqp6fxwv3ndk2mwwkia4ny)(vercel@32.4.1)(wrangler@3.12.0):
+  /@cloudflare/next-on-pages@1.6.3(patch_hash=zc57uqp6fxwv3ndk2mwwkia4ny)(vercel@32.4.1)(wrangler@3.13.1):
     resolution: {integrity: sha512-v+gmG3M8mOUJxeby3Odtuz64D5ta/6bF9rjAiKiq7YQtoRNgYaMZwLOFz7sejabEC2CukjW1Zbj8YULFM1jcOw==}
     hasBin: true
     peerDependencies:
@@ -1772,7 +1772,7 @@ packages:
       pcre-to-regexp: 1.1.0
       semver: 7.5.4
       vercel: 32.4.1(@swc/core@1.3.70)
-      wrangler: 3.12.0
+      wrangler: 3.13.1
       zod: 3.22.4
       zodcli: 0.0.4(zod@3.22.4)
     dev: true
@@ -7343,7 +7343,7 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /cf-bindings-proxy@0.7.0(@cloudflare/workers-types@4.20231010.0)(wrangler@3.12.0):
+  /cf-bindings-proxy@0.7.0(@cloudflare/workers-types@4.20231010.0)(wrangler@3.13.1):
     resolution: {integrity: sha512-o6cSJKQGIJkjB4nZWKNZAZOmzjY+LZxiybsTIviO8qWNwLD7Oe4AsnQ/pW4KaYmDBfBxMzLyewSj0tA2TU/KWw==}
     hasBin: true
     peerDependencies:
@@ -7351,7 +7351,7 @@ packages:
       wrangler: '>=3.0.0'
     dependencies:
       '@cloudflare/workers-types': 4.20231010.0
-      wrangler: 3.12.0
+      wrangler: 3.13.1
     dev: false
 
   /chalk@2.4.2:
@@ -15491,8 +15491,8 @@ packages:
       '@cloudflare/workerd-linux-arm64': 1.20231010.0
       '@cloudflare/workerd-windows-64': 1.20231010.0
 
-  /wrangler@3.12.0:
-    resolution: {integrity: sha512-tD0IKd+1n/K9LSAa+p4LPImaLr0qfDxR05Cajoq/1bY4Jd5Lvd3sYhPOPi0cn36udWKawo5Kz79EGzo9U0/nlw==}
+  /wrangler@3.13.1:
+    resolution: {integrity: sha512-CY73h4lfPx/3CmkC/tPj66DRRZ9Y42sMcHys6B6tjCILUo950IeOvnsj759el3/ewFLY4kG4jCrrrikan6TE+Q==}
     engines: {node: '>=16.13.0'}
     hasBin: true
     dependencies:
