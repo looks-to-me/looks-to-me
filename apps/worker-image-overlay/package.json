@@ -1,5 +1,5 @@
 {
-  "name": "@looks-to-me/worker-cdn",
+  "name": "@looks-to-me/app-worker-image-overlay",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,6 @@
     "lint:type": "tsc --pretty --noEmit"
   },
   "dependencies": {
-    "@looks-to-me/package-image-cache": "workspace:*",
     "zod": "3.22.4"
   },
   "devDependencies": {

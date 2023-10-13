@@ -50,11 +50,11 @@ importers:
         specifier: 3.12.0
         version: 3.12.0
 
-  app:
+  apps/web:
     dependencies:
       '@looks-to-me/package-image-cache':
         specifier: workspace:*
-        version: link:../packages/image-cache
+        version: link:../../packages/image-cache
       '@paralleldrive/cuid2':
         specifier: 2.2.2
         version: 2.2.2
@@ -231,16 +231,7 @@ importers:
         specifier: 5.9.0
         version: 5.9.0
 
-  packages/image-cache:
-    devDependencies:
-      '@cloudflare/workers-types':
-        specifier: 4.20231010.0
-        version: 4.20231010.0
-      typescript:
-        specifier: 5.2.2
-        version: 5.2.2
-
-  workers/cdn:
+  apps/worker-cdn:
     dependencies:
       '@looks-to-me/package-image-cache':
         specifier: workspace:*
@@ -259,7 +250,7 @@ importers:
         specifier: 3.12.0
         version: 3.12.0
 
-  workers/image-overlay:
+  apps/worker-image-overlay:
     dependencies:
       zod:
         specifier: 3.22.4
@@ -274,6 +265,15 @@ importers:
       wrangler:
         specifier: 3.12.0
         version: 3.12.0
+
+  packages/image-cache:
+    devDependencies:
+      '@cloudflare/workers-types':
+        specifier: 4.20231010.0
+        version: 4.20231010.0
+      typescript:
+        specifier: 5.2.2
+        version: 5.2.2
 
 packages:
 
@@ -675,6 +675,7 @@ packages:
   /@babel/plugin-proposal-unicode-property-regex@7.18.6(@babel/core@7.22.9):
     resolution: {integrity: sha512-2BShG/d5yoZyXZfVePH91urL5wTG6ASZU9M4o03lKK8u8UW1y08OMttBSOADTcJrnPMpvDXRG3G8fyLh4ovs8w==}
     engines: {node: '>=4'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-unicode-property-regex instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -3917,6 +3918,7 @@ packages:
 
   /@sqlite.org/sqlite-wasm@3.42.0-build7:
     resolution: {integrity: sha512-3c8zpD8w9ex9ZA+y86tv85bj9zioRsCTt9MkVPEwAjhZ8InjxeoLZTyCw0LpH6fF9N2V1iZCKeFoDVbimv1q8g==}
+    hasBin: true
     optionalDependencies:
       comlink: 4.4.1
     dev: true
@@ -7917,6 +7919,7 @@ packages:
   /cssesc@3.0.0:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
     engines: {node: '>=4'}
+    hasBin: true
     dev: true
 
   /csso@5.0.5:
@@ -8307,6 +8310,7 @@ packages:
 
   /drizzle-kit@0.19.13:
     resolution: {integrity: sha512-Rba5VW1O2JfJlwVBeZ8Zwt2E2us5oZ08PQBDiVSGlug53TOc8hzXjblZFuF+dnll9/RQEHrkzBmJFgqTvn5Rxg==}
+    hasBin: true
     dependencies:
       '@drizzle-team/studio': 0.0.5
       '@esbuild-kit/esm-loader': 2.5.5
@@ -9141,6 +9145,7 @@ packages:
   /esbuild@0.18.12:
     resolution: {integrity: sha512-XuOVLDdtsDslXStStduT41op21Ytmf4/BDS46aa3xPJ7X5h2eMWBF1oAe3QjUH3bDksocNXgzGUZ7XHIBya6Tg==}
     engines: {node: '>=12'}
+    hasBin: true
     requiresBuild: true
     optionalDependencies:
       '@esbuild/android-arm': 0.18.12
@@ -11282,6 +11287,7 @@ packages:
 
   /json-diff@0.9.0:
     resolution: {integrity: sha512-cVnggDrVkAAA3OvFfHpFEhOnmcsUpleEKq4d4O8sQWWSH40MBrWstKigVB1kGrgLWzuom+7rRdaCsnBD6VyObQ==}
+    hasBin: true
     dependencies:
       cli-color: 2.0.3
       difflib: 0.2.4
@@ -11478,6 +11484,7 @@ packages:
 
   /loose-envify@1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
+    hasBin: true
     dependencies:
       js-tokens: 4.0.0
 
@@ -12869,15 +12876,6 @@ packages:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
     dev: true
 
-  /postcss@8.4.24:
-    resolution: {integrity: sha512-M0RzbcI0sO/XJNucsGjvWU9ERWxb/ytp1w6dKtxTKgixdtQDq4rmx/g8W1hnaheq9jgwL/oyEdH5Bc4WwJKMqg==}
-    engines: {node: ^10 || ^12 || >=14}
-    dependencies:
-      nanoid: 3.3.6
-      picocolors: 1.0.0
-      source-map-js: 1.0.2
-    dev: true
-
   /postcss@8.4.31:
     resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
     engines: {node: ^10 || ^12 || >=14}
@@ -13430,6 +13428,7 @@ packages:
 
   /regjsparser@0.9.1:
     resolution: {integrity: sha512-dQUtn90WanSNl+7mQKcXAgZxvUe7Z0SqXlgzv0za4LwiUhyzBC58yQO3liFoUgu8GiJVInAhJjkj1N0EtQ5nkQ==}
+    hasBin: true
     dependencies:
       jsesc: 0.5.0
     dev: true
@@ -14307,6 +14306,7 @@ packages:
   /svgo@3.0.2:
     resolution: {integrity: sha512-Z706C1U2pb1+JGP48fbazf3KxHrWOsLme6Rv7imFBn5EnuanDW1GPaA/P1/dvObE670JDePC3mnj0k0B7P0jjQ==}
     engines: {node: '>=14.0.0'}
+    hasBin: true
     dependencies:
       '@trysound/sax': 0.2.0
       commander: 7.2.0
@@ -15264,7 +15264,7 @@ packages:
     dependencies:
       '@types/node': 20.8.4
       esbuild: 0.17.19
-      postcss: 8.4.24
+      postcss: 8.4.31
       rollup: 3.25.2
     optionalDependencies:
       fsevents: 2.3.2
