@@ -84,6 +84,7 @@ export const InputImageWithPreview: FC<InputImageWithPreviewProps> = ({
 
   return (
     <div className={clsx(className, styles.wrapper)}>
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
       <div
         className={styles.dropZone}
         onClick={handleClick}

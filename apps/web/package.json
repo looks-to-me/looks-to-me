@@ -48,8 +48,11 @@
     "zod": "3.22.4"
   },
   "devDependencies": {
+    "@agaroot/eslint-config-next": "2.0.0",
+    "@agaroot/eslint-config-react": "2.0.0",
     "@cloudflare/next-on-pages": "1.6.3",
     "@cloudflare/workers-types": "4.20231016.0",
+    "@next/eslint-plugin-next": "13.5.5",
     "@sqlite.org/sqlite-wasm": "3.42.0-build7",
     "@storybook/addon-essentials": "7.5.0",
     "@storybook/addon-interactions": "7.5.0",
@@ -70,7 +73,10 @@
     "better-sqlite3": "9.0.0",
     "drizzle-kit": "0.19.13",
     "eslint-config-next": "13.5.5",
+    "eslint-plugin-jsx-a11y": "6.7.1",
     "eslint-plugin-next-on-pages": "1.6.3",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react-hooks": "4.6.0",
     "mini-css-extract-plugin": "2.7.6",
     "rimraf": "5.0.5",
     "storybook": "7.5.0",
