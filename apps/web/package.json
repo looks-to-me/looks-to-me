@@ -77,6 +77,6 @@
     "typescript": "5.2.2",
     "vercel": "32.4.1",
     "webpack-merge": "5.10.0",
-    "wrangler": "3.13.1"
+    "wrangler": "3.13.2"
   }
 }
