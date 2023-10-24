@@ -150,8 +150,8 @@ importers:
         version: 3.22.4
     devDependencies:
       '@agaroot/eslint-config-next':
-        specifier: 2.0.0
-        version: 2.0.0(@next/eslint-plugin-next@13.5.6)(eslint@8.51.0)
+        specifier: 2.1.0
+        version: 2.1.0(@next/eslint-plugin-next@13.5.6)(eslint@8.51.0)
       '@agaroot/eslint-config-react':
         specifier: 2.0.0
         version: 2.0.0(eslint-plugin-jsx-a11y@6.7.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint@8.51.0)
@@ -327,8 +327,8 @@ packages:
       eslint-plugin-unused-imports: 3.0.0(@typescript-eslint/eslint-plugin@6.8.0)(eslint@8.51.0)
     dev: true
 
-  /@agaroot/eslint-config-next@2.0.0(@next/eslint-plugin-next@13.5.6)(eslint@8.51.0):
-    resolution: {integrity: sha512-iAT7HHM6Otd+IvSE6DQqYEQ0EwamU/a2x6LeDuJqTG4HHGMlB+Z5S1Ado+kRYiOPQ5k92DWTeImNRw1OarhViQ==}
+  /@agaroot/eslint-config-next@2.1.0(@next/eslint-plugin-next@13.5.6)(eslint@8.51.0):
+    resolution: {integrity: sha512-n9KL2wj5RBwMZwznFdC0+H3EV3CjRLIqiQapSb+cYgFIdPROVAj43bXv10jOsKv9qI31lcT+zMi4/WANtXFKZg==}
     peerDependencies:
       '@next/eslint-plugin-next': ^13.0.0
       eslint: ^8.0.0
