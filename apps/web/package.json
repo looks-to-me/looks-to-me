@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "@agaroot/eslint-config-next": "2.1.0",
-    "@agaroot/eslint-config-react": "2.0.0",
+    "@agaroot/eslint-config-react": "2.1.0",
     "@cloudflare/next-on-pages": "1.6.3",
     "@cloudflare/workers-types": "4.20231016.0",
     "@next/eslint-plugin-next": "13.5.6",
