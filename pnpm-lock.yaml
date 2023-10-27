@@ -95,8 +95,8 @@ importers:
         specifier: 1.0.3
         version: 1.0.3(@types/react-dom@18.2.14)(@types/react@18.2.33)(react-dom@18.2.0)(react@18.2.0)
       '@supabase/auth-helpers-nextjs':
-        specifier: 0.8.1
-        version: 0.8.1(@supabase/supabase-js@2.38.3)
+        specifier: 0.8.2
+        version: 0.8.2(@supabase/supabase-js@2.38.3)
       '@supabase/auth-helpers-react':
         specifier: 0.4.2
         version: 0.4.2(@supabase/supabase-js@2.38.3)
@@ -4984,8 +4984,8 @@ packages:
       file-system-cache: 2.3.0
     dev: true
 
-  /@supabase/auth-helpers-nextjs@0.8.1(@supabase/supabase-js@2.38.3):
-    resolution: {integrity: sha512-ZO/UGDE9oaVXwPL4gpzGu2NpPwfKOgxTUnuK6no51So8Ah9BUuUUsTj+BdZlx7jJoZEIAkHWdRIx65WuQgWAiQ==}
+  /@supabase/auth-helpers-nextjs@0.8.2(@supabase/supabase-js@2.38.3):
+    resolution: {integrity: sha512-+c9Ck0U0uQuu9fJTnHEnqwZu7hRNFF7ZDWtqOM+8ECxvsHxqgbzpgG0e9M2eS0x+YgCsm1MWUy59ULIkx9zq5Q==}
     peerDependencies:
       '@supabase/supabase-js': ^2.19.0
     dependencies:
