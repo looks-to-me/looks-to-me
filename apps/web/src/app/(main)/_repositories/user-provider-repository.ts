@@ -1,7 +1,7 @@
 import { and, eq } from 'drizzle-orm';
 
-import { db } from '../../_libs/db';
-import { schema } from '../../_libs/db/schema';
+import { database } from '../../_libs/database';
+import { schema } from '../../_libs/database/schema';
 
 export type UserProvider = {
   userId: string;
@@ -10,7 +10,7 @@ export type UserProvider = {
 };
 
 export const insertUserProvider = async (userProvider: UserProvider): Promise<UserProvider> => {
-  await db()
+  await database()
     .insert(schema.userProviders)
     .values(userProvider)
     .run();
@@ -22,7 +22,7 @@ export const findUserProviderByTypeAndSub = async (
   type: UserProvider['type'],
   sub: UserProvider['sub'],
 ): Promise<UserProvider | undefined> => {
-  return await db()
+  return await database()
     .select()
     .from(schema.userProviders)
     .where(

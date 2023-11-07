@@ -4,7 +4,7 @@ import { fetchUserPosts } from './_actions/fetch-user-posts';
 import * as styles from './page.css';
 import { PostList } from '../../../_components/post-list';
 import { findUserByName } from '../../../_repositories/user-repository';
-import { getUserName } from '../../_helpers/getUserName';
+import { getUserName } from '../../_helpers/get-user-name';
 
 import type { InfiniteScrollFetcher } from '../../../../_components/infinite-scroll';
 import type { PageProps } from '../../../../_types/page-props';
@@ -33,9 +33,9 @@ const UserProfilePostsPage: FC<UserProfileMainPageProps> = async ({
 
   const posts = await fetchUserPosts(user.id);
 
-  const fetcher: InfiniteScrollFetcher = async args => {
+  const fetcher: InfiniteScrollFetcher = async arguments_ => {
     'use server';
-    return await fetchUserPosts(user.id, args.cursor);
+    return await fetchUserPosts(user.id, arguments_.cursor);
   };
 
   return (

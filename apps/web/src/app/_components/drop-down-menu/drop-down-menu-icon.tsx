@@ -1,7 +1,7 @@
 import { cloneElement } from 'react';
 
 import * as styles from './drop-down-menu.css';
-import { mergeProps } from '../../_helpers/mergeProps';
+import { mergeProps } from '../../_helpers/merge-props';
 
 import type { ReactElement , FC } from 'react';
 

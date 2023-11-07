@@ -2,8 +2,8 @@
 
 import { and, desc, eq, lt } from 'drizzle-orm';
 
-import { db } from '../../../../../_libs/db';
-import { schema } from '../../../../../_libs/db/schema';
+import { database } from '../../../../../_libs/database';
+import { schema } from '../../../../../_libs/database/schema';
 import { Post } from '../../../../_components/post';
 
 import type { InfiniteScrollEdge } from '../../../../../_components/infinite-scroll';
@@ -11,7 +11,7 @@ import type { InfiniteScrollEdge } from '../../../../../_components/infinite-scr
 const limit = 32;
 
 export const fetchUserPosts = async (userId: string, cursor?: string): Promise<InfiniteScrollEdge[]> => {
-  const posts = await db()
+  const posts = await database()
     .select({
       id: schema.posts.id,
       word: schema.posts.word,

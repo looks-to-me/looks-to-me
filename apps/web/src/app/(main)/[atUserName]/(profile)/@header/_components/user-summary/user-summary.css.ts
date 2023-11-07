@@ -42,6 +42,6 @@ export const lower = style({
   gap: '.5rem',
 });
 
-export const numOfPosts = style({
+export const numberOfPosts = style({
   fontSize: theme.size.font.tiny,
 });

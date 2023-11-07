@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 import * as styles from './post-list.css';
 import { InfiniteScroll } from '../../../_components/infinite-scroll';

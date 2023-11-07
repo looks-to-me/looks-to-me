@@ -1,7 +1,7 @@
 'use client';
 
 import * as DialogPrimitive from '@radix-ui/react-dialog';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { forwardRef } from 'react';
 
 import * as styles from './sheet.css';

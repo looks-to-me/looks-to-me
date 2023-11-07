@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 import * as styles from './page-header.css';
 import { ApplicationLogo } from '../application-logo';

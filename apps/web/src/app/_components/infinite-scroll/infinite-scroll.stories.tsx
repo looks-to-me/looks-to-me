@@ -18,11 +18,11 @@ export const Default = {
         </div>
       ),
     })),
-    fetcher: async args => Promise.resolve(Array.from({ length: 20 }).map((_, index) => ({
-      cursor: (index + args.size).toString(),
+    fetcher: arguments_ => Promise.resolve(Array.from({ length: 20 }).map((_, index) => ({
+      cursor: (index + arguments_.size).toString(),
       node: (
-        <div key={index + args.size} style={{ width: '100%', height: '64px' }}>
-          Item {index + args.size}
+        <div key={index + arguments_.size} style={{ width: '100%', height: '64px' }}>
+          Item {index + arguments_.size}
         </div>
       ),
     }))),

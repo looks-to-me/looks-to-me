@@ -13,6 +13,7 @@ type Story = StoryObj<typeof Toaster>;
 
 export const Default = {
   render: () => {
+    // eslint-disable-next-line unicorn/consistent-function-scoping
     const show = () => {
       toast('Title', { description: 'description' });
     };
@@ -25,6 +26,7 @@ export const Default = {
 
 export const Success = {
   render: () => {
+    // eslint-disable-next-line unicorn/consistent-function-scoping
     const show = () => {
       toast.success('Title', { description: 'description' });
     };
@@ -37,6 +39,7 @@ export const Success = {
 
 export const Error = {
   render: () => {
+    // eslint-disable-next-line unicorn/consistent-function-scoping
     const show = () => {
       toast.error('Title', { description: 'description' });
     };
@@ -49,6 +52,7 @@ export const Error = {
 
 export const Async = {
   render: () => {
+    // eslint-disable-next-line unicorn/consistent-function-scoping
     const show = (promise: () => Promise<void>) => {
       toast.promise(promise, {
         loading: 'Loading...',
@@ -58,11 +62,13 @@ export const Async = {
     };
 
     const success = () => {
+      // eslint-disable-next-line unicorn/consistent-function-scoping
       const promise = () => new Promise<void>(resolve => setTimeout(resolve, 2000));
       show(promise);
     };
 
     const error = () => {
+      // eslint-disable-next-line unicorn/consistent-function-scoping
       const promise = () => new Promise<void>((_, reject) => setTimeout(reject, 2000));
       show(promise);
     };

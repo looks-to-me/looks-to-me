@@ -1,8 +1,8 @@
-export const memoize = <T>(fn: () => T): () => T => {
+export const memoize = <T>(function_: () => T): () => T => {
   const cache: { value: T | undefined } = { value: undefined };
   return () => {
     if (cache.value) return cache.value;
-    const result = fn();
+    const result = function_();
     cache.value = result;
     return result;
   };

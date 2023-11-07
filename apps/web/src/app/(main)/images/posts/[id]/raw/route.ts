@@ -14,10 +14,11 @@ type Context = {
 
 export const GET = async (request: NextRequest, context: Context) => {
   // In the production environment, it should only be accessible by Workers.
-  if (env().NODE_ENV === 'production') {
-    if (request.headers.get('authorization') !== `Bearer ${env().INTERNAL_API_TOKEN}`) {
-      return Response.error();
-    }
+  if (
+    env().NODE_ENV === 'production' &&
+    request.headers.get('authorization') !== `Bearer ${env().INTERNAL_API_TOKEN}`
+  ) {
+    return Response.error();
   }
 
   const post = await findPostById(context.params.id);

@@ -2,8 +2,8 @@
 
 import { eq } from 'drizzle-orm';
 
-import { db } from '../../_libs/db';
-import { schema } from '../../_libs/db/schema';
+import { database } from '../../_libs/database';
+import { schema } from '../../_libs/database/schema';
 
 export type User = {
   id: string;
@@ -18,7 +18,7 @@ export const insertUser = async (user: User): Promise<User> => {
   // TODO: Make use of transaction or batch.
   // @see: https://github.com/drizzle-team/drizzle-orm/issues/758
   {
-    await db()
+    await database()
       .insert(schema.users)
       .values({
         id: user.id,
@@ -26,7 +26,7 @@ export const insertUser = async (user: User): Promise<User> => {
       })
       .run();
 
-    await db()
+    await database()
       .insert(schema.userProfiles)
       .values({
         ...user.profile,
@@ -38,7 +38,7 @@ export const insertUser = async (user: User): Promise<User> => {
 };
 
 export const updateUser = async (user: User): Promise<User> => {
-  await db()
+  await database()
     .update(schema.userProfiles)
     .set(user.profile)
     .where(eq(schema.userProfiles.userId, user.id))
@@ -48,7 +48,7 @@ export const updateUser = async (user: User): Promise<User> => {
 };
 
 export const findUserById = async (id: User['id']): Promise<User | undefined> => {
-  return await db()
+  return await database()
     .select({
       id: schema.users.id,
       profile: {
@@ -64,7 +64,7 @@ export const findUserById = async (id: User['id']): Promise<User | undefined> =>
 };
 
 export const findUserByName = async (name: User['profile']['name']): Promise<User | undefined> => {
-  return await db()
+  return await database()
     .select({
       id: schema.users.id,
       profile: {

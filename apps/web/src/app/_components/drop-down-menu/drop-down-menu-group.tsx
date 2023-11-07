@@ -1,7 +1,7 @@
 'use client';
 
 import * as DropDownMenuPrimitive from '@radix-ui/react-dropdown-menu';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { forwardRef } from 'react';
 
 import * as styles from './drop-down-menu.css';

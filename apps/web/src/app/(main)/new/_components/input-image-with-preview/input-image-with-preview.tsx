@@ -1,6 +1,6 @@
 'use client';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { useCallback, useRef, useState } from 'react';
 
 import * as styles from './input-image-with-preview.css';
@@ -26,13 +26,13 @@ export const InputImageWithPreview: FC<InputImageWithPreviewProps> = ({
 
   const setFile = useCallback((file: File) => {
     const element = new Image();
-    element.onload = () => {
+    element.addEventListener('load', () => {
       setImage({
         file,
         width: element.naturalWidth,
         height: element.naturalHeight,
       });
-    };
+    });
     element.src = URL.createObjectURL(file);
   }, []);
 

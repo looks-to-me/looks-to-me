@@ -4,7 +4,7 @@ import { Slot } from '@radix-ui/react-slot';
 import { forwardRef, useRef, useState } from 'react';
 
 import * as styles from './infinite-scroll.css';
-import { useInViewPort } from '../../_hooks/useInViewPort';
+import { useInViewPort } from '../../_hooks/use-in-view-port';
 
 import type { ReactNode, ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
 
@@ -15,12 +15,12 @@ export type InfiniteScrollEdge = {
   node: ReactNode;
 };
 
-export type InfiniteScrollFetcherArgs = {
+export type InfiniteScrollFetcherArguments = {
   cursor: InfiniteScrollCursor;
   size: number;
 };
 
-export type InfiniteScrollFetcher = (args: InfiniteScrollFetcherArgs) => Promise<InfiniteScrollEdge[]>;
+export type InfiniteScrollFetcher = (arguments_: InfiniteScrollFetcherArguments) => Promise<InfiniteScrollEdge[]>;
 
 export type InfiniteScrollProps = ComponentPropsWithoutRef<'div'> & {
   asChild?: boolean | undefined;
@@ -37,7 +37,7 @@ const InfiniteScrollRender: ForwardRefRenderFunction<HTMLDivElement, InfiniteScr
   const Wrapper = asChild ? Slot : 'div';
 
   const [displayEdges, setDisplayEdges] = useState(edges);
-  const [hasMore, setHasMore] = useState(1 <= edges.length);
+  const [hasMore, setHasMore] = useState(0 < edges.length);
 
   const anchorRef = useRef<HTMLDivElement>(null);
   useInViewPort(anchorRef, async entry => {

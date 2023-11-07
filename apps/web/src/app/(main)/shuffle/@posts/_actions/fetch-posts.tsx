@@ -2,8 +2,8 @@
 
 import { eq, sql } from 'drizzle-orm';
 
-import { db } from '../../../../_libs/db';
-import { schema } from '../../../../_libs/db/schema';
+import { database } from '../../../../_libs/database';
+import { schema } from '../../../../_libs/database/schema';
 import { Post } from '../../../_components/post';
 
 import type { InfiniteScrollEdge } from '../../../../_components/infinite-scroll';
@@ -21,7 +21,7 @@ const shuffle = <T extends object>(array: Array<T>): Array<T> => {
 const limit = 32;
 
 export const fetchPosts = async (): Promise<InfiniteScrollEdge[]> => {
-  const posts = await db()
+  const posts = await database()
     .select({
       id: schema.posts.id,
       word: schema.posts.word,

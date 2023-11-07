@@ -1,7 +1,7 @@
 'use client';
 
-import clsx from 'clsx';
-import { useRef } from 'react';
+import { clsx } from 'clsx';
+import { useCallback, useRef } from 'react';
 
 import * as styles from './variable-text-input.css';
 
@@ -17,10 +17,10 @@ export const VariableTextInput: FC<VariableTextInputProps> = ({
 }) => {
   const dummy = useRef<HTMLDivElement>(null);
 
-  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const onChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     if(dummy.current === null) return;
-    dummy.current.innerText = e.target.value;
-  };
+    dummy.current.textContent = event.target.value;
+  }, []);
 
   return (
     <div className={styles.wrapper}>

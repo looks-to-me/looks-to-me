@@ -19,7 +19,7 @@
     }
   },
   "devDependencies": {
-    "@agaroot/eslint-config-common": "2.0.0",
+    "@agaroot/eslint-config-common": "2.1.6",
     "@scaffdog/types": "3.0.0",
     "@tsconfig/strictest": "2.0.2",
     "@typescript-eslint/eslint-plugin": "6.10.0",
@@ -28,6 +28,7 @@
     "eslint-import-resolver-typescript": "3.6.1",
     "eslint-plugin-import": "2.29.0",
     "eslint-plugin-jest": "27.6.0",
+    "eslint-plugin-unicorn": "49.0.0",
     "eslint-plugin-unused-imports": "3.0.0",
     "scaffdog": "3.0.0",
     "turbo": "1.10.16"

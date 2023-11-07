@@ -4,7 +4,7 @@ import { UserSummary } from './_components/user-summary';
 import * as styles from './page.css';
 import { countPostsByUserId } from '../../../_repositories/post-repository';
 import { findUserByName } from '../../../_repositories/user-repository';
-import { getUserName } from '../../_helpers/getUserName';
+import { getUserName } from '../../_helpers/get-user-name';
 
 import type { PageProps } from '../../../../_types/page-props';
 import type { UserProfilePageProps } from '../page';
@@ -30,13 +30,13 @@ const UserProfileHeaderPage: FC<UserProfileHeaderPageProps> = async ({
   const user = await findUserByName(userName);
   if (!user) return notFound();
 
-  const numOfPosts = await countPostsByUserId(user.id);
+  const numberOfPosts = await countPostsByUserId(user.id);
 
   return (
     <header className={styles.wrapper}>
       <UserSummary
         user={user}
-        numOfPosts={numOfPosts}
+        numOfPosts={numberOfPosts}
       />
     </header>
   );
