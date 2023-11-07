@@ -25,13 +25,13 @@ export const Default = {
         />
       ),
     })),
-    fetcher: args => Promise.resolve(Array.from({ length: 20 }).map((_, index) => ({
-      cursor: (index + args.size).toString(),
+    fetcher: arguments_ => Promise.resolve(Array.from({ length: 20 }).map((_, index) => ({
+      cursor: (index + arguments_.size).toString(),
       node: (
         <Post
-          key={index + args.size}
+          key={index + arguments_.size}
           post={{
-            id: `id-${index + args.size}`,
+            id: `id-${index + arguments_.size}`,
             word: 'Good',
             image: 'https://via.placeholder.com/300x225?text=LGTM&',
             link: `/@user/posts/id-${index}`,

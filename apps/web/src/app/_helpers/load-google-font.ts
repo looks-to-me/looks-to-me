@@ -14,17 +14,17 @@ export const loadGoogleFont = async ({
   weight,
   text,
 }: LoadGoogleFontProps): Promise<ArrayBuffer> => {
-  const params: Record<string, string> = {
+  const parameters: Record<string, string> = {
     family: `${encodeURIComponent(family)}${weight ? `:wght@${weight}` : ''}`,
   };
 
   if (text) {
-    params['text'] = text;
+    parameters['text'] = text;
   } else {
-    params['subset'] = 'latin';
+    parameters['subset'] = 'latin';
   }
 
-  const query = Object.keys(params).map(key => `${key}=${params[key]}`).join('&');
+  const query = Object.keys(parameters).map(key => `${key}=${parameters[key]}`).join('&');
   const url = `https://fonts.googleapis.com/css2?${query}`;
 
   let cache: Cache | undefined;

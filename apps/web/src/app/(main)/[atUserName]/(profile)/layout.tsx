@@ -4,7 +4,7 @@ import { createMetadata } from '../../../_helpers/create-metadata';
 import { PageHeader } from '../../_components/page-header';
 import { PageLayout } from '../../_components/page-layout';
 import { findUserByName } from '../../_repositories/user-repository';
-import { getUserName } from '../_helpers/getUserName';
+import { getUserName } from '../_helpers/get-user-name';
 
 import type { UserProfilePageProps } from './page';
 import type { LayoutProps } from '../../../_types/layout-props';

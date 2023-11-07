@@ -13,16 +13,16 @@ const getCacheKey = (request: Request): WorkerRequest => {
   return new Request(request.url.toString(), request) as unknown as WorkerRequest;
 };
 
-type R2CacheKeyParams = {
+type R2CacheKeyParameters = {
   path: string;
   format?: 'webp' | 'png' | undefined;
   width?: number | undefined;
 };
 
-const getR2CacheKey = (params: R2CacheKeyParams): string => {
-  const path = params.path.replace(/^\/|\/$/g, '');
-  const key = `caches/${path}/${params.format ?? 'unknown'}`;
-  if (params.width) return `${key}/${params.width}`;
+const getR2CacheKey = (parameters: R2CacheKeyParameters): string => {
+  const path = parameters.path.replaceAll(/^\/|\/$/, '');
+  const key = `caches/${path}/${parameters.format ?? 'unknown'}`;
+  if (parameters.width) return `${key}/${parameters.width}`;
   return key;
 };
 
@@ -37,7 +37,7 @@ const fetchR2Cache = async (bucket: R2Bucket, key: string): Promise<WorkerRespon
   return new Response(await r2ObjectBody.arrayBuffer(), { headers }) as unknown as WorkerResponse;
 };
 
-export type ImageCacheParams = {
+export type ImageCacheParameters = {
   request: Request;
   format?: 'webp' | 'png' | undefined;
   width?: number | undefined;
@@ -52,7 +52,7 @@ export const imageCache = async (
     width,
     bucket,
     waitUntil,
-  }: ImageCacheParams,
+  }: ImageCacheParameters,
   callback: () => Promise<Response>,
 ): Promise<WorkerResponse> => {
   const caches = getCaches();

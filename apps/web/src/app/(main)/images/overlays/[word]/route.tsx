@@ -6,14 +6,14 @@ import { z } from 'zod';
 import { loadGoogleFont } from '../../../../_helpers/load-google-font';
 import { env } from '../../../../_libs/env';
 
-import type { ImageCacheParams } from '@looks-to-me/package-image-cache';
+import type { ImageCacheParameters } from '@looks-to-me/package-image-cache';
 import type { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
 
 const wordSchema = z
   .string()
-  .regex(/^[a-zA-Z]+$/, { message: 'Must be a alphabetic.' })
+  .regex(/^[A-Za-z]+$/, { message: 'Must be a alphabetic.' })
   .max(16, { message: 'Must be less than 16 characters.' })
   .transform((word) => `${word[0]?.toUpperCase()}${word.slice(1).toLowerCase()}`);
 
@@ -37,14 +37,14 @@ type Context = {
 
 export const GET = async (request: NextRequest, context: Context) => {
   const executionContext = getRequestExecutionContext();
-  const params: ImageCacheParams = {
+  const parameters: ImageCacheParameters = {
     request,
     format: 'png',
     bucket: env().BUCKET,
     waitUntil: executionContext.waitUntil.bind(executionContext),
   };
 
-  return imageCache(params, async () => {
+  return imageCache(parameters, async () => {
     const word = wordSchema.parse(context.params.word);
     return new ImageResponse(
       (

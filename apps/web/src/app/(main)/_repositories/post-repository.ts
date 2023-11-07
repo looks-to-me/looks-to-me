@@ -2,8 +2,8 @@
 
 import { eq, sql } from 'drizzle-orm';
 
-import { db } from '../../_libs/db';
-import { schema } from '../../_libs/db/schema';
+import { database } from '../../_libs/database';
+import { schema } from '../../_libs/database/schema';
 
 import type { User } from './user-repository';
 
@@ -15,7 +15,7 @@ export type Post = {
 };
 
 export const insertPost = async (post: Post): Promise<Post> => {
-  await db()
+  await database()
     .insert(schema.posts)
     .values({
       id: post.id,
@@ -30,13 +30,13 @@ export const insertPost = async (post: Post): Promise<Post> => {
 };
 
 export const deletePost = async (id: Post['id']): Promise<void> => {
-  await db()
+  await database()
     .delete(schema.posts)
     .where(eq(schema.posts.id, id));
 };
 
 export const findPostById = async (id: Post['id']): Promise<Post | undefined> => {
-  return await db()
+  return await database()
     .select({
       id: schema.posts.id,
       userId: schema.posts.userId,
@@ -49,7 +49,7 @@ export const findPostById = async (id: Post['id']): Promise<Post | undefined> =>
 };
 
 export const countPostsByUserId = async (userId: User['id']): Promise<number> => {
-  const result = await db()
+  const result = await database()
     .select({
       count: sql<number>`COUNT(*)`,
     }).from(schema.posts)

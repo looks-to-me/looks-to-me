@@ -21,12 +21,12 @@ const getQuery = async (tag: string) => {
 
 export const initMockDatabase = async () => {
   const sqlite = await sqlite3InitModule().then(sqlite => new sqlite.oo1.JsStorageDb('local'));
-  const db = drizzle(async (sql, params) => {
+  const database = drizzle(async (sql, parameters) => {
     return await new Promise(resolve => {
       try {
         const rows = sqlite.exec( {
           sql,
-          bind: params,
+          bind: parameters,
           rowMode: 'array',
           returnValue: 'resultRows',
         });
@@ -37,16 +37,16 @@ export const initMockDatabase = async () => {
       }
     });
   }, { schema });
-  initDatabase(db);
+  initDatabase(database);
 
-  const tables = await db.all<string[]>(sql.raw('SELECT name FROM sqlite_master WHERE type=\'table\';'));
+  const tables = await database.all<string[]>(sql.raw('SELECT name FROM sqlite_master WHERE type=\'table\';'));
   for (const table of tables ?? []) {
-    await db.run(sql.raw(`DROP TABLE ${String(table[0])};`));
+    await database.run(sql.raw(`DROP TABLE ${String(table[0])};`));
   }
 
   const journal = await getJournal();
   for (const entry of journal.entries) {
     const query = await getQuery(entry.tag);
-    await db.run(sql.raw(query));
+    await database.run(sql.raw(query));
   }
 };

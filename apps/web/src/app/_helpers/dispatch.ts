@@ -1,5 +1,5 @@
-export const dispatch = <Args extends unknown[]>(
-  callback: (...args: Args) => Promise<unknown>,
-): ((...args: Args) => void) => {
-  return (...args: Args) => void callback(...args);
+export const dispatch = <Arguments extends unknown[]>(
+  callback: (...arguments_: Arguments) => Promise<unknown>,
+): ((...arguments_: Arguments) => void) => {
+  return (...arguments_: Arguments) => void callback(...arguments_);
 };

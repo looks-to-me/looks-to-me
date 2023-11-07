@@ -1,11 +1,11 @@
 'use client';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { toast } from 'sonner';
 
-import { submitPost } from './actions/submitPost';
+import { submitPost } from './actions/submit-post';
 import * as styles from './post-create-form.css';
 import { Button } from '../../../../_components/button';
 import { InputImageWithPreview } from '../input-image-with-preview';

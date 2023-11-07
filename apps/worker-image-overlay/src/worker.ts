@@ -11,7 +11,7 @@ export default {
   async fetch(
     request: Request,
     env: Env,
-    _ctx: ExecutionContext,
+    _context: ExecutionContext,
   ): Promise<Response> {
     if (request.headers.get('authorization') !== `Bearer ${env.INTERNAL_API_TOKEN}`) {
       return new Response('Unauthorized', { status: 401 });

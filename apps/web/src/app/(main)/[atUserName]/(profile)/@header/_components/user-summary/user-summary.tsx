@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 import * as styles from './user-summary.css';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../../../../_components/avatar';
@@ -35,7 +35,7 @@ export const UserSummary: FC<UserSummaryProps> = ({
           )}
         </div>
         <div className={styles.lower}>
-          <p className={styles.numOfPosts}>{`${numOfPosts} posts`}</p>
+          <p className={styles.numberOfPosts}>{`${numOfPosts} posts`}</p>
           <a href={`https://github.com/${user.profile.name}`} target="_blank">GitHub</a>
         </div>
       </div>

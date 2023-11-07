@@ -5,7 +5,7 @@ import { env } from '../../../../_libs/env';
 import { findImageById } from '../../../_repositories/image-repository';
 import { findPostById } from '../../../_repositories/post-repository';
 
-import type { ImageCacheParams } from '@looks-to-me/package-image-cache';
+import type { ImageCacheParameters } from '@looks-to-me/package-image-cache';
 import type { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
@@ -53,14 +53,14 @@ export const GET = async (request: NextRequest, context: Context) => {
   if (!post) return Response.error();
 
   const executionContext = getRequestExecutionContext();
-  const params: ImageCacheParams = {
+  const parameters: ImageCacheParameters = {
     request,
     format: request.headers.get('accept')?.includes('image/webp') ? 'webp' : undefined,
     bucket: env().BUCKET,
     waitUntil: executionContext.waitUntil.bind(executionContext),
   };
 
-  return imageCache(params, async () => {
+  return imageCache(parameters, async () => {
     const response = await fetchImage(request, context.params.id);
 
     // Exclude Cloudflare-related headers so that Cloudflare does not mis-detect them as loop backs.

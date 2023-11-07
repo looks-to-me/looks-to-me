@@ -7,7 +7,7 @@ import { PageHeader } from '../../../_components/page-header';
 import { PageLayout } from '../../../_components/page-layout';
 import { findPostById } from '../../../_repositories/post-repository';
 import { findUserById } from '../../../_repositories/user-repository';
-import { getUserName } from '../../_helpers/getUserName';
+import { getUserName } from '../../_helpers/get-user-name';
 
 import type { UserPostDetailsPageProps } from './page';
 import type { LayoutProps } from '../../../../_types/layout-props';

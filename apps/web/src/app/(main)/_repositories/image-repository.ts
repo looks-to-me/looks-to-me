@@ -2,8 +2,8 @@
 
 import { eq } from 'drizzle-orm';
 
-import { db } from '../../_libs/db';
-import { schema } from '../../_libs/db/schema';
+import { database } from '../../_libs/database';
+import { schema } from '../../_libs/database/schema';
 
 export type Image = {
   id: string;
@@ -13,7 +13,7 @@ export type Image = {
 };
 
 export const insertImage = async (image: Image): Promise<Image> => {
-  await db()
+  await database()
     .insert(schema.images)
     .values({
       id: image.id,
@@ -28,13 +28,13 @@ export const insertImage = async (image: Image): Promise<Image> => {
 };
 
 export const deleteImage = async (id: Image['id']): Promise<void> => {
-  await db()
+  await database()
     .delete(schema.images)
     .where(eq(schema.images.id, id));
 };
 
 export const findImageById = async (id: Image['id']): Promise<Image | undefined> => {
-  return await db()
+  return await database()
     .select({
       id: schema.images.id,
       userId: schema.images.userId,

@@ -1,7 +1,7 @@
 import { imageCache } from '@looks-to-me/package-image-cache';
 import { z } from 'zod';
 
-import type { ImageCacheParams } from '@looks-to-me/package-image-cache';
+import type { ImageCacheParameters } from '@looks-to-me/package-image-cache';
 
 const schema = z.object({
   width: z.coerce.number().optional(),
@@ -11,7 +11,7 @@ export default {
   async fetch(
     request: Request,
     env: Env,
-    ctx: ExecutionContext,
+    context: ExecutionContext,
   ): Promise<Response> {
     const url = new URL(request.url);
     const input = schema.parse({
@@ -20,15 +20,15 @@ export default {
 
     const format = request.headers.get('accept')?.includes('image/webp') ? 'webp' : undefined;
 
-    const params: ImageCacheParams = {
+    const parameters: ImageCacheParameters = {
       request,
       format,
       width: input.width,
       bucket: env.BUCKET,
-      waitUntil: ctx.waitUntil.bind(ctx),
+      waitUntil: context.waitUntil.bind(context),
     };
 
-    return imageCache(params, async () => {
+    return imageCache(parameters, async () => {
       const origin = url.origin.replace('cdn.', '');
       return await fetch(`${origin}${url.pathname}`, {
         cf: {

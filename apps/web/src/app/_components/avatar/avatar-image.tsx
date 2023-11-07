@@ -1,7 +1,7 @@
 'use client';
 
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import Image from 'next/image';
 import { forwardRef } from 'react';
 
