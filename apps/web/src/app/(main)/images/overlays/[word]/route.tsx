@@ -1,4 +1,3 @@
-import { getRequestExecutionContext } from '@cloudflare/next-on-pages/helpers';
 import { imageCache } from '@looks-to-me/package-image-cache';
 import { ImageResponse } from 'next/server';
 import { z } from 'zod';
@@ -36,12 +35,10 @@ type Context = {
 };
 
 export const GET = async (request: NextRequest, context: Context) => {
-  const executionContext = getRequestExecutionContext();
   const parameters: ImageCacheParameters = {
     request,
     format: 'png',
     bucket: env().BUCKET,
-    waitUntil: executionContext.waitUntil.bind(executionContext),
   };
 
   return imageCache(parameters, async () => {
