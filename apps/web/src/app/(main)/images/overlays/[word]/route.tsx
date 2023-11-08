@@ -1,5 +1,5 @@
 import { imageCache } from '@looks-to-me/package-image-cache';
-import { ImageResponse } from 'next/server';
+import { ImageResponse } from 'next/og';
 import { z } from 'zod';
 
 import { loadGoogleFont } from '../../../../_helpers/load-google-font';

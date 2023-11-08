@@ -20,7 +20,7 @@ type R2CacheKeyParameters = {
 };
 
 const getR2CacheKey = (parameters: R2CacheKeyParameters): string => {
-  const path = parameters.path.replaceAll(/^\/|\/$/, '');
+  const path = parameters.path.replaceAll(/^\/|\/$/g, '');
   const key = `caches/${path}/${parameters.format ?? 'unknown'}`;
   if (parameters.width) return `${key}/${parameters.width}`;
   return key;
