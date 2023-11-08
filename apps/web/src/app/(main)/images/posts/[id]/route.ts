@@ -1,4 +1,3 @@
-import { getRequestExecutionContext } from '@cloudflare/next-on-pages/helpers';
 import { imageCache } from '@looks-to-me/package-image-cache';
 
 import { env } from '../../../../_libs/env';
@@ -52,12 +51,10 @@ export const GET = async (request: NextRequest, context: Context) => {
   const post = await findPostById(context.params.id);
   if (!post) return Response.error();
 
-  const executionContext = getRequestExecutionContext();
   const parameters: ImageCacheParameters = {
     request,
     format: request.headers.get('accept')?.includes('image/webp') ? 'webp' : undefined,
     bucket: env().BUCKET,
-    waitUntil: executionContext.waitUntil.bind(executionContext),
   };
 
   return imageCache(parameters, async () => {

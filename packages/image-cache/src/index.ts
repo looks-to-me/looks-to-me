@@ -42,7 +42,7 @@ export type ImageCacheParameters = {
   format?: 'webp' | 'png' | undefined;
   width?: number | undefined;
   bucket: R2Bucket;
-  waitUntil: ExecutionContext['waitUntil'];
+  waitUntil?: ExecutionContext['waitUntil'];
 };
 
 export const imageCache = async (
@@ -60,6 +60,14 @@ export const imageCache = async (
   const cacheResponse = await caches?.default?.match(cacheKey);
   if (cacheResponse) return cacheResponse;
 
+  const wait = async (promise: Promise<unknown>) => {
+    if (waitUntil) {
+      waitUntil(promise);
+    } else {
+      await promise;
+    }
+  };
+
   const r2CacheKey = getR2CacheKey({
     path: new URL(request.url).pathname,
     format,
@@ -69,7 +77,7 @@ export const imageCache = async (
   const r2Cache = await fetchR2Cache(bucket, r2CacheKey);
   if (r2Cache) {
     if (caches) {
-      waitUntil(caches.default.put(cacheKey, r2Cache.clone()));
+      await wait(caches.default.put(cacheKey, r2Cache.clone()));
     }
     return r2Cache;
   }
@@ -88,9 +96,9 @@ export const imageCache = async (
 
   if (needsCache) {
     if (caches) {
-      waitUntil(caches.default.put(cacheKey, response.clone()));
+      await wait(caches.default.put(cacheKey, response.clone()));
     }
-    waitUntil(bucket.put(r2CacheKey, buffer));
+    await wait(bucket.put(r2CacheKey, buffer));
   }
 
   return response;
