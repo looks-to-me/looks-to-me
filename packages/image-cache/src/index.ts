@@ -13,16 +13,16 @@ const getCacheKey = (request: Request): WorkerRequest => {
   return new Request(request.url.toString(), request) as unknown as WorkerRequest;
 };
 
-type R2CacheKeyParams = {
+type R2CacheKeyParameters = {
   path: string;
   format?: 'webp' | 'png' | undefined;
   width?: number | undefined;
 };
 
-const getR2CacheKey = (params: R2CacheKeyParams): string => {
-  const path = params.path.replace(/^\/|\/$/g, '');
-  const key = `caches/${path}/${params.format ?? 'unknown'}`;
-  if (params.width) return `${key}/${params.width}`;
+const getR2CacheKey = (parameters: R2CacheKeyParameters): string => {
+  const path = parameters.path.replaceAll(/^\/|\/$/g, '');
+  const key = `caches/${path}/${parameters.format ?? 'unknown'}`;
+  if (parameters.width) return `${key}/${parameters.width}`;
   return key;
 };
 
@@ -37,12 +37,12 @@ const fetchR2Cache = async (bucket: R2Bucket, key: string): Promise<WorkerRespon
   return new Response(await r2ObjectBody.arrayBuffer(), { headers }) as unknown as WorkerResponse;
 };
 
-export type ImageCacheParams = {
+export type ImageCacheParameters = {
   request: Request;
   format?: 'webp' | 'png' | undefined;
   width?: number | undefined;
   bucket: R2Bucket;
-  waitUntil: ExecutionContext['waitUntil'];
+  waitUntil?: ExecutionContext['waitUntil'];
 };
 
 export const imageCache = async (
@@ -52,13 +52,21 @@ export const imageCache = async (
     width,
     bucket,
     waitUntil,
-  }: ImageCacheParams,
+  }: ImageCacheParameters,
   callback: () => Promise<Response>,
 ): Promise<WorkerResponse> => {
   const caches = getCaches();
   const cacheKey = getCacheKey(request);
   const cacheResponse = await caches?.default?.match(cacheKey);
   if (cacheResponse) return cacheResponse;
+
+  const wait = async (promise: Promise<unknown>) => {
+    if (waitUntil) {
+      waitUntil(promise);
+    } else {
+      await promise;
+    }
+  };
 
   const r2CacheKey = getR2CacheKey({
     path: new URL(request.url).pathname,
@@ -69,7 +77,7 @@ export const imageCache = async (
   const r2Cache = await fetchR2Cache(bucket, r2CacheKey);
   if (r2Cache) {
     if (caches) {
-      waitUntil(caches.default.put(cacheKey, r2Cache.clone()));
+      await wait(caches.default.put(cacheKey, r2Cache.clone()));
     }
     return r2Cache;
   }
@@ -88,9 +96,9 @@ export const imageCache = async (
 
   if (needsCache) {
     if (caches) {
-      waitUntil(caches.default.put(cacheKey, response.clone()));
+      await wait(caches.default.put(cacheKey, response.clone()));
     }
-    waitUntil(bucket.put(r2CacheKey, buffer));
+    await wait(bucket.put(r2CacheKey, buffer));
   }
 
   return response;

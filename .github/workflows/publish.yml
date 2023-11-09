@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  publish-app:
+  publish-app-web:
     name: Publish to Cloudflare Pages
     runs-on: ubuntu-latest
     permissions:
@@ -14,13 +14,13 @@ jobs:
       name: ${{ github.ref == 'refs/heads/main' && 'looks-to-me (Production)' || 'looks-to-me (Preview)' }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Setup
         uses: ./.github/actions/setup
 
       - name: Build
-        run: pnpm run build:ci --filter="@looks-to-me/app"
+        run: pnpm run build:ci --filter="@looks-to-me/app-web"
         env:
           NEXT_PUBLIC_APP_ORIGIN: ${{ vars.NEXT_PUBLIC_APP_ORIGIN }}
           NEXT_PUBLIC_CDN_ORIGIN: ${{ vars.NEXT_PUBLIC_CDN_ORIGIN }}
@@ -28,11 +28,11 @@ jobs:
           NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
 
       - name: Publish to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
+        uses: cloudflare/pages-action@f0a1cd58cd66095dee69bfa18fa5efd1dde93bca # v1.5.0
         with:
           wranglerVersion: '3'
           projectName: looks-to-me
-          directory: app/.vercel/output/static
+          directory: apps/web/.vercel/output/static
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
@@ -45,13 +45,13 @@ jobs:
       contents: read
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Setup
         uses: ./.github/actions/setup
 
       - name: Publish to Cloudflare Workers
-        working-directory: workers/cdn
+        working-directory: apps/worker-cdn
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -65,13 +65,13 @@ jobs:
       contents: read
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Setup
         uses: ./.github/actions/setup
 
       - name: Publish to Cloudflare Workers
-        working-directory: workers/image-overlay
+        working-directory: apps/worker-image-overlay
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

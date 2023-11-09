@@ -1,0 +1,21 @@
+{
+  "name": "@looks-to-me/app-worker-cdn",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "build:ci": "wrangler deploy --dry-run --outdir=dist",
+    "lint:code": "eslint",
+    "lint:type": "tsc --pretty --noEmit"
+  },
+  "dependencies": {
+    "@looks-to-me/package-image-cache": "workspace:*",
+    "zod": "3.22.4"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "4.20231025.0",
+    "eslint": "8.53.0",
+    "typescript": "5.2.2",
+    "wrangler": "3.15.0"
+  }
+}

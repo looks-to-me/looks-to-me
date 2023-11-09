@@ -1,0 +1,7 @@
+{
+  "extends": [
+    "../../.eslintrc.json",
+    "@agaroot/eslint-config-react",
+    "@agaroot/eslint-config-next"
+  ]
+}

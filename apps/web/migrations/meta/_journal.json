@@ -1,0 +1,69 @@
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1691842753444,
+      "tag": "0000_nasty_mongoose",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1692011504573,
+      "tag": "0001_melodic_stardust",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1692065530244,
+      "tag": "0002_violet_malcolm_colcord",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1692479048768,
+      "tag": "0003_tired_onslaught",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1693044730077,
+      "tag": "0004_next_plazm",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1693316837567,
+      "tag": "0005_violet_sue_storm",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1693357366328,
+      "tag": "0006_noisy_stature",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1694089930005,
+      "tag": "0007_real_iron_lad",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1694185846059,
+      "tag": "0008_giant_pete_wisdom",
+      "breakpoints": true
+    }
+  ]
+}
