@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 
 import * as styles from './page.css';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../../../_components/avatar';
-import { env } from '../../../../../_libs/env';
+import { publicEnv } from '../../../../../_libs/env';
 import { ShareButton } from '../../../../_components/share-button';
 import { findPostById } from '../../../../_repositories/post-repository';
 import { findUserById } from '../../../../_repositories/user-repository';
@@ -53,7 +53,7 @@ const UserPostDetailsHeaderPage: FC<UserPostDetailsHeaderPageProps> = async ({
       </div>
       <div className={styles.toolbar}>
         <ShareButton
-          text={`![L${post.word.toUpperCase().at(0)}TM](${env().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id})`}
+          text={`![L${post.word.toUpperCase().at(0)}TM](${publicEnv().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id})`}
         />
       </div>
     </header>

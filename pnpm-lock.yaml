@@ -101,9 +101,6 @@ importers:
       '@supabase/supabase-js':
         specifier: 2.38.4
         version: 2.38.4
-      '@t3-oss/env-nextjs':
-        specifier: 0.7.1
-        version: 0.7.1(typescript@5.2.2)(zod@3.22.4)
       ahooks:
         specifier: 3.7.8
         version: 3.7.8(react@18.2.0)
@@ -140,9 +137,9 @@ importers:
       sonner:
         specifier: 1.2.0
         version: 1.2.0(react-dom@18.2.0)(react@18.2.0)
-      zod:
-        specifier: 3.22.4
-        version: 3.22.4
+      valibot:
+        specifier: 0.20.1
+        version: 0.20.1
     devDependencies:
       '@agaroot/eslint-config-next':
         specifier: 2.1.1
@@ -261,9 +258,9 @@ importers:
       '@looks-to-me/package-image-cache':
         specifier: workspace:*
         version: link:../../packages/image-cache
-      zod:
-        specifier: 3.22.4
-        version: 3.22.4
+      valibot:
+        specifier: 0.20.1
+        version: 0.20.1
     devDependencies:
       '@cloudflare/workers-types':
         specifier: 4.20231025.0
@@ -280,9 +277,9 @@ importers:
 
   apps/worker-image-overlay:
     dependencies:
-      zod:
-        specifier: 3.22.4
-        version: 3.22.4
+      valibot:
+        specifier: 0.20.1
+        version: 0.20.1
     devDependencies:
       '@cloudflare/workers-types':
         specifier: 4.20231025.0
@@ -5842,33 +5839,6 @@ packages:
     dependencies:
       defer-to-connect: 2.0.1
     dev: true
-
-  /@t3-oss/env-core@0.7.1(typescript@5.2.2)(zod@3.22.4):
-    resolution: {integrity: sha512-3+SQt39OlmSaRLqYVFv8uRm1BpFepM5TIiMytRqO9cjH+wB77o6BIJdeyM5h5U4qLBMEzOJWCY4MBaU/rLwbYw==}
-    peerDependencies:
-      typescript: '>=4.7.2'
-      zod: ^3.0.0
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      typescript: 5.2.2
-      zod: 3.22.4
-    dev: false
-
-  /@t3-oss/env-nextjs@0.7.1(typescript@5.2.2)(zod@3.22.4):
-    resolution: {integrity: sha512-tQDbNLGCOvKGi+JoGuJ/CJInJI7/kLWJqtgGppAKS7ZFLdVOqZYR/uRjxlXOWPnxmUKF8VswOAsq7fXUpNZDhA==}
-    peerDependencies:
-      typescript: '>=4.7.2'
-      zod: ^3.0.0
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      '@t3-oss/env-core': 0.7.1(typescript@5.2.2)(zod@3.22.4)
-      typescript: 5.2.2
-      zod: 3.22.4
-    dev: false
 
   /@tootallnate/once@2.0.0:
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}
@@ -16074,6 +16044,7 @@ packages:
     resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
     engines: {node: '>=14.17'}
     hasBin: true
+    dev: true
 
   /ufo@1.1.2:
     resolution: {integrity: sha512-TrY6DsjTQQgyS3E3dBaOXf0TpPD8u9FVrVYmKVegJuFw51n/YB9XPt+U6ydzFG5ZIN7+DIjPbNmXoBj9esYhgQ==}
@@ -16384,6 +16355,10 @@ packages:
       '@types/istanbul-lib-coverage': 2.0.4
       convert-source-map: 1.9.0
     dev: true
+
+  /valibot@0.20.1:
+    resolution: {integrity: sha512-7lToTLG5wtK76u32gq8dUK0bAw7bknTGbeNSKRJunAC2soGVnNrKngg+38Jjt6FOwH+MshUONHoFz+LgmjeYKQ==}
+    dev: false
 
   /valid-filename@4.0.0:
     resolution: {integrity: sha512-VEYTpTVPMgO799f2wI7zWf0x2C54bPX6NAfbZ2Z8kZn76p+3rEYCTYVYzMUcVSMvakxMQTriBf24s3+WeXJtEg==}

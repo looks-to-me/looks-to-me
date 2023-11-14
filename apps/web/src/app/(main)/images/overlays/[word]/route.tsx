@@ -1,20 +1,20 @@
 import { imageCache } from '@looks-to-me/package-image-cache';
 import { ImageResponse } from 'next/og';
-import { z } from 'zod';
+import { getOutput, maxLength, parse, regex, string } from 'valibot';
 
 import { loadGoogleFont } from '../../../../_helpers/load-google-font';
-import { env } from '../../../../_libs/env';
+import { privateEnv } from '../../../../_libs/env';
 
 import type { ImageCacheParameters } from '@looks-to-me/package-image-cache';
 import type { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
 
-const wordSchema = z
-  .string()
-  .regex(/^[A-Za-z]+$/, { message: 'Must be a alphabetic.' })
-  .max(16, { message: 'Must be less than 16 characters.' })
-  .transform((word) => `${word[0]?.toUpperCase()}${word.slice(1).toLowerCase()}`);
+const wordSchema = string([
+  regex(/^[A-Za-z]+$/, 'Must be a alphabetic.'),
+  maxLength(16, 'Must be less than 16 characters.'),
+  input => getOutput(`${input[0]?.toUpperCase()}${input.slice(1).toLowerCase()}`),
+]);
 
 const alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
@@ -38,11 +38,11 @@ export const GET = async (request: NextRequest, context: Context) => {
   const parameters: ImageCacheParameters = {
     request,
     format: 'png',
-    bucket: env().BUCKET,
+    bucket: privateEnv().BUCKET,
   };
 
   return imageCache(parameters, async () => {
-    const word = wordSchema.parse(context.params.word);
+    const word = parse(wordSchema, context.params.word);
     return new ImageResponse(
       (
         <div

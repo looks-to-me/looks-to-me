@@ -1,18 +1,18 @@
 import sqlite3InitModule from '@sqlite.org/sqlite-wasm';
 import { sql } from 'drizzle-orm';
 import { drizzle } from 'drizzle-orm/sqlite-proxy';
-import { z } from 'zod';
+import { array, object, parse, string } from 'valibot';
 
 import { initDatabase } from './index';
 import { schema } from '../schema';
 
 const getJournal = async () => {
   const result = await fetch('./meta/_journal.json').then(result => result.text());
-  return z.object({
-    entries: z.array(z.object({
-      tag: z.string(),
+  return parse(object({
+    entries: array(object({
+      tag: string(),
     })),
-  }).parse(JSON.parse(result));
+  }), JSON.parse(result));
 };
 
 const getQuery = async (tag: string) => {

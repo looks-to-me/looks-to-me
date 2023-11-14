@@ -1,10 +1,10 @@
 import { imageCache } from '@looks-to-me/package-image-cache';
-import { z } from 'zod';
+import { coerce, minValue, number, object, optional, parse } from 'valibot';
 
 import type { ImageCacheParameters } from '@looks-to-me/package-image-cache';
 
-const schema = z.object({
-  width: z.coerce.number().optional(),
+const schema = object({
+  width: optional(coerce(number([minValue(1)]), Number)),
 });
 
 export default {
@@ -14,7 +14,7 @@ export default {
     context: ExecutionContext,
   ): Promise<Response> {
     const url = new URL(request.url);
-    const input = schema.parse({
+    const input = parse(schema, {
       width: url.searchParams.get('width'),
     });
 

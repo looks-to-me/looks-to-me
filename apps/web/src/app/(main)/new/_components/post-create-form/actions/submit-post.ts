@@ -1,10 +1,10 @@
 'use server';
 
 import { createId } from '@paralleldrive/cuid2';
-import { z } from 'zod';
+import { coerce, getOutput, instance, maxLength, minValue, number, object, parse, regex, string } from 'valibot';
 
 import { getUserMetadata } from '../../../../../_libs/auth/server/get-user-metadata';
-import { env } from '../../../../../_libs/env';
+import { publicEnv } from '../../../../../_libs/env';
 import { storage } from '../../../../../_libs/storage';
 import { deleteImage, insertImage } from '../../../../_repositories/image-repository';
 import { deletePost, insertPost } from '../../../../_repositories/post-repository';
@@ -13,14 +13,15 @@ import { findUserById } from '../../../../_repositories/user-repository';
 
 import type { Route } from 'next';
 
-const inputSchema = z.object({
-  image: z.custom<Blob>(value => value instanceof Blob),
-  imageWidth: z.coerce.number().positive(),
-  imageHeight: z.coerce.number().positive(),
-  word: z.string()
-    .regex(/^[A-Za-z]+$/, { message: 'Must be a alphabetic.' })
-    .max(16, { message: 'Must be less than 16 characters.' })
-    .transform((word) => `${word[0]?.toUpperCase()}${word.slice(1).toLowerCase()}`),
+const inputSchema = object({
+  image: instance(Blob),
+  imageWidth: coerce(number([minValue(1)]), Number),
+  imageHeight: coerce(number([minValue(1)]), Number),
+  word: string([
+    regex(/^[A-Za-z]+$/, 'Must be a alphabetic.'),
+    maxLength(16, 'Must be less than 16 characters.'),
+    input => getOutput(`${input[0]?.toUpperCase()}${input.slice(1).toLowerCase()}`),
+  ]),
 });
 
 export type SubmitPostResult = {
@@ -44,7 +45,7 @@ export const submitPost = async (formData: FormData): Promise<SubmitPostResult> 
     const user = await findUserById(userProvider.userId);
     if (!user) return { type: 'error', reason: 'unauthorized', message: 'Login required!' };
 
-    const input = inputSchema.parse({
+    const input = parse(inputSchema, {
       image: formData.get('image'),
       imageWidth: formData.get('image-width'),
       imageHeight: formData.get('image-height'),
@@ -76,8 +77,8 @@ export const submitPost = async (formData: FormData): Promise<SubmitPostResult> 
 
       // TODO: If the request fails, make it retry.
       const results = await Promise.all([
-        fetch(`${env().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id}`),
-        fetch(`${env().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id}`, { headers: { 'accept': 'image/webp' } }),
+        fetch(`${publicEnv().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id}`),
+        fetch(`${publicEnv().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id}`, { headers: { 'accept': 'image/webp' } }),
       ]);
 
       for (const result of results) {
