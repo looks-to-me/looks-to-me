@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:proxy": "cf-bindings-proxy",
     "dev:storybook": "storybook dev",
     "build": "next build",
     "build:storybook": "rimraf public/storybook && storybook build && mv storybook-static public/storybook && mv public/storybook/index.html public/storybook/index.htm",
@@ -33,7 +32,6 @@
     "@supabase/supabase-js": "2.38.4",
     "@t3-oss/env-nextjs": "0.7.1",
     "ahooks": "3.7.8",
-    "cf-bindings-proxy": "0.7.1",
     "client-only": "0.0.1",
     "clsx": "2.0.0",
     "date-fns": "2.30.0",

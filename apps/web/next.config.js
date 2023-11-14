@@ -1,3 +1,5 @@
+/* eslint-disable no-undef,unicorn/prefer-module */
+
 const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin');
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 const { merge } = require('webpack-merge');
@@ -27,7 +29,6 @@ module.exports = phase => {
     },
     experimental: {
       typedRoutes: true,
-      serverActions: true,
     },
     rewrites: async () => [
       {
@@ -70,3 +71,16 @@ module.exports = phase => {
 
   return withVanillaExtract(nextConfig);
 };
+
+if (process.env.NODE_ENV === 'development') {
+  const { setupDevBindings } = require('@cloudflare/next-on-pages/__experimental__next-dev');
+
+  setupDevBindings({
+    r2Buckets: {
+      BUCKET: 'local',
+    },
+    d1Databases: {
+      DB: 'local',
+    },
+  });
+}
