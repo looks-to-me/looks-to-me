@@ -71,7 +71,7 @@
     "@vanilla-extract/recipes": "0.5.1",
     "@vanilla-extract/webpack-plugin": "2.3.1",
     "better-sqlite3": "9.1.1",
-    "drizzle-kit": "0.19.13",
+    "drizzle-kit": "0.20.2",
     "eslint": "8.53.0",
     "eslint-config-next": "14.0.2",
     "eslint-plugin-jsx-a11y": "6.8.0",

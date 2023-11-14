@@ -12,9 +12,6 @@
   "pnpm": {
     "overrides": {
       "tsconfig-paths": "4.2.0"
-    },
-    "patchedDependencies": {
-      "esbuild-register@3.4.2": "patches/esbuild-register@3.4.2.patch"
     }
   },
   "devDependencies": {
