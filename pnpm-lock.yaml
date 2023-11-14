@@ -7,11 +7,6 @@ settings:
 overrides:
   tsconfig-paths: 4.2.0
 
-patchedDependencies:
-  esbuild-register@3.4.2:
-    hash: spgfiu64hqpilsoes5nxr46kwy
-    path: patches/esbuild-register@3.4.2.patch
-
 importers:
 
   .:
@@ -222,8 +217,8 @@ importers:
         specifier: 9.1.1
         version: 9.1.1
       drizzle-kit:
-        specifier: 0.19.13
-        version: 0.19.13
+        specifier: 0.20.2
+        version: 0.20.2
       eslint:
         specifier: 8.53.0
         version: 8.53.0
@@ -1920,8 +1915,8 @@ packages:
     engines: {node: '>=10.0.0'}
     dev: true
 
-  /@drizzle-team/studio@0.0.5:
-    resolution: {integrity: sha512-ps5qF0tMxWRVu+V5gvCRrQNqlY92aTnIKdq27gm9LZMSdaKYZt6AVvSK1dlUMzs6Rt0Jm80b+eWct6xShBKhIw==}
+  /@drizzle-team/studio@0.0.27:
+    resolution: {integrity: sha512-vkgflb8g/7WCdVCuxWE6tCzjZB0q4lLIK6mwH1aleNRqIGOhEWq/E2I8HmKquz1v0GRDHLFd19ZzrVSITt2Uqg==}
     dev: true
 
   /@edge-runtime/cookies@3.4.1:
@@ -8883,24 +8878,27 @@ packages:
       wordwrap: 1.0.0
     dev: true
 
-  /drizzle-kit@0.19.13:
-    resolution: {integrity: sha512-Rba5VW1O2JfJlwVBeZ8Zwt2E2us5oZ08PQBDiVSGlug53TOc8hzXjblZFuF+dnll9/RQEHrkzBmJFgqTvn5Rxg==}
+  /drizzle-kit@0.20.2:
+    resolution: {integrity: sha512-4iwjsIj2sY3B3MleKeyNzg/6myjXbTE/CBOXwfePoRVXayM3VwHGZboMkxUkmIQk6o7UAKRb2ODDpO24YNoL2g==}
     hasBin: true
     dependencies:
-      '@drizzle-team/studio': 0.0.5
+      '@drizzle-team/studio': 0.0.27
       '@esbuild-kit/esm-loader': 2.5.5
       camelcase: 7.0.1
       chalk: 5.3.0
       commander: 9.5.0
       esbuild: 0.18.12
-      esbuild-register: 3.4.2(patch_hash=spgfiu64hqpilsoes5nxr46kwy)(esbuild@0.18.12)
+      esbuild-register: 3.5.0(esbuild@0.18.12)
       glob: 8.1.0
       hanji: 0.0.5
       json-diff: 0.9.0
       minimatch: 7.4.6
+      wrangler: 3.15.0
       zod: 3.22.4
     transitivePeerDependencies:
+      - bufferutil
       - supports-color
+      - utf-8-validate
     dev: true
 
   /drizzle-orm@0.29.0(@cloudflare/workers-types@4.20231025.0)(better-sqlite3@9.1.1):
@@ -9520,18 +9518,6 @@ packages:
   /esbuild-plugin-alias@0.2.1:
     resolution: {integrity: sha512-jyfL/pwPqaFXyKnj8lP8iLk6Z0m099uXR45aSN8Av1XD4vhvQutxxPzgA2bTcAwQpa1zCXDcWOlhFgyP3GKqhQ==}
     dev: true
-
-  /esbuild-register@3.4.2(patch_hash=spgfiu64hqpilsoes5nxr46kwy)(esbuild@0.18.12):
-    resolution: {integrity: sha512-kG/XyTDyz6+YDuyfB9ZoSIOOmgyFCH+xPRtsCa8W85HLRV5Csp+o3jWVbOSHgSLfyLc5DmP+KFDNwty4mEjC+Q==}
-    peerDependencies:
-      esbuild: '>=0.12 <1'
-    dependencies:
-      debug: 4.3.4
-      esbuild: 0.18.12
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-    patched: true
 
   /esbuild-register@3.5.0(esbuild@0.18.12):
     resolution: {integrity: sha512-+4G/XmakeBAsvJuDugJvtyF1x+XJT4FMocynNpxrvEBViirpfUn2PgNpCHedfWhF4WokNsO/OvMKrmJOIJsI5A==}
