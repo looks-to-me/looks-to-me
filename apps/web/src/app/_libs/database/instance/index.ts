@@ -1,6 +1,6 @@
 import { drizzle } from 'drizzle-orm/d1';
 
-import { env } from '../../env';
+import { privateEnv } from '../../env';
 import { schema } from '../schema';
 
 import type { BaseSQLiteDatabase } from 'drizzle-orm/sqlite-core';
@@ -14,7 +14,7 @@ export const initDatabase = (value: Exclude<typeof instance, undefined>): void =
 
 export const database = (): Exclude<typeof instance, undefined> => {
   if (instance) return instance;
-  const database = drizzle(env().DB, { schema });
+  const database = drizzle(privateEnv().DB, { schema });
   initDatabase(database);
   return database;
 };

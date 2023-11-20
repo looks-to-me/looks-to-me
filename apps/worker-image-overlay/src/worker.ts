@@ -1,10 +1,10 @@
-import { z } from 'zod';
+import { coerce, minValue, number, object, parse, string, url } from 'valibot';
 
-const schema = z.object({
-  origin: z.string().url(),
-  overlay: z.string().url(),
-  width: z.coerce.number(),
-  height: z.coerce.number(),
+const schema = object({
+  origin: string([url()]),
+  overlay: string([url()]),
+  width: coerce(number([minValue(1)]), Number),
+  height: coerce(number([minValue(1)]), Number),
 });
 
 export default {
@@ -18,7 +18,7 @@ export default {
     }
 
     const url = new URL(request.url);
-    const input = schema.parse({
+    const input = parse(schema, {
       origin: url.searchParams.get('origin'),
       overlay: url.searchParams.get('overlay'),
       width: url.searchParams.get('width'),

@@ -1,11 +1,11 @@
-import { env } from './src/app/_libs/env';
+import { publicEnv } from './src/app/_libs/env';
 
 import type { ImageLoader } from 'next/image';
 
-const normalizeSrc = (src: string): string => src.startsWith('/') ? src.slice(1) : src;
+const normalizeSource = (source: string): string => source.startsWith('/') ? source.slice(1) : source;
 
 const loader: ImageLoader = ({ src, width }) => {
-  return `${env().NEXT_PUBLIC_CDN_ORIGIN}/${normalizeSrc(src)}?width=${width}`;
+  return `${publicEnv().NEXT_PUBLIC_CDN_ORIGIN}/${normalizeSource(src)}?width=${width}`;
 };
 
 export default loader;
