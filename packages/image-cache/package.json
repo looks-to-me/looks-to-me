@@ -11,7 +11,7 @@
     "lint:type": "tsc --pretty --noEmit"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20231025.0",
+    "@cloudflare/workers-types": "4.20231121.0",
     "@swc/core": "1.3.99",
     "@swc/jest": "0.2.29",
     "@types/jest": "29.5.10",
