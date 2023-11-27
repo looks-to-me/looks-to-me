@@ -148,8 +148,8 @@ importers:
         specifier: 2.1.0
         version: 2.1.0(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint@8.54.0)
       '@cloudflare/next-on-pages':
-        specifier: 1.7.4
-        version: 1.7.4(vercel@32.5.6)(wrangler@3.17.1)
+        specifier: 1.8.0
+        version: 1.8.0(vercel@32.5.6)(wrangler@3.17.1)
       '@cloudflare/workers-types':
         specifier: 4.20231121.0
         version: 4.20231121.0
@@ -1820,8 +1820,8 @@ packages:
       mime: 3.0.0
     dev: true
 
-  /@cloudflare/next-on-pages@1.7.4(vercel@32.5.6)(wrangler@3.17.1):
-    resolution: {integrity: sha512-h8e4ZCL8QMroLckuTX8FhTtBFM2Ix00RBexXGpEh04SvQG8/VhfPyxRFSWAwUnMW857B+fe2cy9FbGeNfkBuLA==}
+  /@cloudflare/next-on-pages@1.8.0(vercel@32.5.6)(wrangler@3.17.1):
+    resolution: {integrity: sha512-Va0YVyUmsrP45pFVsQypwkhTDyOtv/QPj1SQ/vJn3IBwosaUMW1k5Y354gT6c5CEn/9V+6DnfoXYFGvSQrV95Q==}
     hasBin: true
     peerDependencies:
       vercel: '>=30.0.0'
@@ -1834,7 +1834,7 @@ packages:
       cookie: 0.5.0
       esbuild: 0.15.18
       js-yaml: 4.1.0
-      miniflare: 3.20231030.0
+      miniflare: 3.20231030.1
       package-manager-manager: 0.2.0
       pcre-to-regexp: 1.1.0
       semver: 7.5.4
@@ -13319,29 +13319,6 @@ packages:
     dependencies:
       schema-utils: 4.2.0
       webpack: 5.88.1(@swc/core@1.3.93)(esbuild@0.17.19)
-    dev: true
-
-  /miniflare@3.20231030.0:
-    resolution: {integrity: sha512-iCg1dNauUG+kNp7jizcNmV/1XFItuTDvD/6xIC34PrszgKxYCbBO2R72y5NEDJTwaqr5ohQI/320wuJ8GEe7nQ==}
-    engines: {node: '>=16.13'}
-    hasBin: true
-    dependencies:
-      acorn: 8.9.0
-      acorn-walk: 8.2.0
-      capnp-ts: 0.7.0
-      exit-hook: 2.2.1
-      glob-to-regexp: 0.4.1
-      source-map-support: 0.5.21
-      stoppable: 1.1.0
-      undici: 5.26.5
-      workerd: 1.20231030.0
-      ws: 8.13.0
-      youch: 3.2.3
-      zod: 3.22.4
-    transitivePeerDependencies:
-      - bufferutil
-      - supports-color
-      - utf-8-validate
     dev: true
 
   /miniflare@3.20231030.1:
