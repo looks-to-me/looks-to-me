@@ -68,3 +68,16 @@ export const imageCache = async (
 
   return response;
 };
+
+export type DeleteImageCacheParameters = {
+  postId: string;
+  bucket: R2Bucket;
+};
+
+export const deleteImageCache = async ({ bucket, postId }: DeleteImageCacheParameters): Promise<void> => {
+  const result = await bucket.list({ 
+    prefix: `caches/images/posts/${postId}`, 
+  });
+  const promises = result.objects.map((object) => bucket.delete(object.key));
+  await Promise.all(promises);
+};
