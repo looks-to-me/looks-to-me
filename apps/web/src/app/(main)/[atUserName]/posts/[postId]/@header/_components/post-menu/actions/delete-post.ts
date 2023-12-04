@@ -5,7 +5,7 @@ import { deleteImageCache } from '@looks-to-me/package-image-cache';
 import { getLoginUser } from '../../../../../../../../_actions/get-login-user';
 import { privateEnv } from '../../../../../../../../_libs/env';
 import { deleteImage } from '../../../../../../../_repositories/image-repository';
-import { deletePost, findPostById, findPostByImageId } from '../../../../../../../_repositories/post-repository';
+import { deletePost, findPostById } from '../../../../../../../_repositories/post-repository';
 
 import type { Route } from 'next';
 
@@ -30,11 +30,8 @@ export const deletePostAction = async (postId: string): Promise<DeletePostResult
   if (!isMyPost) return { type: 'error', reason: 'badRequest', message: 'Not the owner of the Post!' };
 
   await deletePost(postId);
+  await deleteImage(post.imageId);
+  await deleteImageCache({ bucket: privateEnv().BUCKET, postId: post.id });
 
-  const existPost = await findPostByImageId(post.imageId);
-  if (!existPost) {
-    await deleteImage(post.imageId);
-    await deleteImageCache({ bucket: privateEnv().BUCKET,postId: post.id });
-  }
   return { type: 'success', redirectUrl: `/@${user.profile.name}`, message: 'The post has been successfully deleted.' };
 };

@@ -48,16 +48,6 @@ export const findPostById = async (id: Post['id']): Promise<Post | undefined> =>
     .get();
 };
 
-export const findPostByImageId = async (imageId: Post['imageId']): Promise<Pick<Post, 'id'> | undefined> => {
-  return await database()
-    .select({
-      id: schema.posts.id,
-    })
-    .from(schema.posts)
-    .where(eq(schema.posts.imageId, imageId))
-    .get();
-};
-
 export const countPostsByUserId = async (userId: User['id']): Promise<number> => {
   const result = await database()
     .select({
