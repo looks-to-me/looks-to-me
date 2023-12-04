@@ -31,7 +31,7 @@ export const deletePostAction = async (postId: string): Promise<DeletePostResult
 
   await deletePost(postId);
   await deleteImage(post.imageId);
-  await deleteImageCache({ bucket: privateEnv().BUCKET, postId: post.id });
+  await deleteImageCache({ bucket: privateEnv().BUCKET, path: `caches/images/posts/${post.id}` });
 
   return { type: 'success', redirectUrl: `/@${user.profile.name}`, message: 'The post has been successfully deleted.' };
 };
