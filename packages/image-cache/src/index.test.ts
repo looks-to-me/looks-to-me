@@ -1,5 +1,5 @@
 import { getCaches } from './helper';
-import { imageCache } from './index';
+import { deleteImageCache, imageCache } from './index';
 
 import type { ImageCacheParameters } from './index';
 
@@ -99,5 +99,28 @@ describe('imageCache', () => {
     expect(result?.headers.get('cache-control')).toEqual('public, max-age=31536000, immutable');
     await expect(result?.arrayBuffer()).resolves.toEqual(buffer);
     expect(callback).toHaveBeenCalled();
+  });
+});
+
+describe('deleteImageCache', () => {
+  it('should delete all cache entries for a given postId', async () => {
+    const bucket = {
+      list: jest.fn().mockResolvedValue({
+        objects: [
+          { key: 'caches/images/posts/testPostId/webp' },
+          { key: 'caches/images/posts/testPostId/webp/1920' },
+          { key: 'caches/images/posts/testPostId/unknown/1920' },
+        ],
+      }),
+      delete: jest.fn().mockResolvedValue(null),
+    } as unknown as R2Bucket;
+
+    await deleteImageCache({ bucket, postId: 'testPostId' });
+
+    expect(bucket.list).toHaveBeenCalledWith({ prefix: 'caches/images/posts/testPostId' });
+    expect(bucket.delete).toHaveBeenCalledTimes(3);
+    expect(bucket.delete).toHaveBeenNthCalledWith(1, 'caches/images/posts/testPostId/webp');
+    expect(bucket.delete).toHaveBeenNthCalledWith(2, 'caches/images/posts/testPostId/webp/1920');
+    expect(bucket.delete).toHaveBeenNthCalledWith(3, 'caches/images/posts/testPostId/unknown/1920');
   });
 });
