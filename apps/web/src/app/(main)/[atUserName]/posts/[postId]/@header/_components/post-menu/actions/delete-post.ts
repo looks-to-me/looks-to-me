@@ -2,12 +2,10 @@
 
 import { deleteImageCache } from '@looks-to-me/package-image-cache';
 
-import { getUserMetadata } from '../../../../../../../../_libs/auth/server/get-user-metadata';
+import { getLoginUser } from '../../../../../../../../_actions/get-login-user';
 import { privateEnv } from '../../../../../../../../_libs/env';
 import { deleteImage } from '../../../../../../../_repositories/image-repository';
 import { deletePost, findPostById, findPostByImageId } from '../../../../../../../_repositories/post-repository';
-import { findUserProviderByTypeAndSub } from '../../../../../../../_repositories/user-provider-repository';
-import { findUserById } from '../../../../../../../_repositories/user-repository';
 
 import type { Route } from 'next';
 
@@ -22,13 +20,7 @@ export type DeletePostResult = {
 };
 
 export const deletePostAction = async (postId: string): Promise<DeletePostResult> => {
-  const userMetadata = await getUserMetadata();
-  if (!userMetadata) return { type: 'error', reason: 'unauthorized', message: 'Login required!' };
-
-  const userProvider = await findUserProviderByTypeAndSub(userMetadata.provider, userMetadata.sub);
-  if (!userProvider) return { type: 'error', reason: 'unauthorized', message: 'Login required!' };
-
-  const user = await findUserById(userProvider.userId);
+  const user = await getLoginUser();
   if (!user) return { type: 'error', reason: 'unauthorized', message: 'Login required!' };
 
   const post = await findPostById(postId);
