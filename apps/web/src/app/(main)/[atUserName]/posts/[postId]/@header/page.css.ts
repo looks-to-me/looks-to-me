@@ -34,4 +34,5 @@ export const toolbar = style({
   flexGrow: 1,
   display: 'flex',
   justifyContent: 'flex-end',
+  gap: 16,
 });

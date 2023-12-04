@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+import { PostMenu } from './_components/post-menu';
 import * as styles from './page.css';
+import { getLoginUser } from '../../../../../_actions/get-login-user';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../../../_components/avatar';
 import { publicEnv } from '../../../../../_libs/env';
 import { ShareButton } from '../../../../_components/share-button';
@@ -31,6 +33,9 @@ const UserPostDetailsHeaderPage: FC<UserPostDetailsHeaderPageProps> = async ({
 
   const user = await findUserById(post.userId);
   if (!user) return notFound();
+  
+  const loginUser = await getLoginUser();
+  const isMyPost = post.userId === loginUser?.id;
 
   return (
     <header className={styles.wrapper}>
@@ -55,6 +60,7 @@ const UserPostDetailsHeaderPage: FC<UserPostDetailsHeaderPageProps> = async ({
         <ShareButton
           text={`![L${post.word.toUpperCase().at(0)}TM](${publicEnv().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id})`}
         />
+        {isMyPost && <PostMenu post={post} />}
       </div>
     </header>
   );
