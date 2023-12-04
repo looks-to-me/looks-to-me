@@ -3,9 +3,9 @@ import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { toast } from 'sonner';
 
-import { deletePostAction } from './actions/delete-post';
+import { deletePostAction } from '../actions/delete-post';
 
-import type { Post } from '../../../../../../_repositories/post-repository';
+import type { Post } from '../../../../../../../_repositories/post-repository';
 
 type Props = {
   post: Post;

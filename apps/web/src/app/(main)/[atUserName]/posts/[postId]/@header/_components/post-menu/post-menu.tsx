@@ -1,5 +1,5 @@
 'use client';
-import { useDeletePost } from './use-delete-post';
+import { useDeletePost } from './hooks/use-delete-post';
 import { AccessibleIcon } from '../../../../../../../_components/accessible-icon';
 import { Button, ButtonIcon } from '../../../../../../../_components/button';
 import { DropDownMenu, DropDownMenuContent, DropDownMenuGroup, DropDownMenuIcon, DropDownMenuItem, DropDownMenuTrigger } from '../../../../../../../_components/drop-down-menu';
