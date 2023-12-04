@@ -118,7 +118,7 @@ importers:
         version: 4.3.1
       drizzle-orm:
         specifier: 0.29.1
-        version: 0.29.1(@cloudflare/workers-types@4.20231121.0)(better-sqlite3@9.1.1)
+        version: 0.29.1(@cloudflare/workers-types@4.20231121.0)(better-sqlite3@9.2.0)
       modern-normalize:
         specifier: 2.0.0
         version: 2.0.0
@@ -208,8 +208,8 @@ importers:
         specifier: 2.3.1
         version: 2.3.1(@types/node@20.10.3)(webpack@5.88.1)
       better-sqlite3:
-        specifier: 9.1.1
-        version: 9.1.1
+        specifier: 9.2.0
+        version: 9.2.0
       drizzle-kit:
         specifier: 0.20.6
         version: 0.20.6
@@ -8582,8 +8582,8 @@ packages:
       open: 8.4.2
     dev: true
 
-  /better-sqlite3@9.1.1:
-    resolution: {integrity: sha512-FhW7bS7cXwkB2SFnPJrSGPmQerVSCzwBgmQ1cIRcYKxLsyiKjljzCbyEqqhYXo5TTBqt5BISiBj2YE2Sy2ynaA==}
+  /better-sqlite3@9.2.0:
+    resolution: {integrity: sha512-MEm49nfxCU6Yn5rTyXJhnTmjuom0YFrU76/7AC+7PMcftAwIVJ2VtBF6HSPRwQ/WWXw/sSbnPRPUSZ6vMXMniQ==}
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
@@ -9784,14 +9784,9 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /detect-libc@2.0.1:
-    resolution: {integrity: sha512-463v3ZeIrcWtdgIg6vI6XUncguvr2TnGl4SzDXinkt9mSLpBJKXT3mW6xT3VQdDN11+WVs29pgvivTc4Lp8v+w==}
-    engines: {node: '>=8'}
-
   /detect-libc@2.0.2:
     resolution: {integrity: sha512-UX6sGumvvqSaXgdKGUsgZWqcUyIXZ/vZTrlRT/iobiKhGL0zL4d3osHj3uqllWJK+i+sixDS/3COVEOFbupFyw==}
     engines: {node: '>=8'}
-    dev: true
 
   /detect-newline@3.1.0:
     resolution: {integrity: sha512-TLz+x/vEXm/Y7P7wn1EJFNLxYpUD4TgMosxY6fAVJUnJMbupHBOncxyWUG9OpTaH9EBD7uFI5LfEgmMOc54DsA==}
@@ -9984,7 +9979,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /drizzle-orm@0.29.1(@cloudflare/workers-types@4.20231121.0)(better-sqlite3@9.1.1):
+  /drizzle-orm@0.29.1(@cloudflare/workers-types@4.20231121.0)(better-sqlite3@9.2.0):
     resolution: {integrity: sha512-yItc4unfHnk8XkDD3/bdC63vdboTY7e7I03lCF1OJYABXSIfQYU9BFTQJXMMovVeb3T1/OJWwfW/70T1XPnuUA==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
@@ -10047,7 +10042,7 @@ packages:
         optional: true
     dependencies:
       '@cloudflare/workers-types': 4.20231121.0
-      better-sqlite3: 9.1.1
+      better-sqlite3: 9.2.0
     dev: false
 
   /duplexify@3.7.1:
@@ -15172,7 +15167,7 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      detect-libc: 2.0.1
+      detect-libc: 2.0.2
       expand-template: 2.0.3
       github-from-package: 0.0.0
       minimist: 1.2.8
