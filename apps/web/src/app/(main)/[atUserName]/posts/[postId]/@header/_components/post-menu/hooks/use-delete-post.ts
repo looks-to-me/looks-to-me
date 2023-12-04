@@ -2,6 +2,7 @@ import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { toast } from 'sonner';
 
+import { useGlobalConfirmModal } from '../../../../../../../../_components/global-confirm-modal';
 import { deletePostAction } from '../actions/delete-post';
 
 import type { Post } from '../../../../../../../_repositories/post-repository';
@@ -12,10 +13,10 @@ type Props = {
 
 export const useDeletePost = ({ post }: Props) => {
   const router = useRouter();
+  const { openModal } = useGlobalConfirmModal();
   
-  return useCallback(() => {
-    //TODO: Implement a proper modal for confirmation display.
-    const isComfirm = window.confirm('Are you sure you want to delete this post?');
+  return useCallback(async () => {
+    const isComfirm = await openModal({ title: 'Delete Post', description: 'Are you sure you want to delete this post?' });
     if (!isComfirm) return;
 
     toast.promise(async () => {
