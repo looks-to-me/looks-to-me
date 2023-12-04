@@ -60,7 +60,7 @@
     "@svgr/webpack": "8.1.0",
     "@tsconfig/next": "2.0.1",
     "@types/node": "20.10.3",
-    "@types/react": "18.2.39",
+    "@types/react": "18.2.41",
     "@types/react-dom": "18.2.17",
     "@vanilla-extract/css": "1.14.0",
     "@vanilla-extract/css-utils": "0.1.3",
