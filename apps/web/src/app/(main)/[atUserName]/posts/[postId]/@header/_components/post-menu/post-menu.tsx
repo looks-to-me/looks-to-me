@@ -25,7 +25,7 @@ export const PostMenu: FC<PostMenuProps> = ({
       <DropDownMenuTrigger>
         <Button className={className} size="icon">
           <ButtonIcon>
-            <AccessibleIcon label="Open post navigation">
+            <AccessibleIcon label="Open post menu">
               <MenuIcon />
             </AccessibleIcon>
           </ButtonIcon>
