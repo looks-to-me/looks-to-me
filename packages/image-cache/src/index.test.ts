@@ -115,7 +115,7 @@ describe('deleteImageCache', () => {
       delete: jest.fn().mockResolvedValue(null),
     } as unknown as R2Bucket;
 
-    await deleteImageCache({ bucket, path: 'caches/images/posts/testPostId' });
+    await deleteImageCache({ bucket, path: 'images/posts/testPostId' });
 
     expect(bucket.list).toHaveBeenCalledWith({ prefix: 'caches/images/posts/testPostId' });
     expect(bucket.delete).toHaveBeenCalledTimes(3);
