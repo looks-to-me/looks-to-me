@@ -2,17 +2,13 @@ import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { toast } from 'sonner';
 
-import { useAlertDialog } from '../../../../../../../../_components/alert-dialog';
-import { Button } from '../../../../../../../../_components/button';
+import { useAlertDialog } from '../../../../_components/alert-dialog';
+import { Button } from '../../../../_components/button';
 import { deletePostAction } from '../actions/delete-post';
 
-import type { Post } from '../../../../../../../_repositories/post-repository';
+import type { Post } from '../../../_repositories/post-repository';
 
-type Props = {
-  post: Post;
-};
-
-export const useDeletePost = ({ post }: Props) => {
+export const useDeletePost = (post: Post) => {
   const router = useRouter();
   const { openAlertDialog } = useAlertDialog();
   
@@ -42,5 +38,5 @@ export const useDeletePost = ({ post }: Props) => {
       success: (result: string) => result,
       error: (error: string) => error,
     });
-  },[post.id]);
+  },[openAlertDialog, post.id, router]);
 };
