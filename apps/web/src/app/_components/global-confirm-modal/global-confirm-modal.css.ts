@@ -6,9 +6,7 @@ export const main = style({
 });
 
 export const buttonWrapper = style({
-  alignSelf: 'flex-end',
-});
-
-export const cancelButton = style({
-  marginLeft: '8px',
+  display: 'flex',
+  justifyContent: 'flex-end',
+  gap: '8px',
 });

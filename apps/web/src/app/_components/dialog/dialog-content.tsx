@@ -13,19 +13,17 @@ import type { ElementRef , ComponentPropsWithoutRef, ForwardRefRenderFunction } 
 
 export type DialogContentProps = ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & {
   withClose?: boolean;
-  onClickOverlay?: () => void;
 };
 
 const DialogContentRender: ForwardRefRenderFunction<ElementRef<typeof DialogPrimitive.Content>, DialogContentProps> = ({
   className,
   children,
   withClose,
-  onClickOverlay,
   ...props
 }, ref) => {
   return (
     <DialogPrimitive.Portal>
-      <DialogPrimitive.Overlay className={styles.overlay} onClick={onClickOverlay} />
+      <DialogPrimitive.Overlay className={styles.overlay} />
       <DialogPrimitive.Content
         {...props}
         ref={ref}
