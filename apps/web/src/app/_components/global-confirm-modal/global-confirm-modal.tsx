@@ -16,8 +16,8 @@ import type { ReactNode, FC } from 'react';
 export type ShowModalProps = {
   title: ReactNode;
   description: ReactNode;
-  approveButtonLabel?: string;
-  rejectButtonLabel?: string;
+  acceptButton?: ReactNode;
+  rejectButton?: ReactNode;
 };
 
 type ContextType = {
@@ -32,7 +32,7 @@ export const GlobalConfirmModalProvider: FC<{ children: ReactNode }> = ({
 
   const handleOnClickApprove = useCallback(() => {
     if (!modalState.isOpen) return;
-    modalState.approve();
+    modalState.accept();
   }, [modalState]);
 
   const handleOnClickReject = useCallback(() => {
@@ -43,31 +43,26 @@ export const GlobalConfirmModalProvider: FC<{ children: ReactNode }> = ({
   return (
     <Context.Provider value={{ openModal }}>
       {children}
-      {modalState.isOpen && (
-        <AlertDialog open={modalState.isOpen}>
-          <AlertDialogContent>
-            <AlertDialogTitle>
-              {modalState.title}
-            </AlertDialogTitle>
-            <AlertDialogDescription>
-              {modalState.description}
-            </AlertDialogDescription>
-            <div className={styles.buttonWrapper}>
-              <AlertDialogAction onClick={handleOnClickApprove}>
-                <Button variant="danger">
-                  {modalState.approveButtonLabel}
-                </Button>
-              </AlertDialogAction>
-              <AlertDialogCancel onClick={handleOnClickReject}>
-                <Button>
-                  {modalState.rejectButtonLabel}
-                </Button>
-              </AlertDialogCancel>
-            </div>
-          </AlertDialogContent>
-        </AlertDialog>
-      )}
-
+      {modalState.isOpen &&
+        (() => {
+          const { acceptButton, rejectButton, description, isOpen, title } = modalState;
+          return (
+            <AlertDialog open={isOpen}>
+              <AlertDialogContent>
+                <AlertDialogTitle>{title}</AlertDialogTitle>
+                <AlertDialogDescription>{description}</AlertDialogDescription>
+                <div className={styles.buttonWrapper}>
+                  <AlertDialogAction onClick={handleOnClickApprove}>
+                    {acceptButton ?? <Button variant="danger">OK</Button>}
+                  </AlertDialogAction>
+                  <AlertDialogCancel onClick={handleOnClickReject}>
+                    {rejectButton ?? <Button>Cancel</Button>}
+                  </AlertDialogCancel>
+                </div>
+              </AlertDialogContent>
+            </AlertDialog>
+          );
+        })()}
     </Context.Provider>
   );
 };

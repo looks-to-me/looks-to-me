@@ -5,9 +5,9 @@ import type { ShowModalProps } from '..';
 
 type ModalState = ({
   isOpen: true;
-  approve: () => void;
+  accept: () => void;
   reject: () => void;
-} & Required<ShowModalProps>) | {
+} & ShowModalProps) | {
   isOpen: false;
 };
 
@@ -23,17 +23,22 @@ export const useGlobalConfirmModalDisclosure = () => {
   useKeyPress('ESC', handleOnPressESC);
 
   const closeModal = useCallback(() => setModalState({ isOpen: false }), []);
-  
+
   const openModal = useCallback(async (props: ShowModalProps) => {
-    const { description, title, approveButtonLabel = 'Yes', rejectButtonLabel = 'Cancel' } = props;
+    const {
+      description,
+      title,
+      acceptButton,
+      rejectButton,
+    } = props;
     return await new Promise<boolean>((resolve) => {
       setModalState({
         isOpen: true,
         title,
         description,
-        approveButtonLabel,
-        rejectButtonLabel,
-        approve: () => resolve(true),
+        acceptButton,
+        rejectButton,
+        accept: () => resolve(true),
         reject: () => resolve(false),
       });
     }).finally(() => closeModal(),
