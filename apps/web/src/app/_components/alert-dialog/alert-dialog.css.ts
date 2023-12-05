@@ -64,3 +64,9 @@ export const description = style({
   margin: 0,
   color: theme.color.token.semantic.textMuted,
 });
+
+export const buttonWrapper = style({
+  display: 'flex',
+  justifyContent: 'flex-end',
+  gap: '8px',
+});

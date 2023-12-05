@@ -1,7 +1,7 @@
 import { useKeyPress } from 'ahooks';
 import { useCallback, useState } from 'react';
 
-import type { OpenModalProps } from '..';
+import type { OpenModalProps } from '../alert-dialog-provider';
 
 type ModalState = ({
   isOpen: true;
@@ -11,7 +11,7 @@ type ModalState = ({
   isOpen: false;
 };
 
-export const useGlobalConfirmModalDisclosure = () => {
+export const useAlertDialogDisclosure = () => {
   const [modalState, setModalState] = useState<ModalState>({
     isOpen: false,
   });

@@ -1,14 +1,14 @@
 'use client';
 import { createContext, useCallback, useContext } from 'react';
 
-import * as styles from './global-confirm-modal.css';
-import { useGlobalConfirmModalDisclosure } from './hooks/use-global-confirm-modal-disclosure';
-import { AlertDialog } from '../alert-dialog';
-import { AlertDialogAction } from '../alert-dialog/alert-dialog-action';
-import { AlertDialogCancel } from '../alert-dialog/alert-dialog-cancel';
-import { AlertDialogContent } from '../alert-dialog/alert-dialog-content';
-import { AlertDialogDescription } from '../alert-dialog/alert-dialog-description';
-import { AlertDialogTitle } from '../alert-dialog/alert-dialog-title';
+import { AlertDialog } from '.';
+import { AlertDialogAction } from './alert-dialog-action';
+import { AlertDialogCancel } from './alert-dialog-cancel';
+import { AlertDialogContent } from './alert-dialog-content';
+import { AlertDialogDescription } from './alert-dialog-description';
+import { AlertDialogTitle } from './alert-dialog-title';
+import * as styles from './alert-dialog.css';
+import { useAlertDialogDisclosure } from './hooks/use-alert-dialog-disclosure';
 import { Button } from '../button';
 
 import type { ReactNode, FC } from 'react';
@@ -25,11 +25,11 @@ type ContextType = {
 };
 const Context = createContext<ContextType>(null as unknown as ContextType);
 
-export type GlobalConfirmModalProviderProps = { children: ReactNode };
-export const GlobalConfirmModalProvider: FC<GlobalConfirmModalProviderProps> = ({
+export type AlertDialogProviderProps = { children: ReactNode };
+export const AlertDialogProvider: FC<AlertDialogProviderProps> = ({
   children,
 }) => {
-  const { modalState, openModal } = useGlobalConfirmModalDisclosure();
+  const { modalState, openModal } = useAlertDialogDisclosure();
 
   const handleOnClickApprove = useCallback(() => {
     if (!modalState.isOpen) return;
@@ -68,6 +68,6 @@ export const GlobalConfirmModalProvider: FC<GlobalConfirmModalProviderProps> = (
   );
 };
 
-export const useGlobalConfirmModal = () => {
+export const useAlertDialog = () => {
   return useContext(Context);
 };

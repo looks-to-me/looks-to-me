@@ -5,7 +5,7 @@ import './root.css';
 
 import { SyncOAuthUser } from '../../(main)/_components/sync-o-auth-user';
 import { SessionProvider } from '../../_libs/auth/client/session-provider';
-import { GlobalConfirmModalProvider } from '../global-confirm-modal';
+import { AlertDialogProvider } from '../alert-dialog/alert-dialog-provider';
 import { Toaster } from '../toaster';
 import { TooltipProvider } from '../tooltip';
 
@@ -24,9 +24,9 @@ export const Root: FC<RootProps> = ({
     <div className={inter.className}>
       <SessionProvider>
         <TooltipProvider>
-          <GlobalConfirmModalProvider>
+          <AlertDialogProvider>
             {children}
-          </GlobalConfirmModalProvider>
+          </AlertDialogProvider>
         </TooltipProvider>
         <SyncOAuthUser />
       </SessionProvider>

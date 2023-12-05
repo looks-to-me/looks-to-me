@@ -1,37 +1,85 @@
-import { AlertDialog } from './alert-dialog';
-import { AlertDialogAction } from './alert-dialog-action';
-import { AlertDialogCancel } from './alert-dialog-cancel';
-import { AlertDialogContent } from './alert-dialog-content';
-import { AlertDialogDescription } from './alert-dialog-description';
-import { AlertDialogTitle } from './alert-dialog-title';
-import { AlertDialogTrigger } from './alert-dialog-trigger';
+import { useState } from 'react';
+
+import { AlertDialogProvider, useAlertDialog } from './alert-dialog-provider';
+import LooksToMeWithTextWhite from '../../_icons/looks-to-me-with-text-white.svg';
 import { Button } from '../button';
 
+import type { OpenModalProps } from './alert-dialog-provider';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  component: AlertDialog,
-} as Meta<typeof AlertDialog>;
+  component: AlertDialogProvider,
+} as Meta<typeof AlertDialogProvider>;
 
-type Story = StoryObj<typeof AlertDialog>;
+type Story = StoryObj<typeof AlertDialogProvider>;
 
-export const Default = {
+const modalPropsObject = {
+  shortText: { description: 'Are you sure you want to delete this post?', title: 'Delete Post' },
+  longText: {
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ratione aliquid, odit dolor excepturi eum amet sapiente illum fugit eveniet iure, nam quidem nostrum tenetur omnis, minus nihil saepe quos.',
+    title:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ratione aliquid, odit dolor excepturi eum amet sapiente illum fugit eveniet iure, nam quidem nostrum tenetur omnis, minus nihil saepe quos.',
+  },
+  component: {
+    description: <LooksToMeWithTextWhite style={{ fontSize: '100px', width: '100%' }} />,
+    title: <div style={{ color: 'green' }}>title green</div>,
+  },
+} as const satisfies Record<string, OpenModalProps>;
+
+const ShowGlobalConfirmModalButton = (props: {
+  displayButtonLabel: string;
+  modalProps: OpenModalProps;
+}) => {
+  const { displayButtonLabel, modalProps } = props;
+  const { openModal } = useAlertDialog();
+  const [result, setResult] = useState<boolean[]>([]);
+
+  const handleOnClick = async () => {
+    const result = await openModal(modalProps);
+    setResult((previous) => [...previous, result]);
+  };
+  
+  return (
+    <div style={{ display: 'inline-flex', flexDirection: 'column', gap: '10px' }}>
+      <Button onClick={handleOnClick}>{displayButtonLabel}</Button>
+      <div>
+        <h2>Result</h2>
+        <pre>{JSON.stringify(result, null, 2)}</pre>
+      </div>
+    </div>
+  );
+};
+
+export const shortText = {
   args: {
     children: (
-      <>
-        <AlertDialogTrigger>
-          <Button>Open</Button>
-        </AlertDialogTrigger>
-        <AlertDialogContent style={{ width: '240px' }}>
-          <AlertDialogTitle>Title</AlertDialogTitle>
-          <AlertDialogDescription>Description</AlertDialogDescription>
-          <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px' }}>
-            <AlertDialogAction><Button variant="danger">Yes</Button></AlertDialogAction>
-            <AlertDialogCancel><Button>Cancel</Button></AlertDialogCancel>
-          </div>
-        </AlertDialogContent>
-      </>
+      <ShowGlobalConfirmModalButton
+        displayButtonLabel="shortText"
+        modalProps={modalPropsObject['shortText']}
+      />
     ),
   },
+} satisfies Story;
 
+export const longText = {
+  args: {
+    children: (
+      <ShowGlobalConfirmModalButton
+        displayButtonLabel="longText"
+        modalProps={modalPropsObject['longText']}
+      />
+    ),
+  },
+} satisfies Story;
+
+export const component = {
+  args: {
+    children: (
+      <ShowGlobalConfirmModalButton
+        displayButtonLabel="component"
+        modalProps={modalPropsObject['component']}
+      />
+    ),
+  },
 } satisfies Story;

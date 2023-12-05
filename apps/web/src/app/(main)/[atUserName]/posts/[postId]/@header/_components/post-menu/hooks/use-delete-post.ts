@@ -2,7 +2,7 @@ import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { toast } from 'sonner';
 
-import { useGlobalConfirmModal } from '../../../../../../../../_components/global-confirm-modal';
+import { useAlertDialog } from '../../../../../../../../_components/alert-dialog/alert-dialog-provider';
 import { deletePostAction } from '../actions/delete-post';
 
 import type { Post } from '../../../../../../../_repositories/post-repository';
@@ -13,7 +13,7 @@ type Props = {
 
 export const useDeletePost = ({ post }: Props) => {
   const router = useRouter();
-  const { openModal } = useGlobalConfirmModal();
+  const { openModal } = useAlertDialog();
   
   return useCallback(async () => {
     const isComfirm = await openModal({ title: 'Delete Post', description: 'Are you sure you want to delete this post?' });
