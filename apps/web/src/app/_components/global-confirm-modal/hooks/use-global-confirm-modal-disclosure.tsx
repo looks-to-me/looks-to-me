@@ -1,13 +1,13 @@
 import { useKeyPress } from 'ahooks';
 import { useCallback, useState } from 'react';
 
-import type { ShowModalProps } from '..';
+import type { OpenModalProps } from '..';
 
 type ModalState = ({
   isOpen: true;
   accept: () => void;
   reject: () => void;
-} & ShowModalProps) | {
+} & OpenModalProps) | {
   isOpen: false;
 };
 
@@ -24,7 +24,7 @@ export const useGlobalConfirmModalDisclosure = () => {
 
   const closeModal = useCallback(() => setModalState({ isOpen: false }), []);
 
-  const openModal = useCallback(async (props: ShowModalProps) => {
+  const openModal = useCallback(async (props: OpenModalProps) => {
     const {
       description,
       title,

@@ -13,7 +13,7 @@ import { Button } from '../button';
 
 import type { ReactNode, FC } from 'react';
 
-export type ShowModalProps = {
+export type OpenModalProps = {
   title: ReactNode;
   description: ReactNode;
   acceptButton?: ReactNode;
@@ -21,7 +21,7 @@ export type ShowModalProps = {
 };
 
 type ContextType = {
-  openModal: (props: ShowModalProps) => Promise<boolean>;
+  openModal: (props: OpenModalProps) => Promise<boolean>;
 };
 const Context = createContext<ContextType>(null as unknown as ContextType);
 

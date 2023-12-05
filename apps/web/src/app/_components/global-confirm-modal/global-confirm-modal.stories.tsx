@@ -4,7 +4,7 @@ import { GlobalConfirmModalProvider, useGlobalConfirmModal } from './global-conf
 import LooksToMeWithTextWhite from '../../_icons/looks-to-me-with-text-white.svg';
 import { Button } from '../button';
 
-import type { ShowModalProps } from './global-confirm-modal';
+import type { OpenModalProps } from './global-confirm-modal';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
@@ -24,11 +24,11 @@ const modalPropsObject = {
     description: <LooksToMeWithTextWhite style={{ fontSize: '100px', width: '100%' }} />,
     title: <div style={{ color: 'green' }}>title green</div>,
   },
-} as const satisfies Record<string, ShowModalProps>;
+} as const satisfies Record<string, OpenModalProps>;
 
 const ShowGlobalConfirmModalButton = (props: {
   displayButtonLabel: string;
-  modalProps: ShowModalProps;
+  modalProps: OpenModalProps;
 }) => {
   const { displayButtonLabel, modalProps } = props;
   const { openModal } = useGlobalConfirmModal();
