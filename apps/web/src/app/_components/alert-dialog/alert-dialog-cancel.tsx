@@ -7,12 +7,11 @@ import type { ComponentPropsWithoutRef, FC } from 'react';
 export type AlertDialogCancelProps = ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Cancel>;
 
 export const AlertDialogCancel: FC<AlertDialogCancelProps> = ({
-  className,
   children,
   ...props
 }) => {
   return (
-    <AlertDialogPrimitive.Cancel {...props} className={className} asChild>
+    <AlertDialogPrimitive.Cancel {...props} asChild>
       {children}
     </AlertDialogPrimitive.Cancel>
   );

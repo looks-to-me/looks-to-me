@@ -7,12 +7,11 @@ import type { ComponentPropsWithoutRef, FC } from 'react';
 export type AlertDialogActionProps = ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action>;
 
 export const AlertDialogAction: FC<AlertDialogActionProps> = ({
-  className,
   children,
   ...props
 }) => {
   return (
-    <AlertDialogPrimitive.Action {...props} className={className} asChild>
+    <AlertDialogPrimitive.Action {...props} asChild>
       {children}
     </AlertDialogPrimitive.Action>
   );
