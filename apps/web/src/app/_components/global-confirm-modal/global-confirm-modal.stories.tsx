@@ -24,10 +24,6 @@ const modalPropsObject = {
     description: <LooksToMeWithTextWhite style={{ fontSize: '100px', width: '100%' }} />,
     title: <div style={{ color: 'green' }}>title green</div>,
   },
-  emoji: {
-    description: '👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪👪',
-    title: '😇😇😇😇😇😇😇😇😇😇😇😇😇😇😇😇😇😇😇😇😇😇😇😇😇😇😇😇😇😇',
-  },
 } as const satisfies Record<string, ShowModalProps>;
 
 const ShowGlobalConfirmModalButton = (props: {
@@ -71,17 +67,6 @@ export const longText = {
       <ShowGlobalConfirmModalButton
         displayButtonLabel="longText"
         modalProps={modalPropsObject['longText']}
-      />
-    ),
-  },
-} satisfies Story;
-
-export const emoji = {
-  args: {
-    children: (
-      <ShowGlobalConfirmModalButton
-        displayButtonLabel="emoji"
-        modalProps={modalPropsObject['emoji']}
       />
     ),
   },
