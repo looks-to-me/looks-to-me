@@ -25,7 +25,8 @@ type ContextType = {
 };
 const Context = createContext<ContextType>(null as unknown as ContextType);
 
-export const GlobalConfirmModalProvider: FC<{ children: ReactNode }> = ({
+export type GlobalConfirmModalProviderProps = { children: ReactNode };
+export const GlobalConfirmModalProvider: FC<GlobalConfirmModalProviderProps> = ({
   children,
 }) => {
   const { modalState, openModal } = useGlobalConfirmModalDisclosure();
