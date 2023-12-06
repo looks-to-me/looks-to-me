@@ -65,7 +65,7 @@ export const description = style({
   color: theme.color.token.semantic.textMuted,
 });
 
-export const buttonWrapper = style({
+export const footer = style({
   display: 'flex',
   justifyContent: 'flex-end',
   gap: '8px',

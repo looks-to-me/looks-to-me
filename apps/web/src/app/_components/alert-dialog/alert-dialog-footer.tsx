@@ -15,7 +15,7 @@ const AlertDialogFooterRender: ForwardRefRenderFunction<HTMLDivElement, AlertDia
   ...props
 }, ref) => {
   return (
-    <div ref={ref} {...props} className={clsx(styles.buttonWrapper, className)}>
+    <div ref={ref} {...props} className={clsx(styles.footer, className)}>
       {children}
     </div>
   );
