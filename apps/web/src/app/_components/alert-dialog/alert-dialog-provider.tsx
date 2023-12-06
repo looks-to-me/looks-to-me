@@ -6,8 +6,8 @@ import { AlertDialogAction } from './alert-dialog-action';
 import { AlertDialogCancel } from './alert-dialog-cancel';
 import { AlertDialogContent } from './alert-dialog-content';
 import { AlertDialogDescription } from './alert-dialog-description';
+import { AlertDialogFooter } from './alert-dialog-footer';
 import { AlertDialogTitle } from './alert-dialog-title';
-import * as styles from './alert-dialog.css';
 import { useAlertDialogDisclosure } from './hooks/use-alert-dialog-disclosure';
 
 import type { ButtonProps } from '../button';
@@ -52,14 +52,14 @@ export const AlertDialogProvider: FC<AlertDialogProviderProps> = ({
           <AlertDialogContent>
             <AlertDialogTitle>{modalState.title}</AlertDialogTitle>
             <AlertDialogDescription>{modalState.description}</AlertDialogDescription>
-            <div className={styles.buttonWrapper}>
+            <AlertDialogFooter>
               <AlertDialogAction>
                 {cloneElement(modalState.acceptButton, { onClick: handleOnClickAccept })}
               </AlertDialogAction>
               <AlertDialogCancel>
                 {cloneElement(modalState.rejectButton, { onClick: handleOnClickReject })}
               </AlertDialogCancel>
-            </div>
+            </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>
       )}
