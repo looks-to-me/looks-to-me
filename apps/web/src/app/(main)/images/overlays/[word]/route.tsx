@@ -1,6 +1,6 @@
 import { imageCache } from '@looks-to-me/package-image-cache';
 import { ImageResponse } from 'next/og';
-import { getOutput, maxLength, parse, regex, string } from 'valibot';
+import { maxLength, parse, regex, string, transform } from 'valibot';
 
 import { loadGoogleFont } from '../../../../_helpers/load-google-font';
 import { privateEnv } from '../../../../_libs/env';
@@ -10,11 +10,11 @@ import type { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
 
-const wordSchema = string([
-  regex(/^[A-Za-z]+$/, 'Must be a alphabetic.'),
-  maxLength(16, 'Must be less than 16 characters.'),
-  input => getOutput(`${input[0]?.toUpperCase()}${input.slice(1).toLowerCase()}`),
-]);
+const wordSchema = transform(
+  string([
+    regex(/^[A-Za-z]+$/, 'Must be a alphabetic.'),
+    maxLength(16, 'Must be less than 16 characters.'),
+  ]), input => `${input[0]?.toUpperCase()}${input.slice(1).toLowerCase()}`);
 
 const alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 

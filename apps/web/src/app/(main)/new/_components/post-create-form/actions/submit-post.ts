@@ -1,7 +1,7 @@
 'use server';
 
 import { createId } from '@paralleldrive/cuid2';
-import { coerce, getOutput, instance, maxLength, minValue, number, object, parse, regex, string } from 'valibot';
+import { coerce, transform, instance, maxLength, minValue, number, object, parse, regex, string } from 'valibot';
 
 import { getUserMetadata } from '../../../../../_libs/auth/server/get-user-metadata';
 import { publicEnv } from '../../../../../_libs/env';
@@ -17,11 +17,10 @@ const inputSchema = object({
   image: instance(Blob),
   imageWidth: coerce(number([minValue(1)]), Number),
   imageHeight: coerce(number([minValue(1)]), Number),
-  word: string([
+  word: transform(string([
     regex(/^[A-Za-z]+$/, 'Must be a alphabetic.'),
     maxLength(16, 'Must be less than 16 characters.'),
-    input => getOutput(`${input[0]?.toUpperCase()}${input.slice(1).toLowerCase()}`),
-  ]),
+  ]), input =>`${input[0]?.toUpperCase()}${input.slice(1).toLowerCase()}` ),
 });
 
 export type SubmitPostResult = {
