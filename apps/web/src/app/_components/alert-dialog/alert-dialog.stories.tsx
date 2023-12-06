@@ -4,7 +4,7 @@ import { AlertDialogProvider, useAlertDialog } from './alert-dialog-provider';
 import LooksToMeWithTextWhite from '../../_icons/looks-to-me-with-text-white.svg';
 import { Button } from '../button';
 
-import type { OpenModalProps } from './alert-dialog-provider';
+import type { OpenAlertDialogProps  } from './alert-dialog-provider';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
@@ -25,11 +25,11 @@ const modalPropsObject = {
     description: <LooksToMeWithTextWhite style={{ fontSize: '100px', width: '100%' }} />,
     title: <div style={{ color: 'green' }}>title green</div>,
   },
-} as const satisfies Record<string, OpenModalProps>;
+} as const satisfies Record<string, OpenAlertDialogProps >;
 
 const ShowGlobalConfirmModalButton = (props: {
   displayButtonLabel: string;
-  modalProps: OpenModalProps;
+  modalProps: OpenAlertDialogProps ;
 }) => {
   const { displayButtonLabel, modalProps } = props;
   const { openModal } = useAlertDialog();

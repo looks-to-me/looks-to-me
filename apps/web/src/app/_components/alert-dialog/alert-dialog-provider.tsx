@@ -13,7 +13,7 @@ import { Button } from '../button';
 
 import type { ReactNode, FC } from 'react';
 
-export type OpenModalProps = {
+export type OpenAlertDialogProps = {
   title: ReactNode;
   description: ReactNode;
   acceptButton?: ReactNode;
@@ -21,7 +21,7 @@ export type OpenModalProps = {
 };
 
 type ContextType = {
-  openModal: (props: OpenModalProps) => Promise<boolean>;
+  openModal: (props: OpenAlertDialogProps ) => Promise<boolean>;
 };
 const Context = createContext<ContextType>(null as unknown as ContextType);
 

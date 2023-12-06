@@ -1,13 +1,13 @@
 import { useKeyPress } from 'ahooks';
 import { useCallback, useState } from 'react';
 
-import type { OpenModalProps } from '../alert-dialog-provider';
+import type { OpenAlertDialogProps } from '../alert-dialog-provider';
 
 type ModalState = ({
   isOpen: true;
   accept: () => void;
   reject: () => void;
-} & OpenModalProps) | {
+} & OpenAlertDialogProps ) | {
   isOpen: false;
 };
 
@@ -24,7 +24,7 @@ export const useAlertDialogDisclosure = () => {
 
   const closeModal = useCallback(() => setModalState({ isOpen: false }), []);
 
-  const openModal = useCallback(async (props: OpenModalProps) => {
+  const openModal = useCallback(async (props: OpenAlertDialogProps ) => {
     const {
       description,
       title,
