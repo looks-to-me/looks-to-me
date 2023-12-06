@@ -22,9 +22,9 @@ export const useAlertDialogDisclosure = () => {
   }, [modalState]);
   useKeyPress('ESC', handleOnPressESC);
 
-  const closeModal = useCallback(() => setModalState({ isOpen: false }), []);
+  const closeAlertDialog = useCallback(() => setModalState({ isOpen: false }), []);
 
-  const openModal = useCallback(async (props: OpenAlertDialogProps ) => {
+  const openAlertDialog = useCallback(async (props: OpenAlertDialogProps ) => {
     const {
       description,
       title,
@@ -41,12 +41,12 @@ export const useAlertDialogDisclosure = () => {
         accept: () => resolve(true),
         reject: () => resolve(false),
       });
-    }).finally(() => closeModal(),
+    }).finally(() => closeAlertDialog(),
     );
   }, []);
 
   return {
     modalState,
-    openModal,
+    openAlertDialog,
   };
 };

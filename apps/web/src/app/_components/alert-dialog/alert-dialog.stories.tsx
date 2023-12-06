@@ -4,7 +4,7 @@ import { AlertDialogProvider, useAlertDialog } from './alert-dialog-provider';
 import LooksToMeWithTextWhite from '../../_icons/looks-to-me-with-text-white.svg';
 import { Button } from '../button';
 
-import type { OpenAlertDialogProps  } from './alert-dialog-provider';
+import type { OpenAlertDialogProps } from './alert-dialog-provider';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
@@ -32,11 +32,11 @@ const ShowGlobalConfirmModalButton = (props: {
   modalProps: OpenAlertDialogProps ;
 }) => {
   const { displayButtonLabel, modalProps } = props;
-  const { openModal } = useAlertDialog();
+  const { openAlertDialog } = useAlertDialog();
   const [result, setResult] = useState<boolean[]>([]);
 
   const handleOnClick = async () => {
-    const result = await openModal(modalProps);
+    const result = await openAlertDialog(modalProps);
     setResult((previous) => [...previous, result]);
   };
   

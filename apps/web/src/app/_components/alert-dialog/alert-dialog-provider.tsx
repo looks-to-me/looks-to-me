@@ -21,7 +21,7 @@ export type OpenAlertDialogProps = {
 };
 
 type ContextType = {
-  openModal: (props: OpenAlertDialogProps ) => Promise<boolean>;
+  openAlertDialog: (props: OpenAlertDialogProps ) => Promise<boolean>;
 };
 const Context = createContext<ContextType>(null as unknown as ContextType);
 
@@ -29,7 +29,7 @@ export type AlertDialogProviderProps = { children: ReactNode };
 export const AlertDialogProvider: FC<AlertDialogProviderProps> = ({
   children,
 }) => {
-  const { modalState, openModal } = useAlertDialogDisclosure();
+  const { modalState, openAlertDialog } = useAlertDialogDisclosure();
 
   const handleOnClickApprove = useCallback(() => {
     if (!modalState.isOpen) return;
@@ -42,7 +42,7 @@ export const AlertDialogProvider: FC<AlertDialogProviderProps> = ({
   }, [modalState]);
 
   return (
-    <Context.Provider value={{ openModal }}>
+    <Context.Provider value={{ openAlertDialog }}>
       {children}
       {modalState.isOpen &&
         (() => {

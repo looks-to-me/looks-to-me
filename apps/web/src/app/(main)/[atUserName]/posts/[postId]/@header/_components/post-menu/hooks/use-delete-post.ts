@@ -13,10 +13,10 @@ type Props = {
 
 export const useDeletePost = ({ post }: Props) => {
   const router = useRouter();
-  const { openModal } = useAlertDialog();
+  const { openAlertDialog } = useAlertDialog();
   
   return useCallback(async () => {
-    const isComfirm = await openModal({ title: 'Delete Post', description: 'Are you sure you want to delete this post?' });
+    const isComfirm = await openAlertDialog({ title: 'Delete Post', description: 'Are you sure you want to delete this post?' });
     if (!isComfirm) return;
 
     toast.promise(async () => {
