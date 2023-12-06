@@ -11,15 +11,7 @@ import { AlertDialogTitle } from './alert-dialog-title';
 import { AlertDialogContext } from './contexts/alert-dialog-context';
 import { useAlertDialogDisclosure } from './hooks/use-alert-dialog-disclosure';
 
-import type { ButtonProps } from '../button';
-import type { ReactNode, FC, ReactElement } from 'react';
-
-export type OpenAlertDialogProps = {
-  title: ReactNode;
-  description: ReactNode;
-  acceptButton: ReactElement<ButtonProps>;
-  rejectButton: ReactElement<ButtonProps>;
-};
+import type { ReactNode, FC } from 'react';
 
 export type AlertDialogProviderProps = { children: ReactNode };
 export const AlertDialogProvider: FC<AlertDialogProviderProps> = ({

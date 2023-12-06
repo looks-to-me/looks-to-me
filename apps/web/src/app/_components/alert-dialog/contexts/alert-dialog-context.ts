@@ -2,7 +2,15 @@
 
 import { createContext } from 'react';
 
-import type { OpenAlertDialogProps } from '../alert-dialog-provider';
+import type { ButtonProps } from '../../button';
+import type { ReactElement, ReactNode } from 'react';
+
+export type OpenAlertDialogProps = {
+  title: ReactNode;
+  description: ReactNode;
+  acceptButton: ReactElement<ButtonProps>;
+  rejectButton: ReactElement<ButtonProps>;
+};
 
 type ContextType = {
   openAlertDialog: (props: OpenAlertDialogProps ) => Promise<boolean>;

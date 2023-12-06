@@ -5,7 +5,7 @@ import { AlertDialogProvider } from './alert-dialog-provider';
 import LooksToMeWithTextWhite from '../../_icons/looks-to-me-with-text-white.svg';
 import { Button } from '../button';
 
-import type { OpenAlertDialogProps } from './alert-dialog-provider';
+import type { OpenAlertDialogProps } from './contexts/alert-dialog-context';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {

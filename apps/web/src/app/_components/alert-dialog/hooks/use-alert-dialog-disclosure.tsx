@@ -1,7 +1,7 @@
 import { useKeyPress } from 'ahooks';
 import { useCallback, useState } from 'react';
 
-import type { OpenAlertDialogProps } from '../alert-dialog-provider';
+import type { OpenAlertDialogProps } from '../contexts/alert-dialog-context';
 
 type AlertDialogState = ({
   isOpen: true;
