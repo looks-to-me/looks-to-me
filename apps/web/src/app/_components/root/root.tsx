@@ -5,7 +5,7 @@ import './root.css';
 
 import { SyncOAuthUser } from '../../(main)/_components/sync-o-auth-user';
 import { SessionProvider } from '../../_libs/auth/client/session-provider';
-import { AlertDialogProvider } from '../alert-dialog/alert-dialog-provider';
+import { AlertDialogProvider } from '../alert-dialog';
 import { Toaster } from '../toaster';
 import { TooltipProvider } from '../tooltip';
 
