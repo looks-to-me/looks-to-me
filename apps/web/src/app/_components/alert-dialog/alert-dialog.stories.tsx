@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-import { AlertDialogProvider, useAlertDialog } from './alert-dialog-provider';
+import { useAlertDialog } from '.';
+import { AlertDialogProvider } from './alert-dialog-provider';
 import LooksToMeWithTextWhite from '../../_icons/looks-to-me-with-text-white.svg';
 import { Button } from '../button';
 

@@ -2,7 +2,7 @@ import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { toast } from 'sonner';
 
-import { useAlertDialog } from '../../../../../../../../_components/alert-dialog/alert-dialog-provider';
+import { useAlertDialog } from '../../../../../../../../_components/alert-dialog';
 import { Button } from '../../../../../../../../_components/button';
 import { deletePostAction } from '../actions/delete-post';
 

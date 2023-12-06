@@ -1,5 +1,5 @@
 'use client';
-import React, { cloneElement, createContext, useCallback, useContext } from 'react';
+import React, { cloneElement, createContext, useCallback } from 'react';
 
 import { AlertDialog } from '.';
 import { AlertDialogAction } from './alert-dialog-action';
@@ -22,7 +22,7 @@ export type OpenAlertDialogProps = {
 type ContextType = {
   openAlertDialog: (props: OpenAlertDialogProps ) => Promise<boolean>;
 };
-const Context = createContext<ContextType>({
+export const AlertDialogContext = createContext<ContextType>({
   openAlertDialog: () => {
     throw new Error('DialogContext not implemented');
   },
@@ -45,7 +45,7 @@ export const AlertDialogProvider: FC<AlertDialogProviderProps> = ({
   }, [modalState]);
 
   return (
-    <Context.Provider value={{ openAlertDialog }}>
+    <AlertDialogContext.Provider value={{ openAlertDialog }}>
       {children}
       {modalState.isOpen && (
         <AlertDialog open={modalState.isOpen}>
@@ -63,10 +63,6 @@ export const AlertDialogProvider: FC<AlertDialogProviderProps> = ({
           </AlertDialogContent>
         </AlertDialog>
       )}
-    </Context.Provider>
+    </AlertDialogContext.Provider>
   );
-};
-
-export const useAlertDialog = () => {
-  return useContext(Context);
 };
