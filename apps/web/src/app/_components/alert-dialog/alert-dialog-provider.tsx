@@ -46,12 +46,12 @@ export const AlertDialogProvider: FC<AlertDialogProviderProps> = ({
             <AlertDialogTitle>{modalState.title}</AlertDialogTitle>
             <AlertDialogDescription>{modalState.description}</AlertDialogDescription>
             <AlertDialogFooter>
-              <AlertDialogAction>
-                {cloneElement(modalState.acceptButton, { onClick: handleOnClickAccept })}
-              </AlertDialogAction>
               <AlertDialogCancel>
                 {cloneElement(modalState.rejectButton, { onClick: handleOnClickReject })}
               </AlertDialogCancel>
+              <AlertDialogAction>
+                {cloneElement(modalState.acceptButton, { onClick: handleOnClickAccept })}
+              </AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>
