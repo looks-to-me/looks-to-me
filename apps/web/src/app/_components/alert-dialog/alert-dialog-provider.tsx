@@ -23,7 +23,11 @@ export type OpenAlertDialogProps = {
 type ContextType = {
   openAlertDialog: (props: OpenAlertDialogProps ) => Promise<boolean>;
 };
-const Context = createContext<ContextType>(null as unknown as ContextType);
+const Context = createContext<ContextType>({
+  openAlertDialog: () => {
+    throw new Error('DialogContext not implemented');
+  },
+});
 
 export type AlertDialogProviderProps = { children: ReactNode };
 export const AlertDialogProvider: FC<AlertDialogProviderProps> = ({
