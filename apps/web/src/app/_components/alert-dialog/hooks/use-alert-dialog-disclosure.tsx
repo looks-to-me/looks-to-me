@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react';
 
 import type { OpenAlertDialogProps } from '../alert-dialog-provider';
 
-type ModalState = ({
+type AlertDialogState = ({
   isOpen: true;
   accept: () => void;
   reject: () => void;
@@ -12,7 +12,7 @@ type ModalState = ({
 };
 
 export const useAlertDialogDisclosure = () => {
-  const [modalState, setModalState] = useState<ModalState>({
+  const [modalState, setModalState] = useState<AlertDialogState>({
     isOpen: false,
   });
 
