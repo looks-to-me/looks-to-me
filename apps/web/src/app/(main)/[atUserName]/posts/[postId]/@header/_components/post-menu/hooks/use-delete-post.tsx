@@ -2,6 +2,8 @@ import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { toast } from 'sonner';
 
+import { useAlertDialog } from '../../../../../../../../_components/alert-dialog';
+import { Button } from '../../../../../../../../_components/button';
 import { deletePostAction } from '../actions/delete-post';
 
 import type { Post } from '../../../../../../../_repositories/post-repository';
@@ -12,10 +14,15 @@ type Props = {
 
 export const useDeletePost = ({ post }: Props) => {
   const router = useRouter();
+  const { openAlertDialog } = useAlertDialog();
   
-  return useCallback(() => {
-    //TODO: Implement a proper modal for confirmation display.
-    const isComfirm = window.confirm('Are you sure you want to delete this post?');
+  return useCallback(async () => {
+    const isComfirm = await openAlertDialog({
+      title: 'Delete Post',
+      description: 'Are you sure you want to delete this post?',
+      acceptButton: <Button variant="danger">OK</Button>,
+      rejectButton: <Button>Cancel</Button>,
+    });
     if (!isComfirm) return;
 
     toast.promise(async () => {
