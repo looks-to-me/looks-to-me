@@ -47,26 +47,22 @@ export const AlertDialogProvider: FC<AlertDialogProviderProps> = ({
   return (
     <Context.Provider value={{ openAlertDialog }}>
       {children}
-      {modalState.isOpen &&
-        (() => {
-          const { acceptButton, rejectButton, description, isOpen, title } = modalState;
-          return (
-            <AlertDialog open={isOpen}>
-              <AlertDialogContent>
-                <AlertDialogTitle>{title}</AlertDialogTitle>
-                <AlertDialogDescription>{description}</AlertDialogDescription>
-                <div className={styles.buttonWrapper}>
-                  <AlertDialogAction>
-                    {cloneElement(acceptButton, { onClick: handleOnClickAccept })}
-                  </AlertDialogAction>
-                  <AlertDialogCancel>
-                    {cloneElement(rejectButton, { onClick: handleOnClickReject })}
-                  </AlertDialogCancel>
-                </div>
-              </AlertDialogContent>
-            </AlertDialog>
-          );
-        })()}
+      {modalState.isOpen && (
+        <AlertDialog open={modalState.isOpen}>
+          <AlertDialogContent>
+            <AlertDialogTitle>{modalState.title}</AlertDialogTitle>
+            <AlertDialogDescription>{modalState.description}</AlertDialogDescription>
+            <div className={styles.buttonWrapper}>
+              <AlertDialogAction>
+                {cloneElement(modalState.acceptButton, { onClick: handleOnClickAccept })}
+              </AlertDialogAction>
+              <AlertDialogCancel>
+                {cloneElement(modalState.rejectButton, { onClick: handleOnClickReject })}
+              </AlertDialogCancel>
+            </div>
+          </AlertDialogContent>
+        </AlertDialog>
+      )}
     </Context.Provider>
   );
 };
