@@ -34,7 +34,7 @@ export const AlertDialogProvider: FC<AlertDialogProviderProps> = ({
 }) => {
   const { modalState, openAlertDialog } = useAlertDialogDisclosure();
 
-  const handleOnClickApprove = useCallback(() => {
+  const handleOnClickAccept = useCallback(() => {
     if (!modalState.isOpen) return;
     modalState.accept();
   }, [modalState]);
@@ -57,7 +57,7 @@ export const AlertDialogProvider: FC<AlertDialogProviderProps> = ({
                 <AlertDialogDescription>{description}</AlertDialogDescription>
                 <div className={styles.buttonWrapper}>
                   <AlertDialogAction>
-                    {cloneElement(acceptButton, { onClick: handleOnClickApprove })}
+                    {cloneElement(acceptButton, { onClick: handleOnClickAccept })}
                   </AlertDialogAction>
                   <AlertDialogCancel>
                     {cloneElement(rejectButton, { onClick: handleOnClickReject })}
