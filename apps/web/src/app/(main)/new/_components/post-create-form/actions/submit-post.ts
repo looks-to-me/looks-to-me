@@ -17,10 +17,13 @@ const inputSchema = object({
   image: instance(Blob),
   imageWidth: coerce(number([minValue(1)]), Number),
   imageHeight: coerce(number([minValue(1)]), Number),
-  word: transform(string([
-    regex(/^[A-Za-z]+$/, 'Must be a alphabetic.'),
-    maxLength(16, 'Must be less than 16 characters.'),
-  ]), input =>`${input[0]?.toUpperCase()}${input.slice(1).toLowerCase()}` ),
+  word: transform(
+    string([
+      regex(/^[A-Za-z]+$/, 'Must be a alphabetic.'),
+      maxLength(16, 'Must be less than 16 characters.'),
+    ]),
+    input =>`${input[0]?.toUpperCase()}${input.slice(1).toLowerCase()}`,
+  ),
 });
 
 export type SubmitPostResult = {
