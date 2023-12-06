@@ -32,8 +32,7 @@ export const useAlertDialogDisclosure = () => {
         accept: () => resolve(true),
         reject: () => resolve(false),
       });
-    }).finally(() => closeAlertDialog(),
-    );
+    }).finally(() => closeAlertDialog());
   }, []);
 
   return {
