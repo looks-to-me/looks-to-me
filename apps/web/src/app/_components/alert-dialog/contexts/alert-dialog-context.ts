@@ -2,14 +2,13 @@
 
 import { createContext } from 'react';
 
-import type { ButtonProps } from '../../button';
 import type { ReactElement, ReactNode } from 'react';
 
 export type OpenAlertDialogProps = {
   title: ReactNode;
   description: ReactNode;
-  acceptButton: ReactElement<ButtonProps>;
-  rejectButton: ReactElement<ButtonProps>;
+  acceptButton: ReactElement<{ onClick: () => void }>;
+  rejectButton: ReactElement<{ onClick: () => void }>;
 };
 
 type ContextType = {
