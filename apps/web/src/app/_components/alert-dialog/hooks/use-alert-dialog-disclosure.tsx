@@ -25,19 +25,10 @@ export const useAlertDialogDisclosure = () => {
   const closeAlertDialog = useCallback(() => setModalState({ isOpen: false }), []);
 
   const openAlertDialog = useCallback(async (props: OpenAlertDialogProps ) => {
-    const {
-      description,
-      title,
-      acceptButton,
-      rejectButton,
-    } = props;
     return await new Promise<boolean>((resolve) => {
       setModalState({
         isOpen: true,
-        title,
-        description,
-        acceptButton,
-        rejectButton,
+        ...props,
         accept: () => resolve(true),
         reject: () => resolve(false),
       });
