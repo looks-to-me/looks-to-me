@@ -2,16 +2,17 @@
 
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
 
-import type { ComponentPropsWithoutRef, FC } from 'react';
+import type { FC } from 'react';
 
-export type AlertDialogActionProps = ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action>;
+export type AlertDialogActionProps = {
+  children: React.ReactNode;
+};
 
 export const AlertDialogAction: FC<AlertDialogActionProps> = ({
   children,
-  ...props
 }) => {
   return (
-    <AlertDialogPrimitive.Action {...props} asChild>
+    <AlertDialogPrimitive.Action asChild>
       {children}
     </AlertDialogPrimitive.Action>
   );
