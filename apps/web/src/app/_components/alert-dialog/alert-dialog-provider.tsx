@@ -1,5 +1,5 @@
 'use client';
-import { createContext, useCallback, useContext } from 'react';
+import React, { cloneElement, createContext, useCallback, useContext } from 'react';
 
 import { AlertDialog } from '.';
 import { AlertDialogAction } from './alert-dialog-action';
@@ -9,17 +9,16 @@ import { AlertDialogDescription } from './alert-dialog-description';
 import { AlertDialogTitle } from './alert-dialog-title';
 import * as styles from './alert-dialog.css';
 import { useAlertDialogDisclosure } from './hooks/use-alert-dialog-disclosure';
-import { Button } from '../button';
 
-import type { ReactNode, FC } from 'react';
+import type { ButtonProps } from '../button';
+import type { ReactNode, FC, ReactElement } from 'react';
 
 export type OpenAlertDialogProps = {
   title: ReactNode;
   description: ReactNode;
-  acceptButton?: ReactNode;
-  rejectButton?: ReactNode;
+  acceptButton: ReactElement<ButtonProps>;
+  rejectButton: ReactElement<ButtonProps>;
 };
-
 type ContextType = {
   openAlertDialog: (props: OpenAlertDialogProps ) => Promise<boolean>;
 };
@@ -57,11 +56,11 @@ export const AlertDialogProvider: FC<AlertDialogProviderProps> = ({
                 <AlertDialogTitle>{title}</AlertDialogTitle>
                 <AlertDialogDescription>{description}</AlertDialogDescription>
                 <div className={styles.buttonWrapper}>
-                  <AlertDialogAction onClick={handleOnClickApprove}>
-                    {acceptButton ?? <Button variant="danger">OK</Button>}
+                  <AlertDialogAction>
+                    {cloneElement(acceptButton, { onClick: handleOnClickApprove })}
                   </AlertDialogAction>
-                  <AlertDialogCancel onClick={handleOnClickReject}>
-                    {rejectButton ?? <Button>Cancel</Button>}
+                  <AlertDialogCancel>
+                    {cloneElement(rejectButton, { onClick: handleOnClickReject })}
                   </AlertDialogCancel>
                 </div>
               </AlertDialogContent>

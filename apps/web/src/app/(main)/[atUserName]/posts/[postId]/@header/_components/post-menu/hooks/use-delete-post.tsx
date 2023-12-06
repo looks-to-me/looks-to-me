@@ -3,6 +3,7 @@ import { useCallback } from 'react';
 import { toast } from 'sonner';
 
 import { useAlertDialog } from '../../../../../../../../_components/alert-dialog/alert-dialog-provider';
+import { Button } from '../../../../../../../../_components/button';
 import { deletePostAction } from '../actions/delete-post';
 
 import type { Post } from '../../../../../../../_repositories/post-repository';
@@ -16,7 +17,12 @@ export const useDeletePost = ({ post }: Props) => {
   const { openAlertDialog } = useAlertDialog();
   
   return useCallback(async () => {
-    const isComfirm = await openAlertDialog({ title: 'Delete Post', description: 'Are you sure you want to delete this post?' });
+    const isComfirm = await openAlertDialog({
+      title: 'Delete Post',
+      description: 'Are you sure you want to delete this post?',
+      acceptButton: <Button variant="danger">OK</Button>,
+      rejectButton: <Button>Cancel</Button>,
+    });
     if (!isComfirm) return;
 
     toast.promise(async () => {

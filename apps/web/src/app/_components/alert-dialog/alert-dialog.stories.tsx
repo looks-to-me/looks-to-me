@@ -13,15 +13,27 @@ export default {
 
 type Story = StoryObj<typeof AlertDialogProvider>;
 
+const defaultOpenAlertDialogProps: OpenAlertDialogProps = {
+  description: '',
+  title: '',
+  acceptButton: <Button variant="danger">OK</Button>,
+  rejectButton: <Button>Cancel</Button>,
+};
 const modalPropsObject = {
-  shortText: { description: 'Are you sure you want to delete this post?', title: 'Delete Post' },
+  shortText: { 
+    ...defaultOpenAlertDialogProps,
+    description: 'Are you sure you want to delete this post?', 
+    title: 'Delete Post',
+  },
   longText: {
+    ...defaultOpenAlertDialogProps,
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ratione aliquid, odit dolor excepturi eum amet sapiente illum fugit eveniet iure, nam quidem nostrum tenetur omnis, minus nihil saepe quos.',
     title:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ratione aliquid, odit dolor excepturi eum amet sapiente illum fugit eveniet iure, nam quidem nostrum tenetur omnis, minus nihil saepe quos.',
   },
   component: {
+    ...defaultOpenAlertDialogProps,
     description: <LooksToMeWithTextWhite style={{ fontSize: '100px', width: '100%' }} />,
     title: <div style={{ color: 'green' }}>title green</div>,
   },
