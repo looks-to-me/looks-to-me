@@ -12,20 +12,20 @@ type AlertDialogState = ({
 };
 
 export const useAlertDialogDisclosure = () => {
-  const [modalState, setModalState] = useState<AlertDialogState>({
+  const [alertDialogState, setAlertDialogState] = useState<AlertDialogState>({
     isOpen: false,
   });
 
   useKeyPress('ESC', () => {
-    if (!modalState.isOpen) return;
-    modalState.reject();
+    if (!alertDialogState.isOpen) return;
+    alertDialogState.reject();
   });
 
-  const closeAlertDialog = useCallback(() => setModalState({ isOpen: false }), []);
+  const closeAlertDialog = useCallback(() => setAlertDialogState({ isOpen: false }), []);
 
   const openAlertDialog = useCallback(async (props: OpenAlertDialogProps ) => {
     return await new Promise<boolean>((resolve) => {
-      setModalState({
+      setAlertDialogState({
         isOpen: true,
         ...props,
         accept: () => resolve(true),
@@ -35,7 +35,7 @@ export const useAlertDialogDisclosure = () => {
   }, []);
 
   return {
-    modalState,
+    alertDialogState,
     openAlertDialog,
   };
 };

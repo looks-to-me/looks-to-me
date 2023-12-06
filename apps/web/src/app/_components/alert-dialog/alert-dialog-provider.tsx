@@ -25,32 +25,32 @@ export type AlertDialogProviderProps = { children: ReactNode };
 export const AlertDialogProvider: FC<AlertDialogProviderProps> = ({
   children,
 }) => {
-  const { modalState, openAlertDialog } = useAlertDialogDisclosure();
+  const { alertDialogState, openAlertDialog } = useAlertDialogDisclosure();
 
   const handleOnClickAccept = useCallback(() => {
-    if (!modalState.isOpen) return;
-    modalState.accept();
-  }, [modalState]);
+    if (!alertDialogState.isOpen) return;
+    alertDialogState.accept();
+  }, [alertDialogState]);
 
   const handleOnClickReject = useCallback(() => {
-    if (!modalState.isOpen) return;
-    modalState.reject();
-  }, [modalState]);
+    if (!alertDialogState.isOpen) return;
+    alertDialogState.reject();
+  }, [alertDialogState]);
 
   return (
     <AlertDialogContext.Provider value={{ openAlertDialog }}>
       {children}
-      {modalState.isOpen && (
-        <AlertDialog open={modalState.isOpen}>
+      {alertDialogState.isOpen && (
+        <AlertDialog open={alertDialogState.isOpen}>
           <AlertDialogContent>
-            <AlertDialogTitle>{modalState.title}</AlertDialogTitle>
-            <AlertDialogDescription>{modalState.description}</AlertDialogDescription>
+            <AlertDialogTitle>{alertDialogState.title}</AlertDialogTitle>
+            <AlertDialogDescription>{alertDialogState.description}</AlertDialogDescription>
             <AlertDialogFooter>
               <AlertDialogCancel>
-                {cloneElement(modalState.rejectButton, { onClick: handleOnClickReject })}
+                {cloneElement(alertDialogState.rejectButton, { onClick: handleOnClickReject })}
               </AlertDialogCancel>
               <AlertDialogAction>
-                {cloneElement(modalState.acceptButton, { onClick: handleOnClickAccept })}
+                {cloneElement(alertDialogState.acceptButton, { onClick: handleOnClickAccept })}
               </AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
