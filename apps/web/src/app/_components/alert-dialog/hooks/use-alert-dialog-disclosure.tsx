@@ -16,11 +16,10 @@ export const useAlertDialogDisclosure = () => {
     isOpen: false,
   });
 
-  const handleOnPressESC = useCallback(() => {
+  useKeyPress('ESC', () => {
     if (!modalState.isOpen) return;
     modalState.reject();
-  }, [modalState]);
-  useKeyPress('ESC', handleOnPressESC);
+  });
 
   const closeAlertDialog = useCallback(() => setModalState({ isOpen: false }), []);
 
