@@ -1,5 +1,5 @@
 'use client';
-import React, { cloneElement, createContext, useCallback } from 'react';
+import React, { cloneElement, useCallback } from 'react';
 
 import { AlertDialog } from '.';
 import { AlertDialogAction } from './alert-dialog-action';
@@ -8,6 +8,7 @@ import { AlertDialogContent } from './alert-dialog-content';
 import { AlertDialogDescription } from './alert-dialog-description';
 import { AlertDialogFooter } from './alert-dialog-footer';
 import { AlertDialogTitle } from './alert-dialog-title';
+import { AlertDialogContext } from './contexts/alert-dialog-context';
 import { useAlertDialogDisclosure } from './hooks/use-alert-dialog-disclosure';
 
 import type { ButtonProps } from '../button';
@@ -19,14 +20,6 @@ export type OpenAlertDialogProps = {
   acceptButton: ReactElement<ButtonProps>;
   rejectButton: ReactElement<ButtonProps>;
 };
-type ContextType = {
-  openAlertDialog: (props: OpenAlertDialogProps ) => Promise<boolean>;
-};
-export const AlertDialogContext = createContext<ContextType>({
-  openAlertDialog: () => {
-    throw new Error('DialogContext not implemented');
-  },
-});
 
 export type AlertDialogProviderProps = { children: ReactNode };
 export const AlertDialogProvider: FC<AlertDialogProviderProps> = ({
