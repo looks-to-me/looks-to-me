@@ -17,5 +17,3 @@ export const postTagsRelations = relations(postTags, ({ one }) => ({
   post: one(posts),
   tag: one(tags),
 }));
-
-export type PostTag = typeof postTags._.inferSelect;

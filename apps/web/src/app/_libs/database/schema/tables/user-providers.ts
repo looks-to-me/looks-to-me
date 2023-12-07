@@ -14,5 +14,3 @@ export const userProviders = sqliteTable('user_providers', {
 export const userProvidersRelations = relations(userProviders, ({ one }) => ({
   user: one(users),
 }));
-
-export type UserProvider = typeof userProviders._.inferSelect;
