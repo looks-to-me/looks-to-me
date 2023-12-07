@@ -1,5 +1,5 @@
 import * as styles from './layout.css';
-import { DialogContent } from '../../../../../_components/dialog/dialog-content';
+import { DialogContent } from '../../../../../_components/dialog';
 import { ModalDialog } from '../../../_components/modal-dialog';
 
 import type { ModalUserPostDetailsPageProps } from './page';

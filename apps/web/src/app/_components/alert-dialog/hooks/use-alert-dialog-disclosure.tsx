@@ -3,13 +3,13 @@ import { useCallback, useState } from 'react';
 
 import type { OpenAlertDialogProps } from '../contexts/alert-dialog-context';
 
-type AlertDialogState = ({
+type AlertDialogState = {
+  isOpen: false;
+} | (OpenAlertDialogProps & {
   isOpen: true;
   accept: () => void;
   reject: () => void;
-} & OpenAlertDialogProps ) | {
-  isOpen: false;
-};
+});
 
 export const useAlertDialogDisclosure = () => {
   const [alertDialogState, setAlertDialogState] = useState<AlertDialogState>({
@@ -32,7 +32,7 @@ export const useAlertDialogDisclosure = () => {
         reject: () => resolve(false),
       });
     }).finally(() => closeAlertDialog());
-  }, []);
+  }, [closeAlertDialog]);
 
   return {
     alertDialogState,

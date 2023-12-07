@@ -11,11 +11,11 @@ export type OpenAlertDialogProps = {
   rejectButton: ReactElement<{ onClick: () => void }>;
 };
 
-type ContextType = {
+export type AlertDialogContextValue = {
   openAlertDialog: (props: OpenAlertDialogProps ) => Promise<boolean>;
 };
 
-export const AlertDialogContext = createContext<ContextType>({
+export const AlertDialogContext = createContext<AlertDialogContextValue>({
   openAlertDialog: () => {
     throw new Error('DialogContext not implemented');
   },

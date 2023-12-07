@@ -2,10 +2,10 @@
 
 import * as DropDownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 export type DropDownMenuTriggerProps = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export const DropDownMenuTrigger: FC<DropDownMenuTriggerProps> = ({

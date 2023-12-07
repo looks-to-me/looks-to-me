@@ -2,10 +2,10 @@
 
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 export type SheetTriggerProps = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export const SheetTrigger: FC<SheetTriggerProps> = ({
