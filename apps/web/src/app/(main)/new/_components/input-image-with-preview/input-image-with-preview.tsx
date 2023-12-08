@@ -1,28 +1,40 @@
 'use client';
 
 import { clsx } from 'clsx';
-import { useCallback, useRef, useState } from 'react';
+import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from 'react';
 
 import * as styles from './input-image-with-preview.css';
 import { theme } from '../../../../_theme';
 
-import type { FC, InputHTMLAttributes, ChangeEventHandler, DragEventHandler, MouseEventHandler } from 'react';
+import type { InputHTMLAttributes, ChangeEventHandler, DragEventHandler, MouseEventHandler, ForwardRefRenderFunction } from 'react';
 
 const ACCEPTABLE_TYPES = 'image/png, image/jpeg, image/jpg, image/gif';
 const buttonTheme = theme.color.token.button.normal;
+
+export type InputImageWithPreviewHandle = {
+  reset(): void;
+};
 
 export type InputImageWithPreviewProps = {
   className?: string | undefined;
   name: InputHTMLAttributes<HTMLInputElement>['name'];
 };
 
-export const InputImageWithPreview: FC<InputImageWithPreviewProps> = ({
+const InputImageWithPreviewRender: ForwardRefRenderFunction<InputImageWithPreviewHandle, InputImageWithPreviewProps> = ({
   className,
   name,
-}) => {
+}, ref) => {
   const inputImageRef = useRef<HTMLInputElement>(null);
   const [image, setImage] = useState<{ file: File; width: number; height: number }>();
   const [isDropActive, setIsDropActive] = useState(false);
+
+  useImperativeHandle(ref, () => ({
+    reset: () => {
+      // eslint-disable-next-line unicorn/no-useless-undefined
+      setImage(undefined);
+      if (inputImageRef.current) inputImageRef.current.value = '';
+    },
+  }));
 
   const setFile = useCallback((file: File) => {
     const element = new Image();
@@ -132,3 +144,5 @@ export const InputImageWithPreview: FC<InputImageWithPreviewProps> = ({
     </div>
   );
 };
+
+export const InputImageWithPreview = forwardRef(InputImageWithPreviewRender);
