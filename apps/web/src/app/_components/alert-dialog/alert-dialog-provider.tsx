@@ -1,7 +1,7 @@
 'use client';
 import React, { cloneElement, useCallback } from 'react';
 
-import { AlertDialog } from '.';
+import { AlertDialog } from './alert-dialog';
 import { AlertDialogAction } from './alert-dialog-action';
 import { AlertDialogCancel } from './alert-dialog-cancel';
 import { AlertDialogContent } from './alert-dialog-content';

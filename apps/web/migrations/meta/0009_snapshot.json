@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "sqlite",
-  "id": "70f609cf-6796-4f17-ba1e-06b8449cfbb4",
+  "id": "d57802b1-c7c3-4deb-9b64-45dcd7b3c94d",
   "prevId": "2a2fd099-6a9b-463a-bed1-9d2a9ad72417",
   "tables": {
     "images": {
@@ -130,7 +130,8 @@
           "columns": [
             "post_id",
             "tag_id"
-          ]
+          ],
+          "name": "post_tags_post_id_tag_id_pk"
         }
       },
       "uniqueConstraints": {}

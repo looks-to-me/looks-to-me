@@ -1,10 +1,12 @@
 'use server';
 
-import { eq, sql } from 'drizzle-orm';
+import { and, eq, notInArray, sql } from 'drizzle-orm';
 
+import { getLoginUser } from '../../../../_actions/get-login-user';
 import { database } from '../../../../_libs/database';
 import { schema } from '../../../../_libs/database/schema';
 import { Post } from '../../../_components/post';
+import { findMuteUsersByUserId } from '../../../_repositories/mute-user-repository';
 
 import type { InfiniteScrollEdge } from '../../../../_components/infinite-scroll';
 
@@ -21,6 +23,12 @@ const shuffle = <T extends object>(array: Array<T>): Array<T> => {
 const limit = 32;
 
 export const fetchPosts = async (): Promise<InfiniteScrollEdge[]> => {
+  const user = await getLoginUser();
+  const muteUsers = user ?
+    await findMuteUsersByUserId(user.id)
+    : [];
+  const muteUsersIds = muteUsers.map(user => user.muteUserId);
+
   const posts = await database()
     .select({
       id: schema.posts.id,
@@ -33,7 +41,10 @@ export const fetchPosts = async (): Promise<InfiniteScrollEdge[]> => {
     .from(schema.posts)
     .innerJoin(schema.users, eq(schema.posts.userId, schema.users.id))
     .innerJoin(schema.userProfiles, eq(schema.userProfiles.userId, schema.users.id))
-    .where(sql`posts._ROWID_ >= (ABS(RANDOM()) % ((SELECT MAX(_ROWID_) FROM posts) - ${limit} + 2))`)
+    .where(and(
+      sql`posts._ROWID_ >= (ABS(RANDOM()) % ((SELECT MAX(_ROWID_) FROM posts) - ${limit} + 2))`,
+      muteUsersIds.length ? notInArray(schema.posts.userId, muteUsersIds) : undefined),
+    )
     .limit(limit)
     .all();
 

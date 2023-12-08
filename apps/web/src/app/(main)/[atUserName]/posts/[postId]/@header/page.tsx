@@ -7,9 +7,11 @@ import { getLoginUser } from '../../../../../_actions/get-login-user';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../../../_components/avatar';
 import { publicEnv } from '../../../../../_libs/env';
 import { ShareButton } from '../../../../_components/share-button';
+import { findMuteUserByUserIdAndMuteUserId } from '../../../../_repositories/mute-user-repository';
 import { findPostById } from '../../../../_repositories/post-repository';
 import { findUserById } from '../../../../_repositories/user-repository';
 
+import type { PostMenuProps } from './_components/post-menu';
 import type { PageProps } from '../../../../../_types/page-props';
 import type { UserPostDetailsPageProps } from '../page';
 import type { FC } from 'react';
@@ -35,8 +37,19 @@ const UserPostDetailsHeaderPage: FC<UserPostDetailsHeaderPageProps> = async ({
   if (!user) return notFound();
   
   const loginUser = await getLoginUser();
-  const isMyPost = post.userId === loginUser?.id;
+  const isMuteUser = loginUser
+    ? !!await findMuteUserByUserIdAndMuteUserId({
+      userId: loginUser.id,
+      muteUserId: post.userId,
+    })
+    : false;
 
+  const postMenuProps: PostMenuProps = {
+    post,
+    postUser: user,
+    loginUser,
+    isMuteUser,
+  };
   return (
     <header className={styles.wrapper}>
       <div className={styles.container}>
@@ -60,7 +73,7 @@ const UserPostDetailsHeaderPage: FC<UserPostDetailsHeaderPageProps> = async ({
         <ShareButton
           text={`![L${post.word.toUpperCase().at(0)}TM](${publicEnv().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id})`}
         />
-        {isMyPost && <PostMenu post={post} />}
+        {loginUser && <PostMenu {...postMenuProps} />}
       </div>
     </header>
   );
