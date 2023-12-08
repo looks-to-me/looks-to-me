@@ -2,10 +2,10 @@
 
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
 
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 export type AlertDialogTriggerProps = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export const AlertDialogTrigger: FC<AlertDialogTriggerProps> = ({

@@ -2,7 +2,7 @@
 
 import { clsx } from 'clsx';
 import { useRouter } from 'next/navigation';
-import { useCallback } from 'react';
+import { useCallback, useRef } from 'react';
 import { toast } from 'sonner';
 
 import { submitPost } from './actions/submit-post';
@@ -11,6 +11,7 @@ import { Button } from '../../../../_components/button';
 import { InputImageWithPreview } from '../input-image-with-preview';
 import { VariableTextInput } from '../variable-text-input';
 
+import type { InputImageWithPreviewHandle } from '../input-image-with-preview';
 import type { FC } from 'react';
 
 export type PostCreateFormProps = {
@@ -21,6 +22,7 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
   className,
 }) => {
   const router = useRouter();
+  const inputRef = useRef<InputImageWithPreviewHandle>(null);
 
   const handleSubmit = useCallback((formData: FormData): void => {
     toast.promise(async () => {
@@ -30,6 +32,7 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
         throw result.message;
       }
 
+      inputRef.current?.reset();
       router.push(result.redirectUrl);
       return result.message;
     }, {
@@ -42,7 +45,7 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
   return (
     <div className={clsx(className, styles.wrapper)}>
       <form action={handleSubmit}>
-        <InputImageWithPreview name="image" />
+        <InputImageWithPreview ref={inputRef} name="image" />
         <div className={styles.footer}>
           <div>
             Looks <VariableTextInput className={styles.word} name="word" placeholder="Good" defaultValue="Good" /> To Me

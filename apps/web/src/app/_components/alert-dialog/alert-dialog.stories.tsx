@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import { useAlertDialog } from '.';
 import { AlertDialogProvider } from './alert-dialog-provider';
-import LooksToMeWithTextWhite from '../../_icons/looks-to-me-with-text-white.svg';
 import { Button } from '../button';
 
 import type { OpenAlertDialogProps } from './contexts/alert-dialog-context';
@@ -15,41 +14,42 @@ export default {
 type Story = StoryObj<typeof AlertDialogProvider>;
 
 const defaultOpenAlertDialogProps: OpenAlertDialogProps = {
-  description: '',
   title: '',
+  description: '',
   acceptButton: <Button variant="danger">OK</Button>,
   rejectButton: <Button>Cancel</Button>,
 };
-const modalPropsObject = {
+
+const openAlertDialogPropsMap = {
   shortText: { 
     ...defaultOpenAlertDialogProps,
-    description: 'Are you sure you want to delete this post?', 
     title: 'Delete Post',
+    description: 'Are you sure you want to delete this post?',
   },
   longText: {
     ...defaultOpenAlertDialogProps,
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ratione aliquid, odit dolor excepturi eum amet sapiente illum fugit eveniet iure, nam quidem nostrum tenetur omnis, minus nihil saepe quos.',
-    title:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ratione aliquid, odit dolor excepturi eum amet sapiente illum fugit eveniet iure, nam quidem nostrum tenetur omnis, minus nihil saepe quos.',
+    title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ratione aliquid, odit dolor excepturi eum amet sapiente illum fugit eveniet iure, nam quidem nostrum tenetur omnis, minus nihil saepe quos.',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ratione aliquid, odit dolor excepturi eum amet sapiente illum fugit eveniet iure, nam quidem nostrum tenetur omnis, minus nihil saepe quos.',
   },
   component: {
     ...defaultOpenAlertDialogProps,
-    description: <LooksToMeWithTextWhite style={{ fontSize: '100px', width: '100%' }} />,
     title: <div style={{ color: 'green' }}>title green</div>,
+    description:  <div style={{ color: 'blue' }}>description blue</div>,
   },
-} as const satisfies Record<string, OpenAlertDialogProps >;
+} as const satisfies Record<string, OpenAlertDialogProps>;
 
-const ShowGlobalConfirmModalButton = (props: {
+const ShowAlertDialogButton = ({
+  displayButtonLabel,
+  openAlertDialogProps,
+}: {
   displayButtonLabel: string;
-  modalProps: OpenAlertDialogProps ;
+  openAlertDialogProps: OpenAlertDialogProps ;
 }) => {
-  const { displayButtonLabel, modalProps } = props;
   const { openAlertDialog } = useAlertDialog();
   const [result, setResult] = useState<boolean[]>([]);
 
   const handleOnClick = async () => {
-    const result = await openAlertDialog(modalProps);
+    const result = await openAlertDialog(openAlertDialogProps);
     setResult((previous) => [...previous, result]);
   };
   
@@ -64,34 +64,34 @@ const ShowGlobalConfirmModalButton = (props: {
   );
 };
 
-export const shortText = {
+export const Default = {
   args: {
     children: (
-      <ShowGlobalConfirmModalButton
-        displayButtonLabel="shortText"
-        modalProps={modalPropsObject['shortText']}
+      <ShowAlertDialogButton
+        displayButtonLabel="ShortText"
+        openAlertDialogProps={openAlertDialogPropsMap.shortText}
       />
     ),
   },
 } satisfies Story;
 
-export const longText = {
+export const LongText = {
   args: {
     children: (
-      <ShowGlobalConfirmModalButton
-        displayButtonLabel="longText"
-        modalProps={modalPropsObject['longText']}
+      <ShowAlertDialogButton
+        displayButtonLabel="LongText"
+        openAlertDialogProps={openAlertDialogPropsMap.longText}
       />
     ),
   },
 } satisfies Story;
 
-export const component = {
+export const Component = {
   args: {
     children: (
-      <ShowGlobalConfirmModalButton
-        displayButtonLabel="component"
-        modalProps={modalPropsObject['component']}
+      <ShowAlertDialogButton
+        displayButtonLabel="Component"
+        openAlertDialogProps={openAlertDialogPropsMap.component}
       />
     ),
   },

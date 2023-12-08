@@ -1,7 +1,8 @@
 'use client';
-import React, { cloneElement, useCallback } from 'react';
 
-import { AlertDialog } from '.';
+import { cloneElement, useCallback } from 'react';
+
+import { AlertDialog } from './alert-dialog';
 import { AlertDialogAction } from './alert-dialog-action';
 import { AlertDialogCancel } from './alert-dialog-cancel';
 import { AlertDialogContent } from './alert-dialog-content';
@@ -13,7 +14,10 @@ import { useAlertDialogDisclosure } from './hooks/use-alert-dialog-disclosure';
 
 import type { ReactNode, FC } from 'react';
 
-export type AlertDialogProviderProps = { children: ReactNode };
+export type AlertDialogProviderProps = {
+  children: ReactNode;
+};
+
 export const AlertDialogProvider: FC<AlertDialogProviderProps> = ({
   children,
 }) => {

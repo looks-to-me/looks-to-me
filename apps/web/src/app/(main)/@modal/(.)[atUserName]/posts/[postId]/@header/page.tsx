@@ -2,21 +2,21 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import * as styles from './page.css';
-import { getLoginUser } from '../../../../../_actions/get-login-user';
-import { Avatar, AvatarFallback, AvatarImage } from '../../../../../_components/avatar';
-import { publicEnv } from '../../../../../_libs/env';
-import { PostMenu } from '../../../../_components/post-menu';
-import { ShareButton } from '../../../../_components/share-button';
-import { findPostById } from '../../../../_repositories/post-repository';
-import { findUserById } from '../../../../_repositories/user-repository';
+import { getLoginUser } from '../../../../../../_actions/get-login-user';
+import { Avatar, AvatarFallback, AvatarImage } from '../../../../../../_components/avatar';
+import { publicEnv } from '../../../../../../_libs/env';
+import { PostMenu } from '../../../../../_components/post-menu';
+import { ShareButton } from '../../../../../_components/share-button';
+import { findPostById } from '../../../../../_repositories/post-repository';
+import { findUserById } from '../../../../../_repositories/user-repository';
 
-import type { PageProps } from '../../../../../_types/page-props';
-import type { UserPostDetailsPageProps } from '../page';
+import type { PageProps } from '../../../../../../_types/page-props';
+import type { ModalUserPostDetailsPageProps } from '../page';
 import type { FC } from 'react';
 
 export const runtime = 'edge';
 
-export type UserPostDetailsHeaderPageProps = UserPostDetailsPageProps & PageProps<{
+export type ModalUserPostDetailsHeaderPageProps = ModalUserPostDetailsPageProps & PageProps<{
   params: {
     // empty
   };
@@ -25,7 +25,7 @@ export type UserPostDetailsHeaderPageProps = UserPostDetailsPageProps & PageProp
   };
 }>;
 
-const UserPostDetailsHeaderPage: FC<UserPostDetailsHeaderPageProps> = async ({
+const ModalUserPostDetailsHeaderPage: FC<ModalUserPostDetailsHeaderPageProps> = async ({
   params,
 }) => {
   const post = await findPostById(params.postId);
@@ -33,7 +33,7 @@ const UserPostDetailsHeaderPage: FC<UserPostDetailsHeaderPageProps> = async ({
 
   const user = await findUserById(post.userId);
   if (!user) return notFound();
-  
+
   const loginUser = await getLoginUser();
   const isMyPost = post.userId === loginUser?.id;
 
@@ -57,13 +57,11 @@ const UserPostDetailsHeaderPage: FC<UserPostDetailsHeaderPageProps> = async ({
         </h2>
       </div>
       <div className={styles.toolbar}>
-        <ShareButton
-          text={`![L${post.word.toUpperCase().at(0)}TM](${publicEnv().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id})`}
-        />
+        <ShareButton text={`![LGTM](${publicEnv().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id})`} />
         {isMyPost && <PostMenu post={post} />}
       </div>
     </header>
   );
 };
 
-export default UserPostDetailsHeaderPage;
+export default ModalUserPostDetailsHeaderPage;

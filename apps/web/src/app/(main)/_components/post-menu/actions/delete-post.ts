@@ -2,10 +2,10 @@
 
 import { deleteImageCache } from '@looks-to-me/package-image-cache';
 
-import { getLoginUser } from '../../../../../../../../_actions/get-login-user';
-import { privateEnv } from '../../../../../../../../_libs/env';
-import { deleteImage } from '../../../../../../../_repositories/image-repository';
-import { deletePost, findPostById } from '../../../../../../../_repositories/post-repository';
+import { getLoginUser } from '../../../../_actions/get-login-user';
+import { privateEnv } from '../../../../_libs/env';
+import { deleteImage } from '../../../_repositories/image-repository';
+import { deletePost, findPostById } from '../../../_repositories/post-repository';
 
 import type { Route } from 'next';
 

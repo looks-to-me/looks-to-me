@@ -2,10 +2,10 @@
 
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 export type DialogCloseProps = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export const DialogClose: FC<DialogCloseProps> = ({

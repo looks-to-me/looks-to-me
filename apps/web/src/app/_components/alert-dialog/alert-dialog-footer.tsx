@@ -7,9 +7,9 @@ import * as styles from './alert-dialog.css';
 
 import type { ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
 
-export type AlertDialogDescriptionProps = ComponentPropsWithoutRef<'div'>;
+export type AlertDialogFooterProps = ComponentPropsWithoutRef<'div'>;
 
-const AlertDialogFooterRender: ForwardRefRenderFunction<HTMLDivElement, AlertDialogDescriptionProps> = ({
+const AlertDialogFooterRender: ForwardRefRenderFunction<HTMLDivElement, AlertDialogFooterProps> = ({
   className,
   children,
   ...props

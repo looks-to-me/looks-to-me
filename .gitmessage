@@ -1,1 +1,6 @@
-[feature|bugfix|refactor|chore|deps] subject (#issue)
+
+# feature: Add a new feature
+# bugfix: Fix a bug
+# refactor: A code change that neither fixes a bug or adds a feature
+# chore: A other change
+# deps: Update dependencies
