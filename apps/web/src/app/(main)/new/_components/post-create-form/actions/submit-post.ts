@@ -6,8 +6,8 @@ import { coerce, transform, instance, maxLength, minValue, number, object, parse
 import { getUserMetadata } from '../../../../../_libs/auth/server/get-user-metadata';
 import { publicEnv } from '../../../../../_libs/env';
 import { storage } from '../../../../../_libs/storage';
-import { deleteImage, insertImage } from '../../../../_repositories/image-repository';
-import { deletePost, insertPost } from '../../../../_repositories/post-repository';
+import { deleteImage, saveImage } from '../../../../_repositories/image-repository';
+import { deletePost, savePost } from '../../../../_repositories/post-repository';
 import { findUserProviderByTypeAndSub } from '../../../../_repositories/user-provider-repository';
 import { findUserById } from '../../../../_repositories/user-repository';
 
@@ -63,14 +63,14 @@ export const submitPost = async (formData: FormData): Promise<SubmitPostResult> 
       // @see: https://developers.cloudflare.com/images/image-resizing/format-limitations/#format-limitations
       await storage().put(imageKey, await input.image.arrayBuffer());
 
-      const image = await insertImage({
+      const image = await saveImage({
         id: imageId,
         userId: user.id,
         width: input.imageWidth,
         height: input.imageHeight,
       });
 
-      const post = await insertPost({
+      const post = await savePost({
         id: postId,
         userId: user.id,
         imageId: image.id,

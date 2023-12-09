@@ -27,7 +27,7 @@ export const initMockDatabase = async () => {
         const rows = sqlite.exec( {
           sql,
           bind: parameters,
-          rowMode: 'array',
+          rowMode: 'object',
           returnValue: 'resultRows',
         });
         resolve({ rows });
@@ -39,9 +39,9 @@ export const initMockDatabase = async () => {
   }, { schema });
   initDatabase(database);
 
-  const tables = await database.all<string[]>(sql.raw('SELECT name FROM sqlite_master WHERE type=\'table\';'));
+  const tables = await database.all<{ name: string }>(sql.raw('SELECT name FROM sqlite_master WHERE type=\'table\';'));
   for (const table of tables ?? []) {
-    await database.run(sql.raw(`DROP TABLE ${String(table[0])};`));
+    await database.run(sql.raw(`DROP TABLE ${table.name};`));
   }
 
   const journal = await getJournal();
