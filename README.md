@@ -6,15 +6,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 Contact us for more information.
 
-### 2. run the proxy server
+### 2. run the development server
 
 ```bash
-pnpm run dev:proxy
-```
+cd apps/web
 
-### 3. run the development server
-
-```bash
 npm run dev
 # or
 yarn dev
@@ -22,11 +18,8 @@ yarn dev
 pnpm dev
 ```
 
-### 4. apply migration
+When you run it, you will be asked if you want to migrate, so please press the `y` key.
 
-```bash
-pnpm run migrate:apply
-```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
