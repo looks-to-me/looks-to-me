@@ -62,6 +62,7 @@ globalStyle(':root', {
         [theme.color.token.semantic.borderMuted]: theme.color.palette.gray600,
         [theme.color.token.semantic.overlay]: `color-mix(in srgb, ${theme.color.palette.gray400} 32%, transparent)`,
         [theme.color.token.semantic.shadow]: `color-mix(in srgb, ${theme.color.palette.gray900} 80%, transparent)`,
+        [theme.color.token.semantic.activeSelected]: theme.color.palette.blue500,
 
         [theme.color.token.button.normal.text]: theme.color.palette.white,
         [theme.color.token.button.normal.icon]: theme.color.palette.gray300,
