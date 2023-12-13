@@ -6,7 +6,7 @@ import { database } from '../../../../_libs/database';
 import { schema } from '../../../../_libs/database/schema';
 import { Post } from '../../../_components/post';
 
-import type { InfiniteScrollEdge } from '../../../../_components/infinite-scroll';
+import type { InfiniteScrollEdge } from '../../../../../components/elements/infinite-scroll';
 
 // Fisher–Yates shuffle
 const shuffle = <T extends object>(array: Array<T>): Array<T> => {

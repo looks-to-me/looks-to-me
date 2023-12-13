@@ -1,5 +1,5 @@
-import { Root } from '../src/app/_components/root';
 import { initMockDatabase } from '../src/app/_libs/database/instance/mock';
+import { Root } from '../src/components/elements/root';
 
 import type { Preview } from '@storybook/react';
 

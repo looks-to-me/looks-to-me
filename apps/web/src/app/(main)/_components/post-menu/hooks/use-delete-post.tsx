@@ -2,8 +2,8 @@ import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { toast } from 'sonner';
 
-import { useAlertDialog } from '../../../../_components/alert-dialog';
-import { Button } from '../../../../_components/button';
+import { useAlertDialog } from '../../../../../components/elements/alert-dialog';
+import { Button } from '../../../../../components/elements/button';
 import { deletePostAction } from '../actions/delete-post';
 
 import type { Post } from '../../../_repositories/post-repository';

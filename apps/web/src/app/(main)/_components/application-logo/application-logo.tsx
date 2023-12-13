@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { forwardRef } from 'react';
 
 import * as styles from './application-logo.css';
-import { AccessibleIcon } from '../../../_components/accessible-icon';
-import { PrefersColorScheme } from '../../../_components/prefers-color-scheme';
+import { AccessibleIcon } from '../../../../components/elements/accessible-icon';
+import { PrefersColorScheme } from '../../../../components/elements/prefers-color-scheme';
 import LooksToMeBlack from '../../../_icons/looks-to-me-black.svg';
 import LooksToMeWhite from '../../../_icons/looks-to-me-white.svg';
 import LooksToMeWithTextBlack from '../../../_icons/looks-to-me-with-text-black.svg';
