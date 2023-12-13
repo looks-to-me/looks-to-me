@@ -9,7 +9,7 @@ import {
   slideOutToLeft,
   slideOutToTop,
 } from '../../../app/_styles/transitions/slide.css';
-import { theme } from '../../../app/_theme';
+import { theme } from '../../../themes';
 
 import type { StyleRule } from '@vanilla-extract/css';
 

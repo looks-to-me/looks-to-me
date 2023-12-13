@@ -1,7 +1,7 @@
 import { globalStyle } from '@vanilla-extract/css';
 import { calc } from '@vanilla-extract/css-utils';
 
-import { theme } from '../../../app/_theme';
+import { theme } from '../../../themes';
 
 globalStyle('body', {
   color: theme.color.token.semantic.text,

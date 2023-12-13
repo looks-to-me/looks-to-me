@@ -4,7 +4,7 @@ import { clsx } from 'clsx';
 import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from 'react';
 
 import * as styles from './input-image-with-preview.css';
-import { theme } from '../../../../_theme';
+import { theme } from '../../../../../themes';
 
 import type { InputHTMLAttributes, ChangeEventHandler, DragEventHandler, MouseEventHandler, ForwardRefRenderFunction } from 'react';
 
