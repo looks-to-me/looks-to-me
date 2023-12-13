@@ -1,14 +1,14 @@
 import { style } from '@vanilla-extract/css';
 import deepmerge from 'deepmerge';
 
-import { animateIn, animateOut } from '../../../app/_styles/transitions/animate.css';
-import { fadeIn, fadeOut } from '../../../app/_styles/transitions/fade.css';
+import { animateIn, animateOut } from '../../../styles/transitions/animate.css';
+import { fadeIn, fadeOut } from '../../../styles/transitions/fade.css';
 import {
   slideInFromLeft,
   slideInFromTop,
   slideOutToLeft,
   slideOutToTop,
-} from '../../../app/_styles/transitions/slide.css';
+} from '../../../styles/transitions/slide.css';
 import { theme } from '../../../themes';
 
 import type { StyleRule } from '@vanilla-extract/css';
