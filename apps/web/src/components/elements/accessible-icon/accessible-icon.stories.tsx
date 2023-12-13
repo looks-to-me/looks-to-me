@@ -1,5 +1,5 @@
 import { AccessibleIcon } from './accessible-icon';
-import CloseIcon from '../../../app/_icons/close.svg';
+import CloseIcon from '../../../icons/close.svg';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

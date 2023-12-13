@@ -12,8 +12,8 @@ import {
   DropDownMenuItem,
   DropDownMenuLabel,
 } from '../../../../components/elements/drop-down-menu';
-import LogoutIcon from '../../../_icons/logout.svg';
-import PersonIcon from '../../../_icons/person.svg';
+import LogoutIcon from '../../../../icons/logout.svg';
+import PersonIcon from '../../../../icons/person.svg';
 
 import type { User } from '../../_repositories/user-repository';
 import type { FC } from 'react';
