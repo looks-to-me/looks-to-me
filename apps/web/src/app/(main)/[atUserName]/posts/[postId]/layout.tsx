@@ -1,7 +1,7 @@
 import { notFound, redirect } from 'next/navigation';
 
 import * as styles from './layout.css';
-import { Breadcrumbs, BreadcrumbsItem } from '../../../../_components/breadcrumbs';
+import { Breadcrumbs, BreadcrumbsItem } from '../../../../../components/elements/breadcrumbs';
 import { createMetadata } from '../../../../_helpers/create-metadata';
 import { PageHeader } from '../../../_components/page-header';
 import { PageLayout } from '../../../_components/page-layout';

@@ -3,10 +3,10 @@
 import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 
-import { Dialog } from '../../../../_components/dialog';
+import { Dialog } from '../../../../../components/elements/dialog';
 import { useIsMounted } from '../../../../_hooks/use-is-mounted';
 
-import type { DialogProps } from '../../../../_components/dialog';
+import type { DialogProps } from '../../../../../components/elements/dialog';
 import type { FC } from 'react';
 
 export type ModalDialogProps = Omit<DialogProps, 'open' | 'onOpenChange'>;

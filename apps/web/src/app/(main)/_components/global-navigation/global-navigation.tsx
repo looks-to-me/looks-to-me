@@ -2,11 +2,11 @@ import { getYear } from 'date-fns';
 import Link from 'next/link';
 
 import * as styles from './global-navigation.css';
-import { AccessibleIcon } from '../../../_components/accessible-icon';
-import { Button, ButtonIcon } from '../../../_components/button';
-import { PrefersColorScheme } from '../../../_components/prefers-color-scheme';
-import { Sheet, SheetContent, SheetSection, SheetTitle, SheetTrigger } from '../../../_components/sheet';
-import { VisuallyHidden } from '../../../_components/visually-hidden';
+import { AccessibleIcon } from '../../../../components/elements/accessible-icon';
+import { Button, ButtonIcon } from '../../../../components/elements/button';
+import { PrefersColorScheme } from '../../../../components/elements/prefers-color-scheme';
+import { Sheet, SheetContent, SheetSection, SheetTitle, SheetTrigger } from '../../../../components/elements/sheet';
+import { VisuallyHidden } from '../../../../components/elements/visually-hidden';
 import GitHubBlack from '../../../_icons/github-black.svg';
 import GitHubWhite from '../../../_icons/github-white.svg';
 import HomeIcon from '../../../_icons/home.svg';

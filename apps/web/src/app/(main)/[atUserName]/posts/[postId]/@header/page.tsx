@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import * as styles from './page.css';
+import { Avatar, AvatarFallback, AvatarImage } from '../../../../../../components/elements/avatar';
 import { getLoginUser } from '../../../../../_actions/get-login-user';
-import { Avatar, AvatarFallback, AvatarImage } from '../../../../../_components/avatar';
 import { publicEnv } from '../../../../../_libs/env';
 import { PostMenu } from '../../../../_components/post-menu';
 import { ShareButton } from '../../../../_components/share-button';
