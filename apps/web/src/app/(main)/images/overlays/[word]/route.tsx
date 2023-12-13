@@ -2,7 +2,7 @@ import { imageCache } from '@looks-to-me/package-image-cache';
 import { ImageResponse } from 'next/og';
 import { maxLength, parse, regex, string, transform } from 'valibot';
 
-import { loadGoogleFont } from '../../../../_helpers/load-google-font';
+import { loadGoogleFont } from '../../../../../helpers/load-google-font';
 import { privateEnv } from '../../../../_libs/env';
 
 import type { ImageCacheParameters } from '@looks-to-me/package-image-cache';

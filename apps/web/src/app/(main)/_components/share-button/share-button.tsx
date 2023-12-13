@@ -3,8 +3,8 @@
 import { useCallback } from 'react';
 import { toast } from 'sonner';
 
-import { Button, ButtonIcon } from '../../../_components/button';
-import CopyIcon from '../../../_icons/copy.svg';
+import { Button, ButtonIcon } from '../../../../components/elements/button';
+import CopyIcon from '../../../../icons/copy.svg';
 
 import type { FC } from 'react';
 

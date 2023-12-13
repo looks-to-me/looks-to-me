@@ -4,11 +4,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
   component: LinkButton,
-  parameters: {
-    nextjs: {
-      appDirectory: true,
-    },
-  },
 } as Meta<typeof LinkButton>;
 
 type Story = StoryObj<typeof LinkButton>;

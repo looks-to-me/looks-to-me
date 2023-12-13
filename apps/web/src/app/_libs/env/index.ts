@@ -1,6 +1,6 @@
 import { literal, object, parse, special, string, union, url } from 'valibot';
 
-import { memoize } from '../../_helpers/memoize';
+import { memoize } from '../../../helpers/memoize';
 
 export const mockEnv: Record<string, unknown> = {};
 

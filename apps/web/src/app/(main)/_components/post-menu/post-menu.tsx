@@ -1,11 +1,11 @@
 'use client';
 
 import { useDeletePost } from './hooks/use-delete-post';
-import { AccessibleIcon } from '../../../_components/accessible-icon';
-import { Button, ButtonIcon } from '../../../_components/button';
-import { DropDownMenu, DropDownMenuContent, DropDownMenuGroup, DropDownMenuIcon, DropDownMenuItem, DropDownMenuTrigger } from '../../../_components/drop-down-menu';
-import MenuIcon from '../../../_icons/menu.svg';
-import TrashcanIcon from '../../../_icons/trash-can.svg';
+import { AccessibleIcon } from '../../../../components/elements/accessible-icon';
+import { Button, ButtonIcon } from '../../../../components/elements/button';
+import { DropDownMenu, DropDownMenuContent, DropDownMenuGroup, DropDownMenuIcon, DropDownMenuItem, DropDownMenuTrigger } from '../../../../components/elements/drop-down-menu';
+import MenuIcon from '../../../../icons/menu.svg';
+import TrashcanIcon from '../../../../icons/trash-can.svg';
 
 import type { Post } from '../../_repositories/post-repository';
 import type { FC } from 'react';
