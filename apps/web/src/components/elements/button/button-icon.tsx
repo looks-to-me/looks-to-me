@@ -1,7 +1,7 @@
 import { cloneElement } from 'react';
 
 import * as styles from './button.css';
-import { mergeProps } from '../../../app/_helpers/merge-props';
+import { mergeProps } from '../../../helpers/merge-props';
 
 import type { ReactElement , FC } from 'react';
 

@@ -1,6 +1,6 @@
-import { createMetadata } from './_helpers/create-metadata';
 import { publicEnv } from './_libs/env';
 import { Root } from '../components/elements/root';
+import { createMetadata } from '../helpers/create-metadata';
 
 import type { FC, ReactNode } from 'react';
 
