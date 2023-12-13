@@ -1,7 +1,7 @@
 import { Button } from './button';
 import { ButtonIcon } from './button-icon';
-import CloseIcon from '../../../app/_icons/close.svg';
-import HomeIcon from '../../../app/_icons/home.svg';
+import CloseIcon from '../../../icons/close.svg';
+import HomeIcon from '../../../icons/home.svg';
 import { AccessibleIcon } from '../accessible-icon';
 
 import type { Meta, StoryObj } from '@storybook/react';

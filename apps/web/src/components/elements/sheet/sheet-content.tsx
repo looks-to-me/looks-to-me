@@ -5,7 +5,7 @@ import { clsx } from 'clsx';
 import { forwardRef, Children } from 'react';
 
 import * as styles from './sheet.css';
-import CloseIcon from '../../../app/_icons/close.svg';
+import CloseIcon from '../../../icons/close.svg';
 import { AccessibleIcon } from '../accessible-icon';
 import { Button, ButtonIcon } from '../button';
 import { Separator } from '../separator';
