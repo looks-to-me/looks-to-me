@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 
 import { Dialog } from '../../../../../components/elements/dialog';
-import { useIsMounted } from '../../../../_hooks/use-is-mounted';
+import { useIsMounted } from '../../../../../hooks/use-is-mounted';
 
 import type { DialogProps } from '../../../../../components/elements/dialog';
 import type { FC } from 'react';
