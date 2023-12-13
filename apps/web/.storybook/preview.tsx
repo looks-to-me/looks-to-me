@@ -1,5 +1,5 @@
 import { initMockDatabase } from '../src/app/_libs/database/instance/mock';
-import { Root } from '../src/components/elements/root';
+import { ApplicationRoot } from '../src/components/domains/application/application-root';
 
 import type { Preview } from '@storybook/react';
 
@@ -18,9 +18,9 @@ const preview: Preview = {
   },
   decorators: [
     Story => (
-      <Root>
+      <ApplicationRoot>
         <Story />
-      </Root>
+      </ApplicationRoot>
     ),
   ],
   loaders: [
