@@ -1,20 +1,22 @@
 import { drizzle } from 'drizzle-orm/d1';
 
-import { env } from '../../env';
+import { privateEnv } from '../../env';
 import { schema } from '../schema';
 
 import type { BaseSQLiteDatabase } from 'drizzle-orm/sqlite-core';
 
-let instance: BaseSQLiteDatabase<'async', unknown, typeof schema> | undefined;
+export type Database = BaseSQLiteDatabase<'async', unknown, typeof schema>;
 
-export const initDatabase = (value: Exclude<typeof instance, undefined>): void => {
+let instance: Database | undefined;
+
+export const initDatabase = (value: Database): void => {
   if (instance) return;
   instance = value;
 };
 
-export const database = (): Exclude<typeof instance, undefined> => {
+export const database = (): Database => {
   if (instance) return instance;
-  const database = drizzle(env().DB, { schema });
+  const database = drizzle(privateEnv().DB, { schema });
   initDatabase(database);
   return database;
 };

@@ -1,4 +1,4 @@
-import { env } from '../../../../../_libs/env';
+import { privateEnv } from '../../../../../_libs/env';
 import { storage } from '../../../../../_libs/storage';
 import { findPostById } from '../../../../_repositories/post-repository';
 
@@ -15,8 +15,8 @@ type Context = {
 export const GET = async (request: NextRequest, context: Context) => {
   // In the production environment, it should only be accessible by Workers.
   if (
-    env().NODE_ENV === 'production' &&
-    request.headers.get('authorization') !== `Bearer ${env().INTERNAL_API_TOKEN}`
+    privateEnv().NODE_ENV === 'production' &&
+    request.headers.get('authorization') !== `Bearer ${privateEnv().INTERNAL_API_TOKEN}`
   ) {
     return Response.error();
   }

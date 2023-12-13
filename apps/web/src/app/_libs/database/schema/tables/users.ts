@@ -17,5 +17,3 @@ export const usersRelations = relations(users, ({ one, many }) => ({
   images: many(images),
   posts: many(posts),
 }));
-
-export type User = typeof users._.inferSelect;

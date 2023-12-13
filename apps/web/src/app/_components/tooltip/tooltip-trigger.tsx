@@ -2,10 +2,10 @@
 
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 export type TooltipTriggerProps = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export const TooltipTrigger: FC<TooltipTriggerProps> = ({

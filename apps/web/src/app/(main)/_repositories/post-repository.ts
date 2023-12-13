@@ -14,7 +14,7 @@ export type Post = {
   word: string;
 };
 
-export const insertPost = async (post: Post): Promise<Post> => {
+export const savePost = async (post: Post): Promise<Post> => {
   await database()
     .insert(schema.posts)
     .values({
@@ -23,6 +23,15 @@ export const insertPost = async (post: Post): Promise<Post> => {
       imageId: post.imageId,
       word: post.word,
       postedAt: new Date(),
+    })
+    .onConflictDoUpdate({
+      target: schema.posts.id,
+      set: {
+        userId: sql`excluded.user_id`,
+        imageId: sql`excluded.image_id`,
+        word: sql`excluded.word`,
+        postedAt: sql`excluded.posted_at`,
+      },
     })
     .run();
 

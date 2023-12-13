@@ -1,15 +1,16 @@
 'use server';
 
 import { createId } from '@paralleldrive/cuid2';
+import { parse } from 'valibot';
 
 import { UserMetadataSchema } from '../../../../_libs/auth/type/user-metadata';
-import { findUserProviderByTypeAndSub, insertUserProvider } from '../../../_repositories/user-provider-repository';
-import { insertUser, updateUser } from '../../../_repositories/user-repository';
+import { findUserProviderByTypeAndSub, saveUserProvider } from '../../../_repositories/user-provider-repository';
+import { saveUser } from '../../../_repositories/user-repository';
 
 import type { User } from '@supabase/auth-helpers-react';
 
 export const upsertUser = async (authUser: User): Promise<void> => {
-  const userMetadata = UserMetadataSchema.parse({
+  const userMetadata = parse(UserMetadataSchema, {
     ...authUser.app_metadata,
     ...authUser.user_metadata,
   });
@@ -17,7 +18,7 @@ export const upsertUser = async (authUser: User): Promise<void> => {
   const userProvider = await findUserProviderByTypeAndSub(userMetadata.provider, userMetadata.sub);
   
   if (userProvider) {
-    await updateUser({
+    await saveUser({
       id: userProvider.userId,
       profile: {
         name: userMetadata.user_name,
@@ -28,7 +29,7 @@ export const upsertUser = async (authUser: User): Promise<void> => {
     return;
   }
 
-  const user = await insertUser({
+  const user = await saveUser({
     id: createId(),
     profile: {
       name: userMetadata.user_name,
@@ -37,7 +38,7 @@ export const upsertUser = async (authUser: User): Promise<void> => {
     },
   });
 
-  await insertUserProvider({
+  await saveUserProvider({
     userId: user.id,
     type: userMetadata.provider,
     sub: userMetadata.sub,

@@ -7,17 +7,16 @@ import type { NextRequest } from 'next/server';
 export const runtime = 'edge';
 
 /**
- * sign in時に必要
+ * Used for login with the supabase authentication client.
  * @see https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-sign-in-with-code-exchange
  */
 export const GET = async (request: NextRequest) => {
-  const requestUrl = new URL(request.url);
-  const code = requestUrl.searchParams.get('code');
+  const url = new URL(request.url);
+  const code = url.searchParams.get('code');
   if (code) {
     const supabase = createRouteHandlerClient({ cookies });
     await supabase.auth.exchangeCodeForSession(code);
   }
 
-  // ログイン後にリダイレクトする先（いまはリクエストしてきたところに戻している）
-  return NextResponse.redirect(requestUrl.origin);
+  return NextResponse.redirect(url.origin);
 };

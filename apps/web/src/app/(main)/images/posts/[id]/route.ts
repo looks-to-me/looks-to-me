@@ -1,6 +1,6 @@
 import { imageCache } from '@looks-to-me/package-image-cache';
 
-import { env } from '../../../../_libs/env';
+import { privateEnv } from '../../../../_libs/env';
 import { findImageById } from '../../../_repositories/image-repository';
 import { findPostById } from '../../../_repositories/post-repository';
 
@@ -19,11 +19,11 @@ const fetchImage = async (request: Request, id: string): Promise<Response> => {
   if (!image) return Response.error();
 
   const origin = `${url.origin}/images/posts/${post.id}/raw`;
-  if (env().NODE_ENV === 'development') {
+  if (privateEnv().NODE_ENV === 'development') {
     return fetch(origin);
   }
 
-  const fetchUrl = new URL(env().IMAGE_OVERLAY_WORKER_URL);
+  const fetchUrl = new URL(privateEnv().IMAGE_OVERLAY_WORKER_URL);
   fetchUrl.searchParams.set('origin', origin);
   fetchUrl.searchParams.set('overlay', `${url.origin}/images/overlays/${post.word}`);
 
@@ -36,7 +36,7 @@ const fetchImage = async (request: Request, id: string): Promise<Response> => {
   return await fetch(fetchUrl, {
     headers: {
       ...(accept ? { accept } : {}),
-      authorization: `Bearer ${env().INTERNAL_API_TOKEN}`,
+      authorization: `Bearer ${privateEnv().INTERNAL_API_TOKEN}`,
     },
   });
 };
@@ -54,7 +54,7 @@ export const GET = async (request: NextRequest, context: Context) => {
   const parameters: ImageCacheParameters = {
     request,
     format: request.headers.get('accept')?.includes('image/webp') ? 'webp' : undefined,
-    bucket: env().BUCKET,
+    bucket: privateEnv().BUCKET,
   };
 
   return imageCache(parameters, async () => {

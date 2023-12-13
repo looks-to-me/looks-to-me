@@ -1,11 +1,13 @@
-import { z } from 'zod';
+import { object, optional, string } from 'valibot';
 
-export const UserMetadataSchema = z.object({
-  sub: z.string(),
-  provider: z.string(),
-  name: z.string().optional(),
-  user_name: z.string(),
-  avatar_url: z.string(),
+import type { Input } from 'valibot';
+
+export const UserMetadataSchema = object({
+  sub: string(),
+  provider: string(),
+  name: optional(string()),
+  user_name: string(),
+  avatar_url: string(),
 });
 
-export type UserMetadata = z.infer<typeof UserMetadataSchema>;
+export type UserMetadata = Input<typeof UserMetadataSchema>;

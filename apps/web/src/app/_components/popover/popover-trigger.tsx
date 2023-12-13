@@ -2,10 +2,10 @@
 
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 export type PopoverTriggerProps = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export const PopoverTrigger: FC<PopoverTriggerProps> = ({

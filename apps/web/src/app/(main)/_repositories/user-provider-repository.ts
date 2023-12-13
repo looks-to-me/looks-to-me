@@ -1,4 +1,4 @@
-import { and, eq } from 'drizzle-orm';
+import { and, eq , sql } from 'drizzle-orm';
 
 import { database } from '../../_libs/database';
 import { schema } from '../../_libs/database/schema';
@@ -9,10 +9,23 @@ export type UserProvider = {
   sub: string;
 };
 
-export const insertUserProvider = async (userProvider: UserProvider): Promise<UserProvider> => {
+export const saveUserProvider = async (userProvider: UserProvider): Promise<UserProvider> => {
   await database()
     .insert(schema.userProviders)
-    .values(userProvider)
+    .values({
+      userId: userProvider.userId,
+      type: userProvider.type,
+      sub: userProvider.sub,
+    })
+    .onConflictDoUpdate({
+      target: [
+        schema.userProviders.type,
+        schema.userProviders.sub,
+      ],
+      set: {
+        userId: sql`excluded.user_id`,
+      },
+    })
     .run();
 
   return userProvider;

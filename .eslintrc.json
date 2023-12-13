@@ -1,7 +1,8 @@
 {
   "root": true,
   "extends": [
-    "@agaroot/eslint-config-common"
+    "@agaroot/eslint-config-common",
+    "@agaroot/eslint-config-jest"
   ],
   "parserOptions": {
     "project": "./tsconfig.json"

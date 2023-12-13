@@ -2,7 +2,7 @@
   "name": "looks-to-me",
   "version": "1.0.0",
   "private": true,
-  "packageManager": "pnpm@8.10.2",
+  "packageManager": "pnpm@8.12.0",
   "scripts": {
     "create:component": "scaffdog generate component",
     "build:ci": "turbo run build:ci",
@@ -12,24 +12,22 @@
   "pnpm": {
     "overrides": {
       "tsconfig-paths": "4.2.0"
-    },
-    "patchedDependencies": {
-      "esbuild-register@3.4.2": "patches/esbuild-register@3.4.2.patch"
     }
   },
   "devDependencies": {
     "@agaroot/eslint-config-common": "2.1.6",
+    "@agaroot/eslint-config-jest": "2.1.1",
     "@scaffdog/types": "3.0.0",
     "@tsconfig/strictest": "2.0.2",
-    "@typescript-eslint/eslint-plugin": "6.10.0",
-    "@typescript-eslint/parser": "6.10.0",
-    "eslint": "8.53.0",
+    "@typescript-eslint/eslint-plugin": "6.14.0",
+    "@typescript-eslint/parser": "6.14.0",
+    "eslint": "8.55.0",
     "eslint-import-resolver-typescript": "3.6.1",
     "eslint-plugin-import": "2.29.0",
     "eslint-plugin-jest": "27.6.0",
     "eslint-plugin-unicorn": "49.0.0",
     "eslint-plugin-unused-imports": "3.0.0",
     "scaffdog": "3.0.0",
-    "turbo": "1.10.16"
+    "turbo": "1.11.1"
   }
 }

@@ -1,12 +1,12 @@
 import { Root } from './_components/root';
 import { createMetadata } from './_helpers/create-metadata';
-import { env } from './_libs/env';
+import { publicEnv } from './_libs/env';
 
 import type { FC, ReactNode } from 'react';
 
 export const generateMetadata = () => {
   return createMetadata({
-    metadataBase: new URL(env().NEXT_PUBLIC_APP_ORIGIN),
+    metadataBase: new URL(publicEnv().NEXT_PUBLIC_APP_ORIGIN),
     title: {
       template: '%s | LooksToMe',
       default: 'LooksToMe',

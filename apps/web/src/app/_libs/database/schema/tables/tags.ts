@@ -11,5 +11,3 @@ export const tags = sqliteTable('tags', {
 export const tagsRelations = relations(tags, ({ many }) => ({
   postTags: many(postTags),
 }));
-
-export type Tag = typeof tags._.inferSelect;

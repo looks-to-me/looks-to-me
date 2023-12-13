@@ -1,6 +1,6 @@
 'use server';
 
-import { eq } from 'drizzle-orm';
+import { eq, sql } from 'drizzle-orm';
 
 import { database } from '../../_libs/database';
 import { schema } from '../../_libs/database/schema';
@@ -12,7 +12,7 @@ export type Image = {
   height: number;
 };
 
-export const insertImage = async (image: Image): Promise<Image> => {
+export const saveImage = async (image: Image): Promise<Image> => {
   await database()
     .insert(schema.images)
     .values({
@@ -21,6 +21,15 @@ export const insertImage = async (image: Image): Promise<Image> => {
       width: image.width,
       height: image.height,
       uploadedAt: new Date(),
+    })
+    .onConflictDoUpdate({
+      target: schema.images.id,
+      set: {
+        userId: sql`excluded.user_id`,
+        width: sql`excluded.width`,
+        height: sql`excluded.height`,
+        uploadedAt: sql`excluded.uploaded_at`,
+      },
     })
     .run();
 
