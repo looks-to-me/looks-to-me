@@ -1,17 +1,27 @@
 'use server';
 
-import { desc, eq, lt } from 'drizzle-orm';
+import { and, desc, eq, lt, notInArray } from 'drizzle-orm';
 
 import { database } from '../../../../_libs/database';
 import { schema } from '../../../../_libs/database/schema';
-import { Post } from '../../../_components/post';
+import { findMuteUsersByUserId } from '../../../_repositories/mute-user-repository';
 
-import type { InfiniteScrollEdge } from '../../../../_components/infinite-scroll';
+import type { PostWithUser } from '../../../../../components/elements/infinite-scroll/_libs/get-infinityscroll-props-by-posts';
 
 const limit = 32;
 
-export const fetchPosts = async (cursor?: string): Promise<InfiniteScrollEdge[]> => {
-  const posts = await database()
+type FetchPostProps = {
+  cursor?: string | undefined;
+  loginUserId?: string | undefined;
+};
+
+export const fetchPosts = async ({ cursor, loginUserId }: FetchPostProps): Promise<PostWithUser[]> => {
+  const muteUsers = loginUserId ?
+    await findMuteUsersByUserId(loginUserId)
+    : [];
+  const muteUserIds = muteUsers.map(user => user.muteUserId);
+
+  return await database()
     .select({
       id: schema.posts.id,
       word: schema.posts.word,
@@ -22,24 +32,19 @@ export const fetchPosts = async (cursor?: string): Promise<InfiniteScrollEdge[]>
     })
     .from(schema.posts)
     .innerJoin(schema.users, eq(schema.posts.userId, schema.users.id))
-    .innerJoin(schema.userProfiles, eq(schema.userProfiles.userId, schema.users.id))
-    .where(cursor ? lt(schema.posts.postedAt, new Date(cursor)) : undefined)
+    .innerJoin(
+      schema.userProfiles,
+      eq(schema.userProfiles.userId, schema.users.id),
+    )
+    .where(
+      and(
+        cursor ? lt(schema.posts.postedAt, new Date(cursor)) : undefined,
+        muteUserIds.length
+          ? notInArray(schema.posts.userId, muteUserIds)
+          : undefined,
+      ),
+    )
     .orderBy(desc(schema.posts.postedAt))
     .limit(limit)
     .all();
-
-  return posts.map(post => ({
-    cursor: post.postedAt.toISOString(),
-    node: (
-      <Post
-        key={post.id}
-        post={{
-          id: post.id,
-          word: post.word,
-          image: `/images/posts/${post.id}`,
-          link: `/@${post.user.name}/posts/${post.id}`,
-        }}
-      />
-    ),
-  }));
 };

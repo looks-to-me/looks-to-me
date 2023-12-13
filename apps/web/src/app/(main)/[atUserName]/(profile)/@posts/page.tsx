@@ -6,7 +6,7 @@ import { PostList } from '../../../_components/post-list';
 import { findUserByName } from '../../../_repositories/user-repository';
 import { getUserName } from '../../_helpers/get-user-name';
 
-import type { InfiniteScrollFetcher } from '../../../../_components/infinite-scroll';
+import type { InfiniteScrollFetcher } from '../../../../../components/elements/infinite-scroll';
 import type { PageProps } from '../../../../_types/page-props';
 import type { UserProfilePageProps } from '../page';
 import type { FC } from 'react';
@@ -41,7 +41,7 @@ const UserProfilePostsPage: FC<UserProfileMainPageProps> = async ({
   return (
     <div className={styles.wrapper}>
       <PostList
-        posts={posts}
+        edges={posts}
         fetcher={fetcher}
       />
     </div>

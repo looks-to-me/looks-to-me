@@ -1,6 +1,6 @@
-import { Root } from './_components/root';
-import { createMetadata } from './_helpers/create-metadata';
 import { publicEnv } from './_libs/env';
+import { ApplicationRoot } from '../components/domains/application/application-root';
+import { createMetadata } from '../helpers/create-metadata';
 
 import type { FC, ReactNode } from 'react';
 
@@ -24,9 +24,9 @@ const RootLayout: FC<RootLayoutProps> = ({
   return (
     <html lang="ja">
       <body>
-        <Root>
+        <ApplicationRoot>
           {children}
-        </Root>
+        </ApplicationRoot>
       </body>
     </html>
   );

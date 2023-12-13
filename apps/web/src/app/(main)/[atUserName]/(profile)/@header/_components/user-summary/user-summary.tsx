@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
 
 import * as styles from './user-summary.css';
-import { Avatar, AvatarFallback, AvatarImage } from '../../../../../../_components/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '../../../../../../../components/elements/avatar';
 
 import type { User } from '../../../../../_repositories/user-repository';
 import type { FC } from 'react';

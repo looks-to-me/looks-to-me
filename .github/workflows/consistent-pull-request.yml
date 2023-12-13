@@ -1,7 +1,7 @@
 name: Consistent Pull Request
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, edited, synchronize]
 
 jobs:
@@ -12,50 +12,28 @@ jobs:
     permissions:
       pull-requests: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - name: Check pr label name
+        uses: agaroot-technologies/action-restrict-pr-label@7afc265323238e3b73f016e565f9c81d5e67362d # v1.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          rules: |
+            main <- preview [release]
+            preview <- feature/* [feature]
+            preview <- bugfix/* [bugfix]
+            preview <- refactor/* [refactor]
+            preview <- chore/* [chore]
+            preview <- deps/* [deps]
 
       - name: Check head branch name
-        if: >-
-          github.event.action == 'opened' &&
-          !contains(fromJSON('["main", "preview"]'), github.head_ref)
-        env:
-          HEAD_REF: ${{ github.head_ref }}
-          PR_NUMBER: ${{ github.event.number }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          if ! [[ "${HEAD_REF}" =~ ^(feature|bugfix|refactor|chore|deps)/.* ]]; then
-              echo "::error::Branch name '${HEAD_REF}' does not follow naming convention"
-              gh pr close "${PR_NUMBER}"
-              exit 1
-          fi
-
-      - name: Consistent pull request title and label
-        if: >-
-          github.event.action != 'synchronize' &&
-          github.event.pull_request.state == 'open' &&
-          !contains(fromJSON('["main", "preview"]'), github.head_ref)
-        env:
-          HEAD_REF: ${{ github.head_ref }}
-          PR_TITLE: ${{ github.event.pull_request.title }}
-          PR_NUMBER: ${{ github.event.number }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          label=$(echo "${HEAD_REF}" | cut -d'/' -f1)
-          pr_title_regex="^\[${label}\]"
-          if ! [[ "${PR_TITLE}" =~ ${pr_title_regex} ]]; then
-            PR_TITLE="[${label}] ${PR_TITLE}"
-          fi
-          gh pr edit "${PR_NUMBER}" --title "${PR_TITLE}" --add-label "${label}"
+        uses: agaroot-technologies/action-restrict-head-branch@48b7777bbd99e4702abe38e4a996fcd5a2453667 # v1.0.0
+        with:
+          rules: |
+            feature/* bugfix/* refactor/* chore/* deps/*
 
       - name: Check base branch name
-        if: >-
-          github.event.pull_request.state == 'open' &&
-          !contains(fromJSON('["main", "preview"]'), github.head_ref)
-        env:
-          BASE_REF: ${{ github.base_ref }}
-        run: |
-          if ! [[ "${BASE_REF}" =~ ^(main|preview)$ ]]; then
-              echo "::error::Cannot merge into branch name '${BASE_REF}'."
-              exit 1
-          fi
+        uses: agaroot-technologies/action-restrict-base-branch@824225e012eff11d1d3f44ee5e862af2b7b5f1eb # v1.0.0
+        with:
+          rules: |
+            main <- preview
+            preview <- feature/* bugfix/* refactor/* chore/* deps/*

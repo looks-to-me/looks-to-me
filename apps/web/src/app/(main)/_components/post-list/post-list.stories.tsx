@@ -11,7 +11,7 @@ type Story = StoryObj<typeof PostList>;
 
 export const Default = {
   args: {
-    posts: Array.from({ length: 20 }).map((_, index) => ({
+    edges: Array.from({ length: 20 }).map((_, index) => ({
       cursor: index.toString(),
       node: (
         <Post

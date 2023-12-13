@@ -2,7 +2,7 @@ import { clsx } from 'clsx';
 import Link from 'next/link';
 
 import * as styles from './avatar-menu.css';
-import { Avatar, AvatarFallback, AvatarImage } from '../../../_components/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '../../../../components/elements/avatar';
 import {
   DropDownMenu,
   DropDownMenuContent,
@@ -11,9 +11,9 @@ import {
   DropDownMenuIcon,
   DropDownMenuItem,
   DropDownMenuLabel,
-} from '../../../_components/drop-down-menu';
-import LogoutIcon from '../../../_icons/logout.svg';
-import PersonIcon from '../../../_icons/person.svg';
+} from '../../../../components/elements/drop-down-menu';
+import LogoutIcon from '../../../../icons/logout.svg';
+import PersonIcon from '../../../../icons/person.svg';
 
 import type { User } from '../../_repositories/user-repository';
 import type { FC } from 'react';

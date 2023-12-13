@@ -1,7 +1,9 @@
 import { fetchPosts } from './_actions/fetch-posts';
+import { getInfinityScrollPropsByPosts } from '../../../../components/elements/infinite-scroll/_libs/get-infinityscroll-props-by-posts';
+import { getLoginUser } from '../../../_actions/get-login-user';
 import { PostList } from '../../_components/post-list';
 
-import type { InfiniteScrollFetcher } from '../../../_components/infinite-scroll';
+import type { InfiniteScrollFetcher } from '../../../../components/elements/infinite-scroll';
 import type { PageProps } from '../../../_types/page-props';
 import type { HomePageProps } from '../page';
 import type { FC } from 'react';
@@ -18,16 +20,26 @@ export type HomePostListPageProps = HomePageProps & PageProps<{
 }>;
 
 const HomePostListPage: FC<HomePostListPageProps> = async () => {
-  const posts = await fetchPosts();
+  const loginUser = await getLoginUser();
+  const posts = await fetchPosts({
+    cursor: undefined,
+    loginUserId: loginUser ? loginUser.id : undefined,
+  });
+  const edges = getInfinityScrollPropsByPosts(posts);
 
-  const fetcher: InfiniteScrollFetcher = async arguments_ => {
+  const fetcher: InfiniteScrollFetcher = async (arguments_) => {
     'use server';
-    return await fetchPosts(arguments_.cursor);
+    const loginUser = await getLoginUser();
+    const posts = await fetchPosts({
+      cursor: arguments_.cursor,
+      loginUserId: loginUser ? loginUser.id : undefined,
+    });
+    return getInfinityScrollPropsByPosts(posts);
   };
 
   return (
     <PostList
-      posts={posts}
+      edges={edges}
       fetcher={fetcher}
     />
   );

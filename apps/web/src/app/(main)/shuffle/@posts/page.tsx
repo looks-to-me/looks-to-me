@@ -1,4 +1,6 @@
 import { fetchPosts } from './_actions/fetch-posts';
+import { getInfinityScrollPropsByPosts } from '../../../../components/elements/infinite-scroll/_libs/get-infinityscroll-props-by-posts';
+import { getLoginUser } from '../../../_actions/get-login-user';
 import { PostList } from '../../_components/post-list';
 
 import type { PageProps } from '../../../_types/page-props';
@@ -17,12 +19,19 @@ export type ShufflePostListPageProps = ShufflePageProps & PageProps<{
 }>;
 
 const ShufflePostListPage: FC<ShufflePostListPageProps> = async () => {
-  const posts = await fetchPosts();
+  const loginUser = await getLoginUser();
+  const fetcher = async () => {
+    'use server';
+    const posts = await fetchPosts({ loginUserId: loginUser ? loginUser.id : undefined });
+    return getInfinityScrollPropsByPosts(posts);
+  };
+
+  const edges = await fetcher();
 
   return (
     <PostList
-      posts={posts}
-      fetcher={fetchPosts}
+      edges={edges}
+      fetcher={fetcher}
     />
   );
 };
