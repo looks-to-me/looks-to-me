@@ -1,6 +1,7 @@
 'use server';
 
 import { deleteImageCache } from '@looks-to-me/package-image-cache';
+import { revalidatePath } from 'next/cache';
 
 import { getLoginUser } from '../../../../_actions/get-login-user';
 import { privateEnv } from '../../../../_libs/env';
@@ -33,5 +34,9 @@ export const deletePostAction = async (postId: string): Promise<DeletePostResult
   await deleteImage(post.imageId);
   await deleteImageCache({ bucket: privateEnv().BUCKET, path: `images/posts/${post.id}` });
 
+  revalidatePath('/');
+  revalidatePath('/shuffle');
+  revalidatePath(`/@${user.profile.name}`);
+  
   return { type: 'success', redirectUrl: `/@${user.profile.name}`, message: 'The post has been successfully deleted.' };
 };

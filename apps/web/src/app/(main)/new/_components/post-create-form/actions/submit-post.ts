@@ -1,6 +1,7 @@
 'use server';
 
 import { createId } from '@paralleldrive/cuid2';
+import { revalidatePath } from 'next/cache';
 import { coerce, transform, instance, maxLength, minValue, number, object, parse, regex, string } from 'valibot';
 
 import { getUserMetadata } from '../../../../../_libs/auth/server/get-user-metadata';
@@ -86,6 +87,9 @@ export const submitPost = async (formData: FormData): Promise<SubmitPostResult> 
       for (const result of results) {
         if (!result.ok) throw new Error(await result.text());
       }
+
+      revalidatePath('/');
+      revalidatePath(`/@${user.profile.name}`);
 
       return { type: 'success', message: 'Post created!', redirectUrl: `/@${user.profile.name}/posts/${post.id}` };
     } catch (error) {
