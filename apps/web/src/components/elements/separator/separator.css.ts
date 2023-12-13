@@ -1,6 +1,6 @@
 import { recipe } from '@vanilla-extract/recipes';
 
-import { theme } from '../../../app/_theme';
+import { theme } from '../../../themes';
 
 export const wrapper = recipe({
   base: {
