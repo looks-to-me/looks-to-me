@@ -4,7 +4,7 @@ import { Slot } from '@radix-ui/react-slot';
 import { forwardRef, useRef, useState } from 'react';
 
 import * as styles from './infinite-scroll.css';
-import { useInViewPort } from '../../../app/_hooks/use-in-view-port';
+import { useInViewPort } from '../../../hooks/use-in-view-port';
 
 import type { ReactNode, ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
 
