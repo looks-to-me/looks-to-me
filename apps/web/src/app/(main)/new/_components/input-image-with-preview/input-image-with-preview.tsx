@@ -5,7 +5,7 @@ import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from '
 
 import * as styles from './input-image-with-preview.css';
 import { theme } from '../../../../../themes';
-import { overlayTitleStyle as overlayTitleStyle, overlayDescptionStyle as overlayDescptionStyle } from '../../../images/overlays/[word]/styles';
+import { LgtmText } from '../../../_components/lgtm-text';
 
 import type { InputHTMLAttributes, ChangeEventHandler, DragEventHandler, MouseEventHandler, ForwardRefRenderFunction } from 'react';
 
@@ -97,9 +97,6 @@ const InputImageWithPreviewRender: ForwardRefRenderFunction<InputImageWithPrevie
     event.preventDefault();
   }, []);
 
-  const lgtmFirstLetter = `L${word.at(0)?.toUpperCase() ?? ''}TM`;
-  const lgtmFullText = `Looks ${
-    word.at(0)?.toUpperCase() ?? ''}${word.slice(1).toLowerCase() ?? ''} To Me`;
   return (
     <div className={clsx(className, styles.wrapper)}>
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
@@ -123,9 +120,11 @@ const InputImageWithPreviewRender: ForwardRefRenderFunction<InputImageWithPrevie
               src={URL.createObjectURL(image.file)}
               alt="Preview"
             />
-            <div className={styles.overlayTextWrapper}>
-              <div style={{ ...overlayTitleStyle, fontSize:  '7em' }}>{lgtmFirstLetter}</div>
-              <div style={{ ...overlayDescptionStyle, fontSize:  '1.8em' }}>{lgtmFullText}</div>
+            <div className={styles.overlayWrapper}>
+              <LgtmText
+                word={word} 
+                className={styles.textWrapperOverride}
+              />
             </div>
           </div>
         ) : (

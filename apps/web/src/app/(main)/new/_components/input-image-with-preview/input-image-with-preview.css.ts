@@ -23,8 +23,7 @@ export const image = style({
   maxHeight: '90%',
 });
 
-const INPUT_IMAGE_WIDTH = '630px';
-export const overlayTextWrapper = style({
+export const overlayWrapper = style({
   position: 'absolute',
   top: '0',
   display: 'flex',
@@ -34,9 +33,14 @@ export const overlayTextWrapper = style({
   alignItems: 'center',
   width: '100%',
   height:'100%',
+});
+
+const INPUT_IMAGE_WIDTH = '630px';
+export const textWrapperOverride = style({
+  fontSize: '7.9px !important',
   '@media': {
     [`screen and (width < ${INPUT_IMAGE_WIDTH})`]: {
-      fontSize: '2.2vw',
+      fontSize: '1.25vw !important',
     },
   },
 });

@@ -2,9 +2,9 @@ import { imageCache } from '@looks-to-me/package-image-cache';
 import { ImageResponse } from 'next/og';
 import { maxLength, parse, regex, string, transform } from 'valibot';
 
-import { overlayDescptionStyle, overlayTextWrapper, overlayTitleStyle } from './styles';
 import { loadGoogleFont } from '../../../../../helpers/load-google-font';
 import { privateEnv } from '../../../../_libs/env';
+import { LgtmText } from '../../../_components/lgtm-text';
 
 import type { ImageCacheParameters } from '@looks-to-me/package-image-cache';
 import type { NextRequest } from 'next/server';
@@ -38,14 +38,7 @@ export const GET = async (request: NextRequest, context: Context) => {
     const word = parse(wordSchema, context.params.word);
     return new ImageResponse(
       (
-        <div style={overlayTextWrapper}>
-          <div style={overlayTitleStyle}>
-            L{word.at(0)}TM
-          </div>
-          <div style={overlayDescptionStyle}>
-            Looks {word} To Me
-          </div>
-        </div>
+        <LgtmText word={word} />
       ),
       {
         width: 600,
