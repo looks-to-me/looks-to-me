@@ -2,8 +2,8 @@ import { imageCache } from '@looks-to-me/package-image-cache';
 import { ImageResponse } from 'next/og';
 import { parse } from 'valibot';
 
-import { postImageOverlayWordSchema } from './_types/post-image-overlay-word-schema';
 import { loadGoogleFont } from '../../../../../helpers/load-google-font';
+import { postImageOverlayWordSchema } from '../../../../../schemas/post-image-overlay-word-schema';
 import { privateEnv } from '../../../../_libs/env';
 
 import type { ImageCacheParameters } from '@looks-to-me/package-image-cache';

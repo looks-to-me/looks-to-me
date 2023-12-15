@@ -6,8 +6,8 @@ import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from '
 import { safeParse } from 'valibot';
 
 import * as styles from './input-image-with-preview.css';
+import { postImageOverlayWordSchema } from '../../../../../schemas/post-image-overlay-word-schema';
 import { theme } from '../../../../../themes';
-import { postImageOverlayWordSchema } from '../../../images/overlays/[word]/_types/post-image-overlay-word-schema';
 
 import type { InputHTMLAttributes, ChangeEventHandler, DragEventHandler, MouseEventHandler, ForwardRefRenderFunction } from 'react';
 
