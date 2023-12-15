@@ -7,28 +7,28 @@ import * as styles from './variable-text-input.css';
 
 import type { ChangeEvent, FC } from 'react';
 
-export type VariableTextInputProps = Omit<JSX.IntrinsicElements['input'], 'type'> & {
+export type VariableTextInputProps = Omit<JSX.IntrinsicElements['input'], 'type' | 'onChange'> & {
   className?: string;
-  setWord: (word: string) => void;
+  onChange: (value: string) => void;
 };
 
 export const VariableTextInput: FC<VariableTextInputProps> = ({
   className,
-  setWord,
+  onChange,
   ...props
 }) => {
   const dummy = useRef<HTMLDivElement>(null);
 
-  const onChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+  const handleOnChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     if(dummy.current === null) return;
     dummy.current.textContent = event.target.value;
-    setWord(event.target.value);
+    onChange(event.target.value);
   }, []);
 
   return (
     <div className={styles.wrapper}>
       <div ref={dummy} className={styles.dummy} data-placeholder={props.placeholder} />
-      <input {...props} className={clsx(className, styles.input)} type="text" onChange={onChange} />
+      <input {...props} className={clsx(className, styles.input)} type="text" onChange={handleOnChange} />
     </div>
   );
 };

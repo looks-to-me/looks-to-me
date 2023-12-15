@@ -49,7 +49,7 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
         <InputImageWithPreview ref={inputRef} word={word} name="image" />
         <div className={styles.footer}>
           <div>
-            Looks <VariableTextInput setWord={setWord} className={styles.word} name="word" placeholder="Good" defaultValue="Good" /> To Me
+            Looks <VariableTextInput onChange={setWord} className={styles.word} name="word" placeholder="Good" defaultValue="Good" /> To Me
           </div>
           <Button type="submit" variant="primary" className={styles.submit}>Submit</Button>
         </div>
