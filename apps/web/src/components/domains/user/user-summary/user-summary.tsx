@@ -3,20 +3,27 @@ import { clsx } from 'clsx';
 import * as styles from './user-summary.css';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../elements/avatar';
 
-import type { User } from '../../../../repositories/user-repository';
 import type { FC } from 'react';
 
 export type UserSummaryProps = {
-  user: User;
+  className?: string;
+  user: {
+    id: string;
+    profile: {
+      name: string;
+      displayName: string | null;
+    };
+  };
   numOfPosts: number;
 };
 
 export const UserSummary: FC<UserSummaryProps> = ({
+  className,
   user,
   numOfPosts,
 }) => {
   return (
-    <div className={clsx(styles.wrapper)}>
+    <div className={clsx(className, styles.wrapper)}>
       <Avatar className={styles.image}>
         <AvatarImage
           src={`/images/avatars/${user.id}`}
