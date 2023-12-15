@@ -127,7 +127,7 @@ const InputImageWithPreviewRender: ForwardRefRenderFunction<InputImageWithPrevie
               <NextImage
                 className={styles.overlayImageWord}
                 src={`/images/overlays/${word}`} 
-                alt="Looks Good To Me"  
+                alt={`Looks ${word} To Me`}  
                 width={600}
                 height={300}
               />
