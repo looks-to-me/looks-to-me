@@ -1,7 +1,8 @@
 'use server';
 
-import { eq, sql } from 'drizzle-orm';
+import { eq, inArray, notInArray, sql } from 'drizzle-orm';
 
+import { findMuteUsersByUserId } from '../../../../../repositories/mute-user-repository';
 import { database } from '../../../../_libs/database';
 import { schema } from '../../../../_libs/database/schema';
 import { Post } from '../../../_components/post';
@@ -20,7 +21,33 @@ const shuffle = <T extends object>(array: Array<T>): Array<T> => {
 
 const limit = 32;
 
-export const fetchPosts = async (): Promise<InfiniteScrollEdge[]> => {
+type FetchProps = {
+  loginUserId?: string | undefined;
+};
+export const fetchPosts = async ({ loginUserId }: FetchProps): Promise<InfiniteScrollEdge[]> => {
+  const muteUsers = loginUserId ?
+    await findMuteUsersByUserId(loginUserId)
+    : [];
+  const muteUsersIds = muteUsers.map(user => user.muteUserId);
+
+  //TODO: Exclude already retrieved postIds.
+  const randomPostIds = await(async () => {
+    const randomPosts = await database()
+      .select({
+        id: schema.posts.id,
+      })
+      .from(schema.posts)
+      .where(
+        muteUsersIds.length
+          ? notInArray(schema.posts.userId, muteUsersIds)
+          : undefined,
+      )
+      .orderBy(sql`RANDOM()`)
+      .limit(limit)
+      .all();
+    return randomPosts.map((post) => post.id);
+  })();
+
   const posts = await database()
     .select({
       id: schema.posts.id,
@@ -33,7 +60,7 @@ export const fetchPosts = async (): Promise<InfiniteScrollEdge[]> => {
     .from(schema.posts)
     .innerJoin(schema.users, eq(schema.posts.userId, schema.users.id))
     .innerJoin(schema.userProfiles, eq(schema.userProfiles.userId, schema.users.id))
-    .where(sql`posts._ROWID_ >= (ABS(RANDOM()) % ((SELECT MAX(_ROWID_) FROM posts) - ${limit} + 2))`)
+    .where(inArray(schema.posts.id, randomPostIds))
     .limit(limit)
     .all();
 

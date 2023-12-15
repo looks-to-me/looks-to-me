@@ -64,6 +64,13 @@
       "when": 1694185846059,
       "tag": "0008_giant_pete_wisdom",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "5",
+      "when": 1702297828720,
+      "tag": "0009_fat_franklin_richards",
+      "breakpoints": true
     }
   ]
 }
