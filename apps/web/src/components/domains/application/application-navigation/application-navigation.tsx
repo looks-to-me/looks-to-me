@@ -1,13 +1,7 @@
 import { getYear } from 'date-fns';
 import Link from 'next/link';
 
-import * as styles from './global-navigation.css';
-import { ApplicationLogo } from '../../../../components/domains/application/application-logo';
-import { AccessibleIcon } from '../../../../components/elements/accessible-icon';
-import { Button, ButtonIcon } from '../../../../components/elements/button';
-import { PrefersColorScheme } from '../../../../components/elements/prefers-color-scheme';
-import { Sheet, SheetContent, SheetSection, SheetTitle, SheetTrigger } from '../../../../components/elements/sheet';
-import { VisuallyHidden } from '../../../../components/elements/visually-hidden';
+import * as styles from './application-navigation.css';
 import GitHubBlack from '../../../../icons/github-black.svg';
 import GitHubWhite from '../../../../icons/github-white.svg';
 import HomeIcon from '../../../../icons/home.svg';
@@ -16,14 +10,20 @@ import ReportIcon from '../../../../icons/report.svg';
 import ShuffleIcon from '../../../../icons/shuffle.svg';
 import StorybookBlack from '../../../../icons/storybook-black.svg';
 import StorybookWhite from '../../../../icons/storybook-white.svg';
+import { AccessibleIcon } from '../../../elements/accessible-icon';
+import { Button, ButtonIcon } from '../../../elements/button';
+import { PrefersColorScheme } from '../../../elements/prefers-color-scheme';
+import { Sheet, SheetContent, SheetSection, SheetTitle, SheetTrigger } from '../../../elements/sheet';
+import { VisuallyHidden } from '../../../elements/visually-hidden';
+import { ApplicationLogo } from '../application-logo';
 
 import type { FC } from 'react';
 
-export type GlobalNavigationProps = {
+export type ApplicationNavigationProps = {
   className?: string | undefined;
 };
 
-export const GlobalNavigation: FC<GlobalNavigationProps> = ({
+export const ApplicationNavigation: FC<ApplicationNavigationProps> = ({
   className,
 }) => {
   return (
