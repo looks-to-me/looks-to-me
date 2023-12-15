@@ -2,6 +2,7 @@ import { imageCache } from '@looks-to-me/package-image-cache';
 import { ImageResponse } from 'next/og';
 import { maxLength, parse, regex, string, transform } from 'valibot';
 
+import { overlayDescptionStyle, overlayTextWrapper, overlayTitleStyle } from './styles';
 import { loadGoogleFont } from '../../../../../helpers/load-google-font';
 import { privateEnv } from '../../../../_libs/env';
 
@@ -20,16 +21,6 @@ const wordSchema = transform(
 
 const alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-const textStyle = {
-  display: 'flex',
-  color: '#fff',
-  textShadow:
-    `1px 1px 0px #000, -1px -1px 0px #000,
-    -1px 1px 0px #000,  1px -1px 0px #000,
-    1px 0px 0px #000, -1px  0px 0px #000,
-    0px 1px 0px #000,  0px -1px 0px #000`,
-};
-
 type Context = {
   params: {
     word: string;
@@ -47,20 +38,11 @@ export const GET = async (request: NextRequest, context: Context) => {
     const word = parse(wordSchema, context.params.word);
     return new ImageResponse(
       (
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '100%',
-            height: '100%',
-          }}
-        >
-          <div style={{ ...textStyle, fontSize: 120, fontWeight: 700, letterSpacing: '.1em' }}>
+        <div style={overlayTextWrapper}>
+          <div style={overlayTitleStyle}>
             L{word.at(0)}TM
           </div>
-          <div style={{ ...textStyle, fontSize: 30, letterSpacing: '.05em' }}>
+          <div style={overlayDescptionStyle}>
             Looks {word} To Me
           </div>
         </div>

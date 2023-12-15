@@ -5,6 +5,7 @@ import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from '
 
 import * as styles from './input-image-with-preview.css';
 import { theme } from '../../../../../themes';
+import { overlayTitleStyle as overlayTitleStyle, overlayDescptionStyle as overlayDescptionStyle } from '../../../images/overlays/[word]/styles';
 
 import type { InputHTMLAttributes, ChangeEventHandler, DragEventHandler, MouseEventHandler, ForwardRefRenderFunction } from 'react';
 
@@ -18,11 +19,13 @@ export type InputImageWithPreviewHandle = {
 export type InputImageWithPreviewProps = {
   className?: string | undefined;
   name: InputHTMLAttributes<HTMLInputElement>['name'];
+  word: string;
 };
 
 const InputImageWithPreviewRender: ForwardRefRenderFunction<InputImageWithPreviewHandle, InputImageWithPreviewProps> = ({
   className,
   name,
+  word,
 }, ref) => {
   const inputImageRef = useRef<HTMLInputElement>(null);
   const [image, setImage] = useState<{ file: File; width: number; height: number }>();
@@ -94,6 +97,9 @@ const InputImageWithPreviewRender: ForwardRefRenderFunction<InputImageWithPrevie
     event.preventDefault();
   }, []);
 
+  const lgtmFirstLetter = `L${word.at(0)?.toUpperCase() ?? ''}TM`;
+  const lgtmFullText = `Looks ${
+    word.at(0)?.toUpperCase() ?? ''}${word.slice(1).toLowerCase() ?? ''} To Me`;
   return (
     <div className={clsx(className, styles.wrapper)}>
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
@@ -110,12 +116,18 @@ const InputImageWithPreviewRender: ForwardRefRenderFunction<InputImageWithPrevie
         }}
       >
         {image ? (
-          /* eslint-disable-next-line @next/next/no-img-element */
-          <img
-            className={styles.image}
-            src={URL.createObjectURL(image.file)}
-            alt="Preview"
-          />
+          <div className={styles.imageWrapper}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className={styles.image}
+              src={URL.createObjectURL(image.file)}
+              alt="Preview"
+            />
+            <div className={styles.overlayTextWrapper}>
+              <div style={{ ...overlayTitleStyle, fontSize:  '7em' }}>{lgtmFirstLetter}</div>
+              <div style={{ ...overlayDescptionStyle, fontSize:  '1.8em' }}>{lgtmFullText}</div>
+            </div>
+          </div>
         ) : (
           <>
             <p>Drop an Image Here</p>

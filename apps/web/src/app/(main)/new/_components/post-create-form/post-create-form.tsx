@@ -2,7 +2,7 @@
 
 import { clsx } from 'clsx';
 import { useRouter } from 'next/navigation';
-import { useCallback, useRef } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { toast } from 'sonner';
 
 import { submitPost } from './actions/submit-post';
@@ -42,13 +42,14 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
     });
   }, [router]);
 
+  const [word, setWord] = useState('Good');
   return (
     <div className={clsx(className, styles.wrapper)}>
       <form action={handleSubmit}>
-        <InputImageWithPreview ref={inputRef} name="image" />
+        <InputImageWithPreview ref={inputRef} word={word} name="image" />
         <div className={styles.footer}>
           <div>
-            Looks <VariableTextInput className={styles.word} name="word" placeholder="Good" defaultValue="Good" /> To Me
+            Looks <VariableTextInput setWord={setWord} className={styles.word} name="word" placeholder="Good" defaultValue="Good" /> To Me
           </div>
           <Button type="submit" variant="primary" className={styles.submit}>Submit</Button>
         </div>

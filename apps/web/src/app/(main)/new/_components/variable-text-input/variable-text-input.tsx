@@ -9,10 +9,12 @@ import type { ChangeEvent, FC } from 'react';
 
 export type VariableTextInputProps = Omit<JSX.IntrinsicElements['input'], 'type'> & {
   className?: string;
+  setWord: (word: string) => void;
 };
 
 export const VariableTextInput: FC<VariableTextInputProps> = ({
   className,
+  setWord,
   ...props
 }) => {
   const dummy = useRef<HTMLDivElement>(null);
@@ -20,6 +22,7 @@ export const VariableTextInput: FC<VariableTextInputProps> = ({
   const onChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     if(dummy.current === null) return;
     dummy.current.textContent = event.target.value;
+    setWord(event.target.value);
   }, []);
 
   return (
