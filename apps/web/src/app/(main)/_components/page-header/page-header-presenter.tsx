@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
 
 import * as styles from './page-header.css';
-import { ApplicationLogo } from '../application-logo';
+import { ApplicationLogo } from '../../../../components/domains/application/application-logo';
 import { AvatarMenu } from '../avatar-menu';
 import { GlobalNavigation } from '../global-navigation';
 import { LoginButton } from '../login-button';
