@@ -1,4 +1,4 @@
-import { findUserById } from '../../../_repositories/user-repository';
+import { findUserById } from '../../../../../repositories/user-repository';
 
 import type { NextRequest } from 'next/server';
 

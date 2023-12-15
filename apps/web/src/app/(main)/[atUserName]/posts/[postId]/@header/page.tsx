@@ -2,9 +2,9 @@ import { notFound, redirect } from 'next/navigation';
 
 import { ApplicationHeader } from '../../../../../../components/domains/application/application-header';
 import { Breadcrumbs, BreadcrumbsItem } from '../../../../../../components/elements/breadcrumbs';
+import { findPostById } from '../../../../../../repositories/post-repository';
+import { findUserById } from '../../../../../../repositories/user-repository';
 import { getLoginUser } from '../../../../../_queries/user/get-login-user';
-import { findPostById } from '../../../../_repositories/post-repository';
-import { findUserById } from '../../../../_repositories/user-repository';
 import { getUserName } from '../../../_helpers/get-user-name';
 
 import type { PageProps } from '../../../../../_types/page-props';

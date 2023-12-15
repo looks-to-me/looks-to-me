@@ -1,7 +1,7 @@
 import { and, eq , sql } from 'drizzle-orm';
 
-import { database } from '../../_libs/database';
-import { schema } from '../../_libs/database/schema';
+import { database } from '../app/_libs/database';
+import { schema } from '../app/_libs/database/schema';
 
 export type UserProvider = {
   userId: string;

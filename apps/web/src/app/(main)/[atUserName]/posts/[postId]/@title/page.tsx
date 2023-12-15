@@ -3,12 +3,12 @@ import { notFound } from 'next/navigation';
 
 import * as styles from './page.css';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../../../../components/elements/avatar';
+import { findPostById } from '../../../../../../repositories/post-repository';
+import { findUserById } from '../../../../../../repositories/user-repository';
 import { publicEnv } from '../../../../../_libs/env';
 import { getLoginUser } from '../../../../../_queries/user/get-login-user';
 import { PostMenu } from '../../../../_components/post-menu';
 import { ShareButton } from '../../../../_components/share-button';
-import { findPostById } from '../../../../_repositories/post-repository';
-import { findUserById } from '../../../../_repositories/user-repository';
 
 import type { PageProps } from '../../../../../_types/page-props';
 import type { UserPostDetailsPageProps } from '../page';

@@ -2,10 +2,10 @@ import { createId } from '@paralleldrive/cuid2';
 import { eq } from 'drizzle-orm';
 
 import { findUserById, findUserByName, saveUser } from './user-repository';
-import { database } from '../../_libs/database';
-import { schema } from '../../_libs/database/schema';
-import { setupDatabase } from '../../_libs/test/setup-database';
-import { setupWorker } from '../../_libs/test/setup-worker';
+import { database } from '../app/_libs/database';
+import { schema } from '../app/_libs/database/schema';
+import { setupDatabase } from '../app/_libs/test/setup-database';
+import { setupWorker } from '../app/_libs/test/setup-worker';
 
 import type { User } from './user-repository';
 
