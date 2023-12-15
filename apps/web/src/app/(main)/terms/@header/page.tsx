@@ -2,7 +2,7 @@ import { ApplicationHeader } from '../../../../components/domains/application/ap
 import { Breadcrumbs, BreadcrumbsItem } from '../../../../components/elements/breadcrumbs';
 import { getLoginUser } from '../../../_queries/user/get-login-user';
 
-import type { PageProps } from '../../../_types/page-props';
+import type { PageProps } from '../../../../types/page-props';
 import type { TermsOfUsePageProps } from '../page';
 import type { FC } from 'react';
 

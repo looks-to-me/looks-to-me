@@ -9,7 +9,7 @@
  *   };
  * }>;
  * 
- * const const UserProfilePage: FC<UserPageProps> = ({
+ * const UserProfilePage: FC<UserPageProps> = ({
  *   params: { userId },
  * } => {...}
  */

@@ -1,6 +1,6 @@
 import * as styles from './page.css';
 
-import type { PageProps } from '../../_types/page-props';
+import type { PageProps } from '../../../types/page-props';
 import type { FC } from 'react';
 
 export const runtime = 'edge';

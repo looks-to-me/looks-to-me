@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { dispatch } from '../../../helpers/dispatch';
 import { supabase } from '../../_libs/auth/client/instance';
 
-import type { PageProps } from '../../_types/page-props';
+import type { PageProps } from '../../../types/page-props';
 import type { LoginPageProps } from '../login/page';
 import type { FC } from 'react';
 
