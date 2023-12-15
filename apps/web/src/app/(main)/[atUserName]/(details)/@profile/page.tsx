@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 
-import { UserSummary } from './_components/user-summary';
 import * as styles from './page.css';
+import { UserSummary } from '../../../../../components/domains/user/user-summary';
 import { countPostsByUserId } from '../../../../../repositories/post-repository';
 import { findUserByName } from '../../../../../repositories/user-repository';
 import { getUserName } from '../../_helpers/get-user-name';
