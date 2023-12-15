@@ -57,6 +57,7 @@ export const theme = createGlobalTheme(':root', {
         borderMuted: '',
         overlay: '',
         shadow: '',
+        activeSelected: '',
       },
       button: {
         normal: {
@@ -192,5 +193,10 @@ export const theme = createGlobalTheme(':root', {
     fast: '100ms',
     normal: '250ms',
     slow: '500ms',
+  },
+  breakpoints: {
+    sm: 'screen and (width < 640px)',
+    md: 'screen and (640px <= width < 768px)',
+    lg: 'screen and (768px <= width)',
   },
 });

@@ -14,6 +14,7 @@ import {
 } from '../../../../components/elements/drop-down-menu';
 import LogoutIcon from '../../../../icons/logout.svg';
 import PersonIcon from '../../../../icons/person.svg';
+import SettingsIcon from '../../../../icons/settings.svg';
 
 import type { User } from '../../_repositories/user-repository';
 import type { FC } from 'react';
@@ -65,6 +66,14 @@ export const AvatarMenu: FC<AvatarMenuProps> = ({
                 <LogoutIcon />
               </DropDownMenuIcon>
               Logout
+            </Link>
+          </DropDownMenuItem>
+          <DropDownMenuItem asChild>
+            <Link href="/settings">
+              <DropDownMenuIcon>
+                <SettingsIcon />
+              </DropDownMenuIcon>
+              Settings
             </Link>
           </DropDownMenuItem>
         </DropDownMenuGroup>
