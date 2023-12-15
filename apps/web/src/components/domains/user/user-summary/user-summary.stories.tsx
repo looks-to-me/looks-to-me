@@ -15,7 +15,6 @@ export const Default = {
       profile: {
         name: 'name',
         displayName: 'displayName',
-        avatarUrl: 'https://example.com',
       },
     },
     numOfPosts: 120,

@@ -14,6 +14,7 @@ type Story = StoryObj<typeof ApplicationHeader>;
 export const Default = {
   args: {
     children: 'Header',
+    user: undefined,
   },
 } satisfies Story;
 
@@ -25,7 +26,6 @@ export const LoggedIn = {
       profile: {
         name: 'name',
         displayName: 'displayName',
-        avatarUrl: 'https://example.com',
       },
     },
   },

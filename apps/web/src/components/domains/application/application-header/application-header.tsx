@@ -1,17 +1,18 @@
 import { clsx } from 'clsx';
 
 import * as styles from './application-header.css';
-import { UserAccountMenu } from '../../user/user-account-menu';
 import { LoginButton } from '../../../../app/(main)/_components/login-button';
 import { NewPostButton } from '../../../../app/(main)/_components/new-post-button';
+import { UserAccountMenu } from '../../user/user-account-menu';
 import { ApplicationLogo } from '../application-logo';
 import { ApplicationNavigation } from '../application-navigation';
 
-import type { User } from '../../../../repositories/user-repository';
+import type { UserAccountMenuProps } from '../../user/user-account-menu';
 import type { ComponentPropsWithoutRef, FC } from 'react';
 
 export type ApplicationHeaderProps = ComponentPropsWithoutRef<'header'> & {
-  user?: User | undefined;
+  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
+  user: UserAccountMenuProps['user'] | undefined;
 };
 
 export const ApplicationHeader: FC<ApplicationHeaderProps> = ({

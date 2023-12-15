@@ -15,12 +15,17 @@ import {
   DropDownMenuLabel,
 } from '../../../elements/drop-down-menu';
 
-import type { User } from '../../../../repositories/user-repository';
 import type { FC } from 'react';
 
 export type UserAccountMenuProps = {
   className?: string;
-  user: User;
+  user: {
+    id: string;
+    profile: {
+      name: string;
+      displayName: string | null;
+    };
+  };
 };
 
 export const UserAccountMenu: FC<UserAccountMenuProps> = ({
