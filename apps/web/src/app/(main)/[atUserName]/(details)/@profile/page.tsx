@@ -7,12 +7,12 @@ import { findUserByName } from '../../../_repositories/user-repository';
 import { getUserName } from '../../_helpers/get-user-name';
 
 import type { PageProps } from '../../../../_types/page-props';
-import type { UserProfilePageProps } from '../page';
+import type { UserDetailsPageProps } from '../page';
 import type { FC } from 'react';
 
 export const runtime = 'edge';
 
-export type UserProfileHeaderPageProps = UserProfilePageProps & PageProps<{
+export type UserDetailsProfilePageProps = UserDetailsPageProps & PageProps<{
   params: {
     // empty
   };
@@ -21,7 +21,7 @@ export type UserProfileHeaderPageProps = UserProfilePageProps & PageProps<{
   };
 }>;
 
-const UserProfileHeaderPage: FC<UserProfileHeaderPageProps> = async ({
+const UserDetailsProfilePage: FC<UserDetailsProfilePageProps> = async ({
   params,
 }) => {
   const userName = getUserName(params.atUserName);
@@ -42,4 +42,4 @@ const UserProfileHeaderPage: FC<UserProfileHeaderPageProps> = async ({
   );
 };
 
-export default UserProfileHeaderPage;
+export default UserDetailsProfilePage;

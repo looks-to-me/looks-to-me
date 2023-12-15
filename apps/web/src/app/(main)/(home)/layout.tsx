@@ -1,8 +1,6 @@
 import * as styles from './layout.css';
 import { ApplicationLayout } from '../../../components/domains/application/application-layout';
-import { Breadcrumbs, BreadcrumbsItem } from '../../../components/elements/breadcrumbs';
 import { createMetadata } from '../../../helpers/create-metadata';
-import { PageHeader } from '../_components/page-header';
 
 import type { HomePageProps } from './page';
 import type { LayoutProps } from '../../_types/layout-props';
@@ -15,25 +13,17 @@ export const metadata = createMetadata({
 });
 
 export type HomeLayoutProps = HomePageProps & LayoutProps<{
+  header: ReactNode;
   posts: ReactNode;
 }>;
 
 const HomeLayout: FC<HomeLayoutProps> = ({
   children,
+  header,
   posts,
 }) => {
   return (
-    <ApplicationLayout
-      header={(
-        <PageHeader>
-          <Breadcrumbs>
-            <BreadcrumbsItem href="/">
-              Home
-            </BreadcrumbsItem>
-          </Breadcrumbs>
-        </PageHeader>
-      )}
-    >
+    <ApplicationLayout header={header}>
       <main className={styles.main}>
         {posts}
         {children}

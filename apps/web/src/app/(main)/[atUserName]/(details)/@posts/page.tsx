@@ -8,12 +8,12 @@ import { getUserName } from '../../_helpers/get-user-name';
 
 import type { InfiniteScrollFetcher } from '../../../../../components/elements/infinite-scroll';
 import type { PageProps } from '../../../../_types/page-props';
-import type { UserProfilePageProps } from '../page';
+import type { UserDetailsPageProps } from '../page';
 import type { FC } from 'react';
 
 export const runtime = 'edge';
 
-export type UserProfileMainPageProps = UserProfilePageProps & PageProps<{
+export type UserDetailsPostListPageProps = UserDetailsPageProps & PageProps<{
   params: {
     // empty
   };
@@ -22,7 +22,7 @@ export type UserProfileMainPageProps = UserProfilePageProps & PageProps<{
   };
 }>;
 
-const UserProfilePostsPage: FC<UserProfileMainPageProps> = async ({
+const UserDetailsPostListPage: FC<UserDetailsPostListPageProps> = async ({
   params,
 }) => {
   const userName = getUserName(params.atUserName);
@@ -39,13 +39,13 @@ const UserProfilePostsPage: FC<UserProfileMainPageProps> = async ({
   };
 
   return (
-    <div className={styles.wrapper}>
+    <section className={styles.wrapper}>
       <PostList
         posts={posts}
         fetcher={fetcher}
       />
-    </div>
+    </section>
   );
 };
 
-export default UserProfilePostsPage;
+export default UserDetailsPostListPage;

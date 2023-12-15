@@ -1,8 +1,6 @@
 import * as styles from './layout.css';
 import { ApplicationLayout } from '../../../components/domains/application/application-layout';
-import { Breadcrumbs, BreadcrumbsItem } from '../../../components/elements/breadcrumbs';
 import { createMetadata } from '../../../helpers/create-metadata';
-import { PageHeader } from '../_components/page-header';
 
 import type { NewPostPageProps } from './page';
 import type { LayoutProps } from '../../_types/layout-props';
@@ -14,24 +12,16 @@ export const metadata = createMetadata({
 
 export type NewPostLayoutProps = NewPostPageProps & LayoutProps<{
   auth: ReactNode;
+  header: ReactNode;
 }>;
 
 const NewPostLayout: FC<NewPostLayoutProps> = ({
   children,
   auth,
+  header,
 }) => {
   return (
-    <ApplicationLayout
-      header={(
-        <PageHeader>
-          <Breadcrumbs>
-            <BreadcrumbsItem href="/new">
-              New post
-            </BreadcrumbsItem>
-          </Breadcrumbs>
-        </PageHeader>
-      )}
-    >
+    <ApplicationLayout header={header}>
       <main className={styles.main}>
         {children}
         {auth}
