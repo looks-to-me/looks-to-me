@@ -1,16 +1,14 @@
 import * as styles from './layout.css';
 import { ApplicationLayout } from '../../../../components/domains/application/application-layout';
-import { Breadcrumbs, BreadcrumbsItem } from '../../../../components/elements/breadcrumbs';
 import { createMetadata } from '../../../../helpers/create-metadata';
-import { PageHeader } from '../../_components/page-header';
 import { findUserByName } from '../../_repositories/user-repository';
 import { getUserName } from '../_helpers/get-user-name';
 
-import type { UserProfilePageProps } from './page';
+import type { UserDetailsPageProps } from './page';
 import type { LayoutProps } from '../../../_types/layout-props';
 import type { FC, ReactNode } from 'react';
 
-export const generateMetadata = async ({ params }: UserProfilePageProps) => {
+export const generateMetadata = async ({ params }: UserDetailsPageProps) => {
   const userName = getUserName(params.atUserName);
   if (!userName) return {};
 
@@ -25,34 +23,23 @@ export const generateMetadata = async ({ params }: UserProfilePageProps) => {
   });
 };
 
-export type UserProfileLayoutProps = UserProfilePageProps & LayoutProps<{
+export type UserDetailsLayoutProps = UserDetailsPageProps & LayoutProps<{
   header: ReactNode;
+  profile: ReactNode;
   posts: ReactNode;
 }>;
 
-const UserProfileLayout: FC<UserProfileLayoutProps> = ({
-  params,
+const UserDetailsLayout: FC<UserDetailsLayoutProps> = ({
   header,
+  profile,
   posts,
   children,
 }) => {
-  const userName = getUserName(params.atUserName);
-
   return (
-    <ApplicationLayout
-      header={(
-        <PageHeader>
-          <Breadcrumbs>
-            <BreadcrumbsItem href={`/@${userName}`}>
-              {userName}
-            </BreadcrumbsItem>
-          </Breadcrumbs>
-        </PageHeader>
-      )}
-    >
+    <ApplicationLayout header={header}>
       <main className={styles.main}>
         <article className={styles.article}>
-          {header}
+          {profile}
           {posts}
         </article>
         {children}
@@ -61,4 +48,4 @@ const UserProfileLayout: FC<UserProfileLayoutProps> = ({
   );
 };
 
-export default UserProfileLayout;
+export default UserDetailsLayout;

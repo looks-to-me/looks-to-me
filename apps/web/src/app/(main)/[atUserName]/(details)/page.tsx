@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 export const runtime = 'edge';
 
-export type UserProfilePageProps = PageProps<{
+export type UserDetailsPageProps = PageProps<{
   params: {
     /**
      * username string that starts with "@"
@@ -15,8 +15,8 @@ export type UserProfilePageProps = PageProps<{
   };
 }>;
 
-const UserProfilePage: FC<UserProfilePageProps> = () => {
+const UserDetailsPage: FC<UserDetailsPageProps> = () => {
   return null;
 };
 
-export default UserProfilePage;
+export default UserDetailsPage;

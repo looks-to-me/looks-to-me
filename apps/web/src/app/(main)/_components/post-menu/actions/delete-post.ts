@@ -3,8 +3,8 @@
 import { deleteImageCache } from '@looks-to-me/package-image-cache';
 import { revalidatePath } from 'next/cache';
 
-import { getLoginUser } from '../../../../_actions/get-login-user';
 import { privateEnv } from '../../../../_libs/env';
+import { getLoginUser } from '../../../../_queries/user/get-login-user';
 import { deleteImage } from '../../../_repositories/image-repository';
 import { deletePost, findPostById } from '../../../_repositories/post-repository';
 

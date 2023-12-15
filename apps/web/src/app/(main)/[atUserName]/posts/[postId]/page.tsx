@@ -1,10 +1,10 @@
-import type { UserProfilePageProps } from '../../(profile)/page';
+import type { UserDetailsPageProps } from '../../(details)/page';
 import type { PageProps } from '../../../../_types/page-props';
 import type { FC } from 'react';
 
 export const runtime = 'edge';
 
-export type UserPostDetailsPageProps = UserProfilePageProps & PageProps<{
+export type UserPostDetailsPageProps = UserDetailsPageProps & PageProps<{
   params: {
     postId: string;
   };

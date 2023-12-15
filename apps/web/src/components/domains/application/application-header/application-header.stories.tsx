@@ -1,15 +1,15 @@
-import { PageHeaderPresenter } from './page-header-presenter';
+import { ApplicationHeader } from './application-header';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  component: PageHeaderPresenter,
+  component: ApplicationHeader,
   parameters: {
     layout: 'fullscreen',
   },
-} as Meta<typeof PageHeaderPresenter>;
+} as Meta<typeof ApplicationHeader>;
 
-type Story = StoryObj<typeof PageHeaderPresenter>;
+type Story = StoryObj<typeof ApplicationHeader>;
 
 export const Default = {
   args: {

@@ -26,7 +26,7 @@ const UserPostDetailsMainPage: FC<UserPostDetailsMainPageProps> = async ({
   if (!post) return notFound();
   
   return (
-    <div className={styles.wrapper}>
+    <section className={styles.wrapper}>
       <Image
         className={styles.image}
         src={`/images/posts/${post.id}`}
@@ -34,7 +34,7 @@ const UserPostDetailsMainPage: FC<UserPostDetailsMainPageProps> = async ({
         sizes="80vw"
         fill
       />
-    </div>
+    </section>
   );
 };
 

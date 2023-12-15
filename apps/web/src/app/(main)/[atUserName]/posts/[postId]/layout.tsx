@@ -1,10 +1,6 @@
-import { notFound, redirect } from 'next/navigation';
-
 import * as styles from './layout.css';
 import { ApplicationLayout } from '../../../../../components/domains/application/application-layout';
-import { Breadcrumbs, BreadcrumbsItem } from '../../../../../components/elements/breadcrumbs';
 import { createMetadata } from '../../../../../helpers/create-metadata';
-import { PageHeader } from '../../../_components/page-header';
 import { findPostById } from '../../../_repositories/post-repository';
 import { findUserById } from '../../../_repositories/user-repository';
 import { getUserName } from '../../_helpers/get-user-name';
@@ -34,47 +30,21 @@ export const generateMetadata = async ({ params }: UserPostDetailsPageProps): Pr
 
 export type UserPostDetailsLayoutProps = UserPostDetailsPageProps & LayoutProps<{
   header: ReactNode;
+  title: ReactNode;
   main: ReactNode;
 }>;
 
-const UserPostDetailsLayout: FC<UserPostDetailsLayoutProps> = async ({
+const UserPostDetailsLayout: FC<UserPostDetailsLayoutProps> = ({
   children,
   header,
+  title,
   main,
-  params,
 }) => {
-  const userName = getUserName(params.atUserName);
-  if (!userName) return notFound();
-
-  const post = await findPostById(params.postId);
-  if (!post) return notFound();
-
-  const user = await findUserById(post.userId);
-  if (!user) return notFound();
-
-  if (user.profile.name !== userName) {
-    // redirect to correct username
-    return redirect(`/@${user.profile.name}/posts/${post.id}`);
-  }
-
   return (
-    <ApplicationLayout
-      header={(
-        <PageHeader>
-          <Breadcrumbs>
-            <BreadcrumbsItem href={`/@${user.profile.name}`}>
-              {user.profile.displayName ?? user.profile.name}
-            </BreadcrumbsItem>
-            <BreadcrumbsItem href={`/@${user.profile.name}/posts/${post.id}`}>
-              Looks {post.word} To Me
-            </BreadcrumbsItem>
-          </Breadcrumbs>
-        </PageHeader>
-      )}
-    >
+    <ApplicationLayout header={header}>
       <main className={styles.main}>
         <article className={styles.article}>
-          {header}
+          {title}
           {main}
         </article>
         {children}
