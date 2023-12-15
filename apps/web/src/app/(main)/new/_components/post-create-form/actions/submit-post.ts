@@ -2,12 +2,13 @@
 
 import { createId } from '@paralleldrive/cuid2';
 import { revalidatePath } from 'next/cache';
-import { coerce, transform, instance, maxLength, minValue, number, object, parse, regex, string } from 'valibot';
+import { coerce, instance, minValue, number, object, parse } from 'valibot';
 
 import { deleteImage, saveImage } from '../../../../../../repositories/image-repository';
 import { deletePost, savePost } from '../../../../../../repositories/post-repository';
 import { findUserProviderByTypeAndSub } from '../../../../../../repositories/user-provider-repository';
 import { findUserById } from '../../../../../../repositories/user-repository';
+import { postWordSchema } from '../../../../../../schemas/post-word-schema';
 import { getUserMetadata } from '../../../../../_libs/auth/server/get-user-metadata';
 import { publicEnv } from '../../../../../_libs/env';
 import { storage } from '../../../../../_libs/storage';
@@ -18,13 +19,7 @@ const inputSchema = object({
   image: instance(Blob),
   imageWidth: coerce(number([minValue(1)]), Number),
   imageHeight: coerce(number([minValue(1)]), Number),
-  word: transform(
-    string([
-      regex(/^[A-Za-z]+$/, 'Must be a alphabetic.'),
-      maxLength(16, 'Must be less than 16 characters.'),
-    ]),
-    input =>`${input[0]?.toUpperCase()}${input.slice(1).toLowerCase()}`,
-  ),
+  word: postWordSchema,
 });
 
 export type SubmitPostResult = {
