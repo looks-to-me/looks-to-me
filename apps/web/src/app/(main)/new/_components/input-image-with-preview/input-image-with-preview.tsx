@@ -6,7 +6,7 @@ import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from '
 import { safeParse } from 'valibot';
 
 import * as styles from './input-image-with-preview.css';
-import { postImageOverlayWordSchema } from '../../../../../schemas/post-image-overlay-word-schema';
+import { postWordSchema } from '../../../../../schemas/post-word-schema';
 import { theme } from '../../../../../themes';
 
 import type { InputHTMLAttributes, ChangeEventHandler, DragEventHandler, MouseEventHandler, ForwardRefRenderFunction } from 'react';
@@ -99,7 +99,7 @@ const InputImageWithPreviewRender: ForwardRefRenderFunction<InputImageWithPrevie
     event.preventDefault();
   }, []);
 
-  const parseResult = safeParse(postImageOverlayWordSchema, word);
+  const parseResult = safeParse(postWordSchema, word);
   return (
     <div className={clsx(className, styles.wrapper)}>
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}

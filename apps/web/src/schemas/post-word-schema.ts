@@ -1,6 +1,6 @@
 import { maxLength, regex, string, transform } from 'valibot';
 
-export const postImageOverlayWordSchema = transform(
+export const postWordSchema = transform(
   string([
     regex(/^[A-Za-z]+$/, 'Must be a alphabetic.'),
     maxLength(16, 'Must be less than 16 characters.'),

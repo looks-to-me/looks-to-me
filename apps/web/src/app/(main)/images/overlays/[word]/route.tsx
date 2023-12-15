@@ -3,7 +3,7 @@ import { ImageResponse } from 'next/og';
 import { parse } from 'valibot';
 
 import { loadGoogleFont } from '../../../../../helpers/load-google-font';
-import { postImageOverlayWordSchema } from '../../../../../schemas/post-image-overlay-word-schema';
+import { postWordSchema } from '../../../../../schemas/post-word-schema';
 import { privateEnv } from '../../../../_libs/env';
 
 import type { ImageCacheParameters } from '@looks-to-me/package-image-cache';
@@ -37,7 +37,7 @@ export const GET = async (request: NextRequest, context: Context) => {
   };
 
   return imageCache(parameters, async () => {
-    const word = parse(postImageOverlayWordSchema, context.params.word);
+    const word = parse(postWordSchema, context.params.word);
     return new ImageResponse(
       (
         <div
