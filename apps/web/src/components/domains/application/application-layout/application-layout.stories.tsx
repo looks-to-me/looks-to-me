@@ -1,12 +1,12 @@
-import { PageLayout } from './page-layout';
+import { ApplicationLayout } from './application-layout';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  component: PageLayout,
-} as Meta<typeof PageLayout>;
+  component: ApplicationLayout,
+} as Meta<typeof ApplicationLayout>;
 
-type Story = StoryObj<typeof PageLayout>;
+type Story = StoryObj<typeof ApplicationLayout>;
 
 export const Default = {
   args: {

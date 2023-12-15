@@ -1,8 +1,8 @@
 import * as styles from './layout.css';
+import { ApplicationLayout } from '../../../../components/domains/application/application-layout';
 import { Breadcrumbs, BreadcrumbsItem } from '../../../../components/elements/breadcrumbs';
 import { createMetadata } from '../../../../helpers/create-metadata';
 import { PageHeader } from '../../_components/page-header';
-import { PageLayout } from '../../_components/page-layout';
 import { findUserByName } from '../../_repositories/user-repository';
 import { getUserName } from '../_helpers/get-user-name';
 
@@ -39,7 +39,7 @@ const UserProfileLayout: FC<UserProfileLayoutProps> = ({
   const userName = getUserName(params.atUserName);
 
   return (
-    <PageLayout
+    <ApplicationLayout
       header={(
         <PageHeader>
           <Breadcrumbs>
@@ -57,7 +57,7 @@ const UserProfileLayout: FC<UserProfileLayoutProps> = ({
         </article>
         {children}
       </main>
-    </PageLayout>
+    </ApplicationLayout>
   );
 };
 
