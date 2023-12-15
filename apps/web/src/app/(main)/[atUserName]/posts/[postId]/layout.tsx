@@ -6,7 +6,7 @@ import { findUserById } from '../../../../../repositories/user-repository';
 import { getUserName } from '../../_helpers/get-user-name';
 
 import type { UserPostDetailsPageProps } from './page';
-import type { LayoutProps } from '../../../../_types/layout-props';
+import type { LayoutProps } from '../../../../../types/layout-props';
 import type { Metadata } from 'next';
 import type { FC, ReactNode } from 'react';
 

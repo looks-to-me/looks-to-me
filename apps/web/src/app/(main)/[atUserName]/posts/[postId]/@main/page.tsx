@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import * as styles from './page.css';
 import { findPostById } from '../../../../../../repositories/post-repository';
 
-import type { PageProps } from '../../../../../_types/page-props';
+import type { PageProps } from '../../../../../../types/page-props';
 import type { UserPostDetailsPageProps } from '../page';
 import type { FC } from 'react';
 

@@ -7,7 +7,7 @@ import { findUserById } from '../../../../../../repositories/user-repository';
 import { getLoginUser } from '../../../../../_queries/user/get-login-user';
 import { getUserName } from '../../../_helpers/get-user-name';
 
-import type { PageProps } from '../../../../../_types/page-props';
+import type { PageProps } from '../../../../../../types/page-props';
 import type { UserPostDetailsPageProps } from '../page';
 import type { FC } from 'react';
 

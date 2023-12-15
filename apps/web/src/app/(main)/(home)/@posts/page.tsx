@@ -2,7 +2,7 @@ import { fetchPosts } from './_actions/fetch-posts';
 import { PostList } from '../../_components/post-list';
 
 import type { InfiniteScrollFetcher } from '../../../../components/elements/infinite-scroll';
-import type { PageProps } from '../../../_types/page-props';
+import type { PageProps } from '../../../../types/page-props';
 import type { HomePageProps } from '../page';
 import type { FC } from 'react';
 

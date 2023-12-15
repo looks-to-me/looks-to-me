@@ -5,7 +5,7 @@ import { findUserByName } from '../../../../repositories/user-repository';
 import { getUserName } from '../_helpers/get-user-name';
 
 import type { UserDetailsPageProps } from './page';
-import type { LayoutProps } from '../../../_types/layout-props';
+import type { LayoutProps } from '../../../../types/layout-props';
 import type { FC, ReactNode } from 'react';
 
 export const generateMetadata = async ({ params }: UserDetailsPageProps) => {

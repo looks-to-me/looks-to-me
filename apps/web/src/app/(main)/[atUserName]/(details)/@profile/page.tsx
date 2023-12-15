@@ -6,7 +6,7 @@ import { countPostsByUserId } from '../../../../../repositories/post-repository'
 import { findUserByName } from '../../../../../repositories/user-repository';
 import { getUserName } from '../../_helpers/get-user-name';
 
-import type { PageProps } from '../../../../_types/page-props';
+import type { PageProps } from '../../../../../types/page-props';
 import type { UserDetailsPageProps } from '../page';
 import type { FC } from 'react';
 

@@ -1,4 +1,4 @@
-import type { LayoutProps } from '../_types/layout-props';
+import type { LayoutProps } from '../../types/layout-props';
 import type { FC, ReactNode } from 'react';
 
 export type MainLayoutProps = LayoutProps<{

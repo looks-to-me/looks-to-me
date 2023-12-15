@@ -3,7 +3,7 @@ import { ApplicationLayout } from '../../../components/domains/application/appli
 import { createMetadata } from '../../../helpers/create-metadata';
 
 import type { LoginPageProps } from './page';
-import type { LayoutProps } from '../../_types/layout-props';
+import type { LayoutProps } from '../../../types/layout-props';
 import type { Metadata } from 'next';
 import type { FC, ReactNode } from 'react';
 

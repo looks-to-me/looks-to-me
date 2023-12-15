@@ -10,7 +10,7 @@ import { getLoginUser } from '../../../../../_queries/user/get-login-user';
 import { PostMenu } from '../../../../_components/post-menu';
 import { ShareButton } from '../../../../_components/share-button';
 
-import type { PageProps } from '../../../../../_types/page-props';
+import type { PageProps } from '../../../../../../types/page-props';
 import type { UserPostDetailsPageProps } from '../page';
 import type { FC } from 'react';
 

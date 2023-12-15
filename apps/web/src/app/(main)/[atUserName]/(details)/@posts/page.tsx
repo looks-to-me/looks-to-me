@@ -7,7 +7,7 @@ import { PostList } from '../../../_components/post-list';
 import { getUserName } from '../../_helpers/get-user-name';
 
 import type { InfiniteScrollFetcher } from '../../../../../components/elements/infinite-scroll';
-import type { PageProps } from '../../../../_types/page-props';
+import type { PageProps } from '../../../../../types/page-props';
 import type { UserDetailsPageProps } from '../page';
 import type { FC } from 'react';
 
