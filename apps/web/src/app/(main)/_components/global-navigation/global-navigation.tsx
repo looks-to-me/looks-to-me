@@ -2,6 +2,7 @@ import { getYear } from 'date-fns';
 import Link from 'next/link';
 
 import * as styles from './global-navigation.css';
+import { ApplicationLogo } from '../../../../components/domains/application/application-logo';
 import { AccessibleIcon } from '../../../../components/elements/accessible-icon';
 import { Button, ButtonIcon } from '../../../../components/elements/button';
 import { PrefersColorScheme } from '../../../../components/elements/prefers-color-scheme';
@@ -15,7 +16,6 @@ import ReportIcon from '../../../../icons/report.svg';
 import ShuffleIcon from '../../../../icons/shuffle.svg';
 import StorybookBlack from '../../../../icons/storybook-black.svg';
 import StorybookWhite from '../../../../icons/storybook-white.svg';
-import { ApplicationLogo } from '../application-logo';
 
 import type { FC } from 'react';
 

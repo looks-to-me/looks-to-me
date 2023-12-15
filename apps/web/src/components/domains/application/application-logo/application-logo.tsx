@@ -3,12 +3,12 @@ import Link from 'next/link';
 import { forwardRef } from 'react';
 
 import * as styles from './application-logo.css';
-import { AccessibleIcon } from '../../../../components/elements/accessible-icon';
-import { PrefersColorScheme } from '../../../../components/elements/prefers-color-scheme';
 import LooksToMeBlack from '../../../../icons/looks-to-me-black.svg';
 import LooksToMeWhite from '../../../../icons/looks-to-me-white.svg';
 import LooksToMeWithTextBlack from '../../../../icons/looks-to-me-with-text-black.svg';
 import LooksToMeWithTextWhite from '../../../../icons/looks-to-me-with-text-white.svg';
+import { AccessibleIcon } from '../../../elements/accessible-icon';
+import { PrefersColorScheme } from '../../../elements/prefers-color-scheme';
 
 import type { ForwardRefRenderFunction , ComponentPropsWithoutRef } from 'react';
 
