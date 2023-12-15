@@ -6,7 +6,7 @@ import { useAlertDialog } from '../../../../../components/elements/alert-dialog'
 import { Button } from '../../../../../components/elements/button';
 import { deletePostAction } from '../actions/delete-post';
 
-import type { Post } from '../../../_repositories/post-repository';
+import type { Post } from '../../../../../repositories/post-repository';
 
 export const useDeletePost = (post: Post) => {
   const router = useRouter();

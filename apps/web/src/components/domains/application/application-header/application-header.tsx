@@ -7,7 +7,7 @@ import { NewPostButton } from '../../../../app/(main)/_components/new-post-butto
 import { ApplicationLogo } from '../application-logo';
 import { ApplicationNavigation } from '../application-navigation';
 
-import type { User } from '../../../../app/(main)/_repositories/user-repository';
+import type { User } from '../../../../repositories/user-repository';
 import type { ComponentPropsWithoutRef, FC } from 'react';
 
 export type ApplicationHeaderProps = ComponentPropsWithoutRef<'header'> & {

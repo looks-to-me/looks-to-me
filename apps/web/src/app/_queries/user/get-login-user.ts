@@ -1,8 +1,8 @@
-import { findUserProviderByTypeAndSub } from '../../(main)/_repositories/user-provider-repository';
-import { findUserById } from '../../(main)/_repositories/user-repository';
+import { findUserProviderByTypeAndSub } from '../../../repositories/user-provider-repository';
+import { findUserById } from '../../../repositories/user-repository';
 import { getUserMetadata } from '../../_libs/auth/server/get-user-metadata';
 
-import type { User } from '../../(main)/_repositories/user-repository';
+import type { User } from '../../../repositories/user-repository';
 
 /**
  * Get the user data of the currently logged-in user.

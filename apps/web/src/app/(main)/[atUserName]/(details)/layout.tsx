@@ -1,7 +1,7 @@
 import * as styles from './layout.css';
 import { ApplicationLayout } from '../../../../components/domains/application/application-layout';
 import { createMetadata } from '../../../../helpers/create-metadata';
-import { findUserByName } from '../../_repositories/user-repository';
+import { findUserByName } from '../../../../repositories/user-repository';
 import { getUserName } from '../_helpers/get-user-name';
 
 import type { UserDetailsPageProps } from './page';

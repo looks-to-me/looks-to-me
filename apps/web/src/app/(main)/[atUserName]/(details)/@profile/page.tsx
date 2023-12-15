@@ -2,8 +2,8 @@ import { notFound } from 'next/navigation';
 
 import { UserSummary } from './_components/user-summary';
 import * as styles from './page.css';
-import { countPostsByUserId } from '../../../_repositories/post-repository';
-import { findUserByName } from '../../../_repositories/user-repository';
+import { countPostsByUserId } from '../../../../../repositories/post-repository';
+import { findUserByName } from '../../../../../repositories/user-repository';
 import { getUserName } from '../../_helpers/get-user-name';
 
 import type { PageProps } from '../../../../_types/page-props';

@@ -15,7 +15,7 @@ import {
 import LogoutIcon from '../../../../icons/logout.svg';
 import PersonIcon from '../../../../icons/person.svg';
 
-import type { User } from '../../_repositories/user-repository';
+import type { User } from '../../../../repositories/user-repository';
 import type { FC } from 'react';
 
 export type AvatarMenuProps = {

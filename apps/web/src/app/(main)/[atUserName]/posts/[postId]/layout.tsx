@@ -1,8 +1,8 @@
 import * as styles from './layout.css';
 import { ApplicationLayout } from '../../../../../components/domains/application/application-layout';
 import { createMetadata } from '../../../../../helpers/create-metadata';
-import { findPostById } from '../../../_repositories/post-repository';
-import { findUserById } from '../../../_repositories/user-repository';
+import { findPostById } from '../../../../../repositories/post-repository';
+import { findUserById } from '../../../../../repositories/user-repository';
 import { getUserName } from '../../_helpers/get-user-name';
 
 import type { UserPostDetailsPageProps } from './page';

@@ -7,7 +7,7 @@ import { DropDownMenu, DropDownMenuContent, DropDownMenuGroup, DropDownMenuIcon,
 import MenuIcon from '../../../../icons/menu.svg';
 import TrashcanIcon from '../../../../icons/trash-can.svg';
 
-import type { Post } from '../../_repositories/post-repository';
+import type { Post } from '../../../../repositories/post-repository';
 import type { FC } from 'react';
 
 export type PostMenuProps = {

@@ -2,8 +2,8 @@ import { notFound } from 'next/navigation';
 
 import { fetchUserPosts } from './_actions/fetch-user-posts';
 import * as styles from './page.css';
+import { findUserByName } from '../../../../../repositories/user-repository';
 import { PostList } from '../../../_components/post-list';
-import { findUserByName } from '../../../_repositories/user-repository';
 import { getUserName } from '../../_helpers/get-user-name';
 
 import type { InfiniteScrollFetcher } from '../../../../../components/elements/infinite-scroll';

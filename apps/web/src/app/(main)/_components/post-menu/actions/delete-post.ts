@@ -3,10 +3,10 @@
 import { deleteImageCache } from '@looks-to-me/package-image-cache';
 import { revalidatePath } from 'next/cache';
 
+import { deleteImage } from '../../../../../repositories/image-repository';
+import { deletePost, findPostById } from '../../../../../repositories/post-repository';
 import { privateEnv } from '../../../../_libs/env';
 import { getLoginUser } from '../../../../_queries/user/get-login-user';
-import { deleteImage } from '../../../_repositories/image-repository';
-import { deletePost, findPostById } from '../../../_repositories/post-repository';
 
 import type { Route } from 'next';
 
