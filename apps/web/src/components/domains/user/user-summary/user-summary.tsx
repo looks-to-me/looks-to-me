@@ -1,9 +1,9 @@
 import { clsx } from 'clsx';
 
 import * as styles from './user-summary.css';
-import { Avatar, AvatarFallback, AvatarImage } from '../../../../../../../components/elements/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '../../../elements/avatar';
 
-import type { User } from '../../../../../../../repositories/user-repository';
+import type { User } from '../../../../repositories/user-repository';
 import type { FC } from 'react';
 
 export type UserSummaryProps = {
