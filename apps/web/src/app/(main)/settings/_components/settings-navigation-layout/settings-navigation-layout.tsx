@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import * as styles from './settings-navigation-layout.css';
-import { Button, ButtonIcon } from '../../../../_components/button';
-import HomeIcon from '../../../../_icons/home.svg';
+import { Button, ButtonIcon } from '../../../../../components/elements/button';
+import HomeIcon from '../../../../../icons/home.svg';
 
 import type { ReactNode, FC } from 'react';
 

@@ -4,14 +4,12 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 import * as styles from './mute-user-list-item.css';
-import { AccessibleIcon } from '../../../../../../../_components/accessible-icon';
-import {
-  Avatar,
+import { AccessibleIcon } from '../../../../../../../../components/elements/accessible-icon';
+import { Avatar,
   AvatarFallback,
-  AvatarImage,
-} from '../../../../../../../_components/avatar';
-import { Button, ButtonIcon } from '../../../../../../../_components/button';
-import UnmuteIcon from '../../../../../../../_icons/close.svg';
+  AvatarImage } from '../../../../../../../../components/elements/avatar';
+import { Button, ButtonIcon } from '../../../../../../../../components/elements/button';
+import UnmuteIcon from '../../../../../../../../icons/close.svg';
 
 import type { User } from '../../../../../../_repositories/user-repository';
 import type { FC } from 'react';

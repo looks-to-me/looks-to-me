@@ -6,9 +6,6 @@ export default {
   component: PageHeaderPresenter,
   parameters: {
     layout: 'fullscreen',
-    nextjs: {
-      appDirectory: true,
-    },
   },
 } as Meta<typeof PageHeaderPresenter>;
 

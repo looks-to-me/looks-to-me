@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 
 import * as styles from './github-login-button.css';
-import GitHubWhite from '../../../_icons/github-white.svg';
+import GitHubWhite from '../../../../icons/github-white.svg';
 import { supabase } from '../../../_libs/auth/client/instance';
 
 import type { MouseEventHandler, FC, ComponentPropsWithoutRef } from 'react';

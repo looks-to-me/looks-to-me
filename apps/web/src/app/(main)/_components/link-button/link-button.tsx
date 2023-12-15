@@ -3,9 +3,9 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { Button } from '../../../_components/button';
+import { Button } from '../../../../components/elements/button';
 
-import type { ButtonProps } from '../../../_components/button';
+import type { ButtonProps } from '../../../../components/elements/button';
 import type { LinkProps } from 'next/link';
 
 export type LinkButtonProps<RouteType> = Omit<ButtonProps, 'asChild'> & Omit<LinkProps<RouteType>, 'ref'>;

@@ -1,7 +1,7 @@
 import { style } from '@vanilla-extract/css';
 
-import { applyResponsive } from '../../../../_styles/responsive';
-import { theme } from '../../../../_theme';
+import { applyResponsive } from '../../../../../styles/responsive';
+import { theme } from '../../../../../themes';
 
 export const wrapper = style({
   maxWidth: '900px',
