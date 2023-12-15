@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
 
 import * as styles from './application-header.css';
-import { AvatarMenu } from '../../../../app/(main)/_components/avatar-menu';
+import { UserAccountMenu } from '../../user/user-account-menu';
 import { LoginButton } from '../../../../app/(main)/_components/login-button';
 import { NewPostButton } from '../../../../app/(main)/_components/new-post-button';
 import { ApplicationLogo } from '../application-logo';
@@ -29,7 +29,7 @@ export const ApplicationHeader: FC<ApplicationHeaderProps> = ({
       </div>
       <NewPostButton />
       {user ? (
-        <AvatarMenu user={user} />
+        <UserAccountMenu user={user} />
       ) : (
         <LoginButton />
       )}

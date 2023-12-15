@@ -1,8 +1,10 @@
 import { clsx } from 'clsx';
 import Link from 'next/link';
 
-import * as styles from './avatar-menu.css';
-import { Avatar, AvatarFallback, AvatarImage } from '../../../../components/elements/avatar';
+import * as styles from './user-account-menu.css';
+import LogoutIcon from '../../../../icons/logout.svg';
+import PersonIcon from '../../../../icons/person.svg';
+import { Avatar, AvatarFallback, AvatarImage } from '../../../elements/avatar';
 import {
   DropDownMenu,
   DropDownMenuContent,
@@ -11,19 +13,17 @@ import {
   DropDownMenuIcon,
   DropDownMenuItem,
   DropDownMenuLabel,
-} from '../../../../components/elements/drop-down-menu';
-import LogoutIcon from '../../../../icons/logout.svg';
-import PersonIcon from '../../../../icons/person.svg';
+} from '../../../elements/drop-down-menu';
 
 import type { User } from '../../../../repositories/user-repository';
 import type { FC } from 'react';
 
-export type AvatarMenuProps = {
+export type UserAccountMenuProps = {
   className?: string;
   user: User;
 };
 
-export const AvatarMenu: FC<AvatarMenuProps> = ({
+export const UserAccountMenu: FC<UserAccountMenuProps> = ({
   className,
   user,
 }) => {

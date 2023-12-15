@@ -1,12 +1,12 @@
-import { AvatarMenu } from './avatar-menu';
+import { UserAccountMenu } from './user-account-menu';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  component: AvatarMenu,
-} as Meta<typeof AvatarMenu>;
+  component: UserAccountMenu,
+} as Meta<typeof UserAccountMenu>;
 
-type Story = StoryObj<typeof AvatarMenu>;
+type Story = StoryObj<typeof UserAccountMenu>;
 
 export const Default = {
   args: {
