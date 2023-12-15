@@ -1,16 +1,16 @@
 import { clsx } from 'clsx';
 
-import * as styles from './page-layout.css';
+import * as styles from './application-layout.css';
 
 import type { ReactNode , FC } from 'react';
 
-export type PageLayoutProps = {
+export type ApplicationLayoutProps = {
   className?: string | undefined;
   header: ReactNode;
   children: ReactNode;
 };
 
-export const PageLayout: FC<PageLayoutProps> = ({
+export const ApplicationLayout: FC<ApplicationLayoutProps> = ({
   className,
   header,
   children,

@@ -1,10 +1,10 @@
 import { notFound, redirect } from 'next/navigation';
 
 import * as styles from './layout.css';
+import { ApplicationLayout } from '../../../../../components/domains/application/application-layout';
 import { Breadcrumbs, BreadcrumbsItem } from '../../../../../components/elements/breadcrumbs';
 import { createMetadata } from '../../../../../helpers/create-metadata';
 import { PageHeader } from '../../../_components/page-header';
-import { PageLayout } from '../../../_components/page-layout';
 import { findPostById } from '../../../_repositories/post-repository';
 import { findUserById } from '../../../_repositories/user-repository';
 import { getUserName } from '../../_helpers/get-user-name';
@@ -58,7 +58,7 @@ const UserPostDetailsLayout: FC<UserPostDetailsLayoutProps> = async ({
   }
 
   return (
-    <PageLayout
+    <ApplicationLayout
       header={(
         <PageHeader>
           <Breadcrumbs>
@@ -79,7 +79,7 @@ const UserPostDetailsLayout: FC<UserPostDetailsLayoutProps> = async ({
         </article>
         {children}
       </main>
-    </PageLayout>
+    </ApplicationLayout>
   );
 };
 

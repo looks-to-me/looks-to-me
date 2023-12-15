@@ -1,8 +1,8 @@
 import * as styles from './layout.css';
+import { ApplicationLayout } from '../../../components/domains/application/application-layout';
 import { Breadcrumbs, BreadcrumbsItem } from '../../../components/elements/breadcrumbs';
 import { createMetadata } from '../../../helpers/create-metadata';
 import { PageHeader } from '../_components/page-header';
-import { PageLayout } from '../_components/page-layout';
 
 import type { HomePageProps } from './page';
 import type { LayoutProps } from '../../_types/layout-props';
@@ -23,7 +23,7 @@ const HomeLayout: FC<HomeLayoutProps> = ({
   posts,
 }) => {
   return (
-    <PageLayout
+    <ApplicationLayout
       header={(
         <PageHeader>
           <Breadcrumbs>
@@ -38,7 +38,7 @@ const HomeLayout: FC<HomeLayoutProps> = ({
         {posts}
         {children}
       </main>
-    </PageLayout>
+    </ApplicationLayout>
   );
 };
 

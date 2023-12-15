@@ -1,8 +1,8 @@
 import * as styles from './layout.css';
+import { ApplicationLayout } from '../../../components/domains/application/application-layout';
 import { Breadcrumbs, BreadcrumbsItem } from '../../../components/elements/breadcrumbs';
 import { createMetadata } from '../../../helpers/create-metadata';
 import { PageHeader } from '../_components/page-header';
-import { PageLayout } from '../_components/page-layout';
 
 import type { NewPostPageProps } from './page';
 import type { LayoutProps } from '../../_types/layout-props';
@@ -21,7 +21,7 @@ const NewPostLayout: FC<NewPostLayoutProps> = ({
   auth,
 }) => {
   return (
-    <PageLayout
+    <ApplicationLayout
       header={(
         <PageHeader>
           <Breadcrumbs>
@@ -36,7 +36,7 @@ const NewPostLayout: FC<NewPostLayoutProps> = ({
         {children}
         {auth}
       </main>
-    </PageLayout>
+    </ApplicationLayout>
   );
 };
 
