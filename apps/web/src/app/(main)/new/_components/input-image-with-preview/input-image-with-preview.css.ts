@@ -15,7 +15,20 @@ export const dropZone = style({
   transition: 'background-color 0.3s, border-color 0.3s',
 });
 
+export const imageWrapper = style({
+  position: 'relative',
+});
+
 export const image = style({
-  maxWidth: '90%',
+  width: '90%',
   maxHeight: '90%',
+});
+
+export const overlayImageWord = style({
+  position: 'absolute',
+  margin: 'auto',
+  inset: '0px',
+  objectFit: 'contain',
+  maxWidth: '90%',
+  maxHeight: '100%',
 });

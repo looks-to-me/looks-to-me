@@ -1,9 +1,12 @@
 'use client';
 
 import { clsx } from 'clsx';
+import NextImage from 'next/image';
 import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from 'react';
+import { safeParse } from 'valibot';
 
 import * as styles from './input-image-with-preview.css';
+import { postWordSchema } from '../../../../../schemas/post-word-schema';
 import { theme } from '../../../../../themes';
 
 import type { InputHTMLAttributes, ChangeEventHandler, DragEventHandler, MouseEventHandler, ForwardRefRenderFunction } from 'react';
@@ -18,11 +21,13 @@ export type InputImageWithPreviewHandle = {
 export type InputImageWithPreviewProps = {
   className?: string | undefined;
   name: InputHTMLAttributes<HTMLInputElement>['name'];
+  word: string;
 };
 
 const InputImageWithPreviewRender: ForwardRefRenderFunction<InputImageWithPreviewHandle, InputImageWithPreviewProps> = ({
   className,
   name,
+  word,
 }, ref) => {
   const inputImageRef = useRef<HTMLInputElement>(null);
   const [image, setImage] = useState<{ file: File; width: number; height: number }>();
@@ -94,6 +99,7 @@ const InputImageWithPreviewRender: ForwardRefRenderFunction<InputImageWithPrevie
     event.preventDefault();
   }, []);
 
+  const parseResult = safeParse(postWordSchema, word);
   return (
     <div className={clsx(className, styles.wrapper)}>
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
@@ -110,12 +116,23 @@ const InputImageWithPreviewRender: ForwardRefRenderFunction<InputImageWithPrevie
         }}
       >
         {image ? (
-          /* eslint-disable-next-line @next/next/no-img-element */
-          <img
-            className={styles.image}
-            src={URL.createObjectURL(image.file)}
-            alt="Preview"
-          />
+          <div className={styles.imageWrapper}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className={styles.image}
+              src={URL.createObjectURL(image.file)}
+              alt="Preview"
+            />
+            {parseResult.success && (
+              <NextImage
+                className={styles.overlayImageWord}
+                src={`/images/overlays/${word}`} 
+                alt={`Looks ${word} To Me`}  
+                width={600}
+                height={300}
+              />
+            )}
+          </div>
         ) : (
           <>
             <p>Drop an Image Here</p>

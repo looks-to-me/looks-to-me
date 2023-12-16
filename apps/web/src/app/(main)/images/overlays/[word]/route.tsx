@@ -1,22 +1,15 @@
 import { imageCache } from '@looks-to-me/package-image-cache';
 import { ImageResponse } from 'next/og';
-import { maxLength, parse, regex, string, transform } from 'valibot';
+import { parse } from 'valibot';
 
 import { loadGoogleFont } from '../../../../../helpers/load-google-font';
+import { postWordSchema } from '../../../../../schemas/post-word-schema';
 import { privateEnv } from '../../../../_libs/env';
 
 import type { ImageCacheParameters } from '@looks-to-me/package-image-cache';
 import type { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
-
-const wordSchema = transform(
-  string([
-    regex(/^[A-Za-z]+$/, 'Must be a alphabetic.'),
-    maxLength(16, 'Must be less than 16 characters.'),
-  ]),
-  input => `${input[0]?.toUpperCase()}${input.slice(1).toLowerCase()}`,
-);
 
 const alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
@@ -44,7 +37,7 @@ export const GET = async (request: NextRequest, context: Context) => {
   };
 
   return imageCache(parameters, async () => {
-    const word = parse(wordSchema, context.params.word);
+    const word = parse(postWordSchema, context.params.word);
     return new ImageResponse(
       (
         <div
