@@ -1,5 +1,6 @@
 'use client';
 
+import { useDebounce } from 'ahooks';
 import { clsx } from 'clsx';
 import { useRouter } from 'next/navigation';
 import { useCallback, useRef, useState } from 'react';
@@ -23,6 +24,8 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
 }) => {
   const router = useRouter();
   const inputRef = useRef<InputImageWithPreviewHandle>(null);
+  const [word, setWord] = useState('Good');
+  const debouncedWord = useDebounce(word, { wait: 500 });
 
   const handleSubmit = useCallback((formData: FormData): void => {
     toast.promise(async () => {
@@ -42,14 +45,14 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
     });
   }, [router]);
 
-  const [word, setWord] = useState('Good');
   const handleOnChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     setWord(event.target.value);
   }, []);
+
   return (
     <div className={clsx(className, styles.wrapper)}>
       <form action={handleSubmit}>
-        <InputImageWithPreview ref={inputRef} word={word} name="image" />
+        <InputImageWithPreview ref={inputRef} word={debouncedWord} name="image" />
         <div className={styles.footer}>
           <div>
             Looks <VariableTextInput onChange={handleOnChange} className={styles.word} name="word" placeholder="Good" defaultValue="Good" /> To Me
