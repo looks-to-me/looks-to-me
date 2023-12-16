@@ -130,7 +130,8 @@
           "columns": [
             "post_id",
             "tag_id"
-          ]
+          ],
+          "name": "post_tags_post_id_tag_id_pk"
         }
       },
       "uniqueConstraints": {}
