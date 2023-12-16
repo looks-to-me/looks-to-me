@@ -3,10 +3,10 @@ import { notFound } from 'next/navigation';
 
 import * as styles from './page.css';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../../../../components/elements/avatar';
+import { getLoginUser } from '../../../../../../queries/user/get-login-user';
 import { findPostById } from '../../../../../../repositories/post-repository';
 import { findUserById } from '../../../../../../repositories/user-repository';
 import { publicEnv } from '../../../../../_libs/env';
-import { getLoginUser } from '../../../../../_queries/user/get-login-user';
 import { PostMenu } from '../../../../_components/post-menu';
 import { ShareButton } from '../../../../_components/share-button';
 
