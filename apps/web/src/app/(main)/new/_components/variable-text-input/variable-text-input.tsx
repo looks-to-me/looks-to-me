@@ -21,7 +21,7 @@ export const VariableTextInput: FC<VariableTextInputProps> = ({
     props.onChange?.(event);
     if(dummy.current === null) return;
     dummy.current.textContent = event.target.value;
-  }, []);
+  }, [props]);
 
   return (
     <div className={styles.wrapper}>
