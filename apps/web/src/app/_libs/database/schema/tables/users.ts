@@ -2,6 +2,7 @@ import { relations } from 'drizzle-orm';
 import { text, sqliteTable, integer } from 'drizzle-orm/sqlite-core';
 
 import { images } from './images';
+import { muteUsers } from './mute-users';
 import { posts } from './posts';
 import { userProfiles } from './user-profiles';
 import { userProviders } from './user-providers';
@@ -16,4 +17,5 @@ export const usersRelations = relations(users, ({ one, many }) => ({
   providers: many(userProviders),
   images: many(images),
   posts: many(posts),
+  muteUsers: many(muteUsers),
 }));
