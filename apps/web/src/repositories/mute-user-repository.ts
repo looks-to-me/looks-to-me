@@ -22,6 +22,19 @@ export const saveMuteUser = async (muteUser: MuteUser): Promise<MuteUser> => {
   return muteUser;
 };
 
+export const deleteMuteUser = async ({ userId, muteUserId }: MuteUser) => {
+  return await database()
+    .delete(schema.muteUsers)
+    .where(
+      and(
+        eq(schema.muteUsers.userId, userId),
+        eq(schema.muteUsers.muteUserId, muteUserId),
+      ),
+    )
+    .returning()
+    .get();
+};
+
 export const findMuteUserByUserIdAndMuteUserId = async ({
   userId,
   muteUserId,
@@ -38,18 +51,5 @@ export const findMuteUserByUserIdAndMuteUserId = async ({
         eq(schema.muteUsers.muteUserId, muteUserId),
       ),
     )
-    .get();
-};
-
-export const deleteMuteUser = async ({ userId, muteUserId }: MuteUser) => {
-  return await database()
-    .delete(schema.muteUsers)
-    .where(
-      and(
-        eq(schema.muteUsers.userId, userId),
-        eq(schema.muteUsers.muteUserId, muteUserId),
-      ),
-    )
-    .returning()
     .get();
 };
