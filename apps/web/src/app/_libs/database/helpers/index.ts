@@ -25,6 +25,7 @@ export const truncate = async (database: Database) => {
   await database.delete(schema.postTags);
   await database.delete(schema.images);
   await database.delete(schema.tags);
+  await database.delete(schema.muteUsers);
   await database.delete(schema.userProfiles);
   await database.delete(schema.userProviders);
   await database.delete(schema.users);
