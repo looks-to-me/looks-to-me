@@ -35,7 +35,7 @@ export const PostMenu: FC<PostMenuProps> = ({
     muteUserId: postUser.id,
     muteUserName: postUser.profile.name,
   });
-  const handleOnClickUnuteUser = useUnmuteUser({
+  const handleOnClickUnmuteUser = useUnmuteUser({
     unmuteUserId: postUser.id,
     unmuteUserName: postUser.profile.name,
   });
@@ -65,7 +65,7 @@ export const PostMenu: FC<PostMenuProps> = ({
             </DropDownMenuItem>
           )}
           {!isMyPost && isMuteUser && (
-            <DropDownMenuItem onClick={handleOnClickUnuteUser} asChild>
+            <DropDownMenuItem onClick={handleOnClickUnmuteUser} asChild>
               <Button variant="ghost" borderless>
                 <DropDownMenuIcon>
                   <UnmuteIcon />
