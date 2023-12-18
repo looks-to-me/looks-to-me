@@ -27,10 +27,7 @@ export const muteUserAction = async ({
   const isMe = muteUserId === user.id;
   if (isMe) return { type: 'error', reason: 'badRequest', message: 'Cannot mute yourself!' };
 
-  const muteUser = await findMuteUserByUserIdAndMuteUserId({
-    userId: user.id,
-    muteUserId,
-  });
+  const muteUser = await findMuteUserByUserIdAndMuteUserId(user.id, muteUserId);
   const isMuted = !!muteUser;
   if (isMuted) return { type: 'error', reason: 'badRequest', message: 'Already muted!' };
 

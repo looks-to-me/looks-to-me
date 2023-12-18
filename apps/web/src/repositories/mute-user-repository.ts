@@ -35,7 +35,10 @@ export const deleteMuteUser = async (muteUser: MuteUser) => {
     .get();
 };
 
-export const findMuteUserByUserIdAndMuteUserId = async (muteUser: MuteUser): Promise<MuteUser | undefined> => {
+export const findMuteUserByUserIdAndMuteUserId = async (
+  userId: MuteUser['userId'],
+  muteUserId: MuteUser['muteUserId'],
+): Promise<MuteUser | undefined> => {
   return await database()
     .select({
       userId: schema.muteUsers.userId,
@@ -44,8 +47,8 @@ export const findMuteUserByUserIdAndMuteUserId = async (muteUser: MuteUser): Pro
     .from(schema.muteUsers)
     .where(
       and(
-        eq(schema.muteUsers.userId, muteUser.userId),
-        eq(schema.muteUsers.muteUserId, muteUser.muteUserId),
+        eq(schema.muteUsers.userId, userId),
+        eq(schema.muteUsers.muteUserId, muteUserId),
       ),
     )
     .get();

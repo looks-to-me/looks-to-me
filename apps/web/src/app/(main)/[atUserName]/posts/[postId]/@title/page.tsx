@@ -38,10 +38,7 @@ const UserPostDetailsTitlePage: FC<UserPostDetailsTitlePageProps> = async ({
   
   const loginUser = await getLoginUser();
   const isMuteUser = loginUser
-    ? !!await findMuteUserByUserIdAndMuteUserId({
-      userId: loginUser.id,
-      muteUserId: post.userId,
-    })
+    ? !!await findMuteUserByUserIdAndMuteUserId(loginUser.id, post.userId)
     : false;
 
   const postMenuProps: PostMenuProps = {
