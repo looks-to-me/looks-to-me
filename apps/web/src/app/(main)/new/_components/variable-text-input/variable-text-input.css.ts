@@ -3,6 +3,7 @@ import { style } from '@vanilla-extract/css';
 export const wrapper = style({
   position: 'relative',
   display: 'inline-block',
+  width: '100%',
 });
 
 export const dummy = style({
@@ -29,6 +30,6 @@ export const input = style({
   left: '0',
   boxSizing: 'border-box',
   width: '100%',
-  fontSize: '1rem',
+  height: '100%',
   padding: '2px 4px',
 });

@@ -25,7 +25,9 @@ export const VariableTextInput: FC<VariableTextInputProps> = ({
 
   return (
     <div className={styles.wrapper}>
-      <div ref={dummy} className={styles.dummy} data-placeholder={props.placeholder} />
+      <div ref={dummy} className={styles.dummy} data-placeholder={props.placeholder}>
+        {props.value}
+      </div>
       <input {...props} className={clsx(className, styles.input)} type="text" onChange={onChange} />
     </div>
   );

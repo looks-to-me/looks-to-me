@@ -161,6 +161,18 @@ export const theme = createGlobalTheme(':root', {
         text: '',
         background: '',
       },
+      badge: {
+        normal: {
+          text: '',
+          border: '',
+          background: '',
+        },
+        primary: {
+          text: '',
+          border: '',
+          background: '',
+        },
+      },
     },
   },
   size: {
