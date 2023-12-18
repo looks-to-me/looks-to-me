@@ -23,12 +23,10 @@ export const unmuteUserAction = async ({ unmuteUserId }: UnmuteUserActionProps):
   const isMe = unmuteUserId === user.id;
   if (isMe) return { type: 'error', reason: 'badRequest', message: 'Cannot unmute yourself!' };
 
-  const result = await deleteMuteUser({
+  await deleteMuteUser({
     userId: user.id,
     muteUserId: unmuteUserId,
   });
-
-  if (!result) return { type: 'error', reason: 'badRequest', message: 'Not muted!' };
 
   return { type: 'success', message: `@${user.profile.name} has been unmuted.` };
 };
