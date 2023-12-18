@@ -73,7 +73,7 @@
     "@vanilla-extract/webpack-plugin": "2.3.1",
     "better-sqlite3": "9.2.2",
     "drizzle-kit": "0.20.6",
-    "eslint": "8.55.0",
+    "eslint": "8.56.0",
     "eslint-config-next": "14.0.4",
     "eslint-plugin-jsx-a11y": "6.8.0",
     "eslint-plugin-next-on-pages": "1.8.2",
