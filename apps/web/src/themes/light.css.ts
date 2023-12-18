@@ -136,6 +136,14 @@ globalStyle(':root', {
 
         [theme.color.token.tooltip.text]: theme.color.palette.white,
         [theme.color.token.tooltip.background]: theme.color.palette.gray900,
+
+        [theme.color.token.tag.normal.background]: theme.color.palette.gray700,
+        [theme.color.token.tag.normal.border]: theme.color.palette.gray400,
+        [theme.color.token.tag.normal.text]: theme.color.palette.white,
+
+        [theme.color.token.tag.primary.background]: theme.color.palette.green700,
+        [theme.color.token.tag.primary.border]: theme.color.palette.green400,
+        [theme.color.token.tag.primary.text]: theme.color.palette.white,
       },
     },
   },

@@ -17,6 +17,9 @@
     "migrate:apply": "wrangler d1 migrations apply local --local"
   },
   "dependencies": {
+    "@dnd-kit/core": "6.1.0",
+    "@dnd-kit/sortable": "8.0.0",
+    "@dnd-kit/utilities": "3.2.2",
     "@looks-to-me/package-image-cache": "workspace:*",
     "@paralleldrive/cuid2": "2.2.2",
     "@radix-ui/react-accessible-icon": "1.0.3",
