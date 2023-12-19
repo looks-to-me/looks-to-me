@@ -19,7 +19,7 @@ export const useUnmuteUser = ({ unmuteUserId, unmuteUserName }: Props) => {
 
   const confirm = useCallback(async () => {
     return await openAlertDialog({
-      title: 'Unmute User',
+      title: `Unmute @${unmuteUserName}`,
       description: `Are you sure you want to unmute @${unmuteUserName}?`,
       acceptButton: <Button variant="primary">OK</Button>,
       rejectButton: <Button>Cancel</Button>,
