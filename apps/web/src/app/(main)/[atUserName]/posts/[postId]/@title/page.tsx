@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import * as styles from './page.css';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../../../../components/elements/avatar';
 import { getLoginUser } from '../../../../../../queries/user/get-login-user';
+import { findMuteUserByUserIdAndMuteUserId } from '../../../../../../repositories/mute-user-repository';
 import { findPostById } from '../../../../../../repositories/post-repository';
 import { findUserById } from '../../../../../../repositories/user-repository';
 import { publicEnv } from '../../../../../_libs/env';
@@ -35,7 +36,9 @@ const UserPostDetailsTitlePage: FC<UserPostDetailsTitlePageProps> = async ({
   if (!user) return notFound();
   
   const loginUser = await getLoginUser();
-  const isMyPost = post.userId === loginUser?.id;
+  const isMuteUser = loginUser
+    ? !!await findMuteUserByUserIdAndMuteUserId(loginUser.id, post.userId)
+    : false;
 
   return (
     <header className={styles.wrapper}>
@@ -60,7 +63,14 @@ const UserPostDetailsTitlePage: FC<UserPostDetailsTitlePageProps> = async ({
         <ShareButton
           text={`![L${post.word.toUpperCase().at(0)}TM](${publicEnv().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id})`}
         />
-        {isMyPost && <PostMenu post={post} />}
+        {loginUser && (
+          <PostMenu
+            post={post}
+            postUser={user}
+            loginUser={loginUser}
+            isMuteUser={isMuteUser}
+          />
+        )}
       </div>
     </header>
   );
