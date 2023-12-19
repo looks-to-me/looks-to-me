@@ -47,7 +47,7 @@ describe('mute-user', () => {
       jest.mocked(getUserMetadata).mockResolvedValue(undefined);
     });
 
-    it('should be unauthorized.', async () => {
+    it('should return error if unauthorized', async () => {
       const result = await muteUserAction({ muteUserId: userId2 });
       expect(result).toEqual({
         type: 'error',
