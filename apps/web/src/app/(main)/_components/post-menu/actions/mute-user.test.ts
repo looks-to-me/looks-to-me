@@ -76,7 +76,7 @@ describe('mute-user', () => {
       } satisfies MuteUserResult);
     });
   
-    it('success', async () => {
+    it('should return success if try to mute someone else', async () => {
       const result = await muteUserAction({ muteUserId: userId2 });
       expect(result).toEqual({
         type: 'success',
