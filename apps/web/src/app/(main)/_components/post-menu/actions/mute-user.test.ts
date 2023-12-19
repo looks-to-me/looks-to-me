@@ -67,7 +67,7 @@ describe('mute-user', () => {
       });
     });
   
-    it('failed: when you try to mute yourself', async () => {
+    it('should return error if try to mute yourself', async () => {
       const result = await muteUserAction(userId1);
       expect(result).toEqual({
         type: 'error',

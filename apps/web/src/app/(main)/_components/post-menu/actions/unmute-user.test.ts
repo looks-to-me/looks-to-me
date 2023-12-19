@@ -74,7 +74,7 @@ describe('mute-user', () => {
       });
     });
   
-    it('failed: when you try to mute yourself', async () => {
+    it('should return error if try to mute yourself', async () => {
       const result = await unmuteUserAction(userId1);
       expect(result).toEqual({
         type: 'error',
@@ -83,14 +83,14 @@ describe('mute-user', () => {
       } satisfies MuteUserResult);
     });
   
-    it('success: when already muted', async () => {
+    it('should return success when already muted', async () => {
       const result = await unmuteUserAction(userId2);
       expect(result).toEqual({
         type: 'success',
         message: expect.any(String),
       } satisfies MuteUserResult);
     });
-    it('success: when not muted', async () => {
+    it('should return success when not muted', async () => {
       await deleteMuteUser({
         userId: userId1,
         muteUserId: userId2,
