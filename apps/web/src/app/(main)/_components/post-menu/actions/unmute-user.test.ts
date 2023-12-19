@@ -73,6 +73,15 @@ describe('mute-user', () => {
         avatar_url: 'avatar_url',
       });
     });
+    it('should return error if try to unmute not muted user', async () => {
+      await unmuteUserAction(userId2);
+      const result = await unmuteUserAction(userId2);
+      expect(result).toEqual({
+        type: 'error',
+        reason: 'badRequest',
+        message: expect.any(String),
+      } satisfies MuteUserResult);
+    });
   
     it('should return error if try to mute yourself', async () => {
       const result = await unmuteUserAction(userId1);

@@ -1,7 +1,7 @@
 'use server';
 
 import { getLoginUser } from '../../../../../queries/user/get-login-user';
-import { deleteMuteUser } from '../../../../../repositories/mute-user-repository';
+import { deleteMuteUser, findMuteUserByUserIdAndMuteUserId } from '../../../../../repositories/mute-user-repository';
 
 export type UnmuteUserResult = {
   type: 'success';
@@ -18,6 +18,10 @@ export const unmuteUserAction = async (unmuteUserId: string): Promise<UnmuteUser
 
   const isMe = unmuteUserId === user.id;
   if (isMe) return { type: 'error', reason: 'badRequest', message: 'Cannot unmute yourself!' };
+
+  const muteUser = await findMuteUserByUserIdAndMuteUserId(user.id, unmuteUserId);
+  const isMuted = !!muteUser;
+  if (!isMuted) return { type: 'error', reason: 'badRequest', message: 'Not muted!' };
 
   await deleteMuteUser({
     userId: user.id,
