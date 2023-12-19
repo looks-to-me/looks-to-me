@@ -12,7 +12,6 @@ import { PostMenu } from '../../../../_components/post-menu';
 import { ShareButton } from '../../../../_components/share-button';
 
 import type { PageProps } from '../../../../../../types/page-props';
-import type { PostMenuProps } from '../../../../_components/post-menu';
 import type { UserPostDetailsPageProps } from '../page';
 import type { FC } from 'react';
 
@@ -41,12 +40,6 @@ const UserPostDetailsTitlePage: FC<UserPostDetailsTitlePageProps> = async ({
     ? !!await findMuteUserByUserIdAndMuteUserId(loginUser.id, post.userId)
     : false;
 
-  const postMenuProps: PostMenuProps = {
-    post,
-    postUser: user,
-    loginUser,
-    isMuteUser,
-  };
   return (
     <header className={styles.wrapper}>
       <div className={styles.container}>
@@ -70,7 +63,14 @@ const UserPostDetailsTitlePage: FC<UserPostDetailsTitlePageProps> = async ({
         <ShareButton
           text={`![L${post.word.toUpperCase().at(0)}TM](${publicEnv().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id})`}
         />
-        {loginUser && <PostMenu {...postMenuProps} />}
+        {loginUser && (
+          <PostMenu
+            post={post}
+            postUser={user}
+            loginUser={loginUser}
+            isMuteUser={isMuteUser}
+          />
+        )}
       </div>
     </header>
   );
