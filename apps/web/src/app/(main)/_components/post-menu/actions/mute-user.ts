@@ -14,13 +14,7 @@ export type MuteUserResult =
     message: string;
   };
 
-type MuteUserActionProps = {
-  muteUserId: string;
-};
-
-export const muteUserAction = async ({
-  muteUserId,
-}: MuteUserActionProps): Promise<MuteUserResult> => {
+export const muteUserAction = async (muteUserId: string): Promise<MuteUserResult> => {
   const user = await getLoginUser();
   if (!user) return { type: 'error', reason: 'unauthorized', message: 'Login required!' };
 

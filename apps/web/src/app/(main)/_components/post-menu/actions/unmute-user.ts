@@ -12,11 +12,7 @@ export type UnmuteUserResult = {
   message: string;
 };
 
-type UnmuteUserActionProps = {
-  unmuteUserId: string;
-};
-
-export const unmuteUserAction = async ({ unmuteUserId }: UnmuteUserActionProps): Promise<UnmuteUserResult> => {
+export const unmuteUserAction = async (unmuteUserId: string): Promise<UnmuteUserResult> => {
   const user = await getLoginUser();
   if (!user) return { type: 'error', reason: 'unauthorized', message: 'Login required!' };
 

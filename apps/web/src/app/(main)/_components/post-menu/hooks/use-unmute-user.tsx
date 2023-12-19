@@ -27,9 +27,7 @@ export const useUnmuteUser = ({ unmuteUserId, unmuteUserName }: Props) => {
   }, [openAlertDialog, unmuteUserName]);
 
   const unmute = useCallback(async () => {
-    const result = await unmuteUserAction({
-      unmuteUserId,
-    });
+    const result = await unmuteUserAction(unmuteUserId);
     switch (result.type) {
       case 'success': {
         router.refresh();

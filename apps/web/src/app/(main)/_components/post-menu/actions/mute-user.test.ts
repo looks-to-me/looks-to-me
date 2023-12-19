@@ -48,7 +48,7 @@ describe('mute-user', () => {
     });
 
     it('should return error if unauthorized', async () => {
-      const result = await muteUserAction({ muteUserId: userId2 });
+      const result = await muteUserAction(userId2);
       expect(result).toEqual({
         type: 'error',
         reason: 'unauthorized',
@@ -68,16 +68,16 @@ describe('mute-user', () => {
     });
   
     it('failed: when you try to mute yourself', async () => {
-      const result = await muteUserAction({ muteUserId: userId1 });
+      const result = await muteUserAction(userId1);
       expect(result).toEqual({
         type: 'error',
         reason: 'badRequest',
         message: expect.any(String),
       } satisfies MuteUserResult);
     });
-  
+
     it('should return success if try to mute someone else', async () => {
-      const result = await muteUserAction({ muteUserId: userId2 });
+      const result = await muteUserAction(userId2);
       expect(result).toEqual({
         type: 'success',
         message: expect.any(String),

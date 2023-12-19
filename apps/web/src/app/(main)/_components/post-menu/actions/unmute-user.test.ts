@@ -54,7 +54,7 @@ describe('mute-user', () => {
     });
 
     it('should be unauthorized.', async () => {
-      const result = await unmuteUserAction({ unmuteUserId: userId2 });
+      const result = await unmuteUserAction(userId2);
 
       expect(result).toEqual({
         type: 'error',
@@ -75,7 +75,7 @@ describe('mute-user', () => {
     });
   
     it('failed: when you try to mute yourself', async () => {
-      const result = await unmuteUserAction({ unmuteUserId: userId1 });
+      const result = await unmuteUserAction(userId1);
       expect(result).toEqual({
         type: 'error',
         reason: 'badRequest',
@@ -84,7 +84,7 @@ describe('mute-user', () => {
     });
   
     it('success: when already muted', async () => {
-      const result = await unmuteUserAction({ unmuteUserId: userId2 });
+      const result = await unmuteUserAction(userId2);
       expect(result).toEqual({
         type: 'success',
         message: expect.any(String),
@@ -95,7 +95,7 @@ describe('mute-user', () => {
         userId: userId1,
         muteUserId: userId2,
       });
-      const result = await unmuteUserAction({ unmuteUserId: userId2 });
+      const result = await unmuteUserAction(userId2);
       expect(result).toEqual({
         type: 'success',
         message: expect.any(String),
