@@ -1,5 +1,7 @@
 'use server';
 
+import { revalidatePath } from 'next/cache';
+
 import { getLoginUser } from '../../queries/user/get-login-user';
 import { findMuteUserByUserIdAndMuteUserId, saveMuteUser } from '../../repositories/mute-user-repository';
 
@@ -29,6 +31,9 @@ export const muteUser = async (muteUserId: string): Promise<MuteUserResult> => {
     userId: user.id,
     muteUserId,
   });
+
+  revalidatePath('/');
+  revalidatePath('/shuffle');
 
   return { type: 'success', message: `@${user.profile.name} has been muted.` };
 };
