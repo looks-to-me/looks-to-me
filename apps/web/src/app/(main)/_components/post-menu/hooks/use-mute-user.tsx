@@ -4,7 +4,7 @@ import { toast } from 'sonner';
 
 import { useAlertDialog } from '../../../../../components/elements/alert-dialog';
 import { Button } from '../../../../../components/elements/button';
-import { muteUserAction } from '../actions/mute-user';
+import { muteUser } from '../../../../../mutations/user/mute-user';
 
 import type { User } from '../../../../../repositories/user-repository';
 
@@ -27,7 +27,7 @@ export const useMuteUser = ({ muteUserId, muteUserName }: Props) => {
   }, [openAlertDialog, muteUserName]);
 
   const mute = useCallback(async () => {
-    const result = await muteUserAction(muteUserId);
+    const result = await muteUser(muteUserId);
     switch (result.type) {
       case 'success': {
         router.refresh();

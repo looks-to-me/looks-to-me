@@ -1,16 +1,18 @@
 import { createId } from '@paralleldrive/cuid2';
 
-import { muteUserAction } from './mute-user';
-import { saveUserProvider } from '../../../../../repositories/user-provider-repository';
-import { saveUser } from '../../../../../repositories/user-repository';
-import { getUserMetadata } from '../../../../_libs/auth/server/get-user-metadata';
-import { setupDatabase } from '../../../../_libs/test/setup-database';
-import { setupWorker } from '../../../../_libs/test/setup-worker';
+import { unmuteUser } from './unmute-user';
+import { getUserMetadata } from '../../app/_libs/auth/server/get-user-metadata';
+import { setupDatabase } from '../../app/_libs/test/setup-database';
+import { setupWorker } from '../../app/_libs/test/setup-worker';
+import { deleteMuteUser, saveMuteUser } from '../../repositories/mute-user-repository';
+import { saveUserProvider } from '../../repositories/user-provider-repository';
+import { saveUser } from '../../repositories/user-repository';
 
 import type { MuteUserResult } from './mute-user';
 
 jest.mock('@supabase/auth-helpers-nextjs');
 jest.mock('../../../../_libs/auth/server/get-user-metadata');
+
 describe('mute-user', () => {
   setupWorker();
   setupDatabase();
@@ -27,6 +29,7 @@ describe('mute-user', () => {
         displayName: 'displayName',
       },
     });
+
     await saveUser({
       id: userId2,
       profile: {
@@ -35,20 +38,28 @@ describe('mute-user', () => {
         displayName: 'displayName',
       },
     });
+
     await saveUserProvider({
       sub: 'sub',
       type: 'github',
       userId: userId1,
     });
+
+    await saveMuteUser({
+      userId: userId1,
+      muteUserId: userId2,
+    });
   });
+
   describe('when not logged in', () => {
     beforeEach(() => {
       // eslint-disable-next-line unicorn/no-useless-undefined
       jest.mocked(getUserMetadata).mockResolvedValue(undefined);
     });
 
-    it('should return error if unauthorized', async () => {
-      const result = await muteUserAction(userId2);
+    it('should be unauthorized.', async () => {
+      const result = await unmuteUser(userId2);
+
       expect(result).toEqual({
         type: 'error',
         reason: 'unauthorized',
@@ -56,6 +67,7 @@ describe('mute-user', () => {
       } satisfies MuteUserResult);
     });
   });
+
   describe('when logged in', () => {
     beforeEach(() => {
       jest.mocked(getUserMetadata).mockResolvedValue({
@@ -66,28 +78,46 @@ describe('mute-user', () => {
         avatar_url: 'avatar_url',
       });
     });
-  
-    it('should return error if try to mute yourself', async () => {
-      const result = await muteUserAction(userId1);
+
+    it('should return error if try to unmute not muted user', async () => {
+      await unmuteUser(userId2);
+
+      const result = await unmuteUser(userId2);
+
       expect(result).toEqual({
         type: 'error',
         reason: 'badRequest',
+        message: expect.any(String),
+      } satisfies MuteUserResult);
+    });
+  
+    it('should return error if try to mute yourself', async () => {
+      const result = await unmuteUser(userId1);
+
+      expect(result).toEqual({
+        type: 'error',
+        reason: 'badRequest',
+        message: expect.any(String),
+      } satisfies MuteUserResult);
+    });
+  
+    it('should return success when already muted', async () => {
+      const result = await unmuteUser(userId2);
+
+      expect(result).toEqual({
+        type: 'success',
         message: expect.any(String),
       } satisfies MuteUserResult);
     });
 
-    it('should return error if try to mute already muted user', async () => {
-      await muteUserAction(userId2);
-      const result = await muteUserAction(userId2);
-      expect(result).toEqual({
-        type: 'error',
-        reason: 'badRequest',
-        message: expect.any(String),
-      } satisfies MuteUserResult);
-    });
-    
-    it('should return success if try to mute someone else', async () => {
-      const result = await muteUserAction(userId2);
+    it('should return success when not muted', async () => {
+      await deleteMuteUser({
+        userId: userId1,
+        muteUserId: userId2,
+      });
+
+      const result = await unmuteUser(userId2);
+
       expect(result).toEqual({
         type: 'success',
         message: expect.any(String),
