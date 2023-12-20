@@ -6,6 +6,7 @@
   "scripts": {
     "create:component": "scaffdog generate component",
     "build:ci": "turbo run build:ci",
+    "test": "turbo run test",
     "lint:code": "turbo run lint:code",
     "lint:type": "turbo run lint:type"
   },
