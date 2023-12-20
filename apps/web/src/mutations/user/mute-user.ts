@@ -1,7 +1,7 @@
 'use server';
 
-import { getLoginUser } from '../../../../../queries/user/get-login-user';
-import { findMuteUserByUserIdAndMuteUserId, saveMuteUser } from '../../../../../repositories/mute-user-repository';
+import { getLoginUser } from '../../queries/user/get-login-user';
+import { findMuteUserByUserIdAndMuteUserId, saveMuteUser } from '../../repositories/mute-user-repository';
 
 export type MuteUserResult =
   | {
@@ -14,7 +14,7 @@ export type MuteUserResult =
     message: string;
   };
 
-export const muteUserAction = async (muteUserId: string): Promise<MuteUserResult> => {
+export const muteUser = async (muteUserId: string): Promise<MuteUserResult> => {
   const user = await getLoginUser();
   if (!user) return { type: 'error', reason: 'unauthorized', message: 'Login required!' };
 
