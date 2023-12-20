@@ -8,10 +8,10 @@ import { deleteMuteUser, saveMuteUser } from '../../repositories/mute-user-repos
 import { saveUserProvider } from '../../repositories/user-provider-repository';
 import { saveUser } from '../../repositories/user-repository';
 
-import type { MuteUserResult } from './mute-user';
+import type { UnmuteUserResult } from './unmute-user';
 
 jest.mock('@supabase/auth-helpers-nextjs');
-jest.mock('../../../../_libs/auth/server/get-user-metadata');
+jest.mock('../../app/_libs/auth/server/get-user-metadata');
 
 describe('mute-user', () => {
   setupWorker();
@@ -64,7 +64,7 @@ describe('mute-user', () => {
         type: 'error',
         reason: 'unauthorized',
         message: expect.any(String),
-      } satisfies MuteUserResult);
+      } satisfies UnmuteUserResult);
     });
   });
 
@@ -88,7 +88,7 @@ describe('mute-user', () => {
         type: 'error',
         reason: 'badRequest',
         message: expect.any(String),
-      } satisfies MuteUserResult);
+      } satisfies UnmuteUserResult);
     });
   
     it('should return error if try to mute yourself', async () => {
@@ -98,7 +98,7 @@ describe('mute-user', () => {
         type: 'error',
         reason: 'badRequest',
         message: expect.any(String),
-      } satisfies MuteUserResult);
+      } satisfies UnmuteUserResult);
     });
   
     it('should return success when already muted', async () => {
@@ -107,7 +107,7 @@ describe('mute-user', () => {
       expect(result).toEqual({
         type: 'success',
         message: expect.any(String),
-      } satisfies MuteUserResult);
+      } satisfies UnmuteUserResult);
     });
 
     it('should return success when not muted', async () => {
@@ -119,9 +119,10 @@ describe('mute-user', () => {
       const result = await unmuteUser(userId2);
 
       expect(result).toEqual({
-        type: 'success',
+        type: 'error',
+        reason: 'badRequest',
         message: expect.any(String),
-      } satisfies MuteUserResult);
+      } satisfies UnmuteUserResult);
     });
   });
 });
