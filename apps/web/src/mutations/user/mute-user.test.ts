@@ -10,7 +10,7 @@ import { saveUser } from '../../repositories/user-repository';
 import type { MuteUserResult } from './mute-user';
 
 jest.mock('@supabase/auth-helpers-nextjs');
-jest.mock('../../../../_libs/auth/server/get-user-metadata');
+jest.mock('../../app/_libs/auth/server/get-user-metadata');
 
 describe('mute-user', () => {
   setupWorker();
