@@ -1,5 +1,7 @@
 'use server';
 
+import { revalidatePath } from 'next/cache';
+
 import { getLoginUser } from '../../queries/user/get-login-user';
 import { deleteMuteUser, findMuteUserByUserIdAndMuteUserId } from '../../repositories/mute-user-repository';
 
@@ -28,6 +30,9 @@ export const unmuteUser = async (unmuteUserId: string): Promise<UnmuteUserResult
     userId: user.id,
     muteUserId: unmuteUserId,
   });
+
+  revalidatePath('/');
+  revalidatePath('/shuffle');
 
   return { type: 'success', message: `@${user.profile.name} has been unmuted.` };
 };

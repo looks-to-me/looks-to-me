@@ -10,6 +10,7 @@ import { saveUser } from '../../repositories/user-repository';
 
 import type { UnmuteUserResult } from './unmute-user';
 
+jest.mock('next/cache');
 jest.mock('@supabase/auth-helpers-nextjs');
 jest.mock('../../app/_libs/auth/server/get-user-metadata');
 
