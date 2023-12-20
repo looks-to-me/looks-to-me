@@ -161,10 +161,18 @@ export const theme = createGlobalTheme(':root', {
         text: '',
         background: '',
       },
+      calendarHeatMap: {
+        color1: '',
+        color2: '',
+        color3: '',
+        color4: '',
+        color5: '',
+      },
     },
   },
   size: {
     font: {
+      extraTiny: '.5rem',
       tiny: '.75rem',
       normal: '.875rem',
       medium: '1rem',
