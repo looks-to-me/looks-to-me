@@ -64,6 +64,7 @@ export const group = style({
 
 export const icon = style({
   color: theme.color.palette.gray300,
+  fontSize: theme.size.font.medium,
 });
 
 export const item = style({

@@ -31,10 +31,12 @@ export const PostMenu: FC<PostMenuProps> = ({
   isMuteUser,
 }) => {
   const handleOnClickDeletePost = useDeletePost(post);
+
   const handleOnClickMuteUser = useMuteUser({
     muteUserId: postUser.id,
     muteUserName: postUser.profile.name,
   });
+
   const handleOnClickUnmuteUser = useUnmuteUser({
     unmuteUserId: postUser.id,
     unmuteUserName: postUser.profile.name,
@@ -84,7 +86,6 @@ export const PostMenu: FC<PostMenuProps> = ({
               </Button>
             </DropDownMenuItem>
           )}
-
         </DropDownMenuGroup>
       </DropDownMenuContent>
     </DropDownMenu>
