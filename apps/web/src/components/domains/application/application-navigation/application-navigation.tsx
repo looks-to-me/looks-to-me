@@ -48,7 +48,7 @@ export const ApplicationNavigation: FC<ApplicationNavigationProps> = ({
           <Button variant="ghost" size="medium" borderless asChild>
             <Link href="/">
               <ButtonIcon>
-                <HomeIcon className={styles.buttonLinkIcon} />
+                <HomeIcon />
               </ButtonIcon>
               Home
             </Link>
@@ -56,7 +56,7 @@ export const ApplicationNavigation: FC<ApplicationNavigationProps> = ({
           <Button variant="ghost" size="medium" borderless asChild>
             <Link href="/shuffle">
               <ButtonIcon>
-                <ShuffleIcon className={styles.buttonLinkIcon} />
+                <ShuffleIcon />
               </ButtonIcon>
               Shuffle
             </Link>
@@ -65,28 +65,30 @@ export const ApplicationNavigation: FC<ApplicationNavigationProps> = ({
         <SheetSection>
           <Button variant="ghost" size="medium" borderless asChild>
             <a href="https://github.com/looks-to-me/looks-to-me" target="_blank">
-              <PrefersColorScheme
-                className={styles.buttonLinkIcon}
-                light={<GitHubBlack />}
-                dark={<GitHubWhite />}
-              />
+              <ButtonIcon>
+                <PrefersColorScheme
+                  light={<GitHubBlack />}
+                  dark={<GitHubWhite />}
+                />
+              </ButtonIcon>
               GitHub Repository
             </a>
           </Button>
           <Button variant="ghost" size="medium" borderless asChild>
             <a href="/storybook/" target="_blank">
-              <PrefersColorScheme
-                className={styles.buttonLinkIcon}
-                light={<StorybookBlack />}
-                dark={<StorybookWhite />}
-              />
+              <ButtonIcon>
+                <PrefersColorScheme
+                  light={<StorybookBlack />}
+                  dark={<StorybookWhite />}
+                />
+              </ButtonIcon>
               Storybook
             </a>
           </Button>
           <Button variant="ghost" size="medium" borderless asChild>
             <a href="https://github.com/looks-to-me/looks-to-me/issues" target="_blank">
               <ButtonIcon>
-                <ReportIcon className={styles.buttonLinkIcon} />
+                <ReportIcon />
               </ButtonIcon>
               Bug reports or feature requests
             </a>

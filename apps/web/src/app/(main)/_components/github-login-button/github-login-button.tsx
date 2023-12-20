@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 
 import * as styles from './github-login-button.css';
+import { ButtonIcon } from '../../../../components/elements/button';
 import GitHubWhite from '../../../../icons/github-white.svg';
 import { supabase } from '../../../_libs/auth/client/instance';
 
@@ -32,7 +33,9 @@ export const GitHubLoginButton: FC<LoginButtonProps> = ({
 
   return (
     <button {...props} className={clsx(className, styles.button)} onClick={handleClick}>
-      <GitHubWhite className={styles.icon} />
+      <ButtonIcon>
+        <GitHubWhite />
+      </ButtonIcon>
       Login with GitHub
     </button>
   );

@@ -124,6 +124,7 @@ export const wrapper = recipe({
 });
 
 export const icon = style({
+  fontSize: theme.size.font.medium,
   selectors: {
     [`${wrapper({ variant: 'normal' }).split(' ')[1]} &`]: {
       color: theme.color.token.button.normal.icon,
