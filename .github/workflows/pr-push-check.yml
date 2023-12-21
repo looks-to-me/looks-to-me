@@ -30,7 +30,7 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
 
-      - name: Build
+      - name: Test
         run: pnpm run test
 
   lint:
