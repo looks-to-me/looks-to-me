@@ -3,9 +3,9 @@ import { drizzle } from 'drizzle-orm/d1';
 import { privateEnv } from '../../env';
 import { schema } from '../schema';
 
-import type { BaseSQLiteDatabase } from 'drizzle-orm/sqlite-core';
+import type { DrizzleD1Database } from 'drizzle-orm/d1';
 
-export type Database = BaseSQLiteDatabase<'async', unknown, typeof schema>;
+export type Database = DrizzleD1Database<typeof schema>;
 
 let instance: Database | undefined;
 
