@@ -114,8 +114,8 @@ importers:
         specifier: 2.0.0
         version: 2.0.0
       date-fns:
-        specifier: 2.30.0
-        version: 2.30.0
+        specifier: 3.0.4
+        version: 3.0.4
       deepmerge:
         specifier: 4.3.1
         version: 4.3.1
@@ -9641,11 +9641,8 @@ packages:
     resolution: {integrity: sha512-ND9qDTLc6diwj+Xe5cdAgVTbLVdXbtxTJRXRhli8Mowuaan+0EJOtdqJ0QCHNSSPyoXGx9HX2/VMnKeC34AChA==}
     dev: true
 
-  /date-fns@2.30.0:
-    resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
-    engines: {node: '>=0.11'}
-    dependencies:
-      '@babel/runtime': 7.22.6
+  /date-fns@3.0.4:
+    resolution: {integrity: sha512-+daptVi95nJ/D4TPS7/gbUqneVMA0Izr4qYAsL2ZZwtcDtEP8Zge765mbXhTqWYdTSG79/VtbBigQTluiE9DBQ==}
     dev: false
 
   /dayjs@1.11.9:
