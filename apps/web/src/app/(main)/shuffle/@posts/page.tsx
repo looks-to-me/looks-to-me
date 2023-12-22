@@ -1,5 +1,4 @@
 import { fetchPosts } from './_actions/fetch-posts';
-import { getLoginUser } from '../../../../queries/user/get-login-user';
 import { PostList } from '../../_components/post-list';
 
 import type { PageProps } from '../../../../types/page-props';
@@ -17,14 +16,14 @@ export type ShufflePostListPageProps = ShufflePageProps & PageProps<{
   };
 }>;
 
-const fetcher = async () => {
-  'use server';
-  const loginUser = await getLoginUser();
-  return await fetchPosts(loginUser ? loginUser.id : undefined);
-};
-
 const ShufflePostListPage: FC<ShufflePostListPageProps> = async () => {
-  const posts = await fetcher();
+  const posts = await fetchPosts();
+
+  const fetcher = async () => {
+    'use server';
+    return await fetchPosts();
+  };
+
   return (
     <PostList
       posts={posts}

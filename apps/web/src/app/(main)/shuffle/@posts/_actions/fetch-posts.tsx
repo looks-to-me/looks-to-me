@@ -2,6 +2,7 @@
 
 import { eq, inArray, notInArray, sql } from 'drizzle-orm';
 
+import { getLoginUser } from '../../../../../queries/user/get-login-user';
 import { findMuteUsersByUserId } from '../../../../../repositories/mute-user-repository';
 import { database } from '../../../../_libs/database';
 import { schema } from '../../../../_libs/database/schema';
@@ -21,9 +22,11 @@ const shuffle = <T extends object>(array: Array<T>): Array<T> => {
 
 const limit = 32;
 
-export const fetchPosts = async (loginUserId?: string | undefined): Promise<InfiniteScrollEdge[]> => {
-  const muteUsers = loginUserId ?
-    await findMuteUsersByUserId(loginUserId)
+export const fetchPosts = async (): Promise<InfiniteScrollEdge[]> => {
+  const user = await getLoginUser();
+
+  const muteUsers = user?.id ?
+    await findMuteUsersByUserId(user.id)
     : [];
   const muteUsersIds = muteUsers.map(user => user.muteUserId);
 

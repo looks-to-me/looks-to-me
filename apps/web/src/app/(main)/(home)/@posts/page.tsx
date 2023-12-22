@@ -1,5 +1,4 @@
 import { fetchPosts } from './_actions/fetch-posts';
-import { getLoginUser } from '../../../../queries/user/get-login-user';
 import { PostList } from '../../_components/post-list';
 
 import type { InfiniteScrollFetcher } from '../../../../components/elements/infinite-scroll';
@@ -19,19 +18,11 @@ export type HomePostListPageProps = HomePageProps & PageProps<{
 }>;
 
 const HomePostListPage: FC<HomePostListPageProps> = async () => {
-  const loginUser = await getLoginUser();
-  const posts = await fetchPosts({
-    cursor: undefined,
-    loginUserId: loginUser ? loginUser.id : undefined,
-  });
+  const posts = await fetchPosts();
 
   const fetcher: InfiniteScrollFetcher = async arguments_ => {
     'use server';
-    const loginUser = await getLoginUser();
-    return await fetchPosts({
-      cursor: arguments_.cursor,
-      loginUserId: loginUser ? loginUser.id : undefined,
-    });
+    return await fetchPosts(arguments_.cursor);
   };
 
   return (
