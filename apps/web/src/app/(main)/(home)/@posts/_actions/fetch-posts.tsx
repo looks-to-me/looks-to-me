@@ -2,6 +2,7 @@
 
 import { and, desc, eq, lt, notInArray } from 'drizzle-orm';
 
+import { getLoginUser } from '../../../../../queries/user/get-login-user';
 import { findMuteUsersByUserId } from '../../../../../repositories/mute-user-repository';
 import { database } from '../../../../_libs/database';
 import { schema } from '../../../../_libs/database/schema';
@@ -11,15 +12,11 @@ import type { InfiniteScrollEdge } from '../../../../../components/elements/infi
 
 const limit = 32;
 
-type FetchPostProps = {
-  cursor?: string | undefined;
-  loginUserId?: string | undefined;
-};
+export const fetchPosts = async (cursor?: string): Promise<InfiniteScrollEdge[]> => {
+  const user = await getLoginUser();
 
-export const fetchPosts = async (props: FetchPostProps): Promise<InfiniteScrollEdge[]> => {
-  const { cursor, loginUserId } = props;
-  const muteUsers = loginUserId ?
-    await findMuteUsersByUserId(loginUserId)
+  const muteUsers = user?.id ?
+    await findMuteUsersByUserId(user.id)
     : [];
   const muteUserIds = muteUsers.map(user => user.muteUserId);
 

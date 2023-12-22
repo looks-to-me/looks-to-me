@@ -1,6 +1,7 @@
 import { createId } from '@paralleldrive/cuid2';
 
 import { fetchPosts } from './fetch-posts';
+import { getLoginUser } from '../../../../../queries/user/get-login-user';
 import { saveImage } from '../../../../../repositories/image-repository';
 import { saveMuteUser } from '../../../../../repositories/mute-user-repository';
 import { savePost } from '../../../../../repositories/post-repository';
@@ -13,13 +14,15 @@ import type { User } from '../../../../../repositories/user-repository';
 import type { Post as PostComponent } from '../../../_components/post';
 import type { ComponentProps, ReactElement } from 'react';
 
-const createUser = async () => {
+const createUser = async (user?: Partial<User>) => {
   return await saveUser({
     id: createId(),
+    ...user,
     profile: {
       name: 'name',
       displayName: 'display-name',
       avatarUrl: 'avatar-url',
+      ...user?.profile,
     },
   });
 };
@@ -42,45 +45,51 @@ const createPost = async (user: User, image: Image) => {
   });
 };
 
+jest.mock('@supabase/auth-helpers-nextjs');
+jest.mock('../../../../../queries/user/get-login-user');
+
 describe('fetchPosts', () => {
   setupWorker();
   setupDatabase();
-  describe('when mute user', () => {
-    it('should user1 cannot retrieve posts from user2 if user1 have muted user2.', async () => {
-      const user1 = await createUser();
-      const image1 = await createImage(user1);
-      await createPost(user1, image1);
 
-      const user2 = await createUser();
-      const image2 = await createImage(user2);
-      const post2 = await createPost(user2, image2);
+  describe('when mute user', () => {
+    const userId = createId();
+
+    beforeEach(async () => {
+      const user = await createUser({ id: userId });
+      const image = await createImage(user);
+      await createPost(user, image);
+
+      jest.mocked(getLoginUser).mockResolvedValue(user);
+    });
+
+    it('should user1 cannot retrieve posts from user2 if user1 have muted user2.', async () => {
+      const user = await createUser();
+      const image = await createImage(user);
+      const post = await createPost(user, image);
 
       await saveMuteUser({
-        userId: user1.id,
-        muteUserId: user2.id,
+        userId,
+        muteUserId: user.id,
       });
 
-      const posts = await fetchPosts(user1.id);
+      const posts = await fetchPosts();
       const postElements = posts.map(
         (post) =>
           post.node as ReactElement<ComponentProps<typeof PostComponent>>,
       );
       const postIds = postElements.map((post) => post.props.post.id);
-      
+
       expect(posts.length).toEqual(1);
-      expect(postIds.includes(post2.id)).toBeFalsy();
+      expect(postIds.includes(post.id)).toBeFalsy();
     });
 
     it('should user1 be able to get all posts if user1 has muted anyone.', async () => {
-      const user1 = await createUser();
-      const image1 = await createImage(user1);
-      await createPost(user1, image1);
+      const user = await createUser();
+      const image = await createImage(user);
+      await createPost(user, image);
 
-      const user2 = await createUser();
-      const image2 = await createImage(user2);
-      await createPost(user2, image2);
-
-      const posts = await fetchPosts(user1.id);
+      const posts = await fetchPosts();
 
       expect(posts.length).toEqual(2);
     });
