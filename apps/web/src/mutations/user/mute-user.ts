@@ -3,7 +3,8 @@
 import { revalidatePath } from 'next/cache';
 
 import { getLoginUser } from '../../queries/user/get-login-user';
-import { findMuteUserByUserIdAndMuteUserId, saveMuteUser } from '../../repositories/mute-user-repository';
+import { saveMuteUser } from '../../repositories/mute-user-repository';
+import { findUserById } from '../../repositories/user-repository';
 
 export type MuteUserResult =
   | {
@@ -21,19 +22,18 @@ export const muteUser = async (muteUserId: string): Promise<MuteUserResult> => {
   if (!user) return { type: 'error', reason: 'unauthorized', message: 'Login required!' };
 
   const isMe = muteUserId === user.id;
-  if (isMe) return { type: 'error', reason: 'badRequest', message: 'Cannot mute yourself!' };
+  if (isMe) return { type: 'error', reason: 'badRequest', message: 'Can\'t mute yourself!' };
 
-  const muteUser = await findMuteUserByUserIdAndMuteUserId(user.id, muteUserId);
-  const isMuted = !!muteUser;
-  if (isMuted) return { type: 'error', reason: 'badRequest', message: 'Already muted!' };
+  const targetUser = await findUserById(muteUserId);
+  if (!targetUser) return { type: 'error', reason: 'badRequest', message: 'User not found!' };
 
   await saveMuteUser({
     userId: user.id,
-    muteUserId,
+    muteUserId: targetUser.id,
   });
 
   revalidatePath('/');
   revalidatePath('/shuffle');
 
-  return { type: 'success', message: `@${user.profile.name} has been muted.` };
+  return { type: 'success', message: `@${targetUser.profile.name} has been muted.` };
 };
