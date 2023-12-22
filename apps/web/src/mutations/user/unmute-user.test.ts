@@ -2,12 +2,12 @@ import { createId } from '@paralleldrive/cuid2';
 
 import { unmuteUser } from './unmute-user';
 import { getUserMetadata } from '../../app/_libs/auth/server/get-user-metadata';
+import { database } from '../../app/_libs/database';
+import { schema } from '../../app/_libs/database/schema';
 import { setupDatabase } from '../../app/_libs/test/setup-database';
 import { setupWorker } from '../../app/_libs/test/setup-worker';
-import { deleteMuteUser, saveMuteUser } from '../../repositories/mute-user-repository';
-import { saveUserProvider } from '../../repositories/user-provider-repository';
-import { saveUser } from '../../repositories/user-repository';
 
+import type { MuteUserResult } from './mute-user';
 import type { UnmuteUserResult } from './unmute-user';
 
 jest.mock('next/cache');
@@ -22,34 +22,52 @@ describe('mute-user', () => {
   const userId2 = createId();
 
   beforeEach(async () => {
-    await saveUser({
-      id: userId1,
-      profile: {
-        avatarUrl: 'avatarUrl',
-        name: 'name',
-        displayName: 'displayName',
-      },
-    });
+    await database()
+      .insert(schema.users)
+      .values({
+        id: userId1,
+        registeredAt: new Date(),
+      });
 
-    await saveUser({
-      id: userId2,
-      profile: {
-        avatarUrl: 'avatarUrl',
-        name: 'name',
-        displayName: 'displayName',
-      },
-    });
+    await database()
+      .insert(schema.userProfiles)
+      .values({
+        userId: userId1,
+        name: 'name1',
+        displayName: 'displayName1',
+        avatarUrl: 'avatarUrl1',
+      });
 
-    await saveUserProvider({
-      sub: 'sub',
-      type: 'github',
-      userId: userId1,
-    });
+    await database()
+      .insert(schema.userProviders)
+      .values({
+        userId: userId1,
+        type: 'github',
+        sub: 'sub',
+      });
 
-    await saveMuteUser({
-      userId: userId1,
-      muteUserId: userId2,
-    });
+    await database()
+      .insert(schema.users)
+      .values({
+        id: userId2,
+        registeredAt: new Date(),
+      });
+
+    await database()
+      .insert(schema.userProfiles)
+      .values({
+        userId: userId2,
+        name: 'name2',
+        displayName: 'displayName2',
+        avatarUrl: 'avatarUrl2',
+      });
+
+    await database()
+      .insert(schema.muteUsers)
+      .values({
+        userId: userId1,
+        muteUserId: userId2,
+      });
   });
 
   describe('when not logged in', () => {
@@ -58,13 +76,13 @@ describe('mute-user', () => {
       jest.mocked(getUserMetadata).mockResolvedValue(undefined);
     });
 
-    it('should be unauthorized.', async () => {
+    it('should return error if unauthorized', async () => {
       const result = await unmuteUser(userId2);
 
       expect(result).toEqual({
         type: 'error',
         reason: 'unauthorized',
-        message: expect.any(String),
+        message: 'Login required!',
       } satisfies UnmuteUserResult);
     });
   });
@@ -79,18 +97,6 @@ describe('mute-user', () => {
         avatar_url: 'avatar_url',
       });
     });
-
-    it('should return error if try to unmute not muted user', async () => {
-      await unmuteUser(userId2);
-
-      const result = await unmuteUser(userId2);
-
-      expect(result).toEqual({
-        type: 'error',
-        reason: 'badRequest',
-        message: expect.any(String),
-      } satisfies UnmuteUserResult);
-    });
   
     it('should return error if try to mute yourself', async () => {
       const result = await unmuteUser(userId1);
@@ -98,31 +104,26 @@ describe('mute-user', () => {
       expect(result).toEqual({
         type: 'error',
         reason: 'badRequest',
-        message: expect.any(String),
+        message: 'Can\'t unmute yourself!',
       } satisfies UnmuteUserResult);
     });
-  
+
+    it('should return error if try to mute non-existing user', async () => {
+      const result = await unmuteUser(createId());
+
+      expect(result).toEqual({
+        type: 'error',
+        reason: 'badRequest',
+        message: 'User not found!',
+      } satisfies MuteUserResult);
+    });
+
     it('should return success when already muted', async () => {
       const result = await unmuteUser(userId2);
 
       expect(result).toEqual({
         type: 'success',
-        message: expect.any(String),
-      } satisfies UnmuteUserResult);
-    });
-
-    it('should return success when not muted', async () => {
-      await deleteMuteUser({
-        userId: userId1,
-        muteUserId: userId2,
-      });
-
-      const result = await unmuteUser(userId2);
-
-      expect(result).toEqual({
-        type: 'error',
-        reason: 'badRequest',
-        message: expect.any(String),
+        message: '@name2 has been unmuted.',
       } satisfies UnmuteUserResult);
     });
   });

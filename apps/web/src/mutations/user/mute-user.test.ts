@@ -2,10 +2,10 @@ import { createId } from '@paralleldrive/cuid2';
 
 import { muteUser } from './mute-user';
 import { getUserMetadata } from '../../app/_libs/auth/server/get-user-metadata';
+import { database } from '../../app/_libs/database';
+import { schema } from '../../app/_libs/database/schema';
 import { setupDatabase } from '../../app/_libs/test/setup-database';
 import { setupWorker } from '../../app/_libs/test/setup-worker';
-import { saveUserProvider } from '../../repositories/user-provider-repository';
-import { saveUser } from '../../repositories/user-repository';
 
 import type { MuteUserResult } from './mute-user';
 
@@ -21,29 +21,45 @@ describe('mute-user', () => {
   const userId2 = createId();
 
   beforeEach(async () => {
-    await saveUser({
-      id: userId1,
-      profile: {
-        avatarUrl: 'avatarUrl',
-        name: 'name',
-        displayName: 'displayName',
-      },
-    });
+    await database()
+      .insert(schema.users)
+      .values({
+        id: userId1,
+        registeredAt: new Date(),
+      });
 
-    await saveUser({
-      id: userId2,
-      profile: {
-        avatarUrl: 'avatarUrl',
-        name: 'name',
-        displayName: 'displayName',
-      },
-    });
+    await database()
+      .insert(schema.userProfiles)
+      .values({
+        userId: userId1,
+        name: 'name1',
+        displayName: 'displayName1',
+        avatarUrl: 'avatarUrl1',
+      });
 
-    await saveUserProvider({
-      sub: 'sub',
-      type: 'github',
-      userId: userId1,
-    });
+    await database()
+      .insert(schema.userProviders)
+      .values({
+        userId: userId1,
+        type: 'github',
+        sub: 'sub',
+      });
+
+    await database()
+      .insert(schema.users)
+      .values({
+        id: userId2,
+        registeredAt: new Date(),
+      });
+
+    await database()
+      .insert(schema.userProfiles)
+      .values({
+        userId: userId2,
+        name: 'name2',
+        displayName: 'displayName2',
+        avatarUrl: 'avatarUrl2',
+      });
   });
 
   describe('when not logged in', () => {
@@ -58,7 +74,7 @@ describe('mute-user', () => {
       expect(result).toEqual({
         type: 'error',
         reason: 'unauthorized',
-        message: expect.any(String),
+        message: 'Login required!',
       } satisfies MuteUserResult);
     });
   });
@@ -80,28 +96,26 @@ describe('mute-user', () => {
       expect(result).toEqual({
         type: 'error',
         reason: 'badRequest',
-        message: expect.any(String),
+        message: 'Can\'t mute yourself!',
       } satisfies MuteUserResult);
     });
 
-    it('should return error if try to mute already muted user', async () => {
-      await muteUser(userId2);
-
-      const result = await muteUser(userId2);
+    it('should return error if try to mute non-existing user', async () => {
+      const result = await muteUser(createId());
 
       expect(result).toEqual({
         type: 'error',
         reason: 'badRequest',
-        message: expect.any(String),
+        message: 'User not found!',
       } satisfies MuteUserResult);
     });
-    
+
     it('should return success if try to mute someone else', async () => {
       const result = await muteUser(userId2);
 
       expect(result).toEqual({
         type: 'success',
-        message: expect.any(String),
+        message: '@name2 has been muted.',
       } satisfies MuteUserResult);
     });
   });
