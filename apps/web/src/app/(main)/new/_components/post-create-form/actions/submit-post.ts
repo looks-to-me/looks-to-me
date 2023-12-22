@@ -4,12 +4,10 @@ import { createId } from '@paralleldrive/cuid2';
 import { revalidatePath } from 'next/cache';
 import { coerce, instance, minValue, number, object, parse } from 'valibot';
 
+import { getLoginUser } from '../../../../../../queries/user/get-login-user';
 import { deleteImage, saveImage } from '../../../../../../repositories/image-repository';
 import { deletePost, savePost } from '../../../../../../repositories/post-repository';
-import { findUserProviderByTypeAndSub } from '../../../../../../repositories/user-provider-repository';
-import { findUserById } from '../../../../../../repositories/user-repository';
 import { postWordSchema } from '../../../../../../schemas/post-word-schema';
-import { getUserMetadata } from '../../../../../_libs/auth/server/get-user-metadata';
 import { publicEnv } from '../../../../../_libs/env';
 import { storage } from '../../../../../_libs/storage';
 
@@ -34,13 +32,7 @@ export type SubmitPostResult = {
 
 export const submitPost = async (formData: FormData): Promise<SubmitPostResult> => {
   try {
-    const userMetadata = await getUserMetadata();
-    if (!userMetadata) return { type: 'error', reason: 'unauthorized', message: 'Login required!' };
-
-    const userProvider = await findUserProviderByTypeAndSub(userMetadata.provider, userMetadata.sub);
-    if (!userProvider) return { type: 'error', reason: 'unauthorized', message: 'Login required!' };
-
-    const user = await findUserById(userProvider.userId);
+    const user = await getLoginUser();
     if (!user) return { type: 'error', reason: 'unauthorized', message: 'Login required!' };
 
     const input = parse(inputSchema, {
