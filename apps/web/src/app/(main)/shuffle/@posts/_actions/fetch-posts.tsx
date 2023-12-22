@@ -43,7 +43,7 @@ export const fetchPosts = async (): Promise<InfiniteScrollEdge[]> => {
           isNull(schema.muteUsers.userId),
           ne(schema.muteUsers.userId, user?.id ?? ''),
         ),
-        sql`posts._ROWID_ >= (ABS(RANDOM()) % ((SELECT MAX(_ROWID_) FROM posts) - ${limit} + 2))`,
+        sql`posts._ROWID_ >= (ABS(RANDOM()) % ((SELECT MAX(_ROWID_) FROM posts)))`,
       ),
     )
     .limit(limit)
