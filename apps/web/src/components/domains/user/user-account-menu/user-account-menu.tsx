@@ -4,6 +4,7 @@ import Link from 'next/link';
 import * as styles from './user-account-menu.css';
 import LogoutIcon from '../../../../icons/logout.svg';
 import PersonIcon from '../../../../icons/person.svg';
+import SettingsIcon from '../../../../icons/settings.svg';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../elements/avatar';
 import {
   DropDownMenu,
@@ -70,6 +71,14 @@ export const UserAccountMenu: FC<UserAccountMenuProps> = ({
                 <LogoutIcon />
               </DropDownMenuIcon>
               Logout
+            </Link>
+          </DropDownMenuItem>
+          <DropDownMenuItem asChild>
+            <Link href="/settings">
+              <DropDownMenuIcon>
+                <SettingsIcon />
+              </DropDownMenuIcon>
+              Settings
             </Link>
           </DropDownMenuItem>
         </DropDownMenuGroup>
