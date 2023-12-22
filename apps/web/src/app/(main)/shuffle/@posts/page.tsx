@@ -19,10 +19,15 @@ export type ShufflePostListPageProps = ShufflePageProps & PageProps<{
 const ShufflePostListPage: FC<ShufflePostListPageProps> = async () => {
   const posts = await fetchPosts();
 
+  const fetcher = async () => {
+    'use server';
+    return await fetchPosts();
+  };
+
   return (
     <PostList
       posts={posts}
-      fetcher={fetchPosts}
+      fetcher={fetcher}
     />
   );
 };
