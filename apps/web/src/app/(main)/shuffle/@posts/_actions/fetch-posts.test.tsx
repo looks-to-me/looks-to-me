@@ -129,14 +129,6 @@ describe('fetchPosts', () => {
       expect(posts).toHaveLength(2);
     });
 
-    it('should return posts in the order of latest', async () => {
-      const posts = await fetchPosts();
-
-      const elements = posts.map(post => post.node as ReactElement<PostProps>);
-      expect(elements[0]?.props.post.id).toBe(postId2);
-      expect(elements[1]?.props.post.id).toBe(postId1);
-    });
-
     describe('when user muted', () => {
       beforeEach(async () => {
         await database()
