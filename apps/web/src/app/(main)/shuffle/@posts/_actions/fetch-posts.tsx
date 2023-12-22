@@ -1,9 +1,8 @@
 'use server';
 
-import { eq, inArray, notInArray, sql } from 'drizzle-orm';
+import { and, eq, isNull, ne, or, sql } from 'drizzle-orm';
 
 import { getLoginUser } from '../../../../../queries/user/get-login-user';
-import { findMuteUsersByUserId } from '../../../../../repositories/mute-user-repository';
 import { database } from '../../../../_libs/database';
 import { schema } from '../../../../_libs/database/schema';
 import { Post } from '../../../_components/post';
@@ -25,29 +24,6 @@ const limit = 32;
 export const fetchPosts = async (): Promise<InfiniteScrollEdge[]> => {
   const user = await getLoginUser();
 
-  const muteUsers = user?.id ?
-    await findMuteUsersByUserId(user.id)
-    : [];
-  const muteUsersIds = muteUsers.map(user => user.muteUserId);
-
-  //TODO: Exclude already retrieved postIds.
-  const randomPostIds = await(async () => {
-    const randomPosts = await database()
-      .select({
-        id: schema.posts.id,
-      })
-      .from(schema.posts)
-      .where(
-        muteUsersIds.length
-          ? notInArray(schema.posts.userId, muteUsersIds)
-          : undefined,
-      )
-      .orderBy(sql`RANDOM()`)
-      .limit(limit)
-      .all();
-    return randomPosts.map((post) => post.id);
-  })();
-
   const posts = await database()
     .select({
       id: schema.posts.id,
@@ -60,7 +36,16 @@ export const fetchPosts = async (): Promise<InfiniteScrollEdge[]> => {
     .from(schema.posts)
     .innerJoin(schema.users, eq(schema.posts.userId, schema.users.id))
     .innerJoin(schema.userProfiles, eq(schema.userProfiles.userId, schema.users.id))
-    .where(inArray(schema.posts.id, randomPostIds))
+    .leftJoin(schema.muteUsers, eq(schema.muteUsers.muteUserId, schema.users.id))
+    .where(
+      and(
+        or(
+          isNull(schema.muteUsers.userId),
+          ne(schema.muteUsers.userId, user?.id ?? ''),
+        ),
+        sql`posts._ROWID_ >= (ABS(RANDOM()) % ((SELECT MAX(_ROWID_) FROM posts) - ${limit} + 2))`,
+      ),
+    )
     .limit(limit)
     .all();
 

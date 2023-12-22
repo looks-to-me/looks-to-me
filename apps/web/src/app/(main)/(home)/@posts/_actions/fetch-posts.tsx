@@ -1,9 +1,8 @@
 'use server';
 
-import { and, desc, eq, lt, notInArray } from 'drizzle-orm';
+import { and, desc, eq, isNull, lt, ne, or } from 'drizzle-orm';
 
 import { getLoginUser } from '../../../../../queries/user/get-login-user';
-import { findMuteUsersByUserId } from '../../../../../repositories/mute-user-repository';
 import { database } from '../../../../_libs/database';
 import { schema } from '../../../../_libs/database/schema';
 import { Post } from '../../../_components/post';
@@ -14,11 +13,6 @@ const limit = 32;
 
 export const fetchPosts = async (cursor?: string): Promise<InfiniteScrollEdge[]> => {
   const user = await getLoginUser();
-
-  const muteUsers = user?.id ?
-    await findMuteUsersByUserId(user.id)
-    : [];
-  const muteUserIds = muteUsers.map(user => user.muteUserId);
 
   const posts = await database()
     .select({
@@ -32,12 +26,14 @@ export const fetchPosts = async (cursor?: string): Promise<InfiniteScrollEdge[]>
     .from(schema.posts)
     .innerJoin(schema.users, eq(schema.posts.userId, schema.users.id))
     .innerJoin(schema.userProfiles, eq(schema.userProfiles.userId, schema.users.id))
+    .leftJoin(schema.muteUsers, eq(schema.muteUsers.muteUserId, schema.users.id))
     .where(
       and(
+        or(
+          isNull(schema.muteUsers.userId),
+          ne(schema.muteUsers.userId, user?.id ?? ''),
+        ),
         cursor ? lt(schema.posts.postedAt, new Date(cursor)) : undefined,
-        muteUserIds.length
-          ? notInArray(schema.posts.userId, muteUserIds)
-          : undefined,
       ),
     )
     .orderBy(desc(schema.posts.postedAt))
