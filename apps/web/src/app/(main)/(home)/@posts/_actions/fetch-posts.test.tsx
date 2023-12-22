@@ -2,48 +2,13 @@ import { createId } from '@paralleldrive/cuid2';
 
 import { fetchPosts } from './fetch-posts';
 import { getLoginUser } from '../../../../../queries/user/get-login-user';
-import { saveImage } from '../../../../../repositories/image-repository';
-import { saveMuteUser } from '../../../../../repositories/mute-user-repository';
-import { savePost } from '../../../../../repositories/post-repository';
-import { saveUser } from '../../../../../repositories/user-repository';
+import { database } from '../../../../_libs/database';
+import { schema } from '../../../../_libs/database/schema';
 import { setupDatabase } from '../../../../_libs/test/setup-database';
 import { setupWorker } from '../../../../_libs/test/setup-worker';
 
-import type { Image } from '../../../../../repositories/image-repository';
-import type { User } from '../../../../../repositories/user-repository';
-import type { Post as PostComponent } from '../../../_components/post';
-import type { ComponentProps, ReactElement } from 'react';
-
-const createUser = async (user?: Partial<User>) => {
-  return await saveUser({
-    id: createId(),
-    ...user,
-    profile: {
-      name: 'name',
-      displayName: 'display-name',
-      avatarUrl: 'avatar-url',
-      ...user?.profile,
-    },
-  });
-};
-
-const createImage = async (user: User) => {
-  return await saveImage({
-    id: createId(),
-    userId: user.id,
-    width: 100,
-    height: 100,
-  });
-};
-
-const createPost = async (user: User, image: Image) => {
-  return await savePost({
-    id: createId(),
-    userId: user.id,
-    imageId: image.id,
-    word: createId(),
-  });
-};
+import type { PostProps } from '../../../_components/post';
+import type { ReactElement } from 'react';
 
 jest.mock('@supabase/auth-helpers-nextjs');
 jest.mock('../../../../../queries/user/get-login-user');
@@ -52,46 +17,148 @@ describe('fetchPosts', () => {
   setupWorker();
   setupDatabase();
 
-  describe('when mute user', () => {
-    const userId = createId();
+  describe('when post not found', () => {
+    it('should return empty array', async () => {
+      const posts = await fetchPosts();
 
+      expect(posts).toHaveLength(0);
+    });
+  });
+
+  describe('when post found', () => {
+    const userId1 = createId();
+    const userId2 = createId();
+
+    const postId1 = createId();
+    const postId2 = createId();
+    
     beforeEach(async () => {
-      const user = await createUser({ id: userId });
-      const image = await createImage(user);
-      await createPost(user, image);
+      const user1 = await database()
+        .insert(schema.users)
+        .values({
+          id: userId1,
+          registeredAt: new Date(),
+        })
+        .returning()
+        .get();
 
-      jest.mocked(getLoginUser).mockResolvedValue(user);
+      const userProfile1 = await database()
+        .insert(schema.userProfiles)
+        .values({
+          userId: user1.id,
+          name: 'name',
+          displayName: 'displayName',
+          avatarUrl: 'avatarUrl',
+        })
+        .returning()
+        .get();
+
+      const image1 = await database()
+        .insert(schema.images)
+        .values({
+          id: createId(),
+          userId: user1.id,
+          width: 100,
+          height: 100,
+          uploadedAt: new Date(),
+        })
+        .returning()
+        .get();
+
+      await database()
+        .insert(schema.posts)
+        .values({
+          id: postId1,
+          userId: user1.id,
+          imageId: image1.id,
+          word: 'word',
+          postedAt: new Date(),
+        });
+
+      const user2 = await database()
+        .insert(schema.users)
+        .values({
+          id: userId2,
+          registeredAt: new Date(),
+        })
+        .returning()
+        .get();
+
+      await database()
+        .insert(schema.userProfiles)
+        .values({
+          userId: user2.id,
+          name: 'name',
+          displayName: 'displayName',
+          avatarUrl: 'avatarUrl',
+        })
+        .returning()
+        .get();
+
+      const image2 = await database()
+        .insert(schema.images)
+        .values({
+          id: createId(),
+          userId: user2.id,
+          width: 100,
+          height: 100,
+          uploadedAt: new Date(),
+        })
+        .returning()
+        .get();
+
+      await database()
+        .insert(schema.posts)
+        .values({
+          id: postId2,
+          userId: user2.id,
+          imageId: image2.id,
+          word: 'word',
+          postedAt: new Date(),
+        });
+
+      jest.mocked(getLoginUser).mockResolvedValue({
+        ...user1,
+        profile: userProfile1,
+      });
     });
 
-    it('should user1 cannot retrieve posts from user2 if user1 have muted user2."', async () => {
-      const user2 = await createUser();
-      const image2 = await createImage(user2);
-      const post2 = await createPost(user2, image2);
+    it('should return posts', async () => {
+      const posts = await fetchPosts();
 
-      await saveMuteUser({
-        userId,
-        muteUserId: user2.id,
+      expect(posts).toHaveLength(2);
+    });
+
+    it('should return posts in the order of latest', async () => {
+      const posts = await fetchPosts();
+
+      const elements = posts.map(post => post.node as ReactElement<PostProps>);
+      expect(elements[0]?.props.post.id).toBe(postId2);
+      expect(elements[1]?.props.post.id).toBe(postId1);
+    });
+
+    describe('when user muted', () => {
+      beforeEach(async () => {
+        await database()
+          .insert(schema.muteUsers)
+          .values({
+            userId: userId1,
+            muteUserId: userId2,
+          });
       });
 
-      const posts = await fetchPosts();
-      const postElements = posts.map(
-        (post) =>
-          post.node as ReactElement<ComponentProps<typeof PostComponent>>,
-      );
-      const postIds = postElements.map((post) => post.props.post.id);
-      
-      expect(posts.length).toEqual(1);
-      expect(postIds.includes(post2.id)).toBeFalsy();
-    });
+      it('should return post once', async () => {
+        const posts = await fetchPosts();
 
-    it('should user1 be able to get all posts if user1 has muted anyone.', async () => {
-      const user2 = await createUser();
-      const image2 = await createImage(user2);
-      await createPost(user2, image2);
+        expect(posts).toHaveLength(1);
+      });
 
-      const posts = await fetchPosts();
+      it('should not return user2 post', async () => {
+        const posts = await fetchPosts();
 
-      expect(posts.length).toEqual(2);
+        const elements = posts.map(post => post.node as ReactElement<PostProps>);
+        expect(elements[0]?.props.post.id).toBe(postId1);
+      });
     });
   });
 });
