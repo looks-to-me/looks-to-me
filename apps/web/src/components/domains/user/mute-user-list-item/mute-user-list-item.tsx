@@ -45,7 +45,7 @@ export const MuteUserListItem: FC<MuteUserListItemProps> = ({
       <Button
         className={styles.unmutedButton}
         onClick={() => console.log('TODO: Implement unmute user feature.')}
-        size="large"
+        size="medium"
       >
         <ButtonIcon>
           <UnmuteIcon />
