@@ -20,7 +20,7 @@ export const MuteUserListItem: FC<MuteUserListItemProps> = ({
   user,
 }) => {
   return (
-    <div className={clsx(className, styles.wrapper)}>
+    <li className={clsx(className, styles.wrapper)}>
       <Link
         href={`/@${user.profile.name}`}
         className={styles.profileWrapper}
@@ -52,6 +52,6 @@ export const MuteUserListItem: FC<MuteUserListItemProps> = ({
         </ButtonIcon>
         Unmute
       </Button>
-    </div>
+    </li>
   );
 };

@@ -5,6 +5,7 @@ import { theme } from '../../../../themes';
 export const wrapper = style({
   display: 'flex',
   padding: ' 16px',
+  margin: '0',
   justifyContent: 'space-between',
   borderBottom: `solid 1px ${theme.color.token.semantic.border}`,
   selectors: {

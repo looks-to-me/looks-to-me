@@ -7,6 +7,7 @@ export const mutedWrapper = style({
   flexDirection: 'column',
   border: `solid 1px ${theme.color.token.semantic.border}`,
   borderRadius: theme.size.radius.medium,
+  paddingLeft: '0',
 });
 
 export const notMutedWrapper = style({
