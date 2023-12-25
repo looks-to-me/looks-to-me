@@ -66,19 +66,19 @@ export const UserAccountMenu: FC<UserAccountMenuProps> = ({
             </Link>
           </DropDownMenuItem>
           <DropDownMenuItem asChild>
-            <Link href="/logout">
-              <DropDownMenuIcon>
-                <LogoutIcon />
-              </DropDownMenuIcon>
-              Logout
-            </Link>
-          </DropDownMenuItem>
-          <DropDownMenuItem asChild>
             <Link href="/settings">
               <DropDownMenuIcon>
                 <SettingsIcon />
               </DropDownMenuIcon>
               Settings
+            </Link>
+          </DropDownMenuItem>
+          <DropDownMenuItem asChild>
+            <Link href="/logout">
+              <DropDownMenuIcon>
+                <LogoutIcon />
+              </DropDownMenuIcon>
+              Logout
             </Link>
           </DropDownMenuItem>
         </DropDownMenuGroup>
