@@ -3,14 +3,10 @@ import { clsx } from 'clsx';
 import Link from 'next/link';
 
 import * as styles from './mute-user-list-item.css';
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from '../../../../elements/avatar';
-import { Button } from '../../../../elements/button';
+import { Avatar, AvatarFallback, AvatarImage } from '../../../elements/avatar';
+import { Button } from '../../../elements/button';
 
-import type { User } from '../../../../../repositories/user-repository';
+import type { User } from '../../../../repositories/user-repository';
 import type { FC } from 'react';
 
 export type MuteUserListItemProps = {

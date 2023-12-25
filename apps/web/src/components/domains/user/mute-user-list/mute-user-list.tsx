@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
 
-import { MuteUserListItem } from './mute-user-list-item';
 import * as styles from './mute-user-list.css';
+import { MuteUserListItem } from '../mute-user-list-item';
 
 import type { User } from '../../../../repositories/user-repository';
 import type { FC } from 'react';
