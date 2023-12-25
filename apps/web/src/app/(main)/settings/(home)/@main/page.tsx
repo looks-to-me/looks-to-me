@@ -1,5 +1,5 @@
 import * as styles from './page.css';
-import { MuteUserList } from '../../../../../components/domains/user/mute-user-list';
+import { UserMuteList } from '../../../../../components/domains/user/user-mute-list';
 
 import type { User } from '../../../../../repositories/user-repository';
 import type { PageProps } from '../../../../../types/page-props';
@@ -51,7 +51,7 @@ const SettingsHomeMainPage: FC<SettingsHomeMainPageProps> = () => {
   return (
     <div className={styles.wrapper}>
       {/* TODO: Add SettingTitle Component. */}
-      <MuteUserList muteUsers={demoMuteUsers} />
+      <UserMuteList muteUsers={demoMuteUsers} />
     </div>
   );
 };

@@ -1,12 +1,12 @@
-import { MuteUserList } from './mute-user-list';
+import { UserMuteList } from './user-mute-list';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  component: MuteUserList,
-} as Meta<typeof MuteUserList>;
+  component: UserMuteList,
+} as Meta<typeof UserMuteList>;
 
-type Story = StoryObj<typeof MuteUserList>;
+type Story = StoryObj<typeof UserMuteList>;
 
 export const Default = {
   args: {

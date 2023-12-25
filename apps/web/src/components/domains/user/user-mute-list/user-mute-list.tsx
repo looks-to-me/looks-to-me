@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
 
-import * as styles from './mute-user-list.css';
-import { MuteUserListItem } from '../mute-user-list-item';
+import * as styles from './user-mute-list.css';
+import { UserMuteListItem } from '../user-mute-list-item';
 
 import type { User } from '../../../../repositories/user-repository';
 import type { FC } from 'react';
@@ -11,7 +11,7 @@ export type MuteUserListProps = {
   muteUsers: User[];
 };
 
-export const MuteUserList: FC<MuteUserListProps> = ({
+export const UserMuteList: FC<MuteUserListProps> = ({
   className,
   muteUsers,
 }) => {
@@ -26,7 +26,7 @@ export const MuteUserList: FC<MuteUserListProps> = ({
   return (
     <ul className={clsx(className, styles.mutedWrapper)}>
       {muteUsers.map((user) => (
-        <MuteUserListItem key={user.id} user={user} />
+        <UserMuteListItem key={user.id} user={user} />
       ))}
     </ul>
   );

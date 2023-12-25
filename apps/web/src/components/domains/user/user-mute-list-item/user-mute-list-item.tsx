@@ -2,7 +2,7 @@
 import { clsx } from 'clsx';
 import Link from 'next/link';
 
-import * as styles from './mute-user-list-item.css';
+import * as styles from './user-mute-list-item.css';
 import UnmuteIcon from '../../../../icons/unmute.svg';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../elements/avatar';
 import { Button, ButtonIcon } from '../../../elements/button';
@@ -15,7 +15,7 @@ export type MuteUserListItemProps = {
   user: User;
 };
 
-export const MuteUserListItem: FC<MuteUserListItemProps> = ({
+export const UserMuteListItem: FC<MuteUserListItemProps> = ({
   className,
   user,
 }) => {
