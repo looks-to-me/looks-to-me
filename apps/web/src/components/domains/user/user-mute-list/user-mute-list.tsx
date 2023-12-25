@@ -3,12 +3,17 @@ import { clsx } from 'clsx';
 import * as styles from './user-mute-list.css';
 import { UserMuteListItem } from '../user-mute-list-item';
 
-import type { User } from '../../../../repositories/user-repository';
 import type { FC } from 'react';
 
 export type MuteUserListProps = {
   className?: string | undefined;
-  muteUsers: User[];
+  muteUsers: {
+    id: string;
+    profile: {
+      name: string;
+      displayName: string | null;
+    };
+  }[];
 };
 
 export const UserMuteList: FC<MuteUserListProps> = ({

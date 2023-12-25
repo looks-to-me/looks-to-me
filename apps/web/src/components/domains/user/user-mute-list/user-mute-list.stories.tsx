@@ -16,7 +16,6 @@ export const Default = {
         profile: {
           name: 'name',
           displayName: 'displayName',
-          avatarUrl: 'https://example.com/avatar.png',
         },
       },
       {
@@ -24,7 +23,6 @@ export const Default = {
         profile: {
           name: 'name',
           displayName: 'displayName',
-          avatarUrl: 'https://example.com/avatar.png',
         },
       },
     ],
