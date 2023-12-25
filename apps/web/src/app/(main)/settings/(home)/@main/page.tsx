@@ -1,5 +1,5 @@
 import * as styles from './page.css';
-import { MuteUserList } from '../../../../../components/domains/mute-user/mute-user-list';
+import { MuteUserList } from '../../../../../components/domains/user/mute-user-list';
 
 import type { User } from '../../../../../repositories/user-repository';
 import type { PageProps } from '../../../../../types/page-props';
