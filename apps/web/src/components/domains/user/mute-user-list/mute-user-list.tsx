@@ -26,7 +26,7 @@ export const MuteUserList: FC<MuteUserListProps> = ({
   return (
     <div className={clsx(className, styles.mutedWrapper)}>
       {muteUsers.map((user) => (
-        <MuteUserListItem key={user.id} muteUser={user} />
+        <MuteUserListItem key={user.id} user={user} />
       ))}
     </div>
   );

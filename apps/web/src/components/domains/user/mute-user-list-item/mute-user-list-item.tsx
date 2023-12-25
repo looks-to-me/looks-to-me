@@ -11,33 +11,33 @@ import type { FC } from 'react';
 
 export type MuteUserListItemProps = {
   className?: string | undefined;
-  muteUser: User;
+  user: User;
 };
 
 export const MuteUserListItem: FC<MuteUserListItemProps> = ({
   className,
-  muteUser,
+  user,
 }) => {
   return (
     <div className={clsx(className, styles.wrapper)}>
       <Link
-        href={`/@${muteUser.profile.name}`}
+        href={`/@${user.profile.name}`}
         className={styles.profileWrapper}
       >
         <Avatar className={styles.avatar}>
           <AvatarImage
-            src={`/images/avatars/${muteUser.id}`}
-            alt={muteUser.profile.displayName ?? muteUser.profile.name}
+            src={`/images/avatars/${user.id}`}
+            alt={user.profile.displayName ?? user.profile.name}
             sizes="64px"
           />
           <AvatarFallback>
-            {muteUser.profile.displayName ?? muteUser.profile.name}
+            {user.profile.displayName ?? user.profile.name}
           </AvatarFallback>
         </Avatar>
         <div className={styles.nameWrapper}>
-          <div className={styles.accountName}>{muteUser.profile.name}</div>
+          <div className={styles.accountName}>{user.profile.name}</div>
           <div className={styles.displayName}>
-            {muteUser.profile.displayName}
+            {user.profile.displayName}
           </div>
         </div>
       </Link>
