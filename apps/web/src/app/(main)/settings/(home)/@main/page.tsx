@@ -1,4 +1,6 @@
+import { demoMuteUsers } from './demo-mute-users';
 import * as styles from './page.css';
+import { MuteUserList } from '../../../../../components/domains/mute-user/mute-user-list';
 
 import type { PageProps } from '../../../../../types/page-props';
 import type { SettingsHomePageProps } from '../page';
@@ -16,10 +18,10 @@ export type SettingsHomeMainPageProps = SettingsHomePageProps & PageProps<{
 }>;
 
 const SettingsHomeMainPage: FC<SettingsHomeMainPageProps> = () => {
-
   return (
     <div className={styles.wrapper}>
-      {/* TODO: Display a list of muted users */}
+      {/* TODO: Add SettingTitle Component. */}
+      <MuteUserList muteUsers={demoMuteUsers} />
     </div>
   );
 };
