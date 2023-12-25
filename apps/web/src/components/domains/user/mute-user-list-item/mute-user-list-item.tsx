@@ -3,8 +3,9 @@ import { clsx } from 'clsx';
 import Link from 'next/link';
 
 import * as styles from './mute-user-list-item.css';
+import UnmuteIcon from '../../../../icons/unmute.svg';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../elements/avatar';
-import { Button } from '../../../elements/button';
+import { Button, ButtonIcon } from '../../../elements/button';
 
 import type { User } from '../../../../repositories/user-repository';
 import type { FC } from 'react';
@@ -46,6 +47,9 @@ export const MuteUserListItem: FC<MuteUserListItemProps> = ({
         onClick={() => console.log('TODO: Implement unmute user feature.')}
         size="large"
       >
+        <ButtonIcon>
+          <UnmuteIcon />
+        </ButtonIcon>
         Unmute
       </Button>
     </div>
