@@ -87,6 +87,7 @@ describe('get-muted-users', () => {
           })
           .run();
       });
+      
       it('should return return array containing user2\'s profile', async () => {
         const result = await getMutedUsers();
         expect(result).toEqual([
@@ -98,9 +99,7 @@ describe('get-muted-users', () => {
             },
           },
         ]);
-        expect(true).toBe(true);
       });
     });
-
   });
 });
