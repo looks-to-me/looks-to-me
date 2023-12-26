@@ -1,5 +1,7 @@
 import * as styles from './page.css';
+import { UserMuteList } from '../../../../../components/domains/user/user-mute-list';
 
+import type { User } from '../../../../../repositories/user-repository';
 import type { PageProps } from '../../../../../types/page-props';
 import type { SettingsHomePageProps } from '../page';
 import type { FC } from 'react';
@@ -15,11 +17,41 @@ export type SettingsHomeMainPageProps = SettingsHomePageProps & PageProps<{
   };
 }>;
 
-const SettingsHomeMainPage: FC<SettingsHomeMainPageProps> = () => {
+const demoMuteUsers: User[] = [
+  {
+    id: '1',
+    profile: {
+      avatarUrl:
+        'https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK_400x400.jpg',
+      displayName: '@drizzle',
+      name: 'Drizzle',
+    },
+  },
+  {
+    id: '2',
+    profile: {
+      avatarUrl:
+        'https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK_400x400.jpg',
+      displayName: '@drizzle',
+      name: 'Drizzle',
+    },
+  },
+  {
+    id: '3',
+    profile: {
+      avatarUrl:
+        'https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK_400x400.jpg',
+      displayName: '@drizzle',
+      name: 'Drizzle',
+    },
+  },
+];
 
+const SettingsHomeMainPage: FC<SettingsHomeMainPageProps> = () => {
   return (
     <div className={styles.wrapper}>
-      {/* TODO: Display a list of muted users */}
+      {/* TODO: Add SettingTitle Component. */}
+      <UserMuteList users={demoMuteUsers} />
     </div>
   );
 };
