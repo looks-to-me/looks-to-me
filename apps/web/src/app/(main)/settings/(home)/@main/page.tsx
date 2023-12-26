@@ -1,7 +1,11 @@
+import { redirect } from 'next/navigation';
+
 import * as styles from './page.css';
 import { UserMuteList } from '../../../../../components/domains/user/user-mute-list';
+import { getLoginUser } from '../../../../../queries/user/get-login-user';
+import { findMuteUsersByUserId } from '../../../../../repositories/mute-user-repository';
+import { findUsersByIds } from '../../../../../repositories/user-repository';
 
-import type { User } from '../../../../../repositories/user-repository';
 import type { PageProps } from '../../../../../types/page-props';
 import type { SettingsHomePageProps } from '../page';
 import type { FC } from 'react';
@@ -17,41 +21,18 @@ export type SettingsHomeMainPageProps = SettingsHomePageProps & PageProps<{
   };
 }>;
 
-const demoMuteUsers: User[] = [
-  {
-    id: '1',
-    profile: {
-      avatarUrl:
-        'https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK_400x400.jpg',
-      displayName: '@drizzle',
-      name: 'Drizzle',
-    },
-  },
-  {
-    id: '2',
-    profile: {
-      avatarUrl:
-        'https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK_400x400.jpg',
-      displayName: '@drizzle',
-      name: 'Drizzle',
-    },
-  },
-  {
-    id: '3',
-    profile: {
-      avatarUrl:
-        'https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK_400x400.jpg',
-      displayName: '@drizzle',
-      name: 'Drizzle',
-    },
-  },
-];
+const SettingsHomeMainPage: FC<SettingsHomeMainPageProps> = async () => {
+  const loginUser = await getLoginUser();
+  if (!loginUser) return redirect('/login');
 
-const SettingsHomeMainPage: FC<SettingsHomeMainPageProps> = () => {
+  const muteUsers = await findMuteUsersByUserId(loginUser.id);
+  const muteUserIds = muteUsers.map((muteUser) => muteUser.muteUserId);
+  const users = muteUserIds.length ? await findUsersByIds(muteUserIds) : [];
+  
   return (
     <div className={styles.wrapper}>
       {/* TODO: Add SettingTitle Component. */}
-      <UserMuteList users={demoMuteUsers} />
+      <UserMuteList users={users} />
     </div>
   );
 };

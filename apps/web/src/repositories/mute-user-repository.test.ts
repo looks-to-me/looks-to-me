@@ -1,7 +1,7 @@
 import { createId } from '@paralleldrive/cuid2';
 import { eq } from 'drizzle-orm';
 
-import { deleteMuteUser, findMuteUserByUserIdAndMuteUserId, saveMuteUser } from './mute-user-repository';
+import { deleteMuteUser, findMuteUsersByUserId, findMuteUserByUserIdAndMuteUserId, saveMuteUser } from './mute-user-repository';
 import { database } from '../app/_libs/database';
 import { schema } from '../app/_libs/database/schema';
 import { setupDatabase } from '../app/_libs/test/setup-database';
@@ -154,6 +154,22 @@ describe('mute-user-repository', () => {
       const result = await findMuteUserByUserIdAndMuteUserId(muteUser.userId, muteUser.muteUserId);
 
       expect(result).toBeUndefined();
+    });
+  });
+
+  describe('findMuteUsersByUserId', () => {
+    it('should find muteUsers by id', async () => {
+      await saveMuteUser(muteUser);
+
+      const result = await findMuteUsersByUserId(muteUser.userId);
+
+      expect(result).toEqual([muteUser]);
+    });
+
+    it('should return undefined if muteUser not found', async () => {
+      const result = await findMuteUsersByUserId(muteUser.userId);
+
+      expect(result).toEqual([]);
     });
   });
 });

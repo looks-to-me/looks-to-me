@@ -1,6 +1,6 @@
 'use server';
 
-import { eq, sql } from 'drizzle-orm';
+import { eq, inArray, sql } from 'drizzle-orm';
 
 import { database } from '../app/_libs/database';
 import { schema } from '../app/_libs/database/schema';
@@ -84,4 +84,20 @@ export const findUserByName = async (name: User['profile']['name']): Promise<Use
     .innerJoin(schema.userProfiles, eq(schema.users.id, schema.userProfiles.userId))
     .where(eq(schema.userProfiles.name, name))
     .get();
+};
+
+export const findUsersByIds = async (ids: User['id'][]): Promise<User[]> => {
+  return await database()
+    .select({
+      id: schema.users.id,
+      profile: {
+        name: schema.userProfiles.name,
+        displayName: schema.userProfiles.displayName,
+        avatarUrl: schema.userProfiles.avatarUrl,
+      },
+    })
+    .from(schema.users)
+    .innerJoin(schema.userProfiles, eq(schema.users.id, schema.userProfiles.userId))
+    .where(inArray(schema.users.id, ids))
+    .all();
 };
