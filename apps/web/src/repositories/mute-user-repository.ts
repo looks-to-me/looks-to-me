@@ -57,16 +57,3 @@ export const findMuteUserByUserIdAndMuteUserId = async (
     )
     .get();
 };
-
-export const findMuteUsersByUserId = async (
-  userId: MuteUser['userId'],
-): Promise<MuteUser[]> => {
-  return await database()
-    .select({
-      userId: schema.muteUsers.userId,
-      muteUserId: schema.muteUsers.muteUserId,
-    })
-    .from(schema.muteUsers)
-    .where(eq(schema.muteUsers.userId, userId))
-    .all();
-};

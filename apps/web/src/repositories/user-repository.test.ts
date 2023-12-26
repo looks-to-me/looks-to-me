@@ -1,7 +1,7 @@
 import { createId } from '@paralleldrive/cuid2';
 import { eq } from 'drizzle-orm';
 
-import { findUserById, findUserByName, findUsersByIds, saveUser } from './user-repository';
+import { findUserById, findUserByName, saveUser } from './user-repository';
 import { database } from '../app/_libs/database';
 import { schema } from '../app/_libs/database/schema';
 import { setupDatabase } from '../app/_libs/test/setup-database';
@@ -132,23 +132,6 @@ describe('user-repository', () => {
       const result = await findUserByName(user.profile.name);
 
       expect(result).toBeUndefined();
-    });
-  });
-
-  describe('findUsersByIds', () => {
-    it('should find users by ids', async () => {
-      await saveUser(user);
-      const userId2 = createId();
-      await saveUser({ ...user, id: userId2 });
-      
-      const result = await findUsersByIds([user.id, userId2]);
-      expect(result).toEqual(expect.arrayContaining([user, { ...user, id: userId2 }]));
-    });
-
-    it('should return undefined if user does not exist', async () => {
-      const result = await findUsersByIds([user.id]);
-
-      expect(result.length).toBe(0);
     });
   });
 });
