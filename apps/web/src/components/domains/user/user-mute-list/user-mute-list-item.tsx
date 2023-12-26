@@ -3,7 +3,7 @@ import { clsx } from 'clsx';
 import Link from 'next/link';
 
 import * as styles from './user-mute-list-item.css';
-import { useUnmuteUser } from '../../../../app/(main)/_components/post-menu/hooks/use-unmute-user';
+import { useUnmuteUser } from '../../../../hooks/use-unmute-user';
 import UnmuteIcon from '../../../../icons/unmute.svg';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../elements/avatar';
 import { Button, ButtonIcon } from '../../../elements/button';
