@@ -3,6 +3,7 @@ import { clsx } from 'clsx';
 import Link from 'next/link';
 
 import * as styles from './user-mute-list-item.css';
+import { useUnmuteUser } from '../../../../hooks/use-unmute-user';
 import UnmuteIcon from '../../../../icons/unmute.svg';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../elements/avatar';
 import { Button, ButtonIcon } from '../../../elements/button';
@@ -24,6 +25,11 @@ export const UserMuteListItem: FC<UserMuteListItemProps> = ({
   className,
   user,
 }) => {
+  const unmuteUser = useUnmuteUser({
+    unmuteUserId: user.id,
+    unmuteUserName: user.profile.name,
+  });
+  
   return (
     <li className={clsx(className, styles.wrapper)}>
       <Link
@@ -49,7 +55,7 @@ export const UserMuteListItem: FC<UserMuteListItemProps> = ({
       </Link>
       <Button
         className={styles.unmutedButton}
-        onClick={() => console.log('TODO: Implement unmute user feature.')}
+        onClick={unmuteUser}
         size="medium"
       >
         <ButtonIcon>

@@ -2,10 +2,10 @@
 
 import { useDeletePost } from './hooks/use-delete-post';
 import { useMuteUser } from './hooks/use-mute-user';
-import { useUnmuteUser } from './hooks/use-unmute-user';
 import { AccessibleIcon } from '../../../../components/elements/accessible-icon';
 import { Button, ButtonIcon } from '../../../../components/elements/button';
 import { DropDownMenu, DropDownMenuContent, DropDownMenuGroup, DropDownMenuIcon, DropDownMenuItem, DropDownMenuTrigger } from '../../../../components/elements/drop-down-menu';
+import { useUnmuteUser } from '../../../../hooks/use-unmute-user';
 import MenuIcon from '../../../../icons/menu.svg';
 import MuteIcon from '../../../../icons/mute.svg';
 import TrashcanIcon from '../../../../icons/trash-can.svg';
