@@ -1,11 +1,11 @@
 'use client';
 
 import { clsx } from 'clsx';
+import { Volume2Icon } from 'lucide-react';
 import Link from 'next/link';
 
 import * as styles from './user-mute-list-item.css';
 import { useUnmuteUser } from '../../../../hooks/use-unmute-user';
-import UnmuteIcon from '../../../../icons/unmute.svg';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../elements/avatar';
 import { Button, ButtonIcon } from '../../../elements/button';
 
@@ -60,7 +60,7 @@ export const UserMuteListItem: FC<UserMuteListItemProps> = ({
         size="medium"
       >
         <ButtonIcon>
-          <UnmuteIcon />
+          <Volume2Icon />
         </ButtonIcon>
         Unmute
       </Button>

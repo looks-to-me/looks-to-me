@@ -1,13 +1,10 @@
 import { getYear } from 'date-fns';
+import { CircleDotIcon, HomeIcon, MenuIcon, ShuffleIcon } from 'lucide-react';
 import Link from 'next/link';
 
 import * as styles from './application-navigation.css';
 import GitHubBlack from '../../../../icons/github-black.svg';
 import GitHubWhite from '../../../../icons/github-white.svg';
-import HomeIcon from '../../../../icons/home.svg';
-import MenuIcon from '../../../../icons/menu.svg';
-import ReportIcon from '../../../../icons/report.svg';
-import ShuffleIcon from '../../../../icons/shuffle.svg';
 import StorybookBlack from '../../../../icons/storybook-black.svg';
 import StorybookWhite from '../../../../icons/storybook-white.svg';
 import { AccessibleIcon } from '../../../elements/accessible-icon';
@@ -88,7 +85,7 @@ export const ApplicationNavigation: FC<ApplicationNavigationProps> = ({
           <Button variant="ghost" size="medium" borderless asChild>
             <a href="https://github.com/looks-to-me/looks-to-me/issues" target="_blank">
               <ButtonIcon>
-                <ReportIcon />
+                <CircleDotIcon />
               </ButtonIcon>
               Bug reports or feature requests
             </a>

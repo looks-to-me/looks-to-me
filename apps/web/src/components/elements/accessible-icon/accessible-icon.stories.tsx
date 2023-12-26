@@ -1,5 +1,6 @@
+import { XIcon } from 'lucide-react';
+
 import { AccessibleIcon } from './accessible-icon';
-import CloseIcon from '../../../icons/close.svg';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -12,6 +13,6 @@ type Story = StoryObj<typeof AccessibleIcon>;
 export const Default = {
   args: {
     label: 'Close',
-    children: <CloseIcon />,
+    children: <XIcon />,
   },
 } satisfies Story;

@@ -1,10 +1,10 @@
 'use client';
 
+import { CopyIcon } from 'lucide-react';
 import { useCallback } from 'react';
 import { toast } from 'sonner';
 
 import { Button, ButtonIcon } from '../../../../components/elements/button';
-import CopyIcon from '../../../../icons/copy.svg';
 
 import type { FC } from 'react';
 

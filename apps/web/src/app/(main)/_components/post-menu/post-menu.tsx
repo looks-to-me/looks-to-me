@@ -1,15 +1,13 @@
 'use client';
 
+import { MenuIcon, Trash2Icon, Volume2Icon, VolumeXIcon } from 'lucide-react';
+
 import { useDeletePost } from './hooks/use-delete-post';
 import { useMuteUser } from './hooks/use-mute-user';
 import { AccessibleIcon } from '../../../../components/elements/accessible-icon';
 import { Button, ButtonIcon } from '../../../../components/elements/button';
 import { DropDownMenu, DropDownMenuContent, DropDownMenuGroup, DropDownMenuIcon, DropDownMenuItem, DropDownMenuTrigger } from '../../../../components/elements/drop-down-menu';
 import { useUnmuteUser } from '../../../../hooks/use-unmute-user';
-import MenuIcon from '../../../../icons/menu.svg';
-import MuteIcon from '../../../../icons/mute.svg';
-import TrashcanIcon from '../../../../icons/trash-can.svg';
-import UnmuteIcon from '../../../../icons/unmute.svg';
 
 import type { Post } from '../../../../repositories/post-repository';
 import type { User } from '../../../../repositories/user-repository';
@@ -60,7 +58,7 @@ export const PostMenu: FC<PostMenuProps> = ({
             <DropDownMenuItem onClick={handleOnClickDeletePost} asChild>
               <Button variant="ghost" borderless>
                 <DropDownMenuIcon>
-                  <TrashcanIcon />
+                  <Trash2Icon />
                 </DropDownMenuIcon>
                 Delete
               </Button>
@@ -70,7 +68,7 @@ export const PostMenu: FC<PostMenuProps> = ({
             <DropDownMenuItem onClick={handleOnClickUnmuteUser} asChild>
               <Button variant="ghost" borderless>
                 <DropDownMenuIcon>
-                  <UnmuteIcon />
+                  <Volume2Icon />
                 </DropDownMenuIcon>
                 {`Unmute @${postUser.profile.name}`}
               </Button>
@@ -80,7 +78,7 @@ export const PostMenu: FC<PostMenuProps> = ({
             <DropDownMenuItem onClick={handleOnClickMuteUser} asChild>
               <Button variant="ghost" borderless>
                 <DropDownMenuIcon>
-                  <MuteIcon />
+                  <VolumeXIcon />
                 </DropDownMenuIcon>
                 {`Mute @${postUser.profile.name}`}
               </Button>
