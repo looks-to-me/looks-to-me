@@ -2,9 +2,7 @@ import { redirect } from 'next/navigation';
 
 import * as styles from './page.css';
 import { UserMuteList } from '../../../../../components/domains/user/user-mute-list';
-import { getLoginUser } from '../../../../../queries/user/get-login-user';
-import { findMuteUsersByUserId } from '../../../../../repositories/mute-user-repository';
-import { findUsersByIds } from '../../../../../repositories/user-repository';
+import { getMutedUsers } from '../../../../../queries/user/get-muted-users';
 
 import type { PageProps } from '../../../../../types/page-props';
 import type { SettingsHomePageProps } from '../page';
@@ -22,12 +20,8 @@ export type SettingsHomeMainPageProps = SettingsHomePageProps & PageProps<{
 }>;
 
 const SettingsHomeMainPage: FC<SettingsHomeMainPageProps> = async () => {
-  const loginUser = await getLoginUser();
-  if (!loginUser) return redirect('/login');
-
-  const muteUsers = await findMuteUsersByUserId(loginUser.id);
-  const muteUserIds = muteUsers.map((muteUser) => muteUser.muteUserId);
-  const users = muteUserIds.length ? await findUsersByIds(muteUserIds) : [];
+  const users = await getMutedUsers();
+  if (!users) return redirect('/login');
   
   return (
     <div className={styles.wrapper}>
