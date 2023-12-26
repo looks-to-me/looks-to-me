@@ -10,7 +10,7 @@ type Story = StoryObj<typeof UserMuteList>;
 
 export const Default = {
   args: {
-    muteUsers: [
+    users: [
       {
         id: '1',
         profile: {
@@ -31,6 +31,6 @@ export const Default = {
 
 export const Empty = {
   args: {
-    muteUsers: [],
+    users: [],
   },
 } satisfies Story;

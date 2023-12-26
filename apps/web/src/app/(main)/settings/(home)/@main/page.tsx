@@ -51,7 +51,7 @@ const SettingsHomeMainPage: FC<SettingsHomeMainPageProps> = () => {
   return (
     <div className={styles.wrapper}>
       {/* TODO: Add SettingTitle Component. */}
-      <UserMuteList muteUsers={demoMuteUsers} />
+      <UserMuteList users={demoMuteUsers} />
     </div>
   );
 };

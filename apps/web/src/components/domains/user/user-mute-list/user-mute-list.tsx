@@ -7,7 +7,7 @@ import type { FC } from 'react';
 
 export type UserMuteListProps = {
   className?: string | undefined;
-  muteUsers: {
+  users: {
     id: string;
     profile: {
       name: string;
@@ -18,9 +18,9 @@ export type UserMuteListProps = {
 
 export const UserMuteList: FC<UserMuteListProps> = ({
   className,
-  muteUsers,
+  users,
 }) => {
-  if (!muteUsers.length) {
+  if (!users.length) {
     return (
       <div className={clsx(className, styles.notMutedWrapper)}>
         You haven&apos;t muted anyone yet.
@@ -30,7 +30,7 @@ export const UserMuteList: FC<UserMuteListProps> = ({
 
   return (
     <ul className={clsx(className, styles.mutedWrapper)}>
-      {muteUsers.map((user) => (
+      {users.map((user) => (
         <UserMuteListItem key={user.id} user={user} />
       ))}
     </ul>
