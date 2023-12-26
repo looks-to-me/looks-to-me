@@ -22,14 +22,14 @@ export const UserMuteList: FC<UserMuteListProps> = ({
 }) => {
   if (!users.length) {
     return (
-      <div className={clsx(className, styles.notMutedWrapper)}>
+      <div className={clsx(className, styles.empty)}>
         You haven&apos;t muted anyone yet.
       </div>
     );
   }
 
   return (
-    <ul className={clsx(className, styles.mutedWrapper)}>
+    <ul className={clsx(className, styles.wrapper)}>
       {users.map((user) => (
         <UserMuteListItem key={user.id} user={user} />
       ))}

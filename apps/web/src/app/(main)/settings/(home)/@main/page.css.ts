@@ -5,9 +5,3 @@ export const wrapper = style({
   maxWidth: '600px',
   margin: '0 auto',
 });
-
-export const title = style({
-  fontWeight: '400',
-  fontSize:' 1.5rem',
-  margin: '0 0 10px 0',
-});
