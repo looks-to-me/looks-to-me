@@ -8,7 +8,11 @@ import { setupDatabase } from '../../app/_libs/test/setup-database';
 import { setupWorker } from '../../app/_libs/test/setup-worker';
 
 jest.mock('@supabase/auth-helpers-nextjs');
-
+jest.mock('next/navigation', () => ({
+  redirect: jest.fn(() => {
+    throw new Error('redirect');
+  }),
+}));
 jest.mock('./get-login-user');
 
 describe('get-muted-users', () => {
@@ -21,10 +25,8 @@ describe('get-muted-users', () => {
       jest.mocked(getLoginUser).mockResolvedValue(undefined);
     });
 
-    it('should return undefined', async () => {
-      const result = await getMutedUsers();
-
-      expect(result).toBeUndefined();
+    it('should throw error', async () => {
+      await expect( getMutedUsers()).rejects.toThrow();
     });
   });
 

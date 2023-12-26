@@ -1,5 +1,3 @@
-import { redirect } from 'next/navigation';
-
 import * as styles from './page.css';
 import { UserMuteList } from '../../../../../components/domains/user/user-mute-list';
 import { getMutedUsers } from '../../../../../queries/user/get-muted-users';
@@ -21,7 +19,6 @@ export type SettingsHomeMainPageProps = SettingsHomePageProps & PageProps<{
 
 const SettingsHomeMainPage: FC<SettingsHomeMainPageProps> = async () => {
   const users = await getMutedUsers();
-  if (!users) return redirect('/login');
   
   return (
     <div className={styles.wrapper}>

@@ -1,4 +1,5 @@
 import { eq } from 'drizzle-orm';
+import { redirect } from 'next/navigation';
 
 import { getLoginUser } from './get-login-user';
 import { database } from '../../app/_libs/database';
@@ -12,9 +13,9 @@ type MutedUser = {
   };
 };
 
-export const getMutedUsers = async (): Promise<MutedUser[] | undefined> => {
+export const getMutedUsers = async (): Promise<MutedUser[]> => {
   const loginUser = await getLoginUser();
-  if (!loginUser) return;
+  if (!loginUser) redirect('/login');
 
   return await database()
     .select({
