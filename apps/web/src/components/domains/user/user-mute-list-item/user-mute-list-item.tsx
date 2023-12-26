@@ -9,7 +9,7 @@ import { Button, ButtonIcon } from '../../../elements/button';
 
 import type { FC } from 'react';
 
-export type MuteUserListItemProps = {
+export type UserMuteListItemProps = {
   className?: string | undefined;
   user: {
     id: string;
@@ -20,7 +20,7 @@ export type MuteUserListItemProps = {
   };
 };
 
-export const UserMuteListItem: FC<MuteUserListItemProps> = ({
+export const UserMuteListItem: FC<UserMuteListItemProps> = ({
   className,
   user,
 }) => {

@@ -5,7 +5,7 @@ import { UserMuteListItem } from '../user-mute-list-item';
 
 import type { FC } from 'react';
 
-export type MuteUserListProps = {
+export type UserMuteListProps = {
   className?: string | undefined;
   muteUsers: {
     id: string;
@@ -16,7 +16,7 @@ export type MuteUserListProps = {
   }[];
 };
 
-export const UserMuteList: FC<MuteUserListProps> = ({
+export const UserMuteList: FC<UserMuteListProps> = ({
   className,
   muteUsers,
 }) => {
