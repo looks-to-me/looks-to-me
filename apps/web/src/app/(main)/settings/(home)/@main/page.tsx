@@ -22,7 +22,7 @@ const SettingsHomeMainPage: FC<SettingsHomeMainPageProps> = async () => {
   
   return (
     <div className={styles.wrapper}>
-      <h2 className={styles.title}>Muted Users</h2>
+      <h2>Muted Users</h2>
       <UserMuteList users={users} />
     </div>
   );
