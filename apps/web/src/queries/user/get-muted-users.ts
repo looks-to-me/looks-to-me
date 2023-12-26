@@ -5,7 +5,7 @@ import { getLoginUser } from './get-login-user';
 import { database } from '../../app/_libs/database';
 import { schema } from '../../app/_libs/database/schema';
 
-type MutedUser = {
+export type MutedUser = {
   id: string;
   profile: {
     name: string;

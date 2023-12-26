@@ -8,17 +8,12 @@ import UnmuteIcon from '../../../../icons/unmute.svg';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../elements/avatar';
 import { Button, ButtonIcon } from '../../../elements/button';
 
+import type { MutedUser } from '../../../../queries/user/get-muted-users';
 import type { FC } from 'react';
 
 export type UserMuteListItemProps = {
   className?: string | undefined;
-  user: {
-    id: string;
-    profile: {
-      name: string;
-      displayName: string | null;
-    };
-  };
+  user: MutedUser;
 };
 
 export const UserMuteListItem: FC<UserMuteListItemProps> = ({
