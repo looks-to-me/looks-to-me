@@ -1,10 +1,9 @@
 'use client';
 
+import { MenuIcon, Volume2Icon, VolumeXIcon } from 'lucide-react';
+
 import { useMuteUser } from '../../../../app/(main)/_components/post-menu/hooks/use-mute-user';
 import { useUnmuteUser } from '../../../../hooks/use-unmute-user';
-import MenuIcon from '../../../../icons/menu.svg';
-import MuteIcon from '../../../../icons/mute.svg';
-import UnmuteIcon from '../../../../icons/unmute.svg';
 import { AccessibleIcon } from '../../../elements/accessible-icon';
 import { Button, ButtonIcon } from '../../../elements/button';
 import {
@@ -60,7 +59,7 @@ export const UserProfileMenu: FC<UserProfileMenuProps> = ({
             <DropDownMenuItem onClick={handleOnClickUnmuteUser} asChild>
               <Button variant="ghost" borderless>
                 <DropDownMenuIcon>
-                  <UnmuteIcon />
+                  <Volume2Icon />
                 </DropDownMenuIcon>
                 {`Unmute @${user.profile.name}`}
               </Button>
@@ -70,7 +69,7 @@ export const UserProfileMenu: FC<UserProfileMenuProps> = ({
             <DropDownMenuItem onClick={handleOnClickMuteUser} asChild>
               <Button variant="ghost" borderless>
                 <DropDownMenuIcon>
-                  <MuteIcon />
+                  <VolumeXIcon />
                 </DropDownMenuIcon>
                 {`Mute @${user.profile.name}`}
               </Button>
