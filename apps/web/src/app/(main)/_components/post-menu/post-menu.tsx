@@ -3,10 +3,10 @@
 import { MenuIcon, Trash2Icon, Volume2Icon, VolumeXIcon } from 'lucide-react';
 
 import { useDeletePost } from './hooks/use-delete-post';
-import { useMuteUser } from './hooks/use-mute-user';
 import { AccessibleIcon } from '../../../../components/elements/accessible-icon';
 import { Button, ButtonIcon } from '../../../../components/elements/button';
 import { DropDownMenu, DropDownMenuContent, DropDownMenuGroup, DropDownMenuIcon, DropDownMenuItem, DropDownMenuTrigger } from '../../../../components/elements/drop-down-menu';
+import { useMuteUser } from '../../../../hooks/use-mute-user';
 import { useUnmuteUser } from '../../../../hooks/use-unmute-user';
 
 import type { Post } from '../../../../repositories/post-repository';

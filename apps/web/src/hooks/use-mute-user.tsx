@@ -2,11 +2,11 @@ import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { toast } from 'sonner';
 
-import { useAlertDialog } from '../../../../../components/elements/alert-dialog';
-import { Button } from '../../../../../components/elements/button';
-import { muteUser } from '../../../../../mutations/user/mute-user';
+import { useAlertDialog } from '../components/elements/alert-dialog';
+import { Button } from '../components/elements/button';
+import { muteUser } from '../mutations/user/mute-user';
 
-import type { User } from '../../../../../repositories/user-repository';
+import type { User } from '../repositories/user-repository';
 
 type Props = {
   muteUserId: User['id'];
