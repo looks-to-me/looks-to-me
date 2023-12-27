@@ -55,33 +55,27 @@ export const PostMenu: FC<PostMenuProps> = ({
       <DropDownMenuContent>
         <DropDownMenuGroup>
           {isMyPost && (
-            <DropDownMenuItem onClick={handleOnClickDeletePost} asChild>
-              <Button variant="ghost" borderless>
-                <DropDownMenuIcon>
-                  <Trash2Icon />
-                </DropDownMenuIcon>
-                Delete
-              </Button>
+            <DropDownMenuItem onClick={handleOnClickDeletePost}>
+              <DropDownMenuIcon>
+                <Trash2Icon />
+              </DropDownMenuIcon>
+              Delete
             </DropDownMenuItem>
           )}
           {!isMyPost && isMuteUser && (
-            <DropDownMenuItem onClick={handleOnClickUnmuteUser} asChild>
-              <Button variant="ghost" borderless>
-                <DropDownMenuIcon>
-                  <Volume2Icon />
-                </DropDownMenuIcon>
-                {`Unmute @${postUser.profile.name}`}
-              </Button>
+            <DropDownMenuItem onClick={handleOnClickUnmuteUser}>
+              <DropDownMenuIcon>
+                <Volume2Icon />
+              </DropDownMenuIcon>
+              {`Unmute @${postUser.profile.name}`}
             </DropDownMenuItem>
           )}
           {!isMyPost && !isMuteUser && (
-            <DropDownMenuItem onClick={handleOnClickMuteUser} asChild>
-              <Button variant="ghost" borderless>
-                <DropDownMenuIcon>
-                  <VolumeXIcon />
-                </DropDownMenuIcon>
-                {`Mute @${postUser.profile.name}`}
-              </Button>
+            <DropDownMenuItem onClick={handleOnClickMuteUser}>
+              <DropDownMenuIcon>
+                <VolumeXIcon />
+              </DropDownMenuIcon>
+              {`Mute @${postUser.profile.name}`}
             </DropDownMenuItem>
           )}
         </DropDownMenuGroup>
