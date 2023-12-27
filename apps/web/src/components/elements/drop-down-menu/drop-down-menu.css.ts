@@ -63,6 +63,7 @@ export const group = style({
 });
 
 export const icon = style({
+  display: 'flex',
   color: theme.color.palette.gray300,
   fontSize: theme.size.font.medium,
 });
