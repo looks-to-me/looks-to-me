@@ -2,7 +2,7 @@
 
 import { MenuIcon, Volume2Icon, VolumeXIcon } from 'lucide-react';
 
-import { useMuteUser } from '../../../../app/(main)/_components/post-menu/hooks/use-mute-user';
+import { useMuteUser } from '../../../../hooks/use-mute-user';
 import { useUnmuteUser } from '../../../../hooks/use-unmute-user';
 import { AccessibleIcon } from '../../../elements/accessible-icon';
 import { Button, ButtonIcon } from '../../../elements/button';
