@@ -43,10 +43,9 @@ const UserDetailsProfilePage: FC<UserDetailsProfilePageProps> = async ({
   return (
     <header className={styles.wrapper}>
       <UserSummary
-        user={user}
+        user={{ ...user, isMute }}
         numOfPosts={numberOfPosts}
         isLoggedIn={isLoggedIn}
-        isMute={isMute}
       />
     </header>
   );

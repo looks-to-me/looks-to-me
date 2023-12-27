@@ -25,14 +25,13 @@ export type UserProfileMenuProps = {
     profile: {
       name: string;
     };
+    isMute: boolean;
   };
-  isMute: boolean;
 };
 
 export const UserProfileMenu: FC<UserProfileMenuProps> = ({
   className,
   user,
-  isMute,
 }) => {
   const handleOnClickMuteUser = useMuteUser({
     muteUserId: user.id,
@@ -57,7 +56,7 @@ export const UserProfileMenu: FC<UserProfileMenuProps> = ({
       </DropDownMenuTrigger>
       <DropDownMenuContent>
         <DropDownMenuGroup>
-          {isMute && (
+          {user.isMute && (
             <DropDownMenuItem onClick={handleOnClickUnmuteUser} asChild>
               <Button variant="ghost" borderless>
                 <DropDownMenuIcon>
@@ -67,7 +66,7 @@ export const UserProfileMenu: FC<UserProfileMenuProps> = ({
               </Button>
             </DropDownMenuItem>
           )}
-          {!isMute && (
+          {!user.isMute && (
             <DropDownMenuItem onClick={handleOnClickMuteUser} asChild>
               <Button variant="ghost" borderless>
                 <DropDownMenuIcon>

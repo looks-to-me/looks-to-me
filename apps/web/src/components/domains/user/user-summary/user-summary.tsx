@@ -14,10 +14,10 @@ export type UserSummaryProps = {
       name: string;
       displayName: string | null;
     };
+    isMute: boolean;
   };
   numOfPosts: number;
   isLoggedIn: boolean;
-  isMute: boolean;
 };
 
 export const UserSummary: FC<UserSummaryProps> = ({
@@ -25,7 +25,6 @@ export const UserSummary: FC<UserSummaryProps> = ({
   user,
   numOfPosts,
   isLoggedIn,
-  isMute,
 }) => {
   return (
     <div className={clsx(className, styles.wrapper)}>
@@ -51,7 +50,7 @@ export const UserSummary: FC<UserSummaryProps> = ({
           <a href={`https://github.com/${user.profile.name}`} target="_blank">GitHub</a>
         </div>
       </div>
-      {isLoggedIn && <UserProfileMenu className={styles.menu} user={user} isMute={isMute} />}
+      {isLoggedIn && <UserProfileMenu className={styles.menu} user={user} />}
     </div>
   );
 };
