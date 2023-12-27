@@ -6,7 +6,7 @@ import { useCallback } from 'react';
 
 import * as styles from './github-login-button.css';
 import { ButtonIcon } from '../../../../components/elements/button';
-import GitHubWhite from '../../../../icons/github-white.svg';
+import { GithubIcon } from '../../../../components/icons/github-icon';
 import { supabase } from '../../../_libs/auth/client/instance';
 
 import type { MouseEventHandler, FC, ComponentPropsWithoutRef } from 'react';
@@ -34,7 +34,7 @@ export const GitHubLoginButton: FC<LoginButtonProps> = ({
   return (
     <button {...props} className={clsx(className, styles.button)} onClick={handleClick}>
       <ButtonIcon>
-        <GitHubWhite />
+        <GithubIcon />
       </ButtonIcon>
       Login with GitHub
     </button>

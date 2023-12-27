@@ -1,6 +1,8 @@
+/* eslint-disable unicorn/prefer-module */
+
 import { VanillaExtractPlugin } from '@vanilla-extract/webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import merge from 'webpack-merge';
+import { merge } from 'webpack-merge';
 
 import type { StorybookConfig } from '@storybook/nextjs';
 
@@ -33,13 +35,6 @@ const config: StorybookConfig = {
       }
     });
 
-    config?.module?.rules?.forEach(rule => {
-      if (!rule || typeof rule !== 'object') return;
-      if (rule.test instanceof RegExp && rule.test.test('.svg')) {
-        rule.exclude = /\.svg$/;
-      }
-    });
-
     return merge(config, {
       plugins: [
         new VanillaExtractPlugin(),
@@ -58,13 +53,6 @@ const config: StorybookConfig = {
                 },
               },
             ],
-          },
-          {
-            test: /\.svg$/,
-            use: [{
-              loader: '@svgr/webpack',
-              options: { icon: true, ref: true },
-            }],
           },
         ],
       },
