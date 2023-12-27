@@ -56,23 +56,19 @@ export const UserProfileMenu: FC<UserProfileMenuProps> = ({
       <DropDownMenuContent>
         <DropDownMenuGroup>
           {user.isMute && (
-            <DropDownMenuItem onClick={handleOnClickUnmuteUser} asChild>
-              <Button variant="ghost" borderless>
-                <DropDownMenuIcon>
-                  <Volume2Icon />
-                </DropDownMenuIcon>
-                {`Unmute @${user.profile.name}`}
-              </Button>
+            <DropDownMenuItem onClick={handleOnClickUnmuteUser}>
+              <DropDownMenuIcon>
+                <Volume2Icon />
+              </DropDownMenuIcon>
+              {`Unmute @${user.profile.name}`}
             </DropDownMenuItem>
           )}
           {!user.isMute && (
-            <DropDownMenuItem onClick={handleOnClickMuteUser} asChild>
-              <Button variant="ghost" borderless>
-                <DropDownMenuIcon>
-                  <VolumeXIcon />
-                </DropDownMenuIcon>
-                {`Mute @${user.profile.name}`}
-              </Button>
+            <DropDownMenuItem onClick={handleOnClickMuteUser}>
+              <DropDownMenuIcon>
+                <VolumeXIcon />
+              </DropDownMenuIcon>
+              {`Mute @${user.profile.name}`}
             </DropDownMenuItem>
           )}
         </DropDownMenuGroup>
