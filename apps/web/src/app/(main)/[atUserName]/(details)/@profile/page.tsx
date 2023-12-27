@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 
 import * as styles from './page.css';
+import { UserProfileMenu } from '../../../../../components/domains/user/user-profile-menu';
 import { UserSummary } from '../../../../../components/domains/user/user-summary';
 import { getLoginUser } from '../../../../../queries/user/get-login-user';
 import { findMuteUserByUserIdAndMuteUserId } from '../../../../../repositories/mute-user-repository';
@@ -43,10 +44,10 @@ const UserDetailsProfilePage: FC<UserDetailsProfilePageProps> = async ({
   return (
     <header className={styles.wrapper}>
       <UserSummary
-        user={{ ...user, isMute }}
+        user={user}
         numOfPosts={numberOfPosts}
-        isLoggedIn={isLoggedIn}
       />
+      {isLoggedIn && <UserProfileMenu className={styles.menu} user={{ ...user, isMute }} />}
     </header>
   );
 };

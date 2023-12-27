@@ -45,7 +45,3 @@ export const lower = style({
 export const numberOfPosts = style({
   fontSize: theme.size.font.tiny,
 });
-
-export const menu = style({
-  marginLeft: 'auto',
-});

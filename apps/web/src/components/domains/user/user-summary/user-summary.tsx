@@ -2,7 +2,6 @@ import { clsx } from 'clsx';
 
 import * as styles from './user-summary.css';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../elements/avatar';
-import { UserProfileMenu } from '../user-profile-menu';
 
 import type { FC } from 'react';
 
@@ -14,17 +13,14 @@ export type UserSummaryProps = {
       name: string;
       displayName: string | null;
     };
-    isMute: boolean;
   };
   numOfPosts: number;
-  isLoggedIn: boolean;
 };
 
 export const UserSummary: FC<UserSummaryProps> = ({
   className,
   user,
   numOfPosts,
-  isLoggedIn,
 }) => {
   return (
     <div className={clsx(className, styles.wrapper)}>
@@ -50,7 +46,6 @@ export const UserSummary: FC<UserSummaryProps> = ({
           <a href={`https://github.com/${user.profile.name}`} target="_blank">GitHub</a>
         </div>
       </div>
-      {isLoggedIn && <UserProfileMenu className={styles.menu} user={user} />}
     </div>
   );
 };
