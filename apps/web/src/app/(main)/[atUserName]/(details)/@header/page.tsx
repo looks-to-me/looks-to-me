@@ -23,13 +23,9 @@ const UserDetailsHeaderPage: FC<UserDetailsHeaderPageProps> = async ({
 }) => {
   const loginUser = await getLoginUser();
   const userName = getUserName(params.atUserName);
-  
-  //TODO: Make it retrieve the user's mute status.
+
   return (
-    <ApplicationHeader
-      user={loginUser}
-      bannerProps={{ children: 'This user is currently muted.' }}
-    >
+    <ApplicationHeader user={loginUser}>
       <Breadcrumbs>
         <BreadcrumbsItem href={`/@${userName}`}>
           {userName}

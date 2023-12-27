@@ -1,4 +1,5 @@
 import * as styles from './layout.css';
+import { ApplicationBanner } from '../../../../components/domains/application/application-banner';
 import { ApplicationLayout } from '../../../../components/domains/application/application-layout';
 import { createMetadata } from '../../../../helpers/create-metadata';
 import { findUserByName } from '../../../../repositories/user-repository';
@@ -35,8 +36,10 @@ const UserDetailsLayout: FC<UserDetailsLayoutProps> = ({
   posts,
   children,
 }) => {
+  //TODO: Make it retrieve the user's mute status.
   return (
     <ApplicationLayout header={header}>
+      <ApplicationBanner>This user is currently muted.</ApplicationBanner>
       <main className={styles.main}>
         <article className={styles.article}>
           {profile}
