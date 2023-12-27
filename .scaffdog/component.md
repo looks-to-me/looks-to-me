@@ -1,7 +1,12 @@
 ---
 name: 'component'
 root: '.'
-output: '**/_components'
+output: [
+  '**/_components',
+  '**/components/domains/*',
+  '**/components/elements',
+  '**/components/icons',
+]
 ignore: ['.']
 questions:
   name: 'Please enter a component name.'
