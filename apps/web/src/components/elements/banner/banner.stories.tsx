@@ -1,15 +1,15 @@
-import { ApplicationBanner } from '.';
+import { Banner } from '.';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  component: ApplicationBanner,
+  component: Banner,
   parameters: {
     layout: 'fullscreen',
   },
-} as Meta<typeof ApplicationBanner>;
+} as Meta<typeof Banner>;
 
-type Story = StoryObj<typeof ApplicationBanner>;
+type Story = StoryObj<typeof Banner>;
 
 export const Default = {
   args: {
