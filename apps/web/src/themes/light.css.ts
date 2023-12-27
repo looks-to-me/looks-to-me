@@ -147,6 +147,9 @@ globalStyle(':root', {
 
         [theme.color.token.tooltip.text]: theme.color.palette.white,
         [theme.color.token.tooltip.background]: theme.color.palette.gray900,
+
+        [theme.color.token.headerBanner.warning.background]: theme.color.palette.yellow50,
+        [theme.color.token.headerBanner.warning.border]: theme.color.palette.yellow200,
       },
     },
   },

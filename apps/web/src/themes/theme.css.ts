@@ -171,6 +171,12 @@ export const theme = createGlobalTheme(':root', {
         text: '',
         background: '',
       },
+      headerBanner: {
+        warning: {
+          background: '',
+          border:'',
+        },
+      },
     },
   },
   size: {

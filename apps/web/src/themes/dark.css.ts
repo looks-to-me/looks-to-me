@@ -147,6 +147,9 @@ globalStyle(':root', {
 
         [theme.color.token.tooltip.text]: theme.color.palette.white,
         [theme.color.token.tooltip.background]: theme.color.palette.gray400,
+
+        [theme.color.token.headerBanner.warning.background]: `color-mix(in srgb, ${theme.color.palette.yellow500} 12%, transparent)`,
+        [theme.color.token.headerBanner.warning.border]: `color-mix(in srgb, ${theme.color.palette.yellow500} 50%, transparent)`,
       },
     },
   },

@@ -30,3 +30,13 @@ export const LoggedIn = {
     },
   },
 } satisfies Story;
+
+export const WithWarningBanner = {
+  args: {
+    ...Default.args,
+    bannerProps: {
+      children: 'warning banner',
+      variant:'warning',
+    },
+  },
+} satisfies Story;
