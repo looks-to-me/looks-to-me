@@ -171,6 +171,18 @@ export const theme = createGlobalTheme(':root', {
         text: '',
         background: '',
       },
+      tag: {
+        normal: {
+          text: '',
+          border: '',
+          background: '',
+        },
+        primary: {
+          text: '',
+          border: '',
+          background: '',
+        },
+      },
     },
   },
   size: {
