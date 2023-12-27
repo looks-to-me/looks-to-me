@@ -8,6 +8,6 @@ export const wrapper = style({
   padding: '8px',
   color: theme.color.token.semantic.text,
   fontWeight: 600,
-  backgroundColor: theme.color.token.headerBanner.warning.background,
-  borderBottom: `solid 1px ${theme.color.token.headerBanner.warning.border}`,
+  backgroundColor: theme.color.token.banner.background,
+  borderBottom: `solid 1px ${theme.color.token.banner.border}`,
 });
