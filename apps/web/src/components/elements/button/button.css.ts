@@ -124,6 +124,7 @@ export const wrapper = recipe({
 });
 
 export const icon = style({
+  display: 'flex',
   fontSize: theme.size.font.medium,
   selectors: {
     [`${wrapper({ variant: 'normal' }).split(' ')[1]} &`]: {

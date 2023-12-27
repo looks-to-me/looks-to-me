@@ -54,3 +54,8 @@ globalStyle('p', {
   margin: 0,
   lineHeight: 1.5,
 });
+
+globalStyle('.lucide', {
+  width: '1em',
+  height: '1em',
+});

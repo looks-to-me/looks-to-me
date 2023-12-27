@@ -1,20 +1,14 @@
 import { getYear } from 'date-fns';
+import { CircleDotIcon, HomeIcon, MenuIcon, ShuffleIcon } from 'lucide-react';
 import Link from 'next/link';
 
 import * as styles from './application-navigation.css';
-import GitHubBlack from '../../../../icons/github-black.svg';
-import GitHubWhite from '../../../../icons/github-white.svg';
-import HomeIcon from '../../../../icons/home.svg';
-import MenuIcon from '../../../../icons/menu.svg';
-import ReportIcon from '../../../../icons/report.svg';
-import ShuffleIcon from '../../../../icons/shuffle.svg';
-import StorybookBlack from '../../../../icons/storybook-black.svg';
-import StorybookWhite from '../../../../icons/storybook-white.svg';
 import { AccessibleIcon } from '../../../elements/accessible-icon';
 import { Button, ButtonIcon } from '../../../elements/button';
-import { PrefersColorScheme } from '../../../elements/prefers-color-scheme';
 import { Sheet, SheetContent, SheetSection, SheetTitle, SheetTrigger } from '../../../elements/sheet';
 import { VisuallyHidden } from '../../../elements/visually-hidden';
+import { GithubIcon } from '../../../icons/github-icon';
+import { StorybookIcon } from '../../../icons/storybook-icon';
 import { ApplicationLogo } from '../application-logo';
 
 import type { FC } from 'react';
@@ -66,10 +60,7 @@ export const ApplicationNavigation: FC<ApplicationNavigationProps> = ({
           <Button variant="ghost" size="medium" borderless asChild>
             <a href="https://github.com/looks-to-me/looks-to-me" target="_blank">
               <ButtonIcon>
-                <PrefersColorScheme
-                  light={<GitHubBlack />}
-                  dark={<GitHubWhite />}
-                />
+                <GithubIcon />
               </ButtonIcon>
               GitHub Repository
             </a>
@@ -77,10 +68,7 @@ export const ApplicationNavigation: FC<ApplicationNavigationProps> = ({
           <Button variant="ghost" size="medium" borderless asChild>
             <a href="/storybook/" target="_blank">
               <ButtonIcon>
-                <PrefersColorScheme
-                  light={<StorybookBlack />}
-                  dark={<StorybookWhite />}
-                />
+                <StorybookIcon />
               </ButtonIcon>
               Storybook
             </a>
@@ -88,7 +76,7 @@ export const ApplicationNavigation: FC<ApplicationNavigationProps> = ({
           <Button variant="ghost" size="medium" borderless asChild>
             <a href="https://github.com/looks-to-me/looks-to-me/issues" target="_blank">
               <ButtonIcon>
-                <ReportIcon />
+                <CircleDotIcon />
               </ButtonIcon>
               Bug reports or feature requests
             </a>

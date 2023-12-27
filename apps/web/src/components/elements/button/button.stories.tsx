@@ -1,7 +1,7 @@
+import { HomeIcon, XIcon } from 'lucide-react';
+
 import { Button } from './button';
 import { ButtonIcon } from './button-icon';
-import CloseIcon from '../../../icons/close.svg';
-import HomeIcon from '../../../icons/home.svg';
 import { AccessibleIcon } from '../accessible-icon';
 
 import type { Meta, StoryObj } from '@storybook/react';
@@ -66,7 +66,7 @@ export const Icon = {
     children: (
       <ButtonIcon>
         <AccessibleIcon label="Close">
-          <CloseIcon />
+          <XIcon />
         </AccessibleIcon>
       </ButtonIcon>
     ),

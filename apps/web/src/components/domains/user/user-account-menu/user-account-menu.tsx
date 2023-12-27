@@ -1,10 +1,8 @@
 import { clsx } from 'clsx';
+import { LogOutIcon, SettingsIcon, UserIcon } from 'lucide-react';
 import Link from 'next/link';
 
 import * as styles from './user-account-menu.css';
-import LogoutIcon from '../../../../icons/logout.svg';
-import PersonIcon from '../../../../icons/person.svg';
-import SettingsIcon from '../../../../icons/settings.svg';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../elements/avatar';
 import {
   DropDownMenu,
@@ -60,7 +58,7 @@ export const UserAccountMenu: FC<UserAccountMenuProps> = ({
           <DropDownMenuItem asChild>
             <Link href={`/@${user.profile.name}`}>
               <DropDownMenuIcon>
-                <PersonIcon />
+                <UserIcon />
               </DropDownMenuIcon>
               Your profile
             </Link>
@@ -76,7 +74,7 @@ export const UserAccountMenu: FC<UserAccountMenuProps> = ({
           <DropDownMenuItem asChild>
             <Link href="/logout">
               <DropDownMenuIcon>
-                <LogoutIcon />
+                <LogOutIcon />
               </DropDownMenuIcon>
               Logout
             </Link>

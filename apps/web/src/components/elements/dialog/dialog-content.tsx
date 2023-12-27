@@ -2,10 +2,10 @@
 
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { clsx } from 'clsx';
+import { XIcon } from 'lucide-react';
 import { forwardRef } from 'react';
 
 import * as styles from './dialog.css';
-import CloseIcon from '../../../icons/close.svg';
 import { AccessibleIcon } from '../accessible-icon';
 import { Button, ButtonIcon } from '../button';
 
@@ -35,7 +35,7 @@ const DialogContentRender: ForwardRefRenderFunction<ElementRef<typeof DialogPrim
             <Button className={styles.close} variant="ghost" size="icon" borderless>
               <ButtonIcon>
                 <AccessibleIcon label="Close">
-                  <CloseIcon />
+                  <XIcon />
                 </AccessibleIcon>
               </ButtonIcon>
             </Button>
