@@ -53,6 +53,17 @@ globalStyle(':root', {
         [theme.color.palette.blue800]: '#0c2d6b',
         [theme.color.palette.blue900]: '#051d4d',
 
+        [theme.color.palette.yellow50]: '#f8e3a1',
+        [theme.color.palette.yellow100]: '#f2cc60',
+        [theme.color.palette.yellow200]: '#e3b341',
+        [theme.color.palette.yellow300]: '#d29922',
+        [theme.color.palette.yellow400]: '#bb8009',
+        [theme.color.palette.yellow500]: '#9e6a03',
+        [theme.color.palette.yellow600]: '#845306',
+        [theme.color.palette.yellow700]: '#693e00',
+        [theme.color.palette.yellow800]: '#4b2900',
+        [theme.color.palette.yellow900]: '#341a00',
+
         [theme.color.token.semantic.text]: theme.color.palette.gray50,
         [theme.color.token.semantic.textMuted]: theme.color.palette.gray300,
         [theme.color.token.semantic.background]: theme.color.palette.gray900,
