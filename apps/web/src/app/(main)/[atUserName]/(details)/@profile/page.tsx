@@ -41,13 +41,15 @@ const UserDetailsProfilePage: FC<UserDetailsProfilePageProps> = async ({
   const isMute = isLoggedIn 
     ? !!await findMuteUserByUserIdAndMuteUserId(loginUser.id, user.id)
     : false;
+  
+  const isMe = loginUser?.id === user.id;
   return (
     <header className={styles.wrapper}>
       <UserSummary
         user={user}
         numOfPosts={numberOfPosts}
       />
-      {isLoggedIn && <UserProfileMenu className={styles.menu} user={{ ...user, isMute }} />}
+      {!isMe && isLoggedIn && <UserProfileMenu className={styles.menu} user={{ ...user, isMute }} />}
     </header>
   );
 };
