@@ -172,6 +172,7 @@ export const theme = createGlobalTheme(':root', {
         background: '',
       },
       banner: {
+        text: '',
         background: '',
         border:'',
       },
