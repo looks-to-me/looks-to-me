@@ -45,6 +45,16 @@ export const theme = createGlobalTheme(':root', {
       blue700: '',
       blue800: '',
       blue900: '',
+      yellow50: '',
+      yellow100: '',
+      yellow200: '',
+      yellow300: '',
+      yellow400: '',
+      yellow500: '',
+      yellow600: '',
+      yellow700: '',
+      yellow800: '',
+      yellow900: '',
     },
     token: {
       semantic: {
