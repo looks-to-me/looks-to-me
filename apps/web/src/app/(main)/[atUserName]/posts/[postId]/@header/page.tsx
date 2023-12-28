@@ -1,16 +1,13 @@
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 
-import * as styles from './page.css';
-import { getLoginUser } from '../../../../../_actions/get-login-user';
-import { Avatar, AvatarFallback, AvatarImage } from '../../../../../_components/avatar';
-import { publicEnv } from '../../../../../_libs/env';
-import { PostMenu } from '../../../../_components/post-menu';
-import { ShareButton } from '../../../../_components/share-button';
-import { findPostById } from '../../../../_repositories/post-repository';
-import { findUserById } from '../../../../_repositories/user-repository';
+import { ApplicationHeader } from '../../../../../../components/domains/application/application-header';
+import { Breadcrumbs, BreadcrumbsItem } from '../../../../../../components/elements/breadcrumbs';
+import { getLoginUser } from '../../../../../../queries/user/get-login-user';
+import { findPostById } from '../../../../../../repositories/post-repository';
+import { findUserById } from '../../../../../../repositories/user-repository';
+import { getUserName } from '../../../_helpers/get-user-name';
 
-import type { PageProps } from '../../../../../_types/page-props';
+import type { PageProps } from '../../../../../../types/page-props';
 import type { UserPostDetailsPageProps } from '../page';
 import type { FC } from 'react';
 
@@ -28,41 +25,33 @@ export type UserPostDetailsHeaderPageProps = UserPostDetailsPageProps & PageProp
 const UserPostDetailsHeaderPage: FC<UserPostDetailsHeaderPageProps> = async ({
   params,
 }) => {
+  const loginUser = await getLoginUser();
+
+  const userName = getUserName(params.atUserName);
+  if (!userName) return notFound();
+
   const post = await findPostById(params.postId);
   if (!post) return notFound();
 
   const user = await findUserById(post.userId);
   if (!user) return notFound();
-  
-  const loginUser = await getLoginUser();
-  const isMyPost = post.userId === loginUser?.id;
+
+  if (user.profile.name !== userName) {
+    // redirect to correct username
+    return redirect(`/@${user.profile.name}/posts/${post.id}`);
+  }
 
   return (
-    <header className={styles.wrapper}>
-      <div className={styles.container}>
-        <Link href={`/@${user.profile.name}`}>
-          <Avatar className={styles.avatar}>
-            <AvatarImage
-              src={`/images/avatars/${user.id}`}
-              alt={user.profile.displayName ?? user.profile.name}
-              sizes="32px"
-            />
-            <AvatarFallback>
-              {user.profile.displayName ?? user.profile.name}
-            </AvatarFallback>
-          </Avatar>
-        </Link>
-        <h2 className={styles.title}>
+    <ApplicationHeader user={loginUser}>
+      <Breadcrumbs>
+        <BreadcrumbsItem href={`/@${user.profile.name}`}>
+          {user.profile.displayName ?? user.profile.name}
+        </BreadcrumbsItem>
+        <BreadcrumbsItem href={`/@${user.profile.name}/posts/${post.id}`}>
           Looks {post.word} To Me
-        </h2>
-      </div>
-      <div className={styles.toolbar}>
-        <ShareButton
-          text={`![L${post.word.toUpperCase().at(0)}TM](${publicEnv().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id})`}
-        />
-        {isMyPost && <PostMenu post={post} />}
-      </div>
-    </header>
+        </BreadcrumbsItem>
+      </Breadcrumbs>
+    </ApplicationHeader>
   );
 };
 

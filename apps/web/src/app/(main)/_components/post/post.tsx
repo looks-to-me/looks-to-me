@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import * as styles from './post.css';
-import { AspectRatio } from '../../../_components/aspect-ratio';
+import { AspectRatio } from '../../../../components/elements/aspect-ratio';
 
 import type { Route } from 'next';
 import type { FC } from 'react';

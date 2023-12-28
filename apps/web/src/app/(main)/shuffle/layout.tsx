@@ -1,11 +1,9 @@
 import * as styles from './layout.css';
-import { Breadcrumbs, BreadcrumbsItem } from '../../_components/breadcrumbs';
-import { createMetadata } from '../../_helpers/create-metadata';
-import { PageHeader } from '../_components/page-header';
-import { PageLayout } from '../_components/page-layout';
+import { ApplicationLayout } from '../../../components/domains/application/application-layout';
+import { createMetadata } from '../../../helpers/create-metadata';
 
 import type { ShufflePageProps } from './page';
-import type { LayoutProps } from '../../_types/layout-props';
+import type { LayoutProps } from '../../../types/layout-props';
 import type { FC, ReactNode } from 'react';
 
 export const metadata = createMetadata({
@@ -13,30 +11,22 @@ export const metadata = createMetadata({
 });
 
 export type ShuffleLayoutProps = ShufflePageProps & LayoutProps<{
+  header: ReactNode;
   posts: ReactNode;
 }>;
 
 const ShuffleLayout: FC<ShuffleLayoutProps> = ({
   children,
+  header,
   posts,
 }) => {
   return (
-    <PageLayout
-      header={(
-        <PageHeader>
-          <Breadcrumbs>
-            <BreadcrumbsItem href="/shuffle">
-              Shuffle
-            </BreadcrumbsItem>
-          </Breadcrumbs>
-        </PageHeader>
-      )}
-    >
+    <ApplicationLayout header={header}>
       <main className={styles.main}>
         {posts}
         {children}
       </main>
-    </PageLayout>
+    </ApplicationLayout>
   );
 };
 

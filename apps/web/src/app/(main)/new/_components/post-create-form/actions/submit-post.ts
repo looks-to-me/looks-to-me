@@ -1,15 +1,15 @@
 'use server';
 
 import { createId } from '@paralleldrive/cuid2';
-import { coerce, transform, instance, maxLength, minValue, number, object, parse, regex, string } from 'valibot';
+import { revalidatePath } from 'next/cache';
+import { coerce, instance, minValue, number, object, parse } from 'valibot';
 
-import { getUserMetadata } from '../../../../../_libs/auth/server/get-user-metadata';
+import { getLoginUser } from '../../../../../../queries/user/get-login-user';
+import { deleteImage, saveImage } from '../../../../../../repositories/image-repository';
+import { deletePost, savePost } from '../../../../../../repositories/post-repository';
+import { postWordSchema } from '../../../../../../schemas/post-word-schema';
 import { publicEnv } from '../../../../../_libs/env';
 import { storage } from '../../../../../_libs/storage';
-import { deleteImage, saveImage } from '../../../../_repositories/image-repository';
-import { deletePost, savePost } from '../../../../_repositories/post-repository';
-import { findUserProviderByTypeAndSub } from '../../../../_repositories/user-provider-repository';
-import { findUserById } from '../../../../_repositories/user-repository';
 
 import type { Route } from 'next';
 
@@ -17,13 +17,7 @@ const inputSchema = object({
   image: instance(Blob),
   imageWidth: coerce(number([minValue(1)]), Number),
   imageHeight: coerce(number([minValue(1)]), Number),
-  word: transform(
-    string([
-      regex(/^[A-Za-z]+$/, 'Must be a alphabetic.'),
-      maxLength(16, 'Must be less than 16 characters.'),
-    ]),
-    input =>`${input[0]?.toUpperCase()}${input.slice(1).toLowerCase()}`,
-  ),
+  word: postWordSchema,
 });
 
 export type SubmitPostResult = {
@@ -38,13 +32,7 @@ export type SubmitPostResult = {
 
 export const submitPost = async (formData: FormData): Promise<SubmitPostResult> => {
   try {
-    const userMetadata = await getUserMetadata();
-    if (!userMetadata) return { type: 'error', reason: 'unauthorized', message: 'Login required!' };
-
-    const userProvider = await findUserProviderByTypeAndSub(userMetadata.provider, userMetadata.sub);
-    if (!userProvider) return { type: 'error', reason: 'unauthorized', message: 'Login required!' };
-
-    const user = await findUserById(userProvider.userId);
+    const user = await getLoginUser();
     if (!user) return { type: 'error', reason: 'unauthorized', message: 'Login required!' };
 
     const input = parse(inputSchema, {
@@ -86,6 +74,9 @@ export const submitPost = async (formData: FormData): Promise<SubmitPostResult> 
       for (const result of results) {
         if (!result.ok) throw new Error(await result.text());
       }
+
+      revalidatePath('/');
+      revalidatePath(`/@${user.profile.name}`);
 
       return { type: 'success', message: 'Post created!', redirectUrl: `/@${user.profile.name}/posts/${post.id}` };
     } catch (error) {

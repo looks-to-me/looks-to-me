@@ -18,9 +18,10 @@ export const VariableTextInput: FC<VariableTextInputProps> = ({
   const dummy = useRef<HTMLDivElement>(null);
 
   const onChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+    props.onChange?.(event);
     if(dummy.current === null) return;
     dummy.current.textContent = event.target.value;
-  }, []);
+  }, [props]);
 
   return (
     <div className={styles.wrapper}>

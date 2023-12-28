@@ -1,11 +1,12 @@
 'use server';
 
 import { deleteImageCache } from '@looks-to-me/package-image-cache';
+import { revalidatePath } from 'next/cache';
 
-import { getLoginUser } from '../../../../_actions/get-login-user';
+import { getLoginUser } from '../../../../../queries/user/get-login-user';
+import { deleteImage } from '../../../../../repositories/image-repository';
+import { deletePost, findPostById } from '../../../../../repositories/post-repository';
 import { privateEnv } from '../../../../_libs/env';
-import { deleteImage } from '../../../_repositories/image-repository';
-import { deletePost, findPostById } from '../../../_repositories/post-repository';
 
 import type { Route } from 'next';
 
@@ -33,5 +34,9 @@ export const deletePostAction = async (postId: string): Promise<DeletePostResult
   await deleteImage(post.imageId);
   await deleteImageCache({ bucket: privateEnv().BUCKET, path: `images/posts/${post.id}` });
 
+  revalidatePath('/');
+  revalidatePath('/shuffle');
+  revalidatePath(`/@${user.profile.name}`);
+  
   return { type: 'success', redirectUrl: `/@${user.profile.name}`, message: 'The post has been successfully deleted.' };
 };

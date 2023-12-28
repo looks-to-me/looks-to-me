@@ -3,9 +3,9 @@
 import { createId } from '@paralleldrive/cuid2';
 import { parse } from 'valibot';
 
+import { findUserProviderByTypeAndSub, saveUserProvider } from '../../../../../repositories/user-provider-repository';
+import { saveUser } from '../../../../../repositories/user-repository';
 import { UserMetadataSchema } from '../../../../_libs/auth/type/user-metadata';
-import { findUserProviderByTypeAndSub, saveUserProvider } from '../../../_repositories/user-provider-repository';
-import { saveUser } from '../../../_repositories/user-repository';
 
 import type { User } from '@supabase/auth-helpers-react';
 

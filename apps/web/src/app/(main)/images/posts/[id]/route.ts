@@ -1,8 +1,8 @@
 import { imageCache } from '@looks-to-me/package-image-cache';
 
+import { findImageById } from '../../../../../repositories/image-repository';
+import { findPostById } from '../../../../../repositories/post-repository';
 import { privateEnv } from '../../../../_libs/env';
-import { findImageById } from '../../../_repositories/image-repository';
-import { findPostById } from '../../../_repositories/post-repository';
 
 import type { ImageCacheParameters } from '@looks-to-me/package-image-cache';
 import type { NextRequest } from 'next/server';

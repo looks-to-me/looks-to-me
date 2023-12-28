@@ -1,41 +1,30 @@
 import * as styles from './layout.css';
-import { Breadcrumbs, BreadcrumbsItem } from '../../_components/breadcrumbs';
-import { createMetadata } from '../../_helpers/create-metadata';
-import { PageHeader } from '../_components/page-header';
-import { PageLayout } from '../_components/page-layout';
+import { ApplicationLayout } from '../../../components/domains/application/application-layout';
+import { createMetadata } from '../../../helpers/create-metadata';
 
 import type { LoginPageProps } from './page';
-import type { LayoutProps } from '../../_types/layout-props';
+import type { LayoutProps } from '../../../types/layout-props';
 import type { Metadata } from 'next';
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 export const metadata: Metadata = createMetadata({
   title: 'Login',
 });
 
 export type LoginLayoutProps = LoginPageProps & LayoutProps<{
-  // empty
+  header: ReactNode;
 }>;
 
 const LoginLayout: FC<LoginLayoutProps> = ({
   children,
+  header,
 }) => {
   return (
-    <PageLayout
-      header={(
-        <PageHeader>
-          <Breadcrumbs>
-            <BreadcrumbsItem href="/login">
-              Login
-            </BreadcrumbsItem>
-          </Breadcrumbs>
-        </PageHeader>
-      )}
-    >
+    <ApplicationLayout header={header}>
       <main className={styles.main}>
         {children}
       </main>
-    </PageLayout>
+    </ApplicationLayout>
   );
 };
 

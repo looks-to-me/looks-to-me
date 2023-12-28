@@ -2,7 +2,7 @@ import { clsx } from 'clsx';
 import Link from 'next/link';
 
 import * as styles from './login-form.css';
-import { ApplicationLogo } from '../application-logo';
+import { ApplicationLogo } from '../../../../components/domains/application/application-logo';
 import { GitHubLoginButton } from '../github-login-button';
 
 import type { FC } from 'react';

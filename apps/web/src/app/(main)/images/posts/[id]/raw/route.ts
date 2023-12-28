@@ -1,6 +1,6 @@
+import { findPostById } from '../../../../../../repositories/post-repository';
 import { privateEnv } from '../../../../../_libs/env';
 import { storage } from '../../../../../_libs/storage';
-import { findPostById } from '../../../../_repositories/post-repository';
 
 import type { NextRequest } from 'next/server';
 

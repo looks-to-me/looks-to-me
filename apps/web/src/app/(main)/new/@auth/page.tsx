@@ -3,10 +3,10 @@
 import { useMount } from 'ahooks';
 import { useRouter } from 'next/navigation';
 
-import { dispatch } from '../../../_helpers/dispatch';
+import { dispatch } from '../../../../helpers/dispatch';
 import { getUserMetadata } from '../../../_libs/auth/server/get-user-metadata';
 
-import type { PageProps } from '../../../_types/page-props';
+import type { PageProps } from '../../../../types/page-props';
 import type { NewPostPageProps } from '../page';
 import type { FC } from 'react';
 

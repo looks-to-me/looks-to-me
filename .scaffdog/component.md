@@ -1,7 +1,12 @@
 ---
 name: 'component'
 root: '.'
-output: '**/_components'
+output: [
+  '**/_components',
+  '**/components/domains/*',
+  '**/components/elements',
+  '**/components/icons',
+]
 ignore: ['.']
 questions:
   name: 'Please enter a component name.'
@@ -37,7 +42,7 @@ export const wrapper = style({
 
 ```tsx
 {{- if inputs.needsStyle }}
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 import * as styles from './{{ inputs.name | kebab }}.css';
 
@@ -69,7 +74,7 @@ export const {{ inputs.name | pascal }}: FC<{{ inputs.name | pascal }}Props> = (
 
 ```tsx
 {{- if inputs.needsStyle }}
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { forwardRef } from 'react';
 
 import * as styles from './{{ inputs.name | kebab }}.css';
