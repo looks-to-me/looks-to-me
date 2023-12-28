@@ -1,7 +1,10 @@
+import { notFound } from 'next/navigation';
+
 import * as styles from './layout.css';
 import { ApplicationLayout } from '../../../../components/domains/application/application-layout';
 import { Banner } from '../../../../components/elements/banner';
 import { createMetadata } from '../../../../helpers/create-metadata';
+import { getIsMutedUserByName } from '../../../../queries/user/get-is-muted-user-by-name';
 import { findUserByName } from '../../../../repositories/user-repository';
 import { getUserName } from '../_helpers/get-user-name';
 
@@ -30,16 +33,20 @@ export type UserDetailsLayoutProps = UserDetailsPageProps & LayoutProps<{
   posts: ReactNode;
 }>;
 
-const UserDetailsLayout: FC<UserDetailsLayoutProps> = ({
+const UserDetailsLayout: FC<UserDetailsLayoutProps> = async ({
   header,
   profile,
   posts,
+  params,
   children,
 }) => {
-  //TODO: Make it retrieve the user's mute status.
+  const userName = getUserName(params.atUserName);
+  if (!userName) return notFound();
+
+  const isMute = await getIsMutedUserByName(userName);
   return (
     <ApplicationLayout header={header}>
-      <Banner>This user is currently muted.</Banner>
+      {isMute && <Banner>This user is currently muted.</Banner>}
       <main className={styles.main}>
         <article className={styles.article}>
           {profile}
