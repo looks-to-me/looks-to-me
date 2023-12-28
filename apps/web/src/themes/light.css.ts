@@ -151,6 +151,12 @@ globalStyle(':root', {
 
         [theme.color.token.tooltip.text]: theme.color.palette.white,
         [theme.color.token.tooltip.background]: theme.color.palette.gray900,
+
+        [theme.color.token.calendarHeatMap.color1]: theme.color.palette.green50,
+        [theme.color.token.calendarHeatMap.color2]: theme.color.palette.green200,
+        [theme.color.token.calendarHeatMap.color3]: theme.color.palette.green400,
+        [theme.color.token.calendarHeatMap.color4]: theme.color.palette.green600,
+        [theme.color.token.calendarHeatMap.color5]: theme.color.palette.green900,
       },
     },
   },
