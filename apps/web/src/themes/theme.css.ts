@@ -68,6 +68,11 @@ export const theme = createGlobalTheme(':root', {
         overlay: '',
         shadow: '',
       },
+      banner: {
+        text: '',
+        border:'',
+        background: '',
+      },
       button: {
         normal: {
           text: '',
@@ -170,11 +175,6 @@ export const theme = createGlobalTheme(':root', {
       tooltip: {
         text: '',
         background: '',
-      },
-      banner: {
-        text: '',
-        background: '',
-        border:'',
       },
     },
   },

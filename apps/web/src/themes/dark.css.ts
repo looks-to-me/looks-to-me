@@ -74,6 +74,10 @@ globalStyle(':root', {
         [theme.color.token.semantic.overlay]: `color-mix(in srgb, ${theme.color.palette.gray400} 32%, transparent)`,
         [theme.color.token.semantic.shadow]: `color-mix(in srgb, ${theme.color.palette.gray900} 80%, transparent)`,
 
+        [theme.color.token.banner.text]: theme.color.palette.white,
+        [theme.color.token.banner.border]: `color-mix(in srgb, ${theme.color.palette.yellow400} 40%, transparent)`,
+        [theme.color.token.banner.background]: `color-mix(in srgb, ${theme.color.palette.yellow400} 15%, transparent)`,
+
         [theme.color.token.button.normal.text]: theme.color.palette.white,
         [theme.color.token.button.normal.icon]: theme.color.palette.gray300,
         [theme.color.token.button.normal.border]: theme.color.palette.gray600,
@@ -147,10 +151,6 @@ globalStyle(':root', {
 
         [theme.color.token.tooltip.text]: theme.color.palette.white,
         [theme.color.token.tooltip.background]: theme.color.palette.gray400,
-
-        [theme.color.token.banner.text]: theme.color.palette.white,
-        [theme.color.token.banner.background]: `color-mix(in srgb, ${theme.color.palette.yellow500} 12%, transparent)`,
-        [theme.color.token.banner.border]: `color-mix(in srgb, ${theme.color.palette.yellow500} 50%, transparent)`,
       },
     },
   },

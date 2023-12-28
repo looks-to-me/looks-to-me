@@ -74,6 +74,10 @@ globalStyle(':root', {
         [theme.color.token.semantic.overlay]: `color-mix(in srgb, ${theme.color.palette.gray100} 48%, transparent)`,
         [theme.color.token.semantic.shadow]: `color-mix(in srgb, ${theme.color.palette.gray700} 16%, transparent)`,
 
+        [theme.color.token.banner.text]: theme.color.palette.black,
+        [theme.color.token.banner.border]: `color-mix(in srgb, ${theme.color.palette.yellow300} 40%, transparent)`,
+        [theme.color.token.banner.background]: theme.color.palette.yellow50,
+
         [theme.color.token.button.normal.text]: theme.color.palette.gray900,
         [theme.color.token.button.normal.icon]: theme.color.palette.gray500,
         [theme.color.token.button.normal.border]: theme.color.palette.gray200,
@@ -147,10 +151,6 @@ globalStyle(':root', {
 
         [theme.color.token.tooltip.text]: theme.color.palette.white,
         [theme.color.token.tooltip.background]: theme.color.palette.gray900,
-
-        [theme.color.token.banner.text]: theme.color.palette.black,
-        [theme.color.token.banner.background]: theme.color.palette.yellow50,
-        [theme.color.token.banner.border]: theme.color.palette.yellow200,
       },
     },
   },
