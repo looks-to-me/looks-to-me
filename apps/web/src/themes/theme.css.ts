@@ -68,6 +68,11 @@ export const theme = createGlobalTheme(':root', {
         overlay: '',
         shadow: '',
       },
+      banner: {
+        text: '',
+        border:'',
+        background: '',
+      },
       button: {
         normal: {
           text: '',
