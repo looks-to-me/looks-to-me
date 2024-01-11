@@ -63,7 +63,7 @@
     "@storybook/react": "7.6.7",
     "@tsconfig/next": "2.0.1",
     "@types/jest": "29.5.11",
-    "@types/node": "20.10.7",
+    "@types/node": "20.11.0",
     "@types/react": "18.2.47",
     "@types/react-dom": "18.2.18",
     "@vanilla-extract/css": "1.14.0",
