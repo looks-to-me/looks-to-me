@@ -244,8 +244,8 @@ importers:
         specifier: 2.2.2
         version: 2.2.2(jest@29.7.0)
       mini-css-extract-plugin:
-        specifier: 2.7.6
-        version: 2.7.6(webpack@5.88.1)
+        specifier: 2.7.7
+        version: 2.7.7(webpack@5.88.1)
       miniflare:
         specifier: 3.20231218.1
         version: 3.20231218.1
@@ -12775,8 +12775,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /mini-css-extract-plugin@2.7.6(webpack@5.88.1):
-    resolution: {integrity: sha512-Qk7HcgaPkGG6eD77mLvZS1nmxlao3j+9PkrT9Uc7HAE1id3F41+DdBRYRYkbyfNRGzm8/YWtzhw7nVPmwhqTQw==}
+  /mini-css-extract-plugin@2.7.7(webpack@5.88.1):
+    resolution: {integrity: sha512-+0n11YGyRavUR3IlaOzJ0/4Il1avMvJ1VJfhWfCn24ITQXhRr1gghbhhrda6tgtNcpZaWKdSuwKq20Jb7fnlyw==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
