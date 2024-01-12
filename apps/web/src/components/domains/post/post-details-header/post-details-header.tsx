@@ -17,8 +17,12 @@ export type PostDetailsHeaderProps = {
   isMuteUser: boolean;
 };
 
-export const PostDetailsHeader: FC<PostDetailsHeaderProps> = (props) => {
-  const { loginUser, post, postUser } = props;
+export const PostDetailsHeader: FC<PostDetailsHeaderProps> = ({
+  loginUser,
+  post,
+  postUser,
+  isMuteUser,
+}) => {
   const isMyPost = post.userId === loginUser?.id;
   return (
     <header className={styles.wrapper}>
@@ -44,7 +48,12 @@ export const PostDetailsHeader: FC<PostDetailsHeaderProps> = (props) => {
           text={`![L${post.word.toUpperCase().at(0)}TM](${publicEnv().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id})`}
         />
         {isMyPost && (
-          <PostMenu {...props} />
+          <PostMenu
+            postUser={postUser}
+            isMuteUser={isMuteUser}
+            loginUser={loginUser}
+            post={post}
+          />
         )}
       </div>
     </header>
