@@ -32,7 +32,7 @@ jobs:
             feature/* bugfix/* refactor/* chore/* deps/*
 
       - name: Check base branch name
-        uses: agaroot-technologies/action-restrict-base-branch@824225e012eff11d1d3f44ee5e862af2b7b5f1eb # v1.0.0
+        uses: agaroot-technologies/action-restrict-base-branch@b0773c065df5ad61012ee1802d7571c3624001c6 # v1.0.1
         with:
           rules: |
             main <- preview
