@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 
-import { PostSummary } from '../../../../../../components/domains/post/post-summary/post-summary';
+import { PostDetailsHeader } from '../../../../../../components/domains/post/post-details-header/post-details-header';
 import { getLoginUser } from '../../../../../../queries/user/get-login-user';
 import { findMuteUserByUserIdAndMuteUserId } from '../../../../../../repositories/mute-user-repository';
 import { findPostById } from '../../../../../../repositories/post-repository';
@@ -35,7 +35,7 @@ const UserPostDetailsTitlePage: FC<UserPostDetailsTitlePageProps> = async ({
     ? !!await findMuteUserByUserIdAndMuteUserId(loginUser.id, post.userId)
     : false;
   
-  return (<PostSummary postUser={user} post={post} loginUser={loginUser} isMuteUser={isMuteUser} />
+  return (<PostDetailsHeader postUser={user} post={post} loginUser={loginUser} isMuteUser={isMuteUser} />
   );
 };
 

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import * as styles from './post-summary.css';
+import * as styles from './post-details-header.css';
 import { PostMenu } from '../../../../app/(main)/_components/post-menu';
 import { ShareButton } from '../../../../app/(main)/_components/share-button';
 import { publicEnv } from '../../../../app/_libs/env';
@@ -10,13 +10,14 @@ import type { Post } from '../../../../repositories/post-repository';
 import type { User } from '../../../../repositories/user-repository';
 import type { FC } from 'react';
 
-type Props = {
+export type PostDetailsHeaderProps = {
   postUser: User;
   post: Post;
   loginUser: User | undefined;
   isMuteUser: boolean;
 };
-export const PostSummary: FC<Props> = (props) => {
+
+export const PostDetailsHeader: FC<PostDetailsHeaderProps> = (props) => {
   const { loginUser, post, postUser } = props;
   const isMyPost = post.userId === loginUser?.id;
   return (
