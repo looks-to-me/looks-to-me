@@ -71,7 +71,7 @@
     "@vanilla-extract/next-plugin": "2.3.3",
     "@vanilla-extract/recipes": "0.5.1",
     "@vanilla-extract/webpack-plugin": "2.3.2",
-    "better-sqlite3": "9.2.2",
+    "better-sqlite3": "9.3.0",
     "drizzle-kit": "0.20.13",
     "eslint": "8.56.0",
     "eslint-config-next": "14.0.4",
