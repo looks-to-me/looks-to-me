@@ -35,7 +35,13 @@ const UserPostDetailsTitlePage: FC<UserPostDetailsTitlePageProps> = async ({
     ? !!await findMuteUserByUserIdAndMuteUserId(loginUser.id, post.userId)
     : false;
   
-  return (<PostDetailsHeader postUser={user} post={post} loginUser={loginUser} isMuteUser={isMuteUser} />
+  return (
+    <PostDetailsHeader
+      postUser={user}
+      post={post}
+      loginUser={loginUser}
+      isMuteUser={isMuteUser}
+    />
   );
 };
 
