@@ -247,8 +247,8 @@ importers:
         specifier: 2.7.7
         version: 2.7.7(webpack@5.88.1)
       miniflare:
-        specifier: 3.20231218.2
-        version: 3.20231218.2
+        specifier: 3.20231218.3
+        version: 3.20231218.3
       rimraf:
         specifier: 5.0.5
         version: 5.0.5
@@ -12900,6 +12900,29 @@ packages:
       - utf-8-validate
     dev: true
 
+  /miniflare@3.20231218.3:
+    resolution: {integrity: sha512-OrPBYWO0WnFv6DrxZ7hF8f5agZ4+xo/2qSLE0wwCJSqlFhr91dfSJautxfCOBD896nAA7Jqr5LBPEnqq3/k/JQ==}
+    engines: {node: '>=16.13'}
+    hasBin: true
+    dependencies:
+      '@cspotcode/source-map-support': 0.8.1
+      acorn: 8.9.0
+      acorn-walk: 8.2.0
+      capnp-ts: 0.7.0
+      exit-hook: 2.2.1
+      glob-to-regexp: 0.4.1
+      stoppable: 1.1.0
+      undici: 5.28.2
+      workerd: 1.20231218.0
+      ws: 8.16.0
+      youch: 3.2.3
+      zod: 3.22.4
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+    dev: true
+
   /minimalistic-assert@1.0.1:
     resolution: {integrity: sha512-UtJcAD4yEaGtjPezWuO9wC4nwUnVH/8/Im3yEHQP4b67cXlD/Qr9hdITCU1xDbSEXg2XKNaP8jsReV7vQd00/A==}
     dev: true
@@ -15966,6 +15989,13 @@ packages:
 
   /undici@5.26.5:
     resolution: {integrity: sha512-cSb4bPFd5qgR7qr2jYAi0hlX9n5YKK2ONKkLFkxl+v/9BvC0sOpZjBHDBSXc5lWAf5ty9oZdRXytBIHzgUcerw==}
+    engines: {node: '>=14.0'}
+    dependencies:
+      '@fastify/busboy': 2.0.0
+    dev: true
+
+  /undici@5.28.2:
+    resolution: {integrity: sha512-wh1pHJHnUeQV5Xa8/kyQhO7WFa8M34l026L5P/+2TYiakvGy5Rdc8jWZVyG7ieht/0WgJLEd3kcU5gKx+6GC8w==}
     engines: {node: '>=14.0'}
     dependencies:
       '@fastify/busboy': 2.0.0
