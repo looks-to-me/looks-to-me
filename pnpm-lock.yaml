@@ -155,7 +155,7 @@ importers:
         version: 2.1.0(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint@8.56.0)
       '@cloudflare/next-on-pages':
         specifier: 1.8.5
-        version: 1.8.5(vercel@33.2.0)(wrangler@3.24.0)
+        version: 1.8.5(vercel@33.3.0)(wrangler@3.24.0)
       '@cloudflare/workers-types':
         specifier: 4.20240117.0
         version: 4.20240117.0
@@ -259,8 +259,8 @@ importers:
         specifier: 5.3.3
         version: 5.3.3
       vercel:
-        specifier: 33.2.0
-        version: 33.2.0(@swc/core@1.3.104)
+        specifier: 33.3.0
+        version: 33.3.0(@swc/core@1.3.104)
       webpack-merge:
         specifier: 5.10.0
         version: 5.10.0
@@ -1754,7 +1754,7 @@ packages:
       mime: 3.0.0
     dev: true
 
-  /@cloudflare/next-on-pages@1.8.5(vercel@33.2.0)(wrangler@3.24.0):
+  /@cloudflare/next-on-pages@1.8.5(vercel@33.3.0)(wrangler@3.24.0):
     resolution: {integrity: sha512-mY7ovjE6NM9ZPhWH3HZMW7lT9f3242KpHjz94NYaQ3Seu7BzXoHd23QVotxEpWZ1AtGeymrQ3Bmzy32cRToBSw==}
     hasBin: true
     peerDependencies:
@@ -1773,7 +1773,7 @@ packages:
       package-manager-manager: 0.2.0
       pcre-to-regexp: 1.1.0
       semver: 7.5.4
-      vercel: 33.2.0(@swc/core@1.3.104)
+      vercel: 33.3.0(@swc/core@1.3.104)
       wrangler: 3.24.0
     transitivePeerDependencies:
       - bufferutil
@@ -6521,8 +6521,8 @@ packages:
       - supports-color
     dev: true
 
-  /@vercel/python@4.1.0:
-    resolution: {integrity: sha512-EIQXK5zL6fce0Barh74gc7xyLtRyvgmLZDIVQ8yJLtFxPlPCRY3GXkdJ7Jdcw8Pd0uuVF0vIHatv18xSLbcwtg==}
+  /@vercel/python@4.1.1:
+    resolution: {integrity: sha512-EbAdKOZ0hPd5b59tLt7R3RQK1azNvuZTrCFRAVHNjqcIHNCmrSvjag5zBGn7Memkk8qWb3+CgBw9K/3LJKei0w==}
     dev: true
 
   /@vercel/redwood@2.0.6:
@@ -6555,8 +6555,8 @@ packages:
       ajv: 6.12.6
     dev: true
 
-  /@vercel/ruby@2.0.4:
-    resolution: {integrity: sha512-EpZyfF6wFGzFDmubFIh/EZtYpKindmXx/69xSfKEBTVU0afgljyOOICbyZePe5tvigfOEBLSLgrt/2nN+MlLtA==}
+  /@vercel/ruby@2.0.5:
+    resolution: {integrity: sha512-Gfm8HDech41vf+EPleRzgoJUnDTJerKgckMm4KX0JT860gV9XBMSOWYH7eMWHmMza104+HRCWL7wT6OlpftF2Q==}
     dev: true
 
   /@vercel/static-build@2.1.0:
@@ -16268,8 +16268,8 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vercel@33.2.0(@swc/core@1.3.104):
-    resolution: {integrity: sha512-ZcFUJjw2tsG+ea9npPwTOHmoWYuoVVh0NrAaz/OgGcOKGf4PjhqqvdqPzDjwMTQxfzHGy2ugqiV6Ob7354DZ6Q==}
+  /vercel@33.3.0(@swc/core@1.3.104):
+    resolution: {integrity: sha512-+lPMEFDBhH85yHa1m2qyUuNH+Oz0kgv2MV4DqUu4TsMysLDq031sVP/g7AybOIl34xb26qtp2L7EPbWy8ZK5Nw==}
     engines: {node: '>= 16'}
     hasBin: true
     dependencies:
@@ -16279,10 +16279,10 @@ packages:
       '@vercel/hydrogen': 1.0.2
       '@vercel/next': 4.1.0
       '@vercel/node': 3.0.17(@swc/core@1.3.104)
-      '@vercel/python': 4.1.0
+      '@vercel/python': 4.1.1
       '@vercel/redwood': 2.0.6
       '@vercel/remix-builder': 2.0.18
-      '@vercel/ruby': 2.0.4
+      '@vercel/ruby': 2.0.5
       '@vercel/static-build': 2.1.0
       chokidar: 3.3.1
     transitivePeerDependencies:
