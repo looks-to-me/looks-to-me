@@ -13,7 +13,7 @@
     "valibot": "0.27.1"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20240117.0",
+    "@cloudflare/workers-types": "4.20240129.0",
     "eslint": "8.56.0",
     "typescript": "5.3.3",
     "wrangler": "3.24.0"
