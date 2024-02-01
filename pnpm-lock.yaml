@@ -229,8 +229,8 @@ importers:
         specifier: 6.8.0
         version: 6.8.0(eslint@8.56.0)
       eslint-plugin-next-on-pages:
-        specifier: 1.8.5
-        version: 1.8.5(eslint@8.56.0)
+        specifier: 1.8.6
+        version: 1.8.6(eslint@8.56.0)
       eslint-plugin-react:
         specifier: 7.33.2
         version: 7.33.2(eslint@8.56.0)
@@ -5489,15 +5489,11 @@ packages:
   /@types/estree-jsx@1.0.0:
     resolution: {integrity: sha512-3qvGd0z8F2ENTGr/GG1yViqfiKmRfrXVx5sJyHGFu3z7m5g5utCQtGp/g29JnjflhtQJBv1WDQukHiT58xPcYQ==}
     dependencies:
-      '@types/estree': 1.0.1
+      '@types/estree': 1.0.5
     dev: true
 
   /@types/estree@0.0.51:
     resolution: {integrity: sha512-CuPgU6f3eT/XgKKPqKd/gLZV1Xmvf1a2R5POBOGQa6uv82xpls89HU5zKeVoyR8XzHd1RGNOlQlvUe3CFkjWNQ==}
-    dev: true
-
-  /@types/estree@1.0.1:
-    resolution: {integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==}
     dev: true
 
   /@types/estree@1.0.5:
@@ -9412,8 +9408,8 @@ packages:
       object.fromentries: 2.0.7
     dev: true
 
-  /eslint-plugin-next-on-pages@1.8.5(eslint@8.56.0):
-    resolution: {integrity: sha512-umy1zozprXOPYQ5wX9e+er5tYA1IZQqLTUlHuqn/uvQ8xDDvJysf5GF6oZZIYii+f9TeGi7gC6BhD6g9wQ3Lfg==}
+  /eslint-plugin-next-on-pages@1.8.6(eslint@8.56.0):
+    resolution: {integrity: sha512-2CtCQEUZWz38bXevrPknUlLEferd7Dm6wqhJ8xRMoq92hzRV1DmfeLvs7vdxOP9YVxs/qz7b6gBu1mLxmYo13Q==}
     peerDependencies:
       eslint: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
