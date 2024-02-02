@@ -68,7 +68,7 @@
     "@types/react-dom": "18.2.18",
     "@vanilla-extract/css": "1.14.1",
     "@vanilla-extract/css-utils": "0.1.3",
-    "@vanilla-extract/next-plugin": "2.3.5",
+    "@vanilla-extract/next-plugin": "2.3.6",
     "@vanilla-extract/recipes": "0.5.1",
     "@vanilla-extract/webpack-plugin": "2.3.4",
     "better-sqlite3": "9.3.0",
