@@ -33,7 +33,7 @@
     "@supabase/auth-helpers-nextjs": "0.8.7",
     "@supabase/auth-helpers-react": "0.4.2",
     "@supabase/supabase-js": "2.39.3",
-    "ahooks": "3.7.9",
+    "ahooks": "3.7.10",
     "client-only": "0.0.1",
     "clsx": "2.1.0",
     "date-fns": "3.3.1",
