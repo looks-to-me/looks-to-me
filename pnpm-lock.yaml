@@ -211,8 +211,8 @@ importers:
         specifier: 0.5.1
         version: 0.5.1(@vanilla-extract/css@1.14.1)
       '@vanilla-extract/webpack-plugin':
-        specifier: 2.3.5
-        version: 2.3.5(@types/node@20.11.16)(webpack@5.88.1)
+        specifier: 2.3.6
+        version: 2.3.6(@types/node@20.11.16)(webpack@5.88.1)
       better-sqlite3:
         specifier: 9.3.0
         version: 9.3.0
@@ -5952,8 +5952,8 @@ packages:
       outdent: 0.8.0
     dev: true
 
-  /@vanilla-extract/integration@6.5.0(@types/node@20.11.16):
-    resolution: {integrity: sha512-E2YcfO8vA+vs+ua+gpvy1HRqvgWbI+MTlUpxA8FvatOvybuNcWAY0CKwQ/Gpj7rswYKtC6C7+xw33emM6/ImdQ==}
+  /@vanilla-extract/integration@7.0.0(@types/node@20.11.16):
+    resolution: {integrity: sha512-j5CV/5kUMWcvr6UjnJAsZ/DHr1JsL6+y6KyVvXD7kqvRpIy6IxD882ARcpvKyIcEYDmCo0XVQ4+dTr3LnsYEnQ==}
     dependencies:
       '@babel/core': 7.23.5
       '@babel/plugin-syntax-typescript': 7.23.3(@babel/core@7.23.5)
@@ -5984,7 +5984,7 @@ packages:
     peerDependencies:
       next: '>=12.1.7'
     dependencies:
-      '@vanilla-extract/webpack-plugin': 2.3.5(@types/node@20.11.16)(webpack@5.88.1)
+      '@vanilla-extract/webpack-plugin': 2.3.6(@types/node@20.11.16)(webpack@5.88.1)
       next: 14.1.0(@babel/core@7.23.5)(react-dom@18.2.0)(react@18.2.0)
     transitivePeerDependencies:
       - '@types/node'
@@ -6010,12 +6010,12 @@ packages:
       '@vanilla-extract/css': 1.14.1
     dev: true
 
-  /@vanilla-extract/webpack-plugin@2.3.5(@types/node@20.11.16)(webpack@5.88.1):
-    resolution: {integrity: sha512-ZeDa8cho4TI2JzShIYyBDF7woKTCvGCWx/B9HsqLvqk6MSthHdUP3pivE2V1okBKvYuRRg1dMiegXiNIxhCMCQ==}
+  /@vanilla-extract/webpack-plugin@2.3.6(@types/node@20.11.16)(webpack@5.88.1):
+    resolution: {integrity: sha512-GnWdVzBFDfCzNRyBoYzuwPTEWFOKFtq3Td9gla6ng+dCeJFRGW+6jT5hXvqJojw8Rk2fWzc6XA2FHPrVa7W9wA==}
     peerDependencies:
       webpack: ^4.30.0 || ^5.20.2
     dependencies:
-      '@vanilla-extract/integration': 6.5.0(@types/node@20.11.16)
+      '@vanilla-extract/integration': 7.0.0(@types/node@20.11.16)
       chalk: 4.1.2
       debug: 4.3.4
       loader-utils: 2.0.4
