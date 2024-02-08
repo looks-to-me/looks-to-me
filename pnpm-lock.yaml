@@ -12,8 +12,8 @@ importers:
   .:
     devDependencies:
       '@agaroot/eslint-config-common':
-        specifier: 2.1.7
-        version: 2.1.7(@typescript-eslint/eslint-plugin@6.19.1)(@typescript-eslint/parser@6.19.1)(eslint-import-resolver-typescript@3.6.1)(eslint-plugin-import@2.29.1)(eslint-plugin-unicorn@50.0.1)(eslint-plugin-unused-imports@3.0.0)(eslint@8.56.0)
+        specifier: 2.1.8
+        version: 2.1.8(@typescript-eslint/eslint-plugin@6.19.1)(@typescript-eslint/parser@6.19.1)(eslint-import-resolver-typescript@3.6.1)(eslint-plugin-import@2.29.1)(eslint-plugin-unicorn@50.0.1)(eslint-plugin-unused-imports@3.0.0)(eslint@8.56.0)
       '@agaroot/eslint-config-jest':
         specifier: 2.1.1
         version: 2.1.1(eslint-plugin-jest@27.6.3)(eslint@8.56.0)
@@ -343,15 +343,15 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /@agaroot/eslint-config-common@2.1.7(@typescript-eslint/eslint-plugin@6.19.1)(@typescript-eslint/parser@6.19.1)(eslint-import-resolver-typescript@3.6.1)(eslint-plugin-import@2.29.1)(eslint-plugin-unicorn@50.0.1)(eslint-plugin-unused-imports@3.0.0)(eslint@8.56.0):
-    resolution: {integrity: sha512-ZM4wnFk+10BcskAe78vEaR3mmhSwP7+dgTL5Y6CogYu3jI/qPvV0fuvGbqZyUw8zo58Uc9iKg2wSKE8pXa1eXw==}
+  /@agaroot/eslint-config-common@2.1.8(@typescript-eslint/eslint-plugin@6.19.1)(@typescript-eslint/parser@6.19.1)(eslint-import-resolver-typescript@3.6.1)(eslint-plugin-import@2.29.1)(eslint-plugin-unicorn@50.0.1)(eslint-plugin-unused-imports@3.0.0)(eslint@8.56.0):
+    resolution: {integrity: sha512-CMKdMuxhUfLxgy72QKkQ/njmqPbtDMAQ8npJ1KkjeN3CopX9WVGxQ65X6E/xXA/YsVYMoNdFH5qzVcoDySSzZA==}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^6.0.0
       '@typescript-eslint/parser': ^6.0.0
       eslint: ^8.0.0
       eslint-import-resolver-typescript: ^3.0.0
       eslint-plugin-import: ^2.0.0
-      eslint-plugin-unicorn: '>=48.x.x <=50.x.x'
+      eslint-plugin-unicorn: '>=48.x.x <=51.x.x'
       eslint-plugin-unused-imports: ^3.0.0
     dependencies:
       '@typescript-eslint/eslint-plugin': 6.19.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)(typescript@5.3.3)
