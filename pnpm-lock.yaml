@@ -13,7 +13,7 @@ importers:
     devDependencies:
       '@agaroot/eslint-config-common':
         specifier: 2.1.9
-        version: 2.1.9(@typescript-eslint/eslint-plugin@6.19.1)(@typescript-eslint/parser@6.19.1)(eslint-import-resolver-typescript@3.6.1)(eslint-plugin-import@2.29.1)(eslint-plugin-unicorn@50.0.1)(eslint-plugin-unused-imports@3.0.0)(eslint@8.56.0)
+        version: 2.1.9(@typescript-eslint/eslint-plugin@6.19.1)(@typescript-eslint/parser@6.19.1)(eslint-import-resolver-typescript@3.6.1)(eslint-plugin-import@2.29.1)(eslint-plugin-unicorn@50.0.1)(eslint-plugin-unused-imports@3.1.0)(eslint@8.56.0)
       '@agaroot/eslint-config-jest':
         specifier: 2.1.1
         version: 2.1.1(eslint-plugin-jest@27.9.0)(eslint@8.56.0)
@@ -45,8 +45,8 @@ importers:
         specifier: 50.0.1
         version: 50.0.1(eslint@8.56.0)
       eslint-plugin-unused-imports:
-        specifier: 3.0.0
-        version: 3.0.0(@typescript-eslint/eslint-plugin@6.19.1)(eslint@8.56.0)
+        specifier: 3.1.0
+        version: 3.1.0(@typescript-eslint/eslint-plugin@6.19.1)(eslint@8.56.0)
       scaffdog:
         specifier: 3.0.0
         version: 3.0.0
@@ -343,7 +343,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /@agaroot/eslint-config-common@2.1.9(@typescript-eslint/eslint-plugin@6.19.1)(@typescript-eslint/parser@6.19.1)(eslint-import-resolver-typescript@3.6.1)(eslint-plugin-import@2.29.1)(eslint-plugin-unicorn@50.0.1)(eslint-plugin-unused-imports@3.0.0)(eslint@8.56.0):
+  /@agaroot/eslint-config-common@2.1.9(@typescript-eslint/eslint-plugin@6.19.1)(@typescript-eslint/parser@6.19.1)(eslint-import-resolver-typescript@3.6.1)(eslint-plugin-import@2.29.1)(eslint-plugin-unicorn@50.0.1)(eslint-plugin-unused-imports@3.1.0)(eslint@8.56.0):
     resolution: {integrity: sha512-5vWnrVoG9LKUla9cE9ZbrjKYcMak1jNMFVy+piyN/XZrKzNPpZabzpxcKqLX1UAmpu9EbjbyhyAzSZadLCh8/Q==}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^6.0.0 || ^7.0.0
@@ -360,7 +360,7 @@ packages:
       eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@6.19.1)(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.56.0)
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.19.1)(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)
       eslint-plugin-unicorn: 50.0.1(eslint@8.56.0)
-      eslint-plugin-unused-imports: 3.0.0(@typescript-eslint/eslint-plugin@6.19.1)(eslint@8.56.0)
+      eslint-plugin-unused-imports: 3.1.0(@typescript-eslint/eslint-plugin@6.19.1)(eslint@8.56.0)
     dev: true
 
   /@agaroot/eslint-config-jest@2.1.1(eslint-plugin-jest@27.9.0)(eslint@8.56.0):
@@ -9479,12 +9479,12 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-unused-imports@3.0.0(@typescript-eslint/eslint-plugin@6.19.1)(eslint@8.56.0):
-    resolution: {integrity: sha512-sduiswLJfZHeeBJ+MQaG+xYzSWdRXoSw61DpU13mzWumCkR0ufD0HmO4kdNokjrkluMHpj/7PJeN35pgbhW3kw==}
+  /eslint-plugin-unused-imports@3.1.0(@typescript-eslint/eslint-plugin@6.19.1)(eslint@8.56.0):
+    resolution: {integrity: sha512-9l1YFCzXKkw1qtAru1RWUtG2EVDZY0a0eChKXcL+EZ5jitG7qxdctu4RnvhOJHv4xfmUf7h+JJPINlVpGhZMrw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
-      '@typescript-eslint/eslint-plugin': ^6.0.0
-      eslint: ^8.0.0
+      '@typescript-eslint/eslint-plugin': 6 - 7
+      eslint: '8'
     peerDependenciesMeta:
       '@typescript-eslint/eslint-plugin':
         optional: true
