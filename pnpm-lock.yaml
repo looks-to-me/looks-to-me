@@ -144,8 +144,8 @@ importers:
         specifier: 1.4.0
         version: 1.4.0(react-dom@18.2.0)(react@18.2.0)
       valibot:
-        specifier: 0.28.1
-        version: 0.28.1
+        specifier: 0.29.0
+        version: 0.29.0
     devDependencies:
       '@agaroot/eslint-config-next':
         specifier: 2.1.1
@@ -274,8 +274,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/image-cache
       valibot:
-        specifier: 0.28.1
-        version: 0.28.1
+        specifier: 0.29.0
+        version: 0.29.0
     devDependencies:
       '@cloudflare/workers-types':
         specifier: 4.20240208.0
@@ -293,8 +293,8 @@ importers:
   apps/worker-image-overlay:
     dependencies:
       valibot:
-        specifier: 0.28.1
-        version: 0.28.1
+        specifier: 0.29.0
+        version: 0.29.0
     devDependencies:
       '@cloudflare/workers-types':
         specifier: 4.20240208.0
@@ -15819,8 +15819,8 @@ packages:
       convert-source-map: 1.9.0
     dev: true
 
-  /valibot@0.28.1:
-    resolution: {integrity: sha512-zQnjwNJuXk6362Leu0+4eFa/SMwRom3/hEvH6s1EGf3oXIPbo2WFKDra9ymnbVh3clLRvd8hw4sKF5ruI2Lyvw==}
+  /valibot@0.29.0:
+    resolution: {integrity: sha512-JhZn08lwZPhAamOCfBwBkv/btQt4KeQhekULPH8crH053zUCLSOGEF2zKExu3bFf245tsj6J1dY0ysd/jUiMIQ==}
     dev: false
 
   /valid-filename@4.0.0:
