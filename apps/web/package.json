@@ -86,7 +86,7 @@
     "rimraf": "5.0.5",
     "storybook": "7.6.17",
     "typescript": "5.3.3",
-    "vercel": "33.5.1",
+    "vercel": "33.5.2",
     "webpack-merge": "5.10.0",
     "wrangler": "3.28.4"
   }
