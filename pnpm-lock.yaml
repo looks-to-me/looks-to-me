@@ -141,8 +141,8 @@ importers:
         specifier: 0.0.1
         version: 0.0.1
       sonner:
-        specifier: 1.4.0
-        version: 1.4.0(react-dom@18.2.0)(react@18.2.0)
+        specifier: 1.4.1
+        version: 1.4.1(react-dom@18.2.0)(react@18.2.0)
       valibot:
         specifier: 0.29.0
         version: 0.29.0
@@ -14718,8 +14718,8 @@ packages:
       tslib: 2.5.3
     dev: true
 
-  /sonner@1.4.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-nvkTsIuOmi9e5Wz5If8ldasJjZNVfwiXYijBi2dbijvTQnQppvMcXTFNxL/NUFWlI2yJ1JX7TREDsg+gYm9WyA==}
+  /sonner@1.4.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-KJcFbMF+z2OMSJ9H+N6mrk/ffnEzuyLFlHoza/HQvNyiACoY958VtFdC7xD9D74ttzA+kcS1YIJOsNwbKWDsHw==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
