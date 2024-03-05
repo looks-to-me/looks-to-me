@@ -229,8 +229,8 @@ importers:
         specifier: 6.8.0
         version: 6.8.0(eslint@8.57.0)
       eslint-plugin-next-on-pages:
-        specifier: 1.9.0
-        version: 1.9.0(eslint@8.57.0)
+        specifier: 1.10.0
+        version: 1.10.0(eslint@8.57.0)
       eslint-plugin-react:
         specifier: 7.34.0
         version: 7.34.0(eslint@8.57.0)
@@ -9557,8 +9557,8 @@ packages:
       object.fromentries: 2.0.7
     dev: true
 
-  /eslint-plugin-next-on-pages@1.9.0(eslint@8.57.0):
-    resolution: {integrity: sha512-Iq1kTKlHRWKkvg4PV7vFMs/wLjmyyuTsOAa7O8JdmrRPbev3rlfoKaDgDGFmkxvgHRnxEFlVJ1BTZzHJwPe/Ew==}
+  /eslint-plugin-next-on-pages@1.10.0(eslint@8.57.0):
+    resolution: {integrity: sha512-T3pQ1s8lq0VHLyalbzBDnUEgVgEPDqmD3P5CXNgSPJUOlh1y5SHhxWvtNRf+9LcoE9a4rKPDRoFbHj8n+eU+lw==}
     peerDependencies:
       eslint: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
