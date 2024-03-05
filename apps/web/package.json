@@ -51,7 +51,7 @@
   "devDependencies": {
     "@agaroot/eslint-config-next": "2.1.1",
     "@agaroot/eslint-config-react": "2.1.0",
-    "@cloudflare/next-on-pages": "1.9.0",
+    "@cloudflare/next-on-pages": "1.10.0",
     "@cloudflare/workers-types": "4.20240222.0",
     "@next/eslint-plugin-next": "14.1.1",
     "@sqlite.org/sqlite-wasm": "3.42.0-build7",
