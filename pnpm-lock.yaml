@@ -211,8 +211,8 @@ importers:
         specifier: 0.5.2
         version: 0.5.2(@vanilla-extract/css@1.14.1)
       '@vanilla-extract/webpack-plugin':
-        specifier: 2.3.6
-        version: 2.3.6(@types/node@20.11.25)(webpack@5.88.1)
+        specifier: 2.3.7
+        version: 2.3.7(@types/node@20.11.25)(webpack@5.88.1)
       better-sqlite3:
         specifier: 9.4.3
         version: 9.4.3
@@ -6167,27 +6167,6 @@ packages:
       '@vanilla-extract/css': ^1.0.0
     dependencies:
       '@vanilla-extract/css': 1.14.1
-    dev: true
-
-  /@vanilla-extract/webpack-plugin@2.3.6(@types/node@20.11.25)(webpack@5.88.1):
-    resolution: {integrity: sha512-GnWdVzBFDfCzNRyBoYzuwPTEWFOKFtq3Td9gla6ng+dCeJFRGW+6jT5hXvqJojw8Rk2fWzc6XA2FHPrVa7W9wA==}
-    peerDependencies:
-      webpack: ^4.30.0 || ^5.20.2
-    dependencies:
-      '@vanilla-extract/integration': 7.0.0(@types/node@20.11.25)
-      chalk: 4.1.2
-      debug: 4.3.4
-      loader-utils: 2.0.4
-      webpack: 5.88.1(@swc/core@1.4.2)(esbuild@0.17.19)
-    transitivePeerDependencies:
-      - '@types/node'
-      - less
-      - lightningcss
-      - sass
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
     dev: true
 
   /@vanilla-extract/webpack-plugin@2.3.7(@types/node@20.11.25)(webpack@5.88.1):
