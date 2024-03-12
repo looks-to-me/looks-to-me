@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@looks-to-me/package-image-cache": "workspace:*",
-    "valibot": "0.29.0"
+    "valibot": "0.30.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20240222.0",

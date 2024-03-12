@@ -46,7 +46,7 @@
     "react-dom": "18.2.0",
     "server-only": "0.0.1",
     "sonner": "1.4.3",
-    "valibot": "0.29.0"
+    "valibot": "0.30.0"
   },
   "devDependencies": {
     "@agaroot/eslint-config-next": "2.1.1",
