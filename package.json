@@ -19,7 +19,7 @@
     "@agaroot/eslint-config-common": "2.1.9",
     "@agaroot/eslint-config-jest": "2.1.1",
     "@scaffdog/types": "3.0.0",
-    "@tsconfig/strictest": "2.0.4",
+    "@tsconfig/strictest": "2.0.5",
     "@typescript-eslint/eslint-plugin": "7.4.0",
     "@typescript-eslint/parser": "7.4.0",
     "eslint": "8.57.0",
