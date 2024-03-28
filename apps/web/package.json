@@ -64,7 +64,7 @@
     "@tsconfig/next": "2.0.3",
     "@types/jest": "29.5.12",
     "@types/node": "20.11.30",
-    "@types/react": "18.2.72",
+    "@types/react": "18.2.73",
     "@types/react-dom": "18.2.22",
     "@vanilla-extract/css": "1.14.1",
     "@vanilla-extract/css-utils": "0.1.3",
