@@ -120,8 +120,8 @@ importers:
         specifier: 4.3.1
         version: 4.3.1
       drizzle-orm:
-        specifier: 0.30.4
-        version: 0.30.4(@cloudflare/workers-types@4.20240320.1)(@types/react@18.2.73)(better-sqlite3@9.4.3)(react@18.2.0)
+        specifier: 0.30.5
+        version: 0.30.5(@cloudflare/workers-types@4.20240320.1)(@types/react@18.2.73)(better-sqlite3@9.4.3)(react@18.2.0)
       lucide-react:
         specifier: 0.363.0
         version: 0.363.0(react@18.2.0)
@@ -8509,8 +8509,8 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.30.4(@cloudflare/workers-types@4.20240320.1)(@types/react@18.2.73)(better-sqlite3@9.4.3)(react@18.2.0):
-    resolution: {integrity: sha512-kWoSMGbrOFkmkAweLTFtHJMpN+nwhx89q0mLELqT2aEU+1szNV8jrnBmJwZ0WGNp7J7yQn/ezEtxBI/qzTSElQ==}
+  /drizzle-orm@0.30.5(@cloudflare/workers-types@4.20240320.1)(@types/react@18.2.73)(better-sqlite3@9.4.3)(react@18.2.0):
+    resolution: {integrity: sha512-oImmwGpe1jTWvhPkpsnramZA8m/lE8krTj7Ws7KHSFCMshMXmcZWX2g2Ki793PQOBmwI50KYzWJ9yNKKhWYLyA==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
       '@cloudflare/workers-types': '>=3'
