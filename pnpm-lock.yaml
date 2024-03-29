@@ -205,8 +205,8 @@ importers:
         specifier: 0.1.3
         version: 0.1.3
       '@vanilla-extract/next-plugin':
-        specifier: 2.3.7
-        version: 2.3.7(@types/node@20.11.30)(next@14.1.4)(webpack@5.88.1)
+        specifier: 2.4.0
+        version: 2.4.0(@types/node@20.11.30)(next@14.1.4)(webpack@5.88.1)
       '@vanilla-extract/recipes':
         specifier: 0.5.2
         version: 0.5.2(@vanilla-extract/css@1.14.2)
@@ -6153,8 +6153,8 @@ packages:
       - terser
     dev: true
 
-  /@vanilla-extract/next-plugin@2.3.7(@types/node@20.11.30)(next@14.1.4)(webpack@5.88.1):
-    resolution: {integrity: sha512-/11nYE5a3waT0lwRps+2thvyQlBKi4wK+SF8za/QWwO5GTD3O/bZ3nl96MC00SXZHALHwbV1trdtqVLCq9Xqpw==}
+  /@vanilla-extract/next-plugin@2.4.0(@types/node@20.11.30)(next@14.1.4)(webpack@5.88.1):
+    resolution: {integrity: sha512-hRdTpr43NIFNmIbY7z+oA/BupzK7rBDVMfTFi/fVD3TD4x47LH/eNkDLsujGYl4kUpO96TxLw1wn9P9eC034YA==}
     peerDependencies:
       next: '>=12.1.7'
     dependencies:
