@@ -155,7 +155,7 @@ importers:
         version: 2.1.0(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.34.1)(eslint@8.57.0)
       '@cloudflare/next-on-pages':
         specifier: 1.11.0
-        version: 1.11.0(@cloudflare/workers-types@4.20240405.0)(vercel@33.6.3)(wrangler@3.42.0)
+        version: 1.11.0(@cloudflare/workers-types@4.20240405.0)(vercel@33.7.0)(wrangler@3.42.0)
       '@cloudflare/workers-types':
         specifier: 4.20240405.0
         version: 4.20240405.0
@@ -259,8 +259,8 @@ importers:
         specifier: 5.4.4
         version: 5.4.4
       vercel:
-        specifier: 33.6.3
-        version: 33.6.3(@swc/core@1.4.2)
+        specifier: 33.7.0
+        version: 33.7.0(@swc/core@1.4.2)
       webpack-merge:
         specifier: 5.10.0
         version: 5.10.0
@@ -1754,7 +1754,7 @@ packages:
       mime: 3.0.0
     dev: true
 
-  /@cloudflare/next-on-pages@1.11.0(@cloudflare/workers-types@4.20240405.0)(vercel@33.6.3)(wrangler@3.42.0):
+  /@cloudflare/next-on-pages@1.11.0(@cloudflare/workers-types@4.20240405.0)(vercel@33.7.0)(wrangler@3.42.0):
     resolution: {integrity: sha512-/wKpDMrp2THkco+O5IKb7/JA07pppop4cRF3LEgL1FhJYxlOn3jo9WsZSuW58PovQJR2tZisLB/EJjJpmt1KOA==}
     hasBin: true
     peerDependencies:
@@ -1778,7 +1778,7 @@ packages:
       package-manager-manager: 0.2.0
       pcre-to-regexp: 1.1.0
       semver: 7.5.4
-      vercel: 33.6.3(@swc/core@1.4.2)
+      vercel: 33.7.0(@swc/core@1.4.2)
       wrangler: 3.42.0(@cloudflare/workers-types@4.20240405.0)
     transitivePeerDependencies:
       - bufferutil
@@ -6304,8 +6304,8 @@ packages:
       fs-extra: 11.1.0
     dev: true
 
-  /@vercel/go@3.1.0:
-    resolution: {integrity: sha512-bL2Vphzol//CIhgwGjx/iDjkdZT3vVX5s+F0tdbwhy54i8PTtvwoasSTjjnP27vv+jESsIbV72m3mcKdB1iApw==}
+  /@vercel/go@3.1.1:
+    resolution: {integrity: sha512-mrzomNYltxkjvtUmaYry5YEyvwTz6c/QQHE5Gr/pPGRIniUiP6T6OFOJ49RBN7e6pRXaNzHPVuidiuBhvHh5+Q==}
     dev: true
 
   /@vercel/hydrogen@1.0.2:
@@ -16195,14 +16195,14 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vercel@33.6.3(@swc/core@1.4.2):
-    resolution: {integrity: sha512-/flctkL4tI+7nOT2mHuQ99PDGichX8cKDo/hL9KcJj98YxMhyNTjp9f66LG9nt3ES3LKeAn/6l3iXsIaOuxkXA==}
+  /vercel@33.7.0(@swc/core@1.4.2):
+    resolution: {integrity: sha512-zP2NwI4qwF78AtmJ19GSwyeeAR5WVW8+Jvbnt480GVS7VO4NCAwIeoQmZ1irCD9iKINAO6bM96ry/btZmd+SZw==}
     engines: {node: '>= 16'}
     hasBin: true
     dependencies:
       '@vercel/build-utils': 7.11.0
       '@vercel/fun': 1.1.0
-      '@vercel/go': 3.1.0
+      '@vercel/go': 3.1.1
       '@vercel/hydrogen': 1.0.2
       '@vercel/next': 4.1.6
       '@vercel/node': 3.0.26(@swc/core@1.4.2)
