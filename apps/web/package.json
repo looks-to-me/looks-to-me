@@ -31,7 +31,7 @@
     "@radix-ui/react-tooltip": "1.0.7",
     "@radix-ui/react-visually-hidden": "1.0.3",
     "@supabase/auth-helpers-nextjs": "0.10.0",
-    "@supabase/auth-helpers-react": "0.4.2",
+    "@supabase/auth-helpers-react": "0.5.0",
     "@supabase/supabase-js": "2.42.0",
     "ahooks": "3.7.10",
     "client-only": "0.0.1",

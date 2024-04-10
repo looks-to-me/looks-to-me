@@ -99,8 +99,8 @@ importers:
         specifier: 0.10.0
         version: 0.10.0(@supabase/supabase-js@2.42.0)
       '@supabase/auth-helpers-react':
-        specifier: 0.4.2
-        version: 0.4.2(@supabase/supabase-js@2.42.0)
+        specifier: 0.5.0
+        version: 0.5.0(@supabase/supabase-js@2.42.0)
       '@supabase/supabase-js':
         specifier: 2.42.0
         version: 2.42.0
@@ -5139,10 +5139,10 @@ packages:
       set-cookie-parser: 2.6.0
     dev: false
 
-  /@supabase/auth-helpers-react@0.4.2(@supabase/supabase-js@2.42.0):
-    resolution: {integrity: sha512-zRj1leYMKJVYQeHFvZiUzlmHM+ATWFR/V7Q9F0yXSWEnMcNHL0CKnIBqhkjtSQ2trE+YaoCvFEHjxISppxIZXQ==}
+  /@supabase/auth-helpers-react@0.5.0(@supabase/supabase-js@2.42.0):
+    resolution: {integrity: sha512-5QSaV2CGuhDhd7RlQCoviVEAYsP7XnrFMReOcBazDvVmqSIyjKcDwhLhWvnrxMOq5qjOaA44MHo7wXqDiF0puQ==}
     peerDependencies:
-      '@supabase/supabase-js': ^2.19.0
+      '@supabase/supabase-js': ^2.39.8
     dependencies:
       '@supabase/supabase-js': 2.42.0
     dev: false
