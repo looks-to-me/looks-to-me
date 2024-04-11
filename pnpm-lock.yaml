@@ -123,8 +123,8 @@ importers:
         specifier: 0.30.8
         version: 0.30.8(@cloudflare/workers-types@4.20240405.0)(@types/react@18.2.75)(better-sqlite3@9.5.0)(react@18.2.0)
       lucide-react:
-        specifier: 0.366.0
-        version: 0.366.0(react@18.2.0)
+        specifier: 0.367.0
+        version: 0.367.0(react@18.2.0)
       modern-normalize:
         specifier: 2.0.0
         version: 2.0.0
@@ -12331,8 +12331,8 @@ packages:
       es5-ext: 0.10.62
     dev: true
 
-  /lucide-react@0.366.0(react@18.2.0):
-    resolution: {integrity: sha512-iUOsp/35wOkrgEzigZlZI/OhVxQZ8CmxjebdIjfSDzNBmrNYjQfKSpeKderaEFfGt3OycF1BE+wLlaqWRuoh4w==}
+  /lucide-react@0.367.0(react@18.2.0):
+    resolution: {integrity: sha512-3FWiBaJiqMrx5a1sjH3CVdPqWnw/Z/PTVeeTDmOeILSs+8Ah+VhCd4FQMeHo6Z0WxHcm9piIOtilQwvceiCCKQ==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:
