@@ -154,8 +154,8 @@ importers:
         specifier: 2.1.0
         version: 2.1.0(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.34.1)(eslint@8.57.0)
       '@cloudflare/next-on-pages':
-        specifier: 1.11.0
-        version: 1.11.0(@cloudflare/workers-types@4.20240405.0)(vercel@33.7.1)(wrangler@3.50.0)
+        specifier: 1.11.1
+        version: 1.11.1(@cloudflare/workers-types@4.20240405.0)(vercel@33.7.1)(wrangler@3.50.0)
       '@cloudflare/workers-types':
         specifier: 4.20240405.0
         version: 4.20240405.0
@@ -1754,8 +1754,8 @@ packages:
       mime: 3.0.0
     dev: true
 
-  /@cloudflare/next-on-pages@1.11.0(@cloudflare/workers-types@4.20240405.0)(vercel@33.7.1)(wrangler@3.50.0):
-    resolution: {integrity: sha512-/wKpDMrp2THkco+O5IKb7/JA07pppop4cRF3LEgL1FhJYxlOn3jo9WsZSuW58PovQJR2tZisLB/EJjJpmt1KOA==}
+  /@cloudflare/next-on-pages@1.11.1(@cloudflare/workers-types@4.20240405.0)(vercel@33.7.1)(wrangler@3.50.0):
+    resolution: {integrity: sha512-fDXauz1dM/yNju/n43t2EiLkjekHiDAyNxjRnLamOQHe2oUO4ug+0fwsDn/cy71p/jfmcNdQpE0VrSf6MToEBQ==}
     hasBin: true
     peerDependencies:
       '@cloudflare/workers-types': ^4.20240208.0
@@ -1777,7 +1777,7 @@ packages:
       miniflare: 3.20240405.2
       package-manager-manager: 0.2.0
       pcre-to-regexp: 1.1.0
-      semver: 7.5.4
+      semver: 7.6.0
       vercel: 33.7.1(@swc/core@1.4.2)
       wrangler: 3.50.0(@cloudflare/workers-types@4.20240405.0)
     transitivePeerDependencies:
@@ -4602,7 +4602,7 @@ packages:
       prompts: 2.4.2
       puppeteer-core: 2.1.1
       read-pkg-up: 7.0.1
-      semver: 7.5.4
+      semver: 7.6.0
       strip-json-comments: 3.1.1
       tempy: 1.0.1
       ts-dedent: 2.2.0
@@ -6063,7 +6063,7 @@ packages:
       '@typescript-eslint/typescript-estree': 5.62.0(typescript@5.4.5)
       eslint: 8.57.0
       eslint-scope: 5.1.1
-      semver: 7.5.4
+      semver: 7.6.0
     transitivePeerDependencies:
       - supports-color
       - typescript
