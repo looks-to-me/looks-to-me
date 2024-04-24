@@ -35,7 +35,7 @@
     "@supabase/supabase-js": "2.42.5",
     "ahooks": "3.7.10",
     "client-only": "0.0.1",
-    "clsx": "2.1.0",
+    "clsx": "2.1.1",
     "date-fns": "3.6.0",
     "deepmerge": "4.3.1",
     "drizzle-orm": "0.30.9",
