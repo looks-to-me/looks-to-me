@@ -250,8 +250,8 @@ importers:
         specifier: 3.20240405.2
         version: 3.20240405.2
       rimraf:
-        specifier: 5.0.5
-        version: 5.0.5
+        specifier: 5.0.7
+        version: 5.0.7
       storybook:
         specifier: 7.6.18
         version: 7.6.18
@@ -10693,18 +10693,6 @@ packages:
       path-scurry: 1.10.1
     dev: true
 
-  /glob@10.3.9:
-    resolution: {integrity: sha512-2tU/LKevAQvDVuVJ9pg9Yv9xcbSh+TqHuTaXTNbQwf+0kDl9Fm6bMovi4Nm5c8TVvfxo2LLcqCGtmO9KoJaGWg==}
-    engines: {node: '>=16 || 14 >=14.17'}
-    hasBin: true
-    dependencies:
-      foreground-child: 3.1.1
-      jackspeak: 2.3.5
-      minimatch: 9.0.3
-      minipass: 5.0.0
-      path-scurry: 1.10.1
-    dev: true
-
   /glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
     dependencies:
@@ -14598,12 +14586,12 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rimraf@5.0.5:
-    resolution: {integrity: sha512-CqDakW+hMe/Bz202FPEymy68P+G50RfMQK+Qo5YUqc9SPipvbGjCGKd0RSKEelbsfQuw3g5NZDSrlZZAJurH1A==}
-    engines: {node: '>=14'}
+  /rimraf@5.0.7:
+    resolution: {integrity: sha512-nV6YcJo5wbLW77m+8KjH8aB/7/rxQy9SZ0HY5shnwULfS+9nmTtVXAJET5NdZmCzA4fPI/Hm1wo/Po/4mopOdg==}
+    engines: {node: '>=14.18'}
     hasBin: true
     dependencies:
-      glob: 10.3.9
+      glob: 10.3.10
     dev: true
 
   /ripemd160@2.0.2:
