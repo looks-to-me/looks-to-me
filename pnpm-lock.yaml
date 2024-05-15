@@ -199,8 +199,8 @@ importers:
         specifier: 18.2.25
         version: 18.2.25
       '@vanilla-extract/css':
-        specifier: 1.14.2
-        version: 1.14.2
+        specifier: 1.15.1
+        version: 1.15.1
       '@vanilla-extract/css-utils':
         specifier: 0.1.3
         version: 0.1.3
@@ -209,7 +209,7 @@ importers:
         version: 2.4.0(@types/node@20.11.30)(next@14.2.3)(webpack@5.88.1)
       '@vanilla-extract/recipes':
         specifier: 0.5.2
-        version: 0.5.2(@vanilla-extract/css@1.14.2)
+        version: 0.5.2(@vanilla-extract/css@1.15.1)
       '@vanilla-extract/webpack-plugin':
         specifier: 2.3.8
         version: 2.3.8(@types/node@20.11.30)(webpack@5.88.1)
@@ -6435,22 +6435,6 @@ packages:
     resolution: {integrity: sha512-PZAcHROlgtCUGI2y0JntdNwvPwCNyeVnkQu6KTYKdmxBbK3w72XJUmLFYapfaFfgami4I9CTLnrJTPdtmS3gpw==}
     dev: true
 
-  /@vanilla-extract/css@1.14.2:
-    resolution: {integrity: sha512-OasEW4ojGqqRiUpsyEDUMrSkLnmwbChtafkogpCZ1eDAgAZ9eY9CHLYodj2nB8aV5T25kQ5shm92k25ngjYhhg==}
-    dependencies:
-      '@emotion/hash': 0.9.1
-      '@vanilla-extract/private': 1.0.4
-      chalk: 4.1.2
-      css-what: 6.1.0
-      cssesc: 3.0.0
-      csstype: 3.1.2
-      deep-object-diff: 1.1.9
-      deepmerge: 4.3.1
-      media-query-parser: 2.0.2
-      modern-ahocorasick: 1.0.0
-      outdent: 0.8.0
-    dev: true
-
   /@vanilla-extract/css@1.15.1:
     resolution: {integrity: sha512-puAfTKAUtsMr2+D+grQNjU5umsdw9zdVgQflUlbzS/tGORaAHdgaYz7jfKPmz1c4ZcpJ6uFNOiI50NDOAzzhyg==}
     dependencies:
@@ -6520,12 +6504,12 @@ packages:
     resolution: {integrity: sha512-8FGD6AejeC/nXcblgNCM5rnZb9KXa4WNkR03HCWtdJBpANjTgjHEglNLFnhuvdQ78tC6afaxBPI+g7F2NX3tgg==}
     dev: true
 
-  /@vanilla-extract/recipes@0.5.2(@vanilla-extract/css@1.14.2):
+  /@vanilla-extract/recipes@0.5.2(@vanilla-extract/css@1.15.1):
     resolution: {integrity: sha512-IcDw3tFOcSJ+DUxL8MIGbg03eyccYb6NBO/rcgp439PDuHxo5GIQefVeGc1L5mIr/lUVPwDc1N5OXTHiGpiz1A==}
     peerDependencies:
       '@vanilla-extract/css': ^1.0.0
     dependencies:
-      '@vanilla-extract/css': 1.14.2
+      '@vanilla-extract/css': 1.15.1
     dev: true
 
   /@vanilla-extract/webpack-plugin@2.3.8(@types/node@20.11.30)(webpack@5.88.1):
@@ -8561,15 +8545,6 @@ packages:
 
   /dedent@0.7.0:
     resolution: {integrity: sha512-Q6fKUPqnAHAyhiUgFU7BUzLiv0kd8saH9al7tnu5Q/okj6dnupxyTgFIBjVzJATdfIAm9NAsvXNzjaKa+bxVyA==}
-    dev: true
-
-  /dedent@1.5.1:
-    resolution: {integrity: sha512-+LxW+KLWxu3HW3M2w2ympwtqPrqYRzU8fqi6Fhd18fBALe15blJPI/I4+UHveMVG6lJqB4JNd4UG0S5cnVHwIg==}
-    peerDependencies:
-      babel-plugin-macros: ^3.1.0
-    peerDependenciesMeta:
-      babel-plugin-macros:
-        optional: true
     dev: true
 
   /dedent@1.5.3:
@@ -11926,7 +11901,7 @@ packages:
       '@types/node': 20.11.30
       chalk: 4.1.2
       co: 4.6.0
-      dedent: 1.5.1
+      dedent: 1.5.3
       is-generator-fn: 2.1.0
       jest-each: 29.7.0
       jest-matcher-utils: 29.7.0
@@ -13683,10 +13658,6 @@ packages:
   /os-tmpdir@1.0.2:
     resolution: {integrity: sha512-D2FR03Vir7FIu45XBY20mTb+/ZSWB00sjU9jdQXt83gDrI4Ztz5Fs7/yy74g2N5SVQY4xY1qDr4rNddwYRVX0g==}
     engines: {node: '>=0.10.0'}
-    dev: true
-
-  /outdent@0.8.0:
-    resolution: {integrity: sha512-KiOAIsdpUTcAXuykya5fnVVT+/5uS0Q1mrkRHcF89tpieSmY33O/tmc54CqwA+bfhbtEfZUNLHaPUiB9X3jt1A==}
     dev: true
 
   /p-cancelable@3.0.0:
