@@ -199,8 +199,8 @@ importers:
         specifier: 18.2.25
         version: 18.2.25
       '@vanilla-extract/css':
-        specifier: 1.15.2
-        version: 1.15.2
+        specifier: 1.15.3
+        version: 1.15.3
       '@vanilla-extract/css-utils':
         specifier: 0.1.4
         version: 0.1.4
@@ -209,7 +209,7 @@ importers:
         version: 2.4.1(@types/node@20.11.30)(next@14.2.4)(webpack@5.88.1)
       '@vanilla-extract/recipes':
         specifier: 0.5.3
-        version: 0.5.3(@vanilla-extract/css@1.15.2)
+        version: 0.5.3(@vanilla-extract/css@1.15.3)
       '@vanilla-extract/webpack-plugin':
         specifier: 2.3.9
         version: 2.3.9(@types/node@20.11.30)(webpack@5.88.1)
@@ -6337,8 +6337,8 @@ packages:
     resolution: {integrity: sha512-3WRxMGa/VQaL32jZqRUpnnoVFSws5iPIUpQr+XlT4jXhtMeKYcA20rFK2k2Amkg04sqrO84A8hNMeABWZQesEg==}
     dev: true
 
-  /@vanilla-extract/css@1.15.2:
-    resolution: {integrity: sha512-Bi61iCAtojCuqvV+FYaF5i69vBjuMQJpHPdpgKYyQvx+e2Hp79V0ELglyYOdcyg9Wh0k0MFwgCDipVd7EloTXQ==}
+  /@vanilla-extract/css@1.15.3:
+    resolution: {integrity: sha512-mxoskDAxdQAspbkmQRxBvolUi1u1jnyy9WZGm+GeH8V2wwhEvndzl1QoK7w8JfA0WFevTxbev5d+i+xACZlPhA==}
     dependencies:
       '@emotion/hash': 0.9.1
       '@vanilla-extract/private': 1.0.5
@@ -6361,7 +6361,7 @@ packages:
       '@babel/core': 7.24.5
       '@babel/plugin-syntax-typescript': 7.23.3(@babel/core@7.24.5)
       '@vanilla-extract/babel-plugin-debug-ids': 1.0.6
-      '@vanilla-extract/css': 1.15.2
+      '@vanilla-extract/css': 1.15.3
       dedent: 1.5.3
       esbuild: 0.19.8
       eval: 0.1.8
@@ -6406,12 +6406,12 @@ packages:
     resolution: {integrity: sha512-6YXeOEKYTA3UV+RC8DeAjFk+/okoNz/h88R+McnzA2zpaVqTR/Ep+vszkWYlGBcMNO7vEkqbq5nT/JMMvhi+tw==}
     dev: true
 
-  /@vanilla-extract/recipes@0.5.3(@vanilla-extract/css@1.15.2):
+  /@vanilla-extract/recipes@0.5.3(@vanilla-extract/css@1.15.3):
     resolution: {integrity: sha512-SPREq1NmaoKuvJeOV0pppOkwy3pWZUoDufsyQ6iHrbkHhAU7XQqG9o0iZSmg5JoVgDLIiOr9djQb0x9wuxig7A==}
     peerDependencies:
       '@vanilla-extract/css': ^1.0.0
     dependencies:
-      '@vanilla-extract/css': 1.15.2
+      '@vanilla-extract/css': 1.15.3
     dev: true
 
   /@vanilla-extract/webpack-plugin@2.3.9(@types/node@20.11.30)(webpack@5.88.1):
