@@ -205,8 +205,8 @@ importers:
         specifier: 0.1.4
         version: 0.1.4
       '@vanilla-extract/next-plugin':
-        specifier: 2.4.1
-        version: 2.4.1(@types/node@20.11.30)(next@14.2.4)(webpack@5.88.1)
+        specifier: 2.4.3
+        version: 2.4.3(@types/node@20.11.30)(next@14.2.4)(webpack@5.88.1)
       '@vanilla-extract/recipes':
         specifier: 0.5.3
         version: 0.5.3(@vanilla-extract/css@1.15.3)
@@ -6382,12 +6382,39 @@ packages:
       - terser
     dev: true
 
-  /@vanilla-extract/next-plugin@2.4.1(@types/node@20.11.30)(next@14.2.4)(webpack@5.88.1):
-    resolution: {integrity: sha512-2IOetmzN1u2VS9AmZL6UHVEswZPUC8OCNPA4AdZ24fLchRYeXjzChxHGQXn7G1x3RqtIfC7w00G1s/t189tE5A==}
+  /@vanilla-extract/integration@7.1.7(@types/node@20.11.30):
+    resolution: {integrity: sha512-xKwrCtmiBq6QzRNj+IOg5cAMRQRXkFnnvcE374MROJPnVvDX0d+lrIQapFGt64F0H8Gjk4kVl4slvCiV3ECQ4w==}
+    dependencies:
+      '@babel/core': 7.24.5
+      '@babel/plugin-syntax-typescript': 7.23.3(@babel/core@7.24.5)
+      '@vanilla-extract/babel-plugin-debug-ids': 1.0.6
+      '@vanilla-extract/css': 1.15.3
+      dedent: 1.5.3
+      esbuild: 0.19.8
+      eval: 0.1.8
+      find-up: 5.0.0
+      javascript-stringify: 2.1.0
+      mlly: 1.5.0
+      vite: 5.0.11(@types/node@20.11.30)
+      vite-node: 1.2.1(@types/node@20.11.30)
+    transitivePeerDependencies:
+      - '@types/node'
+      - babel-plugin-macros
+      - less
+      - lightningcss
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+    dev: true
+
+  /@vanilla-extract/next-plugin@2.4.3(@types/node@20.11.30)(next@14.2.4)(webpack@5.88.1):
+    resolution: {integrity: sha512-PI/T6eFynyVQdbUhlh9BuggjtmrcKd6uADvDi+bknYL8u//oNUOaAF/KUvepiMEHAcUgxEfDlS4Id/IdP9Agpw==}
     peerDependencies:
       next: '>=12.1.7'
     dependencies:
-      '@vanilla-extract/webpack-plugin': 2.3.9(@types/node@20.11.30)(webpack@5.88.1)
+      '@vanilla-extract/webpack-plugin': 2.3.11(@types/node@20.11.30)(webpack@5.88.1)
       next: 14.2.4(@babel/core@7.24.5)(react-dom@18.2.0)(react@18.2.0)
     transitivePeerDependencies:
       - '@types/node'
@@ -6412,6 +6439,28 @@ packages:
       '@vanilla-extract/css': ^1.0.0
     dependencies:
       '@vanilla-extract/css': 1.15.3
+    dev: true
+
+  /@vanilla-extract/webpack-plugin@2.3.11(@types/node@20.11.30)(webpack@5.88.1):
+    resolution: {integrity: sha512-DHHYZ3yT84FmDCgnIcgeB7gA3XtNbiHfk2/e3ugoWutKSakW6+zz0qVPV+HX7YVv9o+dlrFe0I17bCBkNaOYlA==}
+    peerDependencies:
+      webpack: ^4.30.0 || ^5.20.2
+    dependencies:
+      '@vanilla-extract/integration': 7.1.7(@types/node@20.11.30)
+      debug: 4.3.4
+      loader-utils: 2.0.4
+      picocolors: 1.0.0
+      webpack: 5.88.1(@swc/core@1.4.17)(esbuild@0.17.19)
+    transitivePeerDependencies:
+      - '@types/node'
+      - babel-plugin-macros
+      - less
+      - lightningcss
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
     dev: true
 
   /@vanilla-extract/webpack-plugin@2.3.9(@types/node@20.11.30)(webpack@5.88.1):
