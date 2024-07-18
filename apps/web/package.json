@@ -70,7 +70,7 @@
     "@vanilla-extract/css-utils": "0.1.4",
     "@vanilla-extract/next-plugin": "2.4.3",
     "@vanilla-extract/recipes": "0.5.3",
-    "@vanilla-extract/webpack-plugin": "2.3.9",
+    "@vanilla-extract/webpack-plugin": "2.3.11",
     "better-sqlite3": "9.6.0",
     "drizzle-kit": "0.20.17",
     "eslint": "8.57.0",
