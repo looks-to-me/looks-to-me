@@ -121,7 +121,7 @@ importers:
         version: 4.3.1
       drizzle-orm:
         specifier: 0.31.2
-        version: 0.31.2(@cloudflare/workers-types@4.20240605.0)(@types/react@18.2.79)(better-sqlite3@9.6.0)(react@18.2.0)
+        version: 0.31.2(@cloudflare/workers-types@4.20240718.0)(@types/react@18.2.79)(better-sqlite3@9.6.0)(react@18.2.0)
       lucide-react:
         specifier: 0.394.0
         version: 0.394.0(react@18.2.0)
@@ -155,10 +155,10 @@ importers:
         version: 2.1.0(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.34.4)(eslint@8.57.0)
       '@cloudflare/next-on-pages':
         specifier: 1.12.1
-        version: 1.12.1(@cloudflare/workers-types@4.20240605.0)(vercel@33.7.1)(wrangler@3.50.0)
+        version: 1.12.1(@cloudflare/workers-types@4.20240718.0)(vercel@33.7.1)(wrangler@3.50.0)
       '@cloudflare/workers-types':
-        specifier: 4.20240605.0
-        version: 4.20240605.0
+        specifier: 4.20240718.0
+        version: 4.20240718.0
       '@next/eslint-plugin-next':
         specifier: 14.2.5
         version: 14.2.5
@@ -266,7 +266,7 @@ importers:
         version: 5.10.0
       wrangler:
         specifier: 3.50.0
-        version: 3.50.0(@cloudflare/workers-types@4.20240605.0)
+        version: 3.50.0(@cloudflare/workers-types@4.20240718.0)
 
   apps/worker-cdn:
     dependencies:
@@ -278,8 +278,8 @@ importers:
         version: 0.30.0
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: 4.20240605.0
-        version: 4.20240605.0
+        specifier: 4.20240718.0
+        version: 4.20240718.0
       eslint:
         specifier: 8.57.0
         version: 8.57.0
@@ -288,7 +288,7 @@ importers:
         version: 5.4.5
       wrangler:
         specifier: 3.50.0
-        version: 3.50.0(@cloudflare/workers-types@4.20240605.0)
+        version: 3.50.0(@cloudflare/workers-types@4.20240718.0)
 
   apps/worker-image-overlay:
     dependencies:
@@ -297,8 +297,8 @@ importers:
         version: 0.30.0
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: 4.20240605.0
-        version: 4.20240605.0
+        specifier: 4.20240718.0
+        version: 4.20240718.0
       eslint:
         specifier: 8.57.0
         version: 8.57.0
@@ -307,13 +307,13 @@ importers:
         version: 5.4.5
       wrangler:
         specifier: 3.50.0
-        version: 3.50.0(@cloudflare/workers-types@4.20240605.0)
+        version: 3.50.0(@cloudflare/workers-types@4.20240718.0)
 
   packages/image-cache:
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: 4.20240605.0
-        version: 4.20240605.0
+        specifier: 4.20240718.0
+        version: 4.20240718.0
       '@swc/core':
         specifier: 1.5.29
         version: 1.5.29
@@ -1777,7 +1777,7 @@ packages:
       mime: 3.0.0
     dev: true
 
-  /@cloudflare/next-on-pages@1.12.1(@cloudflare/workers-types@4.20240605.0)(vercel@33.7.1)(wrangler@3.50.0):
+  /@cloudflare/next-on-pages@1.12.1(@cloudflare/workers-types@4.20240718.0)(vercel@33.7.1)(wrangler@3.50.0):
     resolution: {integrity: sha512-Kx19dKNwe0FgBuBA3h8hnEfJqFLQR7tK787pN7huv6191g7185VWc5n1eSYJdCBvPEoS3D2Lk6ogjSMOgFQhBA==}
     hasBin: true
     peerDependencies:
@@ -1788,7 +1788,7 @@ packages:
       '@cloudflare/workers-types':
         optional: true
     dependencies:
-      '@cloudflare/workers-types': 4.20240605.0
+      '@cloudflare/workers-types': 4.20240718.0
       acorn: 8.11.3
       ast-types: 0.14.2
       chalk: 5.3.0
@@ -1802,7 +1802,7 @@ packages:
       pcre-to-regexp: 1.1.0
       semver: 7.6.0
       vercel: 33.7.1(@swc/core@1.5.29)
-      wrangler: 3.50.0(@cloudflare/workers-types@4.20240605.0)
+      wrangler: 3.50.0(@cloudflare/workers-types@4.20240718.0)
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -1899,8 +1899,8 @@ packages:
     dev: true
     optional: true
 
-  /@cloudflare/workers-types@4.20240605.0:
-    resolution: {integrity: sha512-zJw4Q6CnkaQ5JZmHRkNiSs5GfiRgUIUL8BIHPQkd2XUHZkIBv9M9yc0LKEwMYGpCFC+oSOltet6c9RjP9uQ99g==}
+  /@cloudflare/workers-types@4.20240718.0:
+    resolution: {integrity: sha512-7RqxXIM9HyhjfZ9ztXjITuc7mL0w4s+zXgypqKmMuvuObC3DgXutJ3bOYbQ+Ss5QbywrzWSNMlmGdL/ldg/yZg==}
 
   /@colors/colors@1.5.0:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
@@ -8526,7 +8526,7 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.31.2(@cloudflare/workers-types@4.20240605.0)(@types/react@18.2.79)(better-sqlite3@9.6.0)(react@18.2.0):
+  /drizzle-orm@0.31.2(@cloudflare/workers-types@4.20240718.0)(@types/react@18.2.79)(better-sqlite3@9.6.0)(react@18.2.0):
     resolution: {integrity: sha512-QnenevbnnAzmbNzQwbhklvIYrDE8YER8K7kSrAWQSV1YvFCdSQPzj+jzqRdTSsV2cDqSpQ0NXGyL1G9I43LDLg==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
@@ -8609,7 +8609,7 @@ packages:
       sqlite3:
         optional: true
     dependencies:
-      '@cloudflare/workers-types': 4.20240605.0
+      '@cloudflare/workers-types': 4.20240718.0
       '@types/react': 18.2.79
       better-sqlite3: 9.6.0
       react: 18.2.0
@@ -16635,7 +16635,7 @@ packages:
       '@cloudflare/workerd-windows-64': 1.20240605.0
     dev: true
 
-  /wrangler@3.50.0(@cloudflare/workers-types@4.20240605.0):
+  /wrangler@3.50.0(@cloudflare/workers-types@4.20240718.0):
     resolution: {integrity: sha512-JlLuch+6DtaC5HGp8YD9Au++XvMv34g3ySdlB5SyPbaObELi8P9ZID5vgyf9AA75djzxL7cuNOk1YdKCJEuq0w==}
     engines: {node: '>=16.17.0'}
     hasBin: true
@@ -16646,7 +16646,7 @@ packages:
         optional: true
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.1
-      '@cloudflare/workers-types': 4.20240605.0
+      '@cloudflare/workers-types': 4.20240718.0
       '@esbuild-plugins/node-globals-polyfill': 0.2.3(esbuild@0.17.19)
       '@esbuild-plugins/node-modules-polyfill': 0.2.2(esbuild@0.17.19)
       blake3-wasm: 2.1.5
