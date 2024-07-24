@@ -120,8 +120,8 @@ importers:
         specifier: 4.3.1
         version: 4.3.1
       drizzle-orm:
-        specifier: 0.31.2
-        version: 0.31.2(@cloudflare/workers-types@4.20240722.0)(@types/react@18.2.79)(better-sqlite3@9.6.0)(react@18.2.0)
+        specifier: 0.32.1
+        version: 0.32.1(@cloudflare/workers-types@4.20240722.0)(@types/react@18.2.79)(better-sqlite3@9.6.0)(react@18.2.0)
       lucide-react:
         specifier: 0.394.0
         version: 0.394.0(react@18.2.0)
@@ -8647,8 +8647,8 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.31.2(@cloudflare/workers-types@4.20240722.0)(@types/react@18.2.79)(better-sqlite3@9.6.0)(react@18.2.0):
-    resolution: {integrity: sha512-QnenevbnnAzmbNzQwbhklvIYrDE8YER8K7kSrAWQSV1YvFCdSQPzj+jzqRdTSsV2cDqSpQ0NXGyL1G9I43LDLg==}
+  /drizzle-orm@0.32.1(@cloudflare/workers-types@4.20240722.0)(@types/react@18.2.79)(better-sqlite3@9.6.0)(react@18.2.0):
+    resolution: {integrity: sha512-Wq1J+lL8PzwR5K3a1FfoWsbs8powjr3pGA4+5+2ueN1VTLDNFYEolUyUWFtqy8DVRvYbL2n7sXZkgVmK9dQkng==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
       '@cloudflare/workers-types': '>=3'
@@ -8658,6 +8658,7 @@ packages:
       '@op-engineering/op-sqlite': '>=2'
       '@opentelemetry/api': ^1.4.1
       '@planetscale/database': '>=1'
+      '@prisma/client': '*'
       '@tidbcloud/serverless': '*'
       '@types/better-sqlite3': '*'
       '@types/pg': '*'
@@ -8673,6 +8674,7 @@ packages:
       mysql2: '>=2'
       pg: '>=8'
       postgres: '>=3'
+      prisma: '*'
       react: '>=18'
       sql.js: '>=1'
       sqlite3: '>=5'
@@ -8692,6 +8694,8 @@ packages:
       '@opentelemetry/api':
         optional: true
       '@planetscale/database':
+        optional: true
+      '@prisma/client':
         optional: true
       '@tidbcloud/serverless':
         optional: true
@@ -8722,6 +8726,8 @@ packages:
       pg:
         optional: true
       postgres:
+        optional: true
+      prisma:
         optional: true
       react:
         optional: true
