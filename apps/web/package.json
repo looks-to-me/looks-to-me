@@ -75,7 +75,7 @@
     "drizzle-kit": "0.20.17",
     "eslint": "8.57.0",
     "eslint-config-next": "14.2.5",
-    "eslint-plugin-jsx-a11y": "6.8.0",
+    "eslint-plugin-jsx-a11y": "6.9.0",
     "eslint-plugin-next-on-pages": "1.11.3",
     "eslint-plugin-react": "7.34.4",
     "eslint-plugin-react-hooks": "4.6.0",
