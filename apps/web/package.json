@@ -85,7 +85,7 @@
     "miniflare": "3.20240718.1",
     "rimraf": "5.0.9",
     "storybook": "7.6.20",
-    "typescript": "5.4.5",
+    "typescript": "5.5.4",
     "vercel": "33.7.1",
     "webpack-merge": "5.10.0",
     "wrangler": "3.50.0"
