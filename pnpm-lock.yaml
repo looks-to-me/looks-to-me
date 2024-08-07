@@ -121,7 +121,7 @@ importers:
         version: 4.3.1
       drizzle-orm:
         specifier: 0.32.2
-        version: 0.32.2(@cloudflare/workers-types@4.20240729.0)(@types/react@18.2.79)(better-sqlite3@9.6.0)(react@18.2.0)
+        version: 0.32.2(@cloudflare/workers-types@4.20240806.0)(@types/react@18.2.79)(better-sqlite3@9.6.0)(react@18.2.0)
       lucide-react:
         specifier: 0.424.0
         version: 0.424.0(react@18.2.0)
@@ -155,10 +155,10 @@ importers:
         version: 2.1.0(eslint-plugin-jsx-a11y@6.9.0)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.35.0)(eslint@8.57.0)
       '@cloudflare/next-on-pages':
         specifier: 1.13.1
-        version: 1.13.1(@cloudflare/workers-types@4.20240729.0)(vercel@33.7.1)(wrangler@3.68.0)
+        version: 1.13.1(@cloudflare/workers-types@4.20240806.0)(vercel@33.7.1)(wrangler@3.68.0)
       '@cloudflare/workers-types':
-        specifier: 4.20240729.0
-        version: 4.20240729.0
+        specifier: 4.20240806.0
+        version: 4.20240806.0
       '@next/eslint-plugin-next':
         specifier: 14.2.5
         version: 14.2.5
@@ -266,7 +266,7 @@ importers:
         version: 5.10.0
       wrangler:
         specifier: 3.68.0
-        version: 3.68.0(@cloudflare/workers-types@4.20240729.0)
+        version: 3.68.0(@cloudflare/workers-types@4.20240806.0)
 
   apps/worker-cdn:
     dependencies:
@@ -278,8 +278,8 @@ importers:
         version: 0.30.0
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: 4.20240729.0
-        version: 4.20240729.0
+        specifier: 4.20240806.0
+        version: 4.20240806.0
       eslint:
         specifier: 8.57.0
         version: 8.57.0
@@ -288,7 +288,7 @@ importers:
         version: 5.5.4
       wrangler:
         specifier: 3.68.0
-        version: 3.68.0(@cloudflare/workers-types@4.20240729.0)
+        version: 3.68.0(@cloudflare/workers-types@4.20240806.0)
 
   apps/worker-image-overlay:
     dependencies:
@@ -297,8 +297,8 @@ importers:
         version: 0.30.0
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: 4.20240729.0
-        version: 4.20240729.0
+        specifier: 4.20240806.0
+        version: 4.20240806.0
       eslint:
         specifier: 8.57.0
         version: 8.57.0
@@ -307,13 +307,13 @@ importers:
         version: 5.5.4
       wrangler:
         specifier: 3.68.0
-        version: 3.68.0(@cloudflare/workers-types@4.20240729.0)
+        version: 3.68.0(@cloudflare/workers-types@4.20240806.0)
 
   packages/image-cache:
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: 4.20240729.0
-        version: 4.20240729.0
+        specifier: 4.20240806.0
+        version: 4.20240806.0
       '@swc/core':
         specifier: 1.7.6
         version: 1.7.6
@@ -1778,7 +1778,7 @@ packages:
       mime: 3.0.0
     dev: true
 
-  /@cloudflare/next-on-pages@1.13.1(@cloudflare/workers-types@4.20240729.0)(vercel@33.7.1)(wrangler@3.68.0):
+  /@cloudflare/next-on-pages@1.13.1(@cloudflare/workers-types@4.20240806.0)(vercel@33.7.1)(wrangler@3.68.0):
     resolution: {integrity: sha512-pq7dZ57+nWExb9od1C5TLJ5yYF/hIYxYx/I2YWbPY7yyFfS1PdDMxubBvMrZddcDEdQA7zj1d11G9b1qXE9Lzw==}
     hasBin: true
     peerDependencies:
@@ -1789,7 +1789,7 @@ packages:
       '@cloudflare/workers-types':
         optional: true
     dependencies:
-      '@cloudflare/workers-types': 4.20240729.0
+      '@cloudflare/workers-types': 4.20240806.0
       acorn: 8.11.3
       ast-types: 0.14.2
       chalk: 5.3.0
@@ -1803,7 +1803,7 @@ packages:
       pcre-to-regexp: 1.1.0
       semver: 7.6.0
       vercel: 33.7.1(@swc/core@1.5.29)
-      wrangler: 3.68.0(@cloudflare/workers-types@4.20240729.0)
+      wrangler: 3.68.0(@cloudflare/workers-types@4.20240806.0)
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -1855,8 +1855,8 @@ packages:
     dev: true
     optional: true
 
-  /@cloudflare/workers-types@4.20240729.0:
-    resolution: {integrity: sha512-wfe44YQkv5T9aBr/z95P706r2/Ydg32weJYyBOhvge7FqtdY6mM7l39rybNiJrbJoyN16dd0xxyQMf23aJNC6Q==}
+  /@cloudflare/workers-types@4.20240806.0:
+    resolution: {integrity: sha512-8lvgrwXGTZEBsUQJ8YUnMk72Anh9omwr6fqWLw/EwVgcw1nQxs/bfdadBEbdP48l9fWXjE4E5XERLUrrFuEpsg==}
 
   /@colors/colors@1.5.0:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
@@ -8600,7 +8600,7 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.32.2(@cloudflare/workers-types@4.20240729.0)(@types/react@18.2.79)(better-sqlite3@9.6.0)(react@18.2.0):
+  /drizzle-orm@0.32.2(@cloudflare/workers-types@4.20240806.0)(@types/react@18.2.79)(better-sqlite3@9.6.0)(react@18.2.0):
     resolution: {integrity: sha512-3fXKzPzrgZIcnWCSLiERKN5Opf9Iagrag75snfFlKeKSYB1nlgPBshzW3Zn6dQymkyiib+xc4nIz0t8U+Xdpuw==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
@@ -8689,7 +8689,7 @@ packages:
       sqlite3:
         optional: true
     dependencies:
-      '@cloudflare/workers-types': 4.20240729.0
+      '@cloudflare/workers-types': 4.20240806.0
       '@types/react': 18.2.79
       better-sqlite3: 9.6.0
       react: 18.2.0
@@ -12969,7 +12969,7 @@ packages:
       acorn: 8.11.3
       pathe: 1.1.2
       pkg-types: 1.0.3
-      ufo: 1.3.2
+      ufo: 1.5.4
     dev: true
 
   /modern-ahocorasick@1.0.0:
@@ -15962,10 +15962,6 @@ packages:
     hasBin: true
     dev: true
 
-  /ufo@1.3.2:
-    resolution: {integrity: sha512-o+ORpgGwaYQXgqGDwd+hkS4PuZ3QnmqMMxRuajK/a38L6fTpcE5GPIfrf+L/KemFzfUpeUQc1rRS1iDBozvnFA==}
-    dev: true
-
   /ufo@1.5.4:
     resolution: {integrity: sha512-UsUk3byDzKd04EyoZ7U4DOlxQaD14JUKQl6/P7wiX4FNvUfm3XL246n9W5AmqwW5RSFJ27NAuM0iLscAOYUiGQ==}
     dev: true
@@ -16616,7 +16612,7 @@ packages:
       '@cloudflare/workerd-windows-64': 1.20240725.0
     dev: true
 
-  /wrangler@3.68.0(@cloudflare/workers-types@4.20240729.0):
+  /wrangler@3.68.0(@cloudflare/workers-types@4.20240806.0):
     resolution: {integrity: sha512-gsIeglkh5nOn1mHJs0bf1pOq/DvIt+umjO/5a867IYYXaN4j/ar5cRR1+F5ue3S7uEjYCLIZZjs8ESiPTSEt+Q==}
     engines: {node: '>=16.17.0'}
     hasBin: true
@@ -16627,7 +16623,7 @@ packages:
         optional: true
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
-      '@cloudflare/workers-types': 4.20240729.0
+      '@cloudflare/workers-types': 4.20240806.0
       '@esbuild-plugins/node-globals-polyfill': 0.2.3(esbuild@0.17.19)
       '@esbuild-plugins/node-modules-polyfill': 0.2.2(esbuild@0.17.19)
       blake3-wasm: 2.1.5
