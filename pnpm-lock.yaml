@@ -154,8 +154,8 @@ importers:
         specifier: 2.1.0
         version: 2.1.0(eslint-plugin-jsx-a11y@6.9.0)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.35.0)(eslint@8.57.0)
       '@cloudflare/next-on-pages':
-        specifier: 1.13.1
-        version: 1.13.1(@cloudflare/workers-types@4.20240806.0)(vercel@33.7.1)(wrangler@3.68.0)
+        specifier: 1.13.2
+        version: 1.13.2(@cloudflare/workers-types@4.20240806.0)(vercel@33.7.1)(wrangler@3.68.0)
       '@cloudflare/workers-types':
         specifier: 4.20240806.0
         version: 4.20240806.0
@@ -1778,8 +1778,8 @@ packages:
       mime: 3.0.0
     dev: true
 
-  /@cloudflare/next-on-pages@1.13.1(@cloudflare/workers-types@4.20240806.0)(vercel@33.7.1)(wrangler@3.68.0):
-    resolution: {integrity: sha512-pq7dZ57+nWExb9od1C5TLJ5yYF/hIYxYx/I2YWbPY7yyFfS1PdDMxubBvMrZddcDEdQA7zj1d11G9b1qXE9Lzw==}
+  /@cloudflare/next-on-pages@1.13.2(@cloudflare/workers-types@4.20240806.0)(vercel@33.7.1)(wrangler@3.68.0):
+    resolution: {integrity: sha512-lIri+zuxj6SKqIlewOoC9g9dD5+GbUMAXRrkhApmWGekE0PFlEAR7tHHDkbMXix4ctp7K4lPBY/wWUd8oh+VtQ==}
     hasBin: true
     peerDependencies:
       '@cloudflare/workers-types': ^4.20240208.0
