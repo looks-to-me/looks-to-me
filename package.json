@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@agaroot/eslint-config-common": "2.1.9",
-    "@agaroot/eslint-config-jest": "2.1.1",
+    "@agaroot/eslint-config-jest": "2.1.2",
     "@scaffdog/types": "3.0.0",
     "@tsconfig/strictest": "2.0.5",
     "@typescript-eslint/eslint-plugin": "7.7.1",
