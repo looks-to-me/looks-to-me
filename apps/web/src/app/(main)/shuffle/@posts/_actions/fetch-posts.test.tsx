@@ -31,7 +31,7 @@ describe('fetchPosts', () => {
 
     const postId1 = createId();
     const postId2 = createId();
-    
+
     beforeEach(async () => {
       const user1 = await database()
         .insert(schema.users)
@@ -148,7 +148,7 @@ describe('fetchPosts', () => {
       it('should not return user2 post', async () => {
         const posts = await fetchPosts();
 
-        const elements = posts.map(post => post.node as ReactElement<PostProps>);
+        const elements = posts.map((post) => post.node as ReactElement<PostProps>);
         expect(elements[0]?.props.post.id).toBe(postId1);
       });
     });

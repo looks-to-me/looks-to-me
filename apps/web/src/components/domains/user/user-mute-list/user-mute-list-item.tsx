@@ -30,7 +30,7 @@ export const UserMuteListItem: FC<UserMuteListItemProps> = ({
     unmuteUserId: user.id,
     unmuteUserName: user.profile.name,
   });
-  
+
   return (
     <li className={clsx(className, styles.wrapper)}>
       <Link

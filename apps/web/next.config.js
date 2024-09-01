@@ -1,11 +1,12 @@
-/* eslint-disable no-undef,unicorn/prefer-module */
+/* eslint-disable unicorn/prefer-module */
 
 const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin');
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 
 const withVanillaExtract = createVanillaExtractPlugin();
 
-module.exports = phase => {
+// eslint-disable-next-line unicorn/no-anonymous-default-export
+module.exports = (phase) => {
   /** @type {import('next').NextConfig} */
   const nextConfig = {
     transpilePackages: [

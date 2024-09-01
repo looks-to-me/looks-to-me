@@ -27,8 +27,8 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
-  webpackFinal: config => {
-    config.module?.rules?.forEach(rule => {
+  webpackFinal: (config) => {
+    config.module?.rules?.forEach((rule) => {
       if (!rule || typeof rule !== 'object') return;
       if (rule.test instanceof RegExp && rule.test.test('test.css')) {
         rule.exclude = /\.vanilla\.css$/i;

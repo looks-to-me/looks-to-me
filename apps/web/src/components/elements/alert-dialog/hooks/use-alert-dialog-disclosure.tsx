@@ -23,7 +23,7 @@ export const useAlertDialogDisclosure = () => {
 
   const closeAlertDialog = useCallback(() => setAlertDialogState({ isOpen: false }), []);
 
-  const openAlertDialog = useCallback(async (props: OpenAlertDialogProps ) => {
+  const openAlertDialog = useCallback(async (props: OpenAlertDialogProps) => {
     return await new Promise<boolean>((resolve) => {
       setAlertDialogState({
         isOpen: true,

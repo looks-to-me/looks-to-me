@@ -11,7 +11,6 @@ import type { UserAccountMenuProps } from '../../user/user-account-menu';
 import type { ComponentPropsWithoutRef, FC } from 'react';
 
 export type ApplicationHeaderProps = ComponentPropsWithoutRef<'header'> & {
-  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
   user: UserAccountMenuProps['user'] | undefined;
 };
 
@@ -29,11 +28,13 @@ export const ApplicationHeader: FC<ApplicationHeaderProps> = ({
         {children}
       </div>
       <NewPostButton />
-      {user ? (
-        <UserAccountMenu user={user} />
-      ) : (
-        <LoginButton />
-      )}
+      {user
+        ? (
+            <UserAccountMenu user={user} />
+          )
+        : (
+            <LoginButton />
+          )}
     </header>
   );
 };

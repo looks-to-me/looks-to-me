@@ -70,7 +70,7 @@ export const theme = createGlobalTheme(':root', {
       },
       banner: {
         text: '',
-        border:'',
+        border: '',
         background: '',
       },
       button: {

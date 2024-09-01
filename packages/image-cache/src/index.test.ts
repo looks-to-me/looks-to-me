@@ -4,6 +4,7 @@ import { deleteImageCache, imageCache } from './index';
 import type { ImageCacheParameters } from './index';
 
 jest.mock('./helper', () => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const original = jest.requireActual('./helper');
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return {
@@ -117,10 +118,15 @@ describe('deleteImageCache', () => {
 
     await deleteImageCache({ bucket, path: 'images/posts/testPostId' });
 
+    // eslint-disable-next-line @typescript-eslint/unbound-method
     expect(bucket.list).toHaveBeenCalledWith({ prefix: 'caches/images/posts/testPostId' });
+    // eslint-disable-next-line @typescript-eslint/unbound-method
     expect(bucket.delete).toHaveBeenCalledTimes(3);
+    // eslint-disable-next-line @typescript-eslint/unbound-method
     expect(bucket.delete).toHaveBeenNthCalledWith(1, 'caches/images/posts/testPostId/webp');
+    // eslint-disable-next-line @typescript-eslint/unbound-method
     expect(bucket.delete).toHaveBeenNthCalledWith(2, 'caches/images/posts/testPostId/webp/1920');
+    // eslint-disable-next-line @typescript-eslint/unbound-method
     expect(bucket.delete).toHaveBeenNthCalledWith(3, 'caches/images/posts/testPostId/unknown/1920');
   });
 });

@@ -6,7 +6,7 @@ import { forwardRef } from 'react';
 
 import * as styles from './drop-down-menu.css';
 
-import type { ElementRef , ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
+import type { ElementRef, ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
 
 export type DropDownMenuItemProps = ComponentPropsWithoutRef<typeof DropDownMenuPrimitive.Item>;
 

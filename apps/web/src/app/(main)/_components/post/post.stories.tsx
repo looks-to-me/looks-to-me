@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 export default {
   component: Post,
   decorators: [
-    Story => (
+    (Story) => (
       <div style={{ width: '16rem' }}>
         <Story />
       </div>

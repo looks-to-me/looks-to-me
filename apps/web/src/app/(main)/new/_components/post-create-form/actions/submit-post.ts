@@ -68,7 +68,7 @@ export const submitPost = async (formData: FormData): Promise<SubmitPostResult> 
       // TODO: If the request fails, make it retry.
       const results = await Promise.all([
         fetch(`${publicEnv().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id}`),
-        fetch(`${publicEnv().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id}`, { headers: { 'accept': 'image/webp' } }),
+        fetch(`${publicEnv().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id}`, { headers: { accept: 'image/webp' } }),
       ]);
 
       for (const result of results) {

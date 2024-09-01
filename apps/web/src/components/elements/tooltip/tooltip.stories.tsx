@@ -9,7 +9,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 export default {
   component: Tooltip,
   decorators: [
-    Story => (
+    (Story) => (
       <TooltipProvider>
         <Story />
       </TooltipProvider>

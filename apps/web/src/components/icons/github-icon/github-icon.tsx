@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 
 import * as styles from './github-icon.css';
 
-import type { ForwardRefRenderFunction , ComponentPropsWithoutRef } from 'react';
+import type { ForwardRefRenderFunction, ComponentPropsWithoutRef } from 'react';
 
 export type GitHubIconProps = ComponentPropsWithoutRef<'svg'> & {
   // nothing

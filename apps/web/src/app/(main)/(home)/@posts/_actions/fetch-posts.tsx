@@ -40,7 +40,7 @@ export const fetchPosts = async (cursor?: string): Promise<InfiniteScrollEdge[]>
     .limit(limit)
     .all();
 
-  return posts.map(post => ({
+  return posts.map((post) => ({
     cursor: post.postedAt.toISOString(),
     node: (
       <Post

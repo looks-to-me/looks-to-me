@@ -20,7 +20,7 @@ export type HomePostListPageProps = HomePageProps & PageProps<{
 const HomePostListPage: FC<HomePostListPageProps> = async () => {
   const posts = await fetchPosts();
 
-  const fetcher: InfiniteScrollFetcher = async arguments_ => {
+  const fetcher: InfiniteScrollFetcher = async (arguments_) => {
     'use server';
     return await fetchPosts(arguments_.cursor);
   };

@@ -6,7 +6,7 @@ import { forwardRef } from 'react';
 
 import * as styles from './popover.css';
 
-import type { ElementRef , ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
+import type { ElementRef, ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
 
 export type PopoverContentProps = Omit<ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>, 'sideOffset' | 'align'>;
 

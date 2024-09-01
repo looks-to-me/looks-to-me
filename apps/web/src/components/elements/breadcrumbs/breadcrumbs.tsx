@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 
 import * as styles from './breadcrumbs.css';
 
-import type { ForwardRefRenderFunction , ComponentPropsWithoutRef } from 'react';
+import type { ForwardRefRenderFunction, ComponentPropsWithoutRef } from 'react';
 
 export type BreadcrumbsProps = ComponentPropsWithoutRef<'nav'> & {
   // nothing

@@ -33,7 +33,7 @@ const UserDetailsPostListPage: FC<UserDetailsPostListPageProps> = async ({
 
   const posts = await fetchUserPosts(user.id);
 
-  const fetcher: InfiniteScrollFetcher = async arguments_ => {
+  const fetcher: InfiniteScrollFetcher = async (arguments_) => {
     'use server';
     return await fetchUserPosts(user.id, arguments_.cursor);
   };

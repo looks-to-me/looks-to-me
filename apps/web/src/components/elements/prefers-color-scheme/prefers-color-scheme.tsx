@@ -18,9 +18,7 @@ export const PrefersColorScheme: FC<PrefersColorSchemeProps> = ({
 }) => {
   return (
     <>
-      {/* eslint-disable-next-line @typescript-eslint/no-unsafe-argument */}
       {cloneElement(light, mergeProps(props, light.props, { className: styles.light }))}
-      {/* eslint-disable-next-line @typescript-eslint/no-unsafe-argument */}
       {cloneElement(dark, mergeProps(props, dark.props, { className: styles.dark }))}
     </>
   );

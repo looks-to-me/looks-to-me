@@ -16,7 +16,7 @@ export const upsertUser = async (authUser: User): Promise<void> => {
   });
 
   const userProvider = await findUserProviderByTypeAndSub(userMetadata.provider, userMetadata.sub);
-  
+
   if (userProvider) {
     await saveUser({
       id: userProvider.userId,

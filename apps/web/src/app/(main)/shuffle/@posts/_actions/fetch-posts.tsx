@@ -49,7 +49,7 @@ export const fetchPosts = async (): Promise<InfiniteScrollEdge[]> => {
     .limit(limit)
     .all();
 
-  return shuffle(posts).map(post => ({
+  return shuffle(posts).map((post) => ({
     cursor: post.postedAt.toISOString(),
     node: (
       <Post

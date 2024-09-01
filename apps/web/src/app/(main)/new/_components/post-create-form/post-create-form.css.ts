@@ -14,15 +14,15 @@ export const footer = style({
 });
 
 export const word = style({
-  appearance: 'none',
-  background: 'transparent',
-  border: 'none',
-  borderBottom: '1px solid #ccc',
-  fontSize: '1rem',
-  color: 'inherit',
-  padding: '2px 4px',
-  outline: 'none',
-  transition: 'border-color 0.3s',
+  'appearance': 'none',
+  'background': 'transparent',
+  'border': 'none',
+  'borderBottom': '1px solid #ccc',
+  'fontSize': '1rem',
+  'color': 'inherit',
+  'padding': '2px 4px',
+  'outline': 'none',
+  'transition': 'border-color 0.3s',
   ':focus': {
     borderBottomColor: theme.color.palette.blue500,
   },

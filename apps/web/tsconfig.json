@@ -5,12 +5,12 @@
     "@tsconfig/next/tsconfig.json"
   ],
   "compilerOptions": {
-    "plugins": [
-      { "name": "next" }
-    ],
     "typeRoots": [
       "./node_modules/@types",
       "./node_modules/@cloudflare/workers-types"
+    ],
+    "plugins": [
+      { "name": "next" }
     ]
   },
   "include": [
@@ -18,11 +18,6 @@
     ".storybook/**/*.ts",
     ".storybook/**/*.tsx",
     "**/*.ts",
-    "**/*.tsx",
-    "next-env.d.ts",
-    "sqlite-wasm.d.ts"
-  ],
-  "exclude": [
-    "node_modules"
+    "**/*.tsx"
   ]
 }
