@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 
 import * as styles from './storybook-icon.css';
 
-import type { ForwardRefRenderFunction , ComponentPropsWithoutRef } from 'react';
+import type { ForwardRefRenderFunction, ComponentPropsWithoutRef } from 'react';
 
 export type StorybookIconProps = ComponentPropsWithoutRef<'svg'> & {
   // nothing

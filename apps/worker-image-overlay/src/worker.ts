@@ -35,11 +35,11 @@ export default {
       cf: {
         image: {
           ...(format ? { format } : {}),
-          width: input.width,
-          height: input.height,
-          fit: 'contain',
+          'width': input.width,
+          'height': input.height,
+          'fit': 'contain',
           'origin-auth': 'share-publicly',
-          draw: [
+          'draw': [
             {
               url: input.overlay,
               fit: 'contain',

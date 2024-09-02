@@ -3,8 +3,8 @@ import { clsx } from 'clsx';
 import * as styles from './post-list.css';
 import { InfiniteScroll } from '../../../../components/elements/infinite-scroll';
 
-import type { InfiniteScrollFetcher , InfiniteScrollEdge } from '../../../../components/elements/infinite-scroll';
-import type { ComponentPropsWithoutRef , FC } from 'react';
+import type { InfiniteScrollFetcher, InfiniteScrollEdge } from '../../../../components/elements/infinite-scroll';
+import type { ComponentPropsWithoutRef, FC } from 'react';
 
 export type PostListProps = ComponentPropsWithoutRef<'div'> & {
   posts: InfiniteScrollEdge[];

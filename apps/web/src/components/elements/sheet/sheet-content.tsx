@@ -11,7 +11,7 @@ import { Button, ButtonIcon } from '../button';
 import { Separator } from '../separator';
 
 import type { RecipeVariants } from '@vanilla-extract/recipes';
-import type { ElementRef , ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
+import type { ElementRef, ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
 
 type SheetContentVariants = NonNullable<RecipeVariants<typeof styles.content>>;
 

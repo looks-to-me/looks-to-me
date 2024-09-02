@@ -6,7 +6,7 @@ import { forwardRef } from 'react';
 
 import * as styles from './sheet.css';
 
-import type { ElementRef , ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
+import type { ElementRef, ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
 
 export type SheetDescriptionProps = ComponentPropsWithoutRef<typeof DialogPrimitive.Description>;
 

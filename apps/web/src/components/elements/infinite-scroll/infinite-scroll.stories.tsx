@@ -18,7 +18,7 @@ export const Default = {
         </div>
       ),
     })),
-    fetcher: arguments_ => Promise.resolve(Array.from({ length: 20 }).map((_, index) => ({
+    fetcher: (arguments_) => Promise.resolve(Array.from({ length: 20 }).map((_, index) => ({
       cursor: (index + arguments_.size).toString(),
       node: (
         <div key={index + arguments_.size} style={{ width: '100%', height: '64px' }}>

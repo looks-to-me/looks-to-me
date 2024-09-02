@@ -37,6 +37,6 @@ export const deletePostAction = async (postId: string): Promise<DeletePostResult
   revalidatePath('/');
   revalidatePath('/shuffle');
   revalidatePath(`/@${user.profile.name}`);
-  
+
   return { type: 'success', redirectUrl: `/@${user.profile.name}`, message: 'The post has been successfully deleted.' };
 };

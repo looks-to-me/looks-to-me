@@ -32,16 +32,16 @@ const UserDetailsProfilePage: FC<UserDetailsProfilePageProps> = async ({
 
   const user = await findUserByName(userName);
   if (!user) return notFound();
-  
+
   const numberOfPosts = await countPostsByUserId(user.id);
-  
+
   const loginUser = await getLoginUser();
   const isLoggedIn = !!loginUser;
 
-  const isMute = isLoggedIn 
+  const isMute = isLoggedIn
     ? !!await findMuteUserByUserIdAndMuteUserId(loginUser.id, user.id)
     : false;
-  
+
   const isMe = loginUser?.id === user.id;
   return (
     <header className={styles.wrapper}>

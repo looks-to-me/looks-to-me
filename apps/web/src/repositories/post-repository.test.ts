@@ -58,6 +58,7 @@ describe('post-repository', () => {
 
         expect(result).toEqual({
           ...post,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           postedAt: expect.any(Date),
         });
       });
@@ -132,6 +133,7 @@ describe('post-repository', () => {
 
         expect(result).toEqual({
           ...updatedPost,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           postedAt: expect.any(Date),
         });
       });

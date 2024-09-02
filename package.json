@@ -2,7 +2,6 @@
   "name": "looks-to-me",
   "version": "1.0.0",
   "private": true,
-  "packageManager": "pnpm@9.9.0",
   "scripts": {
     "create:component": "scaffdog generate component",
     "build:ci": "turbo run build:ci",
@@ -10,25 +9,23 @@
     "lint:code": "turbo run lint:code",
     "lint:type": "turbo run lint:type"
   },
+  "devDependencies": {
+    "@agaroot/eslint-config-common": "3.0.6",
+    "@agaroot/eslint-config-definer": "1.0.5",
+    "@agaroot/eslint-config-javascript": "2.0.7",
+    "@agaroot/eslint-config-jest": "3.0.8",
+    "@agaroot/eslint-config-style": "2.0.9",
+    "@agaroot/eslint-config-typescript": "2.0.8",
+    "@scaffdog/types": "3.0.0",
+    "@tsconfig/strictest": "2.0.5",
+    "eslint": "8.57.0",
+    "scaffdog": "3.0.0",
+    "turbo": "1.13.4"
+  },
+  "packageManager": "pnpm@9.9.0",
   "pnpm": {
     "overrides": {
       "tsconfig-paths": "4.2.0"
     }
-  },
-  "devDependencies": {
-    "@agaroot/eslint-config-common": "2.1.9",
-    "@agaroot/eslint-config-jest": "2.1.1",
-    "@scaffdog/types": "3.0.0",
-    "@tsconfig/strictest": "2.0.5",
-    "@typescript-eslint/eslint-plugin": "7.18.0",
-    "@typescript-eslint/parser": "7.18.0",
-    "eslint": "8.57.0",
-    "eslint-import-resolver-typescript": "3.6.1",
-    "eslint-plugin-import": "2.29.1",
-    "eslint-plugin-jest": "27.9.0",
-    "eslint-plugin-unicorn": "51.0.1",
-    "eslint-plugin-unused-imports": "3.2.0",
-    "scaffdog": "3.0.0",
-    "turbo": "1.13.4"
   }
 }

@@ -24,7 +24,7 @@ const UserPostDetailsMainPage: FC<UserPostDetailsMainPageProps> = async ({
 }) => {
   const post = await findPostById(params.postId);
   if (!post) return notFound();
-  
+
   return (
     <section className={styles.wrapper}>
       <Image

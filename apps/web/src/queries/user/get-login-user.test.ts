@@ -22,7 +22,7 @@ describe('get-login-user', () => {
 
     it('should return undefined', async () => {
       const result = await getLoginUser();
-      
+
       expect(result).toBeUndefined();
     });
   });

@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any,@typescript-eslint/ban-types */
-
 declare module '@sqlite.org/sqlite-wasm' {
   type InitOptions = {
     print: (...msg: any[]) => void;

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
 import sqlite3InitModule from '@sqlite.org/sqlite-wasm';
 import { sql } from 'drizzle-orm';
 import { drizzle } from 'drizzle-orm/sqlite-proxy';
@@ -7,7 +9,7 @@ import { initDatabase } from './index';
 import { schema } from '../schema';
 
 const getJournal = async () => {
-  const result = await fetch('./meta/_journal.json').then(result => result.text());
+  const result = await fetch('./meta/_journal.json').then((result) => result.text());
   return parse(object({
     entries: array(object({
       tag: string(),
@@ -16,15 +18,15 @@ const getJournal = async () => {
 };
 
 const getQuery = async (tag: string) => {
-  return await fetch(`./${tag}.sql`).then(result => result.text());
+  return await fetch(`./${tag}.sql`).then((result) => result.text());
 };
 
 export const initMockDatabase = async () => {
-  const sqlite = await sqlite3InitModule().then(sqlite => new sqlite.oo1.JsStorageDb('local'));
+  const sqlite = await sqlite3InitModule().then((sqlite) => new sqlite.oo1.JsStorageDb('local'));
   const database = drizzle(async (sql, parameters) => {
-    return await new Promise(resolve => {
+    return await new Promise((resolve) => {
       try {
-        const rows = sqlite.exec( {
+        const rows = sqlite.exec({
           sql,
           bind: parameters,
           rowMode: 'object',

@@ -25,6 +25,6 @@ export const schema = {
   usersRelations,
   muteUsers,
   muteUsersRelations,
-  postCopies, 
+  postCopies,
   postCopiesRelations,
 };

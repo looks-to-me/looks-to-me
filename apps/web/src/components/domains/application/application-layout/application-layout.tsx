@@ -2,7 +2,7 @@ import { clsx } from 'clsx';
 
 import * as styles from './application-layout.css';
 
-import type { ReactNode , FC } from 'react';
+import type { ReactNode, FC } from 'react';
 
 export type ApplicationLayoutProps = {
   className?: string | undefined;

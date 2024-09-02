@@ -4,18 +4,15 @@
     "../../tsconfig.json"
   ],
   "compilerOptions": {
-    "target": "ES2022",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "types": [
       "@cloudflare/workers-types",
       "jest"
-    ]
+    ],
+    "target": "ES2022"
   },
   "include": [
     "**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
   ]
 }

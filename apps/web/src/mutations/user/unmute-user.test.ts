@@ -97,7 +97,7 @@ describe('mute-user', () => {
         avatar_url: 'avatar_url',
       });
     });
-  
+
     it('should return error if try to mute yourself', async () => {
       const result = await unmuteUser(userId1);
 

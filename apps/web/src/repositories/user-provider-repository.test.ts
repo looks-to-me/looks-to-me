@@ -30,7 +30,7 @@ describe('user-provider-repository', () => {
       })
       .run();
   });
-  
+
   describe('saveUserProvider', () => {
     describe('create', () => {
       it('should create user provider', async () => {

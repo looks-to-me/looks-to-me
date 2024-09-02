@@ -14,7 +14,7 @@ const fetchImage = async (request: Request, id: string): Promise<Response> => {
 
   const post = await findPostById(id);
   if (!post) return Response.error();
-  
+
   const image = await findImageById(post.imageId);
   if (!image) return Response.error();
 

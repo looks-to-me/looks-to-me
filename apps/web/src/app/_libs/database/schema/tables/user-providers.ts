@@ -7,7 +7,7 @@ export const userProviders = sqliteTable('user_providers', {
   userId: text('user_id').notNull().references(() => users.id),
   type: text('type').notNull(),
   sub: text('sub').notNull(),
-}, t => ({
+}, (t) => ({
   subUnique: unique().on(t.type, t.sub),
 }));
 

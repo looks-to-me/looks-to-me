@@ -4,9 +4,6 @@
     "@tsconfig/strictest/tsconfig.json"
   ],
   "include": [
-    ".scaffdog/**/*.ts",
-  ],
-  "exclude": [
-    "node_modules"
+    ".scaffdog/**/*.ts"
   ]
 }

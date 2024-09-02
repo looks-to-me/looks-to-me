@@ -4,7 +4,7 @@ import { forwardRef } from 'react';
 
 import * as styles from './sheet.css';
 
-import type { ForwardRefRenderFunction , ComponentPropsWithoutRef } from 'react';
+import type { ForwardRefRenderFunction, ComponentPropsWithoutRef } from 'react';
 
 export type SheetSectionProps = ComponentPropsWithoutRef<'div'> & {
   asChild?: boolean | undefined;
