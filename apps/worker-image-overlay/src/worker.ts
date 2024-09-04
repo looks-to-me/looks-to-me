@@ -1,10 +1,10 @@
-import { coerce, minValue, number, object, parse, string, url } from 'valibot';
+import * as v from 'valibot';
 
-const schema = object({
-  origin: string([url()]),
-  overlay: string([url()]),
-  width: coerce(number([minValue(1)]), Number),
-  height: coerce(number([minValue(1)]), Number),
+const schema = v.object({
+  origin: v.pipe(v.string(), v.url()),
+  overlay: v.pipe(v.string(), v.url()),
+  width: v.pipe(v.unknown(), v.transform(Number), v.minValue(1)),
+  height: v.pipe(v.unknown(), v.transform(Number), v.minValue(1)),
 });
 
 export default {
@@ -18,7 +18,7 @@ export default {
     }
 
     const url = new URL(request.url);
-    const input = parse(schema, {
+    const input = v.parse(schema, {
       origin: url.searchParams.get('origin'),
       overlay: url.searchParams.get('overlay'),
       width: url.searchParams.get('width'),

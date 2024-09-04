@@ -3,7 +3,7 @@
 import { clsx } from 'clsx';
 import NextImage from 'next/image';
 import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from 'react';
-import { safeParse } from 'valibot';
+import * as v from 'valibot';
 
 import * as styles from './input-image-with-preview.css';
 import { postWordSchema } from '../../../../../schemas/post-word-schema';
@@ -98,7 +98,7 @@ const InputImageWithPreviewRender: ForwardRefRenderFunction<InputImageWithPrevie
     event.preventDefault();
   }, []);
 
-  const parseResult = safeParse(postWordSchema, word);
+  const parseResult = v.safeParse(postWordSchema, word);
   return (
     <div className={clsx(className, styles.wrapper)}>
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
