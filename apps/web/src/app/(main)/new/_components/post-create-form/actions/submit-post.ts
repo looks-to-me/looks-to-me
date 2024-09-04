@@ -2,7 +2,7 @@
 
 import { createId } from '@paralleldrive/cuid2';
 import { revalidatePath } from 'next/cache';
-import { coerce, instance, minValue, number, object, parse } from 'valibot';
+import * as v from 'valibot';
 
 import { getLoginUser } from '../../../../../../queries/user/get-login-user';
 import { deleteImage, saveImage } from '../../../../../../repositories/image-repository';
@@ -13,10 +13,10 @@ import { storage } from '../../../../../_libs/storage';
 
 import type { Route } from 'next';
 
-const inputSchema = object({
-  image: instance(Blob),
-  imageWidth: coerce(number([minValue(1)]), Number),
-  imageHeight: coerce(number([minValue(1)]), Number),
+const inputSchema = v.object({
+  image: v.instance(Blob),
+  imageWidth: v.pipe(v.unknown(), v.transform(Number), v.minValue(1)),
+  imageHeight: v.pipe(v.unknown(), v.transform(Number), v.minValue(1)),
   word: postWordSchema,
 });
 
@@ -35,7 +35,7 @@ export const submitPost = async (formData: FormData): Promise<SubmitPostResult> 
     const user = await getLoginUser();
     if (!user) return { type: 'error', reason: 'unauthorized', message: 'Login required!' };
 
-    const input = parse(inputSchema, {
+    const input = v.parse(inputSchema, {
       image: formData.get('image'),
       imageWidth: formData.get('image-width'),
       imageHeight: formData.get('image-height'),

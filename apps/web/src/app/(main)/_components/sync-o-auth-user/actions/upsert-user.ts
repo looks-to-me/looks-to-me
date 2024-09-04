@@ -1,7 +1,7 @@
 'use server';
 
 import { createId } from '@paralleldrive/cuid2';
-import { parse } from 'valibot';
+import * as v from 'valibot';
 
 import { findUserProviderByTypeAndSub, saveUserProvider } from '../../../../../repositories/user-provider-repository';
 import { saveUser } from '../../../../../repositories/user-repository';
@@ -10,7 +10,7 @@ import { UserMetadataSchema } from '../../../../_libs/auth/type/user-metadata';
 import type { User } from '@supabase/auth-helpers-react';
 
 export const upsertUser = async (authUser: User): Promise<void> => {
-  const userMetadata = parse(UserMetadataSchema, {
+  const userMetadata = v.parse(UserMetadataSchema, {
     ...authUser.app_metadata,
     ...authUser.user_metadata,
   });
