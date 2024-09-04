@@ -16,10 +16,10 @@
     "@agaroot/eslint-config-jest": "3.0.8",
     "@agaroot/eslint-config-style": "2.0.9",
     "@agaroot/eslint-config-typescript": "2.0.8",
-    "@scaffdog/types": "3.0.0",
+    "@scaffdog/types": "4.0.0",
     "@tsconfig/strictest": "2.0.5",
     "eslint": "8.57.0",
-    "scaffdog": "3.0.0",
+    "scaffdog": "4.0.0",
     "turbo": "2.1.1"
   },
   "packageManager": "pnpm@9.9.0",
