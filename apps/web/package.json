@@ -78,7 +78,7 @@
     "jest-watch-typeahead": "2.2.2",
     "mini-css-extract-plugin": "2.9.1",
     "miniflare": "3.20240821.1",
-    "rimraf": "5.0.10",
+    "rimraf": "6.0.1",
     "storybook": "7.6.20",
     "typescript": "5.5.4",
     "vercel": "33.7.1",
