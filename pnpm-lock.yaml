@@ -112,7 +112,7 @@ importers:
         version: 4.3.1
       drizzle-orm:
         specifier: 0.33.0
-        version: 0.33.0(@cloudflare/workers-types@4.20240821.1)(@types/react@18.3.5)(better-sqlite3@9.6.0)(react@18.3.1)
+        version: 0.33.0(@cloudflare/workers-types@4.20240821.1)(@types/react@18.3.5)(better-sqlite3@11.2.1)(react@18.3.1)
       lucide-react:
         specifier: 0.438.0
         version: 0.438.0(react@18.3.1)
@@ -205,8 +205,8 @@ importers:
         specifier: 2.3.13
         version: 2.3.13(@types/node@20.16.4)(terser@5.18.2)(webpack@5.88.1(@swc/core@1.5.29(@swc/helpers@0.5.5))(esbuild@0.17.19))
       better-sqlite3:
-        specifier: 9.6.0
-        version: 9.6.0
+        specifier: 11.2.1
+        version: 11.2.1
       drizzle-kit:
         specifier: 0.20.17
         version: 0.20.17
@@ -3892,8 +3892,8 @@ packages:
     resolution: {integrity: sha512-aVNobHnJqLiUelTaHat9DZ1qM2w0C0Eym4LPI/3JxOnSokGVdsl1T1kN7TFvsEAD8G47A6VKQ0TVHqbBnYMJlQ==}
     engines: {node: '>=12.0.0'}
 
-  better-sqlite3@9.6.0:
-    resolution: {integrity: sha512-yR5HATnqeYNVnkaUTf4bOP2dJSnyhP4puJN/QPRyx4YkBEEUxib422n2XzPqDEHjQQqazoYoADdAm5vE15+dAQ==}
+  better-sqlite3@11.2.1:
+    resolution: {integrity: sha512-Xbt1d68wQnUuFIEVsbt6V+RG30zwgbtCGQ4QOcXVrOH0FE4eHk64FWZ9NUfRHS4/x1PXqwz/+KOrnXD7f0WieA==}
 
   big-integer@1.6.51:
     resolution: {integrity: sha512-GPEid2Y9QU1Exl1rpO9B2IPJGHPSupF5GnVIP0blYvNOMer2bTvSWs1jGOUg04hTmu67nmLsQ9TBo1puaotBHg==}
@@ -13397,7 +13397,7 @@ snapshots:
     dependencies:
       open: 8.4.2
 
-  better-sqlite3@9.6.0:
+  better-sqlite3@11.2.1:
     dependencies:
       bindings: 1.5.0
       prebuild-install: 7.1.1
@@ -14269,11 +14269,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.33.0(@cloudflare/workers-types@4.20240821.1)(@types/react@18.3.5)(better-sqlite3@9.6.0)(react@18.3.1):
+  drizzle-orm@0.33.0(@cloudflare/workers-types@4.20240821.1)(@types/react@18.3.5)(better-sqlite3@11.2.1)(react@18.3.1):
     optionalDependencies:
       '@cloudflare/workers-types': 4.20240821.1
       '@types/react': 18.3.5
-      better-sqlite3: 9.6.0
+      better-sqlite3: 11.2.1
       react: 18.3.1
 
   duplexify@3.7.1:
@@ -17086,7 +17086,7 @@ snapshots:
 
   node-abi@3.45.0:
     dependencies:
-      semver: 7.6.0
+      semver: 7.6.3
 
   node-abort-controller@3.1.1: {}
 
