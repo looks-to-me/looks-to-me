@@ -4,7 +4,7 @@
     "**/.env",
     "**/.env.*local"
   ],
-  "pipeline": {
+  "tasks": {
     "build:ci": {
       "outputs": [
         ".next/**",
