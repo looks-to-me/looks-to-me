@@ -18,7 +18,7 @@
     "@agaroot/eslint-config-typescript": "2.0.8",
     "@scaffdog/types": "3.0.0",
     "@tsconfig/strictest": "2.0.5",
-    "eslint": "8.57.0",
+    "eslint": "9.9.1",
     "scaffdog": "3.0.0",
     "turbo": "1.13.4"
   },
