@@ -1,7 +1,7 @@
-import { useContext } from 'react';
+import { use } from 'react';
 
 import { AlertDialogContext } from '../contexts/alert-dialog-context';
 
 export const useAlertDialog = () => {
-  return useContext(AlertDialogContext);
+  return use(AlertDialogContext);
 };
