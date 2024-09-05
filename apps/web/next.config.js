@@ -1,5 +1,6 @@
 /* eslint-disable unicorn/prefer-module */
 
+const { setupDevPlatform } = require('@cloudflare/next-on-pages/next-dev');
 const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin');
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 
@@ -57,14 +58,5 @@ module.exports = (phase) => {
 };
 
 if (process.env.NODE_ENV === 'development') {
-  const { setupDevBindings } = require('@cloudflare/next-on-pages/__experimental__next-dev');
-
-  setupDevBindings({
-    r2Buckets: {
-      BUCKET: 'local',
-    },
-    d1Databases: {
-      DB: 'local',
-    },
-  });
+  setupDevPlatform();
 }
