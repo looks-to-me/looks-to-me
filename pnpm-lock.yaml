@@ -117,8 +117,8 @@ importers:
         specifier: 0.438.0
         version: 0.438.0(react@18.3.1)
       modern-normalize:
-        specifier: 3.0.0
-        version: 3.0.0
+        specifier: 3.0.1
+        version: 3.0.1
       next:
         specifier: 14.2.8
         version: 14.2.8(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -6751,8 +6751,8 @@ packages:
   modern-ahocorasick@1.0.0:
     resolution: {integrity: sha512-vg0ZzTD3tmcIPUMpuJKfcCpoxzsQu9ka/jAAGQLdrq2yLu/jUUMq/IWw9578q8QE0bNrQHonaFHmvqrhTGpk4g==}
 
-  modern-normalize@3.0.0:
-    resolution: {integrity: sha512-oY2uocgMUQC33i5rKZMWzhyJ+U2nsoiHDYyoDVFxYVBob8RIjZoCbRSbE4+a2/SfbGmZOhOJIavLrzz3BC72tw==}
+  modern-normalize@3.0.1:
+    resolution: {integrity: sha512-VqlMdYi59Uch6fnUPxnpijWUQe+TW6zeWCvyr6Mb7JibheHzSuAAoJi2c71ZwIaWKpECpGpYHoaaBp6rBRr+/g==}
     engines: {node: '>=6'}
 
   mri@1.2.0:
@@ -16667,7 +16667,7 @@ snapshots:
 
   modern-ahocorasick@1.0.0: {}
 
-  modern-normalize@3.0.0: {}
+  modern-normalize@3.0.1: {}
 
   mri@1.2.0: {}
 
