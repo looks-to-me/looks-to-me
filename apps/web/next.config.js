@@ -33,8 +33,8 @@ module.exports = (phase) => {
     },
     rewrites: async () => [
       {
-        source: '/storybook/',
-        destination: '/storybook/index.htm',
+        source: '/storybook',
+        destination: '/storybook/index.html',
       },
     ],
     redirects: async () => [

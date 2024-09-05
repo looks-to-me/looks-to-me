@@ -2,7 +2,6 @@
 
 import { VanillaExtractPlugin } from '@vanilla-extract/webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { merge } from 'webpack-merge';
 
 import type { StorybookConfig } from '@storybook/nextjs';
 
@@ -19,31 +18,29 @@ const config: StorybookConfig = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-  ],
-  framework: {
-    name: '@storybook/nextjs',
-    options: {},
-  },
-  docs: {
-    autodocs: 'tag',
-  },
-  webpackFinal: (config) => {
-    config.module?.rules?.forEach((rule) => {
-      if (!rule || typeof rule !== 'object') return;
-      if (rule.test instanceof RegExp && rule.test.test('test.css')) {
-        rule.exclude = /\.vanilla\.css$/i;
-      }
-    });
-
-    return merge(config, {
-      plugins: [
-        new VanillaExtractPlugin(),
-        new MiniCssExtractPlugin(),
-      ],
-      module: {
+    {
+      name: '@storybook/addon-styling-webpack',
+      options: {
+        plugins: [
+          new VanillaExtractPlugin(),
+          new MiniCssExtractPlugin(),
+        ],
         rules: [
           {
+            test: /\.css$/,
+            exclude: /\.vanilla\.css$/,
+            sideEffects: true,
+            use: [
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
+                options: {},
+              },
+            ],
+          },
+          {
             test: /\.vanilla\.css$/i,
+            sideEffects: true,
             use: [
               MiniCssExtractPlugin.loader,
               {
@@ -56,7 +53,11 @@ const config: StorybookConfig = {
           },
         ],
       },
-    });
+    },
+  ],
+  framework: {
+    name: '@storybook/nextjs',
+    options: {},
   },
 };
 

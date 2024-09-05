@@ -23,6 +23,7 @@ jobs:
       - name: Build
         run: pnpm run build:ci --filter="@looks-to-me/app-web"
         env:
+          NEXT_FONT_GOOGLE_MOCKED_RESPONSES: ${{ github.workspace }}/apps/web/mocked-google-fonts.js
           NEXT_PUBLIC_APP_ORIGIN: ${{ vars.NEXT_PUBLIC_APP_ORIGIN }}
           NEXT_PUBLIC_CDN_ORIGIN: ${{ vars.NEXT_PUBLIC_CDN_ORIGIN }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
