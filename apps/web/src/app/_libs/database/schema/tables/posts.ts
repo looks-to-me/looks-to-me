@@ -10,7 +10,7 @@ export const posts = sqliteTable('posts', {
   imageId: text('image_id').notNull().references(() => images.id),
   word: text('word').notNull(),
   postedAt: integer('posted_at', { mode: 'timestamp_ms' }).notNull(),
-}, t => ({
+}, (t) => ({
   wordUnique: unique().on(t.imageId, t.word),
 }));
 

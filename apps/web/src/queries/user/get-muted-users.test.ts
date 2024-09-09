@@ -26,7 +26,7 @@ describe('get-muted-users', () => {
     });
 
     it('should throw error', async () => {
-      await expect( getMutedUsers()).rejects.toThrow();
+      await expect(getMutedUsers()).rejects.toThrow();
     });
   });
 
@@ -34,13 +34,13 @@ describe('get-muted-users', () => {
     const userId1 = createId();
     const userId2 = createId();
 
-    beforeEach( async () => {
+    beforeEach(async () => {
       await database()
         .insert(schema.users)
         .values([{
           id: userId1,
           registeredAt: new Date(),
-        },{
+        }, {
           id: userId2,
           registeredAt: new Date(),
         }])
@@ -53,7 +53,7 @@ describe('get-muted-users', () => {
           name: 'name1',
           displayName: 'displayName1',
           avatarUrl: 'avatarUrl1',
-        },{
+        }, {
           userId: userId2,
           name: 'name2',
           displayName: 'displayName2',
@@ -78,7 +78,7 @@ describe('get-muted-users', () => {
     });
 
     describe('when user1 mutes user2', () => {
-      beforeEach( async () => {
+      beforeEach(async () => {
         await database()
           .insert(schema.muteUsers)
           .values({
@@ -87,7 +87,7 @@ describe('get-muted-users', () => {
           })
           .run();
       });
-      
+
       it('should return return array containing user2\'s profile', async () => {
         const result = await getMutedUsers();
         expect(result).toEqual([

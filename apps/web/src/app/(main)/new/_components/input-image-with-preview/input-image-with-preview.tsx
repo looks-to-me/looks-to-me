@@ -3,7 +3,7 @@
 import { clsx } from 'clsx';
 import NextImage from 'next/image';
 import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from 'react';
-import { safeParse } from 'valibot';
+import * as v from 'valibot';
 
 import * as styles from './input-image-with-preview.css';
 import { postWordSchema } from '../../../../../schemas/post-word-schema';
@@ -35,7 +35,6 @@ const InputImageWithPreviewRender: ForwardRefRenderFunction<InputImageWithPrevie
 
   useImperativeHandle(ref, () => ({
     reset: () => {
-      // eslint-disable-next-line unicorn/no-useless-undefined
       setImage(undefined);
       if (inputImageRef.current) inputImageRef.current.value = '';
     },
@@ -54,11 +53,11 @@ const InputImageWithPreviewRender: ForwardRefRenderFunction<InputImageWithPrevie
   }, []);
 
   const handleClick = useCallback<MouseEventHandler<HTMLDivElement>>(() => {
-    if(!inputImageRef.current) return;
+    if (!inputImageRef.current) return;
     inputImageRef.current.click();
   }, []);
 
-  const handleFileInputChange = useCallback<ChangeEventHandler<HTMLInputElement>>(event => {
+  const handleFileInputChange = useCallback<ChangeEventHandler<HTMLInputElement>>((event) => {
     if (!event.target.files) return;
 
     const file = event.target.files[0];
@@ -67,11 +66,11 @@ const InputImageWithPreviewRender: ForwardRefRenderFunction<InputImageWithPrevie
     setFile(file);
   }, [setFile]);
 
-  const handleDrop = useCallback<DragEventHandler<HTMLDivElement>>(event => {
+  const handleDrop = useCallback<DragEventHandler<HTMLDivElement>>((event) => {
     event.preventDefault();
     setIsDropActive(false);
 
-    if(!inputImageRef.current) return;
+    if (!inputImageRef.current) return;
     if (!event.dataTransfer.files) return;
 
     const file = event.dataTransfer.files[0];
@@ -82,12 +81,12 @@ const InputImageWithPreviewRender: ForwardRefRenderFunction<InputImageWithPrevie
     setFile(file);
   }, [setFile]);
 
-  const handleDragEnter = useCallback<DragEventHandler<HTMLDivElement>>(event => {
+  const handleDragEnter = useCallback<DragEventHandler<HTMLDivElement>>((event) => {
     event.preventDefault();
     setIsDropActive(true);
   }, []);
 
-  const handleDragLeave = useCallback<DragEventHandler<HTMLDivElement>>(event => {
+  const handleDragLeave = useCallback<DragEventHandler<HTMLDivElement>>((event) => {
     event.preventDefault();
 
     if (!event.currentTarget.contains(event.relatedTarget as Node)) {
@@ -95,11 +94,11 @@ const InputImageWithPreviewRender: ForwardRefRenderFunction<InputImageWithPrevie
     }
   }, []);
 
-  const handleDragOver = useCallback<DragEventHandler<HTMLDivElement>>(event => {
+  const handleDragOver = useCallback<DragEventHandler<HTMLDivElement>>((event) => {
     event.preventDefault();
   }, []);
 
-  const parseResult = safeParse(postWordSchema, word);
+  const parseResult = v.safeParse(postWordSchema, word);
   return (
     <div className={clsx(className, styles.wrapper)}>
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
@@ -126,8 +125,8 @@ const InputImageWithPreviewRender: ForwardRefRenderFunction<InputImageWithPrevie
             {parseResult.success && (
               <NextImage
                 className={styles.overlayImageWord}
-                src={`/images/overlays/${word}`} 
-                alt={`Looks ${word} To Me`}  
+                src={`/images/overlays/${word}`}
+                alt={`Looks ${word} To Me`}
                 width={600}
                 height={300}
               />

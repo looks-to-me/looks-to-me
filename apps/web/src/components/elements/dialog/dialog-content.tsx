@@ -9,7 +9,7 @@ import * as styles from './dialog.css';
 import { AccessibleIcon } from '../accessible-icon';
 import { Button, ButtonIcon } from '../button';
 
-import type { ElementRef , ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
+import type { ElementRef, ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
 
 export type DialogContentProps = ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & {
   withClose?: boolean;

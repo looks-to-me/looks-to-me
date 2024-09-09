@@ -30,13 +30,13 @@ describe('get-is-muted-user-by-name', () => {
     const userId1 = createId();
     const userId2 = createId();
 
-    beforeEach( async () => {
+    beforeEach(async () => {
       await database()
         .insert(schema.users)
         .values([{
           id: userId1,
           registeredAt: new Date(),
-        },{
+        }, {
           id: userId2,
           registeredAt: new Date(),
         }])
@@ -49,7 +49,7 @@ describe('get-is-muted-user-by-name', () => {
           name: 'name1',
           displayName: 'displayName1',
           avatarUrl: 'avatarUrl1',
-        },{
+        }, {
           userId: userId2,
           name: 'name2',
           displayName: 'displayName2',
@@ -74,7 +74,7 @@ describe('get-is-muted-user-by-name', () => {
     });
 
     describe('when user1 mutes user2', () => {
-      beforeEach( async () => {
+      beforeEach(async () => {
         await database()
           .insert(schema.muteUsers)
           .values({
@@ -83,7 +83,7 @@ describe('get-is-muted-user-by-name', () => {
           })
           .run();
       });
-      
+
       it('should return true', async () => {
         const result = await getIsMutedUserByName('name2');
         expect(result).toBeTruthy();

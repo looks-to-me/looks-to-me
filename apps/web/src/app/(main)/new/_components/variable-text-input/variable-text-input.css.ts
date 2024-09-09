@@ -6,13 +6,13 @@ export const wrapper = style({
 });
 
 export const dummy = style({
-  display: 'inline-block',
-  overflow: 'hidden',
-  minWidth: '1em',
-  padding: '3px 5px',
-  whiteSpace: 'nowrap',
-  fontSize: '1rem',
-  opacity: '0',
+  'display': 'inline-block',
+  'overflow': 'hidden',
+  'minWidth': '1em',
+  'padding': '3px 5px',
+  'whiteSpace': 'nowrap',
+  'fontSize': '1rem',
+  'opacity': '0',
   '::before': {
     content: '',
   },

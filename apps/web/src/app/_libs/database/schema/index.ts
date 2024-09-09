@@ -1,5 +1,6 @@
 import { imagesRelations, images } from './tables/images';
 import { muteUsers, muteUsersRelations } from './tables/mute-users';
+import { postCopies, postCopiesRelations } from './tables/post-copy';
 import { postTags, postTagsRelations } from './tables/post-tags';
 import { posts, postsRelations } from './tables/posts';
 import { tags, tagsRelations } from './tables/tags';
@@ -24,4 +25,6 @@ export const schema = {
   usersRelations,
   muteUsers,
   muteUsersRelations,
+  postCopies,
+  postCopiesRelations,
 };

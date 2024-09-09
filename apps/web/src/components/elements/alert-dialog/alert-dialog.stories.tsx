@@ -21,7 +21,7 @@ const defaultOpenAlertDialogProps: OpenAlertDialogProps = {
 };
 
 const openAlertDialogPropsMap = {
-  shortText: { 
+  shortText: {
     ...defaultOpenAlertDialogProps,
     title: 'Delete Post',
     description: 'Are you sure you want to delete this post?',
@@ -34,7 +34,7 @@ const openAlertDialogPropsMap = {
   component: {
     ...defaultOpenAlertDialogProps,
     title: <div style={{ color: 'green' }}>title green</div>,
-    description:  <div style={{ color: 'blue' }}>description blue</div>,
+    description: <div style={{ color: 'blue' }}>description blue</div>,
   },
 } as const satisfies Record<string, OpenAlertDialogProps>;
 
@@ -52,7 +52,7 @@ const ShowAlertDialogButton = ({
     const result = await openAlertDialog(openAlertDialogProps);
     setResult((previous) => [...previous, result]);
   };
-  
+
   return (
     <div style={{ display: 'inline-flex', flexDirection: 'column', gap: '10px' }}>
       <Button onClick={handleOnClick}>{displayButtonLabel}</Button>

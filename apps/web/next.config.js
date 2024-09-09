@@ -1,11 +1,13 @@
-/* eslint-disable no-undef,unicorn/prefer-module */
+/* eslint-disable unicorn/prefer-module */
 
+const { setupDevPlatform } = require('@cloudflare/next-on-pages/next-dev');
 const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin');
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 
 const withVanillaExtract = createVanillaExtractPlugin();
 
-module.exports = phase => {
+// eslint-disable-next-line unicorn/no-anonymous-default-export
+module.exports = (phase) => {
   /** @type {import('next').NextConfig} */
   const nextConfig = {
     transpilePackages: [
@@ -31,8 +33,8 @@ module.exports = phase => {
     },
     rewrites: async () => [
       {
-        source: '/storybook/',
-        destination: '/storybook/index.htm',
+        source: '/storybook',
+        destination: '/storybook/index.html',
       },
     ],
     redirects: async () => [
@@ -56,14 +58,5 @@ module.exports = phase => {
 };
 
 if (process.env.NODE_ENV === 'development') {
-  const { setupDevBindings } = require('@cloudflare/next-on-pages/__experimental__next-dev');
-
-  setupDevBindings({
-    r2Buckets: {
-      BUCKET: 'local',
-    },
-    d1Databases: {
-      DB: 'local',
-    },
-  });
+  setupDevPlatform();
 }

@@ -1,6 +1,6 @@
 import { imageCache } from '@looks-to-me/package-image-cache';
 import { ImageResponse } from 'next/og';
-import { parse } from 'valibot';
+import * as v from 'valibot';
 
 import { loadGoogleFont } from '../../../../../helpers/load-google-font';
 import { postWordSchema } from '../../../../../schemas/post-word-schema';
@@ -37,7 +37,7 @@ export const GET = async (request: NextRequest, context: Context) => {
   };
 
   return imageCache(parameters, async () => {
-    const word = parse(postWordSchema, context.params.word);
+    const word = v.parse(postWordSchema, context.params.word);
     return new ImageResponse(
       (
         <div

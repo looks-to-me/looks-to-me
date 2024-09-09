@@ -29,10 +29,11 @@ jobs:
         uses: agaroot-technologies/action-restrict-head-branch@48b7777bbd99e4702abe38e4a996fcd5a2453667 # v1.0.0
         with:
           rules: |
+            preview
             feature/* bugfix/* refactor/* chore/* deps/*
 
       - name: Check base branch name
-        uses: agaroot-technologies/action-restrict-base-branch@824225e012eff11d1d3f44ee5e862af2b7b5f1eb # v1.0.0
+        uses: agaroot-technologies/action-restrict-base-branch@d0c225fdd8eab6e1e4b4e455e0877003c33078a2 # v1.0.2
         with:
           rules: |
             main <- preview

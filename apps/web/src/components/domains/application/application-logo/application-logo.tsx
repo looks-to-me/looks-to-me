@@ -6,7 +6,7 @@ import * as styles from './application-logo.css';
 import { AccessibleIcon } from '../../../elements/accessible-icon';
 import { PrefersColorScheme } from '../../../elements/prefers-color-scheme';
 
-import type { ForwardRefRenderFunction , ComponentPropsWithoutRef } from 'react';
+import type { ForwardRefRenderFunction, ComponentPropsWithoutRef } from 'react';
 
 export type ApplicationLogoProps = Omit<ComponentPropsWithoutRef<typeof Link>, 'href'> & {
   withText?: boolean;

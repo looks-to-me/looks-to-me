@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 export default {
   component: AspectRatio,
   decorators: [
-    Story => (
+    (Story) => (
       <div style={{ width: '300px' }}>
         <Story />
       </div>

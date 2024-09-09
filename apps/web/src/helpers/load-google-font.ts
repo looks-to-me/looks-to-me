@@ -24,7 +24,7 @@ export const loadGoogleFont = async ({
     parameters['subset'] = 'latin';
   }
 
-  const query = Object.keys(parameters).map(key => `${key}=${parameters[key]}`).join('&');
+  const query = Object.keys(parameters).map((key) => `${key}=${parameters[key]}`).join('&');
   const url = `https://fonts.googleapis.com/css2?${query}`;
 
   let cache: Cache | undefined;
@@ -56,5 +56,5 @@ export const loadGoogleFont = async ({
     throw new Error('Could not find font URL');
   }
 
-  return fetch(fontUrl).then(response => response.arrayBuffer());
+  return fetch(fontUrl).then((response) => response.arrayBuffer());
 };

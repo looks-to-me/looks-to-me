@@ -1,9 +1,8 @@
-import { maxLength, regex, string, transform } from 'valibot';
+import * as v from 'valibot';
 
-export const postWordSchema = transform(
-  string([
-    regex(/^[A-Za-z]+$/, 'Must be a alphabetic.'),
-    maxLength(16, 'Must be less than 16 characters.'),
-  ]),
-  input => `${input[0]?.toUpperCase()}${input.slice(1).toLowerCase()}`,
+export const postWordSchema = v.pipe(
+  v.string(),
+  v.regex(/^[A-Za-z]+$/, 'Must be a alphabetic.'),
+  v.maxLength(16, 'Must be less than 16 characters.'),
+  v.transform((input) => `${input[0]?.toUpperCase()}${input.slice(1).toLowerCase()}`),
 );

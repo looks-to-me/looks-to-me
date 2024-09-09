@@ -1,13 +1,13 @@
-import { literal, object, parse, special, string, union, url } from 'valibot';
+import * as v from 'valibot';
 
 import { memoize } from '../../../helpers/memoize';
 
 export const mockEnv: Record<string, unknown> = {};
 
 export const publicEnv = memoize(() => {
-  return parse(object({
-    NEXT_PUBLIC_APP_ORIGIN: string([url()]),
-    NEXT_PUBLIC_CDN_ORIGIN: string([url()]),
+  return v.parse(v.object({
+    NEXT_PUBLIC_APP_ORIGIN: v.pipe(v.string(), v.url()),
+    NEXT_PUBLIC_CDN_ORIGIN: v.pipe(v.string(), v.url()),
   }), {
     // Environment variables with the prefix NEXT_PUBLIC need to be explicitly specified up to the object keys.
     // This allows Next.js to overwrite its value with a hard-coded value during the build.
@@ -18,12 +18,12 @@ export const publicEnv = memoize(() => {
 });
 
 export const privateEnv = memoize(() => {
-  return parse(object({
-    NODE_ENV: union([literal('production'), literal('development'), literal('test')]),
-    DB: special<D1Database>((value) => !!value && typeof value === 'object'),
-    BUCKET: special<R2Bucket>((value) => !!value && typeof value === 'object'),
-    INTERNAL_API_TOKEN: string(),
-    IMAGE_OVERLAY_WORKER_URL: string([url()]),
+  return v.parse(v.object({
+    NODE_ENV: v.union([v.literal('production'), v.literal('development'), v.literal('test')]),
+    DB: v.custom<D1Database>((value) => !!value && typeof value === 'object'),
+    BUCKET: v.custom<R2Bucket>((value) => !!value && typeof value === 'object'),
+    INTERNAL_API_TOKEN: v.string(),
+    IMAGE_OVERLAY_WORKER_URL: v.pipe(v.string(), v.url()),
   }), {
     ...process.env,
     ...mockEnv,

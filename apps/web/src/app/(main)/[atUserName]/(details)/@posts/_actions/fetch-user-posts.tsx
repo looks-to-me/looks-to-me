@@ -33,7 +33,7 @@ export const fetchUserPosts = async (userId: string, cursor?: string): Promise<I
     .limit(limit)
     .all();
 
-  return posts.map(post => ({
+  return posts.map((post) => ({
     cursor: post.postedAt.toISOString(),
     node: (
       <Post

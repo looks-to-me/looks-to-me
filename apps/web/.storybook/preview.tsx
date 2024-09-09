@@ -17,7 +17,7 @@ const preview: Preview = {
     },
   },
   decorators: [
-    Story => (
+    (Story) => (
       <ApplicationRoot>
         <Story />
       </ApplicationRoot>

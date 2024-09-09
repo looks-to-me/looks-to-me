@@ -1,6 +1,6 @@
 import * as styles from './button.css';
 
-import type { ReactElement , FC } from 'react';
+import type { ReactElement, FC } from 'react';
 
 export type ButtonIconProps = {
   children: ReactElement;

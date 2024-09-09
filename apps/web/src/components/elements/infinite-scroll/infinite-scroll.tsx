@@ -40,19 +40,19 @@ const InfiniteScrollRender: ForwardRefRenderFunction<HTMLDivElement, InfiniteScr
   const [hasMore, setHasMore] = useState(0 < edges.length);
 
   const anchorRef = useRef<HTMLDivElement>(null);
-  useInViewPort(anchorRef, async entry => {
+  useInViewPort(anchorRef, async (entry) => {
     const cursor = displayEdges.at(-1)?.cursor;
     if (!entry.isIntersecting || !hasMore || !cursor) return;
 
     const edges = await fetcher({ cursor, size: displayEdges.length });
     if (edges.length <= 0) return setHasMore(false);
 
-    setDisplayEdges(previous => [...previous, ...edges]);
+    setDisplayEdges((previous) => [...previous, ...edges]);
   });
 
   return (
     <Wrapper {...props} ref={ref}>
-      {displayEdges.map(edge => edge.node)}
+      {displayEdges.map((edge) => edge.node)}
       <div ref={anchorRef} className={styles.anchor} />
     </Wrapper>
   );

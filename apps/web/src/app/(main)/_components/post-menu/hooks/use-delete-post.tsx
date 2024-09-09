@@ -11,7 +11,7 @@ import type { Post } from '../../../../../repositories/post-repository';
 export const useDeletePost = (post: Post) => {
   const router = useRouter();
   const { openAlertDialog } = useAlertDialog();
-  
+
   return useCallback(async () => {
     const isComfirm = await openAlertDialog({
       title: 'Delete Post',
@@ -23,7 +23,7 @@ export const useDeletePost = (post: Post) => {
 
     toast.promise(async () => {
       const result = await deletePostAction(post.id);
-      switch(result.type){
+      switch (result.type) {
         case 'success': {
           router.push(result.redirectUrl);
           return result.message;
@@ -38,5 +38,5 @@ export const useDeletePost = (post: Post) => {
       success: (result: string) => result,
       error: (error: string) => error,
     });
-  },[openAlertDialog, post.id, router]);
+  }, [openAlertDialog, post.id, router]);
 };

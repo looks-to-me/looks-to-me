@@ -19,7 +19,7 @@ export type SettingsHomeMainPageProps = SettingsHomePageProps & PageProps<{
 
 const SettingsHomeMainPage: FC<SettingsHomeMainPageProps> = async () => {
   const users = await getMutedUsers();
-  
+
   return (
     <div className={styles.wrapper}>
       <h2>Muted Users</h2>

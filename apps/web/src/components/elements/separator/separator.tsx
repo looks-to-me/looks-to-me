@@ -4,7 +4,7 @@ import { forwardRef } from 'react';
 
 import * as styles from './separator.css';
 
-import type { ForwardRefRenderFunction , ComponentPropsWithoutRef , ElementRef } from 'react';
+import type { ForwardRefRenderFunction, ComponentPropsWithoutRef, ElementRef } from 'react';
 
 export type SeparatorProps = ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root> & {
   // nothing

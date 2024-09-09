@@ -8,8 +8,8 @@ export const postTags = sqliteTable('post_tags', {
   postId: text('post_id').notNull().references(() => posts.id),
   tagId: text('tag_id').notNull().references(() => tags.id),
   order: integer('order').notNull(),
-}, t => ({
-  primaryKey: primaryKey(t.postId, t.tagId),
+}, (t) => ({
+  primaryKey: primaryKey({ columns: [t.postId, t.tagId] }),
   orderUnique: unique().on(t.order, t.postId),
 }));
 

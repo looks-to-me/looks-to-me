@@ -10,7 +10,7 @@ type Story = StoryObj<typeof Separator>;
 
 export const Default = {
   decorators: [
-    Story => (
+    (Story) => (
       <div style={{ width: '160px' }}>
         <Story />
       </div>
@@ -23,7 +23,7 @@ export const Vertical = {
     orientation: 'vertical',
   },
   decorators: [
-    Story => (
+    (Story) => (
       <div style={{ height: '160px' }}>
         <Story />
       </div>

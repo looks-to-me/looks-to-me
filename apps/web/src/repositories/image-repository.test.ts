@@ -45,6 +45,7 @@ describe('image-repository', () => {
 
         expect(result).toEqual({
           ...image,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           uploadedAt: expect.any(Date),
         });
       });
@@ -98,6 +99,7 @@ describe('image-repository', () => {
 
         expect(result).toEqual({
           ...updatedImage,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           uploadedAt: expect.any(Date),
         });
       });

@@ -66,7 +66,7 @@ export const ApplicationNavigation: FC<ApplicationNavigationProps> = ({
             </a>
           </Button>
           <Button variant="ghost" size="medium" borderless asChild>
-            <a href="/storybook/" target="_blank">
+            <a href="/storybook" target="_blank">
               <ButtonIcon>
                 <StorybookIcon />
               </ButtonIcon>

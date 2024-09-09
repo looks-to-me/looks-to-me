@@ -12,7 +12,7 @@ export type OpenAlertDialogProps = {
 };
 
 export type AlertDialogContextValue = {
-  openAlertDialog: (props: OpenAlertDialogProps ) => Promise<boolean>;
+  openAlertDialog: (props: OpenAlertDialogProps) => Promise<boolean>;
 };
 
 export const AlertDialogContext = createContext<AlertDialogContextValue>({

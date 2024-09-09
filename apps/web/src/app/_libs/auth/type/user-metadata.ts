@@ -1,13 +1,11 @@
-import { object, optional, string } from 'valibot';
+import * as v from 'valibot';
 
-import type { Input } from 'valibot';
-
-export const UserMetadataSchema = object({
-  sub: string(),
-  provider: string(),
-  name: optional(string()),
-  user_name: string(),
-  avatar_url: string(),
+export const UserMetadataSchema = v.object({
+  sub: v.string(),
+  provider: v.string(),
+  name: v.optional(v.string()),
+  user_name: v.string(),
+  avatar_url: v.string(),
 });
 
-export type UserMetadata = Input<typeof UserMetadataSchema>;
+export type UserMetadata = v.InferInput<typeof UserMetadataSchema>;

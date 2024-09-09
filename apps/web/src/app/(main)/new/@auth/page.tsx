@@ -29,7 +29,7 @@ const NewPostAuthPage: FC<NewPostAuthPageProps> = () => {
     if (userMetadata) return;
     router.push('/login');
   }));
-  
+
   return null;
 };
 

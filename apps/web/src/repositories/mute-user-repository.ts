@@ -20,7 +20,7 @@ export const saveMuteUser = async (muteUser: MuteUser): Promise<MuteUser> => {
     .onConflictDoNothing({
       target: [
         schema.muteUsers.userId,
-        schema.muteUsers. muteUserId,
+        schema.muteUsers.muteUserId,
       ],
     })
     .run();

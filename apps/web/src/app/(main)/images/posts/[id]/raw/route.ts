@@ -15,17 +15,17 @@ type Context = {
 export const GET = async (request: NextRequest, context: Context) => {
   // In the production environment, it should only be accessible by Workers.
   if (
-    privateEnv().NODE_ENV === 'production' &&
-    request.headers.get('authorization') !== `Bearer ${privateEnv().INTERNAL_API_TOKEN}`
+    privateEnv().NODE_ENV === 'production'
+    && request.headers.get('authorization') !== `Bearer ${privateEnv().INTERNAL_API_TOKEN}`
   ) {
-    return Response.error();
+    return new Response(null, { status: 403, statusText: 'Forbidden' });
   }
 
   const post = await findPostById(context.params.id);
-  if (!post) return Response.error();
+  if (!post) return new Response(null, { status: 404, statusText: 'Not Found' });
 
   const image = await storage().get(`users/${post.userId}/images/${post.imageId}`);
-  if (!image) return Response.error();
+  if (!image) return new Response(null, { status: 404, statusText: 'Not Found' });
 
   const headers = new Headers();
   image.writeHttpMetadata(headers);

@@ -10,12 +10,12 @@
   },
   "dependencies": {
     "@looks-to-me/package-image-cache": "workspace:*",
-    "valibot": "0.25.0"
+    "valibot": "0.41.0"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20231218.0",
-    "eslint": "8.56.0",
-    "typescript": "5.3.3",
-    "wrangler": "3.22.1"
+    "@cloudflare/workers-types": "4.20240903.0",
+    "eslint": "8.57.0",
+    "typescript": "5.5.4",
+    "wrangler": "3.74.0"
   }
 }

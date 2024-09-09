@@ -4,7 +4,7 @@ import { theme } from '../../../themes';
 
 export const wrapper = style({
   display: 'flex',
-  justifyContent:'center',
+  justifyContent: 'center',
   padding: '10px',
   fontWeight: 600,
   color: theme.color.token.banner.text,

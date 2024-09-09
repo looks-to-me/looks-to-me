@@ -12,7 +12,7 @@ import type { User } from './user-repository';
 describe('user-repository', () => {
   setupWorker();
   setupDatabase();
-  
+
   const user: User = {
     id: createId(),
     profile: {
@@ -21,31 +21,32 @@ describe('user-repository', () => {
       avatarUrl: 'avatar-url',
     },
   };
-  
+
   describe('saveUser', () => {
     describe('create', () => {
       it('should create user', async () => {
         await saveUser(user);
-        
+
         const result = await database()
           .select()
           .from(schema.users)
           .where(eq(schema.users.id, user.id))
           .get();
-        
+
         expect(result).toEqual({
           id: user.id,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           registeredAt: expect.any(Date),
         });
       });
-      
+
       it('should return created user', async () => {
         const result = await saveUser(user);
-        
+
         expect(result).toEqual(user);
       });
     });
-    
+
     describe('update', () => {
       beforeEach(async () => {
         await saveUser(user);
@@ -81,6 +82,7 @@ describe('user-repository', () => {
 
         expect(result).toEqual({
           ...updatedUser,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           registeredAt: expect.any(Date),
         });
       });
@@ -102,11 +104,11 @@ describe('user-repository', () => {
       });
     });
   });
-  
+
   describe('findUserById', () => {
     it('should find user by id', async () => {
       await saveUser(user);
-      
+
       const result = await findUserById(user.id);
 
       expect(result).toEqual(user);
@@ -118,11 +120,11 @@ describe('user-repository', () => {
       expect(result).toBeUndefined();
     });
   });
-  
+
   describe('findUserByName', () => {
     it('should find user by name', async () => {
       await saveUser(user);
-      
+
       const result = await findUserByName(user.profile.name);
 
       expect(result).toEqual(user);

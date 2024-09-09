@@ -63,7 +63,7 @@ export const Async = {
 
     const success = () => {
       // eslint-disable-next-line unicorn/consistent-function-scoping
-      const promise = () => new Promise<void>(resolve => setTimeout(resolve, 2000));
+      const promise = () => new Promise<void>((resolve) => setTimeout(resolve, 2000));
       show(promise);
     };
 

@@ -75,8 +75,8 @@ export type DeleteImageCacheParameters = {
 };
 
 export const deleteImageCache = async ({ bucket, path }: DeleteImageCacheParameters): Promise<void> => {
-  const result = await bucket.list({ 
-    prefix: `caches/${path}`, 
+  const result = await bucket.list({
+    prefix: `caches/${path}`,
   });
   const promises = result.objects.map((object) => bucket.delete(object.key));
   await Promise.all(promises);

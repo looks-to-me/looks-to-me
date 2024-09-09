@@ -1,10 +1,10 @@
 import { imageCache } from '@looks-to-me/package-image-cache';
-import { coerce, minValue, number, object, optional, parse } from 'valibot';
+import * as v from 'valibot';
 
 import type { ImageCacheParameters } from '@looks-to-me/package-image-cache';
 
-const schema = object({
-  width: optional(coerce(number([minValue(1)]), Number)),
+const schema = v.object({
+  width: v.optional(v.pipe(v.unknown(), v.transform(Number), v.minValue(1))),
 });
 
 export default {
@@ -14,7 +14,7 @@ export default {
     context: ExecutionContext,
   ): Promise<Response> {
     const url = new URL(request.url);
-    const input = parse(schema, {
+    const input = v.parse(schema, {
       width: url.searchParams.get('width'),
     });
 

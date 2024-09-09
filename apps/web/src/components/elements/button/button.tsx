@@ -5,7 +5,7 @@ import { forwardRef } from 'react';
 import * as styles from './button.css';
 
 import type { RecipeVariants } from '@vanilla-extract/recipes';
-import type { ForwardRefRenderFunction , ComponentPropsWithoutRef } from 'react';
+import type { ForwardRefRenderFunction, ComponentPropsWithoutRef } from 'react';
 
 type ButtonVariants = NonNullable<RecipeVariants<typeof styles.wrapper>>;
 
