@@ -1,3 +1,5 @@
+import { beforeEach } from 'vitest';
+
 import { database } from '../database';
 import { migrate, truncate } from '../database/helpers';
 

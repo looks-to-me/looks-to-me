@@ -1,5 +1,6 @@
 import { createId } from '@paralleldrive/cuid2';
 import { and, eq } from 'drizzle-orm';
+import { beforeEach, describe, expect, it } from 'vitest';
 
 import { findUserProviderByTypeAndSub, saveUserProvider } from './user-provider-repository';
 import { database } from '../app/_libs/database';

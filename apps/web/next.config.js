@@ -1,14 +1,14 @@
-/* eslint-disable unicorn/prefer-module */
-
-const { setupDevPlatform } = require('@cloudflare/next-on-pages/next-dev');
-const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin');
-const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
+import { setupDevPlatform } from '@cloudflare/next-on-pages/next-dev';
+import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin';
+import { PHASE_DEVELOPMENT_SERVER } from 'next/constants.js';
 
 const withVanillaExtract = createVanillaExtractPlugin();
 
 // eslint-disable-next-line unicorn/no-anonymous-default-export
-module.exports = (phase) => {
-  /** @type {import('next').NextConfig} */
+export default (phase) => {
+  /**
+   * @type {import('next').NextConfig}
+   */
   const nextConfig = {
     transpilePackages: [
       '@looks-to-me/package-image-cache',

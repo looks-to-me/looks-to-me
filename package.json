@@ -2,6 +2,7 @@
   "name": "looks-to-me",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "create:component": "scaffdog generate component",
     "build:ci": "turbo run build:ci",
@@ -13,11 +14,11 @@
     "@agaroot/eslint-config-common": "3.0.6",
     "@agaroot/eslint-config-definer": "1.0.5",
     "@agaroot/eslint-config-javascript": "2.0.7",
-    "@agaroot/eslint-config-jest": "3.0.8",
     "@agaroot/eslint-config-style": "2.0.9",
     "@agaroot/eslint-config-typescript": "2.0.8",
     "@scaffdog/types": "4.0.0",
     "@tsconfig/strictest": "2.0.5",
+    "@vitest/eslint-plugin": "1.1.0",
     "eslint": "8.57.0",
     "scaffdog": "4.0.0",
     "turbo": "2.1.1"

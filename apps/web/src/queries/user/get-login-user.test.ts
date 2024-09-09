@@ -1,4 +1,5 @@
 import { createId } from '@paralleldrive/cuid2';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { getLoginUser } from './get-login-user';
 import { getUserMetadata } from '../../app/_libs/auth/server/get-user-metadata';
@@ -7,8 +8,8 @@ import { schema } from '../../app/_libs/database/schema';
 import { setupDatabase } from '../../app/_libs/test/setup-database';
 import { setupWorker } from '../../app/_libs/test/setup-worker';
 
-jest.mock('@supabase/auth-helpers-nextjs');
-jest.mock('../../app/_libs/auth/server/get-user-metadata');
+vi.mock('@supabase/auth-helpers-nextjs');
+vi.mock('../../app/_libs/auth/server/get-user-metadata');
 
 describe('get-login-user', () => {
   setupWorker();
@@ -17,7 +18,7 @@ describe('get-login-user', () => {
   describe('when not logged in', () => {
     beforeEach(() => {
       // eslint-disable-next-line unicorn/no-useless-undefined
-      jest.mocked(getUserMetadata).mockResolvedValue(undefined);
+      vi.mocked(getUserMetadata).mockResolvedValue(undefined);
     });
 
     it('should return undefined', async () => {
@@ -29,7 +30,7 @@ describe('get-login-user', () => {
 
   describe('when logged in', () => {
     beforeEach(() => {
-      jest.mocked(getUserMetadata).mockResolvedValue({
+      vi.mocked(getUserMetadata).mockResolvedValue({
         provider: 'provider',
         sub: 'sub',
         name: 'name',

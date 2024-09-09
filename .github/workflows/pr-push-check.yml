@@ -19,7 +19,7 @@ jobs:
       - name: Build
         run: pnpm run build:ci
         env:
-          NEXT_FONT_GOOGLE_MOCKED_RESPONSES: ${{ github.workspace }}/apps/web/mocked-google-fonts.js
+          NEXT_FONT_GOOGLE_MOCKED_RESPONSES: ${{ github.workspace }}/apps/web/mocked-google-fonts.cjs
 
   test:
     name: Test
