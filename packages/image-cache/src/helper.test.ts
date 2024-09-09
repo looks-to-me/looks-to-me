@@ -1,3 +1,5 @@
+import { afterEach, describe, expect, it, vi } from 'vitest';
+
 import { fetchR2Cache, getCacheKey, getCaches, getR2CacheKey } from './helper';
 
 import type { R2CacheKeyParameters } from './helper';
@@ -94,12 +96,12 @@ describe('helper', () => {
     it('should return a response', async () => {
       const buffer = new ArrayBuffer(0);
       const bucket = {
-        get: jest.fn().mockResolvedValue({
-          writeHttpMetadata: jest.fn().mockImplementation((headers: Headers) => {
+        get: vi.fn().mockResolvedValue({
+          writeHttpMetadata: vi.fn().mockImplementation((headers: Headers) => {
             headers.set('metadata', 'metadata');
           }),
           httpEtag: 'etag',
-          arrayBuffer: jest.fn().mockResolvedValue(buffer),
+          arrayBuffer: vi.fn().mockResolvedValue(buffer),
         }),
       } as unknown as R2Bucket;
       const key = 'key';
@@ -114,7 +116,7 @@ describe('helper', () => {
     it('should return undefined', async () => {
       const bucket = {
         // eslint-disable-next-line unicorn/no-useless-undefined
-        get: jest.fn().mockResolvedValue(undefined),
+        get: vi.fn().mockResolvedValue(undefined),
       } as unknown as R2Bucket;
       const key = 'key';
 

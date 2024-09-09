@@ -2,6 +2,7 @@
   "name": "@looks-to-me/app-worker-cdn",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "wrangler dev",
     "build:ci": "wrangler deploy --dry-run --outdir=dist",

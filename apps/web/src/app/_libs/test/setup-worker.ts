@@ -1,4 +1,5 @@
 import { Miniflare } from 'miniflare';
+import { afterAll, beforeAll } from 'vitest';
 
 import { mockEnv } from '../env';
 

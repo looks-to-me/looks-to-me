@@ -4,8 +4,8 @@
     "../../tsconfig.json"
   ],
   "compilerOptions": {
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "types": [
       "@cloudflare/workers-types"
     ],

@@ -16,3 +16,7 @@ runs:
     - name: Install dependencies
       shell: bash
       run: pnpm install --frozen-lockfile
+
+    - name: Copy .env
+      shell: bash
+      run: cp apps/web/.env apps/web/.env.local

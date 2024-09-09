@@ -1,4 +1,5 @@
 import { createId } from '@paralleldrive/cuid2';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { fetchPosts } from './fetch-posts';
 import { getLoginUser } from '../../../../../queries/user/get-login-user';
@@ -10,8 +11,8 @@ import { setupWorker } from '../../../../_libs/test/setup-worker';
 import type { PostProps } from '../../../_components/post';
 import type { ReactElement } from 'react';
 
-jest.mock('@supabase/auth-helpers-nextjs');
-jest.mock('../../../../../queries/user/get-login-user');
+vi.mock('@supabase/auth-helpers-nextjs');
+vi.mock('../../../../../queries/user/get-login-user');
 
 describe('fetchPosts', () => {
   setupWorker();
@@ -117,7 +118,7 @@ describe('fetchPosts', () => {
           postedAt: new Date(),
         });
 
-      jest.mocked(getLoginUser).mockResolvedValue({
+      vi.mocked(getLoginUser).mockResolvedValue({
         ...user1,
         profile: userProfile1,
       });

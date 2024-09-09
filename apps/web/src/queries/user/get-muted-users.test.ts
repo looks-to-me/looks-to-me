@@ -1,4 +1,5 @@
 import { createId } from '@paralleldrive/cuid2';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { getLoginUser } from './get-login-user';
 import { getMutedUsers } from './get-muted-users';
@@ -7,13 +8,13 @@ import { schema } from '../../app/_libs/database/schema';
 import { setupDatabase } from '../../app/_libs/test/setup-database';
 import { setupWorker } from '../../app/_libs/test/setup-worker';
 
-jest.mock('@supabase/auth-helpers-nextjs');
-jest.mock('next/navigation', () => ({
-  redirect: jest.fn(() => {
+vi.mock('@supabase/auth-helpers-nextjs');
+vi.mock('next/navigation', () => ({
+  redirect: vi.fn(() => {
     throw new Error('redirect');
   }),
 }));
-jest.mock('./get-login-user');
+vi.mock('./get-login-user');
 
 describe('get-muted-users', () => {
   setupWorker();
@@ -22,7 +23,7 @@ describe('get-muted-users', () => {
   describe('when not logged in', () => {
     beforeEach(() => {
       // eslint-disable-next-line unicorn/no-useless-undefined
-      jest.mocked(getLoginUser).mockResolvedValue(undefined);
+      vi.mocked(getLoginUser).mockResolvedValue(undefined);
     });
 
     it('should throw error', async () => {
@@ -60,7 +61,7 @@ describe('get-muted-users', () => {
           avatarUrl: 'avatarUrl2',
         }])
         .run();
-      jest.mocked(getLoginUser).mockResolvedValue({
+      vi.mocked(getLoginUser).mockResolvedValue({
         id: userId1,
         profile: {
           name: 'name1',

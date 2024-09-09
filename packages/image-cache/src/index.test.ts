@@ -1,15 +1,15 @@
+import { describe, expect, it, vi } from 'vitest';
+
 import { getCaches } from './helper';
 import { deleteImageCache, imageCache } from './index';
 
 import type { ImageCacheParameters } from './index';
 
-jest.mock('./helper', () => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const original = jest.requireActual('./helper');
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+vi.mock('./helper', async () => {
+  const original = await vi.importActual('./helper');
   return {
     ...original,
-    getCaches: jest.fn(),
+    getCaches: vi.fn(),
   };
 });
 
@@ -18,20 +18,20 @@ describe('imageCache', () => {
     const parameters: ImageCacheParameters = {
       request: new Request('https://example.com/image.png'),
       bucket: {
-        get: jest.fn(),
-        put: jest.fn(),
+        get: vi.fn(),
+        put: vi.fn(),
       } as unknown as R2Bucket,
     };
 
-    const callback = jest.fn();
+    const callback = vi.fn();
 
     const response = new Response();
-    jest.mocked(getCaches).mockReturnValue({
-      open: jest.fn(),
+    vi.mocked(getCaches).mockReturnValue({
+      open: vi.fn(),
       default: {
-        match: jest.fn().mockResolvedValue(response),
-        put: jest.fn(),
-        delete: jest.fn(),
+        match: vi.fn().mockResolvedValue(response),
+        put: vi.fn(),
+        delete: vi.fn(),
       },
     });
 
@@ -46,18 +46,18 @@ describe('imageCache', () => {
     const parameters: ImageCacheParameters = {
       request: new Request('https://example.com/image.png'),
       bucket: {
-        get: jest.fn().mockResolvedValue({
-          writeHttpMetadata: jest.fn().mockImplementation((headers: Headers) => {
+        get: vi.fn().mockResolvedValue({
+          writeHttpMetadata: vi.fn().mockImplementation((headers: Headers) => {
             headers.set('metadata', 'metadata');
           }),
           httpEtag: 'etag',
-          arrayBuffer: jest.fn().mockResolvedValue(buffer),
+          arrayBuffer: vi.fn().mockResolvedValue(buffer),
         }),
-        put: jest.fn(),
+        put: vi.fn(),
       } as unknown as R2Bucket,
     };
 
-    const callback = jest.fn();
+    const callback = vi.fn();
 
     const result = await imageCache(parameters, callback);
 
@@ -72,25 +72,25 @@ describe('imageCache', () => {
     const parameters: ImageCacheParameters = {
       request: new Request('https://example.com/image.png'),
       bucket: {
-        get: jest.fn(),
-        put: jest.fn(),
+        get: vi.fn(),
+        put: vi.fn(),
       } as unknown as R2Bucket,
     };
 
     const buffer = new ArrayBuffer(0);
-    const callback = jest.fn().mockResolvedValue(new Response(buffer, {
+    const callback = vi.fn().mockResolvedValue(new Response(buffer, {
       headers: {
         'etag': 'etag',
         'cache-control': 'public, max-age=31536000, immutable',
       },
     }));
 
-    jest.mocked(getCaches).mockReturnValue({
-      open: jest.fn(),
+    vi.mocked(getCaches).mockReturnValue({
+      open: vi.fn(),
       default: {
-        match: jest.fn(),
-        put: jest.fn(),
-        delete: jest.fn(),
+        match: vi.fn(),
+        put: vi.fn(),
+        delete: vi.fn(),
       },
     });
 
@@ -106,14 +106,14 @@ describe('imageCache', () => {
 describe('deleteImageCache', () => {
   it('should delete all cache entries for a given postId', async () => {
     const bucket = {
-      list: jest.fn().mockResolvedValue({
+      list: vi.fn().mockResolvedValue({
         objects: [
           { key: 'caches/images/posts/testPostId/webp' },
           { key: 'caches/images/posts/testPostId/webp/1920' },
           { key: 'caches/images/posts/testPostId/unknown/1920' },
         ],
       }),
-      delete: jest.fn().mockResolvedValue(null),
+      delete: vi.fn().mockResolvedValue(null),
     } as unknown as R2Bucket;
 
     await deleteImageCache({ bucket, path: 'images/posts/testPostId' });
