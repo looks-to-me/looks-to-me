@@ -49,7 +49,7 @@ type Context = {
 
 export const GET = async (request: NextRequest, context: Context) => {
   const post = await findPostById(context.params.id);
-  if (!post) return Response.error();
+  if (!post) return new Response(null, { status: 404, statusText: 'Not Found' });
 
   const parameters: ImageCacheParameters = {
     request,
