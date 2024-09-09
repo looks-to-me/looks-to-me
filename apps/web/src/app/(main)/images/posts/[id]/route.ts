@@ -13,10 +13,10 @@ const fetchImage = async (request: Request, id: string): Promise<Response> => {
   const url = new URL(request.url);
 
   const post = await findPostById(id);
-  if (!post) return Response.error();
+  if (!post) return new Response(null, { status: 404, statusText: 'Not Found' });
 
   const image = await findImageById(post.imageId);
-  if (!image) return Response.error();
+  if (!image) return new Response(null, { status: 404, statusText: 'Not Found' });
 
   const origin = `${url.origin}/images/posts/${post.id}/raw`;
   if (privateEnv().NODE_ENV === 'development') {
