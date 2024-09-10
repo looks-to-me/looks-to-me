@@ -23,5 +23,5 @@
     "scaffdog": "4.0.0",
     "turbo": "2.1.1"
   },
-  "packageManager": "pnpm@9.9.0"
+  "packageManager": "pnpm@9.10.0"
 }
