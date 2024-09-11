@@ -54,7 +54,7 @@
     "@agaroot/eslint-config-next": "3.0.9",
     "@agaroot/eslint-config-react": "3.0.9",
     "@cloudflare/next-on-pages": "1.13.2",
-    "@cloudflare/workers-types": "4.20240903.0",
+    "@cloudflare/workers-types": "4.20240909.0",
     "@sqlite.org/sqlite-wasm": "3.42.0-build7",
     "@storybook/addon-essentials": "8.2.9",
     "@storybook/addon-interactions": "8.2.9",
