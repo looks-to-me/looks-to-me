@@ -220,8 +220,8 @@ importers:
         specifier: 2.9.1
         version: 2.9.1(webpack@5.88.1(@swc/core@1.7.24(@swc/helpers@0.5.5))(esbuild@0.17.19))
       miniflare:
-        specifier: 3.20240909.1
-        version: 3.20240909.1
+        specifier: 3.20240909.2
+        version: 3.20240909.2
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
@@ -5748,8 +5748,8 @@ packages:
     engines: {node: '>=16.13'}
     hasBin: true
 
-  miniflare@3.20240909.1:
-    resolution: {integrity: sha512-tdzJFApHmqFYlpjfpqBDnsE6dHUDLHejBrNgXftLfTf/ni5NySgXKnuntCCMdRtnTpjUKmkHiusGrBCf9b1rnA==}
+  miniflare@3.20240909.2:
+    resolution: {integrity: sha512-rZe7d0GkP02DnsgLD6qT+0K3O1azWCbDQIeHyH7WHJeyfkGPONS8U5FeNJEmus05z+2F6jcMI/Gc/Irc+UFTAA==}
     engines: {node: '>=16.13'}
     hasBin: true
 
@@ -8796,7 +8796,7 @@ snapshots:
       cookie: 0.5.0
       esbuild: 0.15.18
       js-yaml: 4.1.0
-      miniflare: 3.20240909.1
+      miniflare: 3.20240909.2
       package-manager-manager: 0.2.0
       pcre-to-regexp: 1.1.0
       semver: 7.6.0
@@ -14008,7 +14008,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  miniflare@3.20240909.1:
+  miniflare@3.20240909.2:
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       acorn: 8.12.1
