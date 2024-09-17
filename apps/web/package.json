@@ -76,7 +76,7 @@
     "better-sqlite3": "11.3.0",
     "dotenv": "16.4.5",
     "drizzle-kit": "0.24.2",
-    "eslint": "8.57.0",
+    "eslint": "8.57.1",
     "mini-css-extract-plugin": "2.9.1",
     "miniflare": "3.20240909.1",
     "rimraf": "6.0.1",
