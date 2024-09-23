@@ -145,8 +145,8 @@ importers:
         specifier: 3.0.9
         version: 3.0.9(@agaroot/eslint-config-common@3.0.6(eslint@8.57.1))(@agaroot/eslint-config-javascript@2.0.7(@agaroot/eslint-config-common@3.0.6(eslint@8.57.1))(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1)(typescript@5.6.2))(@agaroot/eslint-config-typescript@2.0.8(@agaroot/eslint-config-common@3.0.6(eslint@8.57.1))(@agaroot/eslint-config-javascript@2.0.7(@agaroot/eslint-config-common@3.0.6(eslint@8.57.1))(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1)(typescript@5.6.2))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1))(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1)
       '@cloudflare/next-on-pages':
-        specifier: 1.13.2
-        version: 1.13.2(@cloudflare/workers-types@4.20240909.0)(vercel@37.4.2(@swc/core@1.7.24(@swc/helpers@0.5.5)))(wrangler@3.78.6(@cloudflare/workers-types@4.20240909.0))
+        specifier: 1.13.3
+        version: 1.13.3(@cloudflare/workers-types@4.20240909.0)(vercel@37.4.2(@swc/core@1.7.24(@swc/helpers@0.5.5)))(wrangler@3.78.6(@cloudflare/workers-types@4.20240909.0))
       '@cloudflare/workers-types':
         specifier: 4.20240909.0
         version: 4.20240909.0
@@ -1037,8 +1037,8 @@ packages:
     resolution: {integrity: sha512-YLPHc8yASwjNkmcDMQMY35yiWjoKAKnhUbPRszBRS0YgH+IXtsMp61j+yTcnCE3oO2DgP0U3iejLC8FTtKDC8Q==}
     engines: {node: '>=16.13'}
 
-  '@cloudflare/next-on-pages@1.13.2':
-    resolution: {integrity: sha512-lIri+zuxj6SKqIlewOoC9g9dD5+GbUMAXRrkhApmWGekE0PFlEAR7tHHDkbMXix4ctp7K4lPBY/wWUd8oh+VtQ==}
+  '@cloudflare/next-on-pages@1.13.3':
+    resolution: {integrity: sha512-pPi0cCvSFLtWr/e3iqmpG4h0Apg3NWaw26arDDR7Ap2p/jDewsX4y6dDDRv1vZqfUw5xCgBB6xxNf5vjhbDCzA==}
     hasBin: true
     peerDependencies:
       '@cloudflare/workers-types': ^4.20240208.0
@@ -3038,11 +3038,6 @@ packages:
 
   acorn@7.4.1:
     resolution: {integrity: sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==}
-    engines: {node: '>=0.4.0'}
-    hasBin: true
-
-  acorn@8.11.3:
-    resolution: {integrity: sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==}
     engines: {node: '>=0.4.0'}
     hasBin: true
 
@@ -6715,11 +6710,6 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  semver@7.6.0:
-    resolution: {integrity: sha512-EnwXhrlwXMk9gKu5/flx5sv/an57AkRplG3hTK68W7FRDN+k+OWBj65M7719OkA82XLBxrcX0KSHj+X5COhOVg==}
-    engines: {node: '>=10'}
-    hasBin: true
-
   semver@7.6.3:
     resolution: {integrity: sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==}
     engines: {node: '>=10'}
@@ -8774,9 +8764,9 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@cloudflare/next-on-pages@1.13.2(@cloudflare/workers-types@4.20240909.0)(vercel@37.4.2(@swc/core@1.7.24(@swc/helpers@0.5.5)))(wrangler@3.78.6(@cloudflare/workers-types@4.20240909.0))':
+  '@cloudflare/next-on-pages@1.13.3(@cloudflare/workers-types@4.20240909.0)(vercel@37.4.2(@swc/core@1.7.24(@swc/helpers@0.5.5)))(wrangler@3.78.6(@cloudflare/workers-types@4.20240909.0))':
     dependencies:
-      acorn: 8.11.3
+      acorn: 8.12.1
       ast-types: 0.14.2
       chalk: 5.3.0
       chokidar: 3.5.3
@@ -8787,7 +8777,7 @@ snapshots:
       miniflare: 3.20240909.4
       package-manager-manager: 0.2.0
       pcre-to-regexp: 1.1.0
-      semver: 7.6.0
+      semver: 7.6.3
       vercel: 37.4.2(@swc/core@1.7.24(@swc/helpers@0.5.5))
       wrangler: 3.78.6(@cloudflare/workers-types@4.20240909.0)
     optionalDependencies:
@@ -11010,8 +11000,6 @@ snapshots:
 
   acorn@7.4.1: {}
 
-  acorn@8.11.3: {}
-
   acorn@8.12.1: {}
 
   adjust-sourcemap-loader@4.0.0:
@@ -11242,7 +11230,7 @@ snapshots:
 
   ast-types@0.14.2:
     dependencies:
-      tslib: 2.5.3
+      tslib: 2.7.0
 
   ast-types@0.16.1:
     dependencies:
@@ -15081,10 +15069,6 @@ snapshots:
   semver@6.3.1: {}
 
   semver@7.3.5:
-    dependencies:
-      lru-cache: 6.0.0
-
-  semver@7.6.0:
     dependencies:
       lru-cache: 6.0.0
 
