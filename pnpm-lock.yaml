@@ -196,8 +196,8 @@ importers:
         specifier: 0.5.5
         version: 0.5.5(@vanilla-extract/css@1.15.5)
       '@vanilla-extract/vite-plugin':
-        specifier: 4.0.15
-        version: 4.0.15(@types/node@20.16.10)(terser@5.18.2)(vite@5.0.11(@types/node@20.16.10)(terser@5.18.2))
+        specifier: 4.0.16
+        version: 4.0.16(@types/node@20.16.10)(terser@5.18.2)(vite@5.0.11(@types/node@20.16.10)(terser@5.18.2))
       '@vanilla-extract/webpack-plugin':
         specifier: 2.3.13
         version: 2.3.13(@types/node@20.16.10)(terser@5.18.2)(webpack@5.88.1(@swc/core@1.7.24(@swc/helpers@0.5.5))(esbuild@0.17.19))
@@ -2841,8 +2841,8 @@ packages:
     peerDependencies:
       '@vanilla-extract/css': ^1.0.0
 
-  '@vanilla-extract/vite-plugin@4.0.15':
-    resolution: {integrity: sha512-kl0EJ0DGRA3/cuZeXfBu4C9oPnkCr1PJIAr1/7Fu1mCrlE+fC6DCriPY2cRuGbbBE/ZhXryUSNT7rWjqAyHlkw==}
+  '@vanilla-extract/vite-plugin@4.0.16':
+    resolution: {integrity: sha512-1yaIwn/2QXHvHfUeEcQ+OWVYvfYCfxIpWfY1y/dcGSMHu/fiFHbLgX75rX6SGnepsaYCTqsdtEiGWJhwxMHouw==}
     peerDependencies:
       vite: ^4.0.3 || ^5.0.0
 
@@ -10610,7 +10610,7 @@ snapshots:
 
   '@vanilla-extract/babel-plugin-debug-ids@1.0.6':
     dependencies:
-      '@babel/core': 7.24.5
+      '@babel/core': 7.25.2
     transitivePeerDependencies:
       - supports-color
 
@@ -10728,9 +10728,9 @@ snapshots:
     dependencies:
       '@vanilla-extract/css': 1.15.5
 
-  '@vanilla-extract/vite-plugin@4.0.15(@types/node@20.16.10)(terser@5.18.2)(vite@5.0.11(@types/node@20.16.10)(terser@5.18.2))':
+  '@vanilla-extract/vite-plugin@4.0.16(@types/node@20.16.10)(terser@5.18.2)(vite@5.0.11(@types/node@20.16.10)(terser@5.18.2))':
     dependencies:
-      '@vanilla-extract/integration': 7.1.9(@types/node@20.16.10)(terser@5.18.2)
+      '@vanilla-extract/integration': 7.1.10(@types/node@20.16.10)(terser@5.18.2)
       vite: 5.0.11(@types/node@20.16.10)(terser@5.18.2)
     transitivePeerDependencies:
       - '@types/node'
@@ -14784,7 +14784,7 @@ snapshots:
 
   react-docgen@7.0.1:
     dependencies:
-      '@babel/core': 7.24.5
+      '@babel/core': 7.25.2
       '@babel/traverse': 7.25.6
       '@babel/types': 7.25.6
       '@types/babel__core': 7.20.5
