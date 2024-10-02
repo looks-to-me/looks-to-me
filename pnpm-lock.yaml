@@ -184,8 +184,8 @@ importers:
         specifier: 18.3.0
         version: 18.3.0
       '@vanilla-extract/css':
-        specifier: 1.15.5
-        version: 1.15.5
+        specifier: 1.16.0
+        version: 1.16.0
       '@vanilla-extract/css-utils':
         specifier: 0.1.4
         version: 0.1.4
@@ -194,7 +194,7 @@ importers:
         version: 2.4.6(@types/node@20.16.10)(next@14.2.14(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.18.2)(webpack@5.88.1(@swc/core@1.7.24(@swc/helpers@0.5.5))(esbuild@0.17.19))
       '@vanilla-extract/recipes':
         specifier: 0.5.5
-        version: 0.5.5(@vanilla-extract/css@1.15.5)
+        version: 0.5.5(@vanilla-extract/css@1.16.0)
       '@vanilla-extract/vite-plugin':
         specifier: 4.0.16
         version: 4.0.16(@types/node@20.16.10)(terser@5.18.2)(vite@5.0.11(@types/node@20.16.10)(terser@5.18.2))
@@ -2815,9 +2815,6 @@ packages:
 
   '@vanilla-extract/css-utils@0.1.4':
     resolution: {integrity: sha512-3WRxMGa/VQaL32jZqRUpnnoVFSws5iPIUpQr+XlT4jXhtMeKYcA20rFK2k2Amkg04sqrO84A8hNMeABWZQesEg==}
-
-  '@vanilla-extract/css@1.15.5':
-    resolution: {integrity: sha512-N1nQebRWnXvlcmu9fXKVUs145EVwmWtMD95bpiEKtvehHDpUhmO1l2bauS7FGYKbi3dU1IurJbGpQhBclTr1ng==}
 
   '@vanilla-extract/css@1.16.0':
     resolution: {integrity: sha512-05JTbvG1E0IrSZKZ5el2EM9CmAX0XSdsNY+d4aRZxDvYf3/hwxomvFFEz2b/awjgg9yTVHW83Wq19wE4OoTEMg==}
@@ -5540,10 +5537,6 @@ packages:
 
   lower-case@2.0.2:
     resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}
-
-  lru-cache@10.0.0:
-    resolution: {integrity: sha512-svTf/fzsKHffP42sujkO/Rjs37BCIsQVRCeNYIm9WN8rgT7ffoUnRtZCqU+6BqcSBdv8gwJeTz8knJpgACeQMw==}
-    engines: {node: 14 || >=16.14}
 
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
@@ -10609,23 +10602,6 @@ snapshots:
 
   '@vanilla-extract/css-utils@0.1.4': {}
 
-  '@vanilla-extract/css@1.15.5':
-    dependencies:
-      '@emotion/hash': 0.9.1
-      '@vanilla-extract/private': 1.0.6
-      css-what: 6.1.0
-      cssesc: 3.0.0
-      csstype: 3.1.2
-      dedent: 1.5.3
-      deep-object-diff: 1.1.9
-      deepmerge: 4.3.1
-      lru-cache: 10.4.3
-      media-query-parser: 2.0.2
-      modern-ahocorasick: 1.0.0
-      picocolors: 1.0.1
-    transitivePeerDependencies:
-      - babel-plugin-macros
-
   '@vanilla-extract/css@1.16.0':
     dependencies:
       '@emotion/hash': 0.9.1
@@ -10686,9 +10662,9 @@ snapshots:
 
   '@vanilla-extract/private@1.0.6': {}
 
-  '@vanilla-extract/recipes@0.5.5(@vanilla-extract/css@1.15.5)':
+  '@vanilla-extract/recipes@0.5.5(@vanilla-extract/css@1.16.0)':
     dependencies:
-      '@vanilla-extract/css': 1.15.5
+      '@vanilla-extract/css': 1.16.0
 
   '@vanilla-extract/vite-plugin@4.0.16(@types/node@20.16.10)(terser@5.18.2)(vite@5.0.11(@types/node@20.16.10)(terser@5.18.2))':
     dependencies:
@@ -13778,8 +13754,6 @@ snapshots:
     dependencies:
       tslib: 2.7.0
 
-  lru-cache@10.0.0: {}
-
   lru-cache@10.4.3: {}
 
   lru-cache@11.0.0: {}
@@ -13851,7 +13825,7 @@ snapshots:
 
   media-query-parser@2.0.2:
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.25.6
 
   media-typer@0.3.0: {}
 
@@ -14463,7 +14437,7 @@ snapshots:
 
   path-scurry@1.10.1:
     dependencies:
-      lru-cache: 10.0.0
+      lru-cache: 10.4.3
       minipass: 5.0.0
 
   path-scurry@2.0.0:
