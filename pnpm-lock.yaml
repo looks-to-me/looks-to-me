@@ -145,8 +145,8 @@ importers:
         specifier: 3.0.9
         version: 3.0.9(@agaroot/eslint-config-common@3.0.6(eslint@8.57.1))(@agaroot/eslint-config-javascript@2.0.7(@agaroot/eslint-config-common@3.0.6(eslint@8.57.1))(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1)(typescript@5.6.2))(@agaroot/eslint-config-typescript@2.0.8(@agaroot/eslint-config-common@3.0.6(eslint@8.57.1))(@agaroot/eslint-config-javascript@2.0.7(@agaroot/eslint-config-common@3.0.6(eslint@8.57.1))(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1)(typescript@5.6.2))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1))(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1)
       '@cloudflare/next-on-pages':
-        specifier: 1.13.3
-        version: 1.13.3(@cloudflare/workers-types@4.20240925.0)(vercel@37.6.1(@swc/core@1.7.24(@swc/helpers@0.5.5)))(wrangler@3.78.12(@cloudflare/workers-types@4.20240925.0))
+        specifier: 1.13.5
+        version: 1.13.5(@cloudflare/workers-types@4.20240925.0)(vercel@37.6.1(@swc/core@1.7.24(@swc/helpers@0.5.5)))(wrangler@3.78.12(@cloudflare/workers-types@4.20240925.0))
       '@cloudflare/workers-types':
         specifier: 4.20240925.0
         version: 4.20240925.0
@@ -1039,8 +1039,8 @@ packages:
     resolution: {integrity: sha512-YLPHc8yASwjNkmcDMQMY35yiWjoKAKnhUbPRszBRS0YgH+IXtsMp61j+yTcnCE3oO2DgP0U3iejLC8FTtKDC8Q==}
     engines: {node: '>=16.13'}
 
-  '@cloudflare/next-on-pages@1.13.3':
-    resolution: {integrity: sha512-pPi0cCvSFLtWr/e3iqmpG4h0Apg3NWaw26arDDR7Ap2p/jDewsX4y6dDDRv1vZqfUw5xCgBB6xxNf5vjhbDCzA==}
+  '@cloudflare/next-on-pages@1.13.5':
+    resolution: {integrity: sha512-eKRrI14kCk6kuBIAO6WwMNSvH8fFzkMQj1G95/wLVW2xpUaU0EDxRcQJ0U9aB1tOm/sPWW76Udb92rxyrVJpBw==}
     hasBin: true
     peerDependencies:
       '@cloudflare/workers-types': ^4.20240208.0
@@ -1122,9 +1122,11 @@ packages:
 
   '@esbuild-kit/core-utils@3.1.0':
     resolution: {integrity: sha512-Uuk8RpCg/7fdHSceR1M6XbSZFSuMrxcePFuGgyvsBn+u339dk5OeL4jv2EojwTN2st/unJGsVm4qHWjWNmJ/tw==}
+    deprecated: 'Merged into tsx: https://tsx.is'
 
   '@esbuild-kit/esm-loader@2.5.5':
     resolution: {integrity: sha512-Qwfvj/qoPbClxCRNuac1Du01r9gvNOT+pMYtJDapfB1eoGN1YlJ1BixLyL9WVENRx5RXgNLdfYdx/CuswlGhMw==}
+    deprecated: 'Merged into tsx: https://tsx.is'
 
   '@esbuild-plugins/node-globals-polyfill@0.2.3':
     resolution: {integrity: sha512-r3MIryXDeXDOZh7ih1l/yE9ZLORCd5e8vWg02azWRGj5SPTuoh69A2AIyn0Z31V/kHBfZ4HgWJ+OK3GTTwLmnw==}
@@ -4573,6 +4575,7 @@ packages:
   eslint@8.57.1:
     resolution: {integrity: sha512-ypowyDxpVSYpkXr9WPv2PAZCtNip1Mv5KTW0SCurXv/9iOpcrH9PaqUElksqEB6pChqHGDRCFTyrZlGhnLNGiA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@10.1.0:
@@ -8805,7 +8808,7 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@cloudflare/next-on-pages@1.13.3(@cloudflare/workers-types@4.20240925.0)(vercel@37.6.1(@swc/core@1.7.24(@swc/helpers@0.5.5)))(wrangler@3.78.12(@cloudflare/workers-types@4.20240925.0))':
+  '@cloudflare/next-on-pages@1.13.5(@cloudflare/workers-types@4.20240925.0)(vercel@37.6.1(@swc/core@1.7.24(@swc/helpers@0.5.5)))(wrangler@3.78.12(@cloudflare/workers-types@4.20240925.0))':
     dependencies:
       acorn: 8.12.1
       ast-types: 0.14.2
