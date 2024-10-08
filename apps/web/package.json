@@ -78,7 +78,7 @@
     "drizzle-kit": "0.24.2",
     "eslint": "8.57.1",
     "mini-css-extract-plugin": "2.9.1",
-    "miniflare": "3.20240925.0",
+    "miniflare": "3.20240925.1",
     "rimraf": "6.0.1",
     "storybook": "8.3.2",
     "typescript": "5.6.2",
