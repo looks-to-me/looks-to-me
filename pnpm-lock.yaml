@@ -146,7 +146,7 @@ importers:
         version: 3.0.9(@agaroot/eslint-config-common@3.0.6(eslint@8.57.1))(@agaroot/eslint-config-javascript@2.0.7(@agaroot/eslint-config-common@3.0.6(eslint@8.57.1))(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3))(@agaroot/eslint-config-typescript@2.0.8(@agaroot/eslint-config-common@3.0.6(eslint@8.57.1))(@agaroot/eslint-config-javascript@2.0.7(@agaroot/eslint-config-common@3.0.6(eslint@8.57.1))(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1))(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)
       '@cloudflare/next-on-pages':
         specifier: 1.13.5
-        version: 1.13.5(@cloudflare/workers-types@4.20241004.0)(vercel@37.7.1(@swc/core@1.7.24(@swc/helpers@0.5.5)))(wrangler@3.78.12(@cloudflare/workers-types@4.20241004.0))
+        version: 1.13.5(@cloudflare/workers-types@4.20241004.0)(vercel@37.7.1(@swc/core@1.7.24(@swc/helpers@0.5.5)))(wrangler@3.80.2(@cloudflare/workers-types@4.20241004.0))
       '@cloudflare/workers-types':
         specifier: 4.20241004.0
         version: 4.20241004.0
@@ -238,8 +238,8 @@ importers:
         specifier: 2.1.2
         version: 2.1.2(@edge-runtime/vm@3.2.0)(@types/node@20.16.11)(jsdom@25.0.0)(terser@5.18.2)
       wrangler:
-        specifier: 3.78.12
-        version: 3.78.12(@cloudflare/workers-types@4.20241004.0)
+        specifier: 3.80.2
+        version: 3.80.2(@cloudflare/workers-types@4.20241004.0)
 
   apps/worker-cdn:
     dependencies:
@@ -260,8 +260,8 @@ importers:
         specifier: 5.6.3
         version: 5.6.3
       wrangler:
-        specifier: 3.78.12
-        version: 3.78.12(@cloudflare/workers-types@4.20241004.0)
+        specifier: 3.80.2
+        version: 3.80.2(@cloudflare/workers-types@4.20241004.0)
 
   apps/worker-image-overlay:
     dependencies:
@@ -279,8 +279,8 @@ importers:
         specifier: 5.6.3
         version: 5.6.3
       wrangler:
-        specifier: 3.78.12
-        version: 3.78.12(@cloudflare/workers-types@4.20241004.0)
+        specifier: 3.80.2
+        version: 3.80.2(@cloudflare/workers-types@4.20241004.0)
 
   packages/image-cache:
     devDependencies:
@@ -5735,11 +5735,6 @@ packages:
     peerDependencies:
       webpack: ^5.0.0
 
-  miniflare@3.20240925.0:
-    resolution: {integrity: sha512-2LmQbKHf0n6ertUKhT+Iltixi53giqDH7P71+wCir3OnGyXIODqYwOECx1mSDNhYThpxM2dav8UdPn6SQiMoXw==}
-    engines: {node: '>=16.13'}
-    hasBin: true
-
   miniflare@3.20240925.1:
     resolution: {integrity: sha512-odavnAwWLevMWOi/efIdAI9AVlg8C8NfXe2YLoAeG+Fj5BDHPDxCoY7AjZvBj3CJ7bszkoYyhoPEH60X+Vk+7g==}
     engines: {node: '>=16.13'}
@@ -7679,8 +7674,8 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  wrangler@3.78.12:
-    resolution: {integrity: sha512-a/xk/N04IvOGk9J+BLkiFg42GDyPS+0BiJimbrHsbX+CDr8Iqq3HNMEyQld+6zbmq01u/gmc8S7GKVR9vDx4+g==}
+  wrangler@3.80.2:
+    resolution: {integrity: sha512-WSMDXoNcg+DjZ4i0RMJpz2TKrCbTtsxNsQAwyYg7LRZlfmTZQZOPbHWhATVa4fCsNL6eElN050fMHOW9MptM9g==}
     engines: {node: '>=16.17.0'}
     hasBin: true
     peerDependencies:
@@ -8807,7 +8802,7 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@cloudflare/next-on-pages@1.13.5(@cloudflare/workers-types@4.20241004.0)(vercel@37.7.1(@swc/core@1.7.24(@swc/helpers@0.5.5)))(wrangler@3.78.12(@cloudflare/workers-types@4.20241004.0))':
+  '@cloudflare/next-on-pages@1.13.5(@cloudflare/workers-types@4.20241004.0)(vercel@37.7.1(@swc/core@1.7.24(@swc/helpers@0.5.5)))(wrangler@3.80.2(@cloudflare/workers-types@4.20241004.0))':
     dependencies:
       acorn: 8.12.1
       ast-types: 0.14.2
@@ -8822,7 +8817,7 @@ snapshots:
       pcre-to-regexp: 1.1.0
       semver: 7.6.3
       vercel: 37.7.1(@swc/core@1.7.24(@swc/helpers@0.5.5))
-      wrangler: 3.78.12(@cloudflare/workers-types@4.20241004.0)
+      wrangler: 3.80.2(@cloudflare/workers-types@4.20241004.0)
     optionalDependencies:
       '@cloudflare/workers-types': 4.20241004.0
     transitivePeerDependencies:
@@ -14024,25 +14019,6 @@ snapshots:
       tapable: 2.2.1
       webpack: 5.88.1(@swc/core@1.7.24(@swc/helpers@0.5.5))(esbuild@0.17.19)
 
-  miniflare@3.20240925.0:
-    dependencies:
-      '@cspotcode/source-map-support': 0.8.1
-      acorn: 8.12.1
-      acorn-walk: 8.2.0
-      capnp-ts: 0.7.0
-      exit-hook: 2.2.1
-      glob-to-regexp: 0.4.1
-      stoppable: 1.1.0
-      undici: 5.28.4
-      workerd: 1.20240925.0
-      ws: 8.18.0
-      youch: 3.2.3
-      zod: 3.22.4
-    transitivePeerDependencies:
-      - bufferutil
-      - supports-color
-      - utf-8-validate
-
   miniflare@3.20240925.1:
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
@@ -16297,7 +16273,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20240925.0
       '@cloudflare/workerd-windows-64': 1.20240925.0
 
-  wrangler@3.78.12(@cloudflare/workers-types@4.20241004.0):
+  wrangler@3.80.2(@cloudflare/workers-types@4.20241004.0):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
       '@cloudflare/workers-shared': 0.5.4
@@ -16306,7 +16282,7 @@ snapshots:
       blake3-wasm: 2.1.5
       chokidar: 3.5.3
       esbuild: 0.17.19
-      miniflare: 3.20240925.0
+      miniflare: 3.20240925.1
       nanoid: 3.3.7
       path-to-regexp: 6.3.0
       resolve: 1.22.8
