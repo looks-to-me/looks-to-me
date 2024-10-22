@@ -146,7 +146,7 @@ importers:
         version: 3.0.9(@agaroot/eslint-config-common@3.0.6(eslint@8.57.1))(@agaroot/eslint-config-javascript@2.0.7(@agaroot/eslint-config-common@3.0.6(eslint@8.57.1))(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3))(@agaroot/eslint-config-typescript@2.0.8(@agaroot/eslint-config-common@3.0.6(eslint@8.57.1))(@agaroot/eslint-config-javascript@2.0.7(@agaroot/eslint-config-common@3.0.6(eslint@8.57.1))(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1))(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)
       '@cloudflare/next-on-pages':
         specifier: 1.13.5
-        version: 1.13.5(@cloudflare/workers-types@4.20241018.0)(vercel@37.9.0(@swc/core@1.7.24(@swc/helpers@0.5.5)))(wrangler@3.81.0(@cloudflare/workers-types@4.20241018.0))
+        version: 1.13.5(@cloudflare/workers-types@4.20241018.0)(vercel@37.12.0(@swc/core@1.7.24(@swc/helpers@0.5.5)))(wrangler@3.81.0(@cloudflare/workers-types@4.20241018.0))
       '@cloudflare/workers-types':
         specifier: 4.20241018.0
         version: 4.20241018.0
@@ -232,8 +232,8 @@ importers:
         specifier: 5.6.3
         version: 5.6.3
       vercel:
-        specifier: 37.9.0
-        version: 37.9.0(@swc/core@1.7.24(@swc/helpers@0.5.5))
+        specifier: 37.12.0
+        version: 37.12.0(@swc/core@1.7.24(@swc/helpers@0.5.5))
       vitest:
         specifier: 2.1.3
         version: 2.1.3(@edge-runtime/vm@3.2.0)(@types/node@20.16.14)(jsdom@25.0.0)(terser@5.18.2)
@@ -2877,8 +2877,8 @@ packages:
   '@vercel/hydrogen@1.0.9':
     resolution: {integrity: sha512-IPAVaALuGAzt2apvTtBs5tB+8zZRzn/yG3AGp8dFyCsw/v5YOuk0Q5s8Z3fayLvJbFpjrKtqRNDZzVJBBU3MrQ==}
 
-  '@vercel/next@4.3.16':
-    resolution: {integrity: sha512-kSi4jYYW+szLaoNwsb3dzBOujuUSE1v8vvZ3gEjVXZLWWchEYzZHKGRmecBQjGe/7mqoMNJIrrDLVYS8oTMTQA==}
+  '@vercel/next@4.3.17':
+    resolution: {integrity: sha512-dMyAa4XMYMyzlemk1wH4Eo1eVkWfMDEokLqrIo2+haPUCesfQVovXSJOvHSulS7h7s6nBnEQvALhlGgFi1ig9g==}
 
   '@vercel/nft@0.27.3':
     resolution: {integrity: sha512-oySTdDSzUAFDXpsSLk9Q943o+/Yu/+TCFxnehpFQEf/3khi2stMpTHPVNwFdvZq/Z4Ky93lE+MGHpXCRpMkSCA==}
@@ -7499,8 +7499,8 @@ packages:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
 
-  vercel@37.9.0:
-    resolution: {integrity: sha512-uAayU4fnLqBdxyKay4xhcQVPspUYJeAGRGwTTtKgjjIbe474gONmaEFx644XfnpPQSSqHsIcu4iKnNnRI3NXgQ==}
+  vercel@37.12.0:
+    resolution: {integrity: sha512-q4MxHfNHWeCijEMCcildxGWHDzAhrvdvQkXOqXhRsPJxK23x7AhptjKNHsz/MfGiDrhcjh6rJYhtAQZnfNEbzQ==}
     engines: {node: '>= 16'}
     hasBin: true
 
@@ -8811,7 +8811,7 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@cloudflare/next-on-pages@1.13.5(@cloudflare/workers-types@4.20241018.0)(vercel@37.9.0(@swc/core@1.7.24(@swc/helpers@0.5.5)))(wrangler@3.81.0(@cloudflare/workers-types@4.20241018.0))':
+  '@cloudflare/next-on-pages@1.13.5(@cloudflare/workers-types@4.20241018.0)(vercel@37.12.0(@swc/core@1.7.24(@swc/helpers@0.5.5)))(wrangler@3.81.0(@cloudflare/workers-types@4.20241018.0))':
     dependencies:
       acorn: 8.12.1
       ast-types: 0.14.2
@@ -8825,7 +8825,7 @@ snapshots:
       package-manager-manager: 0.2.0
       pcre-to-regexp: 1.1.0
       semver: 7.6.3
-      vercel: 37.9.0(@swc/core@1.7.24(@swc/helpers@0.5.5))
+      vercel: 37.12.0(@swc/core@1.7.24(@swc/helpers@0.5.5))
       wrangler: 3.81.0(@cloudflare/workers-types@4.20241018.0)
     optionalDependencies:
       '@cloudflare/workers-types': 4.20241018.0
@@ -10764,7 +10764,7 @@ snapshots:
       '@vercel/static-config': 3.0.0
       ts-morph: 12.0.0
 
-  '@vercel/next@4.3.16':
+  '@vercel/next@4.3.17':
     dependencies:
       '@vercel/nft': 0.27.3
     transitivePeerDependencies:
@@ -15960,13 +15960,13 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vercel@37.9.0(@swc/core@1.7.24(@swc/helpers@0.5.5)):
+  vercel@37.12.0(@swc/core@1.7.24(@swc/helpers@0.5.5)):
     dependencies:
       '@vercel/build-utils': 8.4.11
       '@vercel/fun': 1.1.0
       '@vercel/go': 3.2.0
       '@vercel/hydrogen': 1.0.9
-      '@vercel/next': 4.3.16
+      '@vercel/next': 4.3.17
       '@vercel/node': 3.2.23(@swc/core@1.7.24(@swc/helpers@0.5.5))
       '@vercel/python': 4.3.1
       '@vercel/redwood': 2.1.8
