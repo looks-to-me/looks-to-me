@@ -109,7 +109,7 @@ importers:
         version: 4.3.1
       drizzle-orm:
         specifier: 0.35.3
-        version: 0.35.3(@cloudflare/workers-types@4.20241018.0)(@libsql/client-wasm@0.14.0)(@types/react@18.3.11)(better-sqlite3@11.4.0)(react@18.3.1)
+        version: 0.35.3(@cloudflare/workers-types@4.20241018.0)(@libsql/client-wasm@0.14.0)(@types/react@18.3.11)(better-sqlite3@11.5.0)(react@18.3.1)
       lucide-react:
         specifier: 0.453.0
         version: 0.453.0(react@18.3.1)
@@ -205,8 +205,8 @@ importers:
         specifier: 4.3.3
         version: 4.3.3(vite@5.0.11(@types/node@20.16.14)(terser@5.18.2))
       better-sqlite3:
-        specifier: 11.4.0
-        version: 11.4.0
+        specifier: 11.5.0
+        version: 11.5.0
       dotenv:
         specifier: 16.4.5
         version: 16.4.5
@@ -3328,8 +3328,8 @@ packages:
     resolution: {integrity: sha512-aVNobHnJqLiUelTaHat9DZ1qM2w0C0Eym4LPI/3JxOnSokGVdsl1T1kN7TFvsEAD8G47A6VKQ0TVHqbBnYMJlQ==}
     engines: {node: '>=12.0.0'}
 
-  better-sqlite3@11.4.0:
-    resolution: {integrity: sha512-B7C9y2aSvtTwDJIz34iUxMjQWmbAYFmpq0Rwf9weYTtx6jUYsUKVt5ePPYlGyLVBoySppPa41PBrzl1ipMhG7A==}
+  better-sqlite3@11.5.0:
+    resolution: {integrity: sha512-e/6eggfOutzoK0JWiU36jsisdWoHOfN9iWiW/SieKvb7SAa6aGNmBM/UKyp+/wWSXpLlWNN8tCPwoDNPhzUvuQ==}
 
   big.js@5.2.2:
     resolution: {integrity: sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==}
@@ -11375,7 +11375,7 @@ snapshots:
     dependencies:
       open: 8.4.2
 
-  better-sqlite3@11.4.0:
+  better-sqlite3@11.5.0:
     dependencies:
       bindings: 1.5.0
       prebuild-install: 7.1.1
@@ -12061,13 +12061,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.35.3(@cloudflare/workers-types@4.20241018.0)(@libsql/client-wasm@0.14.0)(@types/react@18.3.11)(better-sqlite3@11.4.0)(react@18.3.1):
+  drizzle-orm@0.35.3(@cloudflare/workers-types@4.20241018.0)(@libsql/client-wasm@0.14.0)(@types/react@18.3.11)(better-sqlite3@11.5.0)(react@18.3.1):
     dependencies:
       '@libsql/client-wasm': 0.14.0
     optionalDependencies:
       '@cloudflare/workers-types': 4.20241018.0
       '@types/react': 18.3.11
-      better-sqlite3: 11.4.0
+      better-sqlite3: 11.5.0
       react: 18.3.1
 
   eastasianwidth@0.2.0: {}
