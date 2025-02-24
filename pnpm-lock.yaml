@@ -139,8 +139,8 @@ importers:
         version: 0.42.1(typescript@5.7.3)
     devDependencies:
       '@cloudflare/next-on-pages':
-        specifier: 1.13.7
-        version: 1.13.7(@cloudflare/workers-types@4.20250214.0)(vercel@40.1.0(@swc/core@1.7.24(@swc/helpers@0.5.5))(rollup@4.9.5))(wrangler@3.109.2(@cloudflare/workers-types@4.20250214.0))
+        specifier: 1.13.8
+        version: 1.13.8(@cloudflare/workers-types@4.20250214.0)(vercel@40.1.0(@swc/core@1.7.24(@swc/helpers@0.5.5))(rollup@4.9.5))(wrangler@3.109.2(@cloudflare/workers-types@4.20250214.0))
       '@cloudflare/workers-types':
         specifier: 4.20250214.0
         version: 4.20250214.0
@@ -998,8 +998,8 @@ packages:
     resolution: {integrity: sha512-YLPHc8yASwjNkmcDMQMY35yiWjoKAKnhUbPRszBRS0YgH+IXtsMp61j+yTcnCE3oO2DgP0U3iejLC8FTtKDC8Q==}
     engines: {node: '>=16.13'}
 
-  '@cloudflare/next-on-pages@1.13.7':
-    resolution: {integrity: sha512-TSMVy+1fmxzeyykOC9guMEj7G2FgENw1T8V1sIFnah6piaJNBmybdyikPdQSdikP5w6v9eQhBt/TrXDPMDw0dw==}
+  '@cloudflare/next-on-pages@1.13.8':
+    resolution: {integrity: sha512-uv01vcKMxCmPdm1+RRmAP/Z9z85/O3ic3TXIKOLdmhqdqYCCnSSUBcKsFgVJTTW2DjhwCWyh72AW0nMRL5ZlwQ==}
     hasBin: true
     peerDependencies:
       '@cloudflare/workers-types': ^4.20240208.0
@@ -3033,11 +3033,6 @@ packages:
   acorn-walk@8.3.2:
     resolution: {integrity: sha512-cjkyv4OtNCIeqhHrfS81QWXoCBPExR/J62oyEqepVw8WaQeSqpW2uhuLPh1m9eWhDuOo/jUXVTlifvesOWp/4A==}
     engines: {node: '>=0.4.0'}
-
-  acorn@8.12.1:
-    resolution: {integrity: sha512-tcpGyI9zbizT9JbV6oYE477V6mTlXvvi0T0G3SNIYE2apm/G5huBa1+K89VGeovbg+jycCrfhl3ADxErOuO6Jg==}
-    engines: {node: '>=0.4.0'}
-    hasBin: true
 
   acorn@8.14.0:
     resolution: {integrity: sha512-cl669nCJTZBsL97OF4kUQm5g5hC2uihk0NxY3WENAC0TYdILVkAyHymAntgxGkl7K+t0cXIrH5siy5S4XkFycA==}
@@ -8359,9 +8354,9 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@cloudflare/next-on-pages@1.13.7(@cloudflare/workers-types@4.20250214.0)(vercel@40.1.0(@swc/core@1.7.24(@swc/helpers@0.5.5))(rollup@4.9.5))(wrangler@3.109.2(@cloudflare/workers-types@4.20250214.0))':
+  '@cloudflare/next-on-pages@1.13.8(@cloudflare/workers-types@4.20250214.0)(vercel@40.1.0(@swc/core@1.7.24(@swc/helpers@0.5.5))(rollup@4.9.5))(wrangler@3.109.2(@cloudflare/workers-types@4.20250214.0))':
     dependencies:
-      acorn: 8.12.1
+      acorn: 8.14.0
       ast-types: 0.14.2
       chalk: 5.3.0
       chokidar: 3.5.3
@@ -10564,8 +10559,6 @@ snapshots:
       acorn: 8.14.0
 
   acorn-walk@8.3.2: {}
-
-  acorn@8.12.1: {}
 
   acorn@8.14.0: {}
 
