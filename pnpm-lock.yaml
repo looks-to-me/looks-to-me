@@ -149,10 +149,10 @@ importers:
         version: 2.0.1(eslint@9.21.0(jiti@1.21.6))
       '@praha/eslint-config-next':
         specifier: 4.0.2
-        version: 4.0.2(wlcpl3wqar2adki3o7vcbdvfty)
+        version: 4.0.2(liokgqqcdj5vskrxmjzhoj4jxa)
       '@praha/eslint-config-react':
-        specifier: 4.0.2
-        version: 4.0.2(yskfmj4r6biuojj4zjgiaa6goy)
+        specifier: 4.0.3
+        version: 4.0.3(yskfmj4r6biuojj4zjgiaa6goy)
       '@sqlite.org/sqlite-wasm':
         specifier: 3.48.0-build4
         version: 3.48.0-build4
@@ -1771,12 +1771,12 @@ packages:
       '@praha/eslint-config-typescript':
         optional: true
 
-  '@praha/eslint-config-react@4.0.2':
-    resolution: {integrity: sha512-fQMNWMHP8seXCiIbkdHHsN6GDHv/w6ra3JfG1W64PpVGag3dRcHwPpGIWqwfKVNXCNn/QGfZRj1C/foe+CCJsA==}
+  '@praha/eslint-config-react@4.0.3':
+    resolution: {integrity: sha512-rSY6Xtt7xR37poWPra5YH0/xxcaQl0FEbKlNdBdd15uPSYl5+5ZfDH1jXGBizBLOFCFSjG/tqcPeJC30xT8yjw==}
     peerDependencies:
       '@praha/eslint-config-common': 4.0.1
-      '@praha/eslint-config-javascript': 3.0.1
-      '@praha/eslint-config-typescript': 3.0.2
+      '@praha/eslint-config-javascript': 3.0.2
+      '@praha/eslint-config-typescript': 3.0.3
       eslint: ^9.0.0
     peerDependenciesMeta:
       '@praha/eslint-config-typescript':
@@ -8841,7 +8841,7 @@ snapshots:
       https-proxy-agent: 7.0.5
       node-fetch: 2.6.12
       nopt: 8.0.0
-      semver: 7.6.3
+      semver: 7.7.1
       tar: 7.4.3
     transitivePeerDependencies:
       - encoding
@@ -8967,19 +8967,19 @@ snapshots:
       - supports-color
       - typescript
 
-  '@praha/eslint-config-next@4.0.2(wlcpl3wqar2adki3o7vcbdvfty)':
+  '@praha/eslint-config-next@4.0.2(liokgqqcdj5vskrxmjzhoj4jxa)':
     dependencies:
       '@eslint/compat': 1.2.4(eslint@9.21.0(jiti@1.21.6))
       '@next/eslint-plugin-next': 15.0.4
       '@praha/eslint-config-common': 4.0.1(eslint@9.21.0(jiti@1.21.6))
       '@praha/eslint-config-definer': 2.0.1(eslint@9.21.0(jiti@1.21.6))
       '@praha/eslint-config-javascript': 3.0.2(@praha/eslint-config-common@4.0.1(eslint@9.21.0(jiti@1.21.6)))(@typescript-eslint/eslint-plugin@8.18.0(@typescript-eslint/parser@8.18.0(eslint@9.21.0(jiti@1.21.6))(typescript@5.7.3))(eslint@9.21.0(jiti@1.21.6))(typescript@5.7.3))(eslint@9.21.0(jiti@1.21.6))(typescript@5.7.3)
-      '@praha/eslint-config-react': 4.0.2(yskfmj4r6biuojj4zjgiaa6goy)
+      '@praha/eslint-config-react': 4.0.3(yskfmj4r6biuojj4zjgiaa6goy)
       eslint: 9.21.0(jiti@1.21.6)
     optionalDependencies:
       '@praha/eslint-config-typescript': 3.0.2(@praha/eslint-config-common@4.0.1(eslint@9.21.0(jiti@1.21.6)))(@praha/eslint-config-javascript@3.0.2(@praha/eslint-config-common@4.0.1(eslint@9.21.0(jiti@1.21.6)))(@typescript-eslint/eslint-plugin@8.18.0(@typescript-eslint/parser@8.18.0(eslint@9.21.0(jiti@1.21.6))(typescript@5.7.3))(eslint@9.21.0(jiti@1.21.6))(typescript@5.7.3))(eslint@9.21.0(jiti@1.21.6))(typescript@5.7.3))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@8.18.0(eslint@9.21.0(jiti@1.21.6))(typescript@5.7.3))(eslint@9.21.0(jiti@1.21.6)))(eslint@9.21.0(jiti@1.21.6))(typescript@5.7.3)
 
-  '@praha/eslint-config-react@4.0.2(yskfmj4r6biuojj4zjgiaa6goy)':
+  '@praha/eslint-config-react@4.0.3(yskfmj4r6biuojj4zjgiaa6goy)':
     dependencies:
       '@praha/eslint-config-common': 4.0.1(eslint@9.21.0(jiti@1.21.6))
       '@praha/eslint-config-definer': 2.0.1(eslint@9.21.0(jiti@1.21.6))
@@ -13685,7 +13685,7 @@ snapshots:
       ky: 1.7.2
       registry-auth-token: 5.0.2
       registry-url: 6.0.1
-      semver: 7.6.3
+      semver: 7.7.1
 
   package-manager-manager@0.2.0:
     dependencies:
