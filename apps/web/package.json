@@ -53,7 +53,7 @@
     "@cloudflare/workers-types": "4.20250224.0",
     "@praha/eslint-config-definer": "2.0.1",
     "@praha/eslint-config-next": "4.0.2",
-    "@praha/eslint-config-react": "4.0.2",
+    "@praha/eslint-config-react": "4.0.3",
     "@sqlite.org/sqlite-wasm": "3.48.0-build4",
     "@storybook/addon-essentials": "8.5.8",
     "@storybook/addon-interactions": "8.5.8",
