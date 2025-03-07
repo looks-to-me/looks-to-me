@@ -49,7 +49,7 @@
     "valibot": "0.42.1"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "1.13.8",
+    "@cloudflare/next-on-pages": "1.13.9",
     "@cloudflare/workers-types": "4.20250303.0",
     "@praha/eslint-config-definer": "2.0.1",
     "@praha/eslint-config-next": "4.0.3",
