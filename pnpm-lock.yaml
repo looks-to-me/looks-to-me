@@ -140,7 +140,7 @@ importers:
     devDependencies:
       '@cloudflare/next-on-pages':
         specifier: 1.13.9
-        version: 1.13.9(@cloudflare/workers-types@4.20250303.0)(vercel@40.1.0(@swc/core@1.7.24(@swc/helpers@0.5.5))(rollup@4.9.5))(wrangler@3.113.0(@cloudflare/workers-types@4.20250303.0))
+        version: 1.13.9(@cloudflare/workers-types@4.20250303.0)(vercel@40.1.0(@swc/core@1.7.24(@swc/helpers@0.5.5))(rollup@4.9.5))(wrangler@3.114.0(@cloudflare/workers-types@4.20250303.0))
       '@cloudflare/workers-types':
         specifier: 4.20250303.0
         version: 4.20250303.0
@@ -238,8 +238,8 @@ importers:
         specifier: 3.0.8
         version: 3.0.8(@edge-runtime/vm@3.2.0)(@types/node@22.13.9)(jsdom@25.0.0)(terser@5.18.2)
       wrangler:
-        specifier: 3.113.0
-        version: 3.113.0(@cloudflare/workers-types@4.20250303.0)
+        specifier: 3.114.0
+        version: 3.114.0(@cloudflare/workers-types@4.20250303.0)
 
   apps/worker-cdn:
     dependencies:
@@ -260,8 +260,8 @@ importers:
         specifier: 5.8.2
         version: 5.8.2
       wrangler:
-        specifier: 3.113.0
-        version: 3.113.0(@cloudflare/workers-types@4.20250303.0)
+        specifier: 3.114.0
+        version: 3.114.0(@cloudflare/workers-types@4.20250303.0)
 
   apps/worker-image-overlay:
     dependencies:
@@ -279,8 +279,8 @@ importers:
         specifier: 5.8.2
         version: 5.8.2
       wrangler:
-        specifier: 3.113.0
-        version: 3.113.0(@cloudflare/workers-types@4.20250303.0)
+        specifier: 3.114.0
+        version: 3.114.0(@cloudflare/workers-types@4.20250303.0)
 
   packages/database:
     dependencies:
@@ -7388,8 +7388,8 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  wrangler@3.113.0:
-    resolution: {integrity: sha512-Fr7sxO9kNFoN12AZLdwkQEnHN7pf1FziOfmEZsQIvyyMJTQC0HMWWS9LEsMdxJf0X9okoRMXLPfE9wtz1C1SIg==}
+  wrangler@3.114.0:
+    resolution: {integrity: sha512-cY0HxgU5yuc24tE1Y4KD2n9UzYYEx+9lSL7p/Sqj18SgDfwyiMPY/FryXQAPYLuD/S+dxArRQyeEkFSokIr75Q==}
     engines: {node: '>=16.17.0'}
     hasBin: true
     peerDependencies:
@@ -8397,7 +8397,7 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@cloudflare/next-on-pages@1.13.9(@cloudflare/workers-types@4.20250303.0)(vercel@40.1.0(@swc/core@1.7.24(@swc/helpers@0.5.5))(rollup@4.9.5))(wrangler@3.113.0(@cloudflare/workers-types@4.20250303.0))':
+  '@cloudflare/next-on-pages@1.13.9(@cloudflare/workers-types@4.20250303.0)(vercel@40.1.0(@swc/core@1.7.24(@swc/helpers@0.5.5))(rollup@4.9.5))(wrangler@3.114.0(@cloudflare/workers-types@4.20250303.0))':
     dependencies:
       acorn: 8.14.0
       ast-types: 0.14.2
@@ -8412,7 +8412,7 @@ snapshots:
       pcre-to-regexp: 1.1.0
       semver: 7.7.1
       vercel: 40.1.0(@swc/core@1.7.24(@swc/helpers@0.5.5))(rollup@4.9.5)
-      wrangler: 3.113.0(@cloudflare/workers-types@4.20250303.0)
+      wrangler: 3.114.0(@cloudflare/workers-types@4.20250303.0)
     optionalDependencies:
       '@cloudflare/workers-types': 4.20250303.0
     transitivePeerDependencies:
@@ -15376,7 +15376,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20250224.0
       '@cloudflare/workerd-windows-64': 1.20250224.0
 
-  wrangler@3.113.0(@cloudflare/workers-types@4.20250303.0):
+  wrangler@3.114.0(@cloudflare/workers-types@4.20250303.0):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
       '@cloudflare/unenv-preset': 2.0.0(unenv@2.0.0-rc.8)(workerd@1.20250224.0)
