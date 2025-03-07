@@ -139,8 +139,8 @@ importers:
         version: 0.42.1(typescript@5.8.2)
     devDependencies:
       '@cloudflare/next-on-pages':
-        specifier: 1.13.8
-        version: 1.13.8(@cloudflare/workers-types@4.20250303.0)(vercel@40.1.0(@swc/core@1.7.24(@swc/helpers@0.5.5))(rollup@4.9.5))(wrangler@3.113.0(@cloudflare/workers-types@4.20250303.0))
+        specifier: 1.13.9
+        version: 1.13.9(@cloudflare/workers-types@4.20250303.0)(vercel@40.1.0(@swc/core@1.7.24(@swc/helpers@0.5.5))(rollup@4.9.5))(wrangler@3.113.0(@cloudflare/workers-types@4.20250303.0))
       '@cloudflare/workers-types':
         specifier: 4.20250303.0
         version: 4.20250303.0
@@ -998,8 +998,8 @@ packages:
     resolution: {integrity: sha512-YLPHc8yASwjNkmcDMQMY35yiWjoKAKnhUbPRszBRS0YgH+IXtsMp61j+yTcnCE3oO2DgP0U3iejLC8FTtKDC8Q==}
     engines: {node: '>=16.13'}
 
-  '@cloudflare/next-on-pages@1.13.8':
-    resolution: {integrity: sha512-uv01vcKMxCmPdm1+RRmAP/Z9z85/O3ic3TXIKOLdmhqdqYCCnSSUBcKsFgVJTTW2DjhwCWyh72AW0nMRL5ZlwQ==}
+  '@cloudflare/next-on-pages@1.13.9':
+    resolution: {integrity: sha512-xtZu69cjUmtdpJmk+cesNvKhnt0RXp9LnCafTp9ucRHpkh6iIKAUbjqGoOLLpptpbx2V8LxyNCULJbZf0hYXoA==}
     hasBin: true
     peerDependencies:
       '@cloudflare/workers-types': ^4.20240208.0
@@ -6480,11 +6480,6 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  semver@7.6.3:
-    resolution: {integrity: sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==}
-    engines: {node: '>=10'}
-    hasBin: true
-
   semver@7.7.1:
     resolution: {integrity: sha512-hlq8tAfn0m/61p4BVRcPzIGr6LKiMwo4VM6dGi6pt4qcRkmNzTcWq6eCEjEh+qXjkMDvPlOFFSGwQjoEa6gyMA==}
     engines: {node: '>=10'}
@@ -8402,7 +8397,7 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@cloudflare/next-on-pages@1.13.8(@cloudflare/workers-types@4.20250303.0)(vercel@40.1.0(@swc/core@1.7.24(@swc/helpers@0.5.5))(rollup@4.9.5))(wrangler@3.113.0(@cloudflare/workers-types@4.20250303.0))':
+  '@cloudflare/next-on-pages@1.13.9(@cloudflare/workers-types@4.20250303.0)(vercel@40.1.0(@swc/core@1.7.24(@swc/helpers@0.5.5))(rollup@4.9.5))(wrangler@3.113.0(@cloudflare/workers-types@4.20250303.0))':
     dependencies:
       acorn: 8.14.0
       ast-types: 0.14.2
@@ -8415,7 +8410,7 @@ snapshots:
       miniflare: 3.20250224.0
       package-manager-manager: 0.2.0
       pcre-to-regexp: 1.1.0
-      semver: 7.6.3
+      semver: 7.7.1
       vercel: 40.1.0(@swc/core@1.7.24(@swc/helpers@0.5.5))(rollup@4.9.5)
       wrangler: 3.113.0(@cloudflare/workers-types@4.20250303.0)
     optionalDependencies:
@@ -11951,7 +11946,7 @@ snapshots:
       get-tsconfig: 4.8.0
       is-glob: 4.0.3
       minimatch: 9.0.4
-      semver: 7.6.3
+      semver: 7.7.1
       stable-hash: 0.0.4
       tslib: 2.7.0
     transitivePeerDependencies:
@@ -12390,7 +12385,7 @@ snapshots:
       '@petamoriken/float16': 3.9.1
       debug: 4.4.0
       env-paths: 3.0.0
-      semver: 7.6.3
+      semver: 7.7.1
       shell-quote: 1.8.2
       which: 4.0.0
     transitivePeerDependencies:
@@ -13441,7 +13436,7 @@ snapshots:
 
   node-abi@3.45.0:
     dependencies:
-      semver: 7.6.3
+      semver: 7.7.1
 
   node-abort-controller@3.1.1: {}
 
@@ -14350,8 +14345,6 @@ snapshots:
     dependencies:
       lru-cache: 6.0.0
 
-  semver@7.6.3: {}
-
   semver@7.7.1: {}
 
   serialize-javascript@6.0.1:
@@ -15039,7 +15032,7 @@ snapshots:
       is-npm: 6.0.0
       latest-version: 9.0.0
       pupa: 3.1.0
-      semver: 7.6.3
+      semver: 7.7.1
       xdg-basedir: 5.1.0
 
   uri-js@4.4.1:
