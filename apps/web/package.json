@@ -72,7 +72,7 @@
     "@vanilla-extract/vite-plugin": "5.0.1",
     "@vanilla-extract/webpack-plugin": "2.3.18",
     "@vitejs/plugin-react": "4.3.4",
-    "better-sqlite3": "11.8.1",
+    "better-sqlite3": "11.9.0",
     "dotenv": "16.4.7",
     "eslint": "9.22.0",
     "mini-css-extract-plugin": "2.9.2",
