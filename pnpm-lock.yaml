@@ -111,8 +111,8 @@ importers:
         specifier: 4.3.1
         version: 4.3.1
       drizzle-orm:
-        specifier: 0.40.0
-        version: 0.40.0(@cloudflare/workers-types@4.20250313.0)(@libsql/client-wasm@0.14.0)(better-sqlite3@11.9.1)(gel@2.0.0)
+        specifier: 0.40.1
+        version: 0.40.1(@cloudflare/workers-types@4.20250313.0)(@libsql/client-wasm@0.14.0)(better-sqlite3@11.9.1)(gel@2.0.0)
       lucide-react:
         specifier: 0.482.0
         version: 0.482.0(react@18.3.1)
@@ -288,8 +288,8 @@ importers:
         specifier: 3.48.0-build4
         version: 3.48.0-build4
       drizzle-orm:
-        specifier: 0.40.0
-        version: 0.40.0(@cloudflare/workers-types@4.20250313.0)(@libsql/client-wasm@0.14.0)(better-sqlite3@11.9.1)(gel@2.0.0)
+        specifier: 0.40.1
+        version: 0.40.1(@cloudflare/workers-types@4.20250313.0)(@libsql/client-wasm@0.14.0)(better-sqlite3@11.9.1)(gel@2.0.0)
     devDependencies:
       '@praha/eslint-config-definer':
         specifier: 2.0.1
@@ -3864,8 +3864,8 @@ packages:
     resolution: {integrity: sha512-l6dMSE100u7sDaTbLczibrQZjA35jLsHNqIV+jmhNVO3O8jzM6kywMOmV9uOz9ZVSCMPQhAZEFjL/qDPVrqpUA==}
     hasBin: true
 
-  drizzle-orm@0.40.0:
-    resolution: {integrity: sha512-7ptk/HQiMSrEZHnAsSlBESXWj52VwgMmyTEfoNmpNN2ZXpcz13LwHfXTIghsAEud7Z5UJhDOp8U07ujcqme7wg==}
+  drizzle-orm@0.40.1:
+    resolution: {integrity: sha512-aPNhtiJiPfm3qxz1czrnIDkfvkSdKGXYeZkpG55NPTVI186LmK2fBLMi4dsHpPHlJrZeQ92D322YFPHADBALew==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
       '@cloudflare/workers-types': '>=4'
@@ -11487,7 +11487,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.40.0(@cloudflare/workers-types@4.20250313.0)(@libsql/client-wasm@0.14.0)(better-sqlite3@11.9.1)(gel@2.0.0):
+  drizzle-orm@0.40.1(@cloudflare/workers-types@4.20250313.0)(@libsql/client-wasm@0.14.0)(better-sqlite3@11.9.1)(gel@2.0.0):
     optionalDependencies:
       '@cloudflare/workers-types': 4.20250313.0
       '@libsql/client-wasm': 0.14.0
