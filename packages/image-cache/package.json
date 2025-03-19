@@ -15,6 +15,6 @@
     "@cloudflare/workers-types": "4.20250313.0",
     "eslint": "9.22.0",
     "typescript": "5.8.2",
-    "vitest": "3.0.8"
+    "vitest": "3.0.9"
   }
 }
