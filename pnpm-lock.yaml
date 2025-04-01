@@ -139,8 +139,8 @@ importers:
         version: 0.42.1(typescript@5.8.2)
     devDependencies:
       '@cloudflare/next-on-pages':
-        specifier: 1.13.10
-        version: 1.13.10(@cloudflare/workers-types@4.20250320.0)(vercel@40.1.0(@swc/core@1.7.24(@swc/helpers@0.5.5))(rollup@4.9.5))(wrangler@3.114.3(@cloudflare/workers-types@4.20250320.0))
+        specifier: 1.13.11
+        version: 1.13.11(@cloudflare/workers-types@4.20250320.0)(vercel@40.1.0(@swc/core@1.7.24(@swc/helpers@0.5.5))(rollup@4.9.5))(wrangler@3.114.3(@cloudflare/workers-types@4.20250320.0))
       '@cloudflare/workers-types':
         specifier: 4.20250320.0
         version: 4.20250320.0
@@ -998,8 +998,8 @@ packages:
     resolution: {integrity: sha512-YLPHc8yASwjNkmcDMQMY35yiWjoKAKnhUbPRszBRS0YgH+IXtsMp61j+yTcnCE3oO2DgP0U3iejLC8FTtKDC8Q==}
     engines: {node: '>=16.13'}
 
-  '@cloudflare/next-on-pages@1.13.10':
-    resolution: {integrity: sha512-miboFA675/RzpHNe3nri1XO5cwtJCPfEZbL7mdlwwXqYw6DMlrppPaBNNjgbgXdLylHBV7h1+zfKdVDaQ20B8w==}
+  '@cloudflare/next-on-pages@1.13.11':
+    resolution: {integrity: sha512-Ceq/Q+Ua0p4VT5N6pi1QiBX5YYKlOSp0I69efmirSgcqB53Oz6+64aiso8mw7R7yIxYYKlxFRoTyIjQChoTg+Q==}
     hasBin: true
     peerDependencies:
       '@cloudflare/workers-types': ^4.20240208.0
@@ -8402,7 +8402,7 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@cloudflare/next-on-pages@1.13.10(@cloudflare/workers-types@4.20250320.0)(vercel@40.1.0(@swc/core@1.7.24(@swc/helpers@0.5.5))(rollup@4.9.5))(wrangler@3.114.3(@cloudflare/workers-types@4.20250320.0))':
+  '@cloudflare/next-on-pages@1.13.11(@cloudflare/workers-types@4.20250320.0)(vercel@40.1.0(@swc/core@1.7.24(@swc/helpers@0.5.5))(rollup@4.9.5))(wrangler@3.114.3(@cloudflare/workers-types@4.20250320.0))':
     dependencies:
       acorn: 8.14.0
       ast-types: 0.14.2
