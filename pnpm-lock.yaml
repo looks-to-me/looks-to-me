@@ -149,10 +149,10 @@ importers:
         version: 2.0.1(eslint@9.22.0(jiti@1.21.6))
       '@praha/eslint-config-next':
         specifier: 4.0.4
-        version: 4.0.4(wdteheqpih4fgyske6s4bbzrlm)
+        version: 4.0.4(c5zit4pzwg4oix4wom7u2ozij4)
       '@praha/eslint-config-react':
-        specifier: 4.0.3
-        version: 4.0.3(6of7cccdtyfd6bhyygorlokg3a)
+        specifier: 4.0.4
+        version: 4.0.4(6of7cccdtyfd6bhyygorlokg3a)
       '@sqlite.org/sqlite-wasm':
         specifier: 3.48.0-build4
         version: 3.48.0-build4
@@ -1836,12 +1836,12 @@ packages:
       '@praha/eslint-config-typescript':
         optional: true
 
-  '@praha/eslint-config-react@4.0.3':
-    resolution: {integrity: sha512-rSY6Xtt7xR37poWPra5YH0/xxcaQl0FEbKlNdBdd15uPSYl5+5ZfDH1jXGBizBLOFCFSjG/tqcPeJC30xT8yjw==}
+  '@praha/eslint-config-react@4.0.4':
+    resolution: {integrity: sha512-eiiKrchq80i7gG4ny/kAI0P8429kEs8xAFPSkFmxEVlqBuHJWrogMM0L+qOAkVwJKwxGrc4pbyCT9B+JsyczHg==}
     peerDependencies:
       '@praha/eslint-config-common': 4.0.1
-      '@praha/eslint-config-javascript': 3.0.2
-      '@praha/eslint-config-typescript': 3.0.3
+      '@praha/eslint-config-javascript': 3.0.3
+      '@praha/eslint-config-typescript': 3.0.4
       eslint: ^9.0.0
     peerDependenciesMeta:
       '@praha/eslint-config-typescript':
@@ -4586,8 +4586,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9
 
-  eslint-plugin-react-hooks@5.1.0:
-    resolution: {integrity: sha512-mpJRtPgHN2tNAvZ35AMfqeB3Xqeo273QxrHJsbBEPWODRM4r0yB6jfoROqKEYrOn27UtRPpcpHc2UqyBSuUNTw==}
+  eslint-plugin-react-hooks@5.2.0:
+    resolution: {integrity: sha512-+f15FfK64YQwZdJNELETdn5ibXEUQmW1DZL6KXhNnc2heoy/sg9VJJeT7n8TlMWouzWqSWavFkIhHyIbIAEapg==}
     engines: {node: '>=10'}
     peerDependencies:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0
@@ -9204,19 +9204,19 @@ snapshots:
       - supports-color
       - typescript
 
-  '@praha/eslint-config-next@4.0.4(wdteheqpih4fgyske6s4bbzrlm)':
+  '@praha/eslint-config-next@4.0.4(c5zit4pzwg4oix4wom7u2ozij4)':
     dependencies:
       '@eslint/compat': 1.2.8(eslint@9.22.0(jiti@1.21.6))
       '@next/eslint-plugin-next': 15.0.4
       '@praha/eslint-config-common': 4.0.1(eslint@9.22.0(jiti@1.21.6))
       '@praha/eslint-config-definer': 2.0.1(eslint@9.22.0(jiti@1.21.6))
       '@praha/eslint-config-javascript': 3.0.3(@praha/eslint-config-common@4.0.1(eslint@9.22.0(jiti@1.21.6)))(@typescript-eslint/eslint-plugin@8.18.0(@typescript-eslint/parser@8.18.0(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.3))(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.3))(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.3)
-      '@praha/eslint-config-react': 4.0.3(6of7cccdtyfd6bhyygorlokg3a)
+      '@praha/eslint-config-react': 4.0.4(6of7cccdtyfd6bhyygorlokg3a)
       eslint: 9.22.0(jiti@1.21.6)
     optionalDependencies:
       '@praha/eslint-config-typescript': 3.0.3(@praha/eslint-config-common@4.0.1(eslint@9.22.0(jiti@1.21.6)))(@praha/eslint-config-javascript@3.0.3(@praha/eslint-config-common@4.0.1(eslint@9.22.0(jiti@1.21.6)))(@typescript-eslint/eslint-plugin@8.18.0(@typescript-eslint/parser@8.18.0(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.3))(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.3))(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.3))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@8.18.0(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.3))(eslint@9.22.0(jiti@1.21.6)))(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.3)
 
-  '@praha/eslint-config-react@4.0.3(6of7cccdtyfd6bhyygorlokg3a)':
+  '@praha/eslint-config-react@4.0.4(6of7cccdtyfd6bhyygorlokg3a)':
     dependencies:
       '@praha/eslint-config-common': 4.0.1(eslint@9.22.0(jiti@1.21.6))
       '@praha/eslint-config-definer': 2.0.1(eslint@9.22.0(jiti@1.21.6))
@@ -9224,7 +9224,7 @@ snapshots:
       eslint: 9.22.0(jiti@1.21.6)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.22.0(jiti@1.21.6))
       eslint-plugin-react: 7.37.2(eslint@9.22.0(jiti@1.21.6))
-      eslint-plugin-react-hooks: 5.1.0(eslint@9.22.0(jiti@1.21.6))
+      eslint-plugin-react-hooks: 5.2.0(eslint@9.22.0(jiti@1.21.6))
     optionalDependencies:
       '@praha/eslint-config-typescript': 3.0.3(@praha/eslint-config-common@4.0.1(eslint@9.22.0(jiti@1.21.6)))(@praha/eslint-config-javascript@3.0.3(@praha/eslint-config-common@4.0.1(eslint@9.22.0(jiti@1.21.6)))(@typescript-eslint/eslint-plugin@8.18.0(@typescript-eslint/parser@8.18.0(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.3))(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.3))(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.3))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@8.18.0(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.3))(eslint@9.22.0(jiti@1.21.6)))(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.3)
 
@@ -12369,7 +12369,7 @@ snapshots:
       safe-regex-test: 1.0.3
       string.prototype.includes: 2.0.1
 
-  eslint-plugin-react-hooks@5.1.0(eslint@9.22.0(jiti@1.21.6)):
+  eslint-plugin-react-hooks@5.2.0(eslint@9.22.0(jiti@1.21.6)):
     dependencies:
       eslint: 9.22.0(jiti@1.21.6)
 
