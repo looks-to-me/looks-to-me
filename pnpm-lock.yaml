@@ -30,8 +30,8 @@ importers:
         specifier: 2.0.5
         version: 2.0.5
       '@vitest/eslint-plugin':
-        specifier: 1.1.42
-        version: 1.1.42(@typescript-eslint/utils@8.30.1(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.3))(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.3)(vitest@3.0.9(@edge-runtime/vm@3.2.0)(@types/node@22.14.1)(jsdom@25.0.0)(terser@5.18.2))
+        specifier: 1.1.43
+        version: 1.1.43(@typescript-eslint/utils@8.30.1(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.3))(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.3)(vitest@3.0.9(@edge-runtime/vm@3.2.0)(@types/node@22.14.1)(jsdom@25.0.0)(terser@5.18.2))
       eslint:
         specifier: 9.22.0
         version: 9.22.0(jiti@1.21.6)
@@ -3142,8 +3142,8 @@ packages:
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0 || ^6.0.0
 
-  '@vitest/eslint-plugin@1.1.42':
-    resolution: {integrity: sha512-dTGNbh/angh+hoqp5L5A8YO/29mOXDXmDQ/1fzt/jiYzLvU6FvrMqJpGqMqh5g+Fz6MDoZi0AlxefnFUg93Q5A==}
+  '@vitest/eslint-plugin@1.1.43':
+    resolution: {integrity: sha512-OLoUMO67Yg+kr7E6SjF5+Qvl2f6uNJ7ImQYnXT8WgnPiZE41ZQBsnzn70jehXrhFVadphHs2smk+yl0TFKLV5Q==}
     peerDependencies:
       '@typescript-eslint/utils': '>= 8.24.0'
       eslint: '>= 8.57.0'
@@ -3151,6 +3151,8 @@ packages:
       vitest: '*'
     peerDependenciesMeta:
       typescript:
+        optional: true
+      vitest:
         optional: true
 
   '@vitest/expect@2.0.5':
@@ -10894,13 +10896,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitest/eslint-plugin@1.1.42(@typescript-eslint/utils@8.30.1(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.3))(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.3)(vitest@3.0.9(@edge-runtime/vm@3.2.0)(@types/node@22.14.1)(jsdom@25.0.0)(terser@5.18.2))':
+  '@vitest/eslint-plugin@1.1.43(@typescript-eslint/utils@8.30.1(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.3))(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.3)(vitest@3.0.9(@edge-runtime/vm@3.2.0)(@types/node@22.14.1)(jsdom@25.0.0)(terser@5.18.2))':
     dependencies:
       '@typescript-eslint/utils': 8.30.1(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.3)
       eslint: 9.22.0(jiti@1.21.6)
-      vitest: 3.0.9(@edge-runtime/vm@3.2.0)(@types/node@22.14.1)(jsdom@25.0.0)(terser@5.18.2)
     optionalDependencies:
       typescript: 5.8.3
+      vitest: 3.0.9(@edge-runtime/vm@3.2.0)(@types/node@22.14.1)(jsdom@25.0.0)(terser@5.18.2)
 
   '@vitest/expect@2.0.5':
     dependencies:
