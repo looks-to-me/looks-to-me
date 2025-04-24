@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "1.13.12",
-    "@cloudflare/workers-types": "4.20250422.0",
+    "@cloudflare/workers-types": "4.20250424.0",
     "@praha/eslint-config-definer": "2.0.1",
     "@praha/eslint-config-next": "4.0.4",
     "@praha/eslint-config-react": "4.0.4",
