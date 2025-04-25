@@ -10,7 +10,7 @@
     "lint:type": "tsc --pretty --noEmit"
   },
   "dependencies": {
-    "valibot": "0.42.1"
+    "valibot": "1.0.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20250425.0",
