@@ -7,11 +7,13 @@ import { forwardRef } from 'react';
 
 import * as styles from './avatar.css';
 
-import type { ComponentPropsWithoutRef, ElementRef, ForwardRefRenderFunction } from 'react';
+import type { ComponentPropsWithoutRef, ComponentRef, ForwardRefRenderFunction } from 'react';
 
-export type AvatarImageProps = ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>;
+export type AvatarImageProps = Omit<ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>, 'src'> & {
+  src?: string | undefined;
+};
 
-const AvatarImageRender: ForwardRefRenderFunction<ElementRef<typeof AvatarPrimitive.Image>, AvatarImageProps> = ({
+const AvatarImageRender: ForwardRefRenderFunction<ComponentRef<typeof AvatarPrimitive.Image>, AvatarImageProps> = ({
   className,
   ...props
 }, ref) => {

@@ -7,8 +7,10 @@ import type { FC, ReactElement } from 'react';
 
 export type PrefersColorSchemeProps = {
   className?: string | undefined;
-  light: ReactElement;
-  dark: ReactElement;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  light: ReactElement<any>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  dark: ReactElement<any>;
 };
 
 export const PrefersColorScheme: FC<PrefersColorSchemeProps> = ({
