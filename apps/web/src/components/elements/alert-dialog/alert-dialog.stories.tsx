@@ -43,7 +43,7 @@ const ShowAlertDialogButton = ({
   openAlertDialogProps,
 }: {
   displayButtonLabel: string;
-  openAlertDialogProps: OpenAlertDialogProps ;
+  openAlertDialogProps: OpenAlertDialogProps;
 }) => {
   const { openAlertDialog } = useAlertDialog();
   const [result, setResult] = useState<boolean[]>([]);
