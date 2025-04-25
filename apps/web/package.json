@@ -73,7 +73,7 @@
     "@vanilla-extract/webpack-plugin": "2.3.18",
     "@vitejs/plugin-react": "4.4.1",
     "better-sqlite3": "11.9.1",
-    "dotenv": "16.4.7",
+    "dotenv": "16.5.0",
     "eslint": "9.22.0",
     "mini-css-extract-plugin": "2.9.2",
     "miniflare": "3.20250310.2",
