@@ -12,7 +12,6 @@ import type { MuteUserResult } from './mute-user';
 import type { UnmuteUserResult } from './unmute-user';
 
 vi.mock('next/cache');
-vi.mock('@supabase/auth-helpers-nextjs');
 vi.mock('../../app/_libs/auth/server/get-user-metadata');
 
 describe('mute-user', () => {

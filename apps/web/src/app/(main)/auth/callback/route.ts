@@ -1,6 +1,6 @@
-import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
-import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
+
+import { createClient } from '../../../_libs/auth/server/instance';
 
 import type { NextRequest } from 'next/server';
 
@@ -8,15 +8,29 @@ export const runtime = 'edge';
 
 /**
  * Used for login with the supabase authentication client.
- * @see https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-sign-in-with-code-exchange
+ * @see https://supabase.com/docs/guides/auth/social-login/auth-github?queryGroups=environment&environment=server#add-login-code-to-your-client-app
  */
 export const GET = async (request: NextRequest) => {
   const url = new URL(request.url);
-  const code = url.searchParams.get('code');
-  if (code) {
-    const supabase = createRouteHandlerClient({ cookies });
-    await supabase.auth.exchangeCodeForSession(code);
-  }
 
-  return NextResponse.redirect(url.origin);
+  // if "next" is in param, use it as the redirect URL
+  const next = url.searchParams.get('next') ?? '/';
+  const code = url.searchParams.get('code');
+
+  if (code) {
+    const client = await createClient();
+    const { error } = await client.auth.exchangeCodeForSession(code);
+    if (!error) {
+      const forwardedHost = request.headers.get('x-forwarded-host');
+      const isLocalEnv = process.env.NODE_ENV === 'development';
+      if (isLocalEnv) {
+        return NextResponse.redirect(`${url.origin}${next}`);
+      } else if (forwardedHost) {
+        return NextResponse.redirect(`https://${forwardedHost}${next}`);
+      } else {
+        return NextResponse.redirect(`${url.origin}${next}`);
+      }
+    }
+  }
+  return NextResponse.redirect(url.origin, { status: 401 });
 };

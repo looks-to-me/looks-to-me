@@ -8,11 +8,15 @@ export const publicEnv = memoize(() => {
   return v.parse(v.object({
     NEXT_PUBLIC_APP_ORIGIN: v.pipe(v.string(), v.url()),
     NEXT_PUBLIC_CDN_ORIGIN: v.pipe(v.string(), v.url()),
+    NEXT_PUBLIC_SUPABASE_URL: v.pipe(v.string(), v.url()),
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: v.string(),
   }), {
     // Environment variables with the prefix NEXT_PUBLIC need to be explicitly specified up to the object keys.
     // This allows Next.js to overwrite its value with a hard-coded value during the build.
     NEXT_PUBLIC_APP_ORIGIN: process.env['NEXT_PUBLIC_APP_ORIGIN'],
     NEXT_PUBLIC_CDN_ORIGIN: process.env['NEXT_PUBLIC_CDN_ORIGIN'],
+    NEXT_PUBLIC_SUPABASE_URL: process.env['NEXT_PUBLIC_SUPABASE_URL'],
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env['NEXT_PUBLIC_SUPABASE_ANON_KEY'],
     ...mockEnv,
   });
 });

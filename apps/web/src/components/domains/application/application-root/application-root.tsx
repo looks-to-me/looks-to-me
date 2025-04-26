@@ -1,7 +1,6 @@
 import { Inter } from 'next/font/google';
 
 import { SyncOAuthUser } from '../../../../app/(main)/_components/sync-o-auth-user';
-import { SessionProvider } from '../../../../app/_libs/auth/client/session-provider';
 import { AlertDialogProvider } from '../../../elements/alert-dialog';
 import { Toaster } from '../../../elements/toaster';
 import { TooltipProvider } from '../../../elements/tooltip';
@@ -22,14 +21,12 @@ export const ApplicationRoot: FC<ApplicationRootProps> = ({
 }) => {
   return (
     <div className={inter.className}>
-      <SessionProvider>
-        <TooltipProvider>
-          <AlertDialogProvider>
-            {children}
-          </AlertDialogProvider>
-        </TooltipProvider>
-        <SyncOAuthUser />
-      </SessionProvider>
+      <TooltipProvider>
+        <AlertDialogProvider>
+          {children}
+        </AlertDialogProvider>
+      </TooltipProvider>
+      <SyncOAuthUser />
       <Toaster />
     </div>
   );

@@ -8,7 +8,6 @@ import { database } from '../../app/_libs/database';
 import { setupDatabase } from '../../app/_libs/test/setup-database';
 import { setupWorker } from '../../app/_libs/test/setup-worker';
 
-vi.mock('@supabase/auth-helpers-nextjs');
 vi.mock('./get-login-user');
 
 describe('get-is-muted-user-by-name', () => {

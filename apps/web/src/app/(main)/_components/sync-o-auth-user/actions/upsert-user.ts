@@ -7,7 +7,7 @@ import { findUserProviderByTypeAndSub, saveUserProvider } from '../../../../../r
 import { saveUser } from '../../../../../repositories/user-repository';
 import { UserMetadataSchema } from '../../../../_libs/auth/type/user-metadata';
 
-import type { User } from '@supabase/auth-helpers-react';
+import type { User } from '@supabase/supabase-js';
 
 export const upsertUser = async (authUser: User): Promise<void> => {
   const userMetadata = v.parse(UserMetadataSchema, {

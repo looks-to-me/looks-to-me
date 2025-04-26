@@ -11,7 +11,6 @@ import { setupWorker } from '../../app/_libs/test/setup-worker';
 import type { MuteUserResult } from './mute-user';
 
 vi.mock('next/cache');
-vi.mock('@supabase/auth-helpers-nextjs');
 vi.mock('../../app/_libs/auth/server/get-user-metadata');
 
 describe('mute-user', () => {
