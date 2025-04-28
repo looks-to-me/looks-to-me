@@ -4,12 +4,12 @@ import type { FC } from 'react';
 export const runtime = 'edge';
 
 export type ShufflePageProps = PageProps<{
-  params: {
+  params: Promise<{
     // empty
-  };
-  searchParams: {
+  }>;
+  searchParams: Promise<{
     // empty
-  };
+  }>;
 }>;
 
 const ShufflePage: FC<ShufflePageProps> = () => {

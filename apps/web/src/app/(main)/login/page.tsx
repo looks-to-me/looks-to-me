@@ -6,12 +6,12 @@ import type { FC } from 'react';
 export const runtime = 'edge';
 
 export type LoginPageProps = PageProps<{
-  params: {
+  params: Promise<{
     // empty
-  };
-  searchParams: {
+  }>;
+  searchParams: Promise<{
     // empty
-  };
+  }>;
 }>;
 
 const LoginPage: FC<LoginPageProps> = () => {

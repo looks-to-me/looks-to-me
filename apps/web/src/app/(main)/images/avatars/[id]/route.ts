@@ -5,13 +5,14 @@ import type { NextRequest } from 'next/server';
 export const runtime = 'edge';
 
 type Context = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
 export const GET = async (_: NextRequest, context: Context) => {
-  const user = await findUserById(context.params.id);
+  const { id } = await context.params;
+  const user = await findUserById(id);
   if (!user) return new Response(null, { status: 404, statusText: 'Not Found' });
   return await fetch(user.profile.avatarUrl);
 };

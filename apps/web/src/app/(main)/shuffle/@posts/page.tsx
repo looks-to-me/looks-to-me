@@ -8,12 +8,12 @@ import type { FC } from 'react';
 export const runtime = 'edge';
 
 export type ShufflePostListPageProps = ShufflePageProps & PageProps<{
-  params: {
+  params: Promise<{
     // empty
-  };
-  searchParams: {
+  }>;
+  searchParams: Promise<{
     // empty
-  };
+  }>;
 }>;
 
 const ShufflePostListPage: FC<ShufflePostListPageProps> = async () => {

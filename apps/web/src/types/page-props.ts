@@ -15,10 +15,10 @@
  */
 export type PageProps<
   Context extends {
-    params?: Record<string, string | string[]>;
-    searchParams?: Record<string, string | string[] | undefined>;
+    params?: Promise<Record<string, string | string[]>>;
+    searchParams?: Promise<Record<string, string | string[] | undefined>>;
   } = {
-    params: Record<string, never>;
-    searchParams: Record<string, never>;
+    params: Promise<Record<string, never>>;
+    searchParams: Promise<Record<string, never>>;
   },
 > = Context;

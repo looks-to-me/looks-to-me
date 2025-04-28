@@ -13,18 +13,19 @@ import type { FC } from 'react';
 export const runtime = 'edge';
 
 export type UserPostDetailsTitlePageProps = UserPostDetailsPageProps & PageProps<{
-  params: {
+  params: Promise<{
     // empty
-  };
-  searchParams: {
+  }>;
+  searchParams: Promise<{
     // empty
-  };
+  }>;
 }>;
 
 const UserPostDetailsTitlePage: FC<UserPostDetailsTitlePageProps> = async ({
   params,
 }) => {
-  const post = await findPostById(params.postId);
+  const { postId } = await params;
+  const post = await findPostById(postId);
   if (!post) return notFound();
 
   const user = await findUserById(post.userId);

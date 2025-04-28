@@ -24,9 +24,9 @@ const textStyle = {
 };
 
 type Context = {
-  params: {
+  params: Promise<{
     word: string;
-  };
+  }>;
 };
 
 export const GET = async (request: NextRequest, context: Context) => {
@@ -37,7 +37,8 @@ export const GET = async (request: NextRequest, context: Context) => {
   };
 
   return imageCache(parameters, async () => {
-    const word = v.parse(postWordSchema, context.params.word);
+    const { word } = await context.params;
+    const parsedWord = v.parse(postWordSchema, word);
     return new ImageResponse(
       (
         <div
@@ -51,10 +52,10 @@ export const GET = async (request: NextRequest, context: Context) => {
           }}
         >
           <div style={{ ...textStyle, fontSize: 120, fontWeight: 700, letterSpacing: '.1em' }}>
-            L{word.at(0)}TM
+            L{parsedWord.at(0)}TM
           </div>
           <div style={{ ...textStyle, fontSize: 30, letterSpacing: '.05em' }}>
-            Looks {word} To Me
+            Looks {parsedWord} To Me
           </div>
         </div>
       ),

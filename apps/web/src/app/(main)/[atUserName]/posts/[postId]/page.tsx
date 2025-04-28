@@ -5,12 +5,12 @@ import type { FC } from 'react';
 export const runtime = 'edge';
 
 export type UserPostDetailsPageProps = UserDetailsPageProps & PageProps<{
-  params: {
+  params: Promise<{
     postId: string;
-  };
-  searchParams: {
+  }>;
+  searchParams: Promise<{
     // empty
-  };
+  }>;
 }>;
 
 const UserPostDetailsPage: FC<UserPostDetailsPageProps> = () => {

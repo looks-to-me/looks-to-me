@@ -7,9 +7,9 @@ import type { NextRequest } from 'next/server';
 export const runtime = 'edge';
 
 type Context = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
 export const GET = async (request: NextRequest, context: Context) => {
@@ -21,7 +21,8 @@ export const GET = async (request: NextRequest, context: Context) => {
     return new Response(null, { status: 403, statusText: 'Forbidden' });
   }
 
-  const post = await findPostById(context.params.id);
+  const { id } = await context.params;
+  const post = await findPostById(id);
   if (!post) return new Response(null, { status: 404, statusText: 'Not Found' });
 
   const image = await storage().get(`users/${post.userId}/images/${post.imageId}`);

@@ -11,10 +11,11 @@ import type { Metadata } from 'next';
 import type { FC, ReactNode } from 'react';
 
 export const generateMetadata = async ({ params }: UserPostDetailsPageProps): Promise<Metadata> => {
-  const userName = getUserName(params.atUserName);
+  const { atUserName, postId } = await params;
+  const userName = getUserName(atUserName);
   if (!userName) return {};
 
-  const post = await findPostById(params.postId);
+  const post = await findPostById(postId);
   if (!post) return {};
 
   const user = await findUserById(post.userId);
