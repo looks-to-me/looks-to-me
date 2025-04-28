@@ -1,17 +1,17 @@
-import { style } from '@vanilla-extract/css';
-import deepmerge from 'deepmerge';
-
-import { animateIn, animateOut } from '../../../styles/transitions/animate.css';
-import { fadeIn, fadeOut } from '../../../styles/transitions/fade.css';
 import {
+  animateIn,
+  animateOut,
+  fadeIn,
+  fadeOut,
+  mergeStyles,
   slideInFromLeft,
   slideInFromTop,
   slideOutToLeft,
   slideOutToTop,
-} from '../../../styles/transitions/slide.css';
-import { theme } from '../../../themes';
+} from '@praha/vanilla-essence';
+import { style } from '@vanilla-extract/css';
 
-import type { StyleRule } from '@vanilla-extract/css';
+import { theme } from '../../../themes';
 
 export const overlay = style([
   animateIn(),
@@ -22,10 +22,10 @@ export const overlay = style([
     inset: 0,
     backgroundColor: theme.color.token.semantic.overlay,
     selectors: {
-      '&[data-state="closed"]': deepmerge.all<StyleRule>([
+      '&[data-state="closed"]': mergeStyles(
         animateOut(),
         fadeOut(),
-      ]),
+      ),
     },
   },
 ]);
@@ -50,12 +50,12 @@ export const content = style([
     border: `1px solid ${theme.color.token.semantic.border}`,
     boxShadow: `${theme.size.shadow.medium} ${theme.color.token.semantic.shadow}`,
     selectors: {
-      '&[data-state="closed"]': deepmerge.all<StyleRule>([
+      '&[data-state="closed"]': mergeStyles(
         animateOut(),
         fadeOut(),
         slideOutToLeft('50%'),
         slideOutToTop('42%'),
-      ]),
+      ),
     },
   },
 ]);

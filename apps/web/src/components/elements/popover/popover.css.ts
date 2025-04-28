@@ -1,9 +1,9 @@
-import { style } from '@vanilla-extract/css';
-import deepmerge from 'deepmerge';
-
-import { animateIn, animateOut } from '../../../styles/transitions/animate.css';
-import { fadeIn, fadeOut } from '../../../styles/transitions/fade.css';
 import {
+  animateIn,
+  animateOut,
+  fadeIn,
+  fadeOut,
+  mergeStyles,
   slideInFromBottom,
   slideInFromLeft,
   slideInFromRight,
@@ -12,10 +12,10 @@ import {
   slideOutToLeft,
   slideOutToRight,
   slideOutToTop,
-} from '../../../styles/transitions/slide.css';
-import { theme } from '../../../themes';
+} from '@praha/vanilla-essence';
+import { style } from '@vanilla-extract/css';
 
-import type { StyleRule } from '@vanilla-extract/css';
+import { theme } from '../../../themes';
 
 export const content = style([
   animateIn(),
@@ -29,26 +29,26 @@ export const content = style([
     border: `1px solid ${theme.color.token.popover.border}`,
     boxShadow: `${theme.size.shadow.normal} ${theme.color.token.semantic.shadow}`,
     selectors: {
-      '&[data-state="closed"]': deepmerge.all<StyleRule>([
+      '&[data-state="closed"]': mergeStyles(
         animateOut(),
         fadeOut(),
-      ]),
-      '&[data-side="left"]': deepmerge.all<StyleRule>([
+      ),
+      '&[data-side="left"]': mergeStyles(
         slideInFromRight('4px'),
         slideOutToRight('4px'),
-      ]),
-      '&[data-side="right"]': deepmerge.all<StyleRule>([
+      ),
+      '&[data-side="right"]': mergeStyles(
         slideInFromLeft('4px'),
         slideOutToLeft('4px'),
-      ]),
-      '&[data-side="bottom"]': deepmerge.all<StyleRule>([
+      ),
+      '&[data-side="bottom"]': mergeStyles(
         slideInFromTop('4px'),
         slideOutToTop('4px'),
-      ]),
-      '&[data-side="top"]': deepmerge.all<StyleRule>([
+      ),
+      '&[data-side="top"]': mergeStyles(
         slideInFromBottom('4px'),
         slideOutToBottom('4px'),
-      ]),
+      ),
     },
   },
 ]);

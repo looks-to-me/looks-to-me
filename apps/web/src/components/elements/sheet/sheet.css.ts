@@ -1,10 +1,9 @@
-import { style } from '@vanilla-extract/css';
-import { recipe } from '@vanilla-extract/recipes';
-import deepmerge from 'deepmerge';
-
-import { animateIn, animateOut } from '../../../styles/transitions/animate.css';
-import { fadeIn, fadeOut } from '../../../styles/transitions/fade.css';
 import {
+  animateIn,
+  animateOut,
+  fadeIn,
+  fadeOut,
+  mergeStyles,
   slideInFromBottom,
   slideInFromLeft,
   slideInFromRight,
@@ -13,10 +12,11 @@ import {
   slideOutToLeft,
   slideOutToRight,
   slideOutToTop,
-} from '../../../styles/transitions/slide.css';
-import { theme } from '../../../themes';
+} from '@praha/vanilla-essence';
+import { style } from '@vanilla-extract/css';
+import { recipe } from '@vanilla-extract/recipes';
 
-import type { StyleRule } from '@vanilla-extract/css';
+import { theme } from '../../../themes';
 
 export const overlay = style([
   animateIn(),
@@ -27,10 +27,10 @@ export const overlay = style([
     inset: 0,
     backgroundColor: theme.color.token.semantic.overlay,
     selectors: {
-      '&[data-state="closed"]': deepmerge.all<StyleRule>([
+      '&[data-state="closed"]': mergeStyles(
         animateOut(),
         fadeOut(),
-      ]),
+      ),
     },
   },
 ]);
@@ -49,10 +49,10 @@ export const content = recipe({
       backgroundColor: theme.color.token.semantic.background,
       boxShadow: `${theme.size.shadow.border} ${theme.color.token.semantic.border}, ${theme.size.shadow.large} ${theme.color.token.semantic.shadow}`,
       selectors: {
-        '&[data-state="closed"]': deepmerge.all<StyleRule>([
+        '&[data-state="closed"]': mergeStyles(
           animateOut(),
           fadeOut(),
-        ]),
+        ),
       },
     },
   ],
