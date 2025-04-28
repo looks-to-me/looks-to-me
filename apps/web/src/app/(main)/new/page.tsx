@@ -6,12 +6,12 @@ import type { FC } from 'react';
 export const runtime = 'edge';
 
 export type NewPostPageProps = PageProps<{
-  params: {
+  params: Promise<{
     // empty
-  };
-  searchParams: {
+  }>;
+  searchParams: Promise<{
     // empty
-  };
+  }>;
 }>;
 
 const NewPostPage: FC<NewPostPageProps> = () => {

@@ -9,12 +9,12 @@ import type { FC } from 'react';
 export const runtime = 'edge';
 
 export type HomeHeaderPageProps = HomePageProps & PageProps<{
-  params: {
+  params: Promise<{
     // empty
-  };
-  searchParams: {
+  }>;
+  searchParams: Promise<{
     // empty
-  };
+  }>;
 }>;
 
 const HomeHeaderPage: FC<HomeHeaderPageProps> = async () => {

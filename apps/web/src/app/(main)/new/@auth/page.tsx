@@ -13,12 +13,12 @@ import type { FC } from 'react';
 export const runtime = 'edge';
 
 export type NewPostAuthPageProps = NewPostPageProps & PageProps<{
-  params: {
+  params: Promise<{
     // empty
-  };
-  searchParams: {
+  }>;
+  searchParams: Promise<{
     // empty
-  };
+  }>;
 }>;
 
 const NewPostAuthPage: FC<NewPostAuthPageProps> = () => {

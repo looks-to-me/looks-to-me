@@ -14,23 +14,24 @@ import type { FC } from 'react';
 export const runtime = 'edge';
 
 export type UserPostDetailsHeaderPageProps = UserPostDetailsPageProps & PageProps<{
-  params: {
+  params: Promise<{
     // empty
-  };
-  searchParams: {
+  }>;
+  searchParams: Promise<{
     // empty
-  };
+  }>;
 }>;
 
 const UserPostDetailsHeaderPage: FC<UserPostDetailsHeaderPageProps> = async ({
   params,
 }) => {
+  const { atUserName, postId } = await params;
   const loginUser = await getLoginUser();
 
-  const userName = getUserName(params.atUserName);
+  const userName = getUserName(atUserName);
   if (!userName) return notFound();
 
-  const post = await findPostById(params.postId);
+  const post = await findPostById(postId);
   if (!post) return notFound();
 
   const user = await findUserById(post.userId);

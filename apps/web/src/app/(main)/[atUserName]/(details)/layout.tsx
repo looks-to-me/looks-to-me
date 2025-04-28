@@ -13,7 +13,8 @@ import type { LayoutProps } from '../../../../types/layout-props';
 import type { FC, ReactNode } from 'react';
 
 export const generateMetadata = async ({ params }: UserDetailsPageProps) => {
-  const userName = getUserName(params.atUserName);
+  const { atUserName } = await params;
+  const userName = getUserName(atUserName);
   if (!userName) return {};
 
   const user = await findUserByName(userName);
@@ -40,7 +41,8 @@ const UserDetailsLayout: FC<UserDetailsLayoutProps> = async ({
   params,
   children,
 }) => {
-  const userName = getUserName(params.atUserName);
+  const { atUserName } = await params;
+  const userName = getUserName(atUserName);
   if (!userName) return notFound();
 
   const isMute = await getIsMutedUserByName(userName);

@@ -4,15 +4,15 @@ import type { FC } from 'react';
 export const runtime = 'edge';
 
 export type UserDetailsPageProps = PageProps<{
-  params: {
+  params: Promise<{
     /**
      * username string that starts with "@"
      */
     atUserName: string;
-  };
-  searchParams: {
+  }>;
+  searchParams: Promise<{
     // empty
-  };
+  }>;
 }>;
 
 const UserDetailsPage: FC<UserDetailsPageProps> = () => {

@@ -42,13 +42,14 @@ const fetchImage = async (request: Request, id: string): Promise<Response> => {
 };
 
 type Context = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
 export const GET = async (request: NextRequest, context: Context) => {
-  const post = await findPostById(context.params.id);
+  const { id } = await context.params;
+  const post = await findPostById(id);
   if (!post) return new Response(null, { status: 404, statusText: 'Not Found' });
 
   const parameters: ImageCacheParameters = {
@@ -58,7 +59,7 @@ export const GET = async (request: NextRequest, context: Context) => {
   };
 
   return imageCache(parameters, async () => {
-    const response = await fetchImage(request, context.params.id);
+    const response = await fetchImage(request, id);
 
     // Exclude Cloudflare-related headers so that Cloudflare does not mis-detect them as loop backs.
     const headers = new Headers(response.headers);

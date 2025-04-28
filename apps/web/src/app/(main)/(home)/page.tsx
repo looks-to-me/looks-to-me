@@ -4,12 +4,12 @@ import type { FC } from 'react';
 export const runtime = 'edge';
 
 export type HomePageProps = PageProps<{
-  params: {
+  params: Promise<{
     // empty
-  };
-  searchParams: {
+  }>;
+  searchParams: Promise<{
     // empty
-  };
+  }>;
 }>;
 
 const HomePage: FC<HomePageProps> = () => {

@@ -10,19 +10,20 @@ import type { FC } from 'react';
 export const runtime = 'edge';
 
 export type UserDetailsHeaderPageProps = UserDetailsPageProps & PageProps<{
-  params: {
+  params: Promise<{
     // empty
-  };
-  searchParams: {
+  }>;
+  searchParams: Promise<{
     // empty
-  };
+  }>;
 }>;
 
 const UserDetailsHeaderPage: FC<UserDetailsHeaderPageProps> = async ({
   params,
 }) => {
+  const { atUserName } = await params;
   const loginUser = await getLoginUser();
-  const userName = getUserName(params.atUserName);
+  const userName = getUserName(atUserName);
 
   return (
     <ApplicationHeader user={loginUser}>
