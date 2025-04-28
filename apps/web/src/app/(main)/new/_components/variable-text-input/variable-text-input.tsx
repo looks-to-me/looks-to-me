@@ -5,9 +5,9 @@ import { useCallback, useRef } from 'react';
 
 import * as styles from './variable-text-input.css';
 
-import type { ChangeEvent, FC } from 'react';
+import type { ChangeEvent, FC, ComponentProps } from 'react';
 
-export type VariableTextInputProps = Omit<JSX.IntrinsicElements['input'], 'type'> & {
+export type VariableTextInputProps = Omit<ComponentProps<'input'>, 'type'> & {
   className?: string;
 };
 

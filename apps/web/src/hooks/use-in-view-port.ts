@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import type { RefObject } from 'react';
 
 export const useInViewPort = (
-  target: RefObject<HTMLElement>,
+  target: RefObject<HTMLElement | null>,
   callback: (entry: IntersectionObserverEntry) => void | Promise<void>,
 ) => {
   useEffect(() => {
