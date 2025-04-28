@@ -10,8 +10,11 @@
       "./node_modules/@cloudflare/workers-types"
     ],
     "plugins": [
-      { "name": "next" }
-    ]
+      {
+        "name": "next"
+      }
+    ],
+    "target": "ESNext"
   },
   "include": [
     ".next/types/**/*.ts",

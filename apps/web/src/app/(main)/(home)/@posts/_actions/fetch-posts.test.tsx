@@ -11,7 +11,6 @@ import { setupWorker } from '../../../../_libs/test/setup-worker';
 import type { PostProps } from '../../../_components/post';
 import type { ReactElement } from 'react';
 
-vi.mock('@supabase/auth-helpers-nextjs');
 vi.mock('../../../../../queries/user/get-login-user');
 
 describe('fetchPosts', () => {

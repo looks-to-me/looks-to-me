@@ -8,7 +8,6 @@ import { database } from '../../app/_libs/database';
 import { setupDatabase } from '../../app/_libs/test/setup-database';
 import { setupWorker } from '../../app/_libs/test/setup-worker';
 
-vi.mock('@supabase/auth-helpers-nextjs');
 vi.mock('../../app/_libs/auth/server/get-user-metadata');
 
 describe('get-login-user', () => {
