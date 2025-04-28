@@ -53,6 +53,9 @@ importers:
       '@paralleldrive/cuid2':
         specifier: 2.2.2
         version: 2.2.2
+      '@praha/vanilla-essence':
+        specifier: 1.1.0
+        version: 1.1.0(@vanilla-extract/css@1.17.1)
       '@radix-ui/react-accessible-icon':
         specifier: 1.1.4
         version: 1.1.4(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -101,9 +104,6 @@ importers:
       date-fns:
         specifier: 4.1.0
         version: 4.1.0
-      deepmerge:
-        specifier: 4.3.1
-        version: 4.3.1
       drizzle-orm:
         specifier: 0.43.1
         version: 0.43.1(@cloudflare/workers-types@4.20250428.0)(better-sqlite3@11.9.1)
@@ -1882,6 +1882,11 @@ packages:
       '@praha/eslint-config-common': 4.0.1
       '@praha/eslint-config-javascript': 3.0.3
       eslint: ^9.0.0
+
+  '@praha/vanilla-essence@1.1.0':
+    resolution: {integrity: sha512-AFccwJB9jGTg4fFtayGLEcN82NbxuEEHFlr+BoOwk+Wmxf29lnpyu7hRbE7blhzhBHbNSDJVrF7K8VYEUVrj3A==}
+    peerDependencies:
+      '@vanilla-extract/css': ^1.0.0
 
   '@radix-ui/primitive@1.1.2':
     resolution: {integrity: sha512-XnbHrrprsNqZKQhStrSwgRUQzoCI1glLzdw79xiZPoofhGICeZRSQ3dIxAKH1gb3OHfNf4d6f+vAv3kil2eggA==}
@@ -9003,6 +9008,11 @@ snapshots:
       - eslint-plugin-import
       - supports-color
       - typescript
+
+  '@praha/vanilla-essence@1.1.0(@vanilla-extract/css@1.17.1)':
+    dependencies:
+      '@vanilla-extract/css': 1.17.1
+      deepmerge: 4.3.1
 
   '@radix-ui/primitive@1.1.2': {}
 
