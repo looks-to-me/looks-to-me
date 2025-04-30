@@ -3,8 +3,6 @@ import * as styles from './page.css';
 import type { PageProps } from '../../../types/page-props';
 import type { FC } from 'react';
 
-export const runtime = 'edge';
-
 export type TermsOfUsePageProps = PageProps<{
   params: Promise<{
     // empty

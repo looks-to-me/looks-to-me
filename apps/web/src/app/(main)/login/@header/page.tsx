@@ -6,8 +6,6 @@ import type { PageProps } from '../../../../types/page-props';
 import type { LoginPageProps } from '../page';
 import type { FC } from 'react';
 
-export const runtime = 'edge';
-
 export type LoginHeaderPageProps = LoginPageProps & PageProps<{
   params: Promise<{
     // empty

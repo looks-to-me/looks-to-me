@@ -4,8 +4,6 @@ import { createClient } from '../../../_libs/auth/server/instance';
 
 import type { NextRequest } from 'next/server';
 
-export const runtime = 'edge';
-
 /**
  * Used for login with the supabase authentication client.
  * @see https://supabase.com/docs/guides/auth/social-login/auth-github?queryGroups=environment&environment=server#add-login-code-to-your-client-app

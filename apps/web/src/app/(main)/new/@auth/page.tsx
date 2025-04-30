@@ -10,8 +10,6 @@ import type { PageProps } from '../../../../types/page-props';
 import type { NewPostPageProps } from '../page';
 import type { FC } from 'react';
 
-export const runtime = 'edge';
-
 export type NewPostAuthPageProps = NewPostPageProps & PageProps<{
   params: Promise<{
     // empty

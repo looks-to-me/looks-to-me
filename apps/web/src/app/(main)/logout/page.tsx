@@ -10,8 +10,6 @@ import type { PageProps } from '../../../types/page-props';
 import type { LoginPageProps } from '../login/page';
 import type { FC } from 'react';
 
-export const runtime = 'edge';
-
 export type LogoutPageProps = PageProps<{
   params: Promise<{
     // empty

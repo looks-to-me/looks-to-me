@@ -1,3 +1,4 @@
+import { getCloudflareContext } from '@opennextjs/cloudflare';
 import * as v from 'valibot';
 
 import { memoize } from '../../../helpers/memoize';
@@ -22,6 +23,14 @@ export const publicEnv = memoize(() => {
 });
 
 export const privateEnv = memoize(() => {
+  const context = (() => {
+    try {
+      return getCloudflareContext();
+    } catch {
+      return { env: {} };
+    }
+  })();
+
   return v.parse(v.object({
     NODE_ENV: v.union([v.literal('production'), v.literal('development'), v.literal('test')]),
     DB: v.custom<D1Database>((value) => !!value && typeof value === 'object'),
@@ -30,6 +39,7 @@ export const privateEnv = memoize(() => {
     IMAGE_OVERLAY_WORKER_URL: v.pipe(v.string(), v.url()),
   }), {
     ...process.env,
+    ...context.env,
     ...mockEnv,
   });
 });

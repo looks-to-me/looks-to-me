@@ -7,9 +7,10 @@
     "dev": "next dev",
     "dev:storybook": "storybook dev",
     "build": "next build",
+    "build:worker": "opennextjs-cloudflare build",
     "build:storybook": "rimraf public/storybook && storybook build && mv storybook-static public/storybook && sed -i 's#<head>#<head>\\\\n<base href='\\/storybook\\/'>#' public/storybook/index.html",
-    "build:pages": "next-on-pages",
-    "build:ci": "pnpm run build:storybook && pnpm run build:pages",
+    "build:ci": "pnpm run build:storybook && pnpm run build:worker",
+    "deploy": "pnpm run build:ci && opennextjs-cloudflare deploy",
     "test": "vitest run",
     "test:watch": "vitest watch",
     "lint:code": "eslint .",
@@ -18,6 +19,7 @@
   "dependencies": {
     "@looks-to-me/package-database": "workspace:*",
     "@looks-to-me/package-image-cache": "workspace:*",
+    "@opennextjs/cloudflare": "1.0.0-beta.4",
     "@paralleldrive/cuid2": "2.2.2",
     "@praha/vanilla-essence": "1.1.0",
     "@radix-ui/react-accessible-icon": "1.1.4",
@@ -47,7 +49,6 @@
     "valibot": "1.0.0"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "1.13.12",
     "@cloudflare/workers-types": "4.20250430.0",
     "@praha/eslint-config-definer": "2.0.1",
     "@praha/eslint-config-next": "4.0.4",

@@ -6,8 +6,6 @@ import type { PageProps } from '../../../../types/page-props';
 import type { TermsOfUsePageProps } from '../page';
 import type { FC } from 'react';
 
-export const runtime = 'edge';
-
 export type TermsOfUseHeaderPageProps = TermsOfUsePageProps & PageProps<{
   params: Promise<{
     // empty
