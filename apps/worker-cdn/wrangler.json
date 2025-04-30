@@ -1,4 +1,5 @@
 {
+  "$schema": "node_modules/wrangler/config-schema.json",
   "name": "cdn",
   "main": "src/worker.ts",
   "compatibility_date": "2025-04-02",
