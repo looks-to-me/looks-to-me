@@ -2,6 +2,6 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "image-overlay",
   "main": "src/worker.ts",
-  "compatibility_date": "2025-04-02",
-  "workers_dev": false
+  "workers_dev": false,
+  "compatibility_date": "2025-04-02"
 }
