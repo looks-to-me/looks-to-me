@@ -7,8 +7,7 @@
   "r2_buckets": [
     {
       "binding": "BUCKET",
-      "bucket_name": "production",
-      "preview_bucket_name": "preview"
+      "bucket_name": "name"
     }
   ]
 }

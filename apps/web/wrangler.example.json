@@ -20,15 +20,14 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_id": "local",
-      "database_name": "local"
+      "database_id": "id",
+      "database_name": "name"
     }
   ],
   "r2_buckets": [
     {
       "binding": "BUCKET",
-      "bucket_name": "local",
-      "preview_bucket_name": "local"
+      "bucket_name": "name"
     }
   ]
 }

@@ -20,3 +20,10 @@ runs:
     - name: Copy .env
       shell: bash
       run: cp apps/web/.env apps/web/.env.local
+
+    - name: Copy wrangler.json
+      shell: bash
+      run: |
+        cp apps/web/wrangler.example.json apps/web/wrangler.json
+        cp apps/worker-cdn/wrangler.example.json apps/worker-cdn/wrangler.json
+        cp apps/worker-image-overlay/wrangler.example.json apps/worker-image-overlay/wrangler.json
