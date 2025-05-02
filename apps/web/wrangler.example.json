@@ -22,7 +22,8 @@
     {
       "binding": "DB",
       "database_id": "id",
-      "database_name": "name"
+      "database_name": "name",
+      "migrations_dir": "../../packages/database/migrations"
     }
   ],
   "r2_buckets": [
@@ -44,7 +45,8 @@
         {
           "binding": "DB",
           "database_id": "id-preview",
-          "database_name": "name-preview"
+          "database_name": "name-preview",
+          "migrations_dir": "../../packages/database/migrations"
         }
       ],
       "r2_buckets": [
