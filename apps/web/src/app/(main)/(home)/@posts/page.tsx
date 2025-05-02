@@ -6,8 +6,6 @@ import type { PageProps } from '../../../../types/page-props';
 import type { HomePageProps } from '../page';
 import type { FC } from 'react';
 
-export const runtime = 'edge';
-
 export type HomePostListPageProps = HomePageProps & PageProps<{
   params: Promise<{
     // empty

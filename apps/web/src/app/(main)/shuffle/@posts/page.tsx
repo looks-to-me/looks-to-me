@@ -5,8 +5,6 @@ import type { PageProps } from '../../../../types/page-props';
 import type { ShufflePageProps } from '../page';
 import type { FC } from 'react';
 
-export const runtime = 'edge';
-
 export type ShufflePostListPageProps = ShufflePageProps & PageProps<{
   params: Promise<{
     // empty

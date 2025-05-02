@@ -1,9 +1,0 @@
-[[d1_databases]]
-binding = "DB"
-database_id = "local"
-database_name = "local"
-
-[[r2_buckets]]
-binding = "BUCKET"
-bucket_name = "local"
-preview_bucket_name = "local"

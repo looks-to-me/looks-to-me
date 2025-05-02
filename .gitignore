@@ -15,6 +15,7 @@ logs
 
 # Next.js
 .next
+.open-next
 out
 next-env.d.ts
 
@@ -23,6 +24,7 @@ next-env.d.ts
 
 # Wrangler
 .wrangler
+wrangler.json
 
 # Storybook
 **/public/storybook

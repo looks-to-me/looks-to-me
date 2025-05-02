@@ -6,8 +6,6 @@ import type { PageProps } from '../../../../types/page-props';
 import type { PrivacyPolicyPageProps } from '../page';
 import type { FC } from 'react';
 
-export const runtime = 'edge';
-
 export type PrivacyPolicyHeaderPageProps = PrivacyPolicyPageProps & PageProps<{
   params: Promise<{
     // empty

@@ -9,8 +9,6 @@ import { privateEnv } from '../../../../_libs/env';
 import type { ImageCacheParameters } from '@looks-to-me/package-image-cache';
 import type { NextRequest } from 'next/server';
 
-export const runtime = 'edge';
-
 const alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 const textStyle = {

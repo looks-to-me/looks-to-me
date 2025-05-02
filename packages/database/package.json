@@ -17,7 +17,7 @@
   "types": "src/index.ts",
   "scripts": {
     "migrate:create": "drizzle-kit generate:sqlite",
-    "migrate:apply": "wrangler d1 migrations apply local --local",
+    "migrate:apply": "wrangler d1 migrations apply production --local --config ../../apps/web/wrangler.json",
     "lint:code": "eslint",
     "lint:type": "tsc --pretty --noEmit"
   },
@@ -29,6 +29,7 @@
     "@praha/eslint-config-definer": "2.0.1",
     "drizzle-kit": "0.31.0",
     "eslint": "9.25.1",
-    "typescript": "5.8.3"
+    "typescript": "5.8.3",
+    "wrangler": "4.14.1"
   }
 }

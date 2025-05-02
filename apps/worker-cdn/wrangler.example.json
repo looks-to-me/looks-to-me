@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cdn",
+  "main": "src/worker.ts",
+  "workers_dev": false,
+  "compatibility_date": "2025-04-02",
+  "r2_buckets": [
+    {
+      "binding": "BUCKET",
+      "bucket_name": "name"
+    }
+  ],
+  "env": {
+    "preview": {
+      "name": "cdn-preview",
+      "r2_buckets": [
+        {
+          "binding": "BUCKET",
+          "bucket_name": "name-preview"
+        }
+      ]
+    }
+  }
+}

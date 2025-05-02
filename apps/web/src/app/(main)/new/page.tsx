@@ -3,8 +3,6 @@ import { PostCreateForm } from './_components/post-create-form';
 import type { PageProps } from '../../../types/page-props';
 import type { FC } from 'react';
 
-export const runtime = 'edge';
-
 export type NewPostPageProps = PageProps<{
   params: Promise<{
     // empty

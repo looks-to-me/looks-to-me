@@ -1,15 +1,16 @@
-import { setupDevPlatform } from '@cloudflare/next-on-pages/next-dev';
+import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare';
 import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin';
-import { PHASE_DEVELOPMENT_SERVER } from 'next/constants.js';
+import { PHASE_DEVELOPMENT_SERVER } from 'next/constants';
+
+import type { NextConfig } from 'next';
+
+void initOpenNextCloudflareForDev();
 
 const withVanillaExtract = createVanillaExtractPlugin();
 
 // eslint-disable-next-line unicorn/no-anonymous-default-export
-export default (phase) => {
-  /**
-   * @type {import('next').NextConfig}
-   */
-  const nextConfig = {
+export default (phase: string): NextConfig => {
+  const nextConfig: NextConfig = {
     transpilePackages: [
       '@looks-to-me/*',
     ],
@@ -31,12 +32,14 @@ export default (phase) => {
     experimental: {
       typedRoutes: true,
     },
+    // eslint-disable-next-line @typescript-eslint/require-await
     rewrites: async () => [
       {
         source: '/storybook',
         destination: '/storybook/index.html',
       },
     ],
+    // eslint-disable-next-line @typescript-eslint/require-await
     redirects: async () => [
       {
         source: '/%40:username/',
@@ -56,7 +59,3 @@ export default (phase) => {
 
   return withVanillaExtract(nextConfig);
 };
-
-if (process.env.NODE_ENV === 'development') {
-  setupDevPlatform();
-}

@@ -8,8 +8,6 @@ import type { PageProps } from '../../../../../../types/page-props';
 import type { UserPostDetailsPageProps } from '../page';
 import type { FC } from 'react';
 
-export const runtime = 'edge';
-
 export type UserPostDetailsMainPageProps = UserPostDetailsPageProps & PageProps<{
   params: Promise<{
     // empty

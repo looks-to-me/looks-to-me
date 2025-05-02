@@ -2,8 +2,6 @@ import { findUserById } from '../../../../../repositories/user-repository';
 
 import type { NextRequest } from 'next/server';
 
-export const runtime = 'edge';
-
 type Context = {
   params: Promise<{
     id: string;

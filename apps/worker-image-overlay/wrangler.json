@@ -1,6 +1,0 @@
-{
-  "name": "image-overlay",
-  "main": "src/worker.ts",
-  "compatibility_date": "2025-04-02",
-  "workers_dev": false
-}

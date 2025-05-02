@@ -7,8 +7,6 @@ import { privateEnv } from '../../../../_libs/env';
 import type { ImageCacheParameters } from '@looks-to-me/package-image-cache';
 import type { NextRequest } from 'next/server';
 
-export const runtime = 'edge';
-
 const fetchImage = async (request: Request, id: string): Promise<Response> => {
   const url = new URL(request.url);
 
