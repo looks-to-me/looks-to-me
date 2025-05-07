@@ -9,7 +9,7 @@
     "types": [
       "@cloudflare/workers-types"
     ],
-    "target": "ES2022"
+    "target": "ESNext"
   },
   "include": [
     "**/*.ts"

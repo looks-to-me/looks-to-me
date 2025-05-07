@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "generate": "wrangler types --include-runtime false",
     "dev": "next dev",
     "dev:storybook": "storybook dev",
     "build": "next build",
