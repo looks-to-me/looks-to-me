@@ -51,8 +51,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/image-cache
       '@opennextjs/cloudflare':
-        specifier: 1.0.0-beta.4
-        version: 1.0.0-beta.4(wrangler@4.14.1(@cloudflare/workers-types@4.20250505.0))
+        specifier: 1.0.0
+        version: 1.0.0(wrangler@4.14.1(@cloudflare/workers-types@4.20250505.0))
       '@paralleldrive/cuid2':
         specifier: 2.2.2
         version: 2.2.2
@@ -2240,15 +2240,15 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@opennextjs/aws@3.5.7':
-    resolution: {integrity: sha512-YjyHJrkIHI7YwQRCp8GjDOudu86oOc1RiwxvBBpPHrplsS18H4ZmkzGggAKhK6B4myGsJQ/q9kNP2TraoZiNzg==}
+  '@opennextjs/aws@3.6.0':
+    resolution: {integrity: sha512-fLhPgg9ftV8GKNxuoeRJevKa+LIGMMzY9LIGni+5FO9GyhVf0V93j0WTf2x/g9yk5I64hukMWmCqTszitaZ5yg==}
     hasBin: true
 
-  '@opennextjs/cloudflare@1.0.0-beta.4':
-    resolution: {integrity: sha512-/nEFnjrn8oxfZgW03ZgMzwJvcQ/U/MuXCTIABYvIGnja1+KxFZEc46GFGSxjTwdz4Hmt2eutaEGpQOqC6uRR3w==}
+  '@opennextjs/cloudflare@1.0.0':
+    resolution: {integrity: sha512-/uOeP7Qqjfw+6FWt7H5ufLZG8iB11CCFnPv1Yzjj3WrypgGQLDafW/3ri6DiKdQcWm3JdR5Fdp7cWp8sjz1F5Q==}
     hasBin: true
     peerDependencies:
-      wrangler: ^4.7.0
+      wrangler: ^4.14.0
 
   '@paralleldrive/cuid2@2.2.2':
     resolution: {integrity: sha512-ZOBkgDwEdoYVlSeRbYYXs0S9MejQofiVYoTbKzy/6GQa39/q5tQU2IX46+shYnUkpEl3wc+J6wRlar7r2EK2xA==}
@@ -8609,7 +8609,7 @@ snapshots:
       '@aws-crypto/sha256-js': 3.0.0
       '@aws-crypto/supports-web-crypto': 3.0.0
       '@aws-crypto/util': 3.0.0
-      '@aws-sdk/types': 3.398.0
+      '@aws-sdk/types': 3.775.0
       '@aws-sdk/util-locate-window': 3.723.0
       '@aws-sdk/util-utf8-browser': 3.259.0
       tslib: 1.14.1
@@ -8627,7 +8627,7 @@ snapshots:
   '@aws-crypto/sha256-js@3.0.0':
     dependencies:
       '@aws-crypto/util': 3.0.0
-      '@aws-sdk/types': 3.398.0
+      '@aws-sdk/types': 3.775.0
       tslib: 1.14.1
 
   '@aws-crypto/sha256-js@5.2.0':
@@ -8646,7 +8646,7 @@ snapshots:
 
   '@aws-crypto/util@3.0.0':
     dependencies:
-      '@aws-sdk/types': 3.398.0
+      '@aws-sdk/types': 3.775.0
       '@aws-sdk/util-utf8-browser': 3.259.0
       tslib: 1.14.1
 
@@ -10960,7 +10960,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.19.1
 
-  '@opennextjs/aws@3.5.7':
+  '@opennextjs/aws@3.6.0':
     dependencies:
       '@ast-grep/napi': 0.35.0
       '@aws-sdk/client-cloudfront': 3.398.0
@@ -10982,10 +10982,10 @@ snapshots:
       - aws-crt
       - supports-color
 
-  '@opennextjs/cloudflare@1.0.0-beta.4(wrangler@4.14.1(@cloudflare/workers-types@4.20250505.0))':
+  '@opennextjs/cloudflare@1.0.0(wrangler@4.14.1(@cloudflare/workers-types@4.20250505.0))':
     dependencies:
       '@dotenvx/dotenvx': 1.31.0
-      '@opennextjs/aws': 3.5.7
+      '@opennextjs/aws': 3.6.0
       enquirer: 2.4.1
       glob: 11.0.2
       ts-tqdm: 0.8.6
