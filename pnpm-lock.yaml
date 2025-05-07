@@ -42,6 +42,12 @@ importers:
         specifier: 2.5.8
         version: 2.5.8
 
+  apps/overlay:
+    devDependencies:
+      wrangler:
+        specifier: 4.14.4
+        version: 4.14.4(@cloudflare/workers-types@4.20250515.0)
+
   apps/web:
     dependencies:
       '@icons-pack/react-simple-icons':
