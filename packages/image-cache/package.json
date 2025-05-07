@@ -12,7 +12,7 @@
     "lint:type": "tsc --pretty --noEmit"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20250505.0",
+    "@cloudflare/workers-types": "4.20250507.0",
     "eslint": "9.26.0",
     "typescript": "5.8.3",
     "vitest": "3.1.3"
