@@ -25,6 +25,7 @@ next-env.d.ts
 # Wrangler
 .wrangler
 wrangler.json
+worker-configuration.d.ts
 
 # Storybook
 **/public/storybook

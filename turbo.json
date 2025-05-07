@@ -5,14 +5,34 @@
     "**/.env.*local"
   ],
   "tasks": {
+    "generate": {
+      "outputs": [
+        "worker-configuration.d.ts"
+      ]
+    },
     "build:ci": {
+      "dependsOn": [
+        "generate"
+      ],
       "outputs": [
         ".next/**",
         "dist/**"
       ]
     },
-    "test": {},
-    "lint:code": {},
-    "lint:type": {}
+    "test": {
+      "dependsOn": [
+        "generate"
+      ]
+    },
+    "lint:code": {
+      "dependsOn": [
+        "generate"
+      ]
+    },
+    "lint:type": {
+      "dependsOn": [
+        "generate"
+      ]
+    }
   }
 }

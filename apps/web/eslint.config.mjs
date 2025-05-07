@@ -8,6 +8,11 @@ const config = define([
   base,
   react,
   next,
+  () => [{
+    ignores: [
+      'worker-configuration.d.ts',
+    ],
+  }],
 ]);
 
 export default config({

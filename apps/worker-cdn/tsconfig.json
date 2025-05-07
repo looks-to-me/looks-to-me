@@ -10,9 +10,9 @@
       "@cloudflare/workers-types"
     ],
     "lib": [
-      "esnext"
+      "ESNext"
     ],
-    "target": "ES2022"
+    "target": "ESNext"
   },
   "include": [
     "**/*.ts"
