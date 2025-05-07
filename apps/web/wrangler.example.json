@@ -31,30 +31,5 @@
       "binding": "BUCKET",
       "bucket_name": "name"
     }
-  ],
-  "env": {
-    "preview": {
-      "name": "web-preview",
-      "services": [
-        {
-          "binding": "WORKER_SELF_REFERENCE",
-          "service": "web-preview"
-        }
-      ],
-      "d1_databases": [
-        {
-          "binding": "DB",
-          "database_id": "id-preview",
-          "database_name": "name-preview",
-          "migrations_dir": "../../packages/database/migrations"
-        }
-      ],
-      "r2_buckets": [
-        {
-          "binding": "BUCKET",
-          "bucket_name": "name-preview"
-        }
-      ]
-    }
-  }
+  ]
 }
