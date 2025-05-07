@@ -35,8 +35,7 @@ export const privateEnv = memoize(() => {
     NODE_ENV: v.union([v.literal('production'), v.literal('development'), v.literal('test')]),
     DB: v.custom<D1Database>((value) => !!value && typeof value === 'object'),
     BUCKET: v.custom<R2Bucket>((value) => !!value && typeof value === 'object'),
-    INTERNAL_API_TOKEN: v.string(),
-    IMAGE_OVERLAY_WORKER_URL: v.pipe(v.string(), v.url()),
+    IMAGES: v.custom<ImagesBinding>((value) => !!value && typeof value === 'object'),
   }), {
     ...process.env,
     ...context.env,

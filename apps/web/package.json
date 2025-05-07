@@ -20,6 +20,7 @@
   "dependencies": {
     "@looks-to-me/package-database": "workspace:*",
     "@looks-to-me/package-image-cache": "workspace:*",
+    "@looks-to-me/package-image-metadata": "workspace:*",
     "@opennextjs/cloudflare": "1.0.1",
     "@paralleldrive/cuid2": "2.2.2",
     "@praha/vanilla-essence": "1.1.0",

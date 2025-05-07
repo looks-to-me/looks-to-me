@@ -1,0 +1,17 @@
+{
+  "name": "@looks-to-me/package-image-metadata",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "lint:code": "eslint",
+    "lint:type": "tsc --pretty --noEmit"
+  },
+  "devDependencies": {
+    "eslint": "9.26.0",
+    "typescript": "5.8.3",
+    "vitest": "3.1.3"
+  }
+}

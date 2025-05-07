@@ -49,7 +49,7 @@ export const submitPost = async (formData: FormData): Promise<SubmitPostResult> 
     try {
       // TODO: Need to make sure that the CloudflareImageResizing limit is not exceeded.
       // @see: https://developers.cloudflare.com/images/image-resizing/format-limitations/#format-limitations
-      await storage().put(imageKey, await input.image.arrayBuffer());
+      await storage().put(imageKey, input.image);
 
       const image = await saveImage({
         id: imageId,

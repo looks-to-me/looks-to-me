@@ -11,7 +11,7 @@ import { theme } from '../../../../../themes';
 
 import type { InputHTMLAttributes, ChangeEventHandler, DragEventHandler, MouseEventHandler, ForwardRefRenderFunction } from 'react';
 
-const ACCEPTABLE_TYPES = 'image/png, image/jpeg, image/jpg, image/gif';
+const ACCEPTABLE_TYPES = 'image/png, image/jpeg, image/jpg, image/gif, image/webp';
 const buttonTheme = theme.color.token.button.normal;
 
 export type InputImageWithPreviewHandle = {

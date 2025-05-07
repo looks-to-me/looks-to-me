@@ -1,42 +1,43 @@
 import { imageCache } from '@looks-to-me/package-image-cache';
+import { getImageMetadata } from '@looks-to-me/package-image-metadata';
 
 import { findImageById } from '../../../../../repositories/image-repository';
 import { findPostById } from '../../../../../repositories/post-repository';
 import { privateEnv } from '../../../../_libs/env';
+import { storage } from '../../../../_libs/storage';
 
 import type { ImageCacheParameters } from '@looks-to-me/package-image-cache';
 import type { NextRequest } from 'next/server';
 
 const fetchImage = async (request: Request, id: string): Promise<Response> => {
-  const url = new URL(request.url);
-
   const post = await findPostById(id);
   if (!post) return new Response(null, { status: 404, statusText: 'Not Found' });
 
   const image = await findImageById(post.imageId);
   if (!image) return new Response(null, { status: 404, statusText: 'Not Found' });
 
-  const origin = `${url.origin}/images/posts/${post.id}/raw`;
-  if (privateEnv().NODE_ENV === 'development') {
-    return fetch(origin);
-  }
+  const source = await storage().get(`users/${post.userId}/images/${post.imageId}`);
+  if (!source) return new Response(null, { status: 404, statusText: 'Not Found' });
 
-  const fetchUrl = new URL(privateEnv().IMAGE_OVERLAY_WORKER_URL);
-  fetchUrl.searchParams.set('origin', origin);
-  fetchUrl.searchParams.set('overlay', `${url.origin}/images/overlays/${post.word}`);
+  const url = new URL(request.url);
+  const overlay = await fetch(`${url.origin}/images/overlays/${post.word}`);
+  if (!overlay.body) return new Response(null, { status: 404, statusText: 'Not Found' });
 
-  // Make the image equal to the width of the overlay without changing the aspect ratio.
+  const [transformStream, metadataStream] = (source.body as ReadableStream<Uint8Array>).tee();
   const ratio = image.width / image.height;
-  fetchUrl.searchParams.set('width', '600');
-  fetchUrl.searchParams.set('height', (600 / ratio).toString());
+  const transform = { fit: 'contain', width: 600, height: (600 / ratio) } satisfies ImageTransform;
+  const metadata = await getImageMetadata(metadataStream);
+  const format = request.headers.get('accept')?.includes('image/webp')
+    ? 'image/webp'
+    : (metadata?.animated ? 'image/gif' : 'image/jpeg');
 
-  const accept = request.headers.get('accept');
-  return await fetch(fetchUrl, {
-    headers: {
-      ...(accept ? { accept } : {}),
-      authorization: `Bearer ${privateEnv().INTERNAL_API_TOKEN}`,
-    },
-  });
+  const output = await privateEnv().IMAGES
+    .input(transformStream)
+    .transform(transform)
+    .draw(privateEnv().IMAGES.input(overlay.body).transform(transform))
+    .output({ format });
+
+  return output.response();
 };
 
 type Context = {

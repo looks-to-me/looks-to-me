@@ -6,13 +6,7 @@
   "compilerOptions": {
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "types": [
-      "@cloudflare/workers-types"
-    ],
-    "lib": [
-      "ESNext"
-    ],
-    "target": "ESNext"
+    "target": "ES2022"
   },
   "include": [
     "**/*.ts"
