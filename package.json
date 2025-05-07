@@ -21,7 +21,7 @@
     "@vitest/eslint-plugin": "1.1.44",
     "eslint": "9.26.0",
     "scaffdog": "4.1.0",
-    "turbo": "2.5.2"
+    "turbo": "2.5.3"
   },
   "packageManager": "pnpm@10.10.0"
 }
