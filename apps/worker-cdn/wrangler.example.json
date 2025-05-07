@@ -9,16 +9,5 @@
       "binding": "BUCKET",
       "bucket_name": "name"
     }
-  ],
-  "env": {
-    "preview": {
-      "name": "cdn-preview",
-      "r2_buckets": [
-        {
-          "binding": "BUCKET",
-          "bucket_name": "name-preview"
-        }
-      ]
-    }
-  }
+  ]
 }
