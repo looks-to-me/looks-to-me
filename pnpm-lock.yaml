@@ -229,8 +229,8 @@ importers:
         specifier: 5.8.3
         version: 5.8.3
       vercel:
-        specifier: 41.7.2
-        version: 41.7.2(rollup@4.40.0)
+        specifier: 41.7.3
+        version: 41.7.3(rollup@4.40.0)
       vitest:
         specifier: 3.1.3
         version: 3.1.3(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@22.15.16)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1)
@@ -8207,8 +8207,8 @@ packages:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
 
-  vercel@41.7.2:
-    resolution: {integrity: sha512-XL62xOTXSU2AucAWWNrNaY98M6UQyzPCKMeaTTbAdk42bgcmiL/3GKyKJs0T+li0aFp7w4QPZyB/9+Ll0qRzEw==}
+  vercel@41.7.3:
+    resolution: {integrity: sha512-cVKpbnwPQP/nRt0GkDBkaiWP8ZoBYeowCUKRTnacp1Hg6miKYqQsqjNK6aMJL4zHC1YE6zpJNUJdiEftWNqwqQ==}
     engines: {node: '>= 18'}
     hasBin: true
 
@@ -17902,7 +17902,7 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vercel@41.7.2(rollup@4.40.0):
+  vercel@41.7.3(rollup@4.40.0):
     dependencies:
       '@vercel/build-utils': 10.5.1
       '@vercel/fun': 1.1.5
