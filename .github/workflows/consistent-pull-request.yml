@@ -18,23 +18,23 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           rules: |
-            main <- preview [release]
-            preview <- feature/* [feature]
-            preview <- bugfix/* [bugfix]
-            preview <- refactor/* [refactor]
-            preview <- chore/* [chore]
-            preview <- deps/* [deps]
+            main <- next [release]
+            next <- feature/* [feature]
+            next <- bugfix/* [bugfix]
+            next <- refactor/* [refactor]
+            next <- chore/* [chore]
+            next <- deps/* [deps]
 
       - name: Check head branch name
         uses: praha-inc/action-restrict-head-branch@48b7777bbd99e4702abe38e4a996fcd5a2453667 # v1.0.0
         with:
           rules: |
-            preview
+            next
             feature/* bugfix/* refactor/* chore/* deps/*
 
       - name: Check base branch name
         uses: praha-inc/action-restrict-base-branch@d0c225fdd8eab6e1e4b4e455e0877003c33078a2 # v1.0.2
         with:
           rules: |
-            main <- preview
-            preview <- feature/* bugfix/* refactor/* chore/* deps/*
+            main <- next
+            next <- feature/* bugfix/* refactor/* chore/* deps/*
