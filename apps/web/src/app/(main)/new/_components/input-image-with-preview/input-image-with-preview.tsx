@@ -1,5 +1,6 @@
 'use client';
 
+import { theme } from '@looks-to-me/package-ui-theme';
 import { clsx } from 'clsx';
 import NextImage from 'next/image';
 import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from 'react';
@@ -7,7 +8,6 @@ import * as v from 'valibot';
 
 import * as styles from './input-image-with-preview.css';
 import { postWordSchema } from '../../../../../schemas/post-word-schema';
-import { theme } from '../../../../../themes';
 
 import type { InputHTMLAttributes, ChangeEventHandler, DragEventHandler, MouseEventHandler, ForwardRefRenderFunction } from 'react';
 

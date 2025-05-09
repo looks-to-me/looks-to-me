@@ -1,6 +1,5 @@
+import { theme } from '@looks-to-me/package-ui-theme';
 import { style } from '@vanilla-extract/css';
-
-import { theme } from '../../../../themes';
 
 export const wrapper = style({
   display: 'flex',
