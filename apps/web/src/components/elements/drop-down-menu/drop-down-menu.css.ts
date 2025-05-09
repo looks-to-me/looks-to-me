@@ -1,3 +1,4 @@
+import { theme } from '@looks-to-me/package-ui-theme';
 import {
   animateIn,
   animateOut,
@@ -14,8 +15,6 @@ import {
   slideOutToTop,
 } from '@praha/vanilla-essence';
 import { style } from '@vanilla-extract/css';
-
-import { theme } from '../../../themes';
 
 export const content = style([
   animateIn(),

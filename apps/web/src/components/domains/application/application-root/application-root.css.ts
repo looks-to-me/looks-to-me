@@ -1,7 +1,6 @@
+import { theme } from '@looks-to-me/package-ui-theme';
 import { globalStyle } from '@vanilla-extract/css';
 import { calc } from '@vanilla-extract/css-utils';
-
-import { theme } from '../../../../themes';
 
 globalStyle('body', {
   color: theme.color.token.semantic.text,
