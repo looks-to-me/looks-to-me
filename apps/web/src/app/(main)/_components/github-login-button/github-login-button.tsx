@@ -1,12 +1,12 @@
 'use client';
 
+import { SiGithub } from '@icons-pack/react-simple-icons';
 import { clsx } from 'clsx';
 import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 
 import * as styles from './github-login-button.css';
 import { ButtonIcon } from '../../../../components/elements/button';
-import { GithubIcon } from '../../../../components/icons/github-icon';
 import { dispatch } from '../../../../helpers/dispatch';
 import { createClient } from '../../../_libs/auth/client/instance';
 
@@ -35,7 +35,7 @@ export const GitHubLoginButton: FC<LoginButtonProps> = ({
   return (
     <button {...props} className={clsx(className, styles.button)} onClick={handleClick}>
       <ButtonIcon>
-        <GithubIcon />
+        <SiGithub size="1em" />
       </ButtonIcon>
       Login with GitHub
     </button>
