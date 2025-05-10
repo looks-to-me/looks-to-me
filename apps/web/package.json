@@ -18,6 +18,7 @@
     "lint:type": "tsc --pretty --noEmit"
   },
   "dependencies": {
+    "@icons-pack/react-simple-icons": "12.7.0",
     "@looks-to-me/package-database": "workspace:*",
     "@looks-to-me/package-image-cache": "workspace:*",
     "@looks-to-me/package-ui-theme": "workspace:*",

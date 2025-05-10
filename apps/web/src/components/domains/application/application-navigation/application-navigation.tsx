@@ -1,3 +1,4 @@
+import { SiGithub, SiStorybook } from '@icons-pack/react-simple-icons';
 import { getYear } from 'date-fns';
 import { CircleDotIcon, HomeIcon, MenuIcon, ShuffleIcon } from 'lucide-react';
 import Link from 'next/link';
@@ -7,8 +8,6 @@ import { AccessibleIcon } from '../../../elements/accessible-icon';
 import { Button, ButtonIcon } from '../../../elements/button';
 import { Sheet, SheetContent, SheetSection, SheetTitle, SheetTrigger } from '../../../elements/sheet';
 import { VisuallyHidden } from '../../../elements/visually-hidden';
-import { GithubIcon } from '../../../icons/github-icon';
-import { StorybookIcon } from '../../../icons/storybook-icon';
 import { ApplicationLogo } from '../application-logo';
 
 import type { FC } from 'react';
@@ -60,7 +59,7 @@ export const ApplicationNavigation: FC<ApplicationNavigationProps> = ({
           <Button variant="ghost" size="medium" borderless asChild>
             <a href="https://github.com/looks-to-me/looks-to-me" target="_blank">
               <ButtonIcon>
-                <GithubIcon />
+                <SiGithub size="1em" />
               </ButtonIcon>
               GitHub Repository
             </a>
@@ -68,7 +67,7 @@ export const ApplicationNavigation: FC<ApplicationNavigationProps> = ({
           <Button variant="ghost" size="medium" borderless asChild>
             <a href="/storybook" target="_blank">
               <ButtonIcon>
-                <StorybookIcon />
+                <SiStorybook size="1em" />
               </ButtonIcon>
               Storybook
             </a>
