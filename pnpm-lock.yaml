@@ -45,8 +45,8 @@ importers:
   apps/web:
     dependencies:
       '@icons-pack/react-simple-icons':
-        specifier: 12.7.0
-        version: 12.7.0(react@19.1.0)
+        specifier: 12.8.0
+        version: 12.8.0(react@19.1.0)
       '@looks-to-me/package-database':
         specifier: workspace:*
         version: link:../../packages/database
@@ -2045,8 +2045,8 @@ packages:
     resolution: {integrity: sha512-xeO57FpIu4p1Ri3Jq/EXq4ClRm86dVF2z/+kvFnyqVYRavTZmaFaUBbWCOuuTh0o/g7DSsk6kc2vrS4Vl5oPOQ==}
     engines: {node: '>=18.18'}
 
-  '@icons-pack/react-simple-icons@12.7.0':
-    resolution: {integrity: sha512-XpG7e8buAco8AbvCar+4LX5do0L98d/NaeHoTuW4awyUH33id7HQiiMomK+cS1MRxfLNMmhW2W0223/fMC0unw==}
+  '@icons-pack/react-simple-icons@12.8.0':
+    resolution: {integrity: sha512-Xj6tBadpPYVaoDaXqKpSJc5AXtcXSBk+se+GsceRouYin9XvKv2at0fO5GSr1dNDc3WfZSVc1Gs7KGwUY8PfHA==}
     peerDependencies:
       react: ^16.13 || ^17 || ^18 || ^19
 
@@ -10832,7 +10832,7 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.2': {}
 
-  '@icons-pack/react-simple-icons@12.7.0(react@19.1.0)':
+  '@icons-pack/react-simple-icons@12.8.0(react@19.1.0)':
     dependencies:
       react: 19.1.0
 
