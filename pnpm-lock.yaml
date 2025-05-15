@@ -235,8 +235,8 @@ importers:
         specifier: 5.8.3
         version: 5.8.3
       vercel:
-        specifier: 41.7.4
-        version: 41.7.4(rollup@4.40.0)
+        specifier: 41.7.6
+        version: 41.7.6(rollup@4.40.0)
       vitest:
         specifier: 3.1.3
         version: 3.1.3(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@22.15.18)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1)
@@ -3861,8 +3861,8 @@ packages:
   '@vercel/error-utils@2.0.3':
     resolution: {integrity: sha512-CqC01WZxbLUxoiVdh9B/poPbNpY9U+tO1N9oWHwTl5YAZxcqXmmWJ8KNMFItJCUUWdY3J3xv8LvAuQv2KZ5YdQ==}
 
-  '@vercel/fun@1.1.5':
-    resolution: {integrity: sha512-vRuR7qlsl8CgdeQIhfgLDtbMEuxqltx6JWFahB7Q5VOKMo/sFZV1rCxIHsHsJP4yYY2hoZqlT/EUkfG1tfPicg==}
+  '@vercel/fun@1.1.6':
+    resolution: {integrity: sha512-xDiM+bD0fSZyzcjsAua3D+guXclvHOSTzr03UcZEQwYzIjwWjLduT7bl2gAaeNIe7fASAIZd0P00clcj0On4rQ==}
     engines: {node: '>= 18'}
 
   '@vercel/gatsby-plugin-vercel-analytics@1.0.11':
@@ -3894,8 +3894,8 @@ packages:
   '@vercel/redwood@2.3.1':
     resolution: {integrity: sha512-CCu/lb+W58gfFdxrF1U41vvUdc2zEXiks0l01qXzbHOHQCWOC7NXWwtieeT/SLqG0K5pkR66q1TpLRtGHT0dYg==}
 
-  '@vercel/remix-builder@5.4.4':
-    resolution: {integrity: sha512-ZHQU+lbqP5eOOHOypM+GEZxPsPFF5x/KnwARJWm+i5FMtALxQ0CWKTU7gtzYX6MZVNzWkfL7SLsZMP3ly2BvCw==}
+  '@vercel/remix-builder@5.4.5':
+    resolution: {integrity: sha512-fwUNSnAdMNFP9FSk9ZZwLg2uduqRRFaZYX+7GCsZfoRiJzDoEUM+22rhCP3N2A7Z4m07a+Wg1qCuKTeMijf44g==}
 
   '@vercel/ruby@2.2.0':
     resolution: {integrity: sha512-FJF9gKVNHAljGOgV6zS5ou2N7ZgjOqMMtcPA5lsJEUI5/AZzVDWCmtcowTP80wEtHuupkd7d7M399FA082kXYQ==}
@@ -8241,11 +8241,6 @@ packages:
     resolution: {integrity: sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==}
     engines: {node: '>= 0.4.0'}
 
-  uuid@3.3.2:
-    resolution: {integrity: sha512-yXJmeNaw3DnnKAOKJE51sL/ZaYfWJRl1pK9dr19YFCu0ObS231AB1/LbqTKRAQ5kw8A90rA6fr4riOUpTZvQZA==}
-    deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
-    hasBin: true
-
   uuid@9.0.1:
     resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
     hasBin: true
@@ -8277,8 +8272,8 @@ packages:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
 
-  vercel@41.7.4:
-    resolution: {integrity: sha512-hc4NTKqYhpaAKm6UAIOFHteWbxw2wT4szpBRdkkY1a4kNMvlkazPdddB+PphTlalBzgUraeR7/77i/dBELfnUg==}
+  vercel@41.7.6:
+    resolution: {integrity: sha512-jz+9T0TK5otqM2VMeIEiix4HjtQF/RYsdFjABWXOSCta0Fc1/+ReWAv+X8AolvJCak5kJ4czvfgwD+tBBiI54w==}
     engines: {node: '>= 18'}
     hasBin: true
 
@@ -13054,7 +13049,7 @@ snapshots:
 
   '@vercel/error-utils@2.0.3': {}
 
-  '@vercel/fun@1.1.5':
+  '@vercel/fun@1.1.6':
     dependencies:
       '@tootallnate/once': 2.0.0
       async-listen: 1.2.0
@@ -13072,7 +13067,6 @@ snapshots:
       tinyexec: 0.3.2
       tree-kill: 1.2.2
       uid-promise: 1.0.0
-      uuid: 3.3.2
       xdg-app-paths: 5.1.0
       yauzl-promise: 2.1.3
     transitivePeerDependencies:
@@ -13168,7 +13162,7 @@ snapshots:
       - rollup
       - supports-color
 
-  '@vercel/remix-builder@5.4.4(rollup@4.40.0)':
+  '@vercel/remix-builder@5.4.5(rollup@4.40.0)':
     dependencies:
       '@vercel/error-utils': 2.0.3
       '@vercel/nft': 0.29.2(rollup@4.40.0)
@@ -17998,8 +17992,6 @@ snapshots:
 
   utils-merge@1.0.1: {}
 
-  uuid@3.3.2: {}
-
   uuid@9.0.1: {}
 
   uvu@0.5.6:
@@ -18026,17 +18018,17 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vercel@41.7.4(rollup@4.40.0):
+  vercel@41.7.6(rollup@4.40.0):
     dependencies:
       '@vercel/build-utils': 10.5.1
-      '@vercel/fun': 1.1.5
+      '@vercel/fun': 1.1.6
       '@vercel/go': 3.2.1
       '@vercel/hydrogen': 1.2.0
       '@vercel/next': 4.7.11(rollup@4.40.0)
       '@vercel/node': 5.1.16(rollup@4.40.0)
       '@vercel/python': 4.7.2
       '@vercel/redwood': 2.3.1(rollup@4.40.0)
-      '@vercel/remix-builder': 5.4.4(rollup@4.40.0)
+      '@vercel/remix-builder': 5.4.5(rollup@4.40.0)
       '@vercel/ruby': 2.2.0
       '@vercel/static-build': 2.7.7
       chokidar: 4.0.0
