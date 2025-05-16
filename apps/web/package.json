@@ -49,7 +49,7 @@
     "react-dom": "19.1.0",
     "server-only": "0.0.1",
     "sonner": "2.0.3",
-    "valibot": "1.0.0"
+    "valibot": "1.1.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20250515.0",
