@@ -65,7 +65,7 @@
     "@storybook/react": "8.6.13",
     "@supabase/ssr": "0.6.1",
     "@tsconfig/next": "2.0.3",
-    "@types/node": "22.15.18",
+    "@types/node": "22.15.19",
     "@types/react": "19.1.4",
     "@types/react-dom": "19.1.5",
     "@vanilla-extract/css": "1.17.2",
