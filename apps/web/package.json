@@ -37,7 +37,7 @@
     "@radix-ui/react-tooltip": "1.2.6",
     "@radix-ui/react-visually-hidden": "1.2.2",
     "@supabase/supabase-js": "2.49.4",
-    "ahooks": "3.8.4",
+    "ahooks": "3.8.5",
     "client-only": "0.0.1",
     "clsx": "2.1.1",
     "date-fns": "4.1.0",
