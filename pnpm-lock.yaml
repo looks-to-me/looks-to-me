@@ -30,8 +30,8 @@ importers:
         specifier: 2.0.5
         version: 2.0.5
       '@vitest/eslint-plugin':
-        specifier: 1.1.44
-        version: 1.1.44(@typescript-eslint/utils@8.31.0(eslint@9.26.0(jiti@1.21.7))(typescript@5.8.3))(eslint@9.26.0(jiti@1.21.7))(typescript@5.8.3)(vitest@3.1.4(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@22.15.19)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1))
+        specifier: 1.2.0
+        version: 1.2.0(eslint@9.26.0(jiti@1.21.7))(typescript@5.8.3)(vitest@3.1.4(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@22.15.19)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1))
       eslint:
         specifier: 9.26.0
         version: 9.26.0(jiti@1.21.7)
@@ -3912,10 +3912,9 @@ packages:
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0 || ^6.0.0
 
-  '@vitest/eslint-plugin@1.1.44':
-    resolution: {integrity: sha512-m4XeohMT+Dj2RZfxnbiFR+Cv5dEC0H7C6TlxRQT7GK2556solm99kxgzJp/trKrZvanZcOFyw7aABykUTfWyrg==}
+  '@vitest/eslint-plugin@1.2.0':
+    resolution: {integrity: sha512-6vn3QDy+ysqHGkbH9fU9uyWptqNc638dgPy0uAlh/XpniTBp+0WeVlXGW74zqggex/CwYOhK8t5GVo/FH3NMPw==}
     peerDependencies:
-      '@typescript-eslint/utils': '>= 8.24.0'
       eslint: '>= 8.57.0'
       typescript: '>= 5.0.0'
       vitest: '*'
@@ -13206,13 +13205,15 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitest/eslint-plugin@1.1.44(@typescript-eslint/utils@8.31.0(eslint@9.26.0(jiti@1.21.7))(typescript@5.8.3))(eslint@9.26.0(jiti@1.21.7))(typescript@5.8.3)(vitest@3.1.4(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@22.15.19)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1))':
+  '@vitest/eslint-plugin@1.2.0(eslint@9.26.0(jiti@1.21.7))(typescript@5.8.3)(vitest@3.1.4(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@22.15.19)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1))':
     dependencies:
       '@typescript-eslint/utils': 8.31.0(eslint@9.26.0(jiti@1.21.7))(typescript@5.8.3)
       eslint: 9.26.0(jiti@1.21.7)
     optionalDependencies:
       typescript: 5.8.3
       vitest: 3.1.4(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@22.15.19)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1)
+    transitivePeerDependencies:
+      - supports-color
 
   '@vitest/expect@2.0.5':
     dependencies:
