@@ -2,7 +2,6 @@
 
 import { theme } from '@looks-to-me/package-ui-theme';
 import { clsx } from 'clsx';
-import NextImage from 'next/image';
 import { useCallback, useImperativeHandle, useRef, useState } from 'react';
 import * as v from 'valibot';
 
@@ -11,7 +10,7 @@ import { postWordSchema } from '../../../../../schemas/post-word-schema';
 
 import type { InputHTMLAttributes, ChangeEventHandler, DragEventHandler, MouseEventHandler, FC, Ref } from 'react';
 
-const ACCEPTABLE_TYPES = 'image/png, image/jpeg, image/jpg, image/gif';
+const ACCEPTABLE_TYPES = 'image/png, image/jpeg, image/jpg, image/gif, image/webp';
 const buttonTheme = theme.color.token.button.normal;
 
 export type InputImageWithPreviewRef = {
@@ -124,13 +123,14 @@ export const InputImageWithPreview: FC<InputImageWithPreviewProps> = ({
               alt="Preview"
             />
             {parseResult.success && (
-              <NextImage
-                className={styles.overlayImageWord}
-                src={`/images/overlays/${word}`}
-                alt={`Looks ${word} To Me`}
-                width={600}
-                height={300}
-              />
+              <div className={styles.overlay}>
+                <div className={clsx(styles.overlayText, styles.overlayTitle)}>
+                  L{word.at(0)}TM
+                </div>
+                <div className={clsx(styles.overlayText, styles.overlaySubTitle)}>
+                  Looks {word} To Me
+                </div>
+              </div>
             )}
           </div>
         ) : (

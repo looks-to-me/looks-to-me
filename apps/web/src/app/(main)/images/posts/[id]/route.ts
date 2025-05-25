@@ -3,41 +3,10 @@ import { imageCache } from '@looks-to-me/package-image-cache';
 import { findImageById } from '../../../../../repositories/image-repository';
 import { findPostById } from '../../../../../repositories/post-repository';
 import { privateEnv } from '../../../../_libs/env';
+import { storage } from '../../../../_libs/storage';
 
 import type { ImageCacheParameters } from '@looks-to-me/package-image-cache';
 import type { NextRequest } from 'next/server';
-
-const fetchImage = async (request: Request, id: string): Promise<Response> => {
-  const url = new URL(request.url);
-
-  const post = await findPostById(id);
-  if (!post) return new Response(null, { status: 404, statusText: 'Not Found' });
-
-  const image = await findImageById(post.imageId);
-  if (!image) return new Response(null, { status: 404, statusText: 'Not Found' });
-
-  const origin = `${url.origin}/images/posts/${post.id}/raw`;
-  if (privateEnv().NODE_ENV === 'development') {
-    return fetch(origin);
-  }
-
-  const fetchUrl = new URL(privateEnv().IMAGE_OVERLAY_WORKER_URL);
-  fetchUrl.searchParams.set('origin', origin);
-  fetchUrl.searchParams.set('overlay', `${url.origin}/images/overlays/${post.word}`);
-
-  // Make the image equal to the width of the overlay without changing the aspect ratio.
-  const ratio = image.width / image.height;
-  fetchUrl.searchParams.set('width', '600');
-  fetchUrl.searchParams.set('height', (600 / ratio).toString());
-
-  const accept = request.headers.get('accept');
-  return await fetch(fetchUrl, {
-    headers: {
-      ...(accept ? { accept } : {}),
-      authorization: `Bearer ${privateEnv().INTERNAL_API_TOKEN}`,
-    },
-  });
-};
 
 type Context = RouteContext<'/images/posts/[id]'>;
 
@@ -53,20 +22,16 @@ export const GET = async (request: NextRequest, context: Context) => {
   };
 
   return imageCache(parameters, async () => {
-    const response = await fetchImage(request, id);
+    const post = await findPostById(id);
+    if (!post) return new Response(null, { status: 404, statusText: 'Not Found' });
 
-    // Exclude Cloudflare-related headers so that Cloudflare does not mis-detect them as loop backs.
-    const headers = new Headers(response.headers);
-    headers.forEach((_value, key) => {
-      if (key.startsWith('cf-')) {
-        headers.delete(key);
-      }
-    });
+    const image = await findImageById(post.imageId);
+    if (!image) return new Response(null, { status: 404, statusText: 'Not Found' });
 
-    return new Response(await response.blob(), {
-      headers,
-      status: response.status,
-      statusText: response.statusText,
-    });
+    const source = await storage().get(`users/${post.userId}/images/${post.imageId}`);
+    if (!source) return new Response(null, { status: 404, statusText: 'Not Found' });
+
+    const url = new URL(request.url);
+    return await privateEnv().OVERLAY.fetch(`${url.origin}/${post.word}`, { method: 'POST', body: source.body });
   });
 };

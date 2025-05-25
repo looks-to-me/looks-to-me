@@ -16,6 +16,10 @@
     {
       "binding": "WORKER_SELF_REFERENCE",
       "service": "web"
+    },
+    {
+      "binding": "OVERLAY",
+      "service": "overlay"
     }
   ],
   "d1_databases": [

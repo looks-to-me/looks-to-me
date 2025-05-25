@@ -32,6 +32,11 @@ export default (phase: string): NextConfig => {
         },
       ],
     },
+    experimental: {
+      serverActions: {
+        bodySizeLimit: '5mb',
+      },
+    },
     // eslint-disable-next-line @typescript-eslint/require-await
     rewrites: async () => [
       {

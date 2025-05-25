@@ -13,6 +13,9 @@ export const setupWorker = () => {
       modules: true,
       r2Buckets: ['BUCKET'],
       d1Databases: ['DB'],
+      serviceBindings: {
+        OVERLAY: () => new Response(),
+      },
     });
 
     const bindings = await mf.getBindings();

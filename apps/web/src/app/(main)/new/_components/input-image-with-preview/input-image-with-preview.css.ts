@@ -24,11 +24,34 @@ export const image = style({
   maxHeight: '90%',
 });
 
-export const overlayImageWord = style({
+export const overlay = style({
   position: 'absolute',
   margin: 'auto',
   inset: '0px',
-  objectFit: 'contain',
-  maxWidth: '90%',
-  maxHeight: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  containerType: 'inline-size',
+});
+
+export const overlayText = style({
+  display: 'flex',
+  color: '#fff',
+  textShadow:
+    `1px 1px 0px #000, -1px -1px 0px #000,
+    -1px 1px 0px #000,  1px -1px 0px #000,
+    1px 0px 0px #000, -1px  0px 0px #000,
+    0px 1px 0px #000,  0px -1px 0px #000`,
+});
+
+export const overlayTitle = style({
+  fontSize: '20cqw',
+  fontWeight: 700,
+  letterSpacing: '.1em',
+});
+
+export const overlaySubTitle = style({
+  fontSize: '5cqw',
+  letterSpacing: '.05em',
 });
