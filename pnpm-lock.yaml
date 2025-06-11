@@ -193,8 +193,8 @@ importers:
         specifier: 1.17.3
         version: 1.17.3
       '@vanilla-extract/css-utils':
-        specifier: 0.1.4
-        version: 0.1.4
+        specifier: 0.1.5
+        version: 0.1.5
       '@vanilla-extract/next-plugin':
         specifier: 2.4.11
         version: 2.4.11(next@15.1.7(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(webpack@5.99.6(esbuild@0.25.4))
@@ -3661,8 +3661,8 @@ packages:
   '@vanilla-extract/compiler@0.2.0':
     resolution: {integrity: sha512-pDTwy/I/w0npflYg/f4IS3Wl+V+t5hqtbMfxKYrEMo4tBfUec1oZ1YL2Rq/KcHGo6Ge51JdLwYeNtzvsJOhRYg==}
 
-  '@vanilla-extract/css-utils@0.1.4':
-    resolution: {integrity: sha512-3WRxMGa/VQaL32jZqRUpnnoVFSws5iPIUpQr+XlT4jXhtMeKYcA20rFK2k2Amkg04sqrO84A8hNMeABWZQesEg==}
+  '@vanilla-extract/css-utils@0.1.5':
+    resolution: {integrity: sha512-priFS5bIeVXON6L26F2vnTszo/VG2jr7qjnNjBou12LUFAs2Uak1kVLVBnN7XSFEuRxwp91v5gdzQ2jTL+9o9Q==}
 
   '@vanilla-extract/css@1.17.3':
     resolution: {integrity: sha512-jHivr1UPoJTX5Uel4AZSOwrCf4mO42LcdmnhJtUxZaRWhW4FviFbIfs0moAWWld7GOT+2XnuVZjjA/K32uUnMQ==}
@@ -12635,7 +12635,7 @@ snapshots:
       - tsx
       - yaml
 
-  '@vanilla-extract/css-utils@0.1.4': {}
+  '@vanilla-extract/css-utils@0.1.5': {}
 
   '@vanilla-extract/css@1.17.3':
     dependencies:
