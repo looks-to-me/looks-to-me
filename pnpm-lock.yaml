@@ -148,8 +148,8 @@ importers:
         specifier: 2.0.1
         version: 2.0.1(eslint@9.27.0(jiti@1.21.7))
       '@praha/eslint-config-next':
-        specifier: 4.0.5
-        version: 4.0.5(15480559af45f6b0b3e1842e442fe787)
+        specifier: 4.0.6
+        version: 4.0.6(15480559af45f6b0b3e1842e442fe787)
       '@praha/eslint-config-react':
         specifier: 4.0.5
         version: 4.0.5(@praha/eslint-config-common@4.0.1(eslint@9.27.0(jiti@1.21.7)))(@praha/eslint-config-javascript@3.0.5(@praha/eslint-config-common@4.0.1(eslint@9.27.0(jiti@1.21.7)))(@typescript-eslint/eslint-plugin@8.31.0(@typescript-eslint/parser@8.31.0(eslint@9.27.0(jiti@1.21.7))(typescript@5.8.3))(eslint@9.27.0(jiti@1.21.7))(typescript@5.8.3))(eslint@9.27.0(jiti@1.21.7))(typescript@5.8.3))(@praha/eslint-config-typescript@3.0.5(@praha/eslint-config-common@4.0.1(eslint@9.27.0(jiti@1.21.7)))(@praha/eslint-config-javascript@3.0.5(@praha/eslint-config-common@4.0.1(eslint@9.27.0(jiti@1.21.7)))(@typescript-eslint/eslint-plugin@8.31.0(@typescript-eslint/parser@8.31.0(eslint@9.27.0(jiti@1.21.7))(typescript@5.8.3))(eslint@9.27.0(jiti@1.21.7))(typescript@5.8.3))(eslint@9.27.0(jiti@1.21.7))(typescript@5.8.3))(eslint@9.27.0(jiti@1.21.7))(typescript@5.8.3))(eslint@9.27.0(jiti@1.21.7))
@@ -2212,13 +2212,13 @@ packages:
       '@praha/eslint-config-common': 4.0.1
       eslint: ^9.0.0
 
-  '@praha/eslint-config-next@4.0.5':
-    resolution: {integrity: sha512-0UClQWLo3fikOZQA9CC0AUHEdUueGTjbpeVfRTxCNOplFxQIa7jCBIS0tlr2aIO3vFV3Fr6JDf2Do4OpHTPiAQ==}
+  '@praha/eslint-config-next@4.0.6':
+    resolution: {integrity: sha512-J3EX+yOCALynaAIU7NOz53fXEKU/iJAo/sWJlOLqnXXtLSSCp0ELiu0Sb1oUap3BzTG1Yai2o53XJZ9JYGIMFA==}
     peerDependencies:
       '@praha/eslint-config-common': 4.0.1
-      '@praha/eslint-config-javascript': 3.0.4
-      '@praha/eslint-config-react': 4.0.5
-      '@praha/eslint-config-typescript': 3.0.5
+      '@praha/eslint-config-javascript': 3.0.5
+      '@praha/eslint-config-react': 4.0.6
+      '@praha/eslint-config-typescript': 3.0.6
       eslint: ^9.0.0
     peerDependenciesMeta:
       '@praha/eslint-config-typescript':
@@ -10843,7 +10843,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@praha/eslint-config-next@4.0.5(15480559af45f6b0b3e1842e442fe787)':
+  '@praha/eslint-config-next@4.0.6(15480559af45f6b0b3e1842e442fe787)':
     dependencies:
       '@eslint/compat': 1.2.9(eslint@9.27.0(jiti@1.21.7))
       '@next/eslint-plugin-next': 15.3.1
