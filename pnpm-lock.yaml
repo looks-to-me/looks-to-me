@@ -63,8 +63,8 @@ importers:
         specifier: 2.2.2
         version: 2.2.2
       '@praha/vanilla-essence':
-        specifier: 1.1.0
-        version: 1.1.0(@vanilla-extract/css@1.17.3)
+        specifier: 1.1.1
+        version: 1.1.1(@vanilla-extract/css@1.17.3)
       '@radix-ui/react-accessible-icon':
         specifier: 1.1.7
         version: 1.1.7(@types/react-dom@19.1.6(@types/react@19.1.7))(@types/react@19.1.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -2253,8 +2253,8 @@ packages:
       '@praha/eslint-config-javascript': 3.0.5
       eslint: ^9.0.0
 
-  '@praha/vanilla-essence@1.1.0':
-    resolution: {integrity: sha512-AFccwJB9jGTg4fFtayGLEcN82NbxuEEHFlr+BoOwk+Wmxf29lnpyu7hRbE7blhzhBHbNSDJVrF7K8VYEUVrj3A==}
+  '@praha/vanilla-essence@1.1.1':
+    resolution: {integrity: sha512-yIFWLmCif4WGy5dmTjm3CnxsU5GlHSUduD9JFhqD3lhUrDx3fyV2F9m8BnSgaWv+yCDabV1pbTcJbIP445RqXA==}
     peerDependencies:
       '@vanilla-extract/css': ^1.0.0
 
@@ -10895,7 +10895,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@praha/vanilla-essence@1.1.0(@vanilla-extract/css@1.17.3)':
+  '@praha/vanilla-essence@1.1.1(@vanilla-extract/css@1.17.3)':
     dependencies:
       '@vanilla-extract/css': 1.17.3
       deepmerge: 4.3.1
