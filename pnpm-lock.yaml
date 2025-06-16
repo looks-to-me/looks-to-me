@@ -196,8 +196,8 @@ importers:
         specifier: 0.1.6
         version: 0.1.6
       '@vanilla-extract/next-plugin':
-        specifier: 2.4.12
-        version: 2.4.12(next@15.1.7(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(webpack@5.99.6(esbuild@0.25.4))
+        specifier: 2.4.14
+        version: 2.4.14(next@15.1.7(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(webpack@5.99.6(esbuild@0.25.4))
       '@vanilla-extract/recipes':
         specifier: 0.5.6
         version: 0.5.6(@vanilla-extract/css@1.17.4)
@@ -3661,6 +3661,9 @@ packages:
   '@vanilla-extract/babel-plugin-debug-ids@1.2.1':
     resolution: {integrity: sha512-RkXKzcKVZtcDNmcGh8Bv9MNW6oYYUzy90GYt8amMrk5P+myXsdFSU9N7V+cJAf80l+AsMVMyK0GK7Qj35Sfppg==}
 
+  '@vanilla-extract/babel-plugin-debug-ids@1.2.2':
+    resolution: {integrity: sha512-MeDWGICAF9zA/OZLOKwhoRlsUW+fiMwnfuOAqFVohL31Agj7Q/RBWAYweqjHLgFBCsdnr6XIfwjJnmb2znEWxw==}
+
   '@vanilla-extract/compiler@0.2.2':
     resolution: {integrity: sha512-UXEenzsR9wyZR/NDaARGfrjB0s7ia5REHj6p8JKzZk1wLIPmpyRRAhaSrRqq4YVhdaRrOMueFt94mx5AKwZIoA==}
 
@@ -3676,8 +3679,11 @@ packages:
   '@vanilla-extract/integration@8.0.3':
     resolution: {integrity: sha512-7sCd4kBp/u02iNq3cYBXtOzKyX5muoHylsqcEjyuJWfnxOb1iB/jDCyTsiSRXcByj/wKjgjItbAdm/uzrUlAVw==}
 
-  '@vanilla-extract/next-plugin@2.4.12':
-    resolution: {integrity: sha512-bX6ajfPT3c2IdmXJOMn77lgHMcO6J1DVvx7IX+Oqscg0q9cTbYsMD5dtQDkyDRovN0rMcRbt994dBfpbkg/iGA==}
+  '@vanilla-extract/integration@8.0.4':
+    resolution: {integrity: sha512-cmOb7tR+g3ulKvFtSbmdw3YUyIS1d7MQqN+FcbwNhdieyno5xzUyfDCMjeWJhmCSMvZ6WlinkrOkgs6SHB+FRg==}
+
+  '@vanilla-extract/next-plugin@2.4.14':
+    resolution: {integrity: sha512-5GRgVZayLNvXJVHwVWNZp7rDAgXmF5DAyVtp9O5ZxPoOuokLWwTaIw1bYALXs/uCaeAUwilK5p14peagzFbe2w==}
     peerDependencies:
       next: '>=12.1.7'
 
@@ -3699,8 +3705,8 @@ packages:
     peerDependencies:
       webpack: ^4.30.0 || ^5.20.2
 
-  '@vanilla-extract/webpack-plugin@2.3.20':
-    resolution: {integrity: sha512-I/tQQdpGLVXiLFB3/yORzhA5etK+8gNr3e+mwFLYWNClcoAjAIJ6ywADqbkqxEaRCX5pvqKNJodwxhvsdELHMw==}
+  '@vanilla-extract/webpack-plugin@2.3.22':
+    resolution: {integrity: sha512-3Cx8DkbX3EeLHGbD049jjj6/bWB0VK4YFfWWsf8VXBI8dgf5SvEef1VfET22IOcT9GzLl8MqfsLr/XSo9iv67Q==}
     peerDependencies:
       webpack: ^4.30.0 || ^5.20.2
 
@@ -10130,7 +10136,7 @@ snapshots:
       '@babel/parser': 7.27.0
       '@babel/template': 7.27.0
       '@babel/types': 7.27.0
-      debug: 4.4.0
+      debug: 4.4.1
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -12248,7 +12254,7 @@ snapshots:
 
   '@storybook/react-docgen-typescript-plugin@1.0.6--canary.9.0c3f3b7.0(typescript@5.8.3)(webpack@5.99.6(esbuild@0.25.4))':
     dependencies:
-      debug: 4.4.0
+      debug: 4.4.1
       endent: 2.1.0
       find-cache-dir: 3.3.2
       flat-cache: 3.2.0
@@ -12645,6 +12651,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@vanilla-extract/babel-plugin-debug-ids@1.2.2':
+    dependencies:
+      '@babel/core': 7.26.10
+    transitivePeerDependencies:
+      - supports-color
+
   '@vanilla-extract/compiler@0.2.2(@types/node@22.15.31)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1)':
     dependencies:
       '@vanilla-extract/css': 1.17.4
@@ -12717,9 +12729,25 @@ snapshots:
       - babel-plugin-macros
       - supports-color
 
-  '@vanilla-extract/next-plugin@2.4.12(next@15.1.7(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(webpack@5.99.6(esbuild@0.25.4))':
+  '@vanilla-extract/integration@8.0.4':
     dependencies:
-      '@vanilla-extract/webpack-plugin': 2.3.20(webpack@5.99.6(esbuild@0.25.4))
+      '@babel/core': 7.26.10
+      '@babel/plugin-syntax-typescript': 7.25.9(@babel/core@7.26.10)
+      '@vanilla-extract/babel-plugin-debug-ids': 1.2.2
+      '@vanilla-extract/css': 1.17.4
+      dedent: 1.5.3
+      esbuild: 0.25.4
+      eval: 0.1.8
+      find-up: 5.0.0
+      javascript-stringify: 2.1.0
+      mlly: 1.7.4
+    transitivePeerDependencies:
+      - babel-plugin-macros
+      - supports-color
+
+  '@vanilla-extract/next-plugin@2.4.14(next@15.1.7(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(webpack@5.99.6(esbuild@0.25.4))':
+    dependencies:
+      '@vanilla-extract/webpack-plugin': 2.3.22(webpack@5.99.6(esbuild@0.25.4))
       next: 15.1.7(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
     transitivePeerDependencies:
       - babel-plugin-macros
@@ -12763,10 +12791,10 @@ snapshots:
       - babel-plugin-macros
       - supports-color
 
-  '@vanilla-extract/webpack-plugin@2.3.20(webpack@5.99.6(esbuild@0.25.4))':
+  '@vanilla-extract/webpack-plugin@2.3.22(webpack@5.99.6(esbuild@0.25.4))':
     dependencies:
-      '@vanilla-extract/integration': 8.0.3
-      debug: 4.4.0
+      '@vanilla-extract/integration': 8.0.4
+      debug: 4.4.1
       loader-utils: 2.0.4
       picocolors: 1.1.1
       webpack: 5.99.6(esbuild@0.25.4)
