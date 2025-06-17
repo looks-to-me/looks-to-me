@@ -202,8 +202,8 @@ importers:
         specifier: 0.5.7
         version: 0.5.7(@vanilla-extract/css@1.17.4)
       '@vanilla-extract/vite-plugin':
-        specifier: 5.0.5
-        version: 5.0.5(@types/node@22.15.32)(jiti@1.21.7)(terser@5.39.0)(vite@6.3.3(@types/node@22.15.32)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1))(yaml@2.7.1)
+        specifier: 5.0.6
+        version: 5.0.6(@types/node@22.15.32)(jiti@1.21.7)(terser@5.39.0)(vite@6.3.3(@types/node@22.15.32)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1))(yaml@2.7.1)
       '@vanilla-extract/webpack-plugin':
         specifier: 2.3.19
         version: 2.3.19(webpack@5.99.6(esbuild@0.25.4))
@@ -3658,14 +3658,11 @@ packages:
   '@vanilla-extract/babel-plugin-debug-ids@1.2.0':
     resolution: {integrity: sha512-z5nx2QBnOhvmlmBKeRX5sPVLz437wV30u+GJL+Hzj1rGiJYVNvgIIlzUpRNjVQ0MgAgiQIqIUbqPnmMc6HmDlQ==}
 
-  '@vanilla-extract/babel-plugin-debug-ids@1.2.1':
-    resolution: {integrity: sha512-RkXKzcKVZtcDNmcGh8Bv9MNW6oYYUzy90GYt8amMrk5P+myXsdFSU9N7V+cJAf80l+AsMVMyK0GK7Qj35Sfppg==}
-
   '@vanilla-extract/babel-plugin-debug-ids@1.2.2':
     resolution: {integrity: sha512-MeDWGICAF9zA/OZLOKwhoRlsUW+fiMwnfuOAqFVohL31Agj7Q/RBWAYweqjHLgFBCsdnr6XIfwjJnmb2znEWxw==}
 
-  '@vanilla-extract/compiler@0.2.2':
-    resolution: {integrity: sha512-UXEenzsR9wyZR/NDaARGfrjB0s7ia5REHj6p8JKzZk1wLIPmpyRRAhaSrRqq4YVhdaRrOMueFt94mx5AKwZIoA==}
+  '@vanilla-extract/compiler@0.2.3':
+    resolution: {integrity: sha512-SFEDLbvd5rhpjhrLp9BtvvVNHNxWupiUht/yrsHQ7xfkpEn4xg45gbfma7aX9fsOpi82ebqFmowHd/g6jHDQnA==}
 
   '@vanilla-extract/css-utils@0.1.6':
     resolution: {integrity: sha512-iICpaHma0s2EEnQDw/JRqudQJwYw1JERyWfIllNQplps226KVphjGb3jyGMiBK5Waw69RD3q4gulgRVQAQmKmA==}
@@ -3675,9 +3672,6 @@ packages:
 
   '@vanilla-extract/integration@8.0.2':
     resolution: {integrity: sha512-w9OvWwsYkqyuyHf9NLnOJ8ap0FGTy2pAeWftgxAEkKE3tF1aYeyEtYRHKxfVH6JRgi8JIeQqELHGMSwz+BxwiA==}
-
-  '@vanilla-extract/integration@8.0.3':
-    resolution: {integrity: sha512-7sCd4kBp/u02iNq3cYBXtOzKyX5muoHylsqcEjyuJWfnxOb1iB/jDCyTsiSRXcByj/wKjgjItbAdm/uzrUlAVw==}
 
   '@vanilla-extract/integration@8.0.4':
     resolution: {integrity: sha512-cmOb7tR+g3ulKvFtSbmdw3YUyIS1d7MQqN+FcbwNhdieyno5xzUyfDCMjeWJhmCSMvZ6WlinkrOkgs6SHB+FRg==}
@@ -3695,8 +3689,8 @@ packages:
     peerDependencies:
       '@vanilla-extract/css': ^1.0.0
 
-  '@vanilla-extract/vite-plugin@5.0.5':
-    resolution: {integrity: sha512-SE27bbwcesuMUSnzTGv6I2uME6CxcrV0mUk6GikjMGSDd+q3fFcRhjkbIF2mB/dJflmzHQ38to24q6kFhnWhCg==}
+  '@vanilla-extract/vite-plugin@5.0.6':
+    resolution: {integrity: sha512-9dSPIuxR2NULvVk9bqCoTaZz3CtfBrvo5hImWaiWCblWZXzCcD7jIg7Nbcpdz9MvytO+mNta82/qCWj1G9mEMQ==}
     peerDependencies:
       vite: ^5.0.0 || ^6.0.0
 
@@ -12645,22 +12639,16 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vanilla-extract/babel-plugin-debug-ids@1.2.1':
-    dependencies:
-      '@babel/core': 7.26.10
-    transitivePeerDependencies:
-      - supports-color
-
   '@vanilla-extract/babel-plugin-debug-ids@1.2.2':
     dependencies:
       '@babel/core': 7.26.10
     transitivePeerDependencies:
       - supports-color
 
-  '@vanilla-extract/compiler@0.2.2(@types/node@22.15.32)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1)':
+  '@vanilla-extract/compiler@0.2.3(@types/node@22.15.32)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1)':
     dependencies:
       '@vanilla-extract/css': 1.17.4
-      '@vanilla-extract/integration': 8.0.3
+      '@vanilla-extract/integration': 8.0.4
       vite: 6.3.3(@types/node@22.15.32)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1)
       vite-node: 3.2.3(@types/node@22.15.32)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1)
     transitivePeerDependencies:
@@ -12713,22 +12701,6 @@ snapshots:
       - babel-plugin-macros
       - supports-color
 
-  '@vanilla-extract/integration@8.0.3':
-    dependencies:
-      '@babel/core': 7.26.10
-      '@babel/plugin-syntax-typescript': 7.25.9(@babel/core@7.26.10)
-      '@vanilla-extract/babel-plugin-debug-ids': 1.2.1
-      '@vanilla-extract/css': 1.17.4
-      dedent: 1.5.3
-      esbuild: 0.25.4
-      eval: 0.1.8
-      find-up: 5.0.0
-      javascript-stringify: 2.1.0
-      mlly: 1.7.4
-    transitivePeerDependencies:
-      - babel-plugin-macros
-      - supports-color
-
   '@vanilla-extract/integration@8.0.4':
     dependencies:
       '@babel/core': 7.26.10
@@ -12760,10 +12732,10 @@ snapshots:
     dependencies:
       '@vanilla-extract/css': 1.17.4
 
-  '@vanilla-extract/vite-plugin@5.0.5(@types/node@22.15.32)(jiti@1.21.7)(terser@5.39.0)(vite@6.3.3(@types/node@22.15.32)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1))(yaml@2.7.1)':
+  '@vanilla-extract/vite-plugin@5.0.6(@types/node@22.15.32)(jiti@1.21.7)(terser@5.39.0)(vite@6.3.3(@types/node@22.15.32)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1))(yaml@2.7.1)':
     dependencies:
-      '@vanilla-extract/compiler': 0.2.2(@types/node@22.15.32)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1)
-      '@vanilla-extract/integration': 8.0.3
+      '@vanilla-extract/compiler': 0.2.3(@types/node@22.15.32)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1)
+      '@vanilla-extract/integration': 8.0.4
       vite: 6.3.3(@types/node@22.15.32)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1)
     transitivePeerDependencies:
       - '@types/node'
