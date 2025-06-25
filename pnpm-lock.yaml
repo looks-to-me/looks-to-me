@@ -223,8 +223,8 @@ importers:
         specifier: 2.9.2
         version: 2.9.2(webpack@5.99.6(esbuild@0.25.4))
       miniflare:
-        specifier: 4.20250617.3
-        version: 4.20250617.3
+        specifier: 4.20250617.4
+        version: 4.20250617.4
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
@@ -6309,11 +6309,6 @@ packages:
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
-
-  miniflare@4.20250617.3:
-    resolution: {integrity: sha512-j+LZycT11UdlVeNdaqD0XdNnYnqAL+wXmboz+tNPFgTq6zhD489Ujj3BfSDyEHDCA9UFBLbkc5ByGWBh+pYZ5Q==}
-    engines: {node: '>=18.0.0'}
-    hasBin: true
 
   miniflare@4.20250617.4:
     resolution: {integrity: sha512-IAoApFKxOJlaaFkym5ETstVX3qWzVt3xyqCDj6vSSTgEH3zxZJ5417jZGg8iQfMHosKCcQH1doPPqqnOZm/yrw==}
@@ -15722,24 +15717,6 @@ snapshots:
       schema-utils: 4.3.2
       tapable: 2.2.1
       webpack: 5.99.6(esbuild@0.25.4)
-
-  miniflare@4.20250617.3:
-    dependencies:
-      '@cspotcode/source-map-support': 0.8.1
-      acorn: 8.14.0
-      acorn-walk: 8.3.2
-      exit-hook: 2.2.1
-      glob-to-regexp: 0.4.1
-      sharp: 0.33.5
-      stoppable: 1.1.0
-      undici: 5.29.0
-      workerd: 1.20250617.0
-      ws: 8.18.0
-      youch: 3.3.4
-      zod: 3.22.3
-    transitivePeerDependencies:
-      - bufferutil
-      - utf-8-validate
 
   miniflare@4.20250617.4:
     dependencies:
