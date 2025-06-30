@@ -202,8 +202,8 @@ importers:
         specifier: 0.5.7
         version: 0.5.7(@vanilla-extract/css@1.17.4)
       '@vanilla-extract/vite-plugin':
-        specifier: 5.0.7
-        version: 5.0.7(@types/node@22.15.34)(jiti@1.21.7)(terser@5.39.0)(vite@6.3.3(@types/node@22.15.34)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1))(yaml@2.7.1)
+        specifier: 5.1.0
+        version: 5.1.0(@types/node@22.15.34)(jiti@1.21.7)(terser@5.39.0)(vite@6.3.3(@types/node@22.15.34)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1))(yaml@2.7.1)
       '@vanilla-extract/webpack-plugin':
         specifier: 2.3.22
         version: 2.3.22(webpack@5.99.6(esbuild@0.25.4))
@@ -3585,8 +3585,8 @@ packages:
   '@vanilla-extract/babel-plugin-debug-ids@1.2.2':
     resolution: {integrity: sha512-MeDWGICAF9zA/OZLOKwhoRlsUW+fiMwnfuOAqFVohL31Agj7Q/RBWAYweqjHLgFBCsdnr6XIfwjJnmb2znEWxw==}
 
-  '@vanilla-extract/compiler@0.2.3':
-    resolution: {integrity: sha512-SFEDLbvd5rhpjhrLp9BtvvVNHNxWupiUht/yrsHQ7xfkpEn4xg45gbfma7aX9fsOpi82ebqFmowHd/g6jHDQnA==}
+  '@vanilla-extract/compiler@0.3.0':
+    resolution: {integrity: sha512-8EbPmDMXhY9NrN38Kh8xYDENgBk4i6s6ce4p7E9F3kHtCqxtEgfaKSNS08z/SVCTmaX3IB3N/kGSO0gr+APffg==}
 
   '@vanilla-extract/css-utils@0.1.6':
     resolution: {integrity: sha512-iICpaHma0s2EEnQDw/JRqudQJwYw1JERyWfIllNQplps226KVphjGb3jyGMiBK5Waw69RD3q4gulgRVQAQmKmA==}
@@ -3610,8 +3610,8 @@ packages:
     peerDependencies:
       '@vanilla-extract/css': ^1.0.0
 
-  '@vanilla-extract/vite-plugin@5.0.7':
-    resolution: {integrity: sha512-UyUma9HEl2qHl0CFlTwPKU7SkyuOwNQOgLT1yMShjqiQqg8k+9oma2Z5GigGtEUhUDizCAxeR4b4bP9KAviDdQ==}
+  '@vanilla-extract/vite-plugin@5.1.0':
+    resolution: {integrity: sha512-BzVdmBD+FUyJnY6I29ZezwtDBc1B78l+VvHvIgoJYbgfPj0hvY0RmrGL8B4oNNGY/lOt7KgQflXY5kBMd3MGZg==}
     peerDependencies:
       vite: ^5.0.0 || ^6.0.0
 
@@ -12610,7 +12610,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vanilla-extract/compiler@0.2.3(@types/node@22.15.34)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1)':
+  '@vanilla-extract/compiler@0.3.0(@types/node@22.15.34)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1)':
     dependencies:
       '@vanilla-extract/css': 1.17.4
       '@vanilla-extract/integration': 8.0.4
@@ -12681,9 +12681,9 @@ snapshots:
     dependencies:
       '@vanilla-extract/css': 1.17.4
 
-  '@vanilla-extract/vite-plugin@5.0.7(@types/node@22.15.34)(jiti@1.21.7)(terser@5.39.0)(vite@6.3.3(@types/node@22.15.34)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1))(yaml@2.7.1)':
+  '@vanilla-extract/vite-plugin@5.1.0(@types/node@22.15.34)(jiti@1.21.7)(terser@5.39.0)(vite@6.3.3(@types/node@22.15.34)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1))(yaml@2.7.1)':
     dependencies:
-      '@vanilla-extract/compiler': 0.2.3(@types/node@22.15.34)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1)
+      '@vanilla-extract/compiler': 0.3.0(@types/node@22.15.34)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1)
       '@vanilla-extract/integration': 8.0.4
       vite: 6.3.3(@types/node@22.15.34)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1)
     transitivePeerDependencies:
