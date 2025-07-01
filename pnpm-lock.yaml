@@ -214,8 +214,8 @@ importers:
         specifier: 11.10.0
         version: 11.10.0
       dotenv:
-        specifier: 16.5.0
-        version: 16.5.0
+        specifier: 16.6.1
+        version: 16.6.1
       eslint:
         specifier: 9.29.0
         version: 9.29.0(jiti@1.21.7)
@@ -4685,8 +4685,8 @@ packages:
     resolution: {integrity: sha512-1gxPBJpI/pcjQhKgIU91II6Wkay+dLcN3M6rf2uwP8hRur3HtQXjVrdAK3sjC0piaEuxzMwjXChcETiJl47lAQ==}
     engines: {node: '>=18'}
 
-  dotenv@16.5.0:
-    resolution: {integrity: sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg==}
+  dotenv@16.6.1:
+    resolution: {integrity: sha512-uBq4egWHTcTt33a72vpSG0z3HnPuIl6NqYcTrKEg2azoEyl2hpW0zqlxysq2pK9HlDIHyHyakeYaYnSAwd8bow==}
     engines: {node: '>=12'}
 
   drizzle-kit@0.31.4:
@@ -10211,7 +10211,7 @@ snapshots:
   '@dotenvx/dotenvx@1.31.0':
     dependencies:
       commander: 11.1.0
-      dotenv: 16.5.0
+      dotenv: 16.6.1
       eciesjs: 0.4.14
       execa: 5.1.1
       fdir: 6.4.4(picomatch@4.0.2)
@@ -13934,7 +13934,7 @@ snapshots:
     dependencies:
       type-fest: 4.40.0
 
-  dotenv@16.5.0: {}
+  dotenv@16.6.1: {}
 
   drizzle-kit@0.31.4:
     dependencies:
