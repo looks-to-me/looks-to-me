@@ -30,8 +30,8 @@ importers:
         specifier: 2.0.5
         version: 2.0.5
       '@vitest/eslint-plugin':
-        specifier: 1.3.3
-        version: 1.3.3(eslint@9.30.0(jiti@1.21.7))(typescript@5.8.3)(vitest@3.2.4(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@22.15.34)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1))
+        specifier: 1.3.4
+        version: 1.3.4(eslint@9.30.0(jiti@1.21.7))(typescript@5.8.3)(vitest@3.2.4(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@22.15.34)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1))
       eslint:
         specifier: 9.30.0
         version: 9.30.0(jiti@1.21.7)
@@ -3677,8 +3677,8 @@ packages:
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0-beta.0
 
-  '@vitest/eslint-plugin@1.3.3':
-    resolution: {integrity: sha512-zOB4T5f80JXfP5DC2yQl7azRYq8PmGqYle3uxh3a0NnbKc+EaSYSpEcrVAh2r5W97pi3BVv7oRb5NdEQy0cCXA==}
+  '@vitest/eslint-plugin@1.3.4':
+    resolution: {integrity: sha512-EOg8d0jn3BAiKnR55WkFxmxfWA3nmzrbIIuOXyTe6A72duryNgyU+bdBEauA97Aab3ho9kLmAwgPX63Ckj4QEg==}
     peerDependencies:
       eslint: '>= 8.57.0'
       typescript: '>= 5.0.0'
@@ -12862,7 +12862,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitest/eslint-plugin@1.3.3(eslint@9.30.0(jiti@1.21.7))(typescript@5.8.3)(vitest@3.2.4(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@22.15.34)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1))':
+  '@vitest/eslint-plugin@1.3.4(eslint@9.30.0(jiti@1.21.7))(typescript@5.8.3)(vitest@3.2.4(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@22.15.34)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1))':
     dependencies:
       '@typescript-eslint/utils': 8.31.0(eslint@9.30.0(jiti@1.21.7))(typescript@5.8.3)
       eslint: 9.30.0(jiti@1.21.7)
