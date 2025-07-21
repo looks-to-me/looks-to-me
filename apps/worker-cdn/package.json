@@ -15,7 +15,7 @@
     "valibot": "1.1.0"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20250718.0",
+    "@cloudflare/workers-types": "4.20250719.0",
     "@praha/eslint-config-definer": "2.0.1",
     "eslint": "9.31.0",
     "typescript": "5.8.3",
