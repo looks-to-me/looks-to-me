@@ -57,8 +57,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/ui-theme
       '@opennextjs/cloudflare':
-        specifier: 1.5.2
-        version: 1.5.2(wrangler@4.25.0(@cloudflare/workers-types@4.20250722.0))
+        specifier: 1.5.3
+        version: 1.5.3(wrangler@4.25.0(@cloudflare/workers-types@4.20250722.0))
       '@paralleldrive/cuid2':
         specifier: 2.2.2
         version: 2.2.2
@@ -2097,8 +2097,8 @@ packages:
     resolution: {integrity: sha512-JXUZice+CedEQW20hnBVqzBEj+jfr4Oe2LVYSE4RNKdfHVIeYG+WJAop14TxRJ+NugKWGcJx6opf944l+ZG7XQ==}
     hasBin: true
 
-  '@opennextjs/cloudflare@1.5.2':
-    resolution: {integrity: sha512-MMtRolqYOcdMywtqSkKjd8WAdXoYI3ziX8aLiiuSnWy00An1ubA4g21rBr8H7T44X1TFgcK2KlE8D4IMMAV7SQ==}
+  '@opennextjs/cloudflare@1.5.3':
+    resolution: {integrity: sha512-lYKnAj/76cBJW1nMuF6WiGIQpGcoeAWodz26kSaSJtAStxqzVQ7dU5Xvm9z7wOKty3HEiQpC5k7sIre2RQ3S6g==}
     hasBin: true
     peerDependencies:
       wrangler: ^4.24.4
@@ -10753,8 +10753,8 @@ snapshots:
 
   '@jridgewell/source-map@0.3.6':
     dependencies:
-      '@jridgewell/gen-mapping': 0.3.8
-      '@jridgewell/trace-mapping': 0.3.25
+      '@jridgewell/gen-mapping': 0.3.12
+      '@jridgewell/trace-mapping': 0.3.29
 
   '@jridgewell/sourcemap-codec@1.5.0': {}
 
@@ -10887,7 +10887,7 @@ snapshots:
       - aws-crt
       - supports-color
 
-  '@opennextjs/cloudflare@1.5.2(wrangler@4.25.0(@cloudflare/workers-types@4.20250722.0))':
+  '@opennextjs/cloudflare@1.5.3(wrangler@4.25.0(@cloudflare/workers-types@4.20250722.0))':
     dependencies:
       '@dotenvx/dotenvx': 1.31.0
       '@opennextjs/aws': 3.7.0
