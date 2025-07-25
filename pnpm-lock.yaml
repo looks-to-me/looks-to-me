@@ -223,8 +223,8 @@ importers:
         specifier: 2.9.2
         version: 2.9.2(webpack@5.99.6(esbuild@0.25.4))
       miniflare:
-        specifier: 4.20250712.1
-        version: 4.20250712.1
+        specifier: 4.20250712.2
+        version: 4.20250712.2
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
@@ -6391,6 +6391,11 @@ packages:
 
   miniflare@4.20250712.1:
     resolution: {integrity: sha512-46gB3FGPOsy+EpFGufjhr8agYycO/55d6l0y7hNJ13NcTVwrObMg/0HmI3pC5yQj0974IVXzBgUfDBMAX6thow==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
+
+  miniflare@4.20250712.2:
+    resolution: {integrity: sha512-cZ8WyQBwqfjYLjd61fDR4/j0nAVbjB3Wxbun/brL9S5FAi4RlTR0LyMTKsIVA0s+nL4Pg9VjVMki4M/Jk2cz+Q==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -15956,6 +15961,24 @@ snapshots:
       webpack: 5.99.6(esbuild@0.25.4)
 
   miniflare@4.20250712.1:
+    dependencies:
+      '@cspotcode/source-map-support': 0.8.1
+      acorn: 8.14.0
+      acorn-walk: 8.3.2
+      exit-hook: 2.2.1
+      glob-to-regexp: 0.4.1
+      sharp: 0.33.5
+      stoppable: 1.1.0
+      undici: 7.11.0
+      workerd: 1.20250712.0
+      ws: 8.18.0
+      youch: 4.1.0-beta.10
+      zod: 3.22.3
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
+  miniflare@4.20250712.2:
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       acorn: 8.14.0
