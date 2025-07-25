@@ -58,7 +58,7 @@ importers:
         version: link:../../packages/ui-theme
       '@opennextjs/cloudflare':
         specifier: 1.6.1
-        version: 1.6.1(wrangler@4.25.1(@cloudflare/workers-types@4.20250724.0))
+        version: 1.6.1(wrangler@4.25.1(@cloudflare/workers-types@4.20250725.0))
       '@paralleldrive/cuid2':
         specifier: 2.2.2
         version: 2.2.2
@@ -115,7 +115,7 @@ importers:
         version: 4.1.0
       drizzle-orm:
         specifier: 0.44.3
-        version: 0.44.3(@cloudflare/workers-types@4.20250724.0)(better-sqlite3@11.10.0)
+        version: 0.44.3(@cloudflare/workers-types@4.20250725.0)(better-sqlite3@11.10.0)
       lucide-react:
         specifier: 0.525.0
         version: 0.525.0(react@19.1.0)
@@ -142,8 +142,8 @@ importers:
         version: 1.1.0(typescript@5.8.3)
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: 4.20250724.0
-        version: 4.20250724.0
+        specifier: 4.20250725.0
+        version: 4.20250725.0
       '@praha/eslint-config-definer':
         specifier: 2.0.1
         version: 2.0.1(eslint@9.31.0(jiti@1.21.7))
@@ -242,7 +242,7 @@ importers:
         version: 3.2.4(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@22.16.5)(jiti@1.21.7)(terser@5.39.0)(yaml@2.7.1)
       wrangler:
         specifier: 4.25.1
-        version: 4.25.1(@cloudflare/workers-types@4.20250724.0)
+        version: 4.25.1(@cloudflare/workers-types@4.20250725.0)
 
   apps/worker-cdn:
     dependencies:
@@ -254,8 +254,8 @@ importers:
         version: 1.1.0(typescript@5.8.3)
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: 4.20250724.0
-        version: 4.20250724.0
+        specifier: 4.20250725.0
+        version: 4.20250725.0
       '@praha/eslint-config-definer':
         specifier: 2.0.1
         version: 2.0.1(eslint@9.31.0(jiti@1.21.7))
@@ -267,7 +267,7 @@ importers:
         version: 5.8.3
       wrangler:
         specifier: 4.25.1
-        version: 4.25.1(@cloudflare/workers-types@4.20250724.0)
+        version: 4.25.1(@cloudflare/workers-types@4.20250725.0)
 
   apps/worker-image-overlay:
     dependencies:
@@ -276,8 +276,8 @@ importers:
         version: 1.1.0(typescript@5.8.3)
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: 4.20250724.0
-        version: 4.20250724.0
+        specifier: 4.20250725.0
+        version: 4.20250725.0
       '@praha/eslint-config-definer':
         specifier: 2.0.1
         version: 2.0.1(eslint@9.31.0(jiti@1.21.7))
@@ -289,7 +289,7 @@ importers:
         version: 5.8.3
       wrangler:
         specifier: 4.25.1
-        version: 4.25.1(@cloudflare/workers-types@4.20250724.0)
+        version: 4.25.1(@cloudflare/workers-types@4.20250725.0)
 
   packages/database:
     dependencies:
@@ -298,7 +298,7 @@ importers:
         version: 3.48.0-build4
       drizzle-orm:
         specifier: 0.44.3
-        version: 0.44.3(@cloudflare/workers-types@4.20250724.0)(better-sqlite3@11.10.0)
+        version: 0.44.3(@cloudflare/workers-types@4.20250725.0)(better-sqlite3@11.10.0)
     devDependencies:
       '@praha/eslint-config-definer':
         specifier: 2.0.1
@@ -314,13 +314,13 @@ importers:
         version: 5.8.3
       wrangler:
         specifier: 4.25.1
-        version: 4.25.1(@cloudflare/workers-types@4.20250724.0)
+        version: 4.25.1(@cloudflare/workers-types@4.20250725.0)
 
   packages/image-cache:
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: 4.20250724.0
-        version: 4.20250724.0
+        specifier: 4.20250725.0
+        version: 4.20250725.0
       eslint:
         specifier: 9.31.0
         version: 9.31.0(jiti@1.21.7)
@@ -1393,8 +1393,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@cloudflare/workers-types@4.20250724.0':
-    resolution: {integrity: sha512-TRuz+kMArBpW3lR7xoPR7Ek+/ymvukE5JC7RITlaRyHbs6vWPfwpH9TWQ1dfztYFmSQl5ZiAbLcK8UDRjgiW7g==}
+  '@cloudflare/workers-types@4.20250725.0':
+    resolution: {integrity: sha512-A8x/8yHY6G2xCkz/WVJ3n/iJ2XRRf8lfWsAJJjxPBPyt5CtkPpEIw7w04nrE4A2yLEr3ZOPhm4AJLVdt4NSBjA==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -10359,7 +10359,7 @@ snapshots:
   '@cloudflare/workerd-windows-64@1.20250712.0':
     optional: true
 
-  '@cloudflare/workers-types@4.20250724.0': {}
+  '@cloudflare/workers-types@4.20250725.0': {}
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
@@ -10904,7 +10904,7 @@ snapshots:
       - aws-crt
       - supports-color
 
-  '@opennextjs/cloudflare@1.6.1(wrangler@4.25.1(@cloudflare/workers-types@4.20250724.0))':
+  '@opennextjs/cloudflare@1.6.1(wrangler@4.25.1(@cloudflare/workers-types@4.20250725.0))':
     dependencies:
       '@dotenvx/dotenvx': 1.31.0
       '@opennextjs/aws': 3.7.0
@@ -10912,7 +10912,7 @@ snapshots:
       enquirer: 2.4.1
       glob: 11.0.2
       ts-tqdm: 0.8.6
-      wrangler: 4.25.1(@cloudflare/workers-types@4.20250724.0)
+      wrangler: 4.25.1(@cloudflare/workers-types@4.20250725.0)
       yargs: 18.0.0
     transitivePeerDependencies:
       - aws-crt
@@ -14166,9 +14166,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.44.3(@cloudflare/workers-types@4.20250724.0)(better-sqlite3@11.10.0):
+  drizzle-orm@0.44.3(@cloudflare/workers-types@4.20250725.0)(better-sqlite3@11.10.0):
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20250724.0
+      '@cloudflare/workers-types': 4.20250725.0
       better-sqlite3: 11.10.0
 
   dunder-proto@1.0.1:
@@ -18077,7 +18077,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20250712.0
       '@cloudflare/workerd-windows-64': 1.20250712.0
 
-  wrangler@4.25.1(@cloudflare/workers-types@4.20250724.0):
+  wrangler@4.25.1(@cloudflare/workers-types@4.20250725.0):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.4.0
       '@cloudflare/unenv-preset': 2.3.3(unenv@2.0.0-rc.17)(workerd@1.20250712.0)
@@ -18088,7 +18088,7 @@ snapshots:
       unenv: 2.0.0-rc.17
       workerd: 1.20250712.0
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20250724.0
+      '@cloudflare/workers-types': 4.20250725.0
       fsevents: 2.3.3
     transitivePeerDependencies:
       - bufferutil
