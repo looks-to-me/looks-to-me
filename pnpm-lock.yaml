@@ -220,8 +220,8 @@ importers:
         specifier: 9.32.0
         version: 9.32.0(jiti@1.21.7)
       mini-css-extract-plugin:
-        specifier: 2.9.3
-        version: 2.9.3(webpack@5.99.6(esbuild@0.25.4))
+        specifier: 2.9.4
+        version: 2.9.4(webpack@5.99.6(esbuild@0.25.4))
       miniflare:
         specifier: 4.20250712.2
         version: 4.20250712.2
@@ -6387,8 +6387,8 @@ packages:
     resolution: {integrity: sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==}
     engines: {node: '>=4'}
 
-  mini-css-extract-plugin@2.9.3:
-    resolution: {integrity: sha512-tRA0+PsS4kLVijnN1w9jUu5lkxBwUk9E8SbgEB5dBJqchE6pVYdawROG6uQtpmAri7tdCK9i7b1bULeVWqS6Ag==}
+  mini-css-extract-plugin@2.9.4:
+    resolution: {integrity: sha512-ZWYT7ln73Hptxqxk2DxPU9MmapXRhxkJD6tkSR04dnQxm8BGu2hzgKLugK5yySD97u/8yy7Ma7E76k9ZdvtjkQ==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
@@ -15933,7 +15933,7 @@ snapshots:
 
   min-indent@1.0.1: {}
 
-  mini-css-extract-plugin@2.9.3(webpack@5.99.6(esbuild@0.25.4)):
+  mini-css-extract-plugin@2.9.4(webpack@5.99.6(esbuild@0.25.4)):
     dependencies:
       schema-utils: 4.3.2
       tapable: 2.2.1
