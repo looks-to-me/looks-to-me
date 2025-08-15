@@ -117,8 +117,8 @@ importers:
         specifier: 0.44.4
         version: 0.44.4(@cloudflare/workers-types@4.20250813.0)(better-sqlite3@11.10.0)
       lucide-react:
-        specifier: 0.532.0
-        version: 0.532.0(react@19.1.1)
+        specifier: 0.539.0
+        version: 0.539.0(react@19.1.1)
       modern-normalize:
         specifier: 3.0.1
         version: 3.0.1
@@ -6242,8 +6242,8 @@ packages:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
 
-  lucide-react@0.532.0:
-    resolution: {integrity: sha512-HwmXOIZwuZ21wryFq0ZrwkjAMxI77+jLxLdNzWCiUa/Kf5ozkTFCWT6C1/yapP68uKgj8wlxxqnNCH1xo9NEpg==}
+  lucide-react@0.539.0:
+    resolution: {integrity: sha512-VVISr+VF2krO91FeuCrm1rSOLACQUYVy7NQkzrOty52Y8TlTPcXcMdQFj9bYzBgXbWCiywlwSZ3Z8u6a+6bMlg==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
@@ -15748,7 +15748,7 @@ snapshots:
     dependencies:
       yallist: 4.0.0
 
-  lucide-react@0.532.0(react@19.1.1):
+  lucide-react@0.539.0(react@19.1.1):
     dependencies:
       react: 19.1.1
 
