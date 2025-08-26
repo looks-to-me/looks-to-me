@@ -41,7 +41,7 @@
     "client-only": "0.0.1",
     "clsx": "2.1.1",
     "date-fns": "4.1.0",
-    "drizzle-orm": "0.44.4",
+    "drizzle-orm": "0.44.5",
     "lucide-react": "0.540.0",
     "modern-normalize": "3.0.1",
     "next": "15.1.7",
