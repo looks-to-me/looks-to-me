@@ -175,8 +175,8 @@ importers:
         specifier: 8.6.14
         version: 8.6.14(@storybook/test@8.6.14(storybook@8.6.14))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(storybook@8.6.14)(typescript@5.8.3)
       '@supabase/ssr':
-        specifier: 0.6.1
-        version: 0.6.1(@supabase/supabase-js@2.55.0)
+        specifier: 0.7.0
+        version: 0.7.0(@supabase/supabase-js@2.55.0)
       '@tsconfig/next':
         specifier: 2.0.3
         version: 2.0.3
@@ -3339,8 +3339,8 @@ packages:
   '@supabase/realtime-js@2.15.1':
     resolution: {integrity: sha512-edRFa2IrQw50kNntvUyS38hsL7t2d/psah6om6aNTLLcWem0R6bOUq7sk7DsGeSlNfuwEwWn57FdYSva6VddYw==}
 
-  '@supabase/ssr@0.6.1':
-    resolution: {integrity: sha512-QtQgEMvaDzr77Mk3vZ3jWg2/y+D8tExYF7vcJT+wQ8ysuvOeGGjYbZlvj5bHYsj/SpC0bihcisnwPrM4Gp5G4g==}
+  '@supabase/ssr@0.7.0':
+    resolution: {integrity: sha512-G65t5EhLSJ5c8hTCcXifSL9Q/ZRXvqgXeNo+d3P56f4U1IxwTqjB64UfmfixvmMcjuxnq2yGqEWVJqUcO+AzAg==}
     peerDependencies:
       '@supabase/supabase-js': ^2.43.4
 
@@ -12462,7 +12462,7 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@supabase/ssr@0.6.1(@supabase/supabase-js@2.55.0)':
+  '@supabase/ssr@0.7.0(@supabase/supabase-js@2.55.0)':
     dependencies:
       '@supabase/supabase-js': 2.55.0
       cookie: 1.0.2
