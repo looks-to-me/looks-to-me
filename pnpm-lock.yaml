@@ -57,8 +57,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/ui-theme
       '@opennextjs/cloudflare':
-        specifier: 1.6.5
-        version: 1.6.5(wrangler@4.31.0(@cloudflare/workers-types@4.20250910.0))
+        specifier: 1.8.2
+        version: 1.8.2(wrangler@4.31.0(@cloudflare/workers-types@4.20250910.0))
       '@paralleldrive/cuid2':
         specifier: 2.2.2
         version: 2.2.2
@@ -2073,12 +2073,12 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@opennextjs/aws@3.7.4':
-    resolution: {integrity: sha512-s50dmKrgQ62GliffoI/hGGQVb3q/7ZN5VRa4jJw0ZsEGLfk25XuAulO/ySCYeE7/A23KoAYuhafnKr/h+vxOeQ==}
+  '@opennextjs/aws@3.7.6':
+    resolution: {integrity: sha512-l4UGkmaZaAjWER+PuZ/zNziMnrbf6oA9B1RUDKcyKsX+hEES1b7h6kLgpo4a4maf01M+k0yJUZQyF4sf+vI+Iw==}
     hasBin: true
 
-  '@opennextjs/cloudflare@1.6.5':
-    resolution: {integrity: sha512-eOoRrslJW/cK5RotFHA8Se/KlKyynOFA29i9jor4cp1JF/AkGSwatUaBNK0oLvqM4nDCq3Bo/HlYRbyc/R/T0w==}
+  '@opennextjs/cloudflare@1.8.2':
+    resolution: {integrity: sha512-Og2UvU1EEkQuxK7b+FlJU0zoJKQTIAw85bHo/JGEkXK0hA4MABkb/deuido785yXd91JQU7ayGB3Ql9Cs6jwSQ==}
     hasBin: true
     peerDependencies:
       wrangler: ^4.24.4
@@ -10842,7 +10842,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.19.1
 
-  '@opennextjs/aws@3.7.4':
+  '@opennextjs/aws@3.7.6':
     dependencies:
       '@ast-grep/napi': 0.35.0
       '@aws-sdk/client-cloudfront': 3.398.0
@@ -10865,10 +10865,10 @@ snapshots:
       - aws-crt
       - supports-color
 
-  '@opennextjs/cloudflare@1.6.5(wrangler@4.31.0(@cloudflare/workers-types@4.20250910.0))':
+  '@opennextjs/cloudflare@1.8.2(wrangler@4.31.0(@cloudflare/workers-types@4.20250910.0))':
     dependencies:
       '@dotenvx/dotenvx': 1.31.0
-      '@opennextjs/aws': 3.7.4
+      '@opennextjs/aws': 3.7.6
       cloudflare: 4.4.1
       enquirer: 2.4.1
       glob: 11.0.2
