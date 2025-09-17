@@ -79,7 +79,7 @@
     "dotenv": "16.6.1",
     "eslint": "9.35.0",
     "mini-css-extract-plugin": "2.9.4",
-    "miniflare": "4.20250816.1",
+    "miniflare": "4.20250913.0",
     "rimraf": "6.0.1",
     "storybook": "8.6.14",
     "typescript": "5.8.3",
