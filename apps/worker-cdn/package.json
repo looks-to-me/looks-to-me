@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20250922.0",
-    "@praha/eslint-config-definer": "2.0.1",
+    "@praha/eslint-config-definer": "2.0.2",
     "eslint": "9.36.0",
     "typescript": "5.8.3",
     "wrangler": "4.38.0"
