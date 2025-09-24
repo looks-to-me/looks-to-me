@@ -57,8 +57,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/ui-theme
       '@opennextjs/cloudflare':
-        specifier: 1.8.3
-        version: 1.8.3(wrangler@4.38.0(@cloudflare/workers-types@4.20250922.0))
+        specifier: 1.8.5
+        version: 1.8.5(wrangler@4.38.0(@cloudflare/workers-types@4.20250922.0))
       '@paralleldrive/cuid2':
         specifier: 2.2.2
         version: 2.2.2
@@ -2077,11 +2077,11 @@ packages:
     resolution: {integrity: sha512-rkBpNfBsq3XvbBh+VcNI9dvs0UkuuJH5I7SvVdPx12LudiErShL/9RoA7iF9tpkfRizcwGRIhsedrHKmcs9kqw==}
     hasBin: true
 
-  '@opennextjs/cloudflare@1.8.3':
-    resolution: {integrity: sha512-ftyZwi2Mh6gtUE2HuHfYfQ/GsJ0vkS5KrPmFEd3beBSCvDRUURDR0o3qSdF3DqS5WJIEloWwgkjxyFed3Mp12w==}
+  '@opennextjs/cloudflare@1.8.5':
+    resolution: {integrity: sha512-+U2kq5fno7R1v8CUXEjvz/2LZim+JxtGMXG5+i0sSAAD3l1lxh05/DoFrcb+5QAa/f5Lir2Y8wz2H4qsOjzRwA==}
     hasBin: true
     peerDependencies:
-      wrangler: ^4.24.4
+      wrangler: ^4.38.0
 
   '@paralleldrive/cuid2@2.2.2':
     resolution: {integrity: sha512-ZOBkgDwEdoYVlSeRbYYXs0S9MejQofiVYoTbKzy/6GQa39/q5tQU2IX46+shYnUkpEl3wc+J6wRlar7r2EK2xA==}
@@ -10865,7 +10865,7 @@ snapshots:
       - aws-crt
       - supports-color
 
-  '@opennextjs/cloudflare@1.8.3(wrangler@4.38.0(@cloudflare/workers-types@4.20250922.0))':
+  '@opennextjs/cloudflare@1.8.5(wrangler@4.38.0(@cloudflare/workers-types@4.20250922.0))':
     dependencies:
       '@dotenvx/dotenvx': 1.31.0
       '@opennextjs/aws': 3.7.7
