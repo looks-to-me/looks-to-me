@@ -54,7 +54,7 @@
   "devDependencies": {
     "@cloudflare/workers-types": "4.20250922.0",
     "@praha/eslint-config-definer": "2.0.2",
-    "@praha/eslint-config-next": "4.0.9",
+    "@praha/eslint-config-next": "4.0.10",
     "@praha/eslint-config-react": "4.0.8",
     "@sqlite.org/sqlite-wasm": "3.48.0-build4",
     "@storybook/addon-essentials": "8.6.14",
