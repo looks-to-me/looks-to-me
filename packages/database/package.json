@@ -29,7 +29,7 @@
     "@praha/eslint-config-definer": "2.0.2",
     "drizzle-kit": "0.31.5",
     "eslint": "9.36.0",
-    "typescript": "5.8.3",
+    "typescript": "5.9.3",
     "wrangler": "4.40.2"
   }
 }
