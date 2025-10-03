@@ -114,8 +114,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       drizzle-orm:
-        specifier: 0.44.5
-        version: 0.44.5(@cloudflare/workers-types@4.20251001.0)(better-sqlite3@11.10.0)
+        specifier: 0.44.6
+        version: 0.44.6(@cloudflare/workers-types@4.20251001.0)(better-sqlite3@11.10.0)
       lucide-react:
         specifier: 0.544.0
         version: 0.544.0(react@19.1.1)
@@ -297,8 +297,8 @@ importers:
         specifier: 3.48.0-build4
         version: 3.48.0-build4
       drizzle-orm:
-        specifier: 0.44.5
-        version: 0.44.5(@cloudflare/workers-types@4.20251001.0)(better-sqlite3@11.10.0)
+        specifier: 0.44.6
+        version: 0.44.6(@cloudflare/workers-types@4.20251001.0)(better-sqlite3@11.10.0)
     devDependencies:
       '@praha/eslint-config-definer':
         specifier: 2.0.2
@@ -4773,8 +4773,8 @@ packages:
     resolution: {integrity: sha512-+CHgPFzuoTQTt7cOYCV6MOw2w8vqEn/ap1yv4bpZOWL03u7rlVRQhUY0WYT3rHsgVTXwYQDZaSUJSQrMBUKuWg==}
     hasBin: true
 
-  drizzle-orm@0.44.5:
-    resolution: {integrity: sha512-jBe37K7d8ZSKptdKfakQFdeljtu3P2Cbo7tJoJSVZADzIKOBo9IAJPOmMsH2bZl90bZgh8FQlD8BjxXA/zuBkQ==}
+  drizzle-orm@0.44.6:
+    resolution: {integrity: sha512-uy6uarrrEOc9K1u5/uhBFJbdF5VJ5xQ/Yzbecw3eAYOunv5FDeYkR2m8iitocdHBOHbvorviKOW5GVw0U1j4LQ==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
       '@cloudflare/workers-types': '>=4'
@@ -14159,7 +14159,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.44.5(@cloudflare/workers-types@4.20251001.0)(better-sqlite3@11.10.0):
+  drizzle-orm@0.44.6(@cloudflare/workers-types@4.20251001.0)(better-sqlite3@11.10.0):
     optionalDependencies:
       '@cloudflare/workers-types': 4.20251001.0
       better-sqlite3: 11.10.0
