@@ -77,7 +77,7 @@
     "@vitejs/plugin-react": "4.7.0",
     "better-sqlite3": "11.10.0",
     "dotenv": "16.6.1",
-    "eslint": "9.36.0",
+    "eslint": "9.37.0",
     "mini-css-extract-plugin": "2.9.4",
     "miniflare": "4.20251001.0",
     "rimraf": "6.0.1",
