@@ -1,5 +1,5 @@
-import { Slot } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
+import { Slot as SlotPrimitive } from 'radix-ui';
 import { forwardRef } from 'react';
 
 import * as styles from './sheet.css';
@@ -16,7 +16,7 @@ const SheetSectionRender: ForwardRefRenderFunction<HTMLDivElement, SheetSectionP
   asChild,
   ...props
 }, ref) => {
-  const Wrapper = asChild ? Slot : 'div';
+  const Wrapper = asChild ? SlotPrimitive.Slot : 'div';
 
   return (
     <Wrapper

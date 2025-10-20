@@ -1,5 +1,5 @@
-import { Slot } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
+import { Slot as SlotPrimitive } from 'radix-ui';
 import { forwardRef } from 'react';
 
 import * as styles from './button.css';
@@ -31,7 +31,7 @@ const ButtonRender: ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = (
   asChild,
   ...props
 }, ref) => {
-  const Wrapper = asChild ? Slot : 'button';
+  const Wrapper = asChild ? SlotPrimitive.Slot : 'button';
 
   return (
     <Wrapper

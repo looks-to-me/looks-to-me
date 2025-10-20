@@ -1,8 +1,8 @@
 'use client';
 
-import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { clsx } from 'clsx';
 import { XIcon } from 'lucide-react';
+import { Dialog as DialogPrimitive } from 'radix-ui';
 import { forwardRef } from 'react';
 
 import * as styles from './dialog.css';
