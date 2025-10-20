@@ -5,9 +5,9 @@ import * as styles from './breadcrumbs.css';
 import { Button } from '../button';
 
 import type { Route } from 'next';
-import type { ComponentPropsWithoutRef } from 'react';
+import type { ComponentProps } from 'react';
 
-export type BreadcrumbsItemProps<T extends string> = ComponentPropsWithoutRef<'li'> & {
+export type BreadcrumbsItemProps<T extends string> = ComponentProps<'li'> & {
   href: Route<T>;
 };
 

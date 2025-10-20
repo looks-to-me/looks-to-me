@@ -2,24 +2,22 @@
 
 import { clsx } from 'clsx';
 import { Popover as PopoverPrimitive } from 'radix-ui';
-import { forwardRef } from 'react';
 
 import * as styles from './popover.css';
 
-import type { ElementRef, ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
+import type { ComponentProps, FC } from 'react';
 
-export type PopoverContentProps = Omit<ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>, 'sideOffset' | 'align'>;
+export type PopoverContentProps = Omit<ComponentProps<typeof PopoverPrimitive.Content>, 'sideOffset' | 'align'>;
 
-const PopoverContentRender: ForwardRefRenderFunction<ElementRef<typeof PopoverPrimitive.Content>, PopoverContentProps> = ({
+export const PopoverContent: FC<PopoverContentProps> = ({
   className,
   children,
   ...props
-}, ref) => {
+}) => {
   return (
     <PopoverPrimitive.Portal>
       <PopoverPrimitive.Content
         {...props}
-        ref={ref}
         align="end"
         sideOffset={4}
         className={clsx(className, styles.content)}
@@ -29,5 +27,3 @@ const PopoverContentRender: ForwardRefRenderFunction<ElementRef<typeof PopoverPr
     </PopoverPrimitive.Portal>
   );
 };
-
-export const PopoverContent = forwardRef(PopoverContentRender);

@@ -12,7 +12,7 @@ import { Button } from '../../../../../components/elements/button';
 import { InputImageWithPreview } from '../input-image-with-preview';
 import { VariableTextInput } from '../variable-text-input';
 
-import type { InputImageWithPreviewHandle } from '../input-image-with-preview';
+import type { InputImageWithPreviewRef } from '../input-image-with-preview';
 import type { ChangeEvent, FC } from 'react';
 
 export type PostCreateFormProps = {
@@ -23,7 +23,7 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
   className,
 }) => {
   const router = useRouter();
-  const inputRef = useRef<InputImageWithPreviewHandle>(null);
+  const inputRef = useRef<InputImageWithPreviewRef>(null);
   const [word, setWord] = useState('Good');
   const debouncedWord = useDebounce(word, { wait: 500 });
 

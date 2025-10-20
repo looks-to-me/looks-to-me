@@ -3,7 +3,7 @@
 import { clsx } from 'clsx';
 import { XIcon } from 'lucide-react';
 import { Dialog as DialogPrimitive } from 'radix-ui';
-import { forwardRef, Children } from 'react';
+import { Children } from 'react';
 
 import * as styles from './sheet.css';
 import { AccessibleIcon } from '../accessible-icon';
@@ -11,28 +11,27 @@ import { Button, ButtonIcon } from '../button';
 import { Separator } from '../separator';
 
 import type { RecipeVariants } from '@vanilla-extract/recipes';
-import type { ElementRef, ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
+import type { ComponentProps, FC } from 'react';
 
 type SheetContentVariants = NonNullable<RecipeVariants<typeof styles.content>>;
 
 export type SheetContentSide = Exclude<SheetContentVariants['side'], undefined>;
 
-export type SheetContentProps = ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & {
+export type SheetContentProps = ComponentProps<typeof DialogPrimitive.Content> & {
   side?: SheetContentSide | undefined;
 };
 
-const SheetContentRender: ForwardRefRenderFunction<ElementRef<typeof DialogPrimitive.Content>, SheetContentProps> = ({
+export const SheetContent: FC<SheetContentProps> = ({
   className,
   children,
   side = 'right',
   ...props
-}, ref) => {
+}) => {
   return (
     <DialogPrimitive.Portal>
       <DialogPrimitive.Overlay className={styles.overlay} />
       <DialogPrimitive.Content
         {...props}
-        ref={ref}
         className={clsx(className, styles.content({ side }))}
       >
         {Children.map(children, (child, index) => (
@@ -54,5 +53,3 @@ const SheetContentRender: ForwardRefRenderFunction<ElementRef<typeof DialogPrimi
     </DialogPrimitive.Portal>
   );
 };
-
-export const SheetContent = forwardRef(SheetContentRender);

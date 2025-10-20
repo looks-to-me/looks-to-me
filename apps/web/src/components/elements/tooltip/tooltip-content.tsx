@@ -2,24 +2,22 @@
 
 import { clsx } from 'clsx';
 import { Tooltip as TooltipPrimitive } from 'radix-ui';
-import { forwardRef } from 'react';
 
 import * as styles from './tooltip.css';
 
-import type { ElementRef, ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
+import type { ComponentProps, FC } from 'react';
 
-export type TooltipContentProps = Omit<ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>, 'sideOffset'>;
+export type TooltipContentProps = Omit<ComponentProps<typeof TooltipPrimitive.Content>, 'sideOffset'>;
 
-const TooltipContentRender: ForwardRefRenderFunction<ElementRef<typeof TooltipPrimitive.Content>, TooltipContentProps> = ({
+export const TooltipContent: FC<TooltipContentProps> = ({
   className,
   children,
   ...props
-}, ref) => {
+}) => {
   return (
     <TooltipPrimitive.Portal>
       <TooltipPrimitive.Content
         {...props}
-        ref={ref}
         className={clsx(className, styles.content)}
         sideOffset={4}
       >
@@ -29,5 +27,3 @@ const TooltipContentRender: ForwardRefRenderFunction<ElementRef<typeof TooltipPr
     </TooltipPrimitive.Portal>
   );
 };
-
-export const TooltipContent = forwardRef(TooltipContentRender);

@@ -3,32 +3,34 @@
 import { theme } from '@looks-to-me/package-ui-theme';
 import { clsx } from 'clsx';
 import NextImage from 'next/image';
-import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from 'react';
+import { useCallback, useImperativeHandle, useRef, useState } from 'react';
 import * as v from 'valibot';
 
 import * as styles from './input-image-with-preview.css';
 import { postWordSchema } from '../../../../../schemas/post-word-schema';
 
-import type { InputHTMLAttributes, ChangeEventHandler, DragEventHandler, MouseEventHandler, ForwardRefRenderFunction } from 'react';
+import type { InputHTMLAttributes, ChangeEventHandler, DragEventHandler, MouseEventHandler, FC, Ref } from 'react';
 
 const ACCEPTABLE_TYPES = 'image/png, image/jpeg, image/jpg, image/gif';
 const buttonTheme = theme.color.token.button.normal;
 
-export type InputImageWithPreviewHandle = {
+export type InputImageWithPreviewRef = {
   reset(): void;
 };
 
 export type InputImageWithPreviewProps = {
   className?: string | undefined;
+  ref?: Ref<InputImageWithPreviewRef> | undefined;
   name: InputHTMLAttributes<HTMLInputElement>['name'];
   word: string;
 };
 
-const InputImageWithPreviewRender: ForwardRefRenderFunction<InputImageWithPreviewHandle, InputImageWithPreviewProps> = ({
+export const InputImageWithPreview: FC<InputImageWithPreviewProps> = ({
   className,
+  ref,
   name,
   word,
-}, ref) => {
+}) => {
   const inputImageRef = useRef<HTMLInputElement>(null);
   const [image, setImage] = useState<{ file: File; width: number; height: number }>();
   const [isDropActive, setIsDropActive] = useState(false);
@@ -116,7 +118,6 @@ const InputImageWithPreviewRender: ForwardRefRenderFunction<InputImageWithPrevie
       >
         {image ? (
           <div className={styles.imageWrapper}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className={styles.image}
               src={URL.createObjectURL(image.file)}
@@ -160,5 +161,3 @@ const InputImageWithPreviewRender: ForwardRefRenderFunction<InputImageWithPrevie
     </div>
   );
 };
-
-export const InputImageWithPreview = forwardRef(InputImageWithPreviewRender);

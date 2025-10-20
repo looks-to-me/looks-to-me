@@ -2,30 +2,26 @@
 
 import { clsx } from 'clsx';
 import { Avatar as AvatarPrimitive } from 'radix-ui';
-import { forwardRef } from 'react';
 
 import * as styles from './avatar.css';
 
-import type { ComponentPropsWithoutRef, ElementRef, ForwardRefRenderFunction } from 'react';
+import type { ComponentProps, FC } from 'react';
 
-export type AvatarFallbackProps = Omit<ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback>, 'children'> & {
+export type AvatarFallbackProps = Omit<ComponentProps<typeof AvatarPrimitive.Fallback>, 'children'> & {
   children: string;
 };
 
-const AvatarFallbackRender: ForwardRefRenderFunction<ElementRef<typeof AvatarPrimitive.Fallback>, AvatarFallbackProps> = ({
+export const AvatarFallback: FC<AvatarFallbackProps> = ({
   className,
   children,
   ...props
-}, ref) => {
+}) => {
   return (
     <AvatarPrimitive.Fallback
       {...props}
-      ref={ref}
       className={clsx(className, styles.fallback)}
     >
       {children.at(0)?.toUpperCase() ?? ''}
     </AvatarPrimitive.Fallback>
   );
 };
-
-export const AvatarFallback = forwardRef(AvatarFallbackRender);

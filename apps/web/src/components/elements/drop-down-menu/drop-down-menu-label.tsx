@@ -2,28 +2,24 @@
 
 import { clsx } from 'clsx';
 import { DropdownMenu as DropDownMenuPrimitive } from 'radix-ui';
-import { forwardRef } from 'react';
 
 import * as styles from './drop-down-menu.css';
 
-import type { ElementRef, ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
+import type { ComponentProps, FC } from 'react';
 
-export type DropDownMenuLabelProps = ComponentPropsWithoutRef<typeof DropDownMenuPrimitive.Label>;
+export type DropDownMenuLabelProps = ComponentProps<typeof DropDownMenuPrimitive.Label>;
 
-const DropDownMenuLabelRender: ForwardRefRenderFunction<ElementRef<typeof DropDownMenuPrimitive.Label>, DropDownMenuLabelProps> = ({
+export const DropDownMenuLabel: FC<DropDownMenuLabelProps> = ({
   className,
   children,
   ...props
-}, ref) => {
+}) => {
   return (
     <DropDownMenuPrimitive.Label
       {...props}
-      ref={ref}
       className={clsx(className, styles.label)}
     >
       {children}
     </DropDownMenuPrimitive.Label>
   );
 };
-
-export const DropDownMenuLabel = forwardRef(DropDownMenuLabelRender);

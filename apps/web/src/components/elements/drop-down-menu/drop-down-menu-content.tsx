@@ -2,25 +2,24 @@
 
 import { clsx } from 'clsx';
 import { DropdownMenu as DropDownMenuPrimitive } from 'radix-ui';
-import { Children, forwardRef } from 'react';
+import { Children } from 'react';
 
 import * as styles from './drop-down-menu.css';
 import { Separator } from '../separator';
 
-import type { ElementRef, ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
+import type { ComponentProps, FC } from 'react';
 
-export type DropDownMenuContentProps = Omit<ComponentPropsWithoutRef<typeof DropDownMenuPrimitive.Content>, 'sideOffset' | 'align'>;
+export type DropDownMenuContentProps = Omit<ComponentProps<typeof DropDownMenuPrimitive.Content>, 'sideOffset' | 'align'>;
 
-const DropDownMenuContentRender: ForwardRefRenderFunction<ElementRef<typeof DropDownMenuPrimitive.Content>, DropDownMenuContentProps> = ({
+export const DropDownMenuContent: FC<DropDownMenuContentProps> = ({
   className,
   children,
   ...props
-}, ref) => {
+}) => {
   return (
     <DropDownMenuPrimitive.Portal>
       <DropDownMenuPrimitive.Content
         {...props}
-        ref={ref}
         align="end"
         sideOffset={4}
         className={clsx(className, styles.content)}
@@ -35,5 +34,3 @@ const DropDownMenuContentRender: ForwardRefRenderFunction<ElementRef<typeof Drop
     </DropDownMenuPrimitive.Portal>
   );
 };
-
-export const DropDownMenuContent = forwardRef(DropDownMenuContentRender);

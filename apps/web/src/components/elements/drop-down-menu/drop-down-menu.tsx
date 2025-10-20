@@ -2,8 +2,8 @@
 
 import { DropdownMenu as DropDownMenuPrimitive } from 'radix-ui';
 
-import type { ComponentPropsWithoutRef } from 'react';
+import type { ComponentProps } from 'react';
 
-export type DropDownMenuProps = ComponentPropsWithoutRef<typeof DropDownMenuPrimitive.Root>;
+export type DropDownMenuProps = ComponentProps<typeof DropDownMenuPrimitive.Root>;
 
 export const DropDownMenu = DropDownMenuPrimitive.Root;
