@@ -74,7 +74,7 @@
     "@vanilla-extract/recipes": "0.5.7",
     "@vanilla-extract/vite-plugin": "5.1.1",
     "@vanilla-extract/webpack-plugin": "2.3.22",
-    "@vitejs/plugin-react": "4.7.0",
+    "@vitejs/plugin-react": "5.0.4",
     "better-sqlite3": "12.4.1",
     "dotenv": "17.2.3",
     "eslint": "9.38.0",
