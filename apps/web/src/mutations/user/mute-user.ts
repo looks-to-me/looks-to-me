@@ -6,7 +6,7 @@ import { getLoginUser } from '../../queries/user/get-login-user';
 import { saveMuteUser } from '../../repositories/mute-user-repository';
 import { findUserById } from '../../repositories/user-repository';
 
-export type MuteUserResult =
+export type MuteUserResult = (
   | {
     type: 'success';
     message: `@${string} has been muted.`;
@@ -15,7 +15,8 @@ export type MuteUserResult =
     type: 'error';
     reason: 'unauthorized' | 'badRequest';
     message: string;
-  };
+  }
+);
 
 export const muteUser = async (muteUserId: string): Promise<MuteUserResult> => {
   const user = await getLoginUser();
