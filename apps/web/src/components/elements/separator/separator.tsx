@@ -1,5 +1,5 @@
-import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import { clsx } from 'clsx';
+import { Separator as SeparatorPrimitive } from 'radix-ui';
 import { forwardRef } from 'react';
 
 import * as styles from './separator.css';

@@ -1,7 +1,7 @@
 'use client';
 
-import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 import { clsx } from 'clsx';
+import { Tooltip as TooltipPrimitive } from 'radix-ui';
 import { forwardRef } from 'react';
 
 import * as styles from './tooltip.css';

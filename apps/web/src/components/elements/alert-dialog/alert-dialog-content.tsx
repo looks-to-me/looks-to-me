@@ -1,7 +1,7 @@
 'use client';
 
-import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
 import { clsx } from 'clsx';
+import { AlertDialog as AlertDialogPrimitive } from 'radix-ui';
 import { forwardRef } from 'react';
 
 import * as styles from './alert-dialog.css';
