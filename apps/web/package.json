@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "generate": "wrangler types --include-runtime false",
+    "generate": "wrangler types",
     "dev": "next dev",
     "dev:storybook": "storybook dev",
     "build": "next build",
@@ -42,7 +42,6 @@
     "valibot": "1.1.0"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20251014.0",
     "@praha/eslint-config-definer": "2.0.2",
     "@praha/eslint-config-next": "4.0.10",
     "@praha/eslint-config-react": "4.0.9",

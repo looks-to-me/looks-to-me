@@ -6,21 +6,20 @@ import type { R2CacheKeyParameters } from './helper';
 
 describe('helper', () => {
   describe('getCaches', () => {
-    const originalCaches = globalThis.caches;
-
     afterEach(() => {
-      globalThis.caches = originalCaches;
+      vi.unstubAllGlobals();
     });
 
     it('should return caches', () => {
-      globalThis.caches = {} as CacheStorage;
+      vi.stubGlobal('caches', {});
 
       const result = getCaches();
       expect(result).toEqual(caches);
     });
 
     it('should return undefined', () => {
-      globalThis.caches = undefined as unknown as CacheStorage;
+      // eslint-disable-next-line unicorn/no-useless-undefined
+      vi.stubGlobal('caches', undefined);
 
       const result = getCaches();
       expect(result).toEqual(caches);
