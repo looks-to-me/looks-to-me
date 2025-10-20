@@ -2,11 +2,7 @@ import { findUserById } from '../../../../../repositories/user-repository';
 
 import type { NextRequest } from 'next/server';
 
-type Context = {
-  params: Promise<{
-    id: string;
-  }>;
-};
+type Context = RouteContext<'/images/avatars/[id]'>;
 
 export const GET = async (_: NextRequest, context: Context) => {
   const { id } = await context.params;

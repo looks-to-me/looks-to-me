@@ -2,18 +2,13 @@ import * as styles from './layout.css';
 import { ApplicationLayout } from '../../../components/domains/application/application-layout';
 import { createMetadata } from '../../../helpers/create-metadata';
 
-import type { ShufflePageProps } from './page';
-import type { LayoutProps } from '../../../types/layout-props';
-import type { FC, ReactNode } from 'react';
+import type { FC } from 'react';
 
 export const metadata = createMetadata({
   title: 'Shuffle',
 });
 
-export type ShuffleLayoutProps = ShufflePageProps & LayoutProps<{
-  header: ReactNode;
-  posts: ReactNode;
-}>;
+export type ShuffleLayoutProps = LayoutProps<'/shuffle'>;
 
 const ShuffleLayout: FC<ShuffleLayoutProps> = ({
   children,

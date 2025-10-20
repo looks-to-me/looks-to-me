@@ -2,18 +2,9 @@ import { ApplicationHeader } from '../../../../components/domains/application/ap
 import { Breadcrumbs, BreadcrumbsItem } from '../../../../components/elements/breadcrumbs';
 import { getLoginUser } from '../../../../queries/user/get-login-user';
 
-import type { PageProps } from '../../../../types/page-props';
-import type { PrivacyPolicyPageProps } from '../page';
 import type { FC } from 'react';
 
-export type PrivacyPolicyHeaderPageProps = PrivacyPolicyPageProps & PageProps<{
-  params: Promise<{
-    // empty
-  }>;
-  searchParams: Promise<{
-    // empty
-  }>;
-}>;
+export type PrivacyPolicyHeaderPageProps = PageProps<'/privacy'>;
 
 const PrivacyPolicyHeaderPage: FC<PrivacyPolicyHeaderPageProps> = async () => {
   const loginUser = await getLoginUser();

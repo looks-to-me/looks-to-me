@@ -4,11 +4,7 @@ import { storage } from '../../../../../_libs/storage';
 
 import type { NextRequest } from 'next/server';
 
-type Context = {
-  params: Promise<{
-    id: string;
-  }>;
-};
+type Context = RouteContext<'/images/posts/[id]/raw'>;
 
 export const GET = async (request: NextRequest, context: Context) => {
   // In the production environment, it should only be accessible by Workers.

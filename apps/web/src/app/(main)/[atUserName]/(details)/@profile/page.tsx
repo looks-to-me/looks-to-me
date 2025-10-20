@@ -9,18 +9,9 @@ import { countPostsByUserId } from '../../../../../repositories/post-repository'
 import { findUserByName } from '../../../../../repositories/user-repository';
 import { getUserName } from '../../_helpers/get-user-name';
 
-import type { PageProps } from '../../../../../types/page-props';
-import type { UserDetailsPageProps } from '../page';
 import type { FC } from 'react';
 
-export type UserDetailsProfilePageProps = UserDetailsPageProps & PageProps<{
-  params: Promise<{
-    // empty
-  }>;
-  searchParams: Promise<{
-    // empty
-  }>;
-}>;
+export type UserDetailsProfilePageProps = PageProps<'/[atUserName]'>;
 
 const UserDetailsProfilePage: FC<UserDetailsProfilePageProps> = async ({
   params,

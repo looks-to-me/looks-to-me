@@ -2,18 +2,9 @@ import { fetchPosts } from './_actions/fetch-posts';
 import { PostList } from '../../_components/post-list';
 
 import type { InfiniteScrollFetcher } from '../../../../components/elements/infinite-scroll';
-import type { PageProps } from '../../../../types/page-props';
-import type { HomePageProps } from '../page';
 import type { FC } from 'react';
 
-export type HomePostListPageProps = HomePageProps & PageProps<{
-  params: Promise<{
-    // empty
-  }>;
-  searchParams: Promise<{
-    // empty
-  }>;
-}>;
+export type HomePostListPageProps = PageProps<'/'>;
 
 const HomePostListPage: FC<HomePostListPageProps> = async () => {
   const posts = await fetchPosts();

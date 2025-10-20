@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "generate": "wrangler types",
+    "generate": "wrangler types && next typegen",
     "dev": "next dev",
     "dev:storybook": "storybook dev",
     "build": "next build",

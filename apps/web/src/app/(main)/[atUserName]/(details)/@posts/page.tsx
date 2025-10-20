@@ -7,18 +7,9 @@ import { PostList } from '../../../_components/post-list';
 import { getUserName } from '../../_helpers/get-user-name';
 
 import type { InfiniteScrollFetcher } from '../../../../../components/elements/infinite-scroll';
-import type { PageProps } from '../../../../../types/page-props';
-import type { UserDetailsPageProps } from '../page';
 import type { FC } from 'react';
 
-export type UserDetailsPostListPageProps = UserDetailsPageProps & PageProps<{
-  params: Promise<{
-    // empty
-  }>;
-  searchParams: Promise<{
-    // empty
-  }>;
-}>;
+export type UserDetailsPostListPageProps = PageProps<'/[atUserName]'>;
 
 const UserDetailsPostListPage: FC<UserDetailsPostListPageProps> = async ({
   params,

@@ -6,20 +6,11 @@ import { useRouter } from 'next/navigation';
 import { dispatch } from '../../../helpers/dispatch';
 import { createClient } from '../../_libs/auth/client/instance';
 
-import type { PageProps } from '../../../types/page-props';
-import type { LoginPageProps } from '../login/page';
 import type { FC } from 'react';
 
-export type LogoutPageProps = PageProps<{
-  params: Promise<{
-    // empty
-  }>;
-  searchParams: Promise<{
-    // empty
-  }>;
-}>;
+export type LogoutPageProps = PageProps<'/logout'>;
 
-const LogoutPage: FC<LoginPageProps> = () => {
+const LogoutPage: FC<LogoutPageProps> = () => {
   const router = useRouter();
 
   useMount(dispatch(async () => {

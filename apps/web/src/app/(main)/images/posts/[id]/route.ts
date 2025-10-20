@@ -39,11 +39,7 @@ const fetchImage = async (request: Request, id: string): Promise<Response> => {
   });
 };
 
-type Context = {
-  params: Promise<{
-    id: string;
-  }>;
-};
+type Context = RouteContext<'/images/posts/[id]'>;
 
 export const GET = async (request: NextRequest, context: Context) => {
   const { id } = await context.params;

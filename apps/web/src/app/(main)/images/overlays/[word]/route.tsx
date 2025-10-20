@@ -21,11 +21,7 @@ const textStyle = {
     0px 1px 0px #000,  0px -1px 0px #000`,
 };
 
-type Context = {
-  params: Promise<{
-    word: string;
-  }>;
-};
+type Context = RouteContext<'/images/overlays/[word]'>;
 
 export const GET = async (request: NextRequest, context: Context) => {
   const parameters: ImageCacheParameters = {
@@ -75,6 +71,6 @@ export const GET = async (request: NextRequest, context: Context) => {
           },
         ],
       },
-    ) as unknown as Response;
+    );
   });
 };

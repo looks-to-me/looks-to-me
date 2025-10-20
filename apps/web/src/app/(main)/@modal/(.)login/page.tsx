@@ -1,10 +1,9 @@
 import * as styles from './page.css';
 import { LoginForm } from '../../_components/login-form';
 
-import type { LoginPageProps } from '../../login/page';
 import type { FC } from 'react';
 
-export type ModalLoginPageProps = LoginPageProps;
+export type ModalLoginPageProps = PageProps<'/login'>;
 
 const ModalLoginPage: FC<ModalLoginPageProps> = () => {
   return (

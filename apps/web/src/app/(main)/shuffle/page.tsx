@@ -1,14 +1,6 @@
-import type { PageProps } from '../../../types/page-props';
 import type { FC } from 'react';
 
-export type ShufflePageProps = PageProps<{
-  params: Promise<{
-    // empty
-  }>;
-  searchParams: Promise<{
-    // empty
-  }>;
-}>;
+export type ShufflePageProps = PageProps<'/shuffle'>;
 
 const ShufflePage: FC<ShufflePageProps> = () => {
   return null;

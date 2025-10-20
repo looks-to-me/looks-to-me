@@ -1,18 +1,9 @@
 import { fetchPosts } from './_actions/fetch-posts';
 import { PostList } from '../../_components/post-list';
 
-import type { PageProps } from '../../../../types/page-props';
-import type { ShufflePageProps } from '../page';
 import type { FC } from 'react';
 
-export type ShufflePostListPageProps = ShufflePageProps & PageProps<{
-  params: Promise<{
-    // empty
-  }>;
-  searchParams: Promise<{
-    // empty
-  }>;
-}>;
+export type ShufflePostListPageProps = PageProps<'/shuffle'>;
 
 const ShufflePostListPage: FC<ShufflePostListPageProps> = async () => {
   const posts = await fetchPosts();

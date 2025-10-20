@@ -4,18 +4,9 @@ import { notFound } from 'next/navigation';
 import * as styles from './page.css';
 import { findPostById } from '../../../../../../repositories/post-repository';
 
-import type { PageProps } from '../../../../../../types/page-props';
-import type { UserPostDetailsPageProps } from '../page';
 import type { FC } from 'react';
 
-export type UserPostDetailsMainPageProps = UserPostDetailsPageProps & PageProps<{
-  params: Promise<{
-    // empty
-  }>;
-  searchParams: Promise<{
-    // empty
-  }>;
-}>;
+export type UserPostDetailsMainPageProps = PageProps<'/[atUserName]/posts/[postId]'>;
 
 const UserPostDetailsMainPage: FC<UserPostDetailsMainPageProps> = async ({
   params,

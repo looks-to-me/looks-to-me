@@ -2,17 +2,13 @@ import * as styles from './layout.css';
 import { ApplicationLayout } from '../../../components/domains/application/application-layout';
 import { createMetadata } from '../../../helpers/create-metadata';
 
-import type { TermsOfUsePageProps } from './page';
-import type { LayoutProps } from '../../../types/layout-props';
-import type { FC, ReactNode } from 'react';
+import type { FC } from 'react';
 
 export const metadata = createMetadata({
   title: 'Terms of Use',
 });
 
-export type TermsOfUseLayoutProps = TermsOfUsePageProps & LayoutProps<{
-  header: ReactNode;
-}>;
+export type TermsOfUseLayoutProps = LayoutProps<'/terms'>;
 
 const TermsOfUseLayout: FC<TermsOfUseLayoutProps> = ({
   children,

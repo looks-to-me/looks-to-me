@@ -2,18 +2,9 @@ import { ApplicationHeader } from '../../../../components/domains/application/ap
 import { Breadcrumbs, BreadcrumbsItem } from '../../../../components/elements/breadcrumbs';
 import { getLoginUser } from '../../../../queries/user/get-login-user';
 
-import type { PageProps } from '../../../../types/page-props';
-import type { HomePageProps } from '../page';
 import type { FC } from 'react';
 
-export type HomeHeaderPageProps = HomePageProps & PageProps<{
-  params: Promise<{
-    // empty
-  }>;
-  searchParams: Promise<{
-    // empty
-  }>;
-}>;
+export type HomeHeaderPageProps = PageProps<'/'>;
 
 const HomeHeaderPage: FC<HomeHeaderPageProps> = async () => {
   const loginUser = await getLoginUser();

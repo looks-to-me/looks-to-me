@@ -7,18 +7,9 @@ import { findPostById } from '../../../../../../repositories/post-repository';
 import { findUserById } from '../../../../../../repositories/user-repository';
 import { getUserName } from '../../../_helpers/get-user-name';
 
-import type { PageProps } from '../../../../../../types/page-props';
-import type { UserPostDetailsPageProps } from '../page';
 import type { FC } from 'react';
 
-export type UserPostDetailsHeaderPageProps = UserPostDetailsPageProps & PageProps<{
-  params: Promise<{
-    // empty
-  }>;
-  searchParams: Promise<{
-    // empty
-  }>;
-}>;
+export type UserPostDetailsHeaderPageProps = PageProps<'/[atUserName]/posts/[postId]'>;
 
 const UserPostDetailsHeaderPage: FC<UserPostDetailsHeaderPageProps> = async ({
   params,

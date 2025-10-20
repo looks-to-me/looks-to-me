@@ -8,11 +8,9 @@ import { getIsMutedUserByName } from '../../../../queries/user/get-is-muted-user
 import { findUserByName } from '../../../../repositories/user-repository';
 import { getUserName } from '../_helpers/get-user-name';
 
-import type { UserDetailsPageProps } from './page';
-import type { LayoutProps } from '../../../../types/layout-props';
-import type { FC, ReactNode } from 'react';
+import type { FC } from 'react';
 
-export const generateMetadata = async ({ params }: UserDetailsPageProps) => {
+export const generateMetadata = async ({ params }: UserDetailsLayoutProps) => {
   const { atUserName } = await params;
   const userName = getUserName(atUserName);
   if (!userName) return {};
@@ -28,11 +26,7 @@ export const generateMetadata = async ({ params }: UserDetailsPageProps) => {
   });
 };
 
-export type UserDetailsLayoutProps = UserDetailsPageProps & LayoutProps<{
-  header: ReactNode;
-  profile: ReactNode;
-  posts: ReactNode;
-}>;
+export type UserDetailsLayoutProps = LayoutProps<'/[atUserName]'>;
 
 const UserDetailsLayout: FC<UserDetailsLayoutProps> = async ({
   header,

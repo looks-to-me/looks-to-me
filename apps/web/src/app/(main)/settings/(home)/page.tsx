@@ -1,14 +1,6 @@
-import type { PageProps } from '../../../../types/page-props';
 import type { FC } from 'react';
 
-export type SettingsHomePageProps = PageProps<{
-  params: Promise<{
-    // empty
-  }>;
-  searchParams: Promise<{
-    // empty
-  }>;
-}>;
+export type SettingsHomePageProps = PageProps<'/settings'>;
 
 const SettingsHomePage: FC<SettingsHomePageProps> = () => {
   return null;
