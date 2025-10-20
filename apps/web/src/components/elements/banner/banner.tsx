@@ -2,9 +2,9 @@ import { clsx } from 'clsx';
 
 import * as styles from './banner.css';
 
-import type { ComponentPropsWithoutRef, FC } from 'react';
+import type { ComponentProps, FC } from 'react';
 
-export type ApplicationBannerProps = ComponentPropsWithoutRef<'aside'>;
+export type ApplicationBannerProps = ComponentProps<'aside'>;
 
 export const Banner: FC<ApplicationBannerProps> = ({
   className,

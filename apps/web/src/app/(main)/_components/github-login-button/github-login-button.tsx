@@ -10,9 +10,9 @@ import { ButtonIcon } from '../../../../components/elements/button';
 import { dispatch } from '../../../../helpers/dispatch';
 import { createClient } from '../../../_libs/auth/client/instance';
 
-import type { MouseEventHandler, FC, ComponentPropsWithoutRef } from 'react';
+import type { MouseEventHandler, ComponentProps, FC } from 'react';
 
-export type LoginButtonProps = ComponentPropsWithoutRef<'button'>;
+export type LoginButtonProps = ComponentProps<'button'>;
 
 export const GitHubLoginButton: FC<LoginButtonProps> = ({
   className,

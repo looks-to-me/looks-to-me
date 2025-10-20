@@ -3,26 +3,24 @@
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import { Avatar as AvatarPrimitive } from 'radix-ui';
-import { forwardRef } from 'react';
 
 import * as styles from './avatar.css';
 
-import type { ComponentPropsWithoutRef, ComponentRef, ForwardRefRenderFunction } from 'react';
+import type { ComponentProps, FC } from 'react';
 
-export type AvatarImageProps = Omit<ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>, 'src'> & {
+export type AvatarImageProps = Omit<ComponentProps<typeof AvatarPrimitive.Image>, 'src'> & {
   src?: string | undefined;
 };
 
-const AvatarImageRender: ForwardRefRenderFunction<ComponentRef<typeof AvatarPrimitive.Image>, AvatarImageProps> = ({
+export const AvatarImage: FC<AvatarImageProps> = ({
   className,
   ...props
-}, ref) => {
+}) => {
   const hasImage = !!props.src && !!props.alt;
 
   return (
     <AvatarPrimitive.Image
       {...props}
-      ref={ref}
       className={clsx(className, styles.image)}
       asChild={hasImage}
     >
@@ -32,5 +30,3 @@ const AvatarImageRender: ForwardRefRenderFunction<ComponentRef<typeof AvatarPrim
     </AvatarPrimitive.Image>
   );
 };
-
-export const AvatarImage = forwardRef(AvatarImageRender);

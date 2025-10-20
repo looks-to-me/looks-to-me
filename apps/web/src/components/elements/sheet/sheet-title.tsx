@@ -2,24 +2,21 @@
 
 import { clsx } from 'clsx';
 import { Dialog as DialogPrimitive } from 'radix-ui';
-import { forwardRef } from 'react';
 
 import * as styles from './sheet.css';
 
-import type { ElementRef, ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
+import type { ComponentProps, FC } from 'react';
 
-export type SheetTitleProps = ComponentPropsWithoutRef<typeof DialogPrimitive.Title>;
+export type SheetTitleProps = ComponentProps<typeof DialogPrimitive.Title>;
 
-const SheetTitleRender: ForwardRefRenderFunction<ElementRef<typeof DialogPrimitive.Title>, SheetTitleProps> = ({
+export const SheetTitle: FC<SheetTitleProps> = ({
   className,
   children,
   ...props
-}, ref) => {
+}) => {
   return (
-    <DialogPrimitive.Title {...props} ref={ref} className={clsx(className, styles.title)}>
+    <DialogPrimitive.Title {...props} className={clsx(className, styles.title)}>
       {children}
     </DialogPrimitive.Title>
   );
 };
-
-export const SheetTitle = forwardRef(SheetTitleRender);

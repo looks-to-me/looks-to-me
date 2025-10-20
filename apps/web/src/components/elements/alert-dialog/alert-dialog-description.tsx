@@ -2,24 +2,21 @@
 
 import { clsx } from 'clsx';
 import { AlertDialog as AlertDialogPrimitive } from 'radix-ui';
-import { forwardRef } from 'react';
 
 import * as styles from './alert-dialog.css';
 
-import type { ComponentPropsWithoutRef, ElementRef, ForwardRefRenderFunction } from 'react';
+import type { ComponentProps, FC } from 'react';
 
-export type AlertDialogDescriptionProps = ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description>;
+export type AlertDialogDescriptionProps = ComponentProps<typeof AlertDialogPrimitive.Description>;
 
-const AlertDialogDescriptionRender: ForwardRefRenderFunction<ElementRef<typeof AlertDialogPrimitive.Description>, AlertDialogDescriptionProps> = ({
+export const AlertDialogDescription: FC<AlertDialogDescriptionProps> = ({
   className,
   children,
   ...props
-}, ref) => {
+}) => {
   return (
-    <AlertDialogPrimitive.Description {...props} ref={ref} className={clsx(className, styles.description)}>
+    <AlertDialogPrimitive.Description {...props} className={clsx(className, styles.description)}>
       {children}
     </AlertDialogPrimitive.Description>
   );
 };
-
-export const AlertDialogDescription = forwardRef(AlertDialogDescriptionRender);

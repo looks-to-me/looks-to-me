@@ -3,30 +3,28 @@
 import { clsx } from 'clsx';
 import { XIcon } from 'lucide-react';
 import { Dialog as DialogPrimitive } from 'radix-ui';
-import { forwardRef } from 'react';
 
 import * as styles from './dialog.css';
 import { AccessibleIcon } from '../accessible-icon';
 import { Button, ButtonIcon } from '../button';
 
-import type { ElementRef, ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
+import type { ComponentProps, FC } from 'react';
 
-export type DialogContentProps = ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & {
+export type DialogContentProps = ComponentProps<typeof DialogPrimitive.Content> & {
   withClose?: boolean;
 };
 
-const DialogContentRender: ForwardRefRenderFunction<ElementRef<typeof DialogPrimitive.Content>, DialogContentProps> = ({
+export const DialogContent: FC<DialogContentProps> = ({
   className,
   children,
   withClose,
   ...props
-}, ref) => {
+}) => {
   return (
     <DialogPrimitive.Portal>
       <DialogPrimitive.Overlay className={styles.overlay} />
       <DialogPrimitive.Content
         {...props}
-        ref={ref}
         className={clsx(className, styles.content)}
       >
         {children}
@@ -45,5 +43,3 @@ const DialogContentRender: ForwardRefRenderFunction<ElementRef<typeof DialogPrim
     </DialogPrimitive.Portal>
   );
 };
-
-export const DialogContent = forwardRef(DialogContentRender);

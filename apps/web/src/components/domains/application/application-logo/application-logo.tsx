@@ -1,24 +1,23 @@
 import { clsx } from 'clsx';
 import Link from 'next/link';
-import { forwardRef } from 'react';
 
 import * as styles from './application-logo.css';
 import { AccessibleIcon } from '../../../elements/accessible-icon';
 import { PrefersColorScheme } from '../../../elements/prefers-color-scheme';
 
-import type { ForwardRefRenderFunction, ComponentPropsWithoutRef } from 'react';
+import type { FC, ComponentProps } from 'react';
 
-export type ApplicationLogoProps = Omit<ComponentPropsWithoutRef<typeof Link>, 'href'> & {
+export type ApplicationLogoProps = Omit<ComponentProps<typeof Link>, 'href'> & {
   withText?: boolean;
 };
 
-const ApplicationLogoRender: ForwardRefRenderFunction<HTMLAnchorElement, ApplicationLogoProps> = ({
+export const ApplicationLogo: FC<ApplicationLogoProps> = ({
   className,
   withText = false,
   ...props
-}, ref) => {
+}) => {
   return (
-    <Link {...props} ref={ref} className={clsx(className, styles.wrapper)} href="/">
+    <Link {...props} className={clsx(className, styles.wrapper)} href="/">
       <h1 className={styles.container}>
         <PrefersColorScheme
           light={(
@@ -86,5 +85,3 @@ const ApplicationLogoRender: ForwardRefRenderFunction<HTMLAnchorElement, Applica
     </Link>
   );
 };
-
-export const ApplicationLogo = forwardRef(ApplicationLogoRender);

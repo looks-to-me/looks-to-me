@@ -2,8 +2,8 @@
 
 import { AccessibleIcon as AccessibleIconPrimitive } from 'radix-ui';
 
-import type { ComponentPropsWithoutRef } from 'react';
+import type { ComponentProps } from 'react';
 
-export type AccessibleIconProps = ComponentPropsWithoutRef<typeof AccessibleIconPrimitive.Root>;
+export type AccessibleIconProps = ComponentProps<typeof AccessibleIconPrimitive.Root>;
 
 export const AccessibleIcon = AccessibleIconPrimitive.Root;

@@ -8,9 +8,9 @@ import { ApplicationLogo } from '../application-logo';
 import { ApplicationNavigation } from '../application-navigation';
 
 import type { UserAccountMenuProps } from '../../user/user-account-menu';
-import type { ComponentPropsWithoutRef, FC } from 'react';
+import type { ComponentProps, FC } from 'react';
 
-export type ApplicationHeaderProps = ComponentPropsWithoutRef<'header'> & {
+export type ApplicationHeaderProps = ComponentProps<'header'> & {
   user: UserAccountMenuProps['user'] | undefined;
 };
 
