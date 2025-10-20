@@ -36,7 +36,7 @@
     "@radix-ui/react-slot": "1.2.3",
     "@radix-ui/react-tooltip": "1.2.8",
     "@radix-ui/react-visually-hidden": "1.2.3",
-    "@supabase/supabase-js": "2.75.0",
+    "@supabase/supabase-js": "2.75.1",
     "ahooks": "3.9.5",
     "client-only": "0.0.1",
     "clsx": "2.1.1",
