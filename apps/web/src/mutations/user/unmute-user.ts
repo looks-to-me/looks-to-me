@@ -6,15 +6,17 @@ import { getLoginUser } from '../../queries/user/get-login-user';
 import { deleteMuteUser } from '../../repositories/mute-user-repository';
 import { findUserById } from '../../repositories/user-repository';
 
-export type UnmuteUserResult =
+export type UnmuteUserResult = (
   | {
     type: 'success';
     message: `@${string} has been unmuted.`;
-  } | {
+  }
+  | {
     type: 'error';
     reason: 'unauthorized' | 'badRequest';
     message: string;
-  };
+  }
+);
 
 export const unmuteUser = async (unmuteUserId: string): Promise<UnmuteUserResult> => {
   const user = await getLoginUser();
