@@ -10,7 +10,7 @@
     "build": "next build",
     "build:worker": "opennextjs-cloudflare build",
     "build:storybook": "rimraf public/storybook && storybook build && mv storybook-static public/storybook && sed -i 's#<head>#<head>\\\\n<base href='\\/storybook\\/'>#' public/storybook/index.html",
-    "build:ci": "pnpm run build:storybook && pnpm run build:worker",
+    "build:app": "pnpm run build:storybook && pnpm run build:worker",
     "deploy": "pnpm run build:ci && opennextjs-cloudflare deploy",
     "test": "vitest run",
     "test:watch": "vitest watch",

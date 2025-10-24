@@ -16,5 +16,5 @@ export const config = define([
 ]);
 
 export default config({
-  tsconfigPath: './tsconfig.json',
+  tsconfigPath: './tsconfig.root.json',
 });

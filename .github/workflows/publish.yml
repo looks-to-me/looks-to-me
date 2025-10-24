@@ -21,7 +21,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Build
-        run: pnpm run build:ci --filter="@looks-to-me/app-web"
+        run: pnpm run build:app --filter="@looks-to-me/app-web"
         env:
           NEXT_FONT_GOOGLE_MOCKED_RESPONSES: ${{ github.workspace }}/apps/web/mocked-google-fonts.cjs
           NEXT_PUBLIC_APP_ORIGIN: ${{ vars.NEXT_PUBLIC_APP_ORIGIN }}
