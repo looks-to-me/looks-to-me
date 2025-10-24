@@ -58,7 +58,7 @@ importers:
         version: link:../../packages/ui-theme
       '@opennextjs/cloudflare':
         specifier: 1.11.0
-        version: 1.11.0(wrangler@4.44.0(@cloudflare/workers-types@4.20251014.0))
+        version: 1.11.0(wrangler@4.45.0(@cloudflare/workers-types@4.20251014.0))
       '@paralleldrive/cuid2':
         specifier: 3.1.0
         version: 3.1.0
@@ -205,8 +205,8 @@ importers:
         specifier: 3.2.4
         version: 3.2.4(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@22.18.12)(jiti@2.6.1)(terser@5.44.0)(yaml@2.8.1)
       wrangler:
-        specifier: 4.44.0
-        version: 4.44.0(@cloudflare/workers-types@4.20251014.0)
+        specifier: 4.45.0
+        version: 4.45.0(@cloudflare/workers-types@4.20251014.0)
 
   apps/worker-cdn:
     dependencies:
@@ -230,8 +230,8 @@ importers:
         specifier: 5.9.3
         version: 5.9.3
       wrangler:
-        specifier: 4.44.0
-        version: 4.44.0(@cloudflare/workers-types@4.20251014.0)
+        specifier: 4.45.0
+        version: 4.45.0(@cloudflare/workers-types@4.20251014.0)
 
   apps/worker-image-overlay:
     dependencies:
@@ -252,8 +252,8 @@ importers:
         specifier: 5.9.3
         version: 5.9.3
       wrangler:
-        specifier: 4.44.0
-        version: 4.44.0(@cloudflare/workers-types@4.20251014.0)
+        specifier: 4.45.0
+        version: 4.45.0(@cloudflare/workers-types@4.20251014.0)
 
   packages/database:
     dependencies:
@@ -277,8 +277,8 @@ importers:
         specifier: 5.9.3
         version: 5.9.3
       wrangler:
-        specifier: 4.44.0
-        version: 4.44.0(@cloudflare/workers-types@4.20251014.0)
+        specifier: 4.45.0
+        version: 4.45.0(@cloudflare/workers-types@4.20251014.0)
 
   packages/image-cache:
     devDependencies:
@@ -6881,11 +6881,6 @@ packages:
     peerDependencies:
       webpack: ^5.0.0
 
-  miniflare@4.20251011.0:
-    resolution: {integrity: sha512-DlZ7vR5q/RE9eLsxsrXzfSZIF2f6O5k0YsFrSKhWUtdefyGtJt4sSpR6V+Af/waaZ6+zIFy9lsknHBCm49sEYA==}
-    engines: {node: '>=18.0.0'}
-    hasBin: true
-
   miniflare@4.20251011.1:
     resolution: {integrity: sha512-Qbw1Z8HTYM1adWl6FAtzhrj34/6dPRDPwdYOx21dkae8a/EaxbMzRIPbb4HKVGMVvtqbK1FaRCgDLVLolNzGHg==}
     engines: {node: '>=18.0.0'}
@@ -8766,8 +8761,8 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  wrangler@4.44.0:
-    resolution: {integrity: sha512-BLOUigckcWZ0r4rm7b5PuaTpb9KP9as0XeCRSJ8kqcNgXcKoUD3Ij8FlPvN25KybLnFnetaO0ZdfRYUPWle4qw==}
+  wrangler@4.45.0:
+    resolution: {integrity: sha512-2qM6bHw8l7r89Z9Y5A7Wn4L9U+dFoLjYgEUVpqy7CcmXpppL3QIYqU6rU5lre7/SRzBuPu/H93Vwfh538gZ3iw==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     peerDependencies:
@@ -11432,7 +11427,7 @@ snapshots:
       - aws-crt
       - supports-color
 
-  '@opennextjs/cloudflare@1.11.0(wrangler@4.44.0(@cloudflare/workers-types@4.20251014.0))':
+  '@opennextjs/cloudflare@1.11.0(wrangler@4.45.0(@cloudflare/workers-types@4.20251014.0))':
     dependencies:
       '@dotenvx/dotenvx': 1.31.0
       '@opennextjs/aws': 3.8.5
@@ -11442,7 +11437,7 @@ snapshots:
       glob: 11.0.3
       rclone.js: 0.6.6
       ts-tqdm: 0.8.6
-      wrangler: 4.44.0(@cloudflare/workers-types@4.20251014.0)
+      wrangler: 4.45.0(@cloudflare/workers-types@4.20251014.0)
       yargs: 18.0.0
     transitivePeerDependencies:
       - aws-crt
@@ -16835,24 +16830,6 @@ snapshots:
       tapable: 2.3.0
       webpack: 5.102.1(esbuild@0.25.11)
 
-  miniflare@4.20251011.0:
-    dependencies:
-      '@cspotcode/source-map-support': 0.8.1
-      acorn: 8.14.0
-      acorn-walk: 8.3.2
-      exit-hook: 2.2.1
-      glob-to-regexp: 0.4.1
-      sharp: 0.33.5
-      stoppable: 1.1.0
-      undici: 7.14.0
-      workerd: 1.20251011.0
-      ws: 8.18.0
-      youch: 4.1.0-beta.10
-      zod: 3.22.3
-    transitivePeerDependencies:
-      - bufferutil
-      - utf-8-validate
-
   miniflare@4.20251011.1:
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
@@ -19077,13 +19054,13 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20251011.0
       '@cloudflare/workerd-windows-64': 1.20251011.0
 
-  wrangler@4.44.0(@cloudflare/workers-types@4.20251014.0):
+  wrangler@4.45.0(@cloudflare/workers-types@4.20251014.0):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.4.0
       '@cloudflare/unenv-preset': 2.7.8(unenv@2.0.0-rc.21)(workerd@1.20251011.0)
       blake3-wasm: 2.1.5
       esbuild: 0.25.4
-      miniflare: 4.20251011.0
+      miniflare: 4.20251011.1
       path-to-regexp: 6.3.0
       unenv: 2.0.0-rc.21
       workerd: 1.20251011.0
