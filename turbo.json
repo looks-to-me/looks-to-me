@@ -10,8 +10,18 @@
         "worker-configuration.d.ts"
       ]
     },
-    "build:ci": {
+    "build": {
       "dependsOn": [
+        "^build",
+        "generate"
+      ],
+      "outputs": [
+        "dist/**"
+      ]
+    },
+    "build:app": {
+      "dependsOn": [
+        "^build",
         "generate"
       ],
       "outputs": [
@@ -21,16 +31,19 @@
     },
     "test": {
       "dependsOn": [
+        "^build",
         "generate"
       ]
     },
     "lint:code": {
       "dependsOn": [
+        "^build",
         "generate"
       ]
     },
     "lint:type": {
       "dependsOn": [
+        "^build",
         "generate"
       ]
     }

@@ -10,8 +10,5 @@
       "@cloudflare/workers-types"
     ],
     "target": "ESNext"
-  },
-  "include": [
-    "**/*.ts"
-  ]
+  }
 }

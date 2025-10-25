@@ -11,6 +11,7 @@ logs
 .pnpm-debug.log*
 
 # Typescript
+dist
 *.tsbuildinfo
 
 # Next.js

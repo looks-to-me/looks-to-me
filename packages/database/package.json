@@ -5,17 +5,16 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./src/index.ts",
-      "require": "./src/index.ts"
+      "import": "./dist/index.js",
+      "require": "./dist/index.d.ts"
     },
     "./wasm": {
-      "import": "./src/wasm.ts",
-      "require": "./src/wasm.ts"
+      "import": "./dist/wasm.js",
+      "require": "./dist/wasm.d.ts"
     }
   },
-  "main": "src/index.ts",
-  "types": "src/index.ts",
   "scripts": {
+    "build": "rslib build",
     "migrate:create": "drizzle-kit generate:sqlite",
     "migrate:apply": "wrangler d1 migrations apply production --local --config ../../apps/web/wrangler.json",
     "lint:code": "eslint",
@@ -27,6 +26,7 @@
   },
   "devDependencies": {
     "@praha/eslint-config-definer": "2.0.2",
+    "@rslib/core": "0.16.1",
     "drizzle-kit": "0.31.5",
     "eslint": "9.38.0",
     "typescript": "5.9.3",

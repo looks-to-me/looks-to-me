@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
+    "build": "rslib build",
     "test": "vitest run",
     "test:watch": "vitest watch",
     "lint:code": "eslint",
@@ -13,6 +18,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20251014.0",
+    "@rslib/core": "0.16.1",
     "eslint": "9.38.0",
     "typescript": "5.9.3",
     "vitest": "3.2.4"
