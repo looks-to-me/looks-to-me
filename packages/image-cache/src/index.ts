@@ -1,7 +1,5 @@
 import { fetchR2Cache, getCacheKey, getCaches, getR2CacheKey } from './helper';
 
-import type { Response as WorkerResponse } from '@cloudflare/workers-types';
-
 export type ImageCacheParameters = {
   request: Request;
   format?: 'webp' | 'png' | undefined;
@@ -19,7 +17,7 @@ export const imageCache = async (
     waitUntil,
   }: ImageCacheParameters,
   callback: () => Promise<Response>,
-): Promise<WorkerResponse> => {
+): Promise<Response> => {
   const caches = getCaches();
   const cacheKey = getCacheKey(request);
   const cacheResponse = await caches?.default?.match(cacheKey);
@@ -57,7 +55,7 @@ export const imageCache = async (
     headers,
     status: callbackResponse.status,
     statusText: callbackResponse.statusText,
-  }) as unknown as WorkerResponse;
+  });
 
   if (needsCache) {
     if (caches) {

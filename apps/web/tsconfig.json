@@ -5,10 +5,6 @@
     "@tsconfig/next/tsconfig.json"
   ],
   "compilerOptions": {
-    "typeRoots": [
-      "./node_modules/@types",
-      "./node_modules/@cloudflare/workers-types"
-    ],
     "plugins": [
       {
         "name": "next"
