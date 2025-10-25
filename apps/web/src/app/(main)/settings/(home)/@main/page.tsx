@@ -2,18 +2,9 @@ import * as styles from './page.css';
 import { UserMuteList } from '../../../../../components/domains/user/user-mute-list';
 import { getMutedUsers } from '../../../../../queries/user/get-muted-users';
 
-import type { PageProps } from '../../../../../types/page-props';
-import type { SettingsHomePageProps } from '../page';
 import type { FC } from 'react';
 
-export type SettingsHomeMainPageProps = SettingsHomePageProps & PageProps<{
-  params: Promise<{
-    // empty
-  }>;
-  searchParams: Promise<{
-    // empty
-  }>;
-}>;
+export type SettingsHomeMainPageProps = PageProps<'/settings'>;
 
 const SettingsHomeMainPage: FC<SettingsHomeMainPageProps> = async () => {
   const users = await getMutedUsers();

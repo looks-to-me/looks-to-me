@@ -1,6 +1,8 @@
 import type { FC } from 'react';
 
-const ModalDefaultPage: FC = () => {
+export type ModalDefaultPageProps = PageProps<'/'>;
+
+const ModalDefaultPage: FC<ModalDefaultPageProps> = () => {
   return null;
 };
 

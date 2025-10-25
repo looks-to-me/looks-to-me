@@ -1,23 +1,14 @@
 import { notFound } from 'next/navigation';
 
-import { PostDetailsHeader } from '../../../../../../components/domains/post/post-details-header/post-details-header';
+import { PostDetailsHeader } from '../../../../../../components/domains/post/post-details-header';
 import { getLoginUser } from '../../../../../../queries/user/get-login-user';
 import { findMuteUserByUserIdAndMuteUserId } from '../../../../../../repositories/mute-user-repository';
 import { findPostById } from '../../../../../../repositories/post-repository';
 import { findUserById } from '../../../../../../repositories/user-repository';
 
-import type { PageProps } from '../../../../../../types/page-props';
-import type { UserPostDetailsPageProps } from '../page';
 import type { FC } from 'react';
 
-export type UserPostDetailsTitlePageProps = UserPostDetailsPageProps & PageProps<{
-  params: Promise<{
-    // empty
-  }>;
-  searchParams: Promise<{
-    // empty
-  }>;
-}>;
+export type UserPostDetailsTitlePageProps = PageProps<'/[atUserName]/posts/[postId]'>;
 
 const UserPostDetailsTitlePage: FC<UserPostDetailsTitlePageProps> = async ({
   params,

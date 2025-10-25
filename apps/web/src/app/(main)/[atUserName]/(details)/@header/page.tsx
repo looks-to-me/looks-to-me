@@ -3,18 +3,9 @@ import { Breadcrumbs, BreadcrumbsItem } from '../../../../../components/elements
 import { getLoginUser } from '../../../../../queries/user/get-login-user';
 import { getUserName } from '../../_helpers/get-user-name';
 
-import type { PageProps } from '../../../../../types/page-props';
-import type { UserDetailsPageProps } from '../page';
 import type { FC } from 'react';
 
-export type UserDetailsHeaderPageProps = UserDetailsPageProps & PageProps<{
-  params: Promise<{
-    // empty
-  }>;
-  searchParams: Promise<{
-    // empty
-  }>;
-}>;
+export type UserDetailsHeaderPageProps = PageProps<'/[atUserName]'>;
 
 const UserDetailsHeaderPage: FC<UserDetailsHeaderPageProps> = async ({
   params,

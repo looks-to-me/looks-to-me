@@ -1,17 +1,6 @@
-import type { PageProps } from '../../../../types/page-props';
 import type { FC } from 'react';
 
-export type UserDetailsPageProps = PageProps<{
-  params: Promise<{
-    /**
-     * username string that starts with "@"
-     */
-    atUserName: string;
-  }>;
-  searchParams: Promise<{
-    // empty
-  }>;
-}>;
+export type UserDetailsPageProps = PageProps<'/[atUserName]'>;
 
 const UserDetailsPage: FC<UserDetailsPageProps> = () => {
   return null;

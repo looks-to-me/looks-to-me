@@ -6,18 +6,9 @@ import { useRouter } from 'next/navigation';
 import { dispatch } from '../../../../helpers/dispatch';
 import { getUserMetadata } from '../../../_libs/auth/server/get-user-metadata';
 
-import type { PageProps } from '../../../../types/page-props';
-import type { NewPostPageProps } from '../page';
 import type { FC } from 'react';
 
-export type NewPostAuthPageProps = NewPostPageProps & PageProps<{
-  params: Promise<{
-    // empty
-  }>;
-  searchParams: Promise<{
-    // empty
-  }>;
-}>;
+export type NewPostAuthPageProps = PageProps<'/new'>;
 
 const NewPostAuthPage: FC<NewPostAuthPageProps> = () => {
   const router = useRouter();

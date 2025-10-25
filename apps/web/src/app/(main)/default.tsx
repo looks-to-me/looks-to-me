@@ -1,6 +1,8 @@
 import type { FC } from 'react';
 
-const DefaultPage: FC = () => {
+export type DefaultPageProps = PageProps<'/'>;
+
+const DefaultPage: FC<DefaultPageProps> = () => {
   return null;
 };
 

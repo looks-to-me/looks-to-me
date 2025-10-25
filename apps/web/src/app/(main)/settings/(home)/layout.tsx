@@ -2,18 +2,13 @@ import * as styles from './layout.css';
 import { ApplicationLayout } from '../../../../components/domains/application/application-layout';
 import { createMetadata } from '../../../../helpers/create-metadata';
 
-import type { SettingsHomePageProps } from './page';
-import type { LayoutProps } from '../../../../types/layout-props';
-import type { FC, ReactNode } from 'react';
+import type { FC } from 'react';
 
 export const metadata = createMetadata({
   title: 'Settings',
 });
 
-export type SettingsHomeLayoutProps = SettingsHomePageProps & LayoutProps<{
-  header: ReactNode;
-  main: ReactNode;
-}>;
+export type SettingsHomeLayoutProps = LayoutProps<'/settings'>;
 
 const SettingsHomeLayout: FC<SettingsHomeLayoutProps> = ({
   children,

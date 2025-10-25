@@ -2,18 +2,14 @@ import * as styles from './layout.css';
 import { ApplicationLayout } from '../../../components/domains/application/application-layout';
 import { createMetadata } from '../../../helpers/create-metadata';
 
-import type { LoginPageProps } from './page';
-import type { LayoutProps } from '../../../types/layout-props';
 import type { Metadata } from 'next';
-import type { FC, ReactNode } from 'react';
+import type { FC } from 'react';
 
 export const metadata: Metadata = createMetadata({
   title: 'Login',
 });
 
-export type LoginLayoutProps = LoginPageProps & LayoutProps<{
-  header: ReactNode;
-}>;
+export type LoginLayoutProps = LayoutProps<'/login'>;
 
 const LoginLayout: FC<LoginLayoutProps> = ({
   children,

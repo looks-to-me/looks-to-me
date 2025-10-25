@@ -5,12 +5,10 @@ import { findPostById } from '../../../../../repositories/post-repository';
 import { findUserById } from '../../../../../repositories/user-repository';
 import { getUserName } from '../../_helpers/get-user-name';
 
-import type { UserPostDetailsPageProps } from './page';
-import type { LayoutProps } from '../../../../../types/layout-props';
 import type { Metadata } from 'next';
-import type { FC, ReactNode } from 'react';
+import type { FC } from 'react';
 
-export const generateMetadata = async ({ params }: UserPostDetailsPageProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: UserPostDetailsLayoutProps): Promise<Metadata> => {
   const { atUserName, postId } = await params;
   const userName = getUserName(atUserName);
   if (!userName) return {};
@@ -29,11 +27,7 @@ export const generateMetadata = async ({ params }: UserPostDetailsPageProps): Pr
   });
 };
 
-export type UserPostDetailsLayoutProps = UserPostDetailsPageProps & LayoutProps<{
-  header: ReactNode;
-  title: ReactNode;
-  main: ReactNode;
-}>;
+export type UserPostDetailsLayoutProps = LayoutProps<'/[atUserName]/posts/[postId]'>;
 
 const UserPostDetailsLayout: FC<UserPostDetailsLayoutProps> = ({
   children,

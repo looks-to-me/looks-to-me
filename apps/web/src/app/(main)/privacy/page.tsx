@@ -1,16 +1,8 @@
 import * as styles from './page.css';
 
-import type { PageProps } from '../../../types/page-props';
 import type { FC } from 'react';
 
-export type PrivacyPolicyPageProps = PageProps<{
-  params: Promise<{
-    // empty
-  }>;
-  searchParams: Promise<{
-    // empty
-  }>;
-}>;
+export type PrivacyPolicyPageProps = PageProps<'/privacy'>;
 
 const PrivacyPolicyPage: FC<PrivacyPolicyPageProps> = () => {
   return (

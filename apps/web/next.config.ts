@@ -4,7 +4,9 @@ import { PHASE_DEVELOPMENT_SERVER } from 'next/constants';
 
 import type { NextConfig } from 'next';
 
-void initOpenNextCloudflareForDev();
+if (!process.env['CI']) {
+  void initOpenNextCloudflareForDev();
+}
 
 const withVanillaExtract = createVanillaExtractPlugin();
 
@@ -20,6 +22,7 @@ export default (phase: string): NextConfig => {
     typescript: {
       ignoreBuildErrors: true,
     },
+    typedRoutes: true,
     images: {
       disableStaticImages: true,
       remotePatterns: [
@@ -28,9 +31,6 @@ export default (phase: string): NextConfig => {
           hostname: 'avatars.githubusercontent.com',
         },
       ],
-    },
-    experimental: {
-      typedRoutes: true,
     },
     // eslint-disable-next-line @typescript-eslint/require-await
     rewrites: async () => [

@@ -1,16 +1,8 @@
 import { PostCreateForm } from './_components/post-create-form';
 
-import type { PageProps } from '../../../types/page-props';
 import type { FC } from 'react';
 
-export type NewPostPageProps = PageProps<{
-  params: Promise<{
-    // empty
-  }>;
-  searchParams: Promise<{
-    // empty
-  }>;
-}>;
+export type NewPostPageProps = PageProps<'/new'>;
 
 const NewPostPage: FC<NewPostPageProps> = () => {
   return (
