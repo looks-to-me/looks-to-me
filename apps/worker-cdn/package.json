@@ -7,6 +7,7 @@
     "generate": "wrangler types",
     "dev": "wrangler dev",
     "build:app": "wrangler deploy --dry-run --outdir=dist",
+    "deploy": "wrangler deploy",
     "lint:code": "eslint",
     "lint:type": "tsc --pretty --noEmit"
   },

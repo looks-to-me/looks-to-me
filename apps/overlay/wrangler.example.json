@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "overlay",
+  "main": "build/worker/shim.mjs",
+  "workers_dev": false,
+  "compatibility_date": "2025-10-01",
+  "build": {
+    "command": "cargo install -q worker-build && worker-build --release"
+  }
+}

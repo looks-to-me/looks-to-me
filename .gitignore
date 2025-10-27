@@ -33,3 +33,6 @@ worker-configuration.d.ts
 
 # Turborepo
 .turbo
+
+# Rust
+target
