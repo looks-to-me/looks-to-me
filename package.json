@@ -19,7 +19,7 @@
     "@praha/eslint-config-typescript": "3.0.9",
     "@scaffdog/types": "4.1.0",
     "@tsconfig/strictest": "2.0.6",
-    "@vitest/eslint-plugin": "1.3.25",
+    "@vitest/eslint-plugin": "1.3.26",
     "eslint": "9.38.0",
     "scaffdog": "4.1.0",
     "turbo": "2.5.8"
