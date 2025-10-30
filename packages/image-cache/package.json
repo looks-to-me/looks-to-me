@@ -21,6 +21,6 @@
     "@rslib/core": "0.16.1",
     "eslint": "9.38.0",
     "typescript": "5.9.3",
-    "vitest": "4.0.4"
+    "vitest": "4.0.5"
   }
 }
