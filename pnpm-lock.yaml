@@ -61,14 +61,14 @@ importers:
         specifier: 5.9.3
         version: 5.9.3
       wrangler:
-        specifier: 4.45.2
-        version: 4.45.2(@cloudflare/workers-types@4.20251014.0)
+        specifier: 4.45.3
+        version: 4.45.3(@cloudflare/workers-types@4.20251014.0)
 
   apps/overlay:
     devDependencies:
       wrangler:
-        specifier: 4.45.2
-        version: 4.45.2(@cloudflare/workers-types@4.20251014.0)
+        specifier: 4.45.3
+        version: 4.45.3(@cloudflare/workers-types@4.20251014.0)
 
   apps/web:
     dependencies:
@@ -86,7 +86,7 @@ importers:
         version: link:../../packages/ui-theme
       '@opennextjs/cloudflare':
         specifier: 1.11.0
-        version: 1.11.0(wrangler@4.45.2(@cloudflare/workers-types@4.20251014.0))
+        version: 1.11.0(wrangler@4.45.3(@cloudflare/workers-types@4.20251014.0))
       '@paralleldrive/cuid2':
         specifier: 3.1.0
         version: 3.1.0
@@ -230,8 +230,8 @@ importers:
         specifier: 4.0.5
         version: 4.0.5(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@22.18.13)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.1)
       wrangler:
-        specifier: 4.45.2
-        version: 4.45.2(@cloudflare/workers-types@4.20251014.0)
+        specifier: 4.45.3
+        version: 4.45.3(@cloudflare/workers-types@4.20251014.0)
 
   packages/database:
     dependencies:
@@ -258,8 +258,8 @@ importers:
         specifier: 5.9.3
         version: 5.9.3
       wrangler:
-        specifier: 4.45.2
-        version: 4.45.2(@cloudflare/workers-types@4.20251014.0)
+        specifier: 4.45.3
+        version: 4.45.3(@cloudflare/workers-types@4.20251014.0)
 
   packages/image-cache:
     devDependencies:
@@ -9145,8 +9145,8 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  wrangler@4.45.2:
-    resolution: {integrity: sha512-+G24gD+Rh7iBus5QiVBhNgSLzyAiyuZSm+3Ih5li8+PEA+gosAXfDSZlNZwsVmXd8VJTjq+BR4vhUiruQRWgTw==}
+  wrangler@4.45.3:
+    resolution: {integrity: sha512-0ddEA9t4HeBgSVTVTcqtBHl7Z5CorWZ8tGgTQCP5XuL+9E1TJRwS6t/zzG51Ruwjb17SZYCaLchoM8V629S8cw==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     peerDependencies:
@@ -11947,7 +11947,7 @@ snapshots:
       - aws-crt
       - supports-color
 
-  '@opennextjs/cloudflare@1.11.0(wrangler@4.45.2(@cloudflare/workers-types@4.20251014.0))':
+  '@opennextjs/cloudflare@1.11.0(wrangler@4.45.3(@cloudflare/workers-types@4.20251014.0))':
     dependencies:
       '@dotenvx/dotenvx': 1.31.0
       '@opennextjs/aws': 3.8.5
@@ -11957,7 +11957,7 @@ snapshots:
       glob: 11.0.3
       rclone.js: 0.6.6
       ts-tqdm: 0.8.6
-      wrangler: 4.45.2(@cloudflare/workers-types@4.20251014.0)
+      wrangler: 4.45.3(@cloudflare/workers-types@4.20251014.0)
       yargs: 18.0.0
     transitivePeerDependencies:
       - aws-crt
@@ -19771,7 +19771,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20251011.0
       '@cloudflare/workerd-windows-64': 1.20251011.0
 
-  wrangler@4.45.2(@cloudflare/workers-types@4.20251014.0):
+  wrangler@4.45.3(@cloudflare/workers-types@4.20251014.0):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.4.0
       '@cloudflare/unenv-preset': 2.7.8(unenv@2.0.0-rc.21)(workerd@1.20251011.0)
