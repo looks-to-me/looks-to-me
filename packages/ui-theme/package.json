@@ -15,7 +15,7 @@
     "lint:type": "tsc --pretty --noEmit"
   },
   "devDependencies": {
-    "@rslib/core": "0.16.1",
+    "@rslib/core": "0.17.0",
     "@vanilla-extract/css": "1.17.4",
     "eslint": "9.38.0",
     "typescript": "5.9.3"
