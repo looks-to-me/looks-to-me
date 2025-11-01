@@ -44,9 +44,9 @@ importers:
 
   apps/cdn:
     dependencies:
-      '@looks-to-me/package-image-cache':
+      '@looks-to-me/package-tiered-cache':
         specifier: workspace:*
-        version: link:../../packages/image-cache
+        version: link:../../packages/tiered-cache
       valibot:
         specifier: 1.1.0
         version: 1.1.0(typescript@5.9.3)
@@ -78,9 +78,9 @@ importers:
       '@looks-to-me/package-database':
         specifier: workspace:*
         version: link:../../packages/database
-      '@looks-to-me/package-image-cache':
+      '@looks-to-me/package-tiered-cache':
         specifier: workspace:*
-        version: link:../../packages/image-cache
+        version: link:../../packages/tiered-cache
       '@looks-to-me/package-ui-theme':
         specifier: workspace:*
         version: link:../../packages/ui-theme
@@ -261,7 +261,7 @@ importers:
         specifier: 4.45.3
         version: 4.45.3(@cloudflare/workers-types@4.20251014.0)
 
-  packages/image-cache:
+  packages/tiered-cache:
     devDependencies:
       '@cloudflare/workers-types':
         specifier: 4.20251014.0

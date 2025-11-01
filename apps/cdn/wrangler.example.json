@@ -7,7 +7,11 @@
   "r2_buckets": [
     {
       "binding": "BUCKET",
-      "bucket_name": "name"
+      "bucket_name": "bucket"
+    },
+    {
+      "binding": "TIERED_CACHE",
+      "bucket_name": "tiered-cache"
     }
   ]
 }

@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "generate": "wrangler types && next typegen",
+    "generate": "wrangler types --env-interface CloudflareEnv && next typegen",
     "dev": "next dev",
     "dev:storybook": "storybook dev",
     "build": "next build",
@@ -20,7 +20,7 @@
   "dependencies": {
     "@icons-pack/react-simple-icons": "13.8.0",
     "@looks-to-me/package-database": "workspace:*",
-    "@looks-to-me/package-image-cache": "workspace:*",
+    "@looks-to-me/package-tiered-cache": "workspace:*",
     "@looks-to-me/package-ui-theme": "workspace:*",
     "@opennextjs/cloudflare": "1.11.0",
     "@paralleldrive/cuid2": "3.1.0",

@@ -1,12 +1,12 @@
 'use server';
 
-import { deleteImageCache } from '@looks-to-me/package-image-cache';
+import { tieredCache } from '@looks-to-me/package-tiered-cache';
+import { getCloudflareContext } from '@opennextjs/cloudflare';
 import { revalidatePath } from 'next/cache';
 
 import { getLoginUser } from '../../../../../queries/user/get-login-user';
 import { deleteImage } from '../../../../../repositories/image-repository';
 import { deletePost, findPostById } from '../../../../../repositories/post-repository';
-import { privateEnv } from '../../../../_libs/env';
 
 import type { Route } from 'next';
 
@@ -30,9 +30,15 @@ export const deletePostAction = async (postId: string): Promise<DeletePostResult
   const isMyPost = user.id === post.userId;
   if (!isMyPost) return { type: 'error', reason: 'badRequest', message: 'Not the owner of the Post!' };
 
+  const { ctx, env } = getCloudflareContext();
+  const cache = tieredCache({
+    bucket: env.TIERED_CACHE,
+    waitUntil: ctx.waitUntil.bind(ctx),
+  });
+
   await deletePost(postId);
   await deleteImage(post.imageId);
-  await deleteImageCache({ bucket: privateEnv().BUCKET, path: `images/posts/${post.id}` });
+  await cache.delete(`/images/posts/${post.id}`);
 
   revalidatePath('/');
   revalidatePath('/shuffle');
