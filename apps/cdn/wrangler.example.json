@@ -3,7 +3,7 @@
   "name": "cdn",
   "main": "src/worker.ts",
   "workers_dev": false,
-  "compatibility_date": "2025-04-02",
+  "compatibility_date": "2025-10-01",
   "r2_buckets": [
     {
       "binding": "BUCKET",

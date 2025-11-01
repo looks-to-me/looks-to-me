@@ -3,7 +3,7 @@
   "main": ".open-next/worker.js",
   "name": "web",
   "workers_dev": false,
-  "compatibility_date": "2024-12-30",
+  "compatibility_date": "2025-10-01",
   "compatibility_flags": [
     "nodejs_compat",
     "global_fetch_strictly_public"
