@@ -82,15 +82,11 @@ export const ApplicationNavigation: FC<ApplicationNavigationProps> = ({
           </Button>
           <div className={styles.footer}>
             <small className={styles.copyright}>
-              © {getYear(new Date())} PrAha, Inc.
+              © {getYear(new Date())} <a href="https://www.praha-inc.com/" target="_blank">PrAha, Inc.</a>
             </small>
             <div className={styles.links}>
               <Link href="/privacy">Privacy Policy</Link>
               <Link href="/terms">Terms Of Use</Link>
-            </div>
-            <div className={styles.links}>
-              <a href="https://www.praha-inc.com/" target="_blank">PrAha</a>
-              <a href="https://tech.agaroot.co.jp/" target="_blank">AGAROOT TECHNOLOGIES</a>
             </div>
           </div>
         </SheetSection>

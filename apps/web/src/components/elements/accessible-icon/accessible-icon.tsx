@@ -1,5 +1,3 @@
-'use client';
-
 import { AccessibleIcon as AccessibleIconPrimitive } from 'radix-ui';
 
 import type { ComponentProps } from 'react';
