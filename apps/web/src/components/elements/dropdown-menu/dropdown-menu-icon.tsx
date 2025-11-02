@@ -1,12 +1,12 @@
-import * as styles from './drop-down-menu.css';
+import * as styles from './dropdown-menu.css';
 
 import type { ReactElement, FC } from 'react';
 
-export type DropDownMenuIconProps = {
+export type DropdownMenuIconProps = {
   children: ReactElement;
 };
 
-export const DropDownMenuIcon: FC<DropDownMenuIconProps> = ({
+export const DropdownMenuIcon: FC<DropdownMenuIconProps> = ({
   children,
 }) => {
   return (

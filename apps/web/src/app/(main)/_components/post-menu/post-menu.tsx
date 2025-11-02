@@ -5,7 +5,7 @@ import { MenuIcon, Trash2Icon, Volume2Icon, VolumeXIcon } from 'lucide-react';
 import { useDeletePost } from './hooks/use-delete-post';
 import { AccessibleIcon } from '../../../../components/elements/accessible-icon';
 import { Button, ButtonIcon } from '../../../../components/elements/button';
-import { DropDownMenu, DropDownMenuContent, DropDownMenuGroup, DropDownMenuIcon, DropDownMenuItem, DropDownMenuTrigger } from '../../../../components/elements/drop-down-menu';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuIcon, DropdownMenuItem, DropdownMenuTrigger } from '../../../../components/elements/dropdown-menu';
 import { useMuteUser } from '../../../../hooks/use-mute-user';
 import { useUnmuteUser } from '../../../../hooks/use-unmute-user';
 
@@ -42,8 +42,8 @@ export const PostMenu: FC<PostMenuProps> = ({
 
   const isMyPost = post.userId === loginUser?.id;
   return (
-    <DropDownMenu>
-      <DropDownMenuTrigger>
+    <DropdownMenu>
+      <DropdownMenuTrigger>
         <Button className={className} size="icon">
           <ButtonIcon>
             <AccessibleIcon label="Open post menu">
@@ -51,35 +51,35 @@ export const PostMenu: FC<PostMenuProps> = ({
             </AccessibleIcon>
           </ButtonIcon>
         </Button>
-      </DropDownMenuTrigger>
-      <DropDownMenuContent>
-        <DropDownMenuGroup>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuGroup>
           {isMyPost && (
-            <DropDownMenuItem onClick={handleOnClickDeletePost}>
-              <DropDownMenuIcon>
+            <DropdownMenuItem onClick={handleOnClickDeletePost}>
+              <DropdownMenuIcon>
                 <Trash2Icon />
-              </DropDownMenuIcon>
+              </DropdownMenuIcon>
               Delete
-            </DropDownMenuItem>
+            </DropdownMenuItem>
           )}
           {!isMyPost && isMuteUser && (
-            <DropDownMenuItem onClick={handleOnClickUnmuteUser}>
-              <DropDownMenuIcon>
+            <DropdownMenuItem onClick={handleOnClickUnmuteUser}>
+              <DropdownMenuIcon>
                 <Volume2Icon />
-              </DropDownMenuIcon>
+              </DropdownMenuIcon>
               {`Unmute @${postUser.profile.name}`}
-            </DropDownMenuItem>
+            </DropdownMenuItem>
           )}
           {!isMyPost && !isMuteUser && (
-            <DropDownMenuItem onClick={handleOnClickMuteUser}>
-              <DropDownMenuIcon>
+            <DropdownMenuItem onClick={handleOnClickMuteUser}>
+              <DropdownMenuIcon>
                 <VolumeXIcon />
-              </DropDownMenuIcon>
+              </DropdownMenuIcon>
               {`Mute @${postUser.profile.name}`}
-            </DropDownMenuItem>
+            </DropdownMenuItem>
           )}
-        </DropDownMenuGroup>
-      </DropDownMenuContent>
-    </DropDownMenu>
+        </DropdownMenuGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };

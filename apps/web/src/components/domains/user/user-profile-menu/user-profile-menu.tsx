@@ -7,13 +7,13 @@ import { useUnmuteUser } from '../../../../hooks/use-unmute-user';
 import { AccessibleIcon } from '../../../elements/accessible-icon';
 import { Button, ButtonIcon } from '../../../elements/button';
 import {
-  DropDownMenu,
-  DropDownMenuContent,
-  DropDownMenuGroup,
-  DropDownMenuIcon,
-  DropDownMenuItem,
-  DropDownMenuTrigger,
-} from '../../../elements/drop-down-menu';
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuIcon,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '../../../elements/dropdown-menu';
 
 import type { FC } from 'react';
 
@@ -43,8 +43,8 @@ export const UserProfileMenu: FC<UserProfileMenuProps> = ({
   });
 
   return (
-    <DropDownMenu>
-      <DropDownMenuTrigger>
+    <DropdownMenu>
+      <DropdownMenuTrigger>
         <Button className={className} size="icon">
           <ButtonIcon>
             <AccessibleIcon label="Open user profile menu">
@@ -52,27 +52,27 @@ export const UserProfileMenu: FC<UserProfileMenuProps> = ({
             </AccessibleIcon>
           </ButtonIcon>
         </Button>
-      </DropDownMenuTrigger>
-      <DropDownMenuContent>
-        <DropDownMenuGroup>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuGroup>
           {user.isMute && (
-            <DropDownMenuItem onClick={handleOnClickUnmuteUser}>
-              <DropDownMenuIcon>
+            <DropdownMenuItem onClick={handleOnClickUnmuteUser}>
+              <DropdownMenuIcon>
                 <Volume2Icon />
-              </DropDownMenuIcon>
+              </DropdownMenuIcon>
               {`Unmute @${user.profile.name}`}
-            </DropDownMenuItem>
+            </DropdownMenuItem>
           )}
           {!user.isMute && (
-            <DropDownMenuItem onClick={handleOnClickMuteUser}>
-              <DropDownMenuIcon>
+            <DropdownMenuItem onClick={handleOnClickMuteUser}>
+              <DropdownMenuIcon>
                 <VolumeXIcon />
-              </DropDownMenuIcon>
+              </DropdownMenuIcon>
               {`Mute @${user.profile.name}`}
-            </DropDownMenuItem>
+            </DropdownMenuItem>
           )}
-        </DropDownMenuGroup>
-      </DropDownMenuContent>
-    </DropDownMenu>
+        </DropdownMenuGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };

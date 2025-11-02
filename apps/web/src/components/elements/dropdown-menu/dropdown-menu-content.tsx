@@ -1,24 +1,24 @@
 'use client';
 
 import { clsx } from 'clsx';
-import { DropdownMenu as DropDownMenuPrimitive } from 'radix-ui';
+import { DropdownMenu as DropdownMenuPrimitive } from 'radix-ui';
 import { Children } from 'react';
 
-import * as styles from './drop-down-menu.css';
+import * as styles from './dropdown-menu.css';
 import { Separator } from '../separator';
 
 import type { ComponentProps, FC } from 'react';
 
-export type DropDownMenuContentProps = Omit<ComponentProps<typeof DropDownMenuPrimitive.Content>, 'sideOffset' | 'align'>;
+export type DropdownMenuContentProps = Omit<ComponentProps<typeof DropdownMenuPrimitive.Content>, 'sideOffset' | 'align'>;
 
-export const DropDownMenuContent: FC<DropDownMenuContentProps> = ({
+export const DropdownMenuContent: FC<DropdownMenuContentProps> = ({
   className,
   children,
   ...props
 }) => {
   return (
-    <DropDownMenuPrimitive.Portal>
-      <DropDownMenuPrimitive.Content
+    <DropdownMenuPrimitive.Portal>
+      <DropdownMenuPrimitive.Content
         {...props}
         align="end"
         sideOffset={4}
@@ -30,7 +30,7 @@ export const DropDownMenuContent: FC<DropDownMenuContentProps> = ({
             {child}
           </>
         ))}
-      </DropDownMenuPrimitive.Content>
-    </DropDownMenuPrimitive.Portal>
+      </DropdownMenuPrimitive.Content>
+    </DropdownMenuPrimitive.Portal>
   );
 };
