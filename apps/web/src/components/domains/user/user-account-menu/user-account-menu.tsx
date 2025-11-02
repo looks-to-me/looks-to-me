@@ -5,14 +5,14 @@ import Link from 'next/link';
 import * as styles from './user-account-menu.css';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../elements/avatar';
 import {
-  DropDownMenu,
-  DropDownMenuContent,
-  DropDownMenuGroup,
-  DropDownMenuTrigger,
-  DropDownMenuIcon,
-  DropDownMenuItem,
-  DropDownMenuLabel,
-} from '../../../elements/drop-down-menu';
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuTrigger,
+  DropdownMenuIcon,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+} from '../../../elements/dropdown-menu';
 
 import type { FC } from 'react';
 
@@ -32,8 +32,8 @@ export const UserAccountMenu: FC<UserAccountMenuProps> = ({
   user,
 }) => {
   return (
-    <DropDownMenu>
-      <DropDownMenuTrigger>
+    <DropdownMenu>
+      <DropdownMenuTrigger>
         <Avatar className={clsx(className, styles.avatar)}>
           <AvatarImage
             src={`/images/avatars/${user.id}`}
@@ -44,43 +44,43 @@ export const UserAccountMenu: FC<UserAccountMenuProps> = ({
             {user.profile.displayName ?? user.profile.name}
           </AvatarFallback>
         </Avatar>
-      </DropDownMenuTrigger>
-      <DropDownMenuContent>
-        <DropDownMenuLabel>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuLabel>
           <div className={styles.account}>
             <p className={styles.accountName}>{user.profile.name}</p>
             {user.profile.displayName && (
               <p className={styles.displayName}>{user.profile.displayName}</p>
             )}
           </div>
-        </DropDownMenuLabel>
-        <DropDownMenuGroup>
-          <DropDownMenuItem asChild>
+        </DropdownMenuLabel>
+        <DropdownMenuGroup>
+          <DropdownMenuItem asChild>
             <Link href={`/@${user.profile.name}`}>
-              <DropDownMenuIcon>
+              <DropdownMenuIcon>
                 <UserIcon />
-              </DropDownMenuIcon>
+              </DropdownMenuIcon>
               Your profile
             </Link>
-          </DropDownMenuItem>
-          <DropDownMenuItem asChild>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
             <Link href="/settings">
-              <DropDownMenuIcon>
+              <DropdownMenuIcon>
                 <SettingsIcon />
-              </DropDownMenuIcon>
+              </DropdownMenuIcon>
               Settings
             </Link>
-          </DropDownMenuItem>
-          <DropDownMenuItem asChild>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
             <Link href="/logout">
-              <DropDownMenuIcon>
+              <DropdownMenuIcon>
                 <LogOutIcon />
-              </DropDownMenuIcon>
+              </DropdownMenuIcon>
               Logout
             </Link>
-          </DropDownMenuItem>
-        </DropDownMenuGroup>
-      </DropDownMenuContent>
-    </DropDownMenu>
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
