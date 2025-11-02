@@ -1,5 +1,5 @@
 {
-  "name": "@looks-to-me/package-image-cache",
+  "name": "@looks-to-me/package-tiered-cache",
   "version": "1.0.0",
   "private": true,
   "type": "module",

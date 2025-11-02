@@ -12,7 +12,7 @@
     "lint:type": "tsc --pretty --noEmit"
   },
   "dependencies": {
-    "@looks-to-me/package-image-cache": "workspace:*",
+    "@looks-to-me/package-tiered-cache": "workspace:*",
     "valibot": "1.1.0"
   },
   "devDependencies": {
