@@ -1,5 +1,6 @@
-import { theme } from '@looks-to-me/package-ui-theme';
 import { recipe } from '@vanilla-extract/recipes';
+
+import { theme } from '../../../theme';
 
 export const wrapper = recipe({
   base: {

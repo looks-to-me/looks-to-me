@@ -1,4 +1,3 @@
-import { theme } from '@looks-to-me/package-ui-theme';
 import {
   animateIn,
   animateOut,
@@ -16,6 +15,8 @@ import {
 } from '@praha/vanilla-essence';
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
+
+import { theme } from '../../../theme';
 
 export const overlay = style([
   animateIn(),

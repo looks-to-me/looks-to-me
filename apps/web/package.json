@@ -21,7 +21,6 @@
     "@icons-pack/react-simple-icons": "13.8.0",
     "@looks-to-me/package-database": "workspace:*",
     "@looks-to-me/package-tiered-cache": "workspace:*",
-    "@looks-to-me/package-ui-theme": "workspace:*",
     "@opennextjs/cloudflare": "1.11.0",
     "@paralleldrive/cuid2": "3.1.0",
     "@praha/vanilla-essence": "1.1.3",

@@ -1,5 +1,6 @@
-import { theme } from '@looks-to-me/package-ui-theme';
 import { style } from '@vanilla-extract/css';
+
+import { theme } from '../../../../theme';
 
 export const avatar = style({
   cursor: 'pointer',
