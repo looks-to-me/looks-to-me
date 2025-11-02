@@ -1,12 +1,12 @@
 'use client';
 
-import { theme } from '@looks-to-me/package-ui-theme';
 import { clsx } from 'clsx';
 import { useCallback, useImperativeHandle, useRef, useState } from 'react';
 import * as v from 'valibot';
 
 import * as styles from './input-image-with-preview.css';
 import { postWordSchema } from '../../../../../schemas/post-word-schema';
+import { theme } from '../../../../../theme';
 
 import type { InputHTMLAttributes, ChangeEventHandler, DragEventHandler, MouseEventHandler, FC, Ref } from 'react';
 

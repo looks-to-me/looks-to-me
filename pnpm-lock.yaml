@@ -81,9 +81,6 @@ importers:
       '@looks-to-me/package-tiered-cache':
         specifier: workspace:*
         version: link:../../packages/tiered-cache
-      '@looks-to-me/package-ui-theme':
-        specifier: workspace:*
-        version: link:../../packages/ui-theme
       '@opennextjs/cloudflare':
         specifier: 1.11.0
         version: 1.11.0(wrangler@4.45.3(@cloudflare/workers-types@4.20251014.0))
@@ -278,21 +275,6 @@ importers:
       vitest:
         specifier: 4.0.5
         version: 4.0.5(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@22.18.13)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.1)
-
-  packages/ui-theme:
-    devDependencies:
-      '@rslib/core':
-        specifier: 0.17.0
-        version: 0.17.0(typescript@5.9.3)
-      '@vanilla-extract/css':
-        specifier: 1.17.4
-        version: 1.17.4
-      eslint:
-        specifier: 9.38.0
-        version: 9.38.0(jiti@2.6.1)
-      typescript:
-        specifier: 5.9.3
-        version: 5.9.3
 
 packages:
 
