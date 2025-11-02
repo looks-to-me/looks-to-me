@@ -17,7 +17,7 @@ export const LoginForm: FC<LoginFormProps> = ({
   return (
     <div className={clsx(className, styles.wrapper)}>
       <div className={styles.brand}>
-        <ApplicationLogo withText />
+        <ApplicationLogo withTitle />
       </div>
       <p className={styles.paragraph}>LooksToMeはLGTM画像共有プラットフォームです。良い感じな画像をみんなでシェアしましょう。</p>
       <div className={styles.buttonArea}>

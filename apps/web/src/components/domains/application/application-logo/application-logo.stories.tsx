@@ -17,12 +17,12 @@ export const Default = {
   },
 } satisfies Story;
 
-export const WithText = {
+export const WithTitle = {
   args: {
     style: {
       display: 'block',
       width: '16rem',
     },
-    withText: true,
+    withTitle: true,
   },
 } satisfies Story;
