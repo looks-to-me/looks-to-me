@@ -28,7 +28,7 @@
     "@praha/eslint-config-definer": "2.0.2",
     "@rslib/core": "0.17.0",
     "drizzle-kit": "0.31.6",
-    "eslint": "9.38.0",
+    "eslint": "9.39.0",
     "typescript": "5.9.3",
     "wrangler": "4.45.3"
   }
