@@ -20,7 +20,7 @@ export type InfiniteScrollFetcherArguments = {
   size: number;
 };
 
-export type InfiniteScrollFetcher = (arguments_: InfiniteScrollFetcherArguments) => Promise<InfiniteScrollEdge[]>;
+export type InfiniteScrollFetcher = (args: InfiniteScrollFetcherArguments) => Promise<InfiniteScrollEdge[]>;
 
 export type InfiniteScrollProps = ComponentProps<'div'> & {
   asChild?: boolean | undefined;

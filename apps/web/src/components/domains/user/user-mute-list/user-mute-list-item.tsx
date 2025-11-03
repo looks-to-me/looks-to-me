@@ -4,58 +4,66 @@ import { clsx } from 'clsx';
 import { Volume2Icon } from 'lucide-react';
 import Link from 'next/link';
 
-import * as styles from './user-mute-list-item.css';
+import * as styles from './user-mute-list.css';
+import { getFragmentData, graphql } from '../../../../graphql/generated';
 import { useUnmuteUser } from '../../../../hooks/use-unmute-user';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../elements/avatar';
 import { Button, ButtonIcon } from '../../../elements/button';
 
-import type { FC } from 'react';
+import type { FragmentType } from '../../../../graphql/generated';
+import type { ComponentProps, FC } from 'react';
 
-export type UserMuteListItemProps = {
-  className?: string | undefined;
-  user: {
-    id: string;
-    profile: {
-      name: string;
-      displayName: string | null;
-    };
-  };
+export const UserMuteListItemFragment = graphql(/** GraphQL */ `
+  fragment UserMuteListItemFragment on User {
+    id
+    name
+    displayName
+    avatarUrl
+  }
+`);
+
+export type UserMuteListItemProps = ComponentProps<'li'> & {
+  fragment: FragmentType<typeof UserMuteListItemFragment>;
 };
 
 export const UserMuteListItem: FC<UserMuteListItemProps> = ({
   className,
-  user,
+  fragment,
 }) => {
+  const data = getFragmentData(UserMuteListItemFragment, fragment);
+
   const unmuteUser = useUnmuteUser({
-    unmuteUserId: user.id,
-    unmuteUserName: user.profile.name,
+    unmuteUserId: data.id,
+    unmuteUserName: data.name,
   });
 
   return (
-    <li className={clsx(className, styles.wrapper)}>
+    <li className={clsx(className, styles.item)}>
       <Link
-        href={`/@${user.profile.name}`}
-        className={styles.profileWrapper}
+        href={`/@${data.name}`}
+        className={styles.profile}
       >
         <Avatar className={styles.avatar}>
           <AvatarImage
-            src={`/images/avatars/${user.id}`}
-            alt={user.profile.displayName ?? user.profile.name}
+            src={data.avatarUrl}
+            alt={data.displayName ?? data.name}
             sizes="64px"
           />
           <AvatarFallback>
-            {user.profile.displayName ?? user.profile.name}
+            {data.displayName ?? data.name}
           </AvatarFallback>
         </Avatar>
-        <div className={styles.nameWrapper}>
-          <div className={styles.accountName}>{user.profile.name}</div>
+        <div className={styles.name}>
+          <div className={styles.accountName}>
+            {data.name}
+          </div>
           <div className={styles.displayName}>
-            {user.profile.displayName}
+            {data.displayName}
           </div>
         </div>
       </Link>
       <Button
-        className={styles.unmutedButton}
+        className={styles.unmute}
         onClick={unmuteUser}
         size="medium"
       >

@@ -1,0 +1,34 @@
+{
+  "name": "@looks-to-me/package-database-testing",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./setup": {
+      "import": "./dist/setup.js",
+      "types": "./dist/setup.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "rslib build",
+    "lint:code": "eslint",
+    "lint:type": "tsc --pretty --noEmit"
+  },
+  "dependencies": {
+    "@looks-to-me/package-database": "workspace:*",
+    "@praha/drizzle-factory": "1.4.2",
+    "drizzle-orm": "0.45.2",
+    "vitest": "4.1.10"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "4.20260702.1",
+    "@rslib/core": "0.23.2",
+    "@types/node": "24.10.0",
+    "eslint": "9.39.4",
+    "typescript": "5.9.3"
+  }
+}

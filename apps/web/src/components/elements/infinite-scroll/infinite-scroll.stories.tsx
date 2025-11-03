@@ -1,6 +1,6 @@
 import { InfiniteScroll } from './infinite-scroll';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 export default {
   component: InfiniteScroll,

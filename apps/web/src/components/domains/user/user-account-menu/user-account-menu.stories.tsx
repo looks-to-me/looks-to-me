@@ -1,6 +1,7 @@
-import { UserAccountMenu } from './user-account-menu';
+import { UserAccountMenu, UserAccountMenuFragment } from './user-account-menu';
+import { makeFragmentData } from '../../../../graphql/generated';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 export default {
   component: UserAccountMenu,
@@ -10,12 +11,10 @@ type Story = StoryObj<typeof UserAccountMenu>;
 
 export const Default = {
   args: {
-    user: {
+    fragment: makeFragmentData({
       id: '1',
-      profile: {
-        name: 'name',
-        displayName: 'displayName',
-      },
-    },
+      name: 'octocat',
+      displayName: 'The Octocat',
+    }, UserAccountMenuFragment),
   },
 } satisfies Story;

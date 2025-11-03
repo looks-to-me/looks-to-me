@@ -4,7 +4,7 @@ import { TooltipProvider } from './tooltip-provider';
 import { TooltipTrigger } from './tooltip-trigger';
 import { Button } from '../button';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 export default {
   component: Tooltip,

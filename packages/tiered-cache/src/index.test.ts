@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, test, vi } from 'vitest';
 
 import { tieredCache } from './index';
 
@@ -27,7 +27,7 @@ describe('tieredCache', () => {
       cacheMatch.mockResolvedValue(new Response(body));
     });
 
-    it('should return edge cache response', async () => {
+    test('should return edge cache response', async () => {
       const result = await cache(key, callback);
 
       expect(await result.text()).toBe(body);
@@ -41,14 +41,14 @@ describe('tieredCache', () => {
         r2Get.mockResolvedValue({ body });
       });
 
-      it('should return R2 cache response', async () => {
+      test('should return R2 cache response', async () => {
         const result = await cache(key, callback);
 
         expect(await result.text()).toBe(body);
         expect(callback).not.toHaveBeenCalled();
       });
 
-      it('should put edge cache', async () => {
+      test('should put edge cache', async () => {
         await cache(key, callback);
 
         expect(cachePut).toHaveBeenCalled();
@@ -61,20 +61,20 @@ describe('tieredCache', () => {
           callback.mockResolvedValue(new Response(body, { status: 200 }));
         });
 
-        it('should return callback response', async () => {
+        test('should return callback response', async () => {
           const result = await cache(key, callback);
 
           expect(await result.text()).toBe(body);
           expect(callback).toHaveBeenCalled();
         });
 
-        it('should put edge cache', async () => {
+        test('should put edge cache', async () => {
           await cache(key, callback);
 
           expect(cachePut).toHaveBeenCalled();
         });
 
-        it('should put R2 cache', async () => {
+        test('should put R2 cache', async () => {
           await cache(key, callback);
 
           expect(r2Put).toHaveBeenCalled();
@@ -86,20 +86,20 @@ describe('tieredCache', () => {
           callback.mockResolvedValue(new Response(body, { status: 500 }));
         });
 
-        it('should return callback response', async () => {
+        test('should return callback response', async () => {
           const result = await cache(key, callback);
 
           expect(await result.text()).toBe(body);
           expect(callback).toHaveBeenCalled();
         });
 
-        it('should not put edge cache', async () => {
+        test('should not put edge cache', async () => {
           await cache(key, callback);
 
           expect(cachePut).not.toHaveBeenCalled();
         });
 
-        it('should not put R2 cache', async () => {
+        test('should not put R2 cache', async () => {
           await cache(key, callback);
 
           expect(r2Put).not.toHaveBeenCalled();
@@ -113,7 +113,7 @@ describe('tieredCache', () => {
       r2List.mockResolvedValue({ objects: [{ key: 'key1' }, { key: 'key2' }] });
     });
 
-    it('should delete R2 cache', async () => {
+    test('should delete R2 cache', async () => {
       await cache.delete('prefix/');
 
       expect(r2Delete).toHaveBeenCalledTimes(2);

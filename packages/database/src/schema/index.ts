@@ -1,30 +1,9 @@
-import { imagesRelations, images } from './tables/images';
-import { muteUsers, muteUsersRelations } from './tables/mute-users';
-import { postCopies, postCopiesRelations } from './tables/post-copy';
-import { postTags, postTagsRelations } from './tables/post-tags';
-import { posts, postsRelations } from './tables/posts';
-import { tags, tagsRelations } from './tables/tags';
-import { userProfiles, userProfilesRelations } from './tables/user-profiles';
-import { userProviders, userProvidersRelations } from './tables/user-providers';
-import { users, usersRelations } from './tables/users';
-
-export const schema = {
-  images,
-  imagesRelations,
-  postTags,
-  postTagsRelations,
-  posts,
-  postsRelations,
-  tags,
-  tagsRelations,
-  userProfiles,
-  userProfilesRelations,
-  userProviders,
-  userProvidersRelations,
-  users,
-  usersRelations,
-  muteUsers,
-  muteUsersRelations,
-  postCopies,
-  postCopiesRelations,
-};
+export * from './tables/images';
+export * from './tables/mute-users';
+export * from './tables/post-copy';
+export * from './tables/post-tags';
+export * from './tables/posts';
+export * from './tables/tags';
+export * from './tables/user-profiles';
+export * from './tables/user-providers';
+export * from './tables/users';

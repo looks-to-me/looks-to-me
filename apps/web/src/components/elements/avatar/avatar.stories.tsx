@@ -2,7 +2,7 @@ import { Avatar } from './avatar';
 import { AvatarFallback } from './avatar-fallback';
 import { AvatarImage } from './avatar-image';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 export default {
   component: Avatar,

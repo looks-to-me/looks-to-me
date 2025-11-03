@@ -1,6 +1,6 @@
 import { InputImageWithPreview } from './input-image-with-preview';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 export default {
   component: InputImageWithPreview,

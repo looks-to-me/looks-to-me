@@ -5,17 +5,14 @@ import * as schema from './schema';
 
 import type { Database } from './index';
 
-export const databaseOfWasm = async (): Promise<Database> => {
-  const sqlite3 = await sqlite3InitModule({
-    print: console.log,
-    printErr: console.error,
-  });
+export const createDatabase = async (): Promise<Database> => {
+  const sqlite = await sqlite3InitModule();
 
-  const sqlite = new sqlite3.oo1.JsStorageDb('local');
+  const database = new sqlite.oo1.DB();
   return drizzleProxy(async (sql, parameters) => {
     return await new Promise((resolve) => {
       try {
-        const rows = sqlite.exec({
+        const rows = database.exec({
           sql,
           bind: parameters,
           rowMode: 'object',

@@ -1,6 +1,6 @@
 import { UserSummary } from './user-summary';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 export default {
   component: UserSummary,
@@ -13,8 +13,8 @@ export const Default = {
     user: {
       id: '1',
       profile: {
-        name: 'name',
-        displayName: 'displayName',
+        name: 'octocat',
+        displayName: 'The Octocat',
       },
     },
     numOfPosts: 120,

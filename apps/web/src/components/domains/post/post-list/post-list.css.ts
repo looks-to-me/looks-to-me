@@ -1,0 +1,35 @@
+import { style } from '@vanilla-extract/css';
+
+import { theme } from '../../../../theme';
+
+export const list = style({
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fill, minmax(16rem, 1fr))',
+  gap: '16px',
+});
+
+export const item = style({
+  position: 'relative',
+  overflow: 'hidden',
+  borderRadius: theme.size.radius.medium,
+  border: `solid 1px ${theme.color.token.semantic.border}`,
+  backgroundColor: theme.color.token.semantic.backgroundInset,
+  selectors: {
+    '&:after': {
+      content: '',
+      position: 'absolute',
+      inset: 0,
+      opacity: 0,
+      transitionProperty: 'opacity',
+      transitionDuration: theme.duration.normal,
+      backgroundColor: theme.color.token.semantic.overlay,
+    },
+    '&:hover:after': {
+      opacity: 1,
+    },
+  },
+});
+
+export const image = style({
+  objectFit: 'cover',
+});

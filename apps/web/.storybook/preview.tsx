@@ -1,7 +1,7 @@
-import { initMockDatabase } from '../src/app/_libs/database/instance/mock';
+// import { initMockDatabase } from '../src/app/_libs/database/instance/mock';
 import { ApplicationRoot } from '../src/components/domains/application/application-root';
 
-import type { Preview } from '@storybook/react';
+import type { Preview } from '@storybook/nextjs-vite';
 
 const preview: Preview = {
   parameters: {
@@ -15,6 +15,9 @@ const preview: Preview = {
     nextjs: {
       appDirectory: true,
     },
+    test: {
+      restoreMocks: false,
+    },
   },
   decorators: [
     (Story) => (
@@ -23,9 +26,10 @@ const preview: Preview = {
       </ApplicationRoot>
     ),
   ],
+  // TODO
   loaders: [
     async () => {
-      await initMockDatabase();
+      // await initMockDatabase();
       return {};
     },
   ],

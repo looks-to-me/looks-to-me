@@ -4,9 +4,7 @@ import { PHASE_DEVELOPMENT_SERVER } from 'next/constants';
 
 import type { NextConfig } from 'next';
 
-if (!process.env['CI']) {
-  void initOpenNextCloudflareForDev();
-}
+void initOpenNextCloudflareForDev();
 
 const withVanillaExtract = createVanillaExtractPlugin();
 
@@ -16,22 +14,10 @@ export default (phase: string): NextConfig => {
     transpilePackages: [
       '@looks-to-me/*',
     ],
-    eslint: {
-      ignoreDuringBuilds: true,
-    },
     typescript: {
       ignoreBuildErrors: true,
     },
     typedRoutes: true,
-    images: {
-      disableStaticImages: true,
-      remotePatterns: [
-        {
-          protocol: 'https',
-          hostname: 'avatars.githubusercontent.com',
-        },
-      ],
-    },
     experimental: {
       serverActions: {
         bodySizeLimit: '5mb',
@@ -54,13 +40,15 @@ export default (phase: string): NextConfig => {
     ],
   };
 
-  if (phase !== PHASE_DEVELOPMENT_SERVER) {
-    nextConfig.images = {
-      ...nextConfig.images,
-      loader: 'custom',
-      loaderFile: './next.loader.ts',
-    };
-  }
+  nextConfig.images = phase === PHASE_DEVELOPMENT_SERVER
+    ? {
+        unoptimized: true,
+      }
+    : {
+        ...nextConfig.images,
+        loader: 'custom',
+        loaderFile: './next.loader.ts',
+      };
 
   return withVanillaExtract(nextConfig);
 };

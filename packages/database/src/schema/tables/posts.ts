@@ -1,4 +1,3 @@
-import { relations } from 'drizzle-orm';
 import { text, sqliteTable, integer, unique } from 'drizzle-orm/sqlite-core';
 
 import { images } from './images';
@@ -12,10 +11,4 @@ export const posts = sqliteTable('posts', {
   postedAt: integer('posted_at', { mode: 'timestamp_ms' }).notNull(),
 }, (t) => ({
   wordUnique: unique().on(t.imageId, t.word),
-}));
-
-export const postsRelations = relations(posts, ({ one, many }) => ({
-  user: one(users),
-  image: one(images),
-  postTags: many(posts),
 }));

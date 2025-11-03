@@ -6,30 +6,35 @@
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "require": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts"
     },
     "./wasm": {
       "import": "./dist/wasm.js",
-      "require": "./dist/wasm.d.ts"
+      "types": "./dist/wasm.d.ts"
     }
   },
   "scripts": {
     "build": "rslib build",
-    "migrate:create": "drizzle-kit generate:sqlite",
-    "migrate:apply": "wrangler d1 migrations apply production --local --config ../../apps/web/wrangler.json",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
     "lint:code": "eslint",
-    "lint:type": "tsc --pretty --noEmit"
+    "lint:type": "tsc --pretty --noEmit",
+    "migrate:create": "drizzle-kit generate:sqlite",
+    "migrate:apply": "wrangler d1 migrations apply production --local --config ../../apps/web/wrangler.json"
   },
   "dependencies": {
-    "@sqlite.org/sqlite-wasm": "3.48.0-build4",
+    "@sqlite.org/sqlite-wasm": "3.53.0-build1",
     "drizzle-orm": "0.45.2"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "4.20260702.1",
     "@praha/eslint-config-definer": "2.0.2",
-    "@rslib/core": "0.23.1",
+    "@rslib/core": "0.23.2",
+    "@types/node": "24.10.0",
     "drizzle-kit": "0.31.10",
     "eslint": "9.39.4",
     "typescript": "5.9.3",
-    "wrangler": "4.103.0"
+    "vitest": "4.1.10",
+    "wrangler": "4.107.0"
   }
 }

@@ -1,8 +1,9 @@
 import { style } from '@vanilla-extract/css';
+import { recipe } from '@vanilla-extract/recipes';
 
 import { theme } from '../../../../theme';
 
-export const wrapper = style({
+export const header = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
@@ -12,10 +13,21 @@ export const wrapper = style({
   backgroundColor: theme.color.token.semantic.backgroundInset,
 });
 
-export const logo = style({
-  width: '2rem',
-});
-
-export const container = style({
-  flexGrow: 1,
+export const section = recipe({
+  base: {
+    display: 'flex',
+    flexGrow: 1,
+    gap: '16px',
+    alignItems: 'center',
+  },
+  variants: {
+    align: {
+      start: {
+        justifyContent: 'flex-start',
+      },
+      end: {
+        justifyContent: 'flex-end',
+      },
+    },
+  },
 });

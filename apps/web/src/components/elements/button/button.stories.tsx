@@ -4,7 +4,7 @@ import { Button } from './button';
 import { ButtonIcon } from './button-icon';
 import { AccessibleIcon } from '../accessible-icon';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 export default {
   component: Button,

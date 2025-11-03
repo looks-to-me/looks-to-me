@@ -36,3 +36,7 @@ worker-configuration.d.ts
 
 # Rust
 target
+
+# GraphQL
+**/graphql/generated
+*.graphql

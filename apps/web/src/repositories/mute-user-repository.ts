@@ -10,35 +10,6 @@ export type MuteUser = {
   muteUserId: string;
 };
 
-export const saveMuteUser = async (muteUser: MuteUser): Promise<MuteUser> => {
-  await database()
-    .insert(schema.muteUsers)
-    .values({
-      userId: muteUser.userId,
-      muteUserId: muteUser.muteUserId,
-    })
-    .onConflictDoNothing({
-      target: [
-        schema.muteUsers.userId,
-        schema.muteUsers.muteUserId,
-      ],
-    })
-    .run();
-
-  return muteUser;
-};
-
-export const deleteMuteUser = async (muteUser: MuteUser): Promise<void> => {
-  await database()
-    .delete(schema.muteUsers)
-    .where(
-      and(
-        eq(schema.muteUsers.userId, muteUser.userId),
-        eq(schema.muteUsers.muteUserId, muteUser.muteUserId),
-      ),
-    );
-};
-
 export const findMuteUserByUserIdAndMuteUserId = async (
   userId: MuteUser['userId'],
   muteUserId: MuteUser['muteUserId'],

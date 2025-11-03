@@ -1,6 +1,7 @@
 import { ApplicationHeader } from './application-header';
+import { ApplicationHeaderSection } from './application-header-section';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 export default {
   component: ApplicationHeader,
@@ -13,20 +14,15 @@ type Story = StoryObj<typeof ApplicationHeader>;
 
 export const Default = {
   args: {
-    children: 'Header',
-    user: undefined,
-  },
-} satisfies Story;
-
-export const LoggedIn = {
-  args: {
-    ...Default.args,
-    user: {
-      id: '1',
-      profile: {
-        name: 'name',
-        displayName: 'displayName',
-      },
-    },
+    children: (
+      <>
+        <ApplicationHeaderSection align="start">
+          Left
+        </ApplicationHeaderSection>
+        <ApplicationHeaderSection align="end">
+          Right
+        </ApplicationHeaderSection>
+      </>
+    ),
   },
 } satisfies Story;

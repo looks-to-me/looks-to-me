@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google';
 
-import { SyncOAuthUser } from '../../../../app/(main)/_components/sync-o-auth-user';
+// import { SyncOAuthUser } from '../../../../app/(main)/_components/sync-o-auth-user';
 import { AlertDialogProvider } from '../../../elements/alert-dialog';
 import { Toaster } from '../../../elements/toaster';
 import { TooltipProvider } from '../../../elements/tooltip';
@@ -26,7 +26,7 @@ export const ApplicationRoot: FC<ApplicationRootProps> = ({
           {children}
         </AlertDialogProvider>
       </TooltipProvider>
-      <SyncOAuthUser />
+      {/*<SyncOAuthUser />*/}
       <Toaster />
     </div>
   );

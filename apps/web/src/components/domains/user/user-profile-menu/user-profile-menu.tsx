@@ -1,24 +1,28 @@
 'use client';
 
-import { MenuIcon, Volume2Icon, VolumeXIcon } from 'lucide-react';
+import { MenuIcon } from 'lucide-react';
 
-import { useMuteUser } from '../../../../hooks/use-mute-user';
-import { useUnmuteUser } from '../../../../hooks/use-unmute-user';
+import { getFragmentData, graphql } from '../../../../graphql/generated';
 import { AccessibleIcon } from '../../../elements/accessible-icon';
 import { Button, ButtonIcon } from '../../../elements/button';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuIcon,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '../../../elements/dropdown-menu';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuTrigger } from '../../../elements/dropdown-menu';
+import { UserMuteMenu } from '../user-mute-menu';
+import { UserUnmuteMenu } from '../user-unmute-menu';
 
+import type { FragmentType } from '../../../../graphql/generated';
 import type { FC } from 'react';
+
+export const UserProfileMenuFragment = graphql(/** GraphQL */ `
+  fragment UserProfileMenu on User {
+    id
+    ...UserMuteMenu
+    ...UserUnmuteMenu
+  }
+`);
 
 export type UserProfileMenuProps = {
   className?: string | undefined;
+  fragment: FragmentType<typeof UserProfileMenuFragment>;
   user: {
     id: string;
     profile: {
@@ -30,17 +34,10 @@ export type UserProfileMenuProps = {
 
 export const UserProfileMenu: FC<UserProfileMenuProps> = ({
   className,
+  fragment,
   user,
 }) => {
-  const handleOnClickMuteUser = useMuteUser({
-    muteUserId: user.id,
-    muteUserName: user.profile.name,
-  });
-
-  const handleOnClickUnmuteUser = useUnmuteUser({
-    unmuteUserId: user.id,
-    unmuteUserName: user.profile.name,
-  });
+  const data = getFragmentData(UserProfileMenuFragment, fragment);
 
   return (
     <DropdownMenu>
@@ -55,22 +52,7 @@ export const UserProfileMenu: FC<UserProfileMenuProps> = ({
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuGroup>
-          {user.isMute && (
-            <DropdownMenuItem onClick={handleOnClickUnmuteUser}>
-              <DropdownMenuIcon>
-                <Volume2Icon />
-              </DropdownMenuIcon>
-              {`Unmute @${user.profile.name}`}
-            </DropdownMenuItem>
-          )}
-          {!user.isMute && (
-            <DropdownMenuItem onClick={handleOnClickMuteUser}>
-              <DropdownMenuIcon>
-                <VolumeXIcon />
-              </DropdownMenuIcon>
-              {`Mute @${user.profile.name}`}
-            </DropdownMenuItem>
-          )}
+          {user.isMute ? <UserUnmuteMenu fragment={data} /> : <UserMuteMenu fragment={data} />}
         </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>

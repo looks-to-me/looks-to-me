@@ -1,6 +1,12 @@
 import * as styles from './page.css';
+import { createMetadata } from '../../../helpers/create-metadata';
 
+import type { Metadata } from 'next';
 import type { FC } from 'react';
+
+export const metadata: Metadata = createMetadata({
+  title: 'Terms of Use',
+});
 
 export type TermsOfUsePageProps = PageProps<'/terms'>;
 

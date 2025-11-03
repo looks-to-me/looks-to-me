@@ -1,4 +1,3 @@
-import { relations } from 'drizzle-orm';
 import { text, sqliteTable, integer, primaryKey, unique } from 'drizzle-orm/sqlite-core';
 
 import { posts } from './posts';
@@ -11,9 +10,4 @@ export const postTags = sqliteTable('post_tags', {
 }, (t) => ({
   primaryKey: primaryKey({ columns: [t.postId, t.tagId] }),
   orderUnique: unique().on(t.order, t.postId),
-}));
-
-export const postTagsRelations = relations(postTags, ({ one }) => ({
-  post: one(posts),
-  tag: one(tags),
 }));
