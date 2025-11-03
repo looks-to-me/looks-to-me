@@ -70,7 +70,7 @@
     "storybook": "9.1.16",
     "typescript": "5.9.3",
     "vercel": "48.6.7",
-    "vitest": "4.0.5",
+    "vitest": "4.0.6",
     "wrangler": "4.45.3"
   }
 }
