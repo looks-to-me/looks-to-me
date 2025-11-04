@@ -24,7 +24,12 @@ export const tieredCache = ({
 
     const r2Cache = await bucket.get(key.pathname);
     if (r2Cache) {
-      const response = new Response(r2Cache.body, { headers });
+      const response = new Response(r2Cache.body, {
+        headers: {
+          ...headers,
+          ...(r2Cache.httpMetadata ? { 'Content-Type': r2Cache.httpMetadata?.contentType } : {}),
+        },
+      });
       waitUntil(cache.put(key, response.clone()));
       return response;
     }
