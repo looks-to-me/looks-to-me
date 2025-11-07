@@ -82,8 +82,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/tiered-cache
       '@opennextjs/cloudflare':
-        specifier: 1.11.0
-        version: 1.11.0(wrangler@4.45.4(@cloudflare/workers-types@4.20251014.0))
+        specifier: 1.11.1
+        version: 1.11.1(wrangler@4.45.4(@cloudflare/workers-types@4.20251014.0))
       '@paralleldrive/cuid2':
         specifier: 3.1.0
         version: 3.1.0
@@ -2452,8 +2452,8 @@ packages:
     resolution: {integrity: sha512-elpMb0fJZc0a1VtymedFa7P1lYcyOmt+Pwqyacpq2C/SvbETIeBlW/Xle/vY95ICtccKUxITI8MtonrCo2+2/Q==}
     hasBin: true
 
-  '@opennextjs/cloudflare@1.11.0':
-    resolution: {integrity: sha512-2QVZLjCr3hPwkcGEetLarTZvlNIHsGV3j2+i+KNsjFIBgvsnxhmRqJbT0u8J9cVMFKNh19hSOTOmUKs1T3DWig==}
+  '@opennextjs/cloudflare@1.11.1':
+    resolution: {integrity: sha512-KBZ8AdTwzFDfNCfE8mwNtBzdvA7tuFG8nGK5Eqi4WJ8C7tZQygG0++6t3XF5uZfTUeD+omFz42zlbI5pLK0WDg==}
     hasBin: true
     peerDependencies:
       wrangler: ^4.38.0
@@ -9394,7 +9394,7 @@ snapshots:
       '@aws-crypto/sha256-js': 3.0.0
       '@aws-crypto/supports-web-crypto': 3.0.0
       '@aws-crypto/util': 3.0.0
-      '@aws-sdk/types': 3.398.0
+      '@aws-sdk/types': 3.910.0
       '@aws-sdk/util-locate-window': 3.893.0
       '@aws-sdk/util-utf8-browser': 3.259.0
       tslib: 1.14.1
@@ -9412,7 +9412,7 @@ snapshots:
   '@aws-crypto/sha256-js@3.0.0':
     dependencies:
       '@aws-crypto/util': 3.0.0
-      '@aws-sdk/types': 3.398.0
+      '@aws-sdk/types': 3.910.0
       tslib: 1.14.1
 
   '@aws-crypto/sha256-js@5.2.0':
@@ -9431,7 +9431,7 @@ snapshots:
 
   '@aws-crypto/util@3.0.0':
     dependencies:
-      '@aws-sdk/types': 3.398.0
+      '@aws-sdk/types': 3.910.0
       '@aws-sdk/util-utf8-browser': 3.259.0
       tslib: 1.14.1
 
@@ -11931,7 +11931,7 @@ snapshots:
       - aws-crt
       - supports-color
 
-  '@opennextjs/cloudflare@1.11.0(wrangler@4.45.4(@cloudflare/workers-types@4.20251014.0))':
+  '@opennextjs/cloudflare@1.11.1(wrangler@4.45.4(@cloudflare/workers-types@4.20251014.0))':
     dependencies:
       '@dotenvx/dotenvx': 1.31.0
       '@opennextjs/aws': 3.8.5
@@ -18899,7 +18899,7 @@ snapshots:
 
   string-length@6.0.0:
     dependencies:
-      strip-ansi: 7.1.0
+      strip-ansi: 7.1.2
 
   string-width@4.2.3:
     dependencies:
