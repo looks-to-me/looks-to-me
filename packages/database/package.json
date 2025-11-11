@@ -30,6 +30,6 @@
     "drizzle-kit": "0.31.6",
     "eslint": "9.39.1",
     "typescript": "5.9.3",
-    "wrangler": "4.45.4"
+    "wrangler": "4.46.0"
   }
 }
