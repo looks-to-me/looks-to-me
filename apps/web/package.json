@@ -50,7 +50,7 @@
     "@storybook/nextjs": "9.1.16",
     "@storybook/react": "9.1.16",
     "@supabase/ssr": "0.7.0",
-    "@tsconfig/next": "2.0.3",
+    "@tsconfig/next": "2.0.4",
     "@types/node": "24.10.0",
     "@types/react": "19.2.4",
     "@types/react-dom": "19.2.3",
