@@ -18,8 +18,8 @@ importers:
         specifier: 3.0.9
         version: 3.0.9(@praha/eslint-config-common@4.0.3(eslint@9.39.1(jiti@2.6.1)))(@typescript-eslint/eslint-plugin@8.46.1(@typescript-eslint/parser@8.46.1(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.46.1(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))
       '@praha/eslint-config-style':
-        specifier: 3.0.9
-        version: 3.0.9(d20107a89a9a6b0bd54a50784f4420cc)
+        specifier: 3.0.10
+        version: 3.0.10(d20107a89a9a6b0bd54a50784f4420cc)
       '@praha/eslint-config-typescript':
         specifier: 3.0.9
         version: 3.0.9(@praha/eslint-config-common@4.0.3(eslint@9.39.1(jiti@2.6.1)))(@praha/eslint-config-javascript@3.0.9(@praha/eslint-config-common@4.0.3(eslint@9.39.1(jiti@2.6.1)))(@typescript-eslint/eslint-plugin@8.46.1(@typescript-eslint/parser@8.46.1(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.46.1(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1)))(@typescript-eslint/utils@8.46.1(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
@@ -2584,12 +2584,12 @@ packages:
       '@praha/eslint-config-typescript':
         optional: true
 
-  '@praha/eslint-config-style@3.0.9':
-    resolution: {integrity: sha512-EcSH9yTzBmf4vWDkY39L8sgvPKjqjf6nALAzBpfpV8wXuPWOUEQLduRf0WGwRb9w07stp20c+CaOD6HsvHHVVA==}
+  '@praha/eslint-config-style@3.0.10':
+    resolution: {integrity: sha512-+J5OUbc3sflN8pIBwm+/gpvDfATgXQEF735I5zZsbz9ZQCooHMPARmPvUw/PgBp18VeUBfMElDXtNyomfCiKqg==}
     peerDependencies:
       '@praha/eslint-config-common': 4.0.3
-      '@praha/eslint-config-javascript': 3.0.8
-      '@praha/eslint-config-typescript': 3.0.9
+      '@praha/eslint-config-javascript': 3.0.9
+      '@praha/eslint-config-typescript': 3.0.10
       eslint: ^9.0.0
     peerDependenciesMeta:
       '@praha/eslint-config-typescript':
@@ -12166,7 +12166,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@praha/eslint-config-style@3.0.9(d20107a89a9a6b0bd54a50784f4420cc)':
+  '@praha/eslint-config-style@3.0.10(d20107a89a9a6b0bd54a50784f4420cc)':
     dependencies:
       '@praha/eslint-config-common': 4.0.3(eslint@9.39.1(jiti@2.6.1))
       '@praha/eslint-config-definer': 2.0.2(eslint@9.39.1(jiti@2.6.1))
