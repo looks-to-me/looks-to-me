@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@praha/eslint-config-definer": "2.0.2",
-    "@praha/eslint-config-next": "4.0.10",
+    "@praha/eslint-config-next": "4.0.12",
     "@praha/eslint-config-react": "4.0.10",
     "@sqlite.org/sqlite-wasm": "3.48.0-build4",
     "@storybook/addon-links": "9.1.16",
