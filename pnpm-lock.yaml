@@ -140,8 +140,8 @@ importers:
         specifier: 2.0.2
         version: 2.0.2(eslint@9.39.1(jiti@2.6.1))
       '@praha/eslint-config-next':
-        specifier: 4.0.10
-        version: 4.0.10(6a1199e6b75b8fefdee7ccc735123b4e)
+        specifier: 4.0.12
+        version: 4.0.12(6a1199e6b75b8fefdee7ccc735123b4e)
       '@praha/eslint-config-react':
         specifier: 4.0.10
         version: 4.0.10(4fa96a12434d30d6f9177da216aad039)
@@ -1979,15 +1979,6 @@ packages:
     resolution: {integrity: sha512-CCZCDJuduB9OUkFkY2IgppNZMi2lBQgD2qzwXkEia16cge2pijY/aXi96CJMquDMn3nJdlPV1A5KrJEXwfLNzQ==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
 
-  '@eslint/compat@1.3.2':
-    resolution: {integrity: sha512-jRNwzTbd6p2Rw4sZ1CgWRS8YMtqG15YyZf7zvb6gY2rB2u6n+2Z+ELW0GtL0fQgyl0pr4Y/BzBfng/BdsereRA==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-    peerDependencies:
-      eslint: ^8.40 || 9
-    peerDependenciesMeta:
-      eslint:
-        optional: true
-
   '@eslint/config-array@0.21.1':
     resolution: {integrity: sha512-aw1gNayWpdI/jSYVgzN5pL0cfzU02GT3NBpeT/DXbx1/1x7ZKxFPd9bwrzygx/qiwIQiJ1sw/zD8qY/kRvlGHA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -2378,8 +2369,8 @@ packages:
   '@next/env@15.5.6':
     resolution: {integrity: sha512-3qBGRW+sCGzgbpc5TS1a0p7eNxnOarGVQhZxfvTdnV0gFI61lX7QNtQ4V1TSREctXzYn5NetbUsLvyqwLFJM6Q==}
 
-  '@next/eslint-plugin-next@15.5.6':
-    resolution: {integrity: sha512-YxDvsT2fwy1j5gMqk3ppXlsgDopHnkM4BoxSVASbvvgh5zgsK8lvWerDzPip8k3WVzsTZ1O7A7si1KNfN4OZfQ==}
+  '@next/eslint-plugin-next@16.0.3':
+    resolution: {integrity: sha512-6sPWmZetzFWMsz7Dhuxsdmbu3fK+/AxKRtj7OB0/3OZAI2MHB/v2FeYh271LZ9abvnM1WIwWc/5umYjx0jo5sQ==}
 
   '@next/swc-darwin-arm64@15.5.6':
     resolution: {integrity: sha512-ES3nRz7N+L5Umz4KoGfZ4XX6gwHplwPhioVRc25+QNsDa7RtUF/z8wJcbuQ2Tffm5RZwuN2A063eapoJ1u4nPg==}
@@ -2561,13 +2552,13 @@ packages:
       '@praha/eslint-config-common': 4.0.3
       eslint: ^9.0.0
 
-  '@praha/eslint-config-next@4.0.10':
-    resolution: {integrity: sha512-HiVfq28S8+cCbeOKMJVvfrE7/Q+Jsvdrs6+lTxlXI+hCrnLHvjBaCVjFPaeR2Ywqf72vUFEKCCzLKoip2WHYew==}
+  '@praha/eslint-config-next@4.0.12':
+    resolution: {integrity: sha512-4xOtxXwlIb90pFDJv8a2ewFUooYfqbSKNN/IVsn7QN0u3x/2NnldSSWljPfWwC952+cZa1VMrS5lTJVJLIwnxg==}
     peerDependencies:
       '@praha/eslint-config-common': 4.0.3
-      '@praha/eslint-config-javascript': 3.0.8
-      '@praha/eslint-config-react': 4.0.9
-      '@praha/eslint-config-typescript': 3.0.9
+      '@praha/eslint-config-javascript': 3.0.9
+      '@praha/eslint-config-react': 4.0.10
+      '@praha/eslint-config-typescript': 3.0.10
       eslint: ^9.0.0
     peerDependenciesMeta:
       '@praha/eslint-config-typescript':
@@ -11592,10 +11583,6 @@ snapshots:
 
   '@eslint-community/regexpp@4.12.1': {}
 
-  '@eslint/compat@1.3.2(eslint@9.39.1(jiti@2.6.1))':
-    optionalDependencies:
-      eslint: 9.39.1(jiti@2.6.1)
-
   '@eslint/config-array@0.21.1':
     dependencies:
       '@eslint/object-schema': 2.1.7
@@ -11953,7 +11940,7 @@ snapshots:
 
   '@next/env@15.5.6': {}
 
-  '@next/eslint-plugin-next@15.5.6':
+  '@next/eslint-plugin-next@16.0.3':
     dependencies:
       fast-glob: 3.3.1
 
@@ -12140,10 +12127,9 @@ snapshots:
       - eslint-import-resolver-node
       - supports-color
 
-  '@praha/eslint-config-next@4.0.10(6a1199e6b75b8fefdee7ccc735123b4e)':
+  '@praha/eslint-config-next@4.0.12(6a1199e6b75b8fefdee7ccc735123b4e)':
     dependencies:
-      '@eslint/compat': 1.3.2(eslint@9.39.1(jiti@2.6.1))
-      '@next/eslint-plugin-next': 15.5.6
+      '@next/eslint-plugin-next': 16.0.3
       '@praha/eslint-config-common': 4.0.3(eslint@9.39.1(jiti@2.6.1))
       '@praha/eslint-config-definer': 2.0.2(eslint@9.39.1(jiti@2.6.1))
       '@praha/eslint-config-javascript': 3.0.9(@praha/eslint-config-common@4.0.3(eslint@9.39.1(jiti@2.6.1)))(@typescript-eslint/eslint-plugin@8.46.1(@typescript-eslint/parser@8.46.1(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.46.1(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))
