@@ -1,11 +1,17 @@
-/* eslint-disable unicorn/prefer-module */
+import { createRequire } from 'node:module';
 
 import { VanillaExtractPlugin } from '@vanilla-extract/webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 import type { StorybookConfig } from '@storybook/nextjs';
 
+const require = createRequire(import.meta.url);
+
 const config: StorybookConfig = {
+  framework: {
+    name: '@storybook/nextjs',
+    options: {},
+  },
   staticDirs: [
     '../public',
     '../node_modules/@looks-to-me/package-database/migrations',
@@ -16,8 +22,6 @@ const config: StorybookConfig = {
   ],
   addons: [
     '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
     {
       name: '@storybook/addon-styling-webpack',
       options: {
@@ -55,10 +59,6 @@ const config: StorybookConfig = {
       },
     },
   ],
-  framework: {
-    name: '@storybook/nextjs',
-    options: {},
-  },
 };
 
 export default config;
