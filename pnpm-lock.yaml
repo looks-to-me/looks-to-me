@@ -152,8 +152,8 @@ importers:
         specifier: 9.1.16
         version: 9.1.16(react@19.2.0)(storybook@9.1.16(@testing-library/dom@10.4.1)(vite@7.1.10(@types/node@24.10.1)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.1)))
       '@storybook/addon-styling-webpack':
-        specifier: 2.0.0
-        version: 2.0.0(storybook@9.1.16(@testing-library/dom@10.4.1)(vite@7.1.10(@types/node@24.10.1)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.1)))(webpack@5.102.1(esbuild@0.25.11))
+        specifier: 3.0.0
+        version: 3.0.0(storybook@9.1.16(@testing-library/dom@10.4.1)(vite@7.1.10(@types/node@24.10.1)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.1)))(webpack@5.102.1(esbuild@0.25.11))
       '@storybook/nextjs':
         specifier: 9.1.16
         version: 9.1.16(@rspack/core@1.6.5(@swc/helpers@0.5.17))(esbuild@0.25.11)(next@15.5.6(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@9.1.16(@testing-library/dom@10.4.1)(vite@7.1.10(@types/node@24.10.1)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.1)))(type-fest@4.41.0)(typescript@5.9.3)(webpack-hot-middleware@2.26.1)(webpack@5.102.1(esbuild@0.25.11))
@@ -3980,10 +3980,10 @@ packages:
       react:
         optional: true
 
-  '@storybook/addon-styling-webpack@2.0.0':
-    resolution: {integrity: sha512-N8jWhWnk3/nbL4P9zl0OEV/47P0Cxn/kPzSHjdAClyDYnqj9jI6upeLsraZgIV9Ro3QSeqeIloeXb1zMasWpOw==}
+  '@storybook/addon-styling-webpack@3.0.0':
+    resolution: {integrity: sha512-6iI7wGf/tEt5awB8NYAWU+I/hI7PwOdoaNb5V8Z+GkhEko4nZFpXfp8jz2nMblAnx9Jsl95LfIaH9Spa0JksuQ==}
     peerDependencies:
-      storybook: ^9.0.0
+      storybook: ^10.0.0 || ^10.0.0-0 || ^10.1.0-0 || ^10.2.0-0 || ^10.3.0-0
       webpack: ^5.0.0
 
   '@storybook/builder-webpack5@9.1.16':
@@ -13745,7 +13745,7 @@ snapshots:
     optionalDependencies:
       react: 19.2.0
 
-  '@storybook/addon-styling-webpack@2.0.0(storybook@9.1.16(@testing-library/dom@10.4.1)(vite@7.1.10(@types/node@24.10.1)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.1)))(webpack@5.102.1(esbuild@0.25.11))':
+  '@storybook/addon-styling-webpack@3.0.0(storybook@9.1.16(@testing-library/dom@10.4.1)(vite@7.1.10(@types/node@24.10.1)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.1)))(webpack@5.102.1(esbuild@0.25.11))':
     dependencies:
       storybook: 9.1.16(@testing-library/dom@10.4.1)(vite@7.1.10(@types/node@24.10.1)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.1))
       webpack: 5.102.1(esbuild@0.25.11)
