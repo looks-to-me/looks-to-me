@@ -62,13 +62,13 @@ importers:
         version: 5.9.3
       wrangler:
         specifier: 4.51.0
-        version: 4.51.0(@cloudflare/workers-types@4.20251128.0)
+        version: 4.51.0(@cloudflare/workers-types@4.20251202.0)
 
   apps/overlay:
     devDependencies:
       wrangler:
         specifier: 4.51.0
-        version: 4.51.0(@cloudflare/workers-types@4.20251128.0)
+        version: 4.51.0(@cloudflare/workers-types@4.20251202.0)
 
   apps/web:
     dependencies:
@@ -83,7 +83,7 @@ importers:
         version: link:../../packages/tiered-cache
       '@opennextjs/cloudflare':
         specifier: 1.14.0
-        version: 1.14.0(wrangler@4.51.0(@cloudflare/workers-types@4.20251128.0))
+        version: 1.14.0(wrangler@4.51.0(@cloudflare/workers-types@4.20251202.0))
       '@paralleldrive/cuid2':
         specifier: 3.1.0
         version: 3.1.0
@@ -107,7 +107,7 @@ importers:
         version: 4.1.0
       drizzle-orm:
         specifier: 0.44.7
-        version: 0.44.7(@cloudflare/workers-types@4.20251128.0)(better-sqlite3@12.5.0)
+        version: 0.44.7(@cloudflare/workers-types@4.20251202.0)(better-sqlite3@12.5.0)
       lucide-react:
         specifier: 0.555.0
         version: 0.555.0(react@19.2.0)
@@ -234,7 +234,7 @@ importers:
         version: 4.0.14(@edge-runtime/vm@3.2.0)(@types/node@24.10.1)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.1)
       wrangler:
         specifier: 4.51.0
-        version: 4.51.0(@cloudflare/workers-types@4.20251128.0)
+        version: 4.51.0(@cloudflare/workers-types@4.20251202.0)
 
   packages/database:
     dependencies:
@@ -243,7 +243,7 @@ importers:
         version: 3.48.0-build4
       drizzle-orm:
         specifier: 0.44.7
-        version: 0.44.7(@cloudflare/workers-types@4.20251128.0)(better-sqlite3@12.5.0)
+        version: 0.44.7(@cloudflare/workers-types@4.20251202.0)(better-sqlite3@12.5.0)
     devDependencies:
       '@praha/eslint-config-definer':
         specifier: 2.0.2
@@ -262,13 +262,13 @@ importers:
         version: 5.9.3
       wrangler:
         specifier: 4.51.0
-        version: 4.51.0(@cloudflare/workers-types@4.20251128.0)
+        version: 4.51.0(@cloudflare/workers-types@4.20251202.0)
 
   packages/tiered-cache:
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: 4.20251128.0
-        version: 4.20251128.0
+        specifier: 4.20251202.0
+        version: 4.20251202.0
       '@rslib/core':
         specifier: 0.18.2
         version: 0.18.2(typescript@5.9.3)
@@ -1321,8 +1321,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@cloudflare/workers-types@4.20251128.0':
-    resolution: {integrity: sha512-gQxQvxLRsFb+mDlaBKGoJwEHWt+ox9telZZEuRMbNUAD6v78XYqZepTI4yPDdKhkRTlqYcDqDhIdAI3HrsGk7w==}
+  '@cloudflare/workers-types@4.20251202.0':
+    resolution: {integrity: sha512-Q7m1Ivu2fbKalOPm00KLpu6GfRaq4TlrPknqugvZgp/gDH96OYKINO4x7jvCIBvCz/aK9vVoOj8tlbSQBervVA==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -7336,6 +7336,7 @@ packages:
   next@15.5.6:
     resolution: {integrity: sha512-zTxsnI3LQo3c9HSdSf91O1jMNsEzIXDShXd4wVdg9y5shwLqBXi4ZtUUJyB86KGVSJLZx0PFONvO54aheGX8QQ==}
     engines: {node: ^18.18.0 || ^19.8.0 || >= 20.0.0}
+    deprecated: This version has a security vulnerability. Please upgrade to a patched version. See https://nextjs.org/blog/CVE-2025-66478 for more details.
     hasBin: true
     peerDependencies:
       '@opentelemetry/api': ^1.1.0
@@ -11115,7 +11116,7 @@ snapshots:
   '@cloudflare/workerd-windows-64@1.20251125.0':
     optional: true
 
-  '@cloudflare/workers-types@4.20251128.0': {}
+  '@cloudflare/workers-types@4.20251202.0': {}
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
@@ -11924,7 +11925,7 @@ snapshots:
       - aws-crt
       - supports-color
 
-  '@opennextjs/cloudflare@1.14.0(wrangler@4.51.0(@cloudflare/workers-types@4.20251128.0))':
+  '@opennextjs/cloudflare@1.14.0(wrangler@4.51.0(@cloudflare/workers-types@4.20251202.0))':
     dependencies:
       '@ast-grep/napi': 0.40.0
       '@dotenvx/dotenvx': 1.31.0
@@ -11933,7 +11934,7 @@ snapshots:
       enquirer: 2.4.1
       glob: 12.0.0
       ts-tqdm: 0.8.6
-      wrangler: 4.51.0(@cloudflare/workers-types@4.20251128.0)
+      wrangler: 4.51.0(@cloudflare/workers-types@4.20251202.0)
       yargs: 18.0.0
     transitivePeerDependencies:
       - aws-crt
@@ -15672,9 +15673,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.44.7(@cloudflare/workers-types@4.20251128.0)(better-sqlite3@12.5.0):
+  drizzle-orm@0.44.7(@cloudflare/workers-types@4.20251202.0)(better-sqlite3@12.5.0):
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20251128.0
+      '@cloudflare/workers-types': 4.20251202.0
       better-sqlite3: 12.5.0
 
   dunder-proto@1.0.1:
@@ -19762,7 +19763,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20251125.0
       '@cloudflare/workerd-windows-64': 1.20251125.0
 
-  wrangler@4.51.0(@cloudflare/workers-types@4.20251128.0):
+  wrangler@4.51.0(@cloudflare/workers-types@4.20251202.0):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.4.1
       '@cloudflare/unenv-preset': 2.7.11(unenv@2.0.0-rc.24)(workerd@1.20251125.0)
@@ -19773,7 +19774,7 @@ snapshots:
       unenv: 2.0.0-rc.24
       workerd: 1.20251125.0
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20251128.0
+      '@cloudflare/workers-types': 4.20251202.0
       fsevents: 2.3.3
     transitivePeerDependencies:
       - bufferutil
