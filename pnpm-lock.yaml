@@ -82,8 +82,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/tiered-cache
       '@opennextjs/cloudflare':
-        specifier: 1.14.5
-        version: 1.14.5(next@15.5.9(@babel/core@7.28.5)(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(wrangler@4.51.0(@cloudflare/workers-types@4.20251209.0))
+        specifier: 1.14.6
+        version: 1.14.6(next@15.5.9(@babel/core@7.28.5)(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(wrangler@4.51.0(@cloudflare/workers-types@4.20251209.0))
       '@paralleldrive/cuid2':
         specifier: 3.1.0
         version: 3.1.0
@@ -2444,17 +2444,17 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@opennextjs/aws@3.9.5':
-    resolution: {integrity: sha512-mzap4VWY4rroB/EZWiiLcw6Ljvh9k4hBeTHq3AfCYqlV+qd3j98dWQtLaEHpMeH2omAaURNEuaEaRBCxPb17TA==}
+  '@opennextjs/aws@3.9.6':
+    resolution: {integrity: sha512-46Z4si6Ov7pyiamRDovtfett8d1CLwIVSqMiPBrcPMD+we8DQpqBJeI1uM2y1KiOjwFpH8MKNXGtftpdACP0+g==}
     hasBin: true
     peerDependencies:
-      next: ^14.2.34 || ~15.0.6 || ~15.1.10 || ~15.2.7 || ~15.3.7 || ~15.4.9 || ~15.5.8 || ^16.0.9
+      next: ^14.2.35 || ~15.0.7 || ~15.1.11 || ~15.2.8 || ~15.3.8 || ~15.4.10 || ~15.5.9 || ^16.0.10
 
-  '@opennextjs/cloudflare@1.14.5':
-    resolution: {integrity: sha512-rHcF5s9xec+jLdrFeVI33zyIVxDT9BN1S3G+lLHjk7tDZK3yG/Q1mz2XaYB6QCCQEcUEvnfbyo24xkdxCEmDuw==}
+  '@opennextjs/cloudflare@1.14.6':
+    resolution: {integrity: sha512-w9NCwIhpZ7syS0TFqz5M2K06xm3O3Ce3ULJEkqUv5L5WmwYcMESaNgAT3Us70R4g0w5hzRrZ11dmyC2ri3rbmg==}
     hasBin: true
     peerDependencies:
-      next: ^14.2.34 || ~15.0.6 || ~15.1.10 || ~15.2.7 || ~15.3.7 || ~15.4.9 || ~15.5.8 || ^16.0.9
+      next: ^14.2.35 || ~15.0.7 || ~15.1.11 || ~15.2.8 || ~15.3.8 || ~15.4.10 || ~15.5.9 || ^16.0.10
       wrangler: ^4.53.0
 
   '@oxc-project/runtime@0.82.3':
@@ -11884,7 +11884,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.19.1
 
-  '@opennextjs/aws@3.9.5(next@15.5.9(@babel/core@7.28.5)(react-dom@19.2.1(react@19.2.1))(react@19.2.1))':
+  '@opennextjs/aws@3.9.6(next@15.5.9(@babel/core@7.28.5)(react-dom@19.2.1(react@19.2.1))(react@19.2.1))':
     dependencies:
       '@ast-grep/napi': 0.40.0
       '@aws-sdk/client-cloudfront': 3.398.0
@@ -11908,11 +11908,11 @@ snapshots:
       - aws-crt
       - supports-color
 
-  '@opennextjs/cloudflare@1.14.5(next@15.5.9(@babel/core@7.28.5)(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(wrangler@4.51.0(@cloudflare/workers-types@4.20251209.0))':
+  '@opennextjs/cloudflare@1.14.6(next@15.5.9(@babel/core@7.28.5)(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(wrangler@4.51.0(@cloudflare/workers-types@4.20251209.0))':
     dependencies:
       '@ast-grep/napi': 0.40.0
       '@dotenvx/dotenvx': 1.31.0
-      '@opennextjs/aws': 3.9.5(next@15.5.9(@babel/core@7.28.5)(react-dom@19.2.1(react@19.2.1))(react@19.2.1))
+      '@opennextjs/aws': 3.9.6(next@15.5.9(@babel/core@7.28.5)(react-dom@19.2.1(react@19.2.1))(react@19.2.1))
       cloudflare: 4.5.0
       enquirer: 2.4.1
       glob: 12.0.0
