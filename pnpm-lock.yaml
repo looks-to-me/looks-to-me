@@ -24,8 +24,8 @@ importers:
         specifier: 3.0.12
         version: 3.0.12(@praha/eslint-config-common@4.0.3(eslint@9.39.2(jiti@2.6.1)))(@praha/eslint-config-javascript@3.0.11(@praha/eslint-config-common@4.0.3(eslint@9.39.2(jiti@2.6.1)))(@typescript-eslint/eslint-plugin@8.46.1(@typescript-eslint/parser@8.46.1(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.46.1(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1)))(@typescript-eslint/utils@8.46.1(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       '@praha/eslint-config-vitest':
-        specifier: 1.0.6
-        version: 1.0.6(27c02c0b23eea16700b0ab258a2450eb)
+        specifier: 1.0.7
+        version: 1.0.7(27c02c0b23eea16700b0ab258a2450eb)
       '@scaffdog/types':
         specifier: 4.1.0
         version: 4.1.0
@@ -2724,12 +2724,12 @@ packages:
       '@praha/eslint-config-javascript': 3.0.11
       eslint: ^9.0.0
 
-  '@praha/eslint-config-vitest@1.0.6':
-    resolution: {integrity: sha512-+tNUMsJ3pWTjCzKXURe5CXPmHCsDS5IV5Jsf5MfdU6OpdXuGm4EqVliSTuq2Ur71GwbB8sH9wVjb7dBL/3XhBg==}
+  '@praha/eslint-config-vitest@1.0.7':
+    resolution: {integrity: sha512-BwrY2V6wWIrNfgkD61Lv4jygz0pnynOed/PqO4MBySLRrPUugEwK+rzG+bTCnL1valkIffKztBdwp3lG7UeXLQ==}
     peerDependencies:
       '@praha/eslint-config-common': 4.0.3
-      '@praha/eslint-config-javascript': 3.0.10
-      '@praha/eslint-config-typescript': 3.0.11
+      '@praha/eslint-config-javascript': 3.0.11
+      '@praha/eslint-config-typescript': 3.0.12
       eslint: ^9.0.0
     peerDependenciesMeta:
       '@praha/eslint-config-typescript':
@@ -12307,7 +12307,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@praha/eslint-config-vitest@1.0.6(27c02c0b23eea16700b0ab258a2450eb)':
+  '@praha/eslint-config-vitest@1.0.7(27c02c0b23eea16700b0ab258a2450eb)':
     dependencies:
       '@praha/eslint-config-common': 4.0.3(eslint@9.39.2(jiti@2.6.1))
       '@praha/eslint-config-definer': 2.0.2(eslint@9.39.2(jiti@2.6.1))
