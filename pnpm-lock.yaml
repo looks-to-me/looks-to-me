@@ -82,8 +82,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/tiered-cache
       '@opennextjs/cloudflare':
-        specifier: 1.14.7
-        version: 1.14.7(next@15.5.9(@babel/core@7.28.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(wrangler@4.54.0(@cloudflare/workers-types@4.20260103.0))
+        specifier: 1.14.8
+        version: 1.14.8(next@15.5.9(@babel/core@7.28.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(wrangler@4.54.0(@cloudflare/workers-types@4.20260103.0))
       '@paralleldrive/cuid2':
         specifier: 3.1.0
         version: 3.1.0
@@ -2628,8 +2628,8 @@ packages:
     peerDependencies:
       next: ^14.2.35 || ~15.0.7 || ~15.1.11 || ~15.2.8 || ~15.3.8 || ~15.4.10 || ~15.5.9 || ^16.0.10
 
-  '@opennextjs/cloudflare@1.14.7':
-    resolution: {integrity: sha512-gHK1vx2nIYvr16IG71zRFVTq5diV8haYb6UV+DHw1JZTw1xrM5g6E+k7tDu5n8NX0u/9QH+cZIsJS7nmXUnc+A==}
+  '@opennextjs/cloudflare@1.14.8':
+    resolution: {integrity: sha512-7M6VezThyL7gg86MMuZnBvbzRtC08HWLSJWlvRaiHMUGlEoE94JOwtoC0YcoEnP7F4UsrdRnp+VpvMIVoqsO4w==}
     hasBin: true
     peerDependencies:
       next: ^14.2.35 || ~15.0.7 || ~15.1.11 || ~15.2.8 || ~15.3.8 || ~15.4.10 || ~15.5.9 || ^16.0.10
@@ -12214,7 +12214,7 @@ snapshots:
       - aws-crt
       - supports-color
 
-  '@opennextjs/cloudflare@1.14.7(next@15.5.9(@babel/core@7.28.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(wrangler@4.54.0(@cloudflare/workers-types@4.20260103.0))':
+  '@opennextjs/cloudflare@1.14.8(next@15.5.9(@babel/core@7.28.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(wrangler@4.54.0(@cloudflare/workers-types@4.20260103.0))':
     dependencies:
       '@ast-grep/napi': 0.40.0
       '@dotenvx/dotenvx': 1.31.0
