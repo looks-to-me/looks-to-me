@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20260111.0",
-    "@rslib/core": "0.19.1",
+    "@rslib/core": "0.19.2",
     "eslint": "9.39.2",
     "typescript": "5.9.3",
     "vitest": "4.0.16"
