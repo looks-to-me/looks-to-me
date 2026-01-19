@@ -73,6 +73,6 @@
     "typescript": "5.9.3",
     "vercel": "48.12.1",
     "vitest": "4.0.17",
-    "wrangler": "4.58.0"
+    "wrangler": "4.59.2"
   }
 }
