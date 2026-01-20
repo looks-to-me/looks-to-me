@@ -61,7 +61,7 @@
     "@vanilla-extract/vite-plugin": "5.1.4",
     "@vanilla-extract/webpack-plugin": "2.3.25",
     "@vitejs/plugin-react": "5.1.2",
-    "better-sqlite3": "12.6.0",
+    "better-sqlite3": "12.6.2",
     "css-loader": "7.1.2",
     "dotenv": "17.2.3",
     "eslint": "9.39.2",
