@@ -200,8 +200,8 @@ importers:
         specifier: 12.6.2
         version: 12.6.2
       css-loader:
-        specifier: 7.1.2
-        version: 7.1.2(@rspack/core@1.7.3(@swc/helpers@0.5.18))(webpack@5.102.1)
+        specifier: 7.1.3
+        version: 7.1.3(@rspack/core@1.7.3(@swc/helpers@0.5.18))(webpack@5.102.1)
       dotenv:
         specifier: 17.2.3
         version: 17.2.3
@@ -5555,8 +5555,8 @@ packages:
       webpack:
         optional: true
 
-  css-loader@7.1.2:
-    resolution: {integrity: sha512-6WvYYn7l/XEGN8Xu2vWFt9nVzrCn39vKyTEFf/ExEyoksJjjSZV/0/35XPlMbpnr6VGhZIUg5yJrL8tGfes/FA==}
+  css-loader@7.1.3:
+    resolution: {integrity: sha512-frbERmjT0UC5lMheWpJmMilnt9GEhbZJN/heUb7/zaJYeIzj5St9HvDcfshzzOqbsS+rYpMk++2SD3vGETDSyA==}
     engines: {node: '>= 18.12.0'}
     peerDependencies:
       '@rspack/core': 0.x || 1.x
@@ -14020,7 +14020,7 @@ snapshots:
       '@vitest/mocker': 3.2.4(vite@7.1.10(@types/node@24.10.9)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.1))
       case-sensitive-paths-webpack-plugin: 2.4.0
       cjs-module-lexer: 1.4.3
-      css-loader: 7.1.2(@rspack/core@1.7.3(@swc/helpers@0.5.18))(webpack@5.102.1)
+      css-loader: 7.1.3(@rspack/core@1.7.3(@swc/helpers@0.5.18))(webpack@5.102.1)
       es-module-lexer: 1.7.0
       fork-ts-checker-webpack-plugin: 9.1.0(typescript@5.9.3)(webpack@5.102.1)
       html-webpack-plugin: 5.6.4(@rspack/core@1.7.3(@swc/helpers@0.5.18))(webpack@5.102.1)
@@ -15828,7 +15828,7 @@ snapshots:
       '@rspack/core': 1.7.3(@swc/helpers@0.5.18)
       webpack: 5.102.1
 
-  css-loader@7.1.2(@rspack/core@1.7.3(@swc/helpers@0.5.18))(webpack@5.102.1):
+  css-loader@7.1.3(@rspack/core@1.7.3(@swc/helpers@0.5.18))(webpack@5.102.1):
     dependencies:
       icss-utils: 5.1.0(postcss@8.5.6)
       postcss: 8.5.6
