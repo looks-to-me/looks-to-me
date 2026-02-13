@@ -17,7 +17,7 @@
     "lint:type": "tsc --pretty --noEmit"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20260207.0",
+    "@cloudflare/workers-types": "4.20260210.0",
     "@rslib/core": "0.19.5",
     "eslint": "9.39.2",
     "typescript": "5.9.3",
