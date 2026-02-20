@@ -62,7 +62,7 @@
     "@vanilla-extract/webpack-plugin": "2.3.25",
     "@vitejs/plugin-react": "5.1.4",
     "better-sqlite3": "12.6.2",
-    "css-loader": "7.1.3",
+    "css-loader": "7.1.4",
     "dotenv": "17.3.1",
     "eslint": "9.39.2",
     "mini-css-extract-plugin": "2.10.0",
