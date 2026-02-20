@@ -200,8 +200,8 @@ importers:
         specifier: 12.6.2
         version: 12.6.2
       css-loader:
-        specifier: 7.1.3
-        version: 7.1.3(@rspack/core@1.7.6(@swc/helpers@0.5.18))(webpack@5.105.2)
+        specifier: 7.1.4
+        version: 7.1.4(@rspack/core@1.7.6(@swc/helpers@0.5.18))(webpack@5.105.2)
       dotenv:
         specifier: 17.3.1
         version: 17.3.1
@@ -5419,11 +5419,11 @@ packages:
       webpack:
         optional: true
 
-  css-loader@7.1.3:
-    resolution: {integrity: sha512-frbERmjT0UC5lMheWpJmMilnt9GEhbZJN/heUb7/zaJYeIzj5St9HvDcfshzzOqbsS+rYpMk++2SD3vGETDSyA==}
+  css-loader@7.1.4:
+    resolution: {integrity: sha512-vv3J9tlOl04WjiMvHQI/9tmIrCxVrj6PFbHemBB1iihpeRbi/I4h033eoFIhwxBBqLhI0KYFS7yvynBFhIZfTw==}
     engines: {node: '>= 18.12.0'}
     peerDependencies:
-      '@rspack/core': 0.x || 1.x
+      '@rspack/core': 0.x || ^1.0.0 || ^2.0.0-0
       webpack: ^5.27.0
     peerDependenciesMeta:
       '@rspack/core':
@@ -7810,6 +7810,7 @@ packages:
   prebuild-install@7.1.3:
     resolution: {integrity: sha512-8Mf2cbV7x1cXPUILADGI3wuhfqWvtiLA1iclTDbFRZkgRQS0NqsPZphna9V+HyTEadheuPmjaJMsbzKQFOzLug==}
     engines: {node: '>=10'}
+    deprecated: No longer maintained. Please contact the author of the relevant native addon; alternatives are available.
     hasBin: true
 
   prelude-ls@1.2.1:
@@ -13333,7 +13334,7 @@ snapshots:
       '@storybook/core-webpack': 10.2.8(storybook@10.2.8(@testing-library/dom@10.4.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
       case-sensitive-paths-webpack-plugin: 2.4.0
       cjs-module-lexer: 1.4.3
-      css-loader: 7.1.3(@rspack/core@1.7.6(@swc/helpers@0.5.18))(webpack@5.105.2)
+      css-loader: 7.1.4(@rspack/core@1.7.6(@swc/helpers@0.5.18))(webpack@5.105.2)
       es-module-lexer: 1.7.0
       fork-ts-checker-webpack-plugin: 9.1.0(typescript@5.9.3)(webpack@5.105.2)
       html-webpack-plugin: 5.6.6(@rspack/core@1.7.6(@swc/helpers@0.5.18))(webpack@5.105.2)
@@ -15142,7 +15143,7 @@ snapshots:
       '@rspack/core': 1.7.6(@swc/helpers@0.5.18)
       webpack: 5.105.2
 
-  css-loader@7.1.3(@rspack/core@1.7.6(@swc/helpers@0.5.18))(webpack@5.105.2):
+  css-loader@7.1.4(@rspack/core@1.7.6(@swc/helpers@0.5.18))(webpack@5.105.2):
     dependencies:
       icss-utils: 5.1.0(postcss@8.5.6)
       postcss: 8.5.6
