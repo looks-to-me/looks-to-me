@@ -20,7 +20,7 @@
     "@praha/eslint-config-vitest": "1.0.7",
     "@scaffdog/types": "4.1.0",
     "@tsconfig/strictest": "2.0.8",
-    "eslint": "9.39.2",
+    "eslint": "9.39.3",
     "scaffdog": "4.1.0",
     "turbo": "2.8.10"
   },
