@@ -13,5 +13,10 @@
       "binding": "TIERED_CACHE",
       "bucket_name": "tiered-cache"
     }
-  ]
+  ],
+  "observability": {
+    "traces": {
+      "enabled": true
+    }
+  }
 }
