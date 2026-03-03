@@ -22,7 +22,7 @@
     "@tsconfig/strictest": "2.0.8",
     "eslint": "9.39.3",
     "scaffdog": "4.1.0",
-    "turbo": "2.8.10"
+    "turbo": "2.8.12"
   },
   "packageManager": "pnpm@10.30.2"
 }
