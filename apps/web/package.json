@@ -30,7 +30,7 @@
     "clsx": "2.1.1",
     "date-fns": "4.1.0",
     "drizzle-orm": "0.45.1",
-    "lucide-react": "0.575.0",
+    "lucide-react": "0.576.0",
     "modern-normalize": "3.0.1",
     "next": "15.5.12",
     "radix-ui": "1.4.3",
