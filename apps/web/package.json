@@ -49,7 +49,7 @@
     "@storybook/addon-styling-webpack": "3.0.0",
     "@storybook/nextjs": "10.2.14",
     "@storybook/react": "10.2.14",
-    "@supabase/ssr": "0.8.0",
+    "@supabase/ssr": "0.9.0",
     "@tsconfig/next": "2.0.6",
     "@types/node": "24.11.0",
     "@types/react": "19.2.14",
