@@ -25,7 +25,7 @@ importers:
         version: 3.0.12(@praha/eslint-config-common@4.0.3(eslint@9.39.3(jiti@2.6.1)))(@praha/eslint-config-javascript@3.0.11(@praha/eslint-config-common@4.0.3(eslint@9.39.3(jiti@2.6.1)))(@typescript-eslint/eslint-plugin@8.56.1(@typescript-eslint/parser@8.56.1(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.56.1(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.3(jiti@2.6.1)))(@typescript-eslint/utils@8.56.1(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3)
       '@praha/eslint-config-vitest':
         specifier: 1.0.7
-        version: 1.0.7(ef90cce54e156718d2cb23881afcfd11)
+        version: 1.0.7(545952e3dfcec2e01a00dc37b761d2de)
       '@scaffdog/types':
         specifier: 4.1.0
         version: 4.1.0
@@ -37,7 +37,7 @@ importers:
         version: 9.39.3(jiti@2.6.1)
       scaffdog:
         specifier: 4.1.0
-        version: 4.1.0(@types/node@24.11.0)
+        version: 4.1.0(@types/node@24.11.2)
       turbo:
         specifier: 2.8.12
         version: 2.8.12
@@ -167,8 +167,8 @@ importers:
         specifier: 2.0.6
         version: 2.0.6
       '@types/node':
-        specifier: 24.11.0
-        version: 24.11.0
+        specifier: 24.11.2
+        version: 24.11.2
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -189,13 +189,13 @@ importers:
         version: 0.5.7(@vanilla-extract/css@1.18.0)
       '@vanilla-extract/vite-plugin':
         specifier: 5.1.4
-        version: 5.1.4(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(vite@7.3.1(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2))(yaml@2.8.2)
+        version: 5.1.4(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(vite@7.3.1(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2))(yaml@2.8.2)
       '@vanilla-extract/webpack-plugin':
         specifier: 2.3.25
         version: 2.3.25(webpack@5.105.4)
       '@vitejs/plugin-react':
         specifier: 5.1.4
-        version: 5.1.4(vite@7.3.1(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2))
+        version: 5.1.4(vite@7.3.1(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2))
       better-sqlite3:
         specifier: 12.6.2
         version: 12.6.2
@@ -231,7 +231,7 @@ importers:
         version: 48.12.1(rollup@4.59.0)(typescript@5.9.3)
       vitest:
         specifier: 4.0.18
-        version: 4.0.18(@edge-runtime/vm@3.2.0)(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)
+        version: 4.0.18(@edge-runtime/vm@3.2.0)(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)
       wrangler:
         specifier: 4.69.0
         version: 4.69.0(@cloudflare/workers-types@4.20260305.1)
@@ -280,7 +280,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 4.0.18
-        version: 4.0.18(@edge-runtime/vm@3.2.0)(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)
+        version: 4.0.18(@edge-runtime/vm@3.2.0)(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)
 
 packages:
 
@@ -4110,8 +4110,8 @@ packages:
   '@types/node@18.19.130':
     resolution: {integrity: sha512-GRaXQx6jGfL8sKfaIDD6OupbIHBr9jv7Jnaml9tB7l4v068PAOXqfcujMMo5PhbIs6ggR1XODELqahT2R8v0fg==}
 
-  '@types/node@24.11.0':
-    resolution: {integrity: sha512-fPxQqz4VTgPI/IQ+lj9r0h+fDR66bzoeMGHp8ASee+32OSGIkeASsoZuJixsQoVef1QJbeubcPBxKk22QVoWdw==}
+  '@types/node@24.11.2':
+    resolution: {integrity: sha512-HTsxyfkxTNxOXBsEdgIOzbMgBjDGPvkTfw0B1m09j1LFPk8u3tSL8SNBRTSc381wXXX/Wp93qPi1kQXwnWuHgA==}
 
   '@types/phoenix@1.6.7':
     resolution: {integrity: sha512-oN9ive//QSBkf19rfDv45M7eZPi0eEXylht2OLEXicu5b4KoQ1OzXIw+xDSGWxSxe1JmepRR/ZH283vsu518/Q==}
@@ -11350,12 +11350,12 @@ snapshots:
   '@img/sharp-win32-x64@0.34.5':
     optional: true
 
-  '@inquirer/external-editor@1.0.3(@types/node@24.11.0)':
+  '@inquirer/external-editor@1.0.3(@types/node@24.11.2)':
     dependencies:
       chardet: 2.1.1
       iconv-lite: 0.7.2
     optionalDependencies:
-      '@types/node': 24.11.0
+      '@types/node': 24.11.2
 
   '@inquirer/figures@1.0.15': {}
 
@@ -11693,12 +11693,12 @@ snapshots:
       - supports-color
       - typescript
 
-  '@praha/eslint-config-vitest@1.0.7(ef90cce54e156718d2cb23881afcfd11)':
+  '@praha/eslint-config-vitest@1.0.7(545952e3dfcec2e01a00dc37b761d2de)':
     dependencies:
       '@praha/eslint-config-common': 4.0.3(eslint@9.39.3(jiti@2.6.1))
       '@praha/eslint-config-definer': 2.0.2(eslint@9.39.3(jiti@2.6.1))
       '@praha/eslint-config-javascript': 3.0.11(@praha/eslint-config-common@4.0.3(eslint@9.39.3(jiti@2.6.1)))(@typescript-eslint/eslint-plugin@8.56.1(@typescript-eslint/parser@8.56.1(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.56.1(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.3(jiti@2.6.1))
-      '@vitest/eslint-plugin': 1.6.9(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3)(vitest@4.0.18(@edge-runtime/vm@3.2.0)(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2))
+      '@vitest/eslint-plugin': 1.6.9(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3)(vitest@4.0.18(@edge-runtime/vm@3.2.0)(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2))
       eslint: 9.39.3(jiti@2.6.1)
       globals: 16.5.0
     optionalDependencies:
@@ -13397,7 +13397,7 @@ snapshots:
 
   '@types/node-fetch@2.6.13':
     dependencies:
-      '@types/node': 24.11.0
+      '@types/node': 24.11.2
       form-data: 4.0.5
 
   '@types/node@16.18.11': {}
@@ -13406,7 +13406,7 @@ snapshots:
     dependencies:
       undici-types: 5.26.5
 
-  '@types/node@24.11.0':
+  '@types/node@24.11.2':
     dependencies:
       undici-types: 7.16.0
 
@@ -13430,7 +13430,7 @@ snapshots:
 
   '@types/ws@8.18.1':
     dependencies:
-      '@types/node': 24.11.0
+      '@types/node': 24.11.2
 
   '@typescript-eslint/eslint-plugin@8.56.1(@typescript-eslint/parser@8.56.1(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3)':
     dependencies:
@@ -13588,12 +13588,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vanilla-extract/compiler@0.3.4(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)':
+  '@vanilla-extract/compiler@0.3.4(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)':
     dependencies:
       '@vanilla-extract/css': 1.18.0
       '@vanilla-extract/integration': 8.0.7
-      vite: 7.3.1(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)
-      vite-node: 3.2.4(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)
+      vite: 7.3.1(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)
+      vite-node: 3.2.4(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)
     transitivePeerDependencies:
       - '@types/node'
       - babel-plugin-macros
@@ -13659,11 +13659,11 @@ snapshots:
     dependencies:
       '@vanilla-extract/css': 1.18.0
 
-  '@vanilla-extract/vite-plugin@5.1.4(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(vite@7.3.1(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2))(yaml@2.8.2)':
+  '@vanilla-extract/vite-plugin@5.1.4(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(vite@7.3.1(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2))(yaml@2.8.2)':
     dependencies:
-      '@vanilla-extract/compiler': 0.3.4(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)
+      '@vanilla-extract/compiler': 0.3.4(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)
       '@vanilla-extract/integration': 8.0.7
-      vite: 7.3.1(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)
+      vite: 7.3.1(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)
     transitivePeerDependencies:
       - '@types/node'
       - babel-plugin-macros
@@ -13959,7 +13959,7 @@ snapshots:
       json-schema-to-ts: 1.6.4
       ts-morph: 12.0.0
 
-  '@vitejs/plugin-react@5.1.4(vite@7.3.1(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2))':
+  '@vitejs/plugin-react@5.1.4(vite@7.3.1(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2))':
     dependencies:
       '@babel/core': 7.29.0
       '@babel/plugin-transform-react-jsx-self': 7.27.1(@babel/core@7.29.0)
@@ -13967,18 +13967,18 @@ snapshots:
       '@rolldown/pluginutils': 1.0.0-rc.3
       '@types/babel__core': 7.20.5
       react-refresh: 0.18.0
-      vite: 7.3.1(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)
+      vite: 7.3.1(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)
     transitivePeerDependencies:
       - supports-color
 
-  '@vitest/eslint-plugin@1.6.9(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3)(vitest@4.0.18(@edge-runtime/vm@3.2.0)(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2))':
+  '@vitest/eslint-plugin@1.6.9(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3)(vitest@4.0.18(@edge-runtime/vm@3.2.0)(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2))':
     dependencies:
       '@typescript-eslint/scope-manager': 8.56.1
       '@typescript-eslint/utils': 8.56.1(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3)
       eslint: 9.39.3(jiti@2.6.1)
     optionalDependencies:
       typescript: 5.9.3
-      vitest: 4.0.18(@edge-runtime/vm@3.2.0)(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)
+      vitest: 4.0.18(@edge-runtime/vm@3.2.0)(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -13999,13 +13999,13 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.0.3
 
-  '@vitest/mocker@4.0.18(vite@7.3.1(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2))':
+  '@vitest/mocker@4.0.18(vite@7.3.1(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2))':
     dependencies:
       '@vitest/spy': 4.0.18
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.3.1(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)
+      vite: 7.3.1(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)
 
   '@vitest/pretty-format@3.2.4':
     dependencies:
@@ -15765,7 +15765,7 @@ snapshots:
 
   eval@0.1.8:
     dependencies:
-      '@types/node': 24.11.0
+      '@types/node': 24.11.2
       require-like: 0.1.2
 
   event-target-shim@5.0.1: {}
@@ -16342,18 +16342,18 @@ snapshots:
 
   ini@4.1.1: {}
 
-  inquirer-autocomplete-prompt@3.0.1(inquirer@9.3.8(@types/node@24.11.0)):
+  inquirer-autocomplete-prompt@3.0.1(inquirer@9.3.8(@types/node@24.11.2)):
     dependencies:
       ansi-escapes: 6.2.1
       figures: 5.0.0
-      inquirer: 9.3.8(@types/node@24.11.0)
+      inquirer: 9.3.8(@types/node@24.11.2)
       picocolors: 1.1.1
       run-async: 2.4.1
       rxjs: 7.8.2
 
-  inquirer@9.3.8(@types/node@24.11.0):
+  inquirer@9.3.8(@types/node@24.11.2):
     dependencies:
-      '@inquirer/external-editor': 1.0.3(@types/node@24.11.0)
+      '@inquirer/external-editor': 1.0.3(@types/node@24.11.2)
       '@inquirer/figures': 1.0.15
       ansi-escapes: 4.3.2
       cli-width: 4.1.0
@@ -16578,7 +16578,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 24.11.0
+      '@types/node': 24.11.2
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -18029,7 +18029,7 @@ snapshots:
       '@rspack/core': 1.7.7(@swc/helpers@0.5.19)
       webpack: 5.105.4
 
-  scaffdog@4.1.0(@types/node@24.11.0):
+  scaffdog@4.1.0(@types/node@24.11.2):
     dependencies:
       '@scaffdog/config': 4.1.0
       '@scaffdog/core': 4.1.0
@@ -18046,8 +18046,8 @@ snapshots:
       fuse.js: 7.1.0
       globby: 14.1.0
       indent-string: 5.0.0
-      inquirer: 9.3.8(@types/node@24.11.0)
-      inquirer-autocomplete-prompt: 3.0.1(inquirer@9.3.8(@types/node@24.11.0))
+      inquirer: 9.3.8(@types/node@24.11.2)
+      inquirer-autocomplete-prompt: 3.0.1(inquirer@9.3.8(@types/node@24.11.2))
       is-plain-obj: 4.1.0
       log-symbols: 7.0.1
       micromatch: 4.0.8
@@ -18953,13 +18953,13 @@ snapshots:
       unist-util-stringify-position: 3.0.3
       vfile-message: 3.1.4
 
-  vite-node@3.2.4(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2):
+  vite-node@3.2.4(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2):
     dependencies:
       cac: 6.7.14
       debug: 4.4.3
       es-module-lexer: 1.7.0
       pathe: 2.0.3
-      vite: 7.3.1(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)
+      vite: 7.3.1(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)
     transitivePeerDependencies:
       - '@types/node'
       - jiti
@@ -18974,7 +18974,7 @@ snapshots:
       - tsx
       - yaml
 
-  vite@7.3.1(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2):
+  vite@7.3.1(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2):
     dependencies:
       esbuild: 0.27.3
       fdir: 6.5.0(picomatch@4.0.3)
@@ -18983,17 +18983,17 @@ snapshots:
       rollup: 4.59.0
       tinyglobby: 0.2.15
     optionalDependencies:
-      '@types/node': 24.11.0
+      '@types/node': 24.11.2
       fsevents: 2.3.3
       jiti: 2.6.1
       terser: 5.46.0
       tsx: 4.19.2
       yaml: 2.8.2
 
-  vitest@4.0.18(@edge-runtime/vm@3.2.0)(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2):
+  vitest@4.0.18(@edge-runtime/vm@3.2.0)(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2):
     dependencies:
       '@vitest/expect': 4.0.18
-      '@vitest/mocker': 4.0.18(vite@7.3.1(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2))
+      '@vitest/mocker': 4.0.18(vite@7.3.1(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2))
       '@vitest/pretty-format': 4.0.18
       '@vitest/runner': 4.0.18
       '@vitest/snapshot': 4.0.18
@@ -19010,11 +19010,11 @@ snapshots:
       tinyexec: 1.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vite: 7.3.1(@types/node@24.11.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)
+      vite: 7.3.1(@types/node@24.11.2)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.2)(yaml@2.8.2)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@edge-runtime/vm': 3.2.0
-      '@types/node': 24.11.0
+      '@types/node': 24.11.2
     transitivePeerDependencies:
       - jiti
       - less
