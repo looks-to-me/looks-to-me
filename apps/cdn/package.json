@@ -19,6 +19,6 @@
     "@praha/eslint-config-definer": "2.0.2",
     "eslint": "9.39.4",
     "typescript": "5.9.3",
-    "wrangler": "4.69.0"
+    "wrangler": "4.71.0"
   }
 }
