@@ -72,7 +72,7 @@
     "style-loader": "4.0.0",
     "typescript": "5.9.3",
     "vercel": "48.12.1",
-    "vitest": "4.0.18",
+    "vitest": "4.1.0",
     "wrangler": "4.71.0"
   }
 }
