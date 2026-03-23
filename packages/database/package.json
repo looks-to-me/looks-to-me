@@ -27,7 +27,7 @@
   "devDependencies": {
     "@praha/eslint-config-definer": "2.0.2",
     "@rslib/core": "0.20.0",
-    "drizzle-kit": "0.31.9",
+    "drizzle-kit": "0.31.10",
     "eslint": "9.39.4",
     "typescript": "5.9.3",
     "wrangler": "4.74.0"
