@@ -152,8 +152,8 @@ importers:
         specifier: 10.2.19
         version: 10.2.19(react@19.2.4)(storybook@10.2.19(@testing-library/dom@10.4.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
       '@storybook/addon-styling-webpack':
-        specifier: 3.0.0
-        version: 3.0.0(storybook@10.2.19(@testing-library/dom@10.4.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(webpack@5.105.4)
+        specifier: 3.0.1
+        version: 3.0.1(storybook@10.2.19(@testing-library/dom@10.4.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(webpack@5.105.4)
       '@storybook/nextjs':
         specifier: 10.2.19
         version: 10.2.19(next@15.5.12(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(storybook@10.2.19(@testing-library/dom@10.4.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(type-fest@4.41.0)(typescript@5.9.3)(webpack-hot-middleware@2.26.1)(webpack@5.105.4)
@@ -3994,10 +3994,10 @@ packages:
       react:
         optional: true
 
-  '@storybook/addon-styling-webpack@3.0.0':
-    resolution: {integrity: sha512-6iI7wGf/tEt5awB8NYAWU+I/hI7PwOdoaNb5V8Z+GkhEko4nZFpXfp8jz2nMblAnx9Jsl95LfIaH9Spa0JksuQ==}
+  '@storybook/addon-styling-webpack@3.0.1':
+    resolution: {integrity: sha512-UNrEkzMLPOtN46Glt4tafy0Z/+aSlNoZZsmTFDpmnyLbBHO78jEeKldQGawwmD/sE0QUjLQikVvuC75ZQZjLZQ==}
     peerDependencies:
-      storybook: ^10.0.0 || ^10.0.0-0 || ^10.1.0-0 || ^10.2.0-0 || ^10.3.0-0
+      storybook: ^10.0.0 || ^10.0.0-0 || ^10.1.0-0 || ^10.2.0-0 || ^10.3.0-0 || ^10.4.0-0
       webpack: ^5.0.0
 
   '@storybook/builder-webpack5@10.2.19':
@@ -13211,7 +13211,7 @@ snapshots:
     optionalDependencies:
       react: 19.2.4
 
-  '@storybook/addon-styling-webpack@3.0.0(storybook@10.2.19(@testing-library/dom@10.4.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(webpack@5.105.4)':
+  '@storybook/addon-styling-webpack@3.0.1(storybook@10.2.19(@testing-library/dom@10.4.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(webpack@5.105.4)':
     dependencies:
       storybook: 10.2.19(@testing-library/dom@10.4.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       webpack: 5.105.4

@@ -46,7 +46,7 @@
     "@praha/eslint-config-react": "4.0.12",
     "@sqlite.org/sqlite-wasm": "3.48.0-build4",
     "@storybook/addon-links": "10.2.19",
-    "@storybook/addon-styling-webpack": "3.0.0",
+    "@storybook/addon-styling-webpack": "3.0.1",
     "@storybook/nextjs": "10.2.19",
     "@storybook/react": "10.2.19",
     "@supabase/ssr": "0.9.0",
