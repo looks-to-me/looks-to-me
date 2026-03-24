@@ -18,7 +18,7 @@
     "lint:type": "tsc --pretty --noEmit"
   },
   "dependencies": {
-    "@icons-pack/react-simple-icons": "13.12.0",
+    "@icons-pack/react-simple-icons": "13.13.0",
     "@looks-to-me/package-database": "workspace:*",
     "@looks-to-me/package-tiered-cache": "workspace:*",
     "@opennextjs/cloudflare": "1.17.1",
