@@ -82,8 +82,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/tiered-cache
       '@opennextjs/cloudflare':
-        specifier: 1.19.4
-        version: 1.19.4(next@15.5.15(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(wrangler@4.78.0(@cloudflare/workers-types@4.20260426.1))
+        specifier: 1.19.5
+        version: 1.19.5(next@15.5.15(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(wrangler@4.78.0(@cloudflare/workers-types@4.20260426.1))
       '@paralleldrive/cuid2':
         specifier: 3.3.0
         version: 3.3.0
@@ -2779,12 +2779,12 @@ packages:
     peerDependencies:
       next: '>=15.5.15 <16 || >=16.2.3'
 
-  '@opennextjs/cloudflare@1.19.4':
-    resolution: {integrity: sha512-sRJmLFz6DqGzoToSTPyyQhxozXGgF/YsnHpgiCe2XTugfZZnfetMoI4BolFP65XAzIV3tdSSzCb+etK5s8UEUg==}
+  '@opennextjs/cloudflare@1.19.5':
+    resolution: {integrity: sha512-EE3RiAyxqqlKBImUFuSdK+jYgSuWvQBn0iLnh1USF0nPAGbYjmjRLmOpxNPd234yE+JerDK3GkJ787xF86lHCw==}
     hasBin: true
     peerDependencies:
       next: '>=15.5.15 <16 || >=16.2.3'
-      wrangler: ^4.84.1
+      wrangler: ^4.86.0
 
   '@oxc-project/runtime@0.82.3':
     resolution: {integrity: sha512-LNh5GlJvYHAnMurO+EyA8jJwN1rki7l3PSHuosDh2I7h00T6/u9rCkUjg/SvPmT1CZzvhuW0y+gf7jcqUy/Usg==}
@@ -12174,7 +12174,7 @@ snapshots:
       - aws-crt
       - supports-color
 
-  '@opennextjs/cloudflare@1.19.4(next@15.5.15(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(wrangler@4.78.0(@cloudflare/workers-types@4.20260426.1))':
+  '@opennextjs/cloudflare@1.19.5(next@15.5.15(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(wrangler@4.78.0(@cloudflare/workers-types@4.20260426.1))':
     dependencies:
       '@ast-grep/napi': 0.40.5
       '@dotenvx/dotenvx': 1.31.0
@@ -19163,7 +19163,7 @@ snapshots:
 
   string-length@6.0.0:
     dependencies:
-      strip-ansi: 7.1.0
+      strip-ansi: 7.2.0
 
   string-width@4.2.3:
     dependencies:
@@ -20035,7 +20035,7 @@ snapshots:
     dependencies:
       ansi-styles: 6.2.3
       string-width: 7.2.0
-      strip-ansi: 7.1.0
+      strip-ansi: 7.2.0
 
   wrappy@1.0.2: {}
 
