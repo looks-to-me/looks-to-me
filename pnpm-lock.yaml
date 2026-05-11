@@ -249,8 +249,8 @@ importers:
         specifier: 2.0.2
         version: 2.0.2(eslint@9.39.4(jiti@2.7.0))
       '@rslib/core':
-        specifier: 0.21.3
-        version: 0.21.3(typescript@5.9.3)
+        specifier: 0.21.4
+        version: 0.21.4(typescript@5.9.3)
       drizzle-kit:
         specifier: 0.31.10
         version: 0.31.10
@@ -270,8 +270,8 @@ importers:
         specifier: 4.20260503.1
         version: 4.20260503.1
       '@rslib/core':
-        specifier: 0.21.3
-        version: 0.21.3(typescript@5.9.3)
+        specifier: 0.21.4
+        version: 0.21.4(typescript@5.9.3)
       eslint:
         specifier: 9.39.4
         version: 9.39.4(jiti@2.7.0)
@@ -2826,22 +2826,26 @@ packages:
 
   '@praha/eslint-config-common@4.0.3':
     resolution: {integrity: sha512-Xb2gFVjZexCXEvZ8oGasa8OjSUznOyTO2XxyeMJibvRsk8A2xG5G0whISnYzz4wSPKcH3zReBuBsCLaE2WMrMQ==}
+    deprecated: This package has been deprecated and is no longer maintained. Please use @praha/oxlint-config-standard instead.
     peerDependencies:
       eslint: ^9.0.0
 
   '@praha/eslint-config-definer@2.0.2':
     resolution: {integrity: sha512-oy/sn+Sh/VhCAdATQ6Blj9LknGC3VbBVRHotyQKqvVyeetB6vqhrTH8hXrVhxRWRVKkbeqVJy+1t0uSEiYfFCw==}
+    deprecated: This package has been deprecated and is no longer maintained. Please use @praha/oxlint-config-standard instead.
     peerDependencies:
       eslint: ^9.0.0
 
   '@praha/eslint-config-javascript@3.0.11':
     resolution: {integrity: sha512-YHPM3Ik1HuQrJkaKj49O/MOE7fzOH8Jpf/F3HFPgSkKUFoAHraYzGq0ri06Zd2+u2ekkvIOSO9MTyoISft654g==}
+    deprecated: This package has been deprecated and is no longer maintained. Please use @praha/oxlint-config-standard instead.
     peerDependencies:
       '@praha/eslint-config-common': 4.0.3
       eslint: ^9.0.0
 
   '@praha/eslint-config-next@4.0.14':
     resolution: {integrity: sha512-5IbGniwEO3CkfjjOtLyYCR9Jvqstm0wI113RRzllddXqC91K7dz7HSblDkHxANeO4AcG6kxdKrCHbOHeOEPQLA==}
+    deprecated: This package has been deprecated and is no longer maintained. Please use @praha/oxlint-config-react instead.
     peerDependencies:
       '@praha/eslint-config-common': 4.0.3
       '@praha/eslint-config-javascript': 3.0.11
@@ -2854,6 +2858,7 @@ packages:
 
   '@praha/eslint-config-react@4.0.12':
     resolution: {integrity: sha512-5yU0gONK/O0Yx6NAFF6UcFg+jv2GZqSVITo8NYdVZemhaHmuwLDxcYYVzxH5EB6SyK/Z2xRoI4P3/VxGPeKkjg==}
+    deprecated: This package has been deprecated and is no longer maintained. Please use @praha/oxlint-config-react instead.
     peerDependencies:
       '@praha/eslint-config-common': 4.0.3
       '@praha/eslint-config-javascript': 3.0.11
@@ -2865,6 +2870,7 @@ packages:
 
   '@praha/eslint-config-style@3.0.12':
     resolution: {integrity: sha512-+k7NimnyimvtcAm1Ngq1CpMOxf1Bh+znEtdFTHaY+yM8a30zHWpfvHXBRMuPM25U5hm598a6aSY6kt3ge1CKYw==}
+    deprecated: This package has been deprecated and is no longer maintained. Please use @praha/oxlint-config-standard instead.
     peerDependencies:
       '@praha/eslint-config-common': 4.0.3
       '@praha/eslint-config-javascript': 3.0.11
@@ -2876,6 +2882,7 @@ packages:
 
   '@praha/eslint-config-typescript@3.0.12':
     resolution: {integrity: sha512-tb0V8KxU3Fm0UvK2RMrEEy+GOrosLTYHSTutmrRN/CypX0pVARRrdwFyvK0GwJ/Ov3LuQl1yoEzDIYVpdkNZSg==}
+    deprecated: This package has been deprecated and is no longer maintained. Please use @praha/oxlint-config-standard instead.
     peerDependencies:
       '@praha/eslint-config-common': 4.0.3
       '@praha/eslint-config-javascript': 3.0.11
@@ -2883,6 +2890,7 @@ packages:
 
   '@praha/eslint-config-vitest@1.0.7':
     resolution: {integrity: sha512-BwrY2V6wWIrNfgkD61Lv4jygz0pnynOed/PqO4MBySLRrPUugEwK+rzG+bTCnL1valkIffKztBdwp3lG7UeXLQ==}
+    deprecated: This package has been deprecated and is no longer maintained. Please use @praha/oxlint-config-standard instead.
     peerDependencies:
       '@praha/eslint-config-common': 4.0.3
       '@praha/eslint-config-javascript': 3.0.11
@@ -3784,8 +3792,8 @@ packages:
       core-js:
         optional: true
 
-  '@rslib/core@0.21.3':
-    resolution: {integrity: sha512-3kyF273GQWIky4rAGD+Nkewlc7OraRwM2rG6wMJ19cYeomN0OKokVbk0vvfLAcQu43mtEO+dnZk6BchUoRmQOg==}
+  '@rslib/core@0.21.4':
+    resolution: {integrity: sha512-lGQ3znngCmzYaIbPZcfEm4t+fGhSM4os1GKwXaLydUOB2mf3Q/MDffpEkuMtbzrW+PmAGJ8NIbjgipXd9mlcsg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
@@ -8442,8 +8450,8 @@ packages:
     resolution: {integrity: sha512-nLTrUKm2UyiL7rlhapu/Zl45FwNgkZGaCpZbIHajDYgwlJCOzLSk+cIPAnsEqV955GjILJnKbdQC1nVPz+gAYQ==}
     engines: {node: '>= 18'}
 
-  rsbuild-plugin-dts@0.21.3:
-    resolution: {integrity: sha512-8E3/npwRp99gc/Bl5bE1KKN5eIS2TQ3fuA7fBEk67R1RF7V4OtFKVI7mhk3X8zoH/9cclV9v909dguegZDgncw==}
+  rsbuild-plugin-dts@0.21.4:
+    resolution: {integrity: sha512-hqXzk3pQFcbviCZNECxIZsH8ygyf9F9n3UZWHpjcAZmYeH5wLPsGqa6CyXWh4+EDXkO++7iXTVuIuw2x2hGn/w==}
     engines: {node: ^20.19.0 || >=22.12.0}
     peerDependencies:
       '@microsoft/api-extractor': ^7
@@ -13186,10 +13194,10 @@ snapshots:
     transitivePeerDependencies:
       - '@module-federation/runtime-tools'
 
-  '@rslib/core@0.21.3(typescript@5.9.3)':
+  '@rslib/core@0.21.4(typescript@5.9.3)':
     dependencies:
       '@rsbuild/core': 2.0.5
-      rsbuild-plugin-dts: 0.21.3(@rsbuild/core@2.0.5)(typescript@5.9.3)
+      rsbuild-plugin-dts: 0.21.4(@rsbuild/core@2.0.5)(typescript@5.9.3)
     optionalDependencies:
       typescript: 5.9.3
     transitivePeerDependencies:
@@ -18797,7 +18805,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  rsbuild-plugin-dts@0.21.3(@rsbuild/core@2.0.5)(typescript@5.9.3):
+  rsbuild-plugin-dts@0.21.4(@rsbuild/core@2.0.5)(typescript@5.9.3):
     dependencies:
       '@ast-grep/napi': 0.37.0
       '@rsbuild/core': 2.0.5
