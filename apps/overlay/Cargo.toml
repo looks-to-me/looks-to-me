@@ -24,4 +24,4 @@ ab_glyph = { version = "0.2.32" }
 image = { version = "0.25.8" }
 imageproc = { version = "0.26.0" }
 wasm-bindgen = { version="0.2.104" }
-worker = { version="0.7.0" }
+worker = { version="0.8.0" }
