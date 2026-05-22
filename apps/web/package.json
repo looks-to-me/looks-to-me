@@ -28,7 +28,7 @@
     "ahooks": "3.9.7",
     "client-only": "0.0.1",
     "clsx": "2.1.1",
-    "date-fns": "4.1.0",
+    "date-fns": "4.2.1",
     "drizzle-orm": "0.45.2",
     "lucide-react": "0.577.0",
     "modern-normalize": "3.0.1",
