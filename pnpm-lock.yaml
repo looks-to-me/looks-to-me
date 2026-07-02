@@ -48,8 +48,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/tiered-cache
       valibot:
-        specifier: 1.4.1
-        version: 1.4.1(typescript@5.9.3)
+        specifier: 1.4.2
+        version: 1.4.2(typescript@5.9.3)
     devDependencies:
       '@praha/eslint-config-definer':
         specifier: 2.0.2
@@ -133,8 +133,8 @@ importers:
         specifier: 2.0.7
         version: 2.0.7(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       valibot:
-        specifier: 1.4.1
-        version: 1.4.1(typescript@5.9.3)
+        specifier: 1.4.2
+        version: 1.4.2(typescript@5.9.3)
     devDependencies:
       '@praha/eslint-config-definer':
         specifier: 2.0.2
@@ -9235,8 +9235,8 @@ packages:
   v8-compile-cache-lib@3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
 
-  valibot@1.4.1:
-    resolution: {integrity: sha512-klCmFTz2jeDluy9RwX+F884TCiogtdBJ/YaxSx1EOBYXa3NXNWj8kR1jjN8rzluwojJVWWaHJ4r1U5LfICnM3g==}
+  valibot@1.4.2:
+    resolution: {integrity: sha512-gjdCvJ6d3RyHAneqxMYMW9QMCwYMb3jpOO0IyHZV1bnRHFBHrX3VkIILt5XYR0WhwHiH7Mty8ovuPZ/O3gamrg==}
     peerDependencies:
       typescript: '>=5'
     peerDependenciesMeta:
@@ -19408,7 +19408,7 @@ snapshots:
 
   v8-compile-cache-lib@3.0.1: {}
 
-  valibot@1.4.1(typescript@5.9.3):
+  valibot@1.4.2(typescript@5.9.3):
     optionalDependencies:
       typescript: 5.9.3
 
