@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@looks-to-me/package-tiered-cache": "workspace:*",
-    "valibot": "1.4.1"
+    "valibot": "1.4.2"
   },
   "devDependencies": {
     "@praha/eslint-config-definer": "2.0.2",
