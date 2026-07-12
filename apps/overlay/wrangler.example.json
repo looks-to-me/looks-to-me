@@ -6,5 +6,10 @@
   "compatibility_date": "2025-10-01",
   "build": {
     "command": "cargo install -q worker-build && worker-build --release"
+  },
+  "observability": {
+    "traces": {
+      "enabled": true
+    }
   }
 }
