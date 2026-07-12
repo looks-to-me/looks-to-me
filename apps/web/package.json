@@ -71,7 +71,7 @@
     "storybook": "10.4.6",
     "style-loader": "4.0.0",
     "typescript": "5.9.3",
-    "vercel": "48.12.1",
+    "vercel": "54.21.1",
     "vitest": "4.1.9",
     "wrangler": "4.103.0"
   }
