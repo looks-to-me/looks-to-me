@@ -64,7 +64,7 @@
     "better-sqlite3": "12.11.1",
     "css-loader": "7.1.4",
     "dotenv": "17.4.2",
-    "eslint": "9.39.4",
+    "eslint": "10.6.0",
     "mini-css-extract-plugin": "2.10.2",
     "miniflare": "4.20260625.0",
     "rimraf": "6.1.3",
