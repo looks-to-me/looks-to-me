@@ -14,30 +14,6 @@ export type Post = {
   word: string;
 };
 
-export const savePost = async (post: Post): Promise<Post> => {
-  await database()
-    .insert(schema.posts)
-    .values({
-      id: post.id,
-      userId: post.userId,
-      imageId: post.imageId,
-      word: post.word,
-      postedAt: new Date(),
-    })
-    .onConflictDoUpdate({
-      target: schema.posts.id,
-      set: {
-        userId: sql`excluded.user_id`,
-        imageId: sql`excluded.image_id`,
-        word: sql`excluded.word`,
-        postedAt: sql`excluded.posted_at`,
-      },
-    })
-    .run();
-
-  return post;
-};
-
 export const deletePost = async (id: Post['id']): Promise<void> => {
   await database()
     .delete(schema.posts)

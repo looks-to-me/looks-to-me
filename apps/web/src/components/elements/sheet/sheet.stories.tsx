@@ -6,7 +6,7 @@ import { SheetTitle } from './sheet-title';
 import { SheetTrigger } from './sheet-trigger';
 import { Button } from '../button';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 export default {
   component: Sheet,

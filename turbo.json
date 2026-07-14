@@ -7,6 +7,7 @@
   "tasks": {
     "generate": {
       "outputs": [
+        "src/graphql/generated/**",
         "worker-configuration.d.ts"
       ]
     },

@@ -1,6 +1,6 @@
 import { VariableTextInput } from './variable-text-input';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 export default {
   component: VariableTextInput,

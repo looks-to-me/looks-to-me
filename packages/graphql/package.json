@@ -1,0 +1,48 @@
+{
+  "name": "@looks-to-me/package-graphql",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./schema.graphql": "./schema.graphql"
+  },
+  "scripts": {
+    "generate": "tsx scripts/print-schema.ts",
+    "build": "rslib build",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "lint:code": "eslint",
+    "lint:type": "tsc --pretty --noEmit"
+  },
+  "dependencies": {
+    "@looks-to-me/package-database": "workspace:*",
+    "@paralleldrive/cuid2": "3.3.0",
+    "@pothos/core": "4.13.0",
+    "@pothos/plugin-relay": "4.7.0",
+    "@pothos/plugin-simple-objects": "4.1.3",
+    "@praha/byethrow": "0.12.0",
+    "@praha/diva": "1.0.2",
+    "@praha/error-factory": "1.4.1",
+    "drizzle-orm": "0.45.2",
+    "graphql": "16.12.0",
+    "ts-pattern": "5.9.0",
+    "valibot": "1.4.2"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "4.20260702.1",
+    "@looks-to-me/package-database-testing": "workspace:*",
+    "@praha/byethrow-testing": "0.12.0",
+    "@rslib/core": "0.23.2",
+    "@types/node": "24.10.0",
+    "eslint": "9.39.4",
+    "miniflare": "4.20260701.0",
+    "tsx": "4.23.0",
+    "typescript": "5.9.3",
+    "vitest": "4.1.10",
+    "wrangler": "4.107.0"
+  }
+}

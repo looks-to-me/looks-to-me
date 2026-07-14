@@ -1,6 +1,6 @@
 import { ApplicationLogo } from './application-logo';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 export default {
   component: ApplicationLogo,

@@ -1,12 +1,13 @@
 'use client';
 
+import { R } from '@praha/byethrow';
 import { useDebounce } from 'ahooks';
 import { clsx } from 'clsx';
 import { useRouter } from 'next/navigation';
 import { useCallback, useRef, useState } from 'react';
 import { toast } from 'sonner';
 
-import { submitPost } from './actions/submit-post';
+import { createPost } from './actions/create-post';
 import * as styles from './post-create-form.css';
 import { Button } from '../../../../../components/elements/button';
 import { InputImageWithPreview } from '../input-image-with-preview';
@@ -29,15 +30,12 @@ export const PostCreateForm: FC<PostCreateFormProps> = ({
 
   const handleSubmit = useCallback((formData: FormData): void => {
     toast.promise(async () => {
-      const result = await submitPost(formData);
-      if (result.type === 'error') {
-        if (result.reason === 'unauthorized') router.push('/login');
-        throw new Error(result.message);
-      }
+      const result = await createPost(formData);
+      if (R.isFailure(result)) throw new Error(result.error.message);
 
       inputRef.current?.reset();
-      router.push(result.redirectUrl);
-      return result.message;
+      router.push(result.value.redirectUrl);
+      return result.value.message;
     }, {
       loading: 'Submitting...',
       success: (result: string) => result,

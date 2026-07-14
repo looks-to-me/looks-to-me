@@ -3,7 +3,7 @@ import { PopoverContent } from './popover-content';
 import { PopoverTrigger } from './popover-trigger';
 import { Button } from '../button';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 export default {
   component: Popover,

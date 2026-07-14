@@ -2,27 +2,33 @@ import { clsx } from 'clsx';
 
 import { UserMuteListItem } from './user-mute-list-item';
 import * as styles from './user-mute-list.css';
+import { getFragmentData, graphql } from '../../../../graphql/generated';
 
-import type { FC } from 'react';
+import type { FragmentType } from '../../../../graphql/generated';
+import type { ComponentProps, FC } from 'react';
 
-export type UserMuteListProps = {
-  className?: string | undefined;
-  users: {
-    id: string;
-    profile: {
-      name: string;
-      displayName: string | null;
-    };
-  }[];
+export const UserMuteListFragment = graphql(/** GraphQL */ `
+  fragment UserMuteListFragment on Query {
+    mutedUsers {
+      id
+      ...UserMuteListItemFragment
+    }
+  }
+`);
+
+export type UserMuteListProps = ComponentProps<'ul'> & {
+  fragment: FragmentType<typeof UserMuteListFragment>;
 };
 
 export const UserMuteList: FC<UserMuteListProps> = ({
   className,
-  users,
+  fragment,
 }) => {
-  if (!users.length) {
+  const data = getFragmentData(UserMuteListFragment, fragment);
+
+  if (!data.mutedUsers.length) {
     return (
-      <div className={clsx(className, styles.empty)}>
+      <div className={clsx(className, styles.wrapper, styles.empty)}>
         You haven&apos;t muted anyone yet.
       </div>
     );
@@ -30,8 +36,8 @@ export const UserMuteList: FC<UserMuteListProps> = ({
 
   return (
     <ul className={clsx(className, styles.wrapper)}>
-      {users.map((user) => (
-        <UserMuteListItem key={user.id} user={user} />
+      {data.mutedUsers.map((user) => (
+        <UserMuteListItem key={user.id} fragment={user} />
       ))}
     </ul>
   );

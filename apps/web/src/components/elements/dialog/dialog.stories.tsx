@@ -6,7 +6,7 @@ import { DialogTitle } from './dialog-title';
 import { DialogTrigger } from './dialog-trigger';
 import { Button } from '../button';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 export default {
   component: Dialog,

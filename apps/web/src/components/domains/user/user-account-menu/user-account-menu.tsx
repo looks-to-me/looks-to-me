@@ -3,6 +3,7 @@ import { LogOutIcon, SettingsIcon, UserIcon } from 'lucide-react';
 import Link from 'next/link';
 
 import * as styles from './user-account-menu.css';
+import { getFragmentData, graphql } from '../../../../graphql/generated';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../elements/avatar';
 import {
   DropdownMenu,
@@ -14,49 +15,55 @@ import {
   DropdownMenuLabel,
 } from '../../../elements/dropdown-menu';
 
-import type { FC } from 'react';
+import type { FragmentType } from '../../../../graphql/generated';
+import type { ComponentProps, FC } from 'react';
 
-export type UserAccountMenuProps = {
-  className?: string;
-  user: {
-    id: string;
-    profile: {
-      name: string;
-      displayName: string | null;
-    };
-  };
+export const UserAccountMenuFragment = graphql(/** GraphQL */ `
+  fragment UserAccountMenuFragment on User {
+    id
+    name
+    displayName
+    avatarUrl
+  }
+`);
+
+export type UserAccountMenuProps = ComponentProps<typeof Avatar> & {
+  fragment: FragmentType<typeof UserAccountMenuFragment>;
 };
 
 export const UserAccountMenu: FC<UserAccountMenuProps> = ({
   className,
-  user,
+  fragment,
+  ...props
 }) => {
+  const data = getFragmentData(UserAccountMenuFragment, fragment);
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <Avatar className={clsx(className, styles.avatar)}>
+        <Avatar {...props} className={clsx(styles.avatar, className)}>
           <AvatarImage
-            src={`/images/avatars/${user.id}`}
-            alt={user.profile.displayName ?? user.profile.name}
+            src={data.avatarUrl}
+            alt={data.displayName ?? data.name}
             sizes="32px"
           />
           <AvatarFallback>
-            {user.profile.displayName ?? user.profile.name}
+            {data.displayName ?? data.name}
           </AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>
           <div className={styles.account}>
-            <p className={styles.accountName}>{user.profile.name}</p>
-            {user.profile.displayName && (
-              <p className={styles.displayName}>{user.profile.displayName}</p>
+            <p className={styles.accountName}>{data.name}</p>
+            {data.displayName && (
+              <p className={styles.displayName}>{data.displayName}</p>
             )}
           </div>
         </DropdownMenuLabel>
         <DropdownMenuGroup>
           <DropdownMenuItem asChild>
-            <Link href={`/@${user.profile.name}`}>
+            <Link href={`/@${data.name}`}>
               <DropdownMenuIcon>
                 <UserIcon />
               </DropdownMenuIcon>

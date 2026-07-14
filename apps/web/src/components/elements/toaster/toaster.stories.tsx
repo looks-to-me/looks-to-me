@@ -3,7 +3,7 @@ import { toast } from 'sonner';
 import { Toaster } from './toaster';
 import { Button } from '../button';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 export default {
   component: Toaster,

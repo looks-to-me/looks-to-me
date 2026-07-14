@@ -6,7 +6,7 @@
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "require": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts"
     }
   },
   "scripts": {
@@ -17,10 +17,10 @@
     "lint:type": "tsc --pretty --noEmit"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20260630.1",
-    "@rslib/core": "0.23.1",
+    "@cloudflare/workers-types": "4.20260702.1",
+    "@rslib/core": "0.23.2",
     "eslint": "9.39.4",
     "typescript": "5.9.3",
-    "vitest": "4.1.9"
+    "vitest": "4.1.10"
   }
 }

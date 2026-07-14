@@ -1,53 +1,65 @@
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 import * as styles from './post-details-header.css';
 import { PostMenu } from '../../../../app/(main)/_components/post-menu';
-import { ShareButton } from '../../../../app/(main)/_components/share-button';
-import { publicEnv } from '../../../../app/_libs/env';
+import { getFragmentData, graphql } from '../../../../graphql/generated';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../elements/avatar';
+import { PostShareButton } from '../post-share-button';
 
-import type { Post } from '../../../../repositories/post-repository';
-import type { User } from '../../../../repositories/user-repository';
+import type { FragmentType } from '../../../../graphql/generated';
 import type { FC } from 'react';
 
+export const PostDetailsHeaderFragment = graphql(/** GraphQL */ `
+  fragment PostDetailsHeader on Query {
+    me {
+      id
+    }
+    post(id: $id) {
+      id
+      word
+      ...PostShareButton
+      author {
+        id
+        name
+        displayName
+      }
+    }
+  }
+`);
+
 export type PostDetailsHeaderProps = {
-  postUser: User;
-  post: Post;
-  loginUser: User | undefined;
-  isMuteUser: boolean;
+  fragment: FragmentType<typeof PostDetailsHeaderFragment>;
 };
 
 export const PostDetailsHeader: FC<PostDetailsHeaderProps> = ({
-  loginUser,
-  post,
-  postUser,
-  isMuteUser,
+  fragment,
 }) => {
-  const isMyPost = post.userId === loginUser?.id;
+  const data = getFragmentData(PostDetailsHeaderFragment, fragment);
+  if (!data.post) notFound();
+
   return (
     <header className={styles.wrapper}>
       <div className={styles.container}>
-        <Link href={`/@${postUser.profile.name}`}>
+        <Link href={`/@${data.post.author.name}`}>
           <Avatar className={styles.avatar}>
             <AvatarImage
-              src={`/images/avatars/${postUser.id}`}
-              alt={postUser.profile.displayName ?? postUser.profile.name}
+              src={`/images/avatars/${data.post.author.id}`}
+              alt={data.post.author.displayName ?? data.post.author.name}
               sizes="32px"
             />
             <AvatarFallback>
-              {postUser.profile.displayName ?? postUser.profile.name}
+              {data.post.author.displayName ?? data.post.author.name}
             </AvatarFallback>
           </Avatar>
         </Link>
         <h2 className={styles.title}>
-          Looks {post.word} To Me
+          Looks {data.post.word} To Me
         </h2>
       </div>
       <div className={styles.toolbar}>
-        <ShareButton
-          text={`![L${post.word.toUpperCase().at(0)}TM](${publicEnv().NEXT_PUBLIC_APP_ORIGIN}/images/posts/${post.id})`}
-        />
-        {isMyPost && (
+        <PostShareButton fragment={data.post} />
+        {data.me?.id === data.post.author.id && (
           <PostMenu
             postUser={postUser}
             isMuteUser={isMuteUser}

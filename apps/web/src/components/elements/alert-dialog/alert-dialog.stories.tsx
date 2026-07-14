@@ -5,7 +5,7 @@ import { AlertDialogProvider } from './alert-dialog-provider';
 import { Button } from '../button';
 
 import type { OpenAlertDialogProps } from './contexts/alert-dialog-context';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 export default {
   component: AlertDialogProvider,

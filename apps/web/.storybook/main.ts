@@ -1,18 +1,51 @@
-import { createRequire } from 'node:module';
+/* eslint-disable unicorn/no-thenable */
 
-import { VanillaExtractPlugin } from '@vanilla-extract/webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import fs from 'node:fs';
+import path from 'node:path';
 
-import type { StorybookConfig } from '@storybook/nextjs';
+import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
+import { defineConfig, mergeConfig } from 'vite';
 
-const require = createRequire(import.meta.url);
+import type { StorybookConfig } from '@storybook/nextjs-vite';
+import type { Plugin } from 'vite';
+
+type MockPluginOption = {
+  if: (source: string, importer: string) => boolean;
+  then: (source: string) => string;
+};
+
+const mockPlugin = (options: MockPluginOption[]): Plugin => {
+  return {
+    name: 'mock-plugin',
+    enforce: 'pre',
+    resolveId: (source, importer) => {
+      if (!importer || !path.isAbsolute(importer) || path.isAbsolute(source)) {
+        return null;
+      }
+
+      const sourcePath = path.resolve(path.dirname(importer), source);
+      const matchedOption = options.find((option) => option.if(sourcePath, importer));
+      if (!matchedOption) {
+        return null;
+      }
+
+      const mockPath = matchedOption.then(sourcePath);
+      if (!fs.existsSync(mockPath)) {
+        return null;
+      }
+
+      return { id: mockPath };
+    },
+  };
+};
 
 const config: StorybookConfig = {
   framework: {
-    name: '@storybook/nextjs',
+    name: '@storybook/nextjs-vite',
     options: {},
   },
   staticDirs: [
+    './public',
     '../public',
     '../node_modules/@looks-to-me/package-database/migrations',
   ],
@@ -22,43 +55,20 @@ const config: StorybookConfig = {
   ],
   addons: [
     '@storybook/addon-links',
-    {
-      name: '@storybook/addon-styling-webpack',
-      options: {
-        plugins: [
-          new VanillaExtractPlugin(),
-          new MiniCssExtractPlugin(),
-        ],
-        rules: [
-          {
-            test: /\.css$/,
-            exclude: /\.vanilla\.css$/,
-            sideEffects: true,
-            use: [
-              require.resolve('style-loader'),
-              {
-                loader: require.resolve('css-loader'),
-                options: {},
-              },
-            ],
-          },
-          {
-            test: /\.vanilla\.css$/i,
-            sideEffects: true,
-            use: [
-              MiniCssExtractPlugin.loader,
-              {
-                loader: require.resolve('css-loader'),
-                options: {
-                  url: false,
-                },
-              },
-            ],
-          },
-        ],
-      },
-    },
   ],
+  viteFinal: (config) => {
+    return mergeConfig(config, defineConfig({
+      plugins: [
+        vanillaExtractPlugin(),
+        mockPlugin([
+          {
+            if: (source) => source.endsWith('.action'),
+            then: (source) => `${source}.mock.ts`,
+          },
+        ]),
+      ],
+    }));
+  },
 };
 
 export default config;

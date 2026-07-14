@@ -1,4 +1,3 @@
-import { relations } from 'drizzle-orm';
 import {
   text,
   sqliteTable,
@@ -14,8 +13,4 @@ export const postCopies = sqliteTable('post_copies', {
   copiedAt: integer('copied_at', { mode: 'timestamp_ms' }).notNull(),
 }, (t) => ({
   pk: primaryKey({ columns: [t.copiedAt, t.postId, t.ipAddress] }),
-}));
-
-export const postCopiesRelations = relations(postCopies, ({ one }) => ({
-  post: one(posts),
 }));
